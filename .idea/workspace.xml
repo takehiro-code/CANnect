@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5abef2e8-9b9f-4598-aaed-0fe40b3c39b6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="ensc-405w" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="32-testing-environment" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\Win K. Aung\Desktop\ensc-405w\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1f11pshxyYxdhH4jE8beipUNiaZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5abef2e8-9b9f-4598-aaed-0fe40b3c39b6" name="Default Changelist" comment="" />
+      <created>1595370971126</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595370971126</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Commit1">
+      <created>1595371106598</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595371106598</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Revert &quot;Commit1&quot;&#10;&#10;This reverts commit 7065bfc7">
+      <created>1595371158834</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1595371158834</updated>
+    </task>
+    <task id="LOCAL-00003" summary="merge test">
+      <created>1595371409766</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1595371409766</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit1" />
+    <MESSAGE value="Revert &quot;Commit1&quot;&#10;&#10;This reverts commit 7065bfc7" />
+    <MESSAGE value="merge test" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge test" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="337" y="51" key="CommitChangelistDialog2" timestamp="1595371409007">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="337" y="51" key="CommitChangelistDialog2/0.0.1368.912@0.0.1368.912" timestamp="1595371409007" />
+    <state x="465" y="211" key="FileChooserDialogImpl" timestamp="1595371838326">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="465" y="211" key="FileChooserDialogImpl/0.0.1368.912@0.0.1368.912" timestamp="1595371838326" />
+    <state x="277" y="189" key="Vcs.Push.Dialog.v2" timestamp="1595371444204">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="277" y="189" key="Vcs.Push.Dialog.v2/0.0.1368.912@0.0.1368.912" timestamp="1595371444204" />
+    <state x="379" y="280" key="com.intellij.ide.util.TipDialog" timestamp="1595370975316">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="379" y="280" key="com.intellij.ide.util.TipDialog/0.0.1368.912@0.0.1368.912" timestamp="1595370975316" />
+    <state x="474" y="373" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595371303075">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="474" y="373" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1368.912@0.0.1368.912" timestamp="1595371303075" />
+    <state x="473" y="247" key="git4idea.merge.GitMergeDialog" timestamp="1595371344818">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="473" y="247" key="git4idea.merge.GitMergeDialog/0.0.1368.912@0.0.1368.912" timestamp="1595371344818" />
+    <state x="339" y="247" key="git4idea.merge.GitPullDialog" timestamp="1595371489324">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="339" y="247" key="git4idea.merge.GitPullDialog/0.0.1368.912@0.0.1368.912" timestamp="1595371489324" />
+  </component>
+</project>
