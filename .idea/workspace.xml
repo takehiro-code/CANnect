@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5abef2e8-9b9f-4598-aaed-0fe40b3c39b6" name="Default Changelist" comment="Merge branch 'master' into 32-testing-environment&#10;&#10;# Conflicts:&#10;#&#9;.idea/gradle.xml&#10;#&#9;.idea/misc.xml">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Progress_Review_Meeting_2_Slides_.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Revised_minutes_for_1st_progress_review_meeting.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ensc-405w.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Galaxy_Nexus_API_28" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="ensc-405w" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="32-testing-environment" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\Win K. Aung\Desktop\ensc-405w\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1f11pshxyYxdhH4jE8beipUNiaZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5abef2e8-9b9f-4598-aaed-0fe40b3c39b6" name="Default Changelist" comment="" />
+      <created>1595370971126</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595370971126</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Commit1">
+      <created>1595371106598</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595371106598</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Revert &quot;Commit1&quot;&#10;&#10;This reverts commit 7065bfc7">
+      <created>1595371158834</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1595371158834</updated>
+    </task>
+    <task id="LOCAL-00003" summary="merge test">
+      <created>1595371409766</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1595371409766</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit1" />
+    <MESSAGE value="Revert &quot;Commit1&quot;&#10;&#10;This reverts commit 7065bfc7" />
+    <MESSAGE value="merge test" />
+    <MESSAGE value="Merge branch 'master' into 32-testing-environment&#10;&#10;# Conflicts:&#10;#&#9;.idea/gradle.xml&#10;#&#9;.idea/misc.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' into 32-testing-environment&#10;&#10;# Conflicts:&#10;#&#9;.idea/gradle.xml&#10;#&#9;.idea/misc.xml" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="337" y="2" key="CommitChangelistDialog2" timestamp="1595374661147">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="337" y="2" key="CommitChangelistDialog2/0.0.1368.912@0.0.1368.912" timestamp="1595374661147" />
+    <state x="94" y="94" width="1181" height="725" key="DiffContextDialog" timestamp="1595374639957">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="94" y="94" width="1181" height="725" key="DiffContextDialog/0.0.1368.912@0.0.1368.912" timestamp="1595374639957" />
+    <state x="465" y="211" key="FileChooserDialogImpl" timestamp="1595371838326">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="465" y="211" key="FileChooserDialogImpl/0.0.1368.912@0.0.1368.912" timestamp="1595371838326" />
+    <state x="265" y="200" key="IDE.errors.dialog" timestamp="1595374844839">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="265" y="200" key="IDE.errors.dialog/0.0.1368.912@0.0.1368.912" timestamp="1595374844839" />
+    <state x="-3" y="0" width="1355" height="912" key="MergeDialog" timestamp="1595374618704">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="-3" y="0" width="1355" height="912" key="MergeDialog/0.0.1368.912@0.0.1368.912" timestamp="1595374618704" />
+    <state x="397" y="172" key="MultipleFileMergeDialog" timestamp="1595374618727">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="397" y="172" key="MultipleFileMergeDialog/0.0.1368.912@0.0.1368.912" timestamp="1595374618727" />
+    <state x="277" y="189" key="Vcs.Push.Dialog.v2" timestamp="1595371444204">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="277" y="189" key="Vcs.Push.Dialog.v2/0.0.1368.912@0.0.1368.912" timestamp="1595371444204" />
+    <state x="379" y="280" key="com.intellij.ide.util.TipDialog" timestamp="1595370975316">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="379" y="280" key="com.intellij.ide.util.TipDialog/0.0.1368.912@0.0.1368.912" timestamp="1595370975316" />
+    <state x="474" y="373" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595371303075">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="474" y="373" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1368.912@0.0.1368.912" timestamp="1595371303075" />
+    <state x="473" y="247" key="git4idea.merge.GitMergeDialog" timestamp="1595374898152">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="473" y="247" key="git4idea.merge.GitMergeDialog/0.0.1368.912@0.0.1368.912" timestamp="1595374898152" />
+    <state x="339" y="247" key="git4idea.merge.GitPullDialog" timestamp="1595371489324">
+      <screen x="0" y="0" width="1368" height="912" />
+    </state>
+    <state x="339" y="247" key="git4idea.merge.GitPullDialog/0.0.1368.912@0.0.1368.912" timestamp="1595371489324" />
+  </component>
+</project>
