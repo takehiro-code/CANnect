@@ -25,8 +25,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //add click listener to the cards
         settingsCard.setOnClickListener(this);
+
+        //start diagnostics activity
+        dashboardCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,Dashboard.class );
+                startActivity(i);
+            }
+        });
+
         diagnosticsCard.setOnClickListener(this);
-        dashboardCard.setOnClickListener(this);
         mapCard.setOnClickListener(this);
         //add onclick listener to bottom bar
         connectBar = (RelativeLayout)findViewById(R.id.connect_bar);
