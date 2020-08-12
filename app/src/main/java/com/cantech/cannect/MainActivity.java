@@ -8,15 +8,39 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+// for bluetooth status
+import android.bluetooth.BluetoothAdapter;
+import android.widget.TextView;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private TextView BTstatus;
+    private BluetoothAdapter BA;
+
     //create objects for cards
     private CardView mapCard, dashboardCard, diagnosticsCard, settingsCard;
     // object for bottom bar (connect)
     private RelativeLayout connectBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // check connection status and set text on the top bar
+        BTstatus = (TextView)findViewById(R.id.status_text);
+        BA  = BluetoothAdapter.getDefaultAdapter();
+        if (BA  == null) {
+            // Device does not support Bluetooth
+            BTstatus.setText("Bluetooth Not Supported");
+        } else if (!BA .isEnabled()) {
+            // Bluetooth is not enabled :)
+            BTstatus.setText("Disconnected");
+        } else {
+            // Bluetooth is enabled
+            BTstatus.setText("Connected");
+        }
+
         //define cards
         settingsCard = (CardView) findViewById(R.id.settings_card);
         diagnosticsCard = (CardView) findViewById(R.id.diagnostics_card);
