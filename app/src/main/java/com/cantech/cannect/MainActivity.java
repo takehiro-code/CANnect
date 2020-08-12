@@ -11,35 +11,55 @@ import android.widget.RelativeLayout;
 // for bluetooth status
 import android.bluetooth.BluetoothAdapter;
 import android.widget.TextView;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.IntentFilter;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView BTstatus;
-    private BluetoothAdapter BA;
 
     //create objects for cards
     private CardView mapCard, dashboardCard, diagnosticsCard, settingsCard;
     // object for bottom bar (connect)
     private RelativeLayout connectBar;
 
+    // Source: https://stackoverflow.com/questions/9693755/detecting-state-changes-made-to-the-bluetoothadapter
+    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            final String action = intent.getAction();
+            BTstatus = (TextView)findViewById(R.id.status_text);
+
+            if (action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
+                final int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE,
+                        BluetoothAdapter.ERROR);
+                switch (state) {
+                    case BluetoothAdapter.STATE_OFF:
+                        BTstatus.setText("Disconnected");
+                        break;
+                    case BluetoothAdapter.STATE_TURNING_OFF:
+                        BTstatus.setText("Turning Bluetooth off...");
+                        break;
+                    case BluetoothAdapter.STATE_ON:
+                        BTstatus.setText("Connected");
+                        break;
+                    case BluetoothAdapter.STATE_TURNING_ON:
+                        BTstatus.setText("Turning Bluetooth on...");
+                        break;
+                }
+            }
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // check connection status and set text on the top bar
-        BTstatus = (TextView)findViewById(R.id.status_text);
-        BA  = BluetoothAdapter.getDefaultAdapter();
-        if (BA  == null) {
-            // Device does not support Bluetooth
-            BTstatus.setText("Bluetooth Not Supported");
-        } else if (!BA .isEnabled()) {
-            // Bluetooth is not enabled :)
-            BTstatus.setText("Disconnected");
-        } else {
-            // Bluetooth is enabled
-            BTstatus.setText("Connected");
-        }
+        // Register for broadcasts on BluetoothAdapter state change
+        IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
+        registerReceiver(mReceiver, filter);
 
         //define cards
         settingsCard = (CardView) findViewById(R.id.settings_card);
@@ -66,6 +86,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //add click listener to the bar
         connectBar.setOnClickListener(this);
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // Unregister broadcast listeners
+        unregisterReceiver(mReceiver);
+    }
+
 
     @Override
     public void onClick(View view) {
