@@ -22,16 +22,24 @@
 
         <activity
             android:name=".Connect"
-            android:label="@string/title_activity_connect"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Map"></activity>
-        <activity android:name=".Settings" />
-        <activity android:name=".Dashboard" />
-        <activity android:name=".Diagnostics" />
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".Map"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".Settings"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".Dashboard"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".Diagnostics"
+            android:parentActivityName=".MainActivity"/>
 
 
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

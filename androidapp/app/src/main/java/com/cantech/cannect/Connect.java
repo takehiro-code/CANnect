@@ -69,6 +69,9 @@ public class Connect extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connect);
 
+        getSupportActionBar().setTitle("Connect");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mBluetoothStatus = (TextView)findViewById(R.id.bluetooth_status);
         mReadBuffer = (TextView) findViewById(R.id.read_buffer);
         mScanBtn = (Button)findViewById(R.id.scan);

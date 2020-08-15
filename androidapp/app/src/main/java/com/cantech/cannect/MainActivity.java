@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        connectionStatusUpdate();
+
         // Register for broadcasts on BluetoothAdapter state change
         IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
         registerReceiver(mReceiver, filter);
@@ -85,6 +87,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         connectBar = (RelativeLayout)findViewById(R.id.connect_bar);
         //add click listener to the bar
         connectBar.setOnClickListener(this);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        connectionStatusUpdate();
     }
 
     @Override
@@ -122,6 +130,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             default:
                 break;
+        }
+    }
+
+    public void connectionStatusUpdate ()
+    {
+        BTstatus = (TextView)findViewById(R.id.status_text);
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (mBluetoothAdapter == null) {
+            BTstatus.setText("Bluetooth Not Supported");
+        } else if (!mBluetoothAdapter.isEnabled()) {
+            BTstatus.setText("Disconnected");
+        } else {
+            BTstatus.setText("Connected");
         }
     }
 }

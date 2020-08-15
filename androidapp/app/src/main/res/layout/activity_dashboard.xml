@@ -6,9 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Dashboard">
-
-    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-circular-gauge.min.js"></script>
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,3 +32,6 @@
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>-->
+<!--<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-circular-gauge.min.js"></script>-->
