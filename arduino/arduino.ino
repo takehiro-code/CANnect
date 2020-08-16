@@ -1,5 +1,13 @@
-// Arduino Uno
+/**
+   Arduino Uno & SparkFun CAN Bus shield - Controls the CAN Bus controller
 
+   References:
+   https://github.com/sparkfun/SparkFun_CAN-Bus_Arduino_Library
+*/
+
+/**
+   Libraries
+*/
 #include <SoftwareSerial.h>
 #include <string.h>
 #include <Canbus.h>
@@ -9,17 +17,10 @@
 #include <mcp2515_defs.h>
 
 /**
-   Constants
+   Arduino Hardware Pin-outs
 */
-#define FILTER_FLAG           1 // set this to zero if you want to see everything
-#define MESSAGE_INTERVAL      1000 // 1000 ms
-#define MESSAGE_DELAY           20 
-
-/**
-   Arduino Pin-outs
-*/
-#define rx 2
-#define tx 3
+#define SERIAL_RX             2
+#define SERIAL_TX             3
 
 /**
    PIDs
@@ -36,17 +37,27 @@
 #define PID_REQUEST           0x7DF
 #define PID_REPLY             0x7E8
 
-SoftwareSerial sw(rx, tx); // RX, TX
+/**
+   Constants
+*/
+#define FILTER_FLAG           1 // set this to zero if you want to see everything
+#define MESSAGE_INTERVAL      1000 // 1000 ms
+#define MESSAGE_DELAY         20
+#define BAUD_RATE             115200
 
+/**
+   Global Variables
+*/
+SoftwareSerial sw(SERIAL_RX, SERIAL_TX);
 unsigned long loopTime = 0;
 
 /**
    Setup
 */
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(BAUD_RATE);
   Serial.println("Interfacing with the Arduinos");
-  sw.begin(115200);
+  sw.begin(BAUD_RATE);
 
   if (Canbus.init(CANSPEED_500)) { //Initialise MCP2515 CAN controller at the specified speed
     Serial.println("CAN Init ok");
@@ -62,8 +73,8 @@ void setup() {
 */
 void loop() {
   unsigned long elapsedTime = millis();
-  unsigned char pids[] = {ENGINE_COOLANT_TEMP, ENGINE_RPM};
-  int pidsLength = sizeof(pids)/sizeof(unsigned char);
+  unsigned char pids[] = {ENGINE_COOLANT_TEMP, ENGINE_RPM, VEHICLE_SPEED};
+  int pidsLength = sizeof(pids) / sizeof(unsigned char);
 
   // Send requests every MESSAGE_INTERVAL
   if (elapsedTime - loopTime >= MESSAGE_INTERVAL) {
@@ -73,39 +84,37 @@ void loop() {
   }
 
   if (sw.available()) {
-    Serial.println("New message");
-    Serial.write(sw.read());
-    Serial.println(" ");
+    Serial.print(sw.read());
     delay(MESSAGE_DELAY);
   }
 
-  checkPIDMessageFilter(pids, pidsLength);
+  checkPIDMessageFilter(pids, pidsLength, false);
 }
 
-void checkPIDMessageFilter(unsigned char* pids, int length) {
+void checkPIDMessageFilter(unsigned char* pids, int length, bool filterOn) {
   tCAN message;
   if (mcp2515_check_message()) {
     if (mcp2515_get_message(&message)) {
-      for (int ii=0; ii < length; ii++) {
-        if (message.id == pids[ii]) {
-          printMessage(message);
-          return;
+      if (filterOn) {
+        for (int ii = 0; ii < length; ii++) {
+          if (message.id == PID_REPLY && message.data[2] == pids[ii]) {
+            printMessage(message);
+            return;
+          }
         }
+      }
+      else {
+        printMessage(message);
       }
     }
   }
 }
 
-void checkPIDMessage(void) {
-  tCAN message;
-  if (mcp2515_check_message()) {
-    if (mcp2515_get_message(&message)) {
-      printMessage(message);
-    }
-  }
-}
-
 void printMessage(tCAN message) {
+  Serial.print("ID: ");
+  Serial.print(message.id, HEX);
+  Serial.println(" ");
+
   sw.print("ID: ");
   sw.print(message.id, HEX);
   sw.print(", ");
@@ -115,6 +124,7 @@ void printMessage(tCAN message) {
     sw.print(message.data[i], HEX);
     sw.print(" ");
   }
+  sw.println(" ");
 }
 
 void requestPID(unsigned char pid) {
