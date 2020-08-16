@@ -106,7 +106,7 @@ void writeToBluetooth(void) {
       SerialBT.print(buf[i]);
       SerialBT.print("\t");
     }
-    SerialBT.println();
+    SerialBT.println(" ");
   }
 }
 
