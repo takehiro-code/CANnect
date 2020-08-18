@@ -60,6 +60,26 @@
             android:text="&lt;Bluetooth Status>" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/namefieldOBD2"
+            android:layout_width="9dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="&lt;namefieldOBD2>" />
+
+        <TextView
+            android:id="@+id/datafieldOBD2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="&lt;datafieldOBD2>" />
+    </LinearLayout>
+
     <Button
         android:id="@+id/scan"
         android:layout_width="match_parent"
@@ -87,6 +107,7 @@
     <ListView
         android:id="@+id/devices_list_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="429dp"
         android:choiceMode="singleChoice" />
+
 </LinearLayout>

@@ -55,6 +55,8 @@ public class Connect extends AppCompatActivity {
     private Button mListPairedDevicesBtn;
     private Button mDiscoverBtn;
     private ListView mDevicesListView;
+    private TextView mNameFieldOBD2;
+    private TextView mDataFieldOBD2;
 
     private BluetoothAdapter mBTAdapter;
     private Set<BluetoothDevice> mPairedDevices;
@@ -79,6 +81,11 @@ public class Connect extends AppCompatActivity {
         mDiscoverBtn = (Button)findViewById(R.id.discover);
         mListPairedDevicesBtn = (Button)findViewById(R.id.paired_btn);
 
+        mNameFieldOBD2 = (TextView) findViewById(R.id.namefieldOBD2);
+        mDataFieldOBD2 = (TextView) findViewById(R.id.datafieldOBD2);
+
+
+
         mBTArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
         mBTAdapter = BluetoothAdapter.getDefaultAdapter(); // get a handle on the bluetooth radio
 
@@ -102,6 +109,9 @@ public class Connect extends AppCompatActivity {
                         e.printStackTrace();
                     }
                     mReadBuffer.setText(readMessage);
+                    String[] result = DataParsing.convertOBD2FrameToUserFormat(readMessage);
+                    mNameFieldOBD2.setText(result[0]);
+                    mNameFieldOBD2.setText(result[1]);
                 }
 
                 if(msg.what == CONNECTING_STATUS){
