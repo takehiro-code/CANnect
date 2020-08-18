@@ -118,7 +118,7 @@ public class DataParsing extends AppCompatActivity{
                 break;
             case MAF_SENSOR:
                 result[0] = MAF_SENSOR_STRING;
-                result[1] = Float.toString((convertA * 256) + (convertB / 100.000f));
+                result[1] = Float.toString(((convertA * 256) + convertB) / 100.000f);
                 break;
             case THROTTLE:
                 result[0] = THROTTLE_STRING;
