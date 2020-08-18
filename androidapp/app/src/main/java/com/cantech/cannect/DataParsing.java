@@ -90,8 +90,8 @@ public class DataParsing extends AppCompatActivity{
     private static String[] convertOBD2PIDToUserFormat(String[] splitobd2msg)
     {
         String[] result = {"",""};
-        float convertA = Float.intBitsToFloat(Integer.parseInt(splitobd2msg[3], 16));
-        float convertB = Float.intBitsToFloat(Integer.parseInt(splitobd2msg[4], 16));
+        float convertA = (float) (Integer.parseInt(splitobd2msg[3], 16));
+        float convertB = (float) (Integer.parseInt(splitobd2msg[4], 16));
         switch(splitobd2msg[2])
         {
             case FUEL_STATUS:
@@ -108,7 +108,9 @@ public class DataParsing extends AppCompatActivity{
                 break;
             case ENGINE_RPM:
                 result[0] = ENGINE_RPM_STRING;
-                result[1] = Float.toString((convertA * 256) + (convertB / 4));
+                System.out.println(convertA);
+                System.out.println(convertB);
+                result[1] = Float.toString(((convertA * 256) + convertB )/ 4.000f);
                 break;
             case VEHICLE_SPEED:
                 result[0] = VEHICLE_SPEED_STRING;
@@ -116,15 +118,15 @@ public class DataParsing extends AppCompatActivity{
                 break;
             case MAF_SENSOR:
                 result[0] = MAF_SENSOR_STRING;
-                result[1] = Float.toString((convertA * 256) + (convertB / 100));
+                result[1] = Float.toString((convertA * 256) + (convertB / 100.000f));
                 break;
             case THROTTLE:
                 result[0] = THROTTLE_STRING;
-                result[1] = Float.toString(convertA * (100.0000f/256.0000f));
+                result[1] = Float.toString(convertA * (100.0000f/256.000f));
                 break;
             case O2_VOLTAGE:
                 result[0] = O2_VOLTAGE_STRING;
-                result[1] = Float.toString(convertA / 255);
+                result[1] = Float.toString(convertA / 255.000f);
                 break;
             default:
                 result[0] = "UNDEFINED: " + splitobd2msg[2];
