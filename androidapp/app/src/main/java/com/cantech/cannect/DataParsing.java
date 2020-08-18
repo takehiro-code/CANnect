@@ -60,14 +60,15 @@ public class DataParsing extends AppCompatActivity{
     // Return: User friendly format (Name of field and actual value)
     public static String[] convertOBD2FrameToUserFormat(String obd2message){
         String[] splitobd2msg = obd2message.split("\\s+");
-        // # bytes: ix=0
-        // Mode: ix=1
-        // OBD2 PID: ix=2
-        // OBD2 Data: ix=3 to 6
-        // END: ix=7
+        // CAN ID: ix=0
+        // # bytes: ix=1
+        // Mode: ix=2
+        // OBD2 PID: ix=3
+        // OBD2 Data: ix=4 to 7
+        // END: ix=8
         String[] result = {"",""};
 
-        switch(splitobd2msg[1])
+        switch(splitobd2msg[2])
         {
             case PID_CURRENT_DATA:
                 result = convertOBD2PIDToUserFormat(splitobd2msg);
@@ -90,21 +91,21 @@ public class DataParsing extends AppCompatActivity{
     private static String[] convertOBD2PIDToUserFormat(String[] splitobd2msg)
     {
         String[] result = {"",""};
-        float convertA = (float) (Integer.parseInt(splitobd2msg[3], 16));
-        float convertB = (float) (Integer.parseInt(splitobd2msg[4], 16));
-        switch(splitobd2msg[2])
+        float convertA = (float) (Integer.parseInt(splitobd2msg[4], 16));
+        float convertB = (float) (Integer.parseInt(splitobd2msg[5], 16));
+        switch(splitobd2msg[3])
         {
             case FUEL_STATUS:
                 result[0] = FUEL_STATUS_STRING;
-                result[1] = splitobd2msg[3]; // NEED BETTER SYSTEM TO ORGANIZE THIS
+                result[1] = splitobd2msg[4]; // NEED BETTER SYSTEM TO ORGANIZE THIS
                 break;
             case ENGINE_COOLANT_TEMP:
                 result[0] = ENGINE_COOLANT_TEMP_STRING;
-                result[1] = Integer.toString(Integer.parseInt(splitobd2msg[3], 16) - 40);
+                result[1] = Integer.toString(Integer.parseInt(splitobd2msg[4], 16) - 40);
                 break;
             case FUEL_PRESSURE:
                 result[0] = FUEL_PRESSURE_STRING;
-                result[1] = Integer.toString(Integer.parseInt(splitobd2msg[3], 16) * 3);
+                result[1] = Integer.toString(Integer.parseInt(splitobd2msg[4], 16) * 3);
                 break;
             case ENGINE_RPM:
                 result[0] = ENGINE_RPM_STRING;
@@ -114,7 +115,7 @@ public class DataParsing extends AppCompatActivity{
                 break;
             case VEHICLE_SPEED:
                 result[0] = VEHICLE_SPEED_STRING;
-                result[1] = Integer.toString(Integer.parseInt(splitobd2msg[3], 16));
+                result[1] = Integer.toString(Integer.parseInt(splitobd2msg[4], 16));
                 break;
             case MAF_SENSOR:
                 result[0] = MAF_SENSOR_STRING;
@@ -129,8 +130,8 @@ public class DataParsing extends AppCompatActivity{
                 result[1] = Float.toString(convertA / 255.000f);
                 break;
             default:
-                result[0] = "UNDEFINED: " + splitobd2msg[2];
-                result[1] = "UNDEFINED: " + splitobd2msg[3] + " " + splitobd2msg[4] + " " + splitobd2msg[5] + " " + splitobd2msg[6];
+                result[0] = "UNDEFINED: " + splitobd2msg[3];
+                result[1] = "UNDEFINED: " + splitobd2msg[4] + " " + splitobd2msg[5] + " " + splitobd2msg[6] + " " + splitobd2msg[7];
         }
 
         return result;
