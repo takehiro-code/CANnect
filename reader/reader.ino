@@ -42,6 +42,7 @@
 #define BAUD_RATE                 115200
 #define SETUP_DELAY               100
 #define INITIALISATION_ATTEMPTS   5
+#define MESSAGE_END               0xFF
 
 /**
    Global Variables
@@ -73,6 +74,8 @@ void loop() {
       Serial.write(SerialBT.read());
       delay(MESSAGE_DELAY);
     }
+    SerialBT.print(MESSAGE_END);
+    SerialBT.print(MESSAGE_END);
     Serial.println(" ");
   }
 
@@ -90,6 +93,8 @@ void writeSerialToBluetooth(void) {
       SerialBT.write(Serial.read());
       delay(MESSAGE_DELAY);
     }
+    SerialBT.print(MESSAGE_END);
+    SerialBT.print(MESSAGE_END);
     SerialBT.println(" ");
   }
 }
@@ -110,6 +115,8 @@ void writeCANToBluetooth(void) {
       SerialBT.print(buf[i]);
       SerialBT.print("\t");
     }
+    SerialBT.print(MESSAGE_END);
+    SerialBT.print(MESSAGE_END);
     SerialBT.println();
   }
 }
