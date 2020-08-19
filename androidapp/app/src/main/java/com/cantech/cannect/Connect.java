@@ -113,11 +113,11 @@ public class Connect extends AppCompatActivity {
                 if(msg.what == MESSAGE_READ){
                     String readMessage = null;
                     try {
-                        bufferOutput[bufferCurrSize] = (String) msg.obj; //new String((byte[]) msg.obj, "UTF-8");
+                        bufferOutput[bufferCurrSize] = new String((byte[]) msg.obj, "UTF-8");
                         if (bufferOutput[bufferCurrSize].contains("FF"))
                             delimCount++;
                         bufferCurrSize++;
-                    } catch (Exception e) {
+                    } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
                     readMessage = DataParsing.convertBufferToSingleOBD2String(bufferOutput);
