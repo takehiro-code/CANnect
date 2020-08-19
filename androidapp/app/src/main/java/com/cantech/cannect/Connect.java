@@ -66,6 +66,11 @@ public class Connect extends AppCompatActivity {
     private ConnectedThread mConnectedThread; // bluetooth background worker thread to send and receive data
     private BluetoothSocket mBTSocket = null; // bi-directional client-to-client data path
 
+    // Variables for Buffer Output
+    private String[] bufferOutput;
+    private int bufferCurrSize = 0;
+    private int delimCount = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,7 +101,11 @@ public class Connect extends AppCompatActivity {
         // Ask for location permission if not already allowed
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
-
+        String Input = "7E8 03 01 0D 05 AA AA AA AA";
+        mReadBuffer.setText(Input);
+        String[] result = DataParsing.convertOBD2FrameToUserFormat(Input);
+        mNameFieldOBD2.setText(result[0]);
+        mDataFieldOBD2.setText(result[1]);
 
         mHandler = new Handler(Looper.getMainLooper()){
             @Override
@@ -104,14 +113,36 @@ public class Connect extends AppCompatActivity {
                 if(msg.what == MESSAGE_READ){
                     String readMessage = null;
                     try {
-                        readMessage = new String((byte[]) msg.obj, "UTF-8");
+                        bufferOutput[bufferCurrSize] = new String((byte[]) msg.obj, "UTF-8");
+                        if (bufferOutput[bufferCurrSize].contains("FF"))
+                            delimCount++;
+                        bufferCurrSize++;
                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
+                    readMessage = DataParsing.convertBufferToSingleOBD2String(bufferOutput);
                     mReadBuffer.setText(readMessage);
-                    String[] result = DataParsing.convertOBD2FrameToUserFormat(readMessage);
-                    mNameFieldOBD2.setText(result[0]);
-                    mNameFieldOBD2.setText(result[1]);
+                    if (delimCount == 2)
+                    {
+                        if (bufferCurrSize == 11)
+                            System.out.println("Output from Buffer is correct size with delimiter detected. Converting.");
+                        else
+                            System.out.println("Output from Buffer hasn't reached actual OBD2 size with detected delimiters. Attempt to convert.");
+                        String[] result = DataParsing.convertOBD2FrameToUserFormat(readMessage);
+                        mNameFieldOBD2.setText(result[0]);
+                        mNameFieldOBD2.setText(result[1]);
+                        bufferCurrSize = 0;
+                        delimCount = 0;
+                    }
+                    else if (bufferOutput.length == 11 &&  delimCount != 2)
+                    {
+                        System.out.println("Output from Buffer has reached OBD2 size + 4 bytes without delimiters. Attempt to convert.");
+                        String[] result = DataParsing.convertOBD2FrameToUserFormat(readMessage);
+                        mNameFieldOBD2.setText(result[0]);
+                        mNameFieldOBD2.setText(result[1]);
+                        bufferCurrSize = 0;
+                        delimCount = 0;
+                    }
                 }
 
                 if(msg.what == CONNECTING_STATUS){

@@ -136,4 +136,23 @@ public class DataParsing extends AppCompatActivity{
 
         return result;
     }
+
+    public static String convertBufferToSingleOBD2String(String[] bufferOutput)
+    {
+        String outputString = "";
+        for (int i = 0; i < (bufferOutput.length); i++)
+        {
+            outputString += bufferOutput[i];
+            if ((i + 1) != bufferOutput.length)
+            {
+                outputString += " ";
+            }
+            // Don't copy FF FF delimiters
+            if (bufferOutput.length >= 9)
+            {
+                break;
+            }
+        }
+        return outputString;
+    }
 }
