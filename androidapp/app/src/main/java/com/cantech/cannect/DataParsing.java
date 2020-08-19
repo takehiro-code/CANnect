@@ -56,7 +56,7 @@ public class DataParsing extends AppCompatActivity{
     public static final String PID_FREEZE_DATA = "02";
 
     // OBD2 Stub Function for different Modes
-    // Input a set of 8 segments separated by space (eg. "00 00 00 00 00 00 00 00")
+    // Input a set of CAN ID + 8 segments separated by space (eg. "7E8 00 00 00 00 00 00 00 00")
     // Return: User friendly format (Name of field and actual value)
     public static String[] convertOBD2FrameToUserFormat(String obd2message){
         String[] splitobd2msg = obd2message.split("\\s+");
