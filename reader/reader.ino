@@ -76,6 +76,14 @@ void loop() {
     Serial.println(" ");
   }
 
+#else
+  writeCANToBluetooth();
+  receiveFromBluetooth();
+#endif
+  writeSerialToBluetooth();
+}
+
+void writeSerialToBluetooth(void) {
   if (Serial.available()) {
     while (Serial.available()) {
 
@@ -84,14 +92,9 @@ void loop() {
     }
     SerialBT.println(" ");
   }
-
-#else
-  writeToBluetooth();
-  receiveFromBluetooth();
-#endif
 }
 
-void writeToBluetooth(void) {
+void writeCANToBluetooth(void) {
   unsigned char len = 0;
   unsigned char buf[64];
 
@@ -123,7 +126,7 @@ void setupCANBus(void) {
   }
 
   if (attempt < INITIALISATION_ATTEMPTS) {
-     Serial.println("CAN BUS Init Failed");
+    Serial.println("CAN BUS Init Failed");
   }
   else {
     Serial.println("CAN BUS Init OK!");
