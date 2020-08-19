@@ -67,7 +67,7 @@ public class Connect extends AppCompatActivity {
     private BluetoothSocket mBTSocket = null; // bi-directional client-to-client data path
 
     // Variables for Buffer Output
-    private String[] bufferOutput;
+    private String[] bufferOutput = new String[11];
     private int bufferCurrSize = 0;
     private int delimCount = 0;
 
@@ -130,7 +130,7 @@ public class Connect extends AppCompatActivity {
                             System.out.println("Output from Buffer hasn't reached actual OBD2 size with detected delimiters. Attempt to convert.");
                         String[] result = DataParsing.convertOBD2FrameToUserFormat(readMessage);
                         mNameFieldOBD2.setText(result[0]);
-                        mNameFieldOBD2.setText(result[1]);
+                        mDataFieldOBD2.setText(result[1]);
                         bufferCurrSize = 0;
                         delimCount = 0;
                     }
@@ -139,7 +139,7 @@ public class Connect extends AppCompatActivity {
                         System.out.println("Output from Buffer has reached OBD2 size + 4 bytes without delimiters. Attempt to convert.");
                         String[] result = DataParsing.convertOBD2FrameToUserFormat(readMessage);
                         mNameFieldOBD2.setText(result[0]);
-                        mNameFieldOBD2.setText(result[1]);
+                        mDataFieldOBD2.setText(result[1]);
                         bufferCurrSize = 0;
                         delimCount = 0;
                     }
