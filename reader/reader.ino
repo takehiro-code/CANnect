@@ -37,10 +37,11 @@
 /**
    Constants
 */
-#define MESSAGE_INTERVAL      1000 // 1000 ms
-#define MESSAGE_DELAY         20
-#define BAUD_RATE             115200
-#define SETUP_DELAY           100
+#define MESSAGE_INTERVAL          1000 // 1000 ms
+#define MESSAGE_DELAY             20
+#define BAUD_RATE                 115200
+#define SETUP_DELAY               100
+#define INITIALISATION_ATTEMPTS   5
 
 /**
    Global Variables
@@ -54,12 +55,12 @@ BluetoothSerial SerialBT;
 void setup() {
   Serial.begin(BAUD_RATE);
 
+  SerialBT.begin(ESP32_BL_NAME); //Bluetooth device name
+  Serial.println("The device started, now you can pair it with bluetooth!");
+
 #ifndef ALPHA_VERSION
   setupCANBus();
 #endif
-
-  SerialBT.begin(ESP32_BL_NAME); //Bluetooth device name
-  Serial.println("The device started, now you can pair it with bluetooth!");
 }
 
 /**
@@ -114,11 +115,19 @@ void writeToBluetooth(void) {
    CAN Bus Setup
 */
 void setupCANBus(void) {
-  while (CAN_OK != CAN.begin(CAN_500KBPS)) {
-    Serial.println("CAN BUS Init Failed");
+  int attempt = 0;
+  while (CAN_OK != CAN.begin(CAN_500KBPS) && attempt < INITIALISATION_ATTEMPTS) {
+    Serial.println("CAN BUS init attempt Failed");
     delay(SETUP_DELAY);
+    attempt++;
   }
-  Serial.println("CAN BUS  Init OK!");
+
+  if (attempt < INITIALISATION_ATTEMPTS) {
+     Serial.println("CAN BUS Init Failed");
+  }
+  else {
+    Serial.println("CAN BUS Init OK!");
+  }
 }
 
 void receiveFromBluetooth(void) {
