@@ -101,11 +101,11 @@ public class Connect extends AppCompatActivity {
         // Ask for location permission if not already allowed
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
-        String Input = "7E8 03 01 0D 05 AA AA AA AA";
-        mReadBuffer.setText(Input);
-        String[] result = DataParsing.convertOBD2FrameToUserFormat(Input);
-        mNameFieldOBD2.setText(result[0]);
-        mDataFieldOBD2.setText(result[1]);
+        //String Input = "7E8 03 01 0D 05 AA AA AA AA";
+        //mReadBuffer.setText(Input);
+        //String[] result = DataParsing.convertOBD2FrameToUserFormat(Input);
+        //mNameFieldOBD2.setText(result[0]);
+        //mDataFieldOBD2.setText(result[1]);
 
         mHandler = new Handler(Looper.getMainLooper()){
             @Override
