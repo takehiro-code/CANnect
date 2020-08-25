@@ -1,6 +1,9 @@
 package com.cantech.cannect;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.ComponentName;
+import android.content.ServiceConnection;
 import android.os.Bundle;
 
 // for bluetooth
@@ -12,64 +15,31 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
+
+import android.os.IBinder;
 
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Method;
+
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.UUID;
-
-// added library to resolve "Cannot Resolve Symbol" Error
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.core.app.ActivityCompat;
-
-import android.content.IntentFilter;
 
 
 public class Dashboard extends AppCompatActivity {
 
     // define member variables
-//    private Set<BluetoothDevice> mPairedDevices;
-//    private ArrayAdapter<String> mBTArrayAdapter;
-    private ArrayList<String> stringArrayList = new ArrayList<String>(); // not sure if you are going to use this
+    private Set<BluetoothDevice> mPairedDevices;
+    private ArrayAdapter<String> mBTArrayAdapter;
+    private ArrayList<String> stringArrayList;
     private TextView read_buffer;
-
-    // define broadcast receiver
-    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            // some code here
-            String action = intent.getAction();
-            if(BluetoothDevice.ACTION_FOUND.equals(action)){
-                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                // add the name to the list
-                //mBTArrayAdapter.add(device.getName());
-                Log.d("mytag",device.getName());
-                if (device.getName().equals("ESP32test")) {
-
-                    stringArrayList.add(device.getName());
-//                    mBTArrayAdapter.add(device.getName());
-//                    mBTArrayAdapter.notifyDataSetChanged();
-                }
-            }
-        }
-    };
+    private ListView mDevicesListView;
+    private String deviceMacAddress = "F0:08:D1:DD:30:5A";
+    BluetoothServices mService;
+    boolean mBound = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,29 +49,82 @@ public class Dashboard extends AppCompatActivity {
         getSupportActionBar().setTitle("Dashboard");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // step1: check if BT is on
-        read_buffer =  (TextView)findViewById(R.id.read_buffer);
+        // for bluetooth
+        mBTArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        // from xml
+        read_buffer =  (TextView)findViewById(R.id.read_buffer);
+        mDevicesListView = (ListView)findViewById(R.id.devices_list_view);
+        mDevicesListView.setAdapter(mBTArrayAdapter); // assign model to view
+
+        // step1: check if BT is on
         if (mBluetoothAdapter.isEnabled()) {
             read_buffer.setText("Bluetooth ON");
-
-            // step2: check if device is found
-
             // start discovery of device
             mBluetoothAdapter.startDiscovery();
-
-            //register a broadcast receiver
-            IntentFilter intentFilter= new IntentFilter(BluetoothDevice.ACTION_FOUND);
-            registerReceiver(mReceiver, intentFilter);
-
-            // step3: connect and get data
-            if (stringArrayList.size() > 0) {
-                read_buffer.setText("ESP32 Found");
-            }
-
-        }
+    }
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Intent intent = new Intent(this, BluetoothServices.class);
+        intent.putExtra("bluetooth_device", deviceMacAddress);
+        startService(intent);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mBound = false;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Intent intent = new Intent(this, BluetoothServices.class);
+        stopService(intent);
+    }
+
+    // this is not being called!! why?
+    /** Defines callbacks for service binding, passed to bindService() */
+    private ServiceConnection connection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName className,
+                                       IBinder service) {
+            // We've bound to LocalService, cast the IBinder and get LocalService instance
+            BluetoothServices.LocalBinder binder = (BluetoothServices.LocalBinder) service;
+            mService = binder.getService();
+            mBound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName arg0) {
+            mBound = false;
+        }
+    };
+
+
+
+    // after onReceive, it is not being called!! why
+//    @Override
+    // step2: check if device is found
+
+//    public void onResume() {
+//        super.onResume();
+//
+//        // step3: connect and get data
+//        for (int i = 0; i < mBTArrayAdapter.getCount(); i++) {
+//            if (mBTArrayAdapter.getItem(i).equals("CANnectReader")) {
+//                read_buffer.setText("ESP32 Found");
+//                unregisterReceiver(mReceiver);
+//            }
+//        }
+//    }
 
 
 }
