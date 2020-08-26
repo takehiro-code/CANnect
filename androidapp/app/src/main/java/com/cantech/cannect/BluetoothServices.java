@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.os.Binder;
 import android.os.IBinder;
 
+import android.os.Looper;
+import android.os.Message;
 import android.widget.Toast;
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
@@ -19,6 +21,7 @@ import androidx.annotation.Nullable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.UUID;
 import java.util.Vector;
 
@@ -43,6 +46,8 @@ public class BluetoothServices extends Service {
     public static String deviceName;
     public static BluetoothDevice sDevice = null;
     public Vector<Byte> packData = new Vector<>(2048);
+    public static final String BROADCAST_ACTION = "com.example.tracking.updateprogress";
+
 
 //IBinder mIBinder = new LocalBinder();
 
@@ -254,9 +259,15 @@ public class BluetoothServices extends Service {
             int mByte;
             try {
                 mByte = inS.read(buffer);
+                String readMessage = new String((byte[]) buffer, "UTF-8");
+
+                Intent intent = new Intent(BROADCAST_ACTION);
+                intent.putExtra("message", readMessage );
+                sendBroadcast(intent);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             Log.d("service", "connected thread run method");
 
         }

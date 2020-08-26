@@ -1,6 +1,7 @@
 package com.cantech.cannect;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.content.ComponentName;
 import android.content.ServiceConnection;
@@ -41,6 +42,20 @@ public class Dashboard extends AppCompatActivity {
     BluetoothServices mService;
     boolean mBound = false;
 
+    private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            //Update Your UI here..
+            String data = intent.getStringExtra("message");
+            updateUI(data);
+        }
+    };
+
+    public void updateUI(String data) {
+        read_buffer =  (TextView)findViewById(R.id.read_buffer);
+        read_buffer.setText(data);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,22 +65,23 @@ public class Dashboard extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // for bluetooth
-        mBTArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         // from xml
         read_buffer =  (TextView)findViewById(R.id.read_buffer);
-        mDevicesListView = (ListView)findViewById(R.id.devices_list_view);
-        mDevicesListView.setAdapter(mBTArrayAdapter); // assign model to view
 
-        // step1: check if BT is on
-        if (mBluetoothAdapter.isEnabled()) {
-            read_buffer.setText("Bluetooth ON");
-            // start discovery of device
-            mBluetoothAdapter.startDiscovery();
+
+//        // step1: check if BT is on
+//        if (mBluetoothAdapter.isEnabled()) {
+//            read_buffer.setText("Bluetooth ON");
+//            // start discovery of device
+//            mBluetoothAdapter.startDiscovery();
+//        }
+
+        registerReceiver(broadcastReceiver, new IntentFilter(BluetoothServices.BROADCAST_ACTION));
     }
 
-    }
+
 
     @Override
     protected void onStart() {
@@ -74,11 +90,14 @@ public class Dashboard extends AppCompatActivity {
         Intent intent = new Intent(this, BluetoothServices.class);
         intent.putExtra("bluetooth_device", deviceMacAddress);
         startService(intent);
+        bindService(intent, connection, Context.BIND_AUTO_CREATE);
+
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        unbindService(connection);
         mBound = false;
     }
 
@@ -88,6 +107,9 @@ public class Dashboard extends AppCompatActivity {
         Intent intent = new Intent(this, BluetoothServices.class);
         stopService(intent);
     }
+
+
+
 
     // this is not being called!! why?
     /** Defines callbacks for service binding, passed to bindService() */
@@ -107,24 +129,4 @@ public class Dashboard extends AppCompatActivity {
             mBound = false;
         }
     };
-
-
-
-    // after onReceive, it is not being called!! why
-//    @Override
-    // step2: check if device is found
-
-//    public void onResume() {
-//        super.onResume();
-//
-//        // step3: connect and get data
-//        for (int i = 0; i < mBTArrayAdapter.getCount(); i++) {
-//            if (mBTArrayAdapter.getItem(i).equals("CANnectReader")) {
-//                read_buffer.setText("ESP32 Found");
-//                unregisterReceiver(mReceiver);
-//            }
-//        }
-//    }
-
-
 }
