@@ -69,15 +69,6 @@ public class Dashboard extends AppCompatActivity {
 
         // from xml
         read_buffer =  (TextView)findViewById(R.id.read_buffer);
-
-
-//        // step1: check if BT is on
-//        if (mBluetoothAdapter.isEnabled()) {
-//            read_buffer.setText("Bluetooth ON");
-//            // start discovery of device
-//            mBluetoothAdapter.startDiscovery();
-//        }
-
         registerReceiver(broadcastReceiver, new IntentFilter(BluetoothServices.BROADCAST_ACTION));
     }
 
@@ -88,8 +79,9 @@ public class Dashboard extends AppCompatActivity {
         super.onStart();
 
         Intent intent = new Intent(this, BluetoothServices.class);
+//        intent.putExtra("bluetooth_device", deviceMacAddress);
+//        startService(intent);
         intent.putExtra("bluetooth_device", deviceMacAddress);
-        startService(intent);
         bindService(intent, connection, Context.BIND_AUTO_CREATE);
 
     }
@@ -104,14 +96,11 @@ public class Dashboard extends AppCompatActivity {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Intent intent = new Intent(this, BluetoothServices.class);
-        stopService(intent);
+//        Intent intent = new Intent(this, BluetoothServices.class);
+//        stopService(intent);
+        unregisterReceiver(broadcastReceiver);
     }
 
-
-
-
-    // this is not being called!! why?
     /** Defines callbacks for service binding, passed to bindService() */
     private ServiceConnection connection = new ServiceConnection() {
 

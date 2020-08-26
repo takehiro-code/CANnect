@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CardView mapCard, dashboardCard, diagnosticsCard, settingsCard;
     // object for bottom bar (connect)
     private RelativeLayout connectBar;
+    private String deviceMacAddress = "F0:08:D1:DD:30:5A";
+
 
     // Source: https://stackoverflow.com/questions/9693755/detecting-state-changes-made-to-the-bluetoothadapter
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
@@ -98,6 +100,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onDestroy() {
         super.onDestroy();
+        Intent intent = new Intent(this, BluetoothServices.class);
+        stopService(intent);
         // Unregister broadcast listeners
         unregisterReceiver(mReceiver);
     }
@@ -109,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent i;
         switch (view.getId()){
             case R.id.settings_card :
-                i = new Intent(this, Settings.class);
+                i = new Intent(this, Connect.class);
                 startActivity(i);
                 break;
             case R.id.diagnostics_card :
@@ -125,8 +129,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
             case R.id.connect_bar :
-                i = new Intent(this, Connect.class);
-                startActivity(i);
+                //i = new Intent(this, Connect.class);
+                //startActivity(i);
+                Intent intent = new Intent(this, BluetoothServices.class);
+                intent.putExtra("bluetooth_device", deviceMacAddress);
+                startService(intent);
                 break;
             default:
                 break;

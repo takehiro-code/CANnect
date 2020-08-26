@@ -56,6 +56,9 @@ public class BluetoothServices extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         //mHandler = getApplication().getHandler();
+        String deviceg = intent.getStringExtra("bluetooth_device");
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        connectToDevice(deviceg);
         return mBinder;
     }
 
