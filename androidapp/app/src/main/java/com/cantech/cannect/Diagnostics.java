@@ -10,5 +10,8 @@ public class Diagnostics extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diagnostics);
+
+        getSupportActionBar().setTitle("Diagnostics");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
