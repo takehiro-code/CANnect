@@ -8,7 +8,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+// for bluetooth status
+import android.bluetooth.BluetoothAdapter;
+import android.widget.TextView;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.IntentFilter;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private TextView BTstatus;
+
     //create objects for cards
     private CardView mapCard, dashboardCard, diagnosticsCard, settingsCard;
     // object for bottom bar (connect)
@@ -17,6 +27,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        connectionStatusUpdate();
+
+        // Register for broadcasts on BluetoothAdapter state change
+        IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
+        registerReceiver(mReceiver, filter);
+
         //define cards
         settingsCard = (CardView) findViewById(R.id.settings_card);
         diagnosticsCard = (CardView) findViewById(R.id.diagnostics_card);
@@ -63,6 +80,61 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
+    // Source: https://stackoverflow.com/questions/9693755/detecting-state-changes-made-to-the-bluetoothadapter
+    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            final String action = intent.getAction();
+            BTstatus = (TextView)findViewById(R.id.status_text);
+
+            if (action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
+                final int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE,
+                        BluetoothAdapter.ERROR);
+                switch (state) {
+                    case BluetoothAdapter.STATE_OFF:
+                        BTstatus.setText("Disconnected");
+                        break;
+                    case BluetoothAdapter.STATE_TURNING_OFF:
+                        BTstatus.setText("Turning Bluetooth off...");
+                        break;
+                    case BluetoothAdapter.STATE_ON:
+                        BTstatus.setText("Connected");
+                        break;
+                    case BluetoothAdapter.STATE_TURNING_ON:
+                        BTstatus.setText("Turning Bluetooth on...");
+                        break;
+                }
+            }
+        }
+    };
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        connectionStatusUpdate();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // Unregister broadcast listeners
+        unregisterReceiver(mReceiver);
+    }
+
+    public void connectionStatusUpdate ()
+    {
+        BTstatus = (TextView)findViewById(R.id.status_text);
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (mBluetoothAdapter == null) {
+            BTstatus.setText("Bluetooth Not Supported");
+        } else if (!mBluetoothAdapter.isEnabled()) {
+            BTstatus.setText("Disconnected");
+        } else {
+            BTstatus.setText("Connected");
+        }
+    }
+
 }
 
 //added comments to test
