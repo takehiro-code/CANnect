@@ -41,6 +41,9 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        getSupportActionBar().setTitle("Dashboard");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         listPids = (ListView)findViewById(R.id.listPids);
         messages = new StringBuilder();
         dataParsing = new DataParsing();

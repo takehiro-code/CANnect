@@ -57,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@id/bottom_navigation"
-        app:itemBackground="@color/colorPrimary"
+        app:itemBackground="@color/ColorPrimary"
         app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu_navigation"
