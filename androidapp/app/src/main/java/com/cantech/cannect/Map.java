@@ -50,8 +50,8 @@ public class Map extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
-        //getSupportActionBar().setTitle("Map");
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Map");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 

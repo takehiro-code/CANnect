@@ -53,6 +53,9 @@ public class Dashboard_chart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_chart);
 
+        getSupportActionBar().setTitle("Dashboard");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
         datavals = new ArrayList<Entry>();
         btdata = new ArrayList<Integer>();

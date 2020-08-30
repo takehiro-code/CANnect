@@ -17,6 +17,9 @@ public class Dashboard_gauge extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_gauge);
 
+        getSupportActionBar().setTitle("Dashboard");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
