@@ -8,7 +8,6 @@
     <string name="diag">Diagnostics</string>
     <string name="connect">Connect</string>
     <string name="status">Connected</string>
-    <string name="car_speed">Current Speed</string>
 
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
