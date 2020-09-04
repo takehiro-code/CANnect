@@ -1,6 +1,10 @@
 package com.cantech.cannect;
 
-public class Data {
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class Data implements Serializable {
     private String pid;
     private String value;
 

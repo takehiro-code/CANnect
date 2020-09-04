@@ -1,12 +1,16 @@
+
+//References https://youtu.be/a20EchSQgpw   https://youtu.be/QEbljbZ4dNs
 package com.cantech.cannect;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.google.android.gms.common.server.converter.StringToIntConverter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.Nullable;
@@ -21,6 +25,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -38,16 +44,32 @@ import java.util.ArrayList;
 
 public class Dashboard_chart extends AppCompatActivity {
 
+    private BluetoothSocket mBTSocket = null;
+    private BTCommunication.ConnectedThread mConnectedThread;
+
+    ArrayList<Data> dataArrayList;
+    StringBuilder messages;
+    Data FUEL_STATUS;
+    Data ENGINE_COOLANT_TEMP;
+    Data FUEL_PRESSURE;
+    Data ENGINE_RPM;
+    Data VEHICLE_SPEED;
+    Data MAF_SENSOR;
+    Data THROTTLE;
+    Data O2_VOLTAGE;
+    DataParsing dataParsing;
+
     private LineChart mChart;
     private Thread thread;
     private boolean plotData = true;
     private Button mButton;
     ArrayList<Entry> datavals;
     ArrayList<Integer> btdata;
+    ArrayList<ILineDataSet> line_dataSet;
     LineDataSet dataset;
     LineData data;
     ArrayList<ILineDataSet> linedata;
-
+    int i = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,49 +78,55 @@ public class Dashboard_chart extends AppCompatActivity {
         getSupportActionBar().setTitle("Dashboard");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+        messages = new StringBuilder();
+        dataParsing = new DataParsing();
+
         datavals = new ArrayList<Entry>();
         btdata = new ArrayList<Integer>();
+        line_dataSet = new ArrayList<>();
 
         mChart = (LineChart) findViewById(R.id.chart1);
-        //LineDataSet dataSet1 = new LineDataSet(dataValue1(), "Data1");
-        datavals = new ArrayList<Entry>();
-        datavals.add(new Entry(0, 1));
-        datavals.add(new Entry(2, 10));
-        dataset = new LineDataSet(datavals, "speed");
-        ArrayList<ILineDataSet> dataSet= new ArrayList<>();
-        dataSet.add(dataset);
-        LineData data = new LineData(dataSet);
-        mChart.setData(data);
-        mChart.invalidate();
+
+        datavals.add(new Entry(0,0));
+        dataset = new LineDataSet(datavals, "Speed");
+        line_dataSet.add(dataset);
+        data = new LineData(line_dataSet);
+
+        mChart.setTouchEnabled(true);
+        mChart.setHighlightPerTapEnabled(true);
+
+        mChart.setDragEnabled(true);
+        mChart.setScaleEnabled(true);
+        mChart.setDrawGridBackground(false);
+        mChart.setPinchZoom(true);
+
+        mChart.setBackgroundColor(Color.WHITE);
         mChart.setDrawBorders(true);
 
         data.setValueTextColor(Color.RED);
         mChart.setDrawGridBackground(true);
 
+        //setup axis and legends
         Legend legend = mChart.getLegend();
         legend.setForm(Legend.LegendForm.LINE);
         legend.setTextColor(Color.WHITE);
 
         XAxis xaxis = mChart.getXAxis();
-        xaxis.setTextColor(Color.WHITE);
-        xaxis.setDrawGridLines(true);
+        xaxis.setTextColor(Color.BLACK);
+        xaxis.setDrawGridLines(false);
         xaxis.setAvoidFirstLastClipping(true);
-        xaxis.setEnabled(true);
 
         YAxis lefty = mChart.getAxisLeft();
-        lefty.setTextColor(Color.WHITE);
+        lefty.setTextColor(Color.BLACK);
         lefty.setDrawGridLines(true);
-        lefty.setAxisMaximum(10f);
         lefty.setAxisMinimum(0f);
-        lefty.setDrawGridLines(true);
+        lefty.setAxisMaximum(150f);
 
         YAxis righty = mChart.getAxisRight();
         righty.setEnabled(false);
 
         mChart.getAxisLeft().setDrawGridLines(true);
         mChart.getXAxis().setDrawGridLines(true);
-
 
         //below code is for page navigation
         //initialize and assign variable
@@ -131,12 +159,52 @@ public class Dashboard_chart extends AppCompatActivity {
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            //needs to be modified, received value is a string. also add multiple datasets
-            int value = intent.getIntExtra("theMessage", -1);
-            btdata.add(value);
-            datavals.add(new Entry(btdata.size(), value));
+            String text = intent.getStringExtra("theMessage");
+            messages.append(text + "\n");
+            String[] parsed;
+            parsed = dataParsing.convertOBD2FrameToUserFormat(messages.toString());
 
+            switch (parsed[0]){
+                case "VEHICLE_SPEED":
+                    dataset.addEntry(new Entry(++i, Float.parseFloat(parsed[1])));
+                    data.addDataSet(dataset);
+                    mChart.setData(data);
+                    mChart.invalidate(); // refresh
+                    break;
+                default:
+                    break;
+            }
+            if (messages.length() >= 38) {
+                messages.setLength(0);
+            }
         }
     };
+
+    // called whenever Dashboard visited
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //register broadcast receiver
+        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+    }
+
+    // called whenever Dashboard leaves
+    @Override
+    protected void onStop() {
+        super.onStop();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
+    }
 
 }
