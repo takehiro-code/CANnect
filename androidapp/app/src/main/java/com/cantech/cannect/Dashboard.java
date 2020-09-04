@@ -71,17 +71,15 @@ public class Dashboard extends AppCompatActivity {
         adapter = new DataListAdapter(this, R.layout.adapter_view_pidstable_layout, dataArrayList);
         listPids.setAdapter(adapter);
 
-        //pass the socket into Dashboard activity
-        try {
-            mBTSocket = SocketHandler.getSocket();
-            mConnectedThread = new BTCommunication.ConnectedThread(mBTSocket, Dashboard.this);
-            mConnectedThread.start();
-        } catch (Exception e) {//dashboard opened without connecting to device
-            e.printStackTrace();
-        }
+        //pass the socket into Dashboard activity -- this will cut the stream data into pieces issue
+//        try {
+//            mBTSocket = SocketHandler.getSocket();
+//            mConnectedThread = new BTCommunication.ConnectedThread(mBTSocket, Dashboard.this);
+//            mConnectedThread.start();
+//        } catch (Exception e) {//dashboard opened without connecting to device
+//            e.printStackTrace();
+//        }
 
-        //Below code is for updating the table
-        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
 
         //Below code is for page navigation
         //initialize and assign variable
@@ -112,8 +110,7 @@ public class Dashboard extends AppCompatActivity {
 
     }
 
-    //Below code is for updating the table
-
+    //Below code is for the broadcast receiver
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -178,9 +175,41 @@ public class Dashboard extends AppCompatActivity {
                 default:
                     System.out.println("default");
             }
-            if (messages.length()>=28){
+            if (messages.length()>=38){
                 messages.setLength(0);
             }
         }
     };
+
+    // called only when you go back to main activity, but will called the number of times onCreate called
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    // called whenever Dashboard visited
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //register broadcast receiver
+        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+    }
+
+    // called whenever Dashboard leaves
+    @Override
+    protected void onStop() {
+        super.onStop();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
+    }
+
+    // don't worry about this lifecycle
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//    }
+//
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//    }
 }

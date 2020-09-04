@@ -95,9 +95,11 @@ public class BTCommunication {
 
                         Intent incomingMessageIntent = new Intent("incomingMessage");
                         incomingMessageIntent.putExtra("theMessage", incomingMessage);
-                        LocalBroadcastManager.getInstance(mContext).sendBroadcast(incomingMessageIntent);
 
-
+                        //sometimes it is not equal to 37 bytes that causes errors
+                        if (bytes == 37) {
+                            LocalBroadcastManager.getInstance(mContext).sendBroadcast(incomingMessageIntent);
+                        }
                         //mHandler.obtainMessage(MESSAGE_READ, bytes, -1, buffer)
                         //        .sendToTarget(); // Send the obtained bytes to the UI activity
                     }
