@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -24,7 +25,7 @@ public class Dashboard extends AppCompatActivity {
     private BTCommunication.ConnectedThread mConnectedThread;
     ArrayList<Data> dataArrayList;
     DataListAdapter adapter;
-    StringBuilder messages;
+    String messages;
     ListView listPids;
     Data FUEL_STATUS;
     Data ENGINE_COOLANT_TEMP;
@@ -45,7 +46,7 @@ public class Dashboard extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         listPids = (ListView)findViewById(R.id.listPids);
-        messages = new StringBuilder();
+        messages = "";
         dataParsing = new DataParsing();
         //Below code is for setting up the tabular form
         //Create Data objects
@@ -115,12 +116,12 @@ public class Dashboard extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("theMessage");
-            messages.append(text+"\n");
+            messages += text;
             System.out.println("inside dashboard, messages");
             System.out.println(messages);
             System.out.println("messages size");
             System.out.println(messages.length());
-            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(messages.toString());
+            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(messages.substring(0, messages.length() - 2));//remove FF and then parse
             System.out.println("parsed[0]");
             System.out.println(parsed[0]);
             System.out.println("parsed[1]");
@@ -175,8 +176,15 @@ public class Dashboard extends AppCompatActivity {
                 default:
                     System.out.println("default");
             }
-            if (messages.length()>=38){
-                messages.setLength(0);
+            if (messages.contains("FF") || messages.contains("255255")){//(messages.length()>=28){
+                Toast.makeText(Dashboard.this, messages, Toast.LENGTH_LONG).show();
+                System.out.println("the end");
+                System.out.println(messages);
+                //messages.setLength(0);
+                //messages = new StringBuilder();
+                messages="";
+                System.out.println("the beginnig");
+                System.out.println(messages);
             }
         }
     };
