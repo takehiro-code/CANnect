@@ -121,7 +121,7 @@ public class Dashboard extends AppCompatActivity {
             System.out.println(messages);
             System.out.println("messages size");
             System.out.println(messages.length());
-            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(messages.substring(0, messages.length() - 2));//remove FF and then parse
+            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(messages.substring(0, messages.length() - 10));//remove FF and then parse
             System.out.println("parsed[0]");
             System.out.println(parsed[0]);
             System.out.println("parsed[1]");
