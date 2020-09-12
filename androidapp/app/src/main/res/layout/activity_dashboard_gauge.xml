@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--Reference https://www.youtube.com/watch?v=YKssd_9x8Eg-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:gauge="http://schemas.android.com/apk/res-auto"
@@ -8,265 +7,60 @@
     android:layout_height="match_parent"
     tools:context=".Dashboard_gauge">
 
-    <TextView
+    <de.nitri.gauge.Gauge
+        android:id="@+id/gauge"
+        android:layout_width="172dp"
+        android:layout_height="195dp"
 
-        android:id="@+id/gauge_view"
+        android:layout_marginBottom="372dp"
+        gauge:faceColor="@color/Black"
+        gauge:initialValue="0"
+        gauge:layout_constraintBottom_toBottomOf="parent"
+        gauge:layout_constraintEnd_toEndOf="@+id/vehicle_speed"
+        gauge:layout_constraintHorizontal_bias="0.487"
+        gauge:layout_constraintStart_toStartOf="@+id/vehicle_speed"
+        gauge:maxValue="200"
+        gauge:minValue="0"
+        gauge:needleColor="@color/Green"
+        gauge:scaleColor="@color/Red"
+        gauge:valuePerNick="2"
+        tools:ignore="MissingClass" />
+
+    <TextView
+        android:id="@+id/vehicle_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Vehicle DashBoard"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:textSize="30sp"/>
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="car_speed"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        gauge:layout_constraintBottom_toTopOf="@+id/gauge"
+        gauge:layout_constraintEnd_toEndOf="parent"
+        gauge:layout_constraintStart_toStartOf="parent"
+        gauge:layout_constraintTop_toTopOf="parent"
+        gauge:layout_constraintVertical_bias="1.0"></TextView>
 
-    <GridLayout
-        android:id="@+id/grid_layout_gauge"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation"
-        android:layout_below="@+id/gauge_view"
-        android:rowCount="3"
-        android:columnCount="2">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_gravity="center">
-
-                <com.github.anastr.speedviewlib.SpeedView
-                    android:id="@+id/speedView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    gauge:needleShadow="false"
-                    gauge:sv_centerCircleColor="@color/Black"
-                    gauge:sv_indicator="KiteIndicator"
-                    gauge:sv_indicatorColor="@color/Blue"
-                    gauge:sv_indicatorLightColor="@color/Red"
-                    gauge:sv_markStyle="ROUND"
-                    gauge:sv_maxSpeed="120"
-                    gauge:sv_minSpeed="0"
-                    gauge:sv_speedTextColor="@color/Black"
-                    gauge:sv_speedTextSize="20dp"
-                    gauge:sv_textColor="@color/Black"
-                    gauge:sv_tickNumber="7"
-                    gauge:sv_unit="km/h"
-                    gauge:sv_unitTextColor="@color/Black"
-                    gauge:sv_unitTextSize="8dp"
-                    app:sv_trembleDegree="3"
-                    app:sv_trembleDuration="300"
-                    gauge:sv_unitUnderSpeedText="true"
-                    gauge:sv_withIndicatorLight="true" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Speed"
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal">
-                <com.github.anastr.speedviewlib.TubeSpeedometer
-                    android:id="@+id/RPMView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    gauge:sv_endDegree="360"
-                    gauge:sv_indicatorWidth="25sp"
-                    gauge:sv_maxSpeed="9"
-                    gauge:sv_minSpeed="0"
-                    gauge:sv_speedTextColor="@color/Black"
-                    gauge:sv_speedTextPosition="BOTTOM_RIGHT"
-                    gauge:sv_speedTextSize="20dp"
-                    gauge:sv_startDegree="90"
-                    gauge:sv_textColor="@color/Black"
-                    gauge:sv_unit="x 1K rpm"
-                    gauge:sv_unitTextColor="@color/Black"
-                    gauge:sv_unitTextSize="10dp"
-                    gauge:sv_unitUnderSpeedText="true"
-                    app:sv_trembleDegree="3"
-                    app:sv_trembleDuration="300"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="RPM"
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="0"
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal">
-                <com.github.anastr.speedviewlib.SpeedView
-                    android:id="@+id/engineTempView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    gauge:sv_centerCircleColor="@color/Black"
-                    gauge:sv_endDegree="340"
-                    gauge:sv_markStyle="ROUND"
-                    gauge:sv_maxSpeed="120"
-                    gauge:sv_minSpeed="40"
-                    gauge:sv_speedTextColor="@color/Black"
-                    gauge:sv_startDegree="200"
-                    gauge:sv_textColor="@color/Black"
-                    gauge:sv_tickNumber="3"
-                    gauge:sv_unit="°C"
-                    gauge:sv_unitTextColor="@color/Black"
-                    app:sv_trembleDegree="3"
-                    app:sv_trembleDuration="300"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Temp"
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal">
-
-                <com.github.anastr.speedviewlib.ProgressiveGauge
-                    android:id="@+id/fuel_status"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="fill"
-                    android:layout_marginBottom="24dp"
-                    gauge:sv_speedTextPosition="BOTTOM_RIGHT"
-                    gauge:sv_unit="%"
-                    gauge:sv_unitUnderSpeedText="false"
-                    app:sv_trembleDegree="3"
-                    app:sv_trembleDuration="300"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Fuel"
-                    android:textStyle="bold"
-                    android:textAlignment="center"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-    </GridLayout>
-
-
-
-
-
-
+    <Button
+        android:id="@+id/View_Graph_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Graph"
+        gauge:layout_constraintEnd_toEndOf="parent"
+        gauge:layout_constraintHorizontal_bias="0.498"
+        gauge:layout_constraintStart_toStartOf="parent"
+        gauge:layout_constraintTop_toBottomOf="@+id/gauge" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:id="@id/bottom_navigation"
         app:itemBackground="@color/colorPrimary"
-        app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu_navigation"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="672dp" />
+        android:layout_alignParentBottom="true"
+        tools:ignore="MissingConstraints" />
 </RelativeLayout>
-
-
-
-
-    <!--display text box. ignore for now -->
-    <!--    <TextView-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_alignParentStart="true"-->
-    <!--        android:layout_alignParentBottom="true"-->
-    <!--        android:layout_marginStart="101dp"-->
-    <!--        android:layout_marginBottom="153dp"-->
-    <!--        android:shadowColor="#0000ff"-->
-    <!--        android:shadowDx="0.0"-->
-    <!--        android:shadowDy="0.0"-->
-    <!--        android:shadowRadius="10"-->
-    <!--        android:text="Glowing"-->
-    <!--        android:textColor="#C02938"-->
-    <!--        android:textSize="40sp"-->
-    <!--        android:textStyle="bold"-->
-    <!--        tools:layout_editor_absoluteX="38dp"-->
-    <!--        tools:layout_editor_absoluteY="419dp" />-->
-
-    <!--    For fragment container. Ignore for now.-->
-    <!--    <FrameLayout-->
-    <!--        android:id="@+id/flspeedView"-->
-    <!--        android:layout_width="160dp"-->
-    <!--        android:layout_height="150dp"-->
-    <!--        android:layout_alignParentTop="true"-->
-    <!--        android:layout_marginStart="24dp"-->
-    <!--        android:layout_marginTop="27dp"-->
-    <!--        gauge:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        gauge:layout_constraintStart_toStartOf="parent"-->
-    <!--        gauge:layout_constraintTop_toTopOf="parent"-->
-    <!--        gauge:layout_constraintVertical_bias="0.12">-->
-
-    <!--    </FrameLayout>-->

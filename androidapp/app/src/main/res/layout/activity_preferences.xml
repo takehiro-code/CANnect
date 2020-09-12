@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/backgroundcolor"
+    tools:context=".Preferences">
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="?attr/cardBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:textStyle="bold"
+                android:text="Preferences &amp; Units"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/textcolor"
+                android:text="Choose theme color for your app and set the units for the data"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="?attr/cardBackground"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:textStyle="bold"
+                android:text="Theme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Switch
+                android:id="@+id/theme_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Light/Dark mode"
+                android:textColor="?attr/textcolor"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="?attr/cardBackground"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:textStyle="bold"
+                android:text="Units"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Switch
+                android:id="@+id/volume_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Volume"
+                android:textColor="?attr/textcolor"
+                android:layout_marginTop="8dp"/>
+            <Switch
+                android:id="@+id/pressure_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pressure"
+                android:textColor="?attr/textcolor"
+                android:layout_marginTop="8dp"/>
+            <Switch
+                android:id="@+id/speed_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Distance/Speed"
+                android:textColor="?attr/textcolor"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="?attr/cardBackground"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:textStyle="bold"
+                android:text="Connection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Switch
+                android:id="@+id/autoBT_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Connect Automatically"
+                android:textColor="?attr/textcolor"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

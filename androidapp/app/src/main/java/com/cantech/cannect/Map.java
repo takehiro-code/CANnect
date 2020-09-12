@@ -37,7 +37,7 @@ import android.Manifest;
 //https://stackoverflow.com/questions/44992014/how-to-get-current-location-in-googlemap-using-fusedlocationproviderclient
 public class Map extends AppCompatActivity
         implements OnMapReadyCallback {
-
+    SharedPref sharedPref;
     GoogleMap mGoogleMap;
     SupportMapFragment mapFrag;
     LocationRequest mLocationRequest;
@@ -47,6 +47,14 @@ public class Map extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //load saved theme state
+        sharedPref = new SharedPref(this);
+        //set theme
+        if(sharedPref.loadDarkModeState()==true){
+            setTheme(R.style.darkTheme);
+        }else{
+            setTheme(R.style.AppTheme);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 

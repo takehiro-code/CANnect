@@ -43,14 +43,14 @@ public class DataParsing extends AppCompatActivity{
     private static final String THROTTLE = "11";
     private static final String O2_VOLTAGE = "14";
 
-    public static final String FUEL_STATUS_STRING = "FUEL_STATUS";
-    public static final String ENGINE_COOLANT_TEMP_STRING = "ENGINE_COOLANT_TEMP";
-    public static final String FUEL_PRESSURE_STRING = "FUEL_PRESSURE";
-    public static final String ENGINE_RPM_STRING = "ENGINE_RPM";
-    public static final String VEHICLE_SPEED_STRING = "VEHICLE_SPEED";
-    public static final String MAF_SENSOR_STRING = "MAF_SENSOR";
+    public static final String FUEL_STATUS_STRING = "FUEL STATUS";
+    public static final String ENGINE_COOLANT_TEMP_STRING = "ENGINE COOLANT TEMP";
+    public static final String FUEL_PRESSURE_STRING = "FUEL PRESSURE";
+    public static final String ENGINE_RPM_STRING = "ENGINE RPM";
+    public static final String VEHICLE_SPEED_STRING = "VEHICLE SPEED";
+    public static final String MAF_SENSOR_STRING = "MAF SENSOR";
     public static final String THROTTLE_STRING = "THROTTLE";
-    public static final String O2_VOLTAGE_STRING = "O2_VOLTAGE";
+    public static final String O2_VOLTAGE_STRING = "O2 VOLTAGE";
 
     public static final String PID_CURRENT_DATA = "41";
     public static final String PID_FREEZE_DATA = "42";

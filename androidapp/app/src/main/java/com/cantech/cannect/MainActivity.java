@@ -1,9 +1,12 @@
 package com.cantech.cannect;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -15,8 +18,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.IntentFilter;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import java.util.ArrayList;
+import java.util.List;
 
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    SharedPref sharedPref;
     private TextView BTstatus;
 
     //create objects for cards
@@ -25,11 +31,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RelativeLayout connectBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //load saved theme state
+        sharedPref = new SharedPref(this);
+        //set theme
+        if(sharedPref.loadDarkModeState()==true){
+            setTheme(R.style.darkTheme);
+        }else{
+            setTheme(R.style.AppTheme);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         connectionStatusUpdate();
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         // Register for broadcasts on BluetoothAdapter state change
         IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
         registerReceiver(mReceiver, filter);

@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.os.Bundle;
 
-public class Diagnostics extends AppCompatActivity {
+public class Help extends AppCompatActivity {
     SharedPref sharedPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +18,9 @@ public class Diagnostics extends AppCompatActivity {
             setTheme(R.style.AppTheme);
         }
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_diagnostics);
+        setContentView(R.layout.activity_help);
 
-        getSupportActionBar().setTitle("Diagnostics");
+        getSupportActionBar().setTitle("Help");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
