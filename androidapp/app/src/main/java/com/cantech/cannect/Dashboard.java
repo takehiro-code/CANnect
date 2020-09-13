@@ -104,9 +104,6 @@ public class Dashboard extends AppCompatActivity {
         //    e.printStackTrace();
         //}
 
-        //Below code is for updating the table
-        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-
         //Below code is for page navigation
         //initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -260,4 +257,36 @@ public class Dashboard extends AppCompatActivity {
             }
         }
     };
+
+    // called only when you go back to main activity, but will called the number of times onCreate called
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    // called whenever Dashboard visited
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //register broadcast receiver
+        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+    }
+
+    // called whenever Dashboard leaves
+    @Override
+    protected void onStop() {
+        super.onStop();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
+    }
+
+    // don't worry about this lifecycle
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//    }
+//
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//    }
 }
