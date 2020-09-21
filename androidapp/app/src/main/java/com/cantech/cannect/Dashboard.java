@@ -270,6 +270,12 @@ public class Dashboard extends AppCompatActivity {
         super.onStart();
         //register broadcast receiver
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+
+        // sending data example; send data whenever you visit dashboard
+//        String writeMsg = "hello from dashboard";
+//        Intent sendingMessageIntent = new Intent("sendingMessage");
+//        sendingMessageIntent.putExtra("theMessage", writeMsg);
+//        LocalBroadcastManager.getInstance(this).sendBroadcast(sendingMessageIntent);
     }
 
     // called whenever Dashboard leaves

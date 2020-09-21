@@ -61,6 +61,10 @@ public class BTCommunication {
             InputStream tmpIn = null;
             OutputStream tmpOut = null;
 
+            //register broadcast receiver
+            LocalBroadcastManager.getInstance(context)
+                    .registerReceiver(mReceiver, new IntentFilter("sendingMessage"));
+
             // Get the input and output streams, using temp objects because
             // member streams are final
             try {
@@ -129,5 +133,13 @@ public class BTCommunication {
                 mmSocket.close();
             } catch (IOException e) { }
         }
+
+        BroadcastReceiver mReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String text = intent.getStringExtra("theMessage");
+                write(text);
+            }
+        };
     }
 }
