@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/speedView_menu"
+        android:title="Speed" />
+    <item
+        android:id="@+id/fuelpressure_menu"
+        android:title="Fuel pressure" />
+    <item
+        android:id="@+id/throttle_menu"
+        android:title="Throttle position" />
+
+
+</menu>

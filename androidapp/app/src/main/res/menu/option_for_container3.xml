@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/TEMPView_menu"
+        android:title="Coolant Temp"/>
+    <item
+        android:id="@+id/AirTemp_menu"
+        android:title="Ambient Air Temperature"/>
+</menu>

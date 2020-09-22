@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:gauge="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.RPMgauge_fragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_gravity="center_vertical|center_horizontal">
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.github.anastr.speedviewlib.TubeSpeedometer
+        android:id="@+id/RPMView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        gauge:sv_endDegree="360"
+        gauge:sv_indicatorWidth="25sp"
+        gauge:sv_maxSpeed="9"
+        gauge:sv_minSpeed="0"
+        gauge:sv_speedTextColor="@color/Black"
+        gauge:sv_speedTextPosition="BOTTOM_RIGHT"
+        gauge:sv_speedTextSize="20dp"
+        gauge:sv_startDegree="90"
+        gauge:sv_textColor="@color/Black"
+        gauge:sv_unit="x 1K rpm"
+        gauge:sv_unitTextColor="@color/Black"
+        gauge:sv_unitTextSize="10dp"
+        gauge:sv_unitUnderSpeedText="true"
+        app:sv_withTremble="false"
+        app:sv_trembleDegree="5"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RPM"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+    </LinearLayout>
+</FrameLayout>
