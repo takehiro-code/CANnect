@@ -227,6 +227,18 @@ public class Connect extends AppCompatActivity {
         mBTAdapter.disable(); // turn off
         mBluetoothStatus.setText("Bluetooth disabled");
         Toast.makeText(getApplicationContext(),"Bluetooth turned Off", Toast.LENGTH_SHORT).show();
+
+        // close socket
+        try {
+            mBTSocket = null;
+            mBTSocket = SocketHandler.getSocket();
+            if (mBTSocket != null && mBTSocket.isConnected()) {
+                mBTSocket.close();
+                //SystemClock.sleep(1000);
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
     }
 
     private void discover(View view){
