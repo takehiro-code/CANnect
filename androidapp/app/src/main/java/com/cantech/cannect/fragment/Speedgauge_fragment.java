@@ -94,7 +94,7 @@ public class Speedgauge_fragment extends Fragment {
             String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
             try {
                 switch (parsed[0]) {
-                    case "VEHICLE_SPEED":
+                    case "VEHICLE SPEED":
                         //changing string to float.
                            carSpeed.speedTo(Float.parseFloat(parsed[1]));
                         break;

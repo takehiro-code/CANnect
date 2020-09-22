@@ -82,7 +82,7 @@ public class Fuel_Pressure_fragment extends Fragment {
             String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
             try {
                 switch (parsed[0]) {
-                    case "VEHICLE_SPEED":
+                    case "VEHICLE SPEED":
                         //changing string to float
                         fuelpressure.moveToValue(Float.parseFloat(parsed[1]));
                         break;
