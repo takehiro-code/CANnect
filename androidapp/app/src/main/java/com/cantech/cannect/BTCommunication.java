@@ -78,7 +78,7 @@ public class BTCommunication {
         }
 
         public void run() {
-            byte[] buffer = new byte[37];  //initially it was 1024. buffer store for the stream
+            //byte[] buffer = new byte[50];  //initially it was 1024. buffer store for the stream
             int bytes; // bytes returned from read()
             // Keep listening to the InputStream until an exception occurs
             while (true) {
@@ -86,10 +86,15 @@ public class BTCommunication {
                     // Read from the InputStream
                     bytes = mmInStream.available();
                     if(bytes != 0) {
-                        SystemClock.sleep(1000); //pause and wait for rest of data. Adjust this depending on your sending speed.
+                        SystemClock.sleep(2000); //pause and wait for rest of data. Adjust this depending on your sending speed.
                         bytes = mmInStream.available(); // how many bytes are ready to be read?
+                        System.out.println("bytes-1");
+                        System.out.println(bytes);
+
+                        byte[] buffer = new byte[bytes];
+
                         bytes = mmInStream.read(buffer, 0, bytes); // record how many bytes we actually read
-                        System.out.println("bytes");
+                        System.out.println("bytes-2");
                         String incomingMessage = new String(buffer, "UTF-8");
                         System.out.println(bytes);
 
@@ -97,12 +102,13 @@ public class BTCommunication {
                         incomingMessageIntent.putExtra("theMessage", incomingMessage);
 
                         //sometimes it is not equal to 37 bytes that causes errors
-                        if (bytes == 37) {
-                            LocalBroadcastManager.getInstance(mContext).sendBroadcast(incomingMessageIntent);
-                        }
+                        //if (bytes == 37) {
+                        LocalBroadcastManager.getInstance(mContext).sendBroadcast(incomingMessageIntent);
+                        //}
                         //mHandler.obtainMessage(MESSAGE_READ, bytes, -1, buffer)
                         //        .sendToTarget(); // Send the obtained bytes to the UI activity
                     }
+                    //buffer = new byte[50];
                 } catch (IOException e) {
                     e.printStackTrace();
 
