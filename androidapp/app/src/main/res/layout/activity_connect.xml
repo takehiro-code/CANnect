@@ -10,7 +10,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background= "#454545">
+        android:background= "?attr/backgroundcolor">
     </RelativeLayout>
 
     <LinearLayout
@@ -21,7 +21,7 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingBottom="@dimen/activity_vertical_margin"
-        android:background="#FFFE">
+        android:background="?attr/backgroundcolor">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             >
             <TextView
+                android:textColor="?attr/textcolor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.1"
@@ -38,6 +39,7 @@
                 android:maxLines="1"
                 android:textStyle="bold" />
             <TextView
+                android:textColor="?attr/textcolor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.9"
@@ -54,6 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp">
             <TextView
+                android:textColor="?attr/textcolor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.1"
@@ -63,6 +66,7 @@
                 android:textStyle="bold"
                 />
             <TextView
+                android:textColor="?attr/textcolor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.9"
@@ -76,6 +80,7 @@
         </LinearLayout>
 
         <Button
+            android:background="?attr/buttoncolor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Bluetooth ON"
@@ -85,6 +90,7 @@
             />
 
         <Button
+            android:background="?attr/buttoncolor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Bluetooth OFF"
@@ -94,6 +100,7 @@
             android:layout_toRightOf="@+id/PairedBtn" />
 
         <Button
+            android:background="?attr/buttoncolor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Show paired Devices"
@@ -102,6 +109,7 @@
             android:layout_toStartOf="@+id/discover" />
 
         <Button
+            android:background="?attr/buttoncolor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Discover New Devices"
@@ -111,6 +119,7 @@
             android:layout_toEndOf="@+id/checkboxLED1" />
 
         <ListView
+            android:background="?attr/backgroundcolor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/devicesListView"

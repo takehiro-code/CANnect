@@ -29,7 +29,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.github.anastr.speedviewlib.Speedometer;
 import com.github.anastr.speedviewlib.TubeSpeedometer;
 
-public class Dashboard_gauge extends AppCompatActivity{
+public class Dashboard_gauge extends AppCompatActivity {
     private static final String TAG = "Dashboard_gauge";
     private static final int SPEED_GAUGE = 0;
     private static final int RPM_GAUGE = 1;
@@ -56,6 +56,7 @@ public class Dashboard_gauge extends AppCompatActivity{
 
 
     FragmentTransaction ft1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "OnCreate started.");
@@ -110,14 +111,14 @@ public class Dashboard_gauge extends AppCompatActivity{
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
                     case R.id.Table:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.Chart:
-                        startActivity(new Intent(getApplicationContext(),Dashboard_chart.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), Dashboard_chart.class));
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.Gauge:
                         return true;
@@ -127,15 +128,15 @@ public class Dashboard_gauge extends AppCompatActivity{
         });
 
 
-
     }
+
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         return false;
     }
+
     @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
-    {
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         switch (v.getId()) {
             case R.id.gauge_container1:
@@ -156,39 +157,39 @@ public class Dashboard_gauge extends AppCompatActivity{
     }
 
     @Override
-    public boolean onContextItemSelected(MenuItem item){
+    public boolean onContextItemSelected(MenuItem item) {
         ft1 = getSupportFragmentManager().beginTransaction();
-       switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.speedView_menu:
                 ft1.replace(R.id.gauge_container1, speedgauge);
                 ft1.commit();
                 return true;
 
-           case R.id.fuelpressure_menu:
+            case R.id.fuelpressure_menu:
                 ft1.replace(R.id.gauge_container1, fuelpressuregauge);
                 ft1.commit();
-               return true;
+                return true;
 
-           case R.id.RPMView_menu:
+            case R.id.RPMView_menu:
                 ft1.replace(R.id.gauge_container2, rpmgauge);
                 ft1.commit();
                 return true;
 
-           case R.id.TEMPView_menu:
+            case R.id.TEMPView_menu:
                 ft1.replace(R.id.gauge_container3, coolantgauge);
                 ft1.commit();
                 return true;
 
-           case R.id.IntakAirTemp_menu:
-               ft1.replace(R.id.gauge_container2, airtemptextview);
-               ft1.commit();
-               return true;
+            case R.id.IntakAirTemp_menu:
+                ft1.replace(R.id.gauge_container2, airtemptextview);
+                ft1.commit();
+                return true;
 
-           default:
+            default:
                 return super.onContextItemSelected(item);
         }
     }
-
+}
 
 //    BroadcastReceiver mReceiver = new BroadcastReceiver() {
 //        @Override
@@ -252,4 +253,5 @@ public class Dashboard_gauge extends AppCompatActivity{
 //        super.onStop();
 //        LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
 //    }
-}
+
+

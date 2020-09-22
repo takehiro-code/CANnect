@@ -15,6 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
@@ -53,6 +54,7 @@ import android.widget.Toast;
 import com.cantech.cannect.BTCommunication.*;
 
 public class Connect extends AppCompatActivity {
+    SharedPref sharedPref;
     public String asd;
     StringBuilder messages;
 
@@ -83,6 +85,14 @@ public class Connect extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //load saved theme state
+        sharedPref = new SharedPref(this);
+        //set theme
+        if(sharedPref.loadDarkModeState()==true){
+            setTheme(R.style.darkTheme);
+        }else{
+            setTheme(R.style.AppTheme);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connect);
 
@@ -205,10 +215,10 @@ public class Connect extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("theMessage");
             messages.append(text+"\n");
-            System.out.println("inside mreceiver text");
-            System.out.println(text);
-            System.out.println("inside mreceiver messages");
-            System.out.println(messages);
+            //System.out.println("inside mreceiver text");
+            //System.out.println(text);
+            //System.out.println("inside mreceiver messages");
+            //System.out.println(messages);
             mReadBuffer.setText(messages);
         }
     };
@@ -217,6 +227,18 @@ public class Connect extends AppCompatActivity {
         mBTAdapter.disable(); // turn off
         mBluetoothStatus.setText("Bluetooth disabled");
         Toast.makeText(getApplicationContext(),"Bluetooth turned Off", Toast.LENGTH_SHORT).show();
+
+        // close socket
+        try {
+            mBTSocket = null;
+            mBTSocket = SocketHandler.getSocket();
+            if (mBTSocket != null && mBTSocket.isConnected()) {
+                mBTSocket.close();
+                //SystemClock.sleep(1000);
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
     }
 
     private void discover(View view){

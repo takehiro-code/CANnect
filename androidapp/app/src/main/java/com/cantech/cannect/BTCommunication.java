@@ -61,6 +61,10 @@ public class BTCommunication {
             InputStream tmpIn = null;
             OutputStream tmpOut = null;
 
+            //register broadcast receiver
+            LocalBroadcastManager.getInstance(context)
+                    .registerReceiver(mReceiver, new IntentFilter("sendingMessage"));
+
             // Get the input and output streams, using temp objects because
             // member streams are final
             try {
@@ -85,33 +89,31 @@ public class BTCommunication {
                 try {
                     // Read from the InputStream
                     bytes = mmInStream.available();
+
                     if(bytes != 0) {
+
                         SystemClock.sleep(2000); //pause and wait for rest of data. Adjust this depending on your sending speed.
                         bytes = mmInStream.available(); // how many bytes are ready to be read?
-                        System.out.println("bytes-1");
-                        System.out.println(bytes);
-
                         byte[] buffer = new byte[bytes];
-
                         bytes = mmInStream.read(buffer, 0, bytes); // record how many bytes we actually read
-                        System.out.println("bytes-2");
-                        String incomingMessage = new String(buffer, "UTF-8");
+                        System.out.println("bytes");
                         System.out.println(bytes);
+                        String incomingMessage = new String(buffer, "UTF-8");
+
+                        System.out.println("incoming");
+                        System.out.println(incomingMessage);
 
                         Intent incomingMessageIntent = new Intent("incomingMessage");
                         incomingMessageIntent.putExtra("theMessage", incomingMessage);
-
-                        //sometimes it is not equal to 37 bytes that causes errors
-                        //if (bytes == 37) {
                         LocalBroadcastManager.getInstance(mContext).sendBroadcast(incomingMessageIntent);
-                        //}
+
+
                         //mHandler.obtainMessage(MESSAGE_READ, bytes, -1, buffer)
                         //        .sendToTarget(); // Send the obtained bytes to the UI activity
                     }
                     //buffer = new byte[50];
                 } catch (IOException e) {
                     e.printStackTrace();
-
                     break;
                 }
             }
@@ -131,5 +133,13 @@ public class BTCommunication {
                 mmSocket.close();
             } catch (IOException e) { }
         }
+
+        BroadcastReceiver mReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String text = intent.getStringExtra("theMessage");
+                write(text);
+            }
+        };
     }
 }

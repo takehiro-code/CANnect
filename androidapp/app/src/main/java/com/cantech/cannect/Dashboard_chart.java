@@ -224,7 +224,7 @@ public class Dashboard_chart extends AppCompatActivity {
                 while (true){
                     plotData = true;
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
@@ -256,28 +256,28 @@ public class Dashboard_chart extends AppCompatActivity {
                 // convert string to float value
                 float value = Float.parseFloat(parsed[1]);
                 switch (parsed[0]) {
-                    case "FUEL_STATUS":
+                    case "FUEL STATUS":
                         addEntry(0, value);
                         break;
-                    case "ENGINE_COOLANT_TEMP":
+                    case "ENGINE COOLANT TEMP":
                         addEntry(1, value);
                         break;
-                    case "FUEL_PRESSURE":
+                    case "FUEL PRESSURE":
                         addEntry(2, value);
                         break;
-                    case "ENGINE_RPM":
+                    case "ENGINE RPM":
                         addEntry(3, value);
                         break;
-                    case "VEHICLE_SPEED":
+                    case "VEHICLE SPEED":
                         addEntry(4, value);
                         break;
-                    case "MAF_SENSOR":
+                    case "MAF SENSOR":
                         addEntry(5, value);
                         break;
                     case "THROTTLE":
                         addEntry(6, value);
                         break;
-                    case "O2_VOLTAGE":
+                    case "O2 VOLTAGE":
                         addEntry(7, value);
                         break;
                     default:
