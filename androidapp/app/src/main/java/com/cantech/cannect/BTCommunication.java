@@ -54,6 +54,7 @@ public class BTCommunication {
         public final InputStream mmInStream;
         private final OutputStream mmOutStream;
         private Context mContext;
+        private String incomingMessage = "";
 
         public ConnectedThread(BluetoothSocket socket, Context context) {
             mContext = context;
@@ -82,36 +83,36 @@ public class BTCommunication {
         }
 
         public void run() {
-            //byte[] buffer = new byte[50];  //initially it was 1024. buffer store for the stream
             int bytes; // bytes returned from read()
             // Keep listening to the InputStream until an exception occurs
             while (true) {
                 try {
+
                     // Read from the InputStream
-                    bytes = mmInStream.available();
+                    // reads 1 byte of data which is  (ASCII code 55 is String '7')
+                    int firstByte = mmInStream.read();
+                    char firstChar = (char) firstByte;
+                    incomingMessage += firstChar;
 
-                    if(bytes != 0) {
+                    // found end message
+                    if(incomingMessage.endsWith("255255")) {
 
-                        SystemClock.sleep(2000); //pause and wait for rest of data. Adjust this depending on your sending speed.
-                        bytes = mmInStream.available(); // how many bytes are ready to be read?
-                        byte[] buffer = new byte[bytes];
-                        bytes = mmInStream.read(buffer, 0, bytes); // record how many bytes we actually read
-                        System.out.println("bytes");
-                        System.out.println(bytes);
-                        String incomingMessage = new String(buffer, "UTF-8");
-
-                        System.out.println("incoming");
+                        SystemClock.sleep(100); //pause and wait for rest of data. Adjust this depending on your sending speed.
+                        // clean white spaces. Without this, I got white bunch of spaces at the first.
+                        incomingMessage = incomingMessage.trim();
+                        System.out.println("Incoming message string below:");
                         System.out.println(incomingMessage);
 
                         Intent incomingMessageIntent = new Intent("incomingMessage");
                         incomingMessageIntent.putExtra("theMessage", incomingMessage);
                         LocalBroadcastManager.getInstance(mContext).sendBroadcast(incomingMessageIntent);
 
+                        // initialize String of incomingMessage after sending
+                        incomingMessage = "";
 
                         //mHandler.obtainMessage(MESSAGE_READ, bytes, -1, buffer)
                         //        .sendToTarget(); // Send the obtained bytes to the UI activity
                     }
-                    //buffer = new byte[50];
                 } catch (IOException e) {
                     e.printStackTrace();
                     break;

@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.cantech.cannect.DataParsing;
 import com.cantech.cannect.R;
+import com.cantech.cannect.SharedPref;
 
 import de.nitri.gauge.Gauge;
 
@@ -30,8 +31,8 @@ import de.nitri.gauge.Gauge;
 public class Air_temp_fragment extends Fragment {
     private static final String TAG = "Air Temp Fragment";
     private Context mContext;
-    LocalBroadcastManager localBroadcastManager;
     TextView airtemp;
+    SharedPref sharedPref;
     private DataParsing dataParsing;
     private StringBuilder data_message;
     // TODO: Rename parameter arguments, choose names that match
@@ -79,6 +80,14 @@ public class Air_temp_fragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        sharedPref = new SharedPref(mContext);
+        //set theme
+        if(sharedPref.loadDarkModeState()==true){
+            mContext.getTheme().applyStyle(R.style.darkTheme, true);
+        }else{
+
+            mContext.getTheme().applyStyle(R.style.AppTheme, true);
+        }
         super.onCreate(savedInstanceState);
         data_message = new StringBuilder();
         if (getArguments() != null) {
@@ -95,12 +104,13 @@ public class Air_temp_fragment extends Fragment {
             String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
             try {
                 switch (parsed[0]) {
-                    case "VEHICLE SPEED":
+                    case "AIR TEMP":
                         //changing string to float.
                         airtemp.setText(parsed[1]);
                         break;
 
                     default:
+
                         break;
                 }
             }catch (Exception e){
@@ -118,7 +128,6 @@ public class Air_temp_fragment extends Fragment {
         // Inflate the layout for this fragment
 
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-        View layout = inflater.inflate(R.layout.fragment_air_temp, container, false);
         return inflater.inflate(R.layout.fragment_air_temp, container, false);
     }
 

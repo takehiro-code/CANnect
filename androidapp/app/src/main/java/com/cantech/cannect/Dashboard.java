@@ -246,7 +246,7 @@ public class Dashboard extends AppCompatActivity {
                     System.out.println("default");
             }
             if (messages.contains("FF") || messages.contains("255255")){//(messages.length()>=28){
-                Toast.makeText(Dashboard.this, messages, Toast.LENGTH_LONG).show();
+                //Toast.makeText(Dashboard.this, messages, Toast.LENGTH_LONG).show();
                 System.out.println("the end");
                 System.out.println(messages);
                 //messages.setLength(0);

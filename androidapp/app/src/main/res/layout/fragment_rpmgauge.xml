@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
     tools:context=".fragment.RPMgauge_fragment">
 
     <LinearLayout
@@ -25,13 +26,14 @@
         gauge:sv_indicatorWidth="25sp"
         gauge:sv_maxSpeed="9"
         gauge:sv_minSpeed="0"
-        gauge:sv_speedTextColor="@color/Black"
+        gauge:sv_speedTextColor="@color/Turquoise"
         gauge:sv_speedTextPosition="BOTTOM_RIGHT"
-        gauge:sv_speedTextSize="20dp"
+        gauge:sv_textSize="10dp"
         gauge:sv_startDegree="90"
-        gauge:sv_textColor="@color/Black"
+        gauge:sv_textColor="@color/Turquoise"
         gauge:sv_unit="x 1K rpm"
-        gauge:sv_unitTextColor="@color/Black"
+        gauge:sv_unitTextColor="@color/Turquoise"
+        app:sv_speedTextSize="20dp"
         gauge:sv_unitTextSize="10dp"
         gauge:sv_unitUnderSpeedText="true"
         app:sv_withTremble="false"
@@ -40,6 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RPM"
+        android:textColor="@color/Turquoise"
         android:textStyle="bold"
         android:textAlignment="center"/>
 

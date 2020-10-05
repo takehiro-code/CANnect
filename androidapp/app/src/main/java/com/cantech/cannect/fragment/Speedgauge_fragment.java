@@ -1,5 +1,6 @@
 package com.cantech.cannect.fragment;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -23,6 +24,7 @@ import android.widget.TextView;
 
 import com.cantech.cannect.DataParsing;
 import com.cantech.cannect.R;
+import com.cantech.cannect.SharedPref;
 import com.github.anastr.speedviewlib.Speedometer;
 import com.github.anastr.speedviewlib.components.Section;
 
@@ -37,6 +39,7 @@ public class Speedgauge_fragment extends Fragment {
 
     private static final String TAG = "Speedgauge fragment";
     Speedometer carSpeed;
+    SharedPref sharedPref;
     private Context mContext;
     private DataParsing dataParsing;
     private StringBuilder data_message;
@@ -49,6 +52,16 @@ public class Speedgauge_fragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    //interface to the dashboard_gauge activity
+    public interface FromSpeedGauge {
+        public void sendSpeedPID(String string);
+    }
+
+    FromSpeedGauge mCallback;
+
+
+
 
     public Speedgauge_fragment() {
         // Required empty public constructor
@@ -72,10 +85,19 @@ public class Speedgauge_fragment extends Fragment {
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "onCreate started");
         data_message = new StringBuilder();
+        sharedPref = new SharedPref(mContext);
+        //set theme
+        if(sharedPref.loadDarkModeState()==true){
+            mContext.getTheme().applyStyle(R.style.darkTheme, true);
+        }else{
+
+            mContext.getTheme().applyStyle(R.style.AppTheme, true);
+        }
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -89,25 +111,24 @@ public class Speedgauge_fragment extends Fragment {
         public void onReceive(Context context, Intent intent) {
             //needs to be modified, received value is a string. also add multiple datasets
             String text = intent.getStringExtra("theMessage");
-            Log.d(TAG, text);
             data_message.append(text + "\n");
-            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
-            try {
-                switch (parsed[0]) {
-                    case "VEHICLE SPEED":
-                        //changing string to float.
-                           carSpeed.speedTo(Float.parseFloat(parsed[1]));
-                        break;
+            String[] message = text.split("\n");
+            for(int i = 0; i < message.length; i++){
 
-                    default:
-                        break;
+                String[] parsed = dataParsing.convertOBD2FrameToUserFormat(message[i]);
+                try {
+                    switch (parsed[0]) {
+                        case "VEHICLE SPEED":
+                            //changing string to float
+                            carSpeed.speedTo(Float.parseFloat(parsed[1]), 0);
+                            break;
+                        default:
+                            mCallback.sendSpeedPID("SpeedPID/");
+                            break;
+                    }
+                }catch (Exception e){
+                    e.printStackTrace();
                 }
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-
-            if (data_message.length()>=32){
-                data_message.setLength(0);
             }
         }
     };
@@ -117,12 +138,23 @@ public class Speedgauge_fragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         mContext = context;
+        Activity activity;
+
+        if (context instanceof Activity){
+            activity=(Activity) context;
+            try{
+                mCallback = (FromSpeedGauge) activity;
+            }catch (ClassCastException e){
+                throw new ClassCastException(activity.toString() + "must implement sendSpeedPID:");
+            }
+        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
         mContext = null;
+        mCallback = null;
     }
     @Override
     public void onPause() {
@@ -142,14 +174,12 @@ public class Speedgauge_fragment extends Fragment {
         Log.d(TAG, "onCreateView started");
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
         // Inflate the layout for this fragment
-        View layout = inflater.inflate(R.layout.fragment_speedgauge, container, false);
         return inflater.inflate(R.layout.fragment_speedgauge, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         carSpeed = (Speedometer) view.findViewById(R.id.speedView);
         carSpeed.clearSections();
         carSpeed.addSections(
@@ -157,10 +187,15 @@ public class Speedgauge_fragment extends Fragment {
                 , new Section(.65f, .85f, Color.YELLOW)
                 , new Section(.85f, 1f, Color.RED));
         carSpeed.setSpeedometerWidth(30);
-
-
     }
-//    @Override
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mCallback.sendSpeedPID("SpeedPID/");
+    }
+
+    //    @Override
 //    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 //        MenuItem item;
 //        int i = 0;

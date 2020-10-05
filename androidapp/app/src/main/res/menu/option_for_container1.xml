@@ -6,9 +6,7 @@
     <item
         android:id="@+id/fuelpressure_menu"
         android:title="Fuel pressure" />
-    <item
-        android:id="@+id/throttle_menu"
-        android:title="Throttle position" />
+
 
 
 </menu>

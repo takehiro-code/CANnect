@@ -4,6 +4,6 @@
         android:id="@+id/TEMPView_menu"
         android:title="Coolant Temp"/>
     <item
-        android:id="@+id/AirTemp_menu"
-        android:title="Ambient Air Temperature"/>
+        android:id="@+id/Fuel_type_menu"
+        android:title="Fuel Type"/>
 </menu>

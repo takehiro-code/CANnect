@@ -4,15 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
     tools:context=".Dashboard_chart">
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/chart1"
-        android:layout_above="@id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingClass"/>
+        android:layout_margin="5dp"
+        android:layout_above="@id/spinner1"
+        tools:ignore="MissingClass">
+
+    </com.github.mikephil.charting.charts.LineChart>
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/charttext"-->
+<!--        android:singleLine="true"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:ellipsize="marquee"-->
+<!--        android:textSize="15sp"-->
+<!--        android:textColor="#808080"-->
+<!--        android:text="Select "-->
+<!--        android:layout_above="@id/spinner1"/>-->
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:outlineAmbientShadowColor="@color/Red"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"/>
+
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

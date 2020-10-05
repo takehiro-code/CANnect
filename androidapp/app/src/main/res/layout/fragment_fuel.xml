@@ -5,6 +5,7 @@
     xmlns:gauge="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
     tools:context=".fragment.Fuel_fragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -17,7 +18,7 @@
         android:layout_gravity="center_vertical|center_horizontal">
 
         <com.github.anastr.speedviewlib.ProgressiveGauge
-            android:id="@+id/fuel_status"
+            android:id="@+id/fuel_level"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="fill"
@@ -32,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Fuel"
+            android:textColor="@color/Turquoise"
             android:textStyle="bold"
             android:textAlignment="center"/>
     </LinearLayout>

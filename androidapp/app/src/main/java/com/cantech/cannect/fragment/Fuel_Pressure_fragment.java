@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 
 import com.cantech.cannect.DataParsing;
 import com.cantech.cannect.R;
+import com.cantech.cannect.SharedPref;
 
 import de.nitri.gauge.Gauge;
 
@@ -30,6 +31,7 @@ import de.nitri.gauge.Gauge;
 public class Fuel_Pressure_fragment extends Fragment {
     private static final String TAG = "Fuel Pressure Fragment";
     private Context mContext;
+    SharedPref sharedPref;
     private DataParsing dataParsing;
     private StringBuilder data_message;
     Gauge fuelpressure;
@@ -66,6 +68,14 @@ public class Fuel_Pressure_fragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        sharedPref = new SharedPref(mContext);
+        //set theme
+        if(sharedPref.loadDarkModeState()==true){
+            mContext.getTheme().applyStyle(R.style.darkTheme, true);
+        }else{
+
+            mContext.getTheme().applyStyle(R.style.AppTheme, true);
+        }
         super.onCreate(savedInstanceState);
         data_message = new StringBuilder();
         if (getArguments() != null) {
@@ -79,10 +89,13 @@ public class Fuel_Pressure_fragment extends Fragment {
             String text = intent.getStringExtra("theMessage");
             Log.d(TAG, text);
             data_message.append(text + "\n");
-            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
+            String[] message = text.split("\n");
+            for(int i = 0; i < message.length; i++){
+
+            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(message[i]);
             try {
                 switch (parsed[0]) {
-                    case "VEHICLE SPEED":
+                    case "FUEL PRESSURE":
                         //changing string to float
                         fuelpressure.moveToValue(Float.parseFloat(parsed[1]));
                         break;
@@ -93,11 +106,10 @@ public class Fuel_Pressure_fragment extends Fragment {
             }catch (Exception e){
                 e.printStackTrace();
             }
-
-            if (data_message.length()>=32){
-                data_message.setLength(0);
             }
+
         }
+
     };
 
     @Override

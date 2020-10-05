@@ -3,5 +3,8 @@
     <item
         android:id="@+id/Fuel_levle_menu"
         android:title="Fuel Level"/>
+    <item
+        android:id="@+id/MAF_menu"
+        android:title="MAF Reading"/>
 
 </menu>

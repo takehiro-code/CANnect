@@ -7,9 +7,6 @@
         android:id="@+id/RPMView_menu"
         android:title="RPM" />
     <item
-        android:id="@+id/EngineLoad_menu"
-        android:title="Engine Load"/>
-    <item
         android:id="@+id/IntakAirTemp_menu"
         android:title="Intake Air Temperature"/>
 
