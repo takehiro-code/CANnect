@@ -3,7 +3,7 @@ package com.cantech.cannect;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.bluetooth.BluetoothSocket;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -16,7 +16,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.graphics.Color;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -29,6 +34,7 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Dashboard_chart extends AppCompatActivity {
@@ -37,8 +43,19 @@ public class Dashboard_chart extends AppCompatActivity {
     DataParsing dataParsing;
 
     private LineChart mChart;
+    private Spinner spinner;
     private Thread thread;
     private boolean plotData = true;
+    List<Entry> data;
+    LineDataSet lineDataSet;
+    LineData lineData;
+    int x;
+    XAxis xl;
+    YAxis leftAxis;
+    YAxis rightAxis;
+
+    String toDisplay = "VEHICLE SPEED";
+    String previousPID = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +68,40 @@ public class Dashboard_chart extends AppCompatActivity {
         messages = new StringBuilder();
         dataParsing = new DataParsing();
 
-        mChart = (LineChart) findViewById(R.id.chart1);
+        data =  new ArrayList<>();
+        data.add(new Entry(0,0));
+        lineDataSet = new LineDataSet(data, toDisplay);
+        lineData = new LineData(lineDataSet);
 
+        lineDataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
+        lineDataSet.setLineWidth(1f);
+        lineDataSet.setHighlightEnabled(false);
+        lineDataSet.setDrawValues(false);
+        lineDataSet.setDrawCircles(false);
+
+        mChart = (LineChart) findViewById(R.id.chart1);
+        spinner = findViewById(R.id.spinner1);
+        mChart.setData(lineData);
+        previousPID = toDisplay;
+
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.PIDs));
+        spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                toDisplay = adapterView.getItemAtPosition(i).toString();
+                Toast.makeText(getApplicationContext(), toDisplay, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
         // enable touch gestures
         mChart.setTouchEnabled(true);
 
@@ -67,19 +116,7 @@ public class Dashboard_chart extends AppCompatActivity {
         // set an alternative background color
         mChart.setBackgroundColor(Color.BLACK);
 
-        // add empty data
-        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
-        for (int i =0 ; i < 8; i++) {
-            LineDataSet set = createSet(i);
-            set.addEntry(new Entry(set.getEntryCount(), 0));
-            dataSets.add(set);
-        }
-        LineData data = new LineData(dataSets);
-//        LineData data = new LineData();
-        data.setValueTextColor(Color.WHITE);
-        mChart.setData(data);
 
-        // get the legend (only possible after setting data)
         Legend l = mChart.getLegend();
 
         // modify the legend ...
@@ -88,27 +125,30 @@ public class Dashboard_chart extends AppCompatActivity {
         l.setWordWrapEnabled(true);
 
 
-        XAxis xl = mChart.getXAxis();
+        xl = mChart.getXAxis();
+        leftAxis = mChart.getAxisLeft();
+        rightAxis = mChart.getAxisRight();
+
         xl.setTextColor(Color.WHITE);
-        xl.setDrawGridLines(true);
+        xl.setDrawGridLines(false);
         xl.setAvoidFirstLastClipping(true);
         xl.setEnabled(true);
 
-        YAxis leftAxis = mChart.getAxisLeft();
         leftAxis.setTextColor(Color.WHITE);
         leftAxis.setDrawGridLines(false);
-        leftAxis.setAxisMaximum(100f);
+        leftAxis.setAxisMaximum(200f);
         leftAxis.setAxisMinimum(0f);
         leftAxis.setDrawGridLines(true);
 
-        YAxis rightAxis = mChart.getAxisRight();
+
         rightAxis.setEnabled(false);
 
         mChart.getAxisLeft().setDrawGridLines(true);
         mChart.getXAxis().setDrawGridLines(true);
         mChart.setDrawBorders(true);
+        // limit the number of visible entries
 
-        feedMultiple();
+        //feedMultiple();
 
         //below code is for page navigation
         //initialize and assign variable
@@ -252,39 +292,40 @@ public class Dashboard_chart extends AppCompatActivity {
             System.out.println("parsed[1]");
             System.out.println(parsed[1]);
 
-            if (plotData) {
-                // convert string to float value
-                float value = Float.parseFloat(parsed[1]);
-                switch (parsed[0]) {
-                    case "FUEL STATUS":
-                        addEntry(0, value);
-                        break;
-                    case "ENGINE COOLANT TEMP":
-                        addEntry(1, value);
-                        break;
-                    case "FUEL PRESSURE":
-                        addEntry(2, value);
-                        break;
-                    case "ENGINE RPM":
-                        addEntry(3, value);
-                        break;
-                    case "VEHICLE SPEED":
-                        addEntry(4, value);
-                        break;
-                    case "MAF SENSOR":
-                        addEntry(5, value);
-                        break;
-                    case "THROTTLE":
-                        addEntry(6, value);
-                        break;
-                    case "O2 VOLTAGE":
-                        addEntry(7, value);
-                        break;
-                    default:
-                        System.out.println("default");
+            float value = Float.parseFloat(parsed[1]);
+            if(previousPID.equals(toDisplay)) {
+                if(parsed[0].equals(toDisplay)) {
+                    data.add(new Entry(lineDataSet.getEntryCount(), value));
+                    lineDataSet.notifyDataSetChanged();
+                    lineData.notifyDataChanged();
+                    mChart.notifyDataSetChanged();
+                    mChart.invalidate();
+                    mChart.setVisibleXRangeMaximum(20);
+                    // mChart.setVisibleYRange(30, AxisDependency.LEFT);
+
+                    // move to the latest entry
+                    mChart.moveViewToX(lineData.getEntryCount());
                 }
-                plotData = false;
+
+            }else if(!previousPID.equals(toDisplay)){
+                data.clear();
+                data.add(new Entry(0,0));
+                lineDataSet.clear();
+                lineDataSet = new LineDataSet(data, toDisplay);
+                data.add(new Entry(lineDataSet.getEntryCount(), value));
+                reDesignChart(lineDataSet, toDisplay);
+                lineData.clearValues();
+                lineData.addDataSet(lineDataSet);
+                mChart.setData(lineData);
+                lineDataSet.notifyDataSetChanged();
+                lineData.notifyDataChanged();
+                mChart.notifyDataSetChanged();
+                mChart.invalidate();
+                System.out.println("Array size");
+                System.out.println(lineDataSet.getEntryCount());
+                previousPID = toDisplay;
             }
+
 
             if (messages.length() >= 38) {
                 messages.setLength(0);
@@ -292,6 +333,36 @@ public class Dashboard_chart extends AppCompatActivity {
         }
     };
 
+    protected  void reDesignChart(LineDataSet toChange, String str){
+        toChange.setAxisDependency(YAxis.AxisDependency.LEFT);
+        toChange.setLineWidth(1f);
+        toChange.setHighlightEnabled(false);
+        toChange.setDrawValues(false);
+        toChange.setDrawCircles(false);
+        switch (str){
+            case "ENGINE COOLANT TEMP":
+                leftAxis.setAxisMaximum(100f);
+                leftAxis.setAxisMinimum(30f);
+                break;
+            case "VEHICLE SPEED":
+                leftAxis.setAxisMaximum(200f);
+                leftAxis.setAxisMinimum(0f);
+                break;
+            case "ENGINE RPM":
+                leftAxis.setAxisMaximum(9000f);
+                leftAxis.setAxisMinimum(0f);
+                break;
+            case "FUEL PRESSURE":
+                leftAxis.setAxisMaximum(100f);
+                leftAxis.setAxisMinimum(0f);
+                break;
+            default:
+                leftAxis.setAxisMaximum(200f);
+                leftAxis.setAxisMinimum(0f);
+                break;
+        }
+
+    }
     // called whenever Dashboard visited
     @Override
     protected void onStart() {
@@ -313,7 +384,7 @@ public class Dashboard_chart extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        thread.interrupt();
+        // thread.interrupt();
         super.onDestroy();
     }
 }
