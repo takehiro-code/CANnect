@@ -111,13 +111,13 @@ public class DataParsing extends AppCompatActivity{
                 break;
             case FUEL_PRESSURE:
                 result[0] = FUEL_PRESSURE_STRING;
-                result[1] = Integer.toString(Integer.parseInt(splitobd2msg[4], 16) / 300);
+                result[1] = Integer.toString(Integer.parseInt(splitobd2msg[4], 16) *3);
                 break;
             case ENGINE_RPM:
                 result[0] = ENGINE_RPM_STRING;
                 System.out.println(convertA);
                 System.out.println(convertB);
-                result[1] = Float.toString(((convertA * 256) + convertB )/ 4000.000f);
+                result[1] = Float.toString(((convertA * 256) + convertB )/ 4.000f);
                 break;
             case VEHICLE_SPEED:
                 result[0] = VEHICLE_SPEED_STRING;

@@ -97,7 +97,7 @@ public class Fuel_Pressure_fragment extends Fragment {
                 switch (parsed[0]) {
                     case "FUEL PRESSURE":
                         //changing string to float
-                        fuelpressure.moveToValue(Float.parseFloat(parsed[1]));
+                        fuelpressure.moveToValue(Float.parseFloat(parsed[1])/1000.00f);
                         break;
 
                     default:

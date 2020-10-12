@@ -123,7 +123,8 @@ public class Speedgauge_fragment extends Fragment {
                             carSpeed.speedTo(Float.parseFloat(parsed[1]), 0);
                             break;
                         default:
-                            mCallback.sendSpeedPID("SpeedPID/");
+                            mCallback.sendSpeedPID("ASDFGHJKWERTYUIXCVBN/");
+
                             break;
                     }
                 }catch (Exception e){
@@ -192,7 +193,7 @@ public class Speedgauge_fragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mCallback.sendSpeedPID("SpeedPID/");
+        mCallback.sendSpeedPID("SpeedPID");
     }
 
     //    @Override
