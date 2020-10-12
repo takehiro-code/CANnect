@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP STN2120
+D The STN2120 is a OBD to UART interpreter IC designed to provide bi-directional, half-duplex communication with the vehicle's OBD system. The STN2120 supports two additional properitery networls: GM Signle Wire CAN (GMLAN) and Ford Medium Speed CAN (MS CAN)
+K obdii
+F https://www.scantool.net/scantool/downloads/206/stn21xx_ds_c.pdf
+$ENDCMP
+#
+#End Doc Library

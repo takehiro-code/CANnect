@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name CANtech)(type Legacy)(uri ${KIPRJMOD}/CANtech.lib)(options "")(descr ""))
+  (lib (name MAX25276ATCAVY)(type Legacy)(uri ${KIPRJMOD}/MAX25276ATCAVY.lib)(options "")(descr ""))
+)
