@@ -1,0 +1,236 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 5 9
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text HLabel 2550 2400 0    50   Input ~ 0
+Raw_Voltage
+Text HLabel 9050 2400 2    50   Output ~ 0
+Protected_Voltage
+$Comp
+L Device:C C22
+U 1 1 5F9D7679
+P 3350 3600
+F 0 "C22" H 3465 3646 50  0000 L CNN
+F 1 "10nF/100V" H 3465 3555 50  0000 L CNN
+F 2 "" H 3388 3450 50  0001 C CNN
+F 3 "~" H 3350 3600 50  0001 C CNN
+	1    3350 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:US2AA D9
+U 1 1 5F9D8203
+P 3750 2400
+F 0 "D9" H 3750 2617 50  0000 C CNN
+F 1 "US2AA" H 3750 2526 50  0000 C CNN
+F 2 "Diode_SMD:D_SMA" H 3750 2225 50  0001 C CNN
+F 3 "https://www.onsemi.com/pub/Collateral/S2M-D.PDF" H 3750 2400 50  0001 C CNN
+	1    3750 2400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R57
+U 1 1 5F9D99AE
+P 5350 3000
+F 0 "R57" V 5154 3000 50  0000 C CNN
+F 1 "10k" V 5245 3000 50  0000 C CNN
+F 2 "" H 5350 3000 50  0001 C CNN
+F 3 "~" H 5350 3000 50  0001 C CNN
+	1    5350 3000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R58
+U 1 1 5F9D9C88
+P 6500 3600
+F 0 "R58" H 6441 3554 50  0000 R CNN
+F 1 "100k" H 6441 3645 50  0000 R CNN
+F 2 "" H 6500 3600 50  0001 C CNN
+F 3 "~" H 6500 3600 50  0001 C CNN
+	1    6500 3600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C24
+U 1 1 5F9DB543
+P 8450 3600
+F 0 "C24" H 8565 3646 50  0000 L CNN
+F 1 "1uF" H 8565 3555 50  0000 L CNN
+F 2 "" H 8488 3450 50  0001 C CNN
+F 3 "~" H 8450 3600 50  0001 C CNN
+	1    8450 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:MMBT3906 Q11
+U 1 1 5F9DBBAC
+P 6400 3000
+F 0 "Q11" H 6591 2954 50  0000 L CNN
+F 1 "MMBT3906" H 6591 3045 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 6600 2925 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/2N3906-D.PDF" H 6400 3000 50  0001 L CNN
+	1    6400 3000
+	1    0    0    1   
+$EndComp
+$Comp
+L BSS192:BSS192 Q10
+U 1 1 5F9DE5EE
+P 8450 2700
+F 0 "Q10" V 9039 2700 60  0000 C CNN
+F 1 "BSS192" V 8933 2700 60  0000 C CNN
+F 2 "SOT89_NXP" H 8900 2440 60  0001 C CNN
+F 3 "" H 8450 2700 60  0000 C CNN
+	1    8450 2700
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	2550 2400 3350 2400
+Wire Wire Line
+	3900 2400 4600 2400
+Wire Wire Line
+	8750 2400 9050 2400
+Wire Wire Line
+	7750 2500 7750 2400
+Connection ~ 7750 2400
+Wire Wire Line
+	7750 2400 8150 2400
+Wire Wire Line
+	7750 2800 7750 3100
+Wire Wire Line
+	7750 3100 8450 3100
+Wire Wire Line
+	8450 3100 8450 2700
+Wire Wire Line
+	8450 3100 8450 3350
+Connection ~ 8450 3100
+$Comp
+L power:GND #PWR0114
+U 1 1 5F9E1DED
+P 8450 4350
+F 0 "#PWR0114" H 8450 4100 50  0001 C CNN
+F 1 "GND" H 8455 4177 50  0000 C CNN
+F 2 "" H 8450 4350 50  0001 C CNN
+F 3 "" H 8450 4350 50  0001 C CNN
+	1    8450 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0115
+U 1 1 5F9E1FBB
+P 6500 4350
+F 0 "#PWR0115" H 6500 4100 50  0001 C CNN
+F 1 "GND" H 6505 4177 50  0000 C CNN
+F 2 "" H 6500 4350 50  0001 C CNN
+F 3 "" H 6500 4350 50  0001 C CNN
+	1    6500 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0116
+U 1 1 5F9E2378
+P 4600 4350
+F 0 "#PWR0116" H 4600 4100 50  0001 C CNN
+F 1 "GND" H 4605 4177 50  0000 C CNN
+F 2 "" H 4600 4350 50  0001 C CNN
+F 3 "" H 4600 4350 50  0001 C CNN
+	1    4600 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0117
+U 1 1 5F9E2748
+P 3350 4350
+F 0 "#PWR0117" H 3350 4100 50  0001 C CNN
+F 1 "GND" H 3355 4177 50  0000 C CNN
+F 2 "" H 3350 4350 50  0001 C CNN
+F 3 "" H 3350 4350 50  0001 C CNN
+	1    3350 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 4350 3350 3750
+Wire Wire Line
+	3350 3450 3350 2400
+Connection ~ 3350 2400
+Wire Wire Line
+	3350 2400 3600 2400
+Wire Wire Line
+	4600 4350 4600 3750
+Wire Wire Line
+	4600 2600 4600 2400
+Connection ~ 4600 2400
+Wire Wire Line
+	4600 2400 6500 2400
+Wire Wire Line
+	4600 2800 4600 3000
+Wire Wire Line
+	5450 3000 6200 3000
+Wire Wire Line
+	5250 3000 4600 3000
+Connection ~ 4600 3000
+Wire Wire Line
+	4600 3000 4600 3450
+Wire Wire Line
+	6500 3200 6500 3350
+Wire Wire Line
+	6500 4350 6500 3700
+Wire Wire Line
+	6500 2800 6500 2400
+Connection ~ 6500 2400
+Wire Wire Line
+	6500 2400 7750 2400
+Wire Wire Line
+	8450 3750 8450 4350
+Wire Wire Line
+	6500 3350 8450 3350
+Connection ~ 6500 3350
+Wire Wire Line
+	6500 3350 6500 3500
+Connection ~ 8450 3350
+Wire Wire Line
+	8450 3350 8450 3450
+$Comp
+L Device:D_Zener D10
+U 1 1 5F9DAAB5
+P 7750 2650
+F 0 "D10" V 7704 2730 50  0000 L CNN
+F 1 "BZX84B16VLFH" V 7795 2730 50  0000 L CNN
+F 2 "" H 7750 2650 50  0001 C CNN
+F 3 "~" H 7750 2650 50  0001 C CNN
+	1    7750 2650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:D_Zener D12
+U 1 1 5F9DA35E
+P 4600 3600
+F 0 "D12" V 4554 3680 50  0000 L CNN
+F 1 "BZX84B16VLFH" V 4645 3680 50  0000 L CNN
+F 2 "" H 4600 3600 50  0001 C CNN
+F 3 "https://d1d2qsbl8m0m72.cloudfront.net/en/products/databook/datasheet/discrete/diode/zener/bzx84b16vlfht116-e.pdf" V 4691 3680 50  0001 L CNN
+	1    4600 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5F9D955B
+P 4600 2700
+F 0 "R?" H 4659 2746 50  0000 L CNN
+F 1 "R_Small" H 4659 2655 50  0000 L CNN
+F 2 "" H 4600 2700 50  0001 C CNN
+F 3 "~" H 4600 2700 50  0001 C CNN
+	1    4600 2700
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

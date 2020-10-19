@@ -1,0 +1,193 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 3 9
+Title ""
+Date "2020-10-18"
+Rev "0.0.1"
+Comp "CANtech"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text HLabel 1450 1850 0    50   Input ~ 0
+Raw_+12V
+Wire Wire Line
+	1450 1850 1700 1850
+$Comp
+L power:GND #PWR0109
+U 1 1 5F9CD91F
+P 3350 3200
+F 0 "#PWR0109" H 3350 2950 50  0001 C CNN
+F 1 "GND" H 3355 3027 50  0000 C CNN
+F 2 "" H 3350 3200 50  0001 C CNN
+F 3 "" H 3350 3200 50  0001 C CNN
+	1    3350 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 1850 3350 1850
+$Comp
+L Device:C C12v
+U 1 1 5F9D0FD9
+P 3350 2550
+F 0 "C12v" H 3465 2596 50  0000 L CNN
+F 1 "4.7uF" H 3465 2505 50  0000 L CNN
+F 2 "" H 3388 2400 50  0001 C CNN
+F 3 "~" H 3350 2550 50  0001 C CNN
+	1    3350 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 2400 3350 1850
+Wire Wire Line
+	3350 2700 3350 3200
+$Sheet
+S 4000 1500 1400 950 
+U 5F9EA8B0
+F0 "Voltage Regulator (5V)" 50
+F1 "voltage_regulator_5v.sch" 50
+F2 "Enable_Signal" I L 4000 1600 50 
+F3 "Supply_Voltage" I L 4000 1700 50 
+F4 "Sync_Signal" I L 4000 2050 50 
+F5 "Fixed_5V" O R 5400 1850 50 
+F6 "PGood" O R 5400 1950 50 
+F7 "Spread_Spectrum_Enable" I L 4000 2150 50 
+$EndSheet
+Connection ~ 3350 1850
+NoConn ~ 4000 2050
+NoConn ~ 4000 2150
+NoConn ~ 5400 1950
+$Comp
+L power:GND #PWR0110
+U 1 1 5F9FBA67
+P 5800 3200
+F 0 "#PWR0110" H 5800 2950 50  0001 C CNN
+F 1 "GND" H 5805 3027 50  0000 C CNN
+F 2 "" H 5800 3200 50  0001 C CNN
+F 3 "" H 5800 3200 50  0001 C CNN
+	1    5800 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0111
+U 1 1 5F9FC0C0
+P 5800 1400
+F 0 "#PWR0111" H 5800 1250 50  0001 C CNN
+F 1 "+5V" H 5815 1573 50  0000 C CNN
+F 2 "" H 5800 1400 50  0001 C CNN
+F 3 "" H 5800 1400 50  0001 C CNN
+	1    5800 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 1850 5800 1850
+Wire Wire Line
+	5800 1850 5800 1400
+Wire Wire Line
+	5800 3200 5800 1850
+Connection ~ 5800 1850
+$Comp
+L Device:R_Small R?
+U 1 1 5F9FD1AC
+P 6750 2200
+F 0 "R?" H 6809 2246 50  0000 L CNN
+F 1 "2.2k" H 6809 2155 50  0000 L CNN
+F 2 "" H 6750 2200 50  0001 C CNN
+F 3 "~" H 6750 2200 50  0001 C CNN
+	1    6750 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5F9FD5A4
+P 6750 2700
+F 0 "R?" H 6809 2746 50  0000 L CNN
+F 1 "3.3k" H 6809 2655 50  0000 L CNN
+F 2 "" H 6750 2700 50  0001 C CNN
+F 3 "~" H 6750 2700 50  0001 C CNN
+	1    6750 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0112
+U 1 1 5F9FDC3A
+P 6750 3200
+F 0 "#PWR0112" H 6750 2950 50  0001 C CNN
+F 1 "GND" H 6755 3027 50  0000 C CNN
+F 2 "" H 6750 3200 50  0001 C CNN
+F 3 "" H 6750 3200 50  0001 C CNN
+	1    6750 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 2800 6750 3200
+Wire Wire Line
+	5800 1850 6750 1850
+Wire Wire Line
+	6750 1850 6750 2100
+Wire Wire Line
+	6750 2300 6750 2450
+$Comp
+L power:+3.3V #PWR0113
+U 1 1 5F9FE7BA
+P 7400 1400
+F 0 "#PWR0113" H 7400 1250 50  0001 C CNN
+F 1 "+3.3V" H 7415 1573 50  0000 C CNN
+F 2 "" H 7400 1400 50  0001 C CNN
+F 3 "" H 7400 1400 50  0001 C CNN
+	1    7400 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 2450 7400 2450
+Wire Wire Line
+	7400 2450 7400 1400
+Connection ~ 6750 2450
+Wire Wire Line
+	6750 2450 6750 2600
+Wire Notes Line
+	6500 3550 7850 3550
+Wire Notes Line
+	7850 3550 7850 2000
+Wire Notes Line
+	7850 2000 6500 2000
+Wire Notes Line
+	6500 2000 6500 3550
+Text Notes 7900 3650 2    50   ~ 0
+Resistor Divider to obtain +3.3V from +5V
+$Sheet
+S 1700 1500 1450 1450
+U 5F9AE5F2
+F0 "Overvoltage Protection" 50
+F1 "overvoltage_protection.sch" 50
+F2 "Raw_Voltage" I L 1700 1850 50 
+F3 "Protected_Voltage" O R 3150 1850 50 
+$EndSheet
+Wire Wire Line
+	3350 1600 3350 1700
+Wire Wire Line
+	3350 1600 4000 1600
+Wire Wire Line
+	4000 1700 3350 1700
+Connection ~ 3350 1700
+Wire Wire Line
+	3350 1700 3350 1850
+$Comp
+L power:+12V #PWR?
+U 1 1 5FA66599
+P 3350 1400
+F 0 "#PWR?" H 3350 1250 50  0001 C CNN
+F 1 "+12V" H 3365 1573 50  0000 C CNN
+F 2 "" H 3350 1400 50  0001 C CNN
+F 3 "" H 3350 1400 50  0001 C CNN
+	1    3350 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 1600 3350 1400
+Connection ~ 3350 1600
+$EndSCHEMATC

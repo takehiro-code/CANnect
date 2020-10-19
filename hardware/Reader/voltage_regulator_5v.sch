@@ -1,0 +1,186 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 6 9
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MAX25276ATCAVY:MAX25276ATCA_VY+ VR
+U 1 1 5F9ECE66
+P 3800 2200
+F 0 "VR" H 4600 2587 60  0000 C CNN
+F 1 "MAX25276ATCA_VY+" H 4600 2481 60  0000 C CNN
+F 2 "21-100284A_TD1233Y+3C_MXM" H 4600 2440 60  0001 C CNN
+F 3 "" H 3800 2200 60  0000 C CNN
+	1    3800 2200
+	1    0    0    -1  
+$EndComp
+Text HLabel 1800 1750 0    50   Input ~ 0
+Enable_Signal
+Text HLabel 1850 2300 0    50   Input ~ 0
+Supply_Voltage
+Text HLabel 1850 2500 0    50   Input ~ 0
+Sync_Signal
+Text HLabel 7450 2300 2    50   Output ~ 0
+Fixed_5V
+Text HLabel 7450 4150 2    50   Output ~ 0
+PGood
+Wire Wire Line
+	5400 2300 6650 2300
+$Comp
+L power:GND #PWR0118
+U 1 1 5F9EE541
+P 5600 3000
+F 0 "#PWR0118" H 5600 2750 50  0001 C CNN
+F 1 "GND" H 5605 2827 50  0000 C CNN
+F 2 "" H 5600 3000 50  0001 C CNN
+F 3 "" H 5600 3000 50  0001 C CNN
+	1    5600 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0119
+U 1 1 5F9EE8B3
+P 5950 4550
+F 0 "#PWR0119" H 5950 4300 50  0001 C CNN
+F 1 "GND" H 5955 4377 50  0000 C CNN
+F 2 "" H 5950 4550 50  0001 C CNN
+F 3 "" H 5950 4550 50  0001 C CNN
+	1    5950 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 2700 5600 2700
+Wire Wire Line
+	5600 2700 5600 2800
+Wire Wire Line
+	5400 2800 5600 2800
+Connection ~ 5600 2800
+Wire Wire Line
+	5600 2800 5600 3000
+Wire Wire Line
+	5400 2200 5950 2200
+Wire Wire Line
+	5950 2200 5950 3750
+Wire Wire Line
+	5950 4100 5950 4550
+Connection ~ 5950 3750
+Wire Wire Line
+	5950 3750 5950 3800
+$Comp
+L Device:C Cin
+U 1 1 5F9F0C9F
+P 2750 2300
+F 0 "Cin" V 2498 2300 50  0000 C CNN
+F 1 "4.7uF" V 2589 2300 50  0000 C CNN
+F 2 "" H 2788 2150 50  0001 C CNN
+F 3 "~" H 2750 2300 50  0001 C CNN
+	1    2750 2300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1800 1750 3800 1750
+Wire Wire Line
+	3800 1750 3800 2200
+Wire Wire Line
+	1850 2300 2600 2300
+Wire Wire Line
+	2900 2300 3800 2300
+Wire Wire Line
+	1850 2500 3800 2500
+Wire Wire Line
+	3800 2500 3800 2400
+Wire Wire Line
+	3800 3300 3800 4150
+Wire Wire Line
+	3800 4150 7450 4150
+$Comp
+L Device:L L
+U 1 1 5F9F2ADC
+P 6650 2950
+F 0 "L" H 6703 2996 50  0000 L CNN
+F 1 "4.7uH" H 6703 2905 50  0000 L CNN
+F 2 "" H 6650 2950 50  0001 C CNN
+F 3 "~" H 6650 2950 50  0001 C CNN
+	1    6650 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 2800 6650 2300
+Connection ~ 6650 2300
+Wire Wire Line
+	6650 2300 7450 2300
+$Comp
+L Device:C CBST
+U 1 1 5F9F38FF
+P 2950 3350
+F 0 "CBST" H 3065 3396 50  0000 L CNN
+F 1 "0.1uF" H 3065 3305 50  0000 L CNN
+F 2 "" H 2988 3200 50  0001 C CNN
+F 3 "~" H 2950 3350 50  0001 C CNN
+	1    2950 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0120
+U 1 1 5F9F3DB1
+P 3650 3450
+F 0 "#PWR0120" H 3650 3200 50  0001 C CNN
+F 1 "GND" H 3655 3277 50  0000 C CNN
+F 2 "" H 3650 3450 50  0001 C CNN
+F 3 "" H 3650 3450 50  0001 C CNN
+	1    3650 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 2600 2600 3750
+Wire Wire Line
+	2600 2600 3800 2600
+Wire Wire Line
+	2600 3750 5950 3750
+Wire Wire Line
+	3650 3450 3650 2800
+Wire Wire Line
+	3650 2800 3800 2800
+Wire Wire Line
+	3800 2700 2950 2700
+Wire Wire Line
+	2950 2700 2950 3200
+Wire Wire Line
+	2950 3500 2950 3700
+Wire Wire Line
+	2950 3700 3300 3700
+Wire Wire Line
+	6650 3700 6650 3100
+Wire Wire Line
+	3800 2900 3300 2900
+Wire Wire Line
+	3300 2900 3300 3700
+Connection ~ 3300 3700
+Wire Wire Line
+	3300 3700 6650 3700
+Text HLabel 1800 3000 0    50   Input ~ 0
+Spread_Spectrum_Enable
+Wire Wire Line
+	1800 3000 3800 3000
+$Comp
+L Device:C C?
+U 1 1 5F9EFBD6
+P 5950 3950
+F 0 "C?" H 6065 3996 50  0000 L CNN
+F 1 "1uF" H 6065 3905 50  0000 L CNN
+F 2 "" H 5988 3800 50  0001 C CNN
+F 3 "~" H 5950 3950 50  0001 C CNN
+	1    5950 3950
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
