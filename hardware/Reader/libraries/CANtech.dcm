@@ -1,7 +1,29 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP +12V_SW
+D Battery voltage, controlled by a switch
+$ENDCMP
+#
+$CMP +3.3V_SW
+D +3.3V, controlled by a switch
+$ENDCMP
+#
+$CMP +5V_SW
+D +5V, controlled by a switch
+$ENDCMP
+#
+$CMP +V_J1850
+D Power symbol creates a global label with name "+V_J1850". Used to denote power voltage for SAE J1850
+K power-flag
+$ENDCMP
+#
 $CMP STN2120
+D OBDII-to-UART Interpreter
 F https://www.scantool.net/scantool/downloads/206/stn21xx_ds_c.pdf
+$ENDCMP
+#
+$CMP VRaw
+D Raw voltage from a source. Presume dirty
 $ENDCMP
 #
 #End Doc Library

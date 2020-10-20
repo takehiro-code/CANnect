@@ -3,25 +3,25 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 2 9
-Title ""
-Date "2020-10-18"
+Sheet 8 17
+Title "CANnect Reader | MEMs"
+Date "2020-10-20"
 Rev "0.0.1"
 Comp "CANtech"
-Comment1 ""
+Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 ""
 Comment3 ""
-Comment4 ""
+Comment4 "Component Identifier: MM"
 $EndDescr
 $Comp
 L LSM6DSMTR:LSM6DSMTR MEMS?
 U 1 1 5F9A440D
 P 6550 3400
 AR Path="/5F9A440D" Ref="MEMS?"  Part="1" 
-AR Path="/5F988046/5F9A440D" Ref="MEMS?"  Part="1" 
-F 0 "MEMS?" H 6550 4167 50  0000 C CNN
+AR Path="/5F988046/5F9A440D" Ref="MEMS1"  Part="1" 
+F 0 "MEMS1" H 6550 4167 50  0000 C CNN
 F 1 "LSM6DSMTR" H 6550 4076 50  0000 C CNN
-F 2 "PQFN50P300X250X86-14N" H 6550 3400 50  0001 L BNN
+F 2 "footprints:PQFN50P300X250X86-14N" H 6550 3400 50  0001 L BNN
 F 3 "STMicroelectronics" H 6550 3400 50  0001 L BNN
 F 4 "0.86 mm" H 6550 3400 50  0001 L BNN "Field4"
 F 5 "Rev 7" H 6550 3400 50  0001 L BNN "Field5"
@@ -47,11 +47,11 @@ L Device:C Cmem?
 U 1 1 5F9A441F
 P 7750 3150
 AR Path="/5F9A441F" Ref="Cmem?"  Part="1" 
-AR Path="/5F988046/5F9A441F" Ref="Cmem?"  Part="1" 
-F 0 "Cmem?" H 7865 3196 50  0000 L CNN
+AR Path="/5F988046/5F9A441F" Ref="C_MM_1"  Part="1" 
+F 0 "C_MM_1" H 7865 3196 50  0000 L CNN
 F 1 "100nF" H 7865 3105 50  0000 L CNN
-F 2 "" H 7788 3000 50  0001 C CNN
-F 3 "~" H 7750 3150 50  0001 C CNN
+F 2 "footprints:FA16C0G2A104JRU06" H 7788 3000 50  0001 C CNN
+F 3 "https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fa_en.pdf" H 7750 3150 50  0001 C CNN
 	1    7750 3150
 	1    0    0    -1  
 $EndComp
@@ -118,10 +118,10 @@ Wire Wire Line
 	3100 3200 5650 3200
 NoConn ~ 5650 3100
 $Comp
-L CANtech:+3.3V_SW PWR?
+L CANtech:+3.3V_SW #PWR0143
 U 1 1 5FA73E29
 P 7750 2800
-F 0 "PWR?" H 7750 3050 50  0001 C CNN
+F 0 "#PWR0143" H 7750 3050 50  0001 C CNN
 F 1 "+3.3V_SW" H 7808 2837 50  0000 L CNN
 F 2 "" H 7000 3600 50  0001 C CNN
 F 3 "" H 7000 3600 50  0001 C CNN

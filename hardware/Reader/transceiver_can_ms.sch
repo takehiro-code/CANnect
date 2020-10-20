@@ -1,0 +1,355 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 12 17
+Title "CANnect Reader | Medium Speed CAN Transceiver"
+Date "2020-10-20"
+Rev "0.0.1"
+Comp "CANtech"
+Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
+Comment2 "Taken from STN21xx's datasheet for recommended configuration"
+Comment3 ""
+Comment4 "Component Identifier: MSCAN"
+$EndDescr
+Text HLabel 1600 3000 0    50   BiDi ~ 0
+MS_CAN_High
+Text HLabel 1600 3100 0    50   BiDi ~ 0
+MS_CAN_Low
+$Comp
+L PESD2CAN_215:PESD2CAN,215 D?
+U 1 1 5FB39FD5
+P 1750 4050
+AR Path="/5F95F80B/5FAEE035/5FB39FD5" Ref="D?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB39FD5" Ref="Q_MSCAN_2"  Part="1" 
+F 0 "Q_MSCAN_2" V 1704 4280 50  0000 L CNN
+F 1 "PESD2CAN,215" V 1795 4280 50  0000 L CNN
+F 2 "footprints:SOT95P230X110-3N" H 1750 4050 50  0001 L BNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/PESD2CAN.pdf" H 1750 4050 50  0001 L BNN
+	1    1750 4050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1600 3000 1850 3000
+$Comp
+L power:GND #PWR?
+U 1 1 5FB39FDC
+P 1750 4900
+AR Path="/5F95F80B/5FAEE035/5FB39FDC" Ref="#PWR?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB39FDC" Ref="#PWR0157"  Part="1" 
+F 0 "#PWR0157" H 1750 4650 50  0001 C CNN
+F 1 "GND" H 1755 4727 50  0000 C CNN
+F 2 "" H 1750 4900 50  0001 C CNN
+F 3 "" H 1750 4900 50  0001 C CNN
+	1    1750 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 4450 1750 4900
+Wire Notes Line
+	1450 5150 2600 5150
+Wire Notes Line
+	2600 5150 2600 3700
+Wire Notes Line
+	2600 3700 1450 3700
+Wire Notes Line
+	1450 3700 1450 5150
+Text Notes 1450 5300 0    50   ~ 0
+ESD Protection
+$Comp
+L MCP2562HMF:MCP2562-H_MF IC?
+U 1 1 5FB39FE8
+P 7200 2800
+AR Path="/5F95F80B/5FAEE035/5FB39FE8" Ref="IC?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB39FE8" Ref="IC5"  Part="1" 
+F 0 "IC5" H 8400 3293 60  0000 C CNN
+F 1 "MCP2562-H_MF" H 8400 3187 60  0000 C CNN
+F 2 "footprints:MCP2562-H&slash_MF" H 8400 3040 60  0001 C CNN
+F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/20005167C.pdf" H 8400 3081 60  0000 C CNN
+	1    7200 2800
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 3100 1650 3650
+Connection ~ 1650 3100
+Wire Wire Line
+	1650 3100 1600 3100
+Connection ~ 1850 3000
+Wire Wire Line
+	1850 3000 1850 3650
+$Comp
+L Device:R_Small R?
+U 1 1 5FB39FF3
+P 2750 3950
+AR Path="/5F95F80B/5FAEE035/5FB39FF3" Ref="R?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB39FF3" Ref="R_MSCAN_2"  Part="1" 
+F 0 "R_MSCAN_2" H 2809 3996 50  0000 L CNN
+F 1 "100" H 2809 3905 50  0000 L CNN
+F 2 "footprints:RESC3216X70N" H 2750 3950 50  0001 C CNN
+F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 2750 3950 50  0001 C CNN
+F 4 "ERJ-8ENF1000V" H 2750 3950 50  0001 C CNN "Part Name"
+	1    2750 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5FB39FF9
+P 3500 3950
+AR Path="/5F95F80B/5FAEE035/5FB39FF9" Ref="R?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB39FF9" Ref="R_MSCAN_3"  Part="1" 
+F 0 "R_MSCAN_3" H 3559 3996 50  0000 L CNN
+F 1 "100" H 3559 3905 50  0000 L CNN
+F 2 "footprints:RESC3216X70N" H 3500 3950 50  0001 C CNN
+F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 3500 3950 50  0001 C CNN
+F 4 "ERJ-8ENF1000V" H 3500 3950 50  0001 C CNN "Part Name"
+	1    3500 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5FB39FFF
+P 2750 4500
+AR Path="/5F95F80B/5FAEE035/5FB39FFF" Ref="C?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB39FFF" Ref="C_MSCAN_1"  Part="1" 
+F 0 "C_MSCAN_1" H 2865 4546 50  0000 L CNN
+F 1 "560pF" H 2865 4455 50  0000 L CNN
+F 2 "footprints:CAPC1608X90" H 2788 4350 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf" H 2750 4500 50  0001 C CNN
+	1    2750 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5FB3A005
+P 3500 4500
+AR Path="/5F95F80B/5FAEE035/5FB3A005" Ref="C?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB3A005" Ref="C_MSCAN_2"  Part="1" 
+F 0 "C_MSCAN_2" H 3615 4546 50  0000 L CNN
+F 1 "560pF" H 3615 4455 50  0000 L CNN
+F 2 "footprints:CAPC1608X90" H 3538 4350 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf" H 3500 4500 50  0001 C CNN
+	1    3500 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5FB3A00B
+P 2750 4900
+AR Path="/5F95F80B/5FAEE035/5FB3A00B" Ref="#PWR?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB3A00B" Ref="#PWR0158"  Part="1" 
+F 0 "#PWR0158" H 2750 4650 50  0001 C CNN
+F 1 "GND" H 2755 4727 50  0000 C CNN
+F 2 "" H 2750 4900 50  0001 C CNN
+F 3 "" H 2750 4900 50  0001 C CNN
+	1    2750 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5FB3A011
+P 3500 4900
+AR Path="/5F95F80B/5FAEE035/5FB3A011" Ref="#PWR?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB3A011" Ref="#PWR0159"  Part="1" 
+F 0 "#PWR0159" H 3500 4650 50  0001 C CNN
+F 1 "GND" H 3505 4727 50  0000 C CNN
+F 2 "" H 3500 4900 50  0001 C CNN
+F 3 "" H 3500 4900 50  0001 C CNN
+	1    3500 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 4900 2750 4650
+Wire Wire Line
+	3500 4900 3500 4650
+Wire Wire Line
+	2750 4350 2750 4050
+Wire Wire Line
+	3500 4350 3500 4050
+Wire Wire Line
+	2750 3850 2750 3100
+Connection ~ 2750 3100
+Wire Wire Line
+	1650 3100 2750 3100
+Wire Wire Line
+	7200 2900 7450 2900
+$Comp
+L power:GND #PWR?
+U 1 1 5FB3A022
+P 5500 2200
+AR Path="/5F95F80B/5FAEE035/5FB3A022" Ref="#PWR?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB3A022" Ref="#PWR0160"  Part="1" 
+F 0 "#PWR0160" H 5500 1950 50  0001 C CNN
+F 1 "GND" H 5505 2027 50  0000 C CNN
+F 2 "" H 5500 2200 50  0001 C CNN
+F 3 "" H 5500 2200 50  0001 C CNN
+	1    5500 2200
+	1    0    0    -1  
+$EndComp
+Text HLabel 1600 2200 0    50   Input ~ 0
+~PWR_CTRL~
+$Comp
+L NX7002AK_215:NX7002AK,215 Q?
+U 1 1 5FB3A02C
+P 2550 2100
+AR Path="/5F95F80B/5FAEE035/5FB3A02C" Ref="Q?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB3A02C" Ref="Q_MSCAN_1"  Part="1" 
+F 0 "Q_MSCAN_1" H 2748 2096 50  0000 L CNN
+F 1 "NX7002AK,215" H 2748 2005 50  0000 L CNN
+F 2 "footprints:SOT95P230X110-3N" H 2550 2100 50  0001 L BNN
+F 3 "1.1mm" H 2550 2100 50  0001 L BNN
+F 4 "Nexperia" H 2550 2100 50  0001 L BNN "Field4"
+F 5 "7" H 2550 2100 50  0001 L BNN "Field5"
+F 6 "IPC-7351B" H 2550 2100 50  0001 L BNN "Field6"
+	1    2550 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5FB3A032
+P 2650 2700
+AR Path="/5F95F80B/5FAEE035/5FB3A032" Ref="#PWR?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB3A032" Ref="#PWR0161"  Part="1" 
+F 0 "#PWR0161" H 2650 2450 50  0001 C CNN
+F 1 "GND" H 2655 2527 50  0000 C CNN
+F 2 "" H 2650 2700 50  0001 C CNN
+F 3 "" H 2650 2700 50  0001 C CNN
+	1    2650 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FB3A038
+P 3600 1200
+AR Path="/5F95F80B/5FAEE035/5FB3A038" Ref="#PWR?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB3A038" Ref="#PWR0162"  Part="1" 
+F 0 "#PWR0162" H 3600 1050 50  0001 C CNN
+F 1 "+3.3V" H 3615 1373 50  0000 C CNN
+F 2 "" H 3600 1200 50  0001 C CNN
+F 3 "" H 3600 1200 50  0001 C CNN
+	1    3600 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5FB3A03E
+P 2650 1650
+AR Path="/5F95F80B/5FAEE035/5FB3A03E" Ref="R?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB3A03E" Ref="R_MSCAN_1"  Part="1" 
+F 0 "R_MSCAN_1" H 2709 1696 50  0000 L CNN
+F 1 "100k" H 2709 1605 50  0000 L CNN
+F 2 "footprints:RESC1608X55N" H 2650 1650 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 2650 1650 50  0001 C CNN
+F 4 "RT0603DRE07100KL" H 2650 1650 50  0001 C CNN "Part Name"
+	1    2650 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5FB3A044
+P 8300 2450
+AR Path="/5F95F80B/5FAEE035/5FB3A044" Ref="C?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB3A044" Ref="C_MSCAN_3"  Part="1" 
+F 0 "C_MSCAN_3" V 8048 2450 50  0000 C CNN
+F 1 "1uF" V 8139 2450 50  0000 C CNN
+F 2 "footprints:0603" H 8338 2300 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf" H 8300 2450 50  0001 C CNN
+	1    8300 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5FB3A04A
+P 8800 2550
+AR Path="/5F95F80B/5FAEE035/5FB3A04A" Ref="#PWR?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB3A04A" Ref="#PWR0163"  Part="1" 
+F 0 "#PWR0163" H 8800 2300 50  0001 C CNN
+F 1 "GND" H 8805 2377 50  0000 C CNN
+F 2 "" H 8800 2550 50  0001 C CNN
+F 3 "" H 8800 2550 50  0001 C CNN
+	1    8800 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7200 2800 9250 2800
+Wire Wire Line
+	7200 3100 9250 3100
+Wire Wire Line
+	8450 2450 8800 2450
+Wire Wire Line
+	8800 2450 8800 2550
+Wire Wire Line
+	7200 3000 7900 3000
+Wire Wire Line
+	7900 3000 7900 2450
+Wire Wire Line
+	7900 2450 8150 2450
+Wire Wire Line
+	7900 2200 7900 2450
+Connection ~ 7900 2450
+$Comp
+L power:+5V #PWR?
+U 1 1 5FB3A059
+P 7900 2200
+AR Path="/5F95F80B/5FAEE035/5FB3A059" Ref="#PWR?"  Part="1" 
+AR Path="/5F95F80B/5FB34A7C/5FB3A059" Ref="#PWR0164"  Part="1" 
+F 0 "#PWR0164" H 7900 2050 50  0001 C CNN
+F 1 "+5V" H 7915 2373 50  0000 C CNN
+F 2 "" H 7900 2200 50  0001 C CNN
+F 3 "" H 7900 2200 50  0001 C CNN
+	1    7900 2200
+	1    0    0    -1  
+$EndComp
+Text HLabel 9250 2800 2    50   Input ~ 0
+MS_CAN_TX
+Wire Wire Line
+	2750 3100 4800 3100
+Wire Wire Line
+	2650 2400 2650 2700
+Wire Wire Line
+	1600 2200 2350 2200
+Wire Wire Line
+	2650 1900 2650 1850
+Wire Wire Line
+	2650 1550 2650 1450
+Wire Wire Line
+	2650 1450 3600 1450
+Wire Wire Line
+	3600 1450 3600 1200
+Wire Wire Line
+	3600 1450 3600 3200
+Wire Wire Line
+	3600 3200 4800 3200
+Connection ~ 3600 1450
+Wire Wire Line
+	2650 1850 3450 1850
+Wire Wire Line
+	3450 1850 3450 2900
+Wire Wire Line
+	3450 2900 4800 2900
+Connection ~ 2650 1850
+Wire Wire Line
+	2650 1850 2650 1750
+Wire Wire Line
+	4800 2800 4450 2800
+Wire Wire Line
+	4450 2800 4450 2000
+Wire Wire Line
+	7450 2000 5500 2000
+Wire Wire Line
+	7450 2000 7450 2900
+Wire Wire Line
+	5500 2200 5500 2000
+Connection ~ 5500 2000
+Wire Wire Line
+	5500 2000 4450 2000
+Text HLabel 9250 3100 2    50   Output ~ 0
+MS_CAN_RX
+Wire Wire Line
+	1850 3000 3500 3000
+Wire Wire Line
+	3500 3850 3500 3000
+Connection ~ 3500 3000
+Wire Wire Line
+	3500 3000 4800 3000
+$EndSCHEMATC
