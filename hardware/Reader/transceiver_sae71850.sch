@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 13 17
+Sheet 12 18
 Title "CANnect Reader | SAE J1850 VPW/PWM Transceiver"
 Date "2020-10-20"
-Rev "0.0.1"
+Rev "0.0.01"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -86,7 +86,7 @@ P 2000 3000
 F 0 "Q_J1850_1" H 2198 2996 50  0000 L CNN
 F 1 "NX7002AK,215" H 2198 2905 50  0000 L CNN
 F 2 "footprints:SOT95P230X110-3N" H 2000 3000 50  0001 L BNN
-F 3 "1.1mm" H 2000 3000 50  0001 L BNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 2000 3000 50  0001 L BNN
 F 4 "Nexperia" H 2000 3000 50  0001 L BNN "Field4"
 F 5 "7" H 2000 3000 50  0001 L BNN "Field5"
 F 6 "IPC-7351B" H 2000 3000 50  0001 L BNN "Field6"
@@ -175,7 +175,7 @@ P 2050 5900
 F 0 "Q_J1850_3" H 2248 5896 50  0000 L CNN
 F 1 "NX7002AK,215" H 2248 5805 50  0000 L CNN
 F 2 "footprints:SOT95P230X110-3N" H 2050 5900 50  0001 L BNN
-F 3 "1.1mm" H 2050 5900 50  0001 L BNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 2050 5900 50  0001 L BNN
 F 4 "Nexperia" H 2050 5900 50  0001 L BNN "Field4"
 F 5 "7" H 2050 5900 50  0001 L BNN "Field5"
 F 6 "IPC-7351B" H 2050 5900 50  0001 L BNN "Field6"
@@ -341,7 +341,7 @@ P 7700 2900
 F 0 "Q_J1850_2" H 7898 2896 50  0000 L CNN
 F 1 "NX7002AK,215" H 7898 2805 50  0000 L CNN
 F 2 "footprints:SOT95P230X110-3N" H 7700 2900 50  0001 L BNN
-F 3 "1.1mm" H 7700 2900 50  0001 L BNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 7700 2900 50  0001 L BNN
 F 4 "Nexperia" H 7700 2900 50  0001 L BNN "Field4"
 F 5 "7" H 7700 2900 50  0001 L BNN "Field5"
 F 6 "IPC-7351B" H 7700 2900 50  0001 L BNN "Field6"

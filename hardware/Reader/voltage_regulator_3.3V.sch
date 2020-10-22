@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 6 17
+Sheet 6 18
 Title "CANnect Reader | Voltage Regulator (3.3V)"
 Date "2020-10-20"
-Rev "0.0.1"
+Rev "0.0.01"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 ""

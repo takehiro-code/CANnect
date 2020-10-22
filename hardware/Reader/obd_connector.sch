@@ -3,15 +3,15 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 17 17
+Sheet 16 18
 Title "CANnect Reader | OBD Connector"
 Date "2020-10-20"
-Rev "0.0.1"
+Rev "0.0.01"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
 Comment3 ""
-Comment4 "Component Identifier: "
+Comment4 "Component Identifier: CN"
 $EndDescr
 Text GLabel 3000 3800 0    50   Input ~ 0
 Pin16_Raw_+12V_Battery
@@ -45,155 +45,117 @@ Text GLabel 3000 1550 0    50   BiDi ~ 0
 Pin1_SW_CAN
 Text Notes 1600 1450 0    50   ~ 0
 OBD-II Connector/Data Link Connector
-Text HLabel 4250 1550 2    50   BiDi ~ 0
+Text HLabel 5600 1550 2    50   BiDi ~ 0
 SW_CAN
-Text HLabel 4250 3800 2    50   Output ~ 0
+Text HLabel 5600 3800 2    50   Output ~ 0
 Raw_12V
-Wire Wire Line
-	3000 3800 4250 3800
 Text GLabel 3000 2600 0    50   BiDi ~ 0
 Pin8
-Text HLabel 4250 1700 2    50   BiDi ~ 0
+Text HLabel 5600 1700 2    50   BiDi ~ 0
 J1850_BUS+
-Text HLabel 4250 1850 2    50   BiDi ~ 0
+Text HLabel 5600 1850 2    50   BiDi ~ 0
 MS_CAN_High
-Text HLabel 4250 2000 2    50   Output ~ 0
+Text HLabel 5600 2000 2    50   Output ~ 0
 GnD_Chassis
-Text HLabel 4250 2150 2    50   Output ~ 0
+Text HLabel 5600 2150 2    50   Output ~ 0
 GnD_Signal
-Text HLabel 4250 2300 2    50   BiDi ~ 0
+Text HLabel 5600 2300 2    50   BiDi ~ 0
 HS_CAN_High
-Text HLabel 4250 2450 2    50   BiDi ~ 0
+Text HLabel 5600 2450 2    50   BiDi ~ 0
 K-Line
-Text HLabel 4250 2600 2    50   BiDi ~ 0
+Text HLabel 5600 2600 2    50   BiDi ~ 0
 OBD_PIN_8
-Text HLabel 4250 2750 2    50   BiDi ~ 0
+Text HLabel 5600 2750 2    50   BiDi ~ 0
 OBD_PIN_9
-Text HLabel 4250 2900 2    50   BiDi ~ 0
+Text HLabel 5600 2900 2    50   BiDi ~ 0
 ~J1850_BUS-~
-Text HLabel 4250 3050 2    50   BiDi ~ 0
+Text HLabel 5600 3050 2    50   BiDi ~ 0
 MS_CAN_Low
-Text HLabel 4250 3200 2    50   BiDi ~ 0
+Text HLabel 5600 3200 2    50   BiDi ~ 0
 OBD_PIN_12
-Text HLabel 4250 3350 2    50   BiDi ~ 0
+Text HLabel 5600 3350 2    50   BiDi ~ 0
 OBD_PIN_13
-Text HLabel 4250 3500 2    50   BiDi ~ 0
+Text HLabel 5600 3500 2    50   BiDi ~ 0
 HS_CAN_Low
-Text HLabel 4250 3650 2    50   Output ~ 0
+Text HLabel 5600 3650 2    50   Output ~ 0
 L-Line
-Wire Wire Line
-	3000 1700 4250 1700
-Wire Wire Line
-	3000 1550 4250 1550
-Wire Wire Line
-	3000 1850 4250 1850
-Wire Wire Line
-	3000 2000 4250 2000
-Wire Wire Line
-	3000 2150 4250 2150
-Wire Wire Line
-	3000 2300 4250 2300
-Wire Wire Line
-	3000 2450 4250 2450
-Wire Wire Line
-	3000 2600 4250 2600
-Wire Wire Line
-	3000 2750 4250 2750
-Wire Wire Line
-	3000 2900 4250 2900
-Wire Wire Line
-	3000 3050 4250 3050
-Wire Wire Line
-	3000 3200 4250 3200
-Wire Wire Line
-	3000 3350 4250 3350
-Wire Wire Line
-	3000 3500 4250 3500
-Wire Wire Line
-	3000 3650 4250 3650
 $Comp
 L AHDF15AKGTAXB:AHDF15A-KG-TAXB CN?
 U 1 1 5FF7CC92
-P 7400 1850
+P 7650 1850
 AR Path="/5FF7CC92" Ref="CN?"  Part="1" 
 AR Path="/5FF6FE24/5FF7CC92" Ref="CN1"  Part="1" 
-F 0 "CN1" H 7750 2295 60  0000 C CNN
-F 1 "AHDF15A-KG-TAXB" H 7750 2189 60  0000 C CNN
-F 2 "CONN_AHDF15A-KG-TAXB_ASM" H 7800 1090 60  0001 C CNN
-F 3 "http://www.assmann-wsw.com/fileadmin/datasheets/AHDxxxA-KG-TAxB.pdf" H 7750 2083 60  0000 C CNN
-	1    7400 1850
+F 0 "CN1" H 8000 2295 60  0000 C CNN
+F 1 "AHDF15A-KG-TAXB" H 8000 2189 60  0000 C CNN
+F 2 "footprints:AHDF15A-KG-TAXB" H 8050 1090 60  0001 C CNN
+F 3 "http://www.assmann-wsw.com/fileadmin/datasheets/AHDxxxA-KG-TAxB.pdf" H 8000 2083 60  0000 C CNN
+	1    7650 1850
 	1    0    0    -1  
 $EndComp
-Text GLabel 7050 1900 0    50   BiDi ~ 0
+Text GLabel 7300 1900 0    50   BiDi ~ 0
 Pin7_ISO9141_K-Line
-Text GLabel 7050 2000 0    50   BiDi ~ 0
+Text GLabel 7300 2000 0    50   BiDi ~ 0
 Pin2_SAE_J1850_BUS+
-Text GLabel 7050 2100 0    50   Input ~ 0
+Text GLabel 7300 2100 0    50   Input ~ 0
 Pin15_ISO9141_L-Line
-Text GLabel 7050 2200 0    50   BiDi ~ 0
+Text GLabel 7300 2200 0    50   BiDi ~ 0
 Pin10_SAE_J1850_BUS-
-Text GLabel 7050 2300 0    50   BiDi ~ 0
+Text GLabel 7300 2300 0    50   BiDi ~ 0
 Pin8
-Text GLabel 7050 2400 0    50   BiDi ~ 0
+Text GLabel 7300 2400 0    50   BiDi ~ 0
 Pin3_MS_CAN_High
-Text GLabel 7050 2500 0    50   BiDi ~ 0
+Text GLabel 7300 2500 0    50   BiDi ~ 0
 Pin1_SW_CAN
-Text GLabel 7050 2600 0    50   BiDi ~ 0
+Text GLabel 7300 2600 0    50   BiDi ~ 0
 Pin11_MS_CAN_Low
-Text GLabel 7050 2800 0    50   BiDi ~ 0
+Text GLabel 7300 2800 0    50   BiDi ~ 0
 Pin13
-Text GLabel 7050 2700 0    50   Input ~ 0
+Text GLabel 7300 2700 0    50   Input ~ 0
 Pin16_Raw_+12V_Battery
-Text GLabel 8500 2000 2    50   BiDi ~ 0
+Text GLabel 8750 2000 2    50   BiDi ~ 0
 Pin6_ISO15765-4_CAN_BUS_High
-Text GLabel 8500 2200 2    50   BiDi ~ 0
+Text GLabel 8750 2200 2    50   BiDi ~ 0
 Pin14_ISO15765-4_CAN_BUS_Low
-Text GLabel 8500 2400 2    50   Input ~ 0
+Text GLabel 8750 2400 2    50   Input ~ 0
 Pin4_GnD_Chassis
-Text GLabel 8500 2600 2    50   BiDi ~ 0
+Text GLabel 8750 2600 2    50   BiDi ~ 0
 Pin9
-Text GLabel 8500 2800 2    50   BiDi ~ 0
+Text GLabel 8750 2800 2    50   BiDi ~ 0
 Pin12
-Text GLabel 7750 3350 3    50   Input ~ 0
+Text GLabel 8000 3350 3    50   Input ~ 0
 Pin4_GnD_Chassis
 Wire Wire Line
-	7050 1900 7450 1900
+	7300 1900 7700 1900
 Wire Wire Line
-	7050 2000 7450 2000
+	7300 2000 7700 2000
 Wire Wire Line
-	7050 2100 7450 2100
+	7300 2100 7700 2100
 Wire Wire Line
-	7050 2200 7450 2200
+	7300 2200 7700 2200
 Wire Wire Line
-	7050 2300 7450 2300
+	7300 2300 7700 2300
 Wire Wire Line
-	7050 2400 7450 2400
+	7300 2400 7700 2400
 Wire Wire Line
-	7050 2500 7450 2500
+	7300 2500 7700 2500
 Wire Wire Line
-	7050 2600 7450 2600
+	7300 2600 7700 2600
 Wire Wire Line
-	7050 2700 7450 2700
+	7300 2700 7700 2700
 Wire Wire Line
-	7050 2800 7450 2800
+	7300 2800 7700 2800
 Wire Wire Line
-	7750 3350 7750 3100
+	8000 3350 8000 3100
 Wire Wire Line
-	8500 2800 8050 2800
+	8750 2800 8300 2800
 Wire Wire Line
-	8500 2600 8050 2600
+	8750 2600 8300 2600
 Wire Wire Line
-	8500 2400 8050 2400
+	8750 2400 8300 2400
 Wire Wire Line
-	8500 2200 8050 2200
+	8750 2200 8300 2200
 Wire Wire Line
-	8500 2000 8050 2000
-Wire Notes Line
-	4100 1100 4100 4300
-Wire Notes Line
-	4100 4300 10150 4300
-Wire Notes Line
-	10150 4300 10150 1100
+	8750 2000 8300 2000
 Wire Notes Line
 	10150 1100 4100 1100
 Text Notes 5950 1250 2    50   ~ 0
@@ -981,4 +943,86 @@ Wire Notes Line
 	3350 1350 1350 1350
 Text Notes 4650 5750 2    50   ~ 0
 Reference: https://components101.com/sites/default/files/component_pin/OBD2-Connector-Pinout.png
+$Comp
+L 2828322:282832-2 J_CN_1
+U 1 1 5F9847E5
+P 4350 4200
+F 0 "J_CN_1" V 4539 4328 60  0000 L CNN
+F 1 "282832-2" V 4645 4328 60  0000 L CNN
+F 2 "footprints:282832-2" H 4750 4140 60  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" V 4645 4328 60  0001 L CNN
+F 4 "282832-2" H 4350 4200 50  0001 C CNN "Part Name"
+	1    4350 4200
+	0    1    1    0   
+$EndComp
+$Comp
+L 2828322:282832-2 J_CN_2
+U 1 1 5F984F05
+P 5200 4200
+F 0 "J_CN_2" V 5389 4328 60  0000 L CNN
+F 1 "282832-2" V 5495 4328 60  0000 L CNN
+F 2 "footprints:282832-2" H 5600 4140 60  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" V 5495 4328 60  0001 L CNN
+F 4 "282832-2" H 5200 4200 50  0001 C CNN "Part Name"
+	1    5200 4200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3000 1550 5600 1550
+Wire Wire Line
+	3000 1700 5600 1700
+Wire Wire Line
+	3000 1850 5600 1850
+Wire Wire Line
+	3000 2000 5600 2000
+Wire Wire Line
+	3000 2150 5600 2150
+Wire Wire Line
+	3000 2300 4350 2300
+Wire Wire Line
+	3000 2600 5600 2600
+Wire Wire Line
+	3000 2750 5600 2750
+Wire Wire Line
+	3000 2900 5600 2900
+Wire Wire Line
+	3000 3050 5600 3050
+Wire Wire Line
+	3000 3200 5600 3200
+Wire Wire Line
+	3000 3350 5600 3350
+Wire Wire Line
+	3000 3500 4250 3500
+Wire Wire Line
+	3000 3650 5100 3650
+Wire Wire Line
+	3000 3800 5600 3800
+Wire Notes Line
+	4100 5200 10150 5200
+Wire Notes Line
+	4100 1100 4100 5200
+Wire Notes Line
+	10150 1100 10150 5200
+Wire Wire Line
+	4250 4200 4250 3500
+Connection ~ 4250 3500
+Wire Wire Line
+	4250 3500 5600 3500
+Wire Wire Line
+	4350 4200 4350 2300
+Connection ~ 4350 2300
+Wire Wire Line
+	4350 2300 5600 2300
+Wire Wire Line
+	5100 4200 5100 3650
+Connection ~ 5100 3650
+Wire Wire Line
+	5100 3650 5600 3650
+Wire Wire Line
+	5200 4200 5200 2450
+Wire Wire Line
+	3000 2450 5200 2450
+Connection ~ 5200 2450
+Wire Wire Line
+	5200 2450 5600 2450
 $EndSCHEMATC

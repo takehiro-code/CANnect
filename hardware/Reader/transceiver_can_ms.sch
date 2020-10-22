@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 12 17
+Sheet 12 18
 Title "CANnect Reader | Medium Speed CAN Transceiver"
 Date "2020-10-20"
-Rev "0.0.1"
+Rev "0.0.01"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -197,7 +197,7 @@ AR Path="/5F95F80B/5FB34A7C/5FB3A02C" Ref="Q_MSCAN_1"  Part="1"
 F 0 "Q_MSCAN_1" H 2748 2096 50  0000 L CNN
 F 1 "NX7002AK,215" H 2748 2005 50  0000 L CNN
 F 2 "footprints:SOT95P230X110-3N" H 2550 2100 50  0001 L BNN
-F 3 "1.1mm" H 2550 2100 50  0001 L BNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 2550 2100 50  0001 L BNN
 F 4 "Nexperia" H 2550 2100 50  0001 L BNN "Field4"
 F 5 "7" H 2550 2100 50  0001 L BNN "Field5"
 F 6 "IPC-7351B" H 2550 2100 50  0001 L BNN "Field6"

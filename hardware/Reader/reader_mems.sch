@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 8 17
+Sheet 18 18
 Title "CANnect Reader | MEMs"
 Date "2020-10-20"
-Rev "0.0.1"
+Rev "0.0.01"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 ""
@@ -102,21 +102,18 @@ Connection ~ 7750 2900
 Connection ~ 7750 3000
 NoConn ~ 7450 3400
 NoConn ~ 7450 3500
-NoConn ~ 5650 3400
-NoConn ~ 5650 3900
 Text HLabel 3100 3200 0    50   BiDi ~ 0
 MEMS_SCL
 Text HLabel 3100 3300 0    50   BiDi ~ 0
 MEMS_SDA
 Text HLabel 3100 3800 0    50   Input ~ 0
-MEMS_INT
+MEMS_INT1
 Wire Wire Line
 	3100 3800 5650 3800
 Wire Wire Line
 	5650 3300 3100 3300
 Wire Wire Line
 	3100 3200 5650 3200
-NoConn ~ 5650 3100
 $Comp
 L CANtech:+3.3V_SW #PWR0143
 U 1 1 5FA73E29
@@ -128,4 +125,16 @@ F 3 "" H 7000 3600 50  0001 C CNN
 	1    7750 2800
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	5650 3400 3100 3400
+Wire Wire Line
+	5650 3100 3100 3100
+Text HLabel 3100 3100 0    50   Input ~ 0
+MEMS_CS
+Text HLabel 3100 3400 0    50   BiDi ~ 0
+MEMS_SDO_SA0
+Text HLabel 3100 3900 0    50   Input ~ 0
+MEMS_INT2
+Wire Wire Line
+	3100 3900 5650 3900
 $EndSCHEMATC

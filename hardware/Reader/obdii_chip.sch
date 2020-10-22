@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 16 17
+Sheet 15 18
 Title "CANnect Reader | OBDII Chip (STN2110)"
 Date "2020-10-20"
-Rev "0.0.1"
+Rev "0.0.01"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -21,7 +21,7 @@ AR Path="/5F95F80B/5FC0708B" Ref="U?"  Part="1"
 AR Path="/5F95F80B/5FC0631B/5FC0708B" Ref="IC2"  Part="1" 
 F 0 "IC2" H 6250 3050 50  0000 L CNB
 F 1 "STN2120" H 6250 2950 50  0000 L CNB
-F 2 "" H 6350 3000 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-44-1EP_8x8mm_P0.65mm_EP6.45x6.45mm_ThermalVias" H 7750 2750 50  0000 C CNN
 F 3 "https://www.scantool.net/scantool/downloads/206/stn21xx_ds_c.pdf" H 6250 2850 50  0000 L CNN
 	1    6050 3350
 	1    0    0    -1  
@@ -107,113 +107,90 @@ F 3 "" H 2900 4500 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2900 4500 2900 4350
-Text HLabel 4150 3900 0    50   Output ~ 0
+Text HLabel 3950 3900 0    50   Output ~ 0
 HS_CAN_TX
-Text HLabel 4150 4000 0    50   Output ~ 0
+Text HLabel 3950 4000 0    50   Output ~ 0
 MS_CAN_TX
-Text HLabel 4150 4100 0    50   Input ~ 0
+Text HLabel 3950 4100 0    50   Input ~ 0
 HS_CAN_RX
-Text HLabel 4150 4200 0    50   Input ~ 0
+Text HLabel 3950 4200 0    50   Input ~ 0
 MS_CAN_RX
-Wire Wire Line
-	4150 3900 4750 3900
-Wire Wire Line
-	4150 4000 4750 4000
-Wire Wire Line
-	4150 4100 4750 4100
-Wire Wire Line
-	4150 4200 4750 4200
-$Comp
-L Device:Jumper JP_STN_1
-U 1 1 5FC0F0F4
-P 5350 5600
-F 0 "JP_STN_1" H 5350 5864 50  0000 C CNN
-F 1 "\"HW Reset\"" H 5350 5773 50  0000 C CNN
-F 2 "" H 5350 5600 50  0001 C CNN
-F 3 "~" H 5350 5600 50  0001 C CNN
-	1    5350 5600
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GND #PWR0194
 U 1 1 5FC1071B
-P 5050 5700
-F 0 "#PWR0194" H 5050 5450 50  0001 C CNN
-F 1 "GND" H 5055 5527 50  0000 C CNN
-F 2 "" H 5050 5700 50  0001 C CNN
-F 3 "" H 5050 5700 50  0001 C CNN
-	1    5050 5700
+P 4400 6550
+F 0 "#PWR0194" H 4400 6300 50  0001 C CNN
+F 1 "GND" H 4405 6377 50  0000 C CNN
+F 2 "" H 4400 6550 50  0001 C CNN
+F 3 "" H 4400 6550 50  0001 C CNN
+	1    4400 6550
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R_Small R_STN_5
 U 1 1 5FC10F0A
-P 5650 5950
-F 0 "R_STN_5" H 5709 5996 50  0000 L CNN
-F 1 "100k" H 5709 5905 50  0000 L CNN
-F 2 "footprints:RESC1608X55N" H 5650 5950 50  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 5650 5950 50  0001 C CNN
-F 4 "RT0603DRE07100KL" H 5650 5950 50  0001 C CNN "Part Name"
-	1    5650 5950
+P 5650 6950
+F 0 "R_STN_5" H 5709 6996 50  0000 L CNN
+F 1 "100k" H 5709 6905 50  0000 L CNN
+F 2 "footprints:RESC1608X55N" H 5650 6950 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 5650 6950 50  0001 C CNN
+F 4 "RT0603DRE07100KL" H 5650 6950 50  0001 C CNN "Part Name"
+	1    5650 6950
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3.3V #PWR0195
 U 1 1 5FC11757
-P 5200 6300
-F 0 "#PWR0195" H 5200 6150 50  0001 C CNN
-F 1 "+3.3V" H 5215 6473 50  0000 C CNN
-F 2 "" H 5200 6300 50  0001 C CNN
-F 3 "" H 5200 6300 50  0001 C CNN
-	1    5200 6300
+P 6150 7050
+F 0 "#PWR0195" H 6150 6900 50  0001 C CNN
+F 1 "+3.3V" H 6165 7223 50  0000 C CNN
+F 2 "" H 6150 7050 50  0001 C CNN
+F 3 "" H 6150 7050 50  0001 C CNN
+	1    6150 7050
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:LED LED_STN_2
 U 1 1 5FC12D78
-P 2600 6600
-F 0 "LED_STN_2" V 2502 6680 50  0000 L CNN
-F 1 "\"OBD Activity\"" V 2600 6700 50  0000 L CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 2600 6600 50  0001 C CNN
-F 3 "https://katalog.we-online.de/led/datasheet/150060YS75000.pdf" H 2600 6600 50  0001 C CNN
-F 4 "" V 2684 6680 50  0000 L CNN "LED Colour"
-F 5 "150060YS75000" H 2600 6600 50  0001 C CNN "Part Name"
-	1    2600 6600
+P 2500 6600
+F 0 "LED_STN_2" V 2402 6680 50  0000 L CNN
+F 1 "\"OBD Activity\"" V 2500 6700 50  0000 L CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 2500 6600 50  0001 C CNN
+F 3 "https://katalog.we-online.de/led/datasheet/150060YS75000.pdf" H 2500 6600 50  0001 C CNN
+F 4 "" V 2584 6680 50  0000 L CNN "LED Colour"
+F 5 "150060YS75000" H 2500 6600 50  0001 C CNN "Part Name"
+	1    2500 6600
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:R_Small R_STN_3
 U 1 1 5FC13627
-P 2600 6250
-F 0 "R_STN_3" H 2541 6204 50  0000 R CNN
-F 1 "330" H 2541 6295 50  0000 R CNN
-F 2 "footprints:RESC3216X70N" H 2600 6250 50  0001 C CNN
-F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 2600 6250 50  0001 C CNN
-F 4 "ERJ-8ENF3300V" H 2600 6250 50  0001 C CNN "Part Name"
-	1    2600 6250
+P 2500 6250
+F 0 "R_STN_3" H 2441 6204 50  0000 R CNN
+F 1 "330" H 2441 6295 50  0000 R CNN
+F 2 "footprints:RESC3216X70N" H 2500 6250 50  0001 C CNN
+F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 2500 6250 50  0001 C CNN
+F 4 "ERJ-8ENF3300V" H 2500 6250 50  0001 C CNN "Part Name"
+	1    2500 6250
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	2600 6350 2600 6450
+	2500 6350 2500 6450
 $Comp
 L power:+3.3V #PWR0196
 U 1 1 5FC1B34E
-P 2300 6650
-F 0 "#PWR0196" H 2300 6500 50  0001 C CNN
-F 1 "+3.3V" H 2315 6823 50  0000 C CNN
-F 2 "" H 2300 6650 50  0001 C CNN
-F 3 "" H 2300 6650 50  0001 C CNN
-	1    2300 6650
+P 2200 6650
+F 0 "#PWR0196" H 2200 6500 50  0001 C CNN
+F 1 "+3.3V" H 2215 6823 50  0000 C CNN
+F 2 "" H 2200 6650 50  0001 C CNN
+F 3 "" H 2200 6650 50  0001 C CNN
+	1    2200 6650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5200 6300 5200 6500
+	2500 6750 2500 6900
 Wire Wire Line
-	5200 6500 5650 6500
-Wire Wire Line
-	2600 6750 2600 6900
-Wire Wire Line
-	2300 6900 2300 6650
+	2200 6900 2200 6650
 Wire Wire Line
 	2900 3900 2900 3800
 Wire Wire Line
@@ -224,244 +201,135 @@ Connection ~ 2900 4350
 $Comp
 L Device:LED LED_STN_1
 U 1 1 5FC2D12E
-P 1550 6600
-F 0 "LED_STN_1" V 1452 6680 50  0000 L CNN
-F 1 "\"Status\"" V 1550 6700 50  0000 L CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 1550 6600 50  0001 C CNN
-F 3 "https://katalog.we-online.de/led/datasheet/150060RS75000.pdf" H 1550 6600 50  0001 C CNN
-F 4 "" V 1634 6680 50  0000 L CNN "LED Colour"
-F 5 "150060RS75000" H 1550 6600 50  0001 C CNN "Part Name"
-	1    1550 6600
+P 1450 6600
+F 0 "LED_STN_1" V 1352 6680 50  0000 L CNN
+F 1 "\"Status\"" V 1450 6700 50  0000 L CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 1450 6600 50  0001 C CNN
+F 3 "https://katalog.we-online.de/led/datasheet/150060RS75000.pdf" H 1450 6600 50  0001 C CNN
+F 4 "" V 1534 6680 50  0000 L CNN "LED Colour"
+F 5 "150060RS75000" H 1450 6600 50  0001 C CNN "Part Name"
+	1    1450 6600
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:R_Small R_STN_2
 U 1 1 5FC2D134
-P 1550 6250
-F 0 "R_STN_2" H 1491 6204 50  0000 R CNN
-F 1 "330" H 1491 6295 50  0000 R CNN
-F 2 "footprints:RESC3216X70N" H 1550 6250 50  0001 C CNN
-F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 1550 6250 50  0001 C CNN
-F 4 "ERJ-8ENF3300V" H 1550 6250 50  0001 C CNN "Part Name"
-	1    1550 6250
+P 1450 6250
+F 0 "R_STN_2" H 1391 6204 50  0000 R CNN
+F 1 "330" H 1391 6295 50  0000 R CNN
+F 2 "footprints:RESC3216X70N" H 1450 6250 50  0001 C CNN
+F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 1450 6250 50  0001 C CNN
+F 4 "ERJ-8ENF3300V" H 1450 6250 50  0001 C CNN "Part Name"
+	1    1450 6250
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	1550 6350 1550 6450
+	1450 6350 1450 6450
 $Comp
 L power:+3.3V #PWR0197
 U 1 1 5FC2D13B
-P 1250 6650
-F 0 "#PWR0197" H 1250 6500 50  0001 C CNN
-F 1 "+3.3V" H 1265 6823 50  0000 C CNN
-F 2 "" H 1250 6650 50  0001 C CNN
-F 3 "" H 1250 6650 50  0001 C CNN
-	1    1250 6650
+P 1150 6650
+F 0 "#PWR0197" H 1150 6500 50  0001 C CNN
+F 1 "+3.3V" H 1165 6823 50  0000 C CNN
+F 2 "" H 1150 6650 50  0001 C CNN
+F 3 "" H 1150 6650 50  0001 C CNN
+	1    1150 6650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1550 6750 1550 6900
+	1450 6750 1450 6900
 Wire Wire Line
-	1250 6900 1250 6650
-Connection ~ 5050 5600
-Wire Wire Line
-	5050 5600 5050 5700
-Connection ~ 5650 5600
+	1150 6900 1150 6650
 $Comp
 L Device:LED LED_STN_3
 U 1 1 5FC463FB
-P 3700 6600
-F 0 "LED_STN_3" V 3602 6680 50  0000 L CNN
-F 1 "\"Host Activity\"" V 3700 6700 50  0000 L CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 3700 6600 50  0001 C CNN
-F 3 "https://www.we-online.de/katalog/datasheet/150060VS75000.pdf" H 3700 6600 50  0001 C CNN
-F 4 "" V 3784 6680 50  0000 L CNN "LED Colour"
-F 5 "150060VS75000" H 3700 6600 50  0001 C CNN "Part Name"
-	1    3700 6600
+P 3600 6600
+F 0 "LED_STN_3" V 3502 6680 50  0000 L CNN
+F 1 "\"Host Activity\"" V 3600 6700 50  0000 L CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 3600 6600 50  0001 C CNN
+F 3 "https://www.we-online.de/katalog/datasheet/150060VS75000.pdf" H 3600 6600 50  0001 C CNN
+F 4 "" V 3684 6680 50  0000 L CNN "LED Colour"
+F 5 "150060VS75000" H 3600 6600 50  0001 C CNN "Part Name"
+	1    3600 6600
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:R_Small R_STN_4
 U 1 1 5FC46401
-P 3700 6250
-F 0 "R_STN_4" H 3641 6204 50  0000 R CNN
-F 1 "330" H 3641 6295 50  0000 R CNN
-F 2 "footprints:RESC3216X70N" H 3700 6250 50  0001 C CNN
-F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 3700 6250 50  0001 C CNN
-F 4 "ERJ-8ENF3300V" H 3700 6250 50  0001 C CNN "Part Name"
-	1    3700 6250
+P 3600 6250
+F 0 "R_STN_4" H 3541 6204 50  0000 R CNN
+F 1 "330" H 3541 6295 50  0000 R CNN
+F 2 "footprints:RESC3216X70N" H 3600 6250 50  0001 C CNN
+F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 3600 6250 50  0001 C CNN
+F 4 "ERJ-8ENF3300V" H 3600 6250 50  0001 C CNN "Part Name"
+	1    3600 6250
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	3700 6350 3700 6450
+	3600 6350 3600 6450
 $Comp
 L power:+3.3V #PWR0198
 U 1 1 5FC46408
-P 3400 6650
-F 0 "#PWR0198" H 3400 6500 50  0001 C CNN
-F 1 "+3.3V" H 3415 6823 50  0000 C CNN
-F 2 "" H 3400 6650 50  0001 C CNN
-F 3 "" H 3400 6650 50  0001 C CNN
-	1    3400 6650
+P 3300 6650
+F 0 "#PWR0198" H 3300 6500 50  0001 C CNN
+F 1 "+3.3V" H 3315 6823 50  0000 C CNN
+F 2 "" H 3300 6650 50  0001 C CNN
+F 3 "" H 3300 6650 50  0001 C CNN
+	1    3300 6650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3700 6750 3700 6900
+	3600 6750 3600 6900
 Wire Wire Line
-	3400 6900 3400 6650
+	3300 6900 3300 6650
 Wire Wire Line
-	5650 6500 5650 6050
+	1450 5200 1450 6150
 Wire Wire Line
-	5650 5600 5650 5850
+	2500 5000 2500 6150
 Wire Wire Line
-	1550 5200 1550 6150
+	3600 5000 3600 6150
 Wire Wire Line
-	2600 5000 2600 6150
+	3600 6900 3300 6900
 Wire Wire Line
-	3700 5000 3700 6150
-Wire Wire Line
-	3700 6900 3400 6900
-Wire Wire Line
-	2600 6900 2300 6900
-Wire Wire Line
-	5050 4600 5050 5600
-Wire Wire Line
-	5650 5000 5650 5600
+	2500 6900 2200 6900
 Connection ~ 5650 5000
 Wire Wire Line
 	5750 4600 5750 5100
 Wire Wire Line
 	5850 4600 5850 5200
-Text Notes 3900 6900 0    50   ~ 0
+Text Notes 750  5400 0    50   ~ 0
 LED Indicators
 $Comp
 L power:GND #PWR0199
 U 1 1 5FC652FD
-P 8300 5000
-F 0 "#PWR0199" H 8300 4750 50  0001 C CNN
-F 1 "GND" H 8305 4827 50  0000 C CNN
-F 2 "" H 8300 5000 50  0001 C CNN
-F 3 "" H 8300 5000 50  0001 C CNN
-	1    8300 5000
+P 10200 4900
+F 0 "#PWR0199" H 10200 4650 50  0001 C CNN
+F 1 "GND" H 10205 4727 50  0000 C CNN
+F 2 "" H 10200 4900 50  0001 C CNN
+F 3 "" H 10200 4900 50  0001 C CNN
+	1    10200 4900
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:+3.3V #PWR0200
-U 1 1 5FC68371
-P 7700 5450
-F 0 "#PWR0200" H 7700 5300 50  0001 C CNN
-F 1 "+3.3V" H 7715 5623 50  0000 C CNN
-F 2 "" H 7700 5450 50  0001 C CNN
-F 3 "" H 7700 5450 50  0001 C CNN
-	1    7700 5450
-	1    0    0    -1  
-$EndComp
-Text HLabel 7450 5150 2    50   Input ~ 0
+Text HLabel 9600 5150 2    50   Input ~ 0
 RESET_SW
-Text HLabel 7450 5050 2    50   Input ~ 0
+Text HLabel 9600 5050 2    50   Input ~ 0
 ANALOG_IN
-$Comp
-L Device:C C_STN_2
-U 1 1 5FC6BE46
-P 7700 6150
-F 0 "C_STN_2" H 7815 6196 50  0000 L CNN
-F 1 "1uF" H 7815 6105 50  0000 L CNN
-F 2 "footprints:0603" H 7738 6000 50  0001 C CNN
-F 3 "https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf" H 7700 6150 50  0001 C CNN
-	1    7700 6150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6350 4600 6350 5050
 Wire Wire Line
-	6350 5050 7450 5050
+	6350 5050 9600 5050
 Wire Wire Line
 	6250 4600 6250 5150
 Wire Wire Line
-	6250 5150 7450 5150
-$Comp
-L Device:R R_STN_6
-U 1 1 5FC6FB41
-P 6900 5550
-F 0 "R_STN_6" V 6693 5550 50  0000 C CNN
-F 1 "10k" V 6784 5550 50  0000 C CNN
-F 2 "footprints:RESC1608X55N" V 6830 5550 50  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 6900 5550 50  0001 C CNN
-F 4 "RT0603FRE0710KL" H 6900 5550 50  0001 C CNN "Part Name"
-	1    6900 5550
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R_STN_7
-U 1 1 5FC6FCEB
-P 6900 5900
-F 0 "R_STN_7" V 6693 5900 50  0000 C CNN
-F 1 "10" V 6784 5900 50  0000 C CNN
-F 2 "footprints:RESC1005X40N" V 6830 5900 50  0001 C CNN
-F 3 "https://www.bourns.com/docs/product-datasheets/CRxxxxx.pdf" H 6900 5900 50  0001 C CNN
-	1    6900 5900
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	7050 5550 7700 5550
-Wire Wire Line
-	7700 5550 7700 5450
-Wire Wire Line
-	7050 5900 7700 5900
-Connection ~ 7700 5550
-Wire Wire Line
-	6150 4600 6150 5900
-Wire Wire Line
-	6150 5900 6750 5900
-$Comp
-L power:GND #PWR0201
-U 1 1 5FC7689D
-P 7700 6450
-F 0 "#PWR0201" H 7700 6200 50  0001 C CNN
-F 1 "GND" H 7705 6277 50  0000 C CNN
-F 2 "" H 7700 6450 50  0001 C CNN
-F 3 "" H 7700 6450 50  0001 C CNN
-	1    7700 6450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7700 6450 7700 6300
-$Comp
-L power:VDDA #PWR0202
-U 1 1 5FC78554
-P 6650 6250
-F 0 "#PWR0202" H 6650 6100 50  0001 C CNN
-F 1 "VDDA" H 6665 6423 50  0000 C CNN
-F 2 "" H 6650 6250 50  0001 C CNN
-F 3 "" H 6650 6250 50  0001 C CNN
-	1    6650 6250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6250 5550 6750 5550
-Wire Wire Line
-	7700 5900 7700 5550
-Wire Wire Line
-	7700 5900 7700 6000
-Connection ~ 7700 5900
-Wire Wire Line
-	6150 5900 6150 6400
-Connection ~ 6150 5900
-Wire Wire Line
-	6650 6250 6650 6400
-Connection ~ 6250 5150
-Wire Wire Line
-	6250 5150 6250 5550
-Text HLabel 7650 4800 2    50   Input ~ 0
+	6250 5150 9600 5150
+Text HLabel 9600 4800 2    50   Input ~ 0
 ~ISO_RX~
-Text HLabel 7650 4700 2    50   Input ~ 0
+Text HLabel 9600 4700 2    50   Input ~ 0
 ~VPW_RX~
 Wire Wire Line
 	5950 4600 5950 4900
 Wire Wire Line
 	5950 4900 6050 4900
-Wire Wire Line
-	8300 4900 8300 5000
 Wire Wire Line
 	6050 4600 6050 4900
 Connection ~ 6050 4900
@@ -470,16 +338,16 @@ Wire Wire Line
 Wire Wire Line
 	6550 4600 6550 4800
 Wire Wire Line
-	6550 4800 7650 4800
+	6550 4800 9600 4800
 Wire Wire Line
-	7650 4700 6650 4700
+	9600 4700 6650 4700
 Wire Wire Line
 	6650 4700 6650 4600
 Wire Wire Line
 	6450 4600 6450 4900
 Connection ~ 6450 4900
 Wire Wire Line
-	6450 4900 8300 4900
+	6450 4900 10200 4900
 Text HLabel 7850 3600 2    50   Input ~ 0
 PWM_RX
 Text HLabel 7850 3500 2    50   Output ~ 0
@@ -514,8 +382,6 @@ Text HLabel 7850 2600 2    50   Output ~ 0
 J1850_BUS-_TX
 Text HLabel 7850 2700 2    50   Output ~ 0
 ~PWR_CTRL~
-Wire Wire Line
-	7100 2700 7850 2700
 Wire Wire Line
 	7100 2600 7850 2600
 $Comp
@@ -676,8 +542,6 @@ Wire Notes Line
 	1650 3250 1650 3750
 Wire Notes Line
 	1050 3750 1650 3750
-Wire Wire Line
-	6150 6400 6650 6400
 Text HLabel 10050 3200 2    50   Input ~ 0
 ~SLEEP~
 Wire Wire Line
@@ -742,7 +606,7 @@ Wire Wire Line
 Wire Wire Line
 	7100 1350 7100 2150
 Wire Wire Line
-	7100 3200 9450 3200
+	7100 3200 7550 3200
 Wire Wire Line
 	9450 2550 9450 2150
 Wire Wire Line
@@ -801,32 +665,15 @@ Text HLabel 1350 4800 0    50   Output ~ 0
 Text HLabel 1350 5000 0    50   Output ~ 0
 ~OBD_ACT_LED~
 Wire Wire Line
-	1250 6900 1550 6900
-Wire Wire Line
-	2600 5000 3700 5000
+	1150 6900 1450 6900
 Wire Wire Line
 	1350 4800 5650 4800
 Wire Wire Line
-	2600 5000 1350 5000
-Connection ~ 2600 5000
-Wire Wire Line
 	1350 5100 5750 5100
 Wire Wire Line
-	1350 5200 1550 5200
-Connection ~ 1550 5200
-Wire Wire Line
-	1550 5200 5850 5200
-Connection ~ 3700 5000
-Wire Wire Line
-	3700 5000 5650 5000
+	1350 5200 1450 5200
 Wire Notes Line
 	700  4900 700  7000
-Wire Notes Line
-	700  7000 4500 7000
-Wire Notes Line
-	4500 7000 4500 4900
-Wire Notes Line
-	4500 4900 700  4900
 $Comp
 L Device:C C_STN_1
 U 1 1 5FCFC133
@@ -855,4 +702,233 @@ Wire Wire Line
 	9150 3000 9150 2300
 Wire Wire Line
 	9150 2300 9950 2300
+$Comp
+L 2828322:282832-2 J_STN_1
+U 1 1 5F9472A1
+P 4250 4250
+F 0 "J_STN_1" V 4439 4378 60  0000 L CNN
+F 1 "282832-2" V 4545 4378 60  0000 L CNN
+F 2 "footprints:282832-2" H 4650 4190 60  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 4250 4250 60  0001 C CNN
+F 4 "282832-2" H 4250 4250 50  0001 C CNN "Part Name"
+	1    4250 4250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3950 3900 4150 3900
+Wire Wire Line
+	3950 4000 4750 4000
+Wire Wire Line
+	3950 4100 4250 4100
+Wire Wire Line
+	3950 4200 4750 4200
+Wire Wire Line
+	4150 4250 4150 3900
+Connection ~ 4150 3900
+Wire Wire Line
+	4150 3900 4750 3900
+Wire Wire Line
+	4250 4250 4250 4100
+Connection ~ 4250 4100
+Wire Wire Line
+	4250 4100 4750 4100
+$Comp
+L 2828322:282832-2 J_STN_3
+U 1 1 5F9BC402
+P 7600 2300
+F 0 "J_STN_3" H 8128 2303 60  0000 L CNN
+F 1 "282832-2" H 8128 2197 60  0000 L CNN
+F 2 "footprints:282832-2" H 8000 2240 60  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 7600 2300 60  0001 C CNN
+F 4 "282832-2" H 7600 2300 50  0001 C CNN "Part Name"
+	1    7600 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 2700 7450 2700
+Wire Wire Line
+	7600 2300 7450 2300
+Wire Wire Line
+	7450 2300 7450 2700
+Connection ~ 7450 2700
+Wire Wire Line
+	7450 2700 7850 2700
+Wire Wire Line
+	7600 2400 7550 2400
+Wire Wire Line
+	7550 2400 7550 3200
+Connection ~ 7550 3200
+Wire Wire Line
+	7550 3200 9450 3200
+Wire Wire Line
+	5650 7200 5650 7050
+$Comp
+L 2828322:282832-2 J_STN_RST1
+U 1 1 5FA37F1D
+P 5100 6200
+F 0 "J_STN_RST1" V 5700 5900 60  0000 L CNN
+F 1 "282832-2" V 5800 5950 60  0000 L CNN
+F 2 "footprints:282832-2" H 5500 6140 60  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 5100 6200 60  0001 C CNN
+F 4 "282832-2" H 5100 6200 50  0001 C CNN "Part Name"
+	1    5100 6200
+	0    1    1    0   
+$EndComp
+$Comp
+L PTS647SK38SMTR2LFS:PTS647SK38SMTR2LFS SW_STN_1
+U 1 1 5F93A6E5
+P 4250 5700
+F 0 "SW_STN_1" H 5050 6087 60  0000 C CNN
+F 1 "PTS647SK38SMTR2LFS" H 5050 5981 60  0000 C CNN
+F 2 "footprints:PTS647SK38SMTR2LFS" H 5050 5940 60  0001 C CNN
+F 3 "https://www.ckswitches.com/media/2567/pts647.pdf" H 4250 5700 60  0001 C CNN
+	1    4250 5700
+	1    0    0    -1  
+$EndComp
+Connection ~ 6250 5150
+Wire Wire Line
+	6150 4600 6150 5950
+$Comp
+L power:+3.3V #PWR0200
+U 1 1 5FC68371
+P 10050 5500
+F 0 "#PWR0200" H 10050 5350 50  0001 C CNN
+F 1 "+3.3V" H 10065 5673 50  0000 C CNN
+F 2 "" H 10050 5500 50  0001 C CNN
+F 3 "" H 10050 5500 50  0001 C CNN
+	1    10050 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C_STN_2
+U 1 1 5FC6BE46
+P 10050 6200
+F 0 "C_STN_2" H 10165 6246 50  0000 L CNN
+F 1 "1uF" H 10165 6155 50  0000 L CNN
+F 2 "footprints:0603" H 10088 6050 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf" H 10050 6200 50  0001 C CNN
+	1    10050 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R_STN_6
+U 1 1 5FC6FB41
+P 9250 5600
+F 0 "R_STN_6" V 9043 5600 50  0000 C CNN
+F 1 "10k" V 9134 5600 50  0000 C CNN
+F 2 "footprints:RESC1608X55N" V 9180 5600 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 9250 5600 50  0001 C CNN
+F 4 "RT0603FRE0710KL" H 9250 5600 50  0001 C CNN "Part Name"
+	1    9250 5600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R_STN_7
+U 1 1 5FC6FCEB
+P 9250 5950
+F 0 "R_STN_7" V 9043 5950 50  0000 C CNN
+F 1 "10" V 9134 5950 50  0000 C CNN
+F 2 "footprints:RESC1005X40N" V 9180 5950 50  0001 C CNN
+F 3 "https://www.bourns.com/docs/product-datasheets/CRxxxxx.pdf" H 9250 5950 50  0001 C CNN
+	1    9250 5950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9400 5600 10050 5600
+Wire Wire Line
+	10050 5600 10050 5500
+Wire Wire Line
+	9400 5950 10050 5950
+Connection ~ 10050 5600
+$Comp
+L power:GND #PWR0201
+U 1 1 5FC7689D
+P 10050 6500
+F 0 "#PWR0201" H 10050 6250 50  0001 C CNN
+F 1 "GND" H 10055 6327 50  0000 C CNN
+F 2 "" H 10050 6500 50  0001 C CNN
+F 3 "" H 10050 6500 50  0001 C CNN
+	1    10050 6500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10050 6500 10050 6350
+$Comp
+L power:VDDA #PWR0202
+U 1 1 5FC78554
+P 9000 6350
+F 0 "#PWR0202" H 9000 6200 50  0001 C CNN
+F 1 "VDDA" H 9015 6523 50  0000 C CNN
+F 2 "" H 9000 6350 50  0001 C CNN
+F 3 "" H 9000 6350 50  0001 C CNN
+	1    9000 6350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10050 5950 10050 5600
+Wire Wire Line
+	10050 5950 10050 6050
+Connection ~ 10050 5950
+Wire Wire Line
+	9000 6350 9000 6550
+Wire Wire Line
+	6250 5150 6250 5600
+Wire Wire Line
+	6250 5600 9100 5600
+Wire Wire Line
+	6150 5950 9100 5950
+Connection ~ 6150 5950
+Wire Wire Line
+	6150 6550 9000 6550
+Wire Wire Line
+	6150 5950 6150 6550
+Connection ~ 1450 5200
+Connection ~ 2500 5000
+Wire Wire Line
+	2500 5000 1350 5000
+Connection ~ 3600 5000
+Wire Wire Line
+	2500 5000 3600 5000
+Wire Wire Line
+	1450 5200 5850 5200
+Wire Wire Line
+	3600 5000 5650 5000
+Wire Notes Line
+	700  7000 4250 7000
+Wire Notes Line
+	4250 7000 4250 4900
+Wire Notes Line
+	4250 4900 700  4900
+Wire Wire Line
+	5050 4600 5050 4700
+Wire Wire Line
+	5050 4700 4400 4700
+Wire Wire Line
+	4400 4700 4400 5700
+Wire Wire Line
+	5650 5000 5650 5700
+Wire Wire Line
+	5450 5700 5650 5700
+Connection ~ 5650 5700
+Wire Wire Line
+	5650 5700 5650 6200
+Wire Wire Line
+	4650 5700 4400 5700
+Connection ~ 4400 5700
+Wire Wire Line
+	4400 5700 4400 6200
+Wire Wire Line
+	5650 7200 6150 7200
+Wire Wire Line
+	6150 7200 6150 7050
+Wire Wire Line
+	5100 6200 5650 6200
+Connection ~ 5650 6200
+Wire Wire Line
+	5650 6200 5650 6850
+Wire Wire Line
+	5000 6200 4400 6200
+Connection ~ 4400 6200
+Wire Wire Line
+	4400 6200 4400 6550
 $EndSCHEMATC

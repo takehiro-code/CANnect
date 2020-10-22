@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 4 17
+Sheet 4 18
 Title "CANnect Reader | Overvoltage Protection"
 Date "2020-10-20"
-Rev "0.0.1"
+Rev "0.0.01"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -229,9 +229,10 @@ L Device:R_Small R_OVP_1
 U 1 1 5F9D955B
 P 4600 2700
 F 0 "R_OVP_1" H 4659 2746 50  0000 L CNN
-F 1 "R_Small" H 4659 2655 50  0000 L CNN
-F 2 "" H 4600 2700 50  0001 C CNN
-F 3 "~" H 4600 2700 50  0001 C CNN
+F 1 "100" H 4659 2655 50  0000 L CNN
+F 2 "footprints:RESC3216X70N" H 4600 2700 50  0001 C CNN
+F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 4600 2700 50  0001 C CNN
+F 4 "ERJ-8ENF1000V" H 4600 2700 50  0001 C CNN "Part Name"
 	1    4600 2700
 	1    0    0    -1  
 $EndComp

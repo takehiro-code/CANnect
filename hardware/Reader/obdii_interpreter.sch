@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 9 17
+Sheet 8 18
 Title "CANnect Reader | OBD-II Interpreter"
 Date "2020-10-20"
-Rev "0.0.1"
+Rev "0.0.01"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -248,4 +248,8 @@ Wire Wire Line
 	1400 6300 4750 6300
 Wire Wire Line
 	4750 6400 1400 6400
+Text HLabel 1400 3450 0    50   Input ~ 0
+PWR_CTRL
+Wire Wire Line
+	1400 3450 2450 3450
 $EndSCHEMATC

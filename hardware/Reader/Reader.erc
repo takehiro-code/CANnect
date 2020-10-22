@@ -1,0 +1,475 @@
+ERC report (10/22/20 10:37:00, Encoding UTF8 )
+
+***** Sheet /
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(66.04 mm, 48.26 mm): Pin 1 (Power input) of component #PWR01 is connected to 
+    @(62.23 mm, 139.70 mm): pin 1 (Unspecified) of component J_HST_5 (net 19).
+
+***** Sheet /Power Supply/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(85.09 mm, 110.49 mm): Pin 1 (Power input) of component #PWR0109 is connected to 
+    @(179.07 mm, 81.28 mm): pin 3 (Unspecified) of component Q_PSW_4 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(147.32 mm, 34.29 mm): Pin 1 (Power input) of component #PWR0111 is connected to 
+    @(96.52 mm, 71.12 mm): pin 13 (Unspecified) of component VR1 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(185.42 mm, 41.91 mm): Pin 1 (Unspecified) of component J_PS_2 is connected to 
+    @(66.04 mm, 48.26 mm): pin 1 (Power input) of component #PWR01 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(182.88 mm, 41.91 mm): Pin 2 (Unspecified) of component J_PS_2 is connected to 
+    @(151.13 mm, 118.11 mm): pin 2 (Passive) of component C_VR1_BIAS1 (net 19).
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(27.94 mm, 35.56 mm): Pin 1 (Power input) of component #V0102 is not driven (Net 28).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(58.42 mm, 45.72 mm): Pin 1 (Unspecified) of component J_PS_1 is connected to 
+    @(113.03 mm, 99.06 mm): pin 1 (Passive) of component C_SWCAN_2 (net 35).
+
+***** Sheet /Power Supply/Voltage Regulator (5V)/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(96.52 mm, 71.12 mm): Pin 13 (Unspecified) of component VR1 is connected to 
+    @(185.42 mm, 41.91 mm): pin 1 (Unspecified) of component J_PS_2 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(168.91 mm, 71.12 mm): Pin 1 (Passive) of component L_VR1 is connected to 
+    @(182.88 mm, 41.91 mm): pin 2 (Unspecified) of component J_PS_2 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(151.13 mm, 118.11 mm): Pin 2 (Passive) of component C_VR1_BIAS1 is connected to 
+    @(224.79 mm, 115.57 mm): pin 1 (Unspecified) of component J_HST_6 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(66.04 mm, 58.42 mm): Pin 2 (Passive) of component C_VR1_in1 is connected to 
+    @(58.42 mm, 45.72 mm): pin 1 (Unspecified) of component J_PS_1 (net 35).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(137.16 mm, 55.88 mm): Pin 8 (Output) of component VR1 is connected to 
+    @(96.52 mm, 66.04 mm): pin 10 (Unspecified) of component VR1 (net 107).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(96.52 mm, 66.04 mm): Pin 10 (Unspecified) of component VR1 is connected to 
+    @(151.13 mm, 110.49 mm): pin 1 (Passive) of component C_VR1_BIAS1 (net 107).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(168.91 mm, 78.74 mm): Pin 2 (Passive) of component L_VR1 is connected to 
+    @(96.52 mm, 73.66 mm): pin 5 (Unspecified) of component VR1 (net 109).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(69.85 mm, 81.28 mm): Pin 1 (Passive) of component C_VR1_BST1 is connected to 
+    @(96.52 mm, 68.58 mm): pin 3 (Unspecified) of component VR1 (net 110).
+
+***** Sheet /Power Supply/Overvoltage Protection/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(196.85 mm, 71.12 mm): Pin 2 (Passive) of component D_OVP_3 is connected to 
+    @(214.63 mm, 68.58 mm): pin 3 (Unspecified) of component Q_OVP_2 (net 103).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(214.63 mm, 68.58 mm): Pin 3 (Unspecified) of component Q_OVP_2 is connected to 
+    @(165.10 mm, 81.28 mm): pin 3 (Passive) of component Q_OVP_1 (net 103).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(165.10 mm, 71.12 mm): Pin 2 (Passive) of component Q_OVP_1 is connected to 
+    @(207.01 mm, 60.96 mm): pin 1 (Unspecified) of component Q_OVP_2 (net 105).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(207.01 mm, 60.96 mm): Pin 1 (Unspecified) of component Q_OVP_2 is connected to 
+    @(196.85 mm, 63.50 mm): pin 1 (Passive) of component D_OVP_3 (net 105).
+ErrType(7): A pin with a “no connection” flag is connected
+    @(78.74 mm, 60.96 mm): More than 1 pin connected to an UnConnect symbol.
+
+***** Sheet /Power Supply/Voltage Sense/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(72.39 mm, 52.07 mm): Pin 1 (Passive) of component R_VS_1 is connected to 
+    @(55.88 mm, 45.72 mm): pin 2 (Unspecified) of component J_PS_1 (net 28).
+
+***** Sheet /Power Supply/Voltage Regulator (3.3V)/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(82.55 mm, 119.38 mm): Pin 1 (Power input) of component #PWR0129 is connected to 
+    @(113.03 mm, 73.66 mm): pin 13 (Unspecified) of component VR2 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(113.03 mm, 73.66 mm): Pin 13 (Unspecified) of component VR2 is connected to 
+    @(182.88 mm, 73.66 mm): pin 2 (Power input) of component IC5 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(82.55 mm, 60.96 mm): Pin 2 (Passive) of component C_VR2_in1 is connected to 
+    @(134.62 mm, 147.32 mm): pin 2 (Unspecified) of component J_STN_RST1 (net 19).
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(113.03 mm, 78.74 mm): Pin 1 (Unspecified) of component VR2 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(113.03 mm, 86.36 mm): Pin 12 (Output) of component VR2 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(113.03 mm, 63.50 mm): Pin 11 (Input) of component VR2 is unconnected.
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(82.55 mm, 105.41 mm): Pin 1 (Passive) of component C_VR2_BIAS1 is connected to 
+    @(113.03 mm, 68.58 mm): pin 10 (Unspecified) of component VR2 (net 111).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(113.03 mm, 76.20 mm): Pin 5 (Unspecified) of component VR2 is connected to 
+    @(91.44 mm, 91.44 mm): pin 2 (Passive) of component C_VR2_BST1 (net 113).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(91.44 mm, 83.82 mm): Pin 1 (Passive) of component C_VR2_BST1 is connected to 
+    @(113.03 mm, 71.12 mm): pin 3 (Unspecified) of component VR2 (net 114).
+
+***** Sheet /Power Switch/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(87.63 mm, 95.25 mm): Pin 3 (Passive) of component Q_PSW_1 is connected to 
+    @(149.86 mm, 88.90 mm): pin 1 (Unspecified) of component Q_PSW_3 (net 8).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(149.86 mm, 88.90 mm): Pin 1 (Unspecified) of component Q_PSW_3 is connected to 
+    @(54.61 mm, 115.57 mm): pin 1 (Unspecified) of component Q_ISO_4 (net 8).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(184.15 mm, 88.90 mm): Pin 1 (Unspecified) of component Q_PSW_4 is connected to 
+    @(118.11 mm, 88.90 mm): pin 1 (Unspecified) of component Q_PSW_2 (net 8).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(144.78 mm, 81.28 mm): Pin 3 (Unspecified) of component Q_PSW_3 is connected to 
+    @(85.09 mm, 110.49 mm): pin 1 (Power input) of component #PWR0109 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(179.07 mm, 81.28 mm): Pin 3 (Unspecified) of component Q_PSW_4 is connected to 
+    @(87.63 mm, 107.95 mm): pin 2 (Passive) of component Q_PSW_1 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(87.63 mm, 107.95 mm): Pin 2 (Passive) of component Q_PSW_1 is connected to 
+    @(182.88 mm, 53.34 mm): pin 2 (Unspecified) of component J_PSW_3 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(182.88 mm, 53.34 mm): Pin 2 (Unspecified) of component J_PSW_3 is connected to 
+    @(148.59 mm, 53.34 mm): pin 2 (Unspecified) of component J_PSW_2 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(148.59 mm, 53.34 mm): Pin 2 (Unspecified) of component J_PSW_2 is connected to 
+    @(147.32 mm, 34.29 mm): pin 1 (Power input) of component #PWR0111 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(113.03 mm, 81.28 mm): Pin 3 (Unspecified) of component Q_PSW_2 is connected to 
+    @(87.63 mm, 46.99 mm): pin 1 (Power input) of component #PWR0136 (net 35).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(87.63 mm, 46.99 mm): Pin 1 (Power input) of component #PWR0136 is connected to 
+    @(116.84 mm, 53.34 mm): pin 2 (Unspecified) of component J_PSW_1 (net 35).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(116.84 mm, 53.34 mm): Pin 2 (Unspecified) of component J_PSW_1 is connected to 
+    @(62.23 mm, 106.68 mm): pin 1 (Power input) of component #PWR0125 (net 35).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(107.95 mm, 46.99 mm): Pin 1 (Power input) of component #PWR0142 is connected to 
+    @(62.23 mm, 110.49 mm): pin 3 (Unspecified) of component Q_ISO_4 (net 35).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(189.23 mm, 81.28 mm): Pin 2 (Unspecified) of component Q_PSW_4 is connected to 
+    @(185.42 mm, 53.34 mm): pin 1 (Unspecified) of component J_PSW_3 (net 98).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(185.42 mm, 53.34 mm): Pin 1 (Unspecified) of component J_PSW_3 is connected to 
+    @(194.31 mm, 46.99 mm): pin 1 (Power input) of component #PWR0139 (net 98).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(128.27 mm, 46.99 mm): Pin 1 (Power input) of component #PWR0145 is connected to 
+    @(119.38 mm, 53.34 mm): pin 1 (Unspecified) of component J_PSW_1 (net 99).
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(128.27 mm, 46.99 mm): Pin 1 (Power input) of component #PWR0145 is not driven (Net 99).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(119.38 mm, 53.34 mm): Pin 1 (Unspecified) of component J_PSW_1 is connected to 
+    @(133.35 mm, 82.55 mm): pin 1 (Passive) of component R_COMP_6 (net 99).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(123.19 mm, 81.28 mm): Pin 2 (Unspecified) of component Q_PSW_2 is connected to 
+    @(133.35 mm, 80.01 mm): pin 1 (Power input) of component #PWR0173 (net 99).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(151.13 mm, 53.34 mm): Pin 1 (Unspecified) of component J_PSW_2 is connected to 
+    @(198.12 mm, 40.64 mm): pin 1 (Power input) of component #PWR0172 (net 100).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(154.94 mm, 81.28 mm): Pin 2 (Unspecified) of component Q_PSW_3 is connected to 
+    @(158.75 mm, 82.55 mm): pin 1 (Passive) of component R_COMP_8 (net 100).
+
+***** Sheet /OBDII Interpreter/
+ErrType(7): A pin with a “no connection” flag is connected
+    @(166.37 mm, 102.87 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(6): Mismatch between hierarchical labels and pins sheets
+    @(96.52 mm, 80.01 mm): Sheet label ~ISO_RX~ is not connected to a hierarchical label.
+ErrType(7): A pin with a “no connection” flag is connected
+    @(166.37 mm, 97.79 mm): More than 1 pin connected to an UnConnect symbol.
+
+***** Sheet /OBDII Interpreter/ISO 9141/ISO 14230 Transceiver/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(54.61 mm, 115.57 mm): Pin 1 (Unspecified) of component Q_ISO_4 is connected to 
+    @(54.61 mm, 64.77 mm): pin 1 (Unspecified) of component Q_ISO_1 (net 8).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(54.61 mm, 64.77 mm): Pin 1 (Unspecified) of component Q_ISO_1 is connected to 
+    @(184.15 mm, 88.90 mm): pin 1 (Unspecified) of component Q_PSW_4 (net 8).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(62.23 mm, 143.51 mm): Pin 2 (Passive) of component Q_ISO_5 is connected to 
+    @(116.84 mm, 73.66 mm): pin 5 (Unspecified) of component IC3 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(62.23 mm, 106.68 mm): Pin 1 (Power input) of component #PWR0125 is connected to 
+    @(62.23 mm, 59.69 mm): pin 3 (Unspecified) of component Q_ISO_1 (net 35).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(62.23 mm, 59.69 mm): Pin 3 (Unspecified) of component Q_ISO_1 is connected to 
+    @(107.95 mm, 46.99 mm): pin 1 (Power input) of component #PWR0142 (net 35).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(62.23 mm, 73.66 mm): Pin 2 (Passive) of component R_ISO_2 is connected to 
+    @(62.23 mm, 69.85 mm): pin 2 (Unspecified) of component Q_ISO_1 (net 117).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(62.23 mm, 123.19 mm): Pin 2 (Passive) of component R_ISO_3 is connected to 
+    @(62.23 mm, 120.65 mm): pin 2 (Unspecified) of component Q_ISO_4 (net 118).
+
+***** Sheet /OBDII Interpreter/High Speed CAN Transceiver/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(36.83 mm, 85.09 mm): Pin 2 (Passive) of component Q_HSCAN_2 is connected to 
+    @(107.95 mm, 106.68 mm): pin 2 (Unspecified) of component J_CN_1 (net 7).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(54.61 mm, 48.26 mm): Pin 1 (Passive) of component Q_HSCAN_1 is connected to 
+    @(193.04 mm, 58.42 mm): pin 1 (Unspecified) of component J_STN_3 (net 9).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(116.84 mm, 68.58 mm): Pin 7 (Bidirectional) of component IC3 is connected to 
+    @(110.49 mm, 106.68 mm): pin 1 (Unspecified) of component J_CN_1 (net 18).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(116.84 mm, 63.50 mm): Pin 9 (Unspecified) of component IC3 is connected to 
+    @(62.23 mm, 143.51 mm): pin 2 (Passive) of component Q_ISO_5 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(116.84 mm, 73.66 mm): Pin 5 (Unspecified) of component IC3 is connected to 
+    @(82.55 mm, 60.96 mm): pin 2 (Passive) of component C_VR2_in1 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(177.80 mm, 63.50 mm): Pin 1 (Input) of component IC3 is connected to 
+    @(105.41 mm, 107.95 mm): pin 2 (Unspecified) of component J_STN_1 (net 92).
+
+***** Sheet /OBDII Interpreter/Medium Speed CAN Transceiver/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(182.88 mm, 73.66 mm): Pin 2 (Power input) of component IC5 is connected to 
+    @(121.92 mm, 81.28 mm): pin 5 (Unspecified) of component IC5 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(121.92 mm, 81.28 mm): Pin 5 (Unspecified) of component IC5 is connected to 
+    @(44.45 mm, 124.46 mm): pin 1 (Power input) of component #PWR0157 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(44.45 mm, 124.46 mm): Pin 1 (Power input) of component #PWR0157 is connected to 
+    @(116.84 mm, 63.50 mm): pin 9 (Unspecified) of component IC3 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(121.92 mm, 71.12 mm): Pin 9 (Unspecified) of component IC5 is connected to 
+    @(69.85 mm, 118.11 mm): pin 2 (Passive) of component C_MSCAN_1 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(69.85 mm, 118.11 mm): Pin 2 (Passive) of component C_MSCAN_1 is connected to 
+    @(144.78 mm, 81.28 mm): pin 3 (Unspecified) of component Q_PSW_3 (net 19).
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(59.69 mm, 55.88 mm): Pin 1 (Passive) of component Q_MSCAN_1 is unconnected.
+
+***** Sheet /OBDII Interpreter/SAE J1850 VPW/PWM Transceiver/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(198.12 mm, 45.72 mm): Pin 2 (Passive) of component D_J1850_1 is connected to 
+    @(151.13 mm, 53.34 mm): pin 1 (Unspecified) of component J_PSW_2 (net 100).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(198.12 mm, 40.64 mm): Pin 1 (Power input) of component #PWR0172 is connected to 
+    @(154.94 mm, 81.28 mm): pin 2 (Unspecified) of component Q_PSW_3 (net 100).
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(198.12 mm, 40.64 mm): Pin 1 (Power input) of component #PWR0172 is not driven (Net 100).
+ErrType(5): Conflict problem between pins. Severity: error
+    @(130.81 mm, 48.26 mm): Pin 7 (Output) of component IC8 is connected to 
+    @(130.81 mm, 48.26 mm): pin 6 (Output) of component IC8 (net 127).
+ErrType(5): Conflict problem between pins. Severity: error
+    @(130.81 mm, 48.26 mm): Pin 6 (Output) of component IC8 is connected to 
+    @(130.81 mm, 48.26 mm): pin 3 (Output) of component IC8 (net 127).
+ErrType(5): Conflict problem between pins. Severity: error
+    @(130.81 mm, 48.26 mm): Pin 3 (Output) of component IC8 is connected to 
+    @(130.81 mm, 48.26 mm): pin 2 (Output) of component IC8 (net 127).
+ErrType(7): A pin with a “no connection” flag is connected
+    @(95.25 mm, 55.88 mm): More than 1 pin connected to an UnConnect symbol.
+
+***** Sheet /OBDII Interpreter/Comparator Transceiver/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(86.36 mm, 68.58 mm): Pin 1 (Passive) of component R_COMP_2 is connected to 
+    @(132.08 mm, 106.68 mm): pin 1 (Unspecified) of component J_CN_2 (net 17).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(133.35 mm, 82.55 mm): Pin 1 (Passive) of component R_COMP_6 is connected to 
+    @(123.19 mm, 81.28 mm): pin 2 (Unspecified) of component Q_PSW_2 (net 99).
+
+***** Sheet /OBDII Interpreter/Single Wire CAN Transceiver/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(52.07 mm, 73.66 mm): Pin 1 (Passive) of component C_SWCAN_1 is connected to 
+    @(66.04 mm, 95.25 mm): pin 1 (Unspecified) of component J_SWCAN_1 (net 29).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(66.04 mm, 95.25 mm): Pin 1 (Unspecified) of component J_SWCAN_1 is connected to 
+    @(195.58 mm, 63.50 mm): pin 9 (Passive) of component CN1 (net 29).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(113.03 mm, 99.06 mm): Pin 1 (Passive) of component C_SWCAN_2 is connected to 
+    @(113.03 mm, 81.28 mm): pin 3 (Unspecified) of component Q_PSW_2 (net 35).
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(120.65 mm, 72.39 mm): Pin 10 (Power input) of component IC6 is not driven (Net 35).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(66.04 mm, 113.03 mm): Pin 1 (Passive) of component R_SWCAN_6 is connected to 
+    @(66.04 mm, 97.79 mm): pin 2 (Unspecified) of component J_SWCAN_1 (net 144).
+
+***** Sheet /OBDII Interpreter/OBDII Chip/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(240.03 mm, 72.39 mm): Pin 2 (Passive) of component R_STN_8 is connected to 
+    @(193.04 mm, 60.96 mm): pin 2 (Unspecified) of component J_STN_3 (net 4).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(143.51 mm, 116.84 mm): Pin 12 (Input) of component IC2 is connected to 
+    @(137.16 mm, 147.32 mm): pin 1 (Unspecified) of component J_STN_RST1 (net 6).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(137.16 mm, 147.32 mm): Pin 1 (Unspecified) of component J_STN_RST1 is connected to 
+    @(93.98 mm, 156.21 mm): pin 2 (Passive) of component R_STN_4 (net 6).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(193.04 mm, 58.42 mm): Pin 1 (Unspecified) of component J_STN_3 is connected to 
+    @(59.69 mm, 92.71 mm): pin 2 (Passive) of component R_PSW_1 (net 9).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(134.62 mm, 147.32 mm): Pin 2 (Unspecified) of component J_STN_RST1 is connected to 
+    @(238.76 mm, 90.17 mm): pin 1 (Power input) of component #PWR0203 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(238.76 mm, 90.17 mm): Pin 1 (Power input) of component #PWR0203 is connected to 
+    @(121.92 mm, 71.12 mm): pin 9 (Unspecified) of component IC5 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(120.65 mm, 88.90 mm): Pin 4 (Output) of component IC2 is connected to 
+    @(73.66 mm, 85.09 mm): pin 2 (Unspecified) of component J_HST_2 (net 23).
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(120.65 mm, 101.60 mm): Pin 9 (Input) of component IC2 is not driven (Net 78).
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(166.37 mm, 116.84 mm): Pin 21 (Input) of component IC2 is unconnected.
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(105.41 mm, 107.95 mm): Pin 2 (Unspecified) of component J_STN_1 is connected to 
+    @(120.65 mm, 99.06 mm): pin 8 (Input) of component IC2 (net 92).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(120.65 mm, 104.14 mm): Pin 10 (Input) of component IC2 is connected to 
+    @(107.95 mm, 107.95 mm): pin 1 (Unspecified) of component J_STN_1 (net 93).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(107.95 mm, 107.95 mm): Pin 1 (Unspecified) of component J_STN_1 is connected to 
+    @(177.80 mm, 71.12 mm): pin 4 (Output) of component IC3 (net 93).
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(120.65 mm, 96.52 mm): Pin 7 (Power input) of component IC2 is not driven (Net 150).
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(180.34 mm, 76.20 mm): Pin 29 (Power input) of component IC2 is not driven (Net 153).
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(168.91 mm, 160.02 mm): Pin 1 (Power input) of component #PWR0202 is not driven (Net 154).
+
+***** Sheet /OBD Connector/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(107.95 mm, 106.68 mm): Pin 2 (Unspecified) of component J_CN_1 is connected to 
+    @(64.77 mm, 90.17 mm): pin 1 (Passive) of component R_HSCAN_2 (net 7).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(129.54 mm, 106.68 mm): Pin 2 (Unspecified) of component J_CN_2 is connected to 
+    @(195.58 mm, 53.34 mm): pin 7 (Passive) of component CN1 (net 14).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(132.08 mm, 106.68 mm): Pin 1 (Unspecified) of component J_CN_2 is connected to 
+    @(62.23 mm, 82.55 mm): pin 3 (Passive) of component Q_ISO_3 (net 17).
+ErrType(8): Global label not connected to any other global label
+    @(76.20 mm, 54.61 mm): Global label Pin5_Gnd_Signal is not connected to any other global label.
+
+***** Sheet /Host/
+ErrType(7): A pin with a “no connection” flag is connected
+    @(198.12 mm, 100.33 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(7): A pin with a “no connection” flag is connected
+    @(81.28 mm, 100.33 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(7): A pin with a “no connection” flag is connected
+    @(81.28 mm, 105.41 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(52.07 mm, 85.09 mm): Pin 2 (Unspecified) of component J_HST_1 is connected to 
+    @(171.45 mm, 140.97 mm): pin 2 (Passive) of component R_STN_6 (net 5).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(49.53 mm, 85.09 mm): Pin 1 (Unspecified) of component J_HST_1 is connected to 
+    @(143.51 mm, 116.84 mm): pin 12 (Input) of component IC2 (net 6).
+ErrType(7): A pin with a “no connection” flag is connected
+    @(81.28 mm, 102.87 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(7): A pin with a “no connection” flag is connected
+    @(198.12 mm, 87.63 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(7): A pin with a “no connection” flag is connected
+    @(198.12 mm, 97.79 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(7): A pin with a “no connection” flag is connected
+    @(198.12 mm, 82.55 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(7): A pin with a “no connection” flag is connected
+    @(81.28 mm, 115.57 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(7): A pin with a “no connection” flag is connected
+    @(81.28 mm, 128.27 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(62.23 mm, 139.70 mm): Pin 1 (Unspecified) of component J_HST_5 is connected to 
+    @(168.91 mm, 71.12 mm): pin 1 (Passive) of component L_VR1 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(224.79 mm, 115.57 mm): Pin 1 (Unspecified) of component J_HST_6 is connected to 
+    @(59.69 mm, 139.70 mm): pin 2 (Unspecified) of component J_HST_5 (net 19).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(59.69 mm, 139.70 mm): Pin 2 (Unspecified) of component J_HST_5 is connected to 
+    @(138.43 mm, 101.60 mm): pin 1 (Power input) of component #PWR0107 (net 19).
+ErrType(7): A pin with a “no connection” flag is connected
+    @(198.12 mm, 102.87 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(237.49 mm, 73.66 mm): Pin 2 (Unspecified) of component J_HST_4 is connected to 
+    @(222.25 mm, 115.57 mm): pin 2 (Unspecified) of component J_HST_6 (net 21).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(222.25 mm, 115.57 mm): Pin 2 (Unspecified) of component J_HST_6 is connected to 
+    @(143.51 mm, 78.74 mm): pin 12 (Input) of component MEMS1 (net 21).
+ErrType(7): A pin with a “no connection” flag is connected
+    @(198.12 mm, 95.25 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(7): A pin with a “no connection” flag is connected
+    @(81.28 mm, 123.19 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(71.12 mm, 85.09 mm): Pin 1 (Unspecified) of component J_HST_2 is connected to 
+    @(120.65 mm, 91.44 mm): pin 5 (Input) of component IC2 (net 24).
+ErrType(7): A pin with a “no connection” flag is connected
+    @(81.28 mm, 120.65 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 85.09 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 100.33 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 123.19 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 128.27 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 107.95 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 102.87 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 105.41 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 90.17 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 118.11 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 113.03 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 110.49 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 110.49 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 120.65 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 92.71 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 95.25 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 87.63 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 125.73 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 123.19 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 128.27 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 107.95 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 82.55 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 97.79 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 115.57 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 85.09 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 105.41 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 102.87 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 95.25 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 92.71 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 100.33 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 97.79 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 90.17 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 125.73 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 120.65 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 118.11 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 115.57 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(156.21 mm, 113.03 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 87.63 mm): Pin ~ (Input) of component IC1 is unconnected.
+ErrType(2): Pin not connected (use a “no connection” flag to suppress this error)
+    @(124.46 mm, 82.55 mm): Pin ~ (Input) of component IC1 is unconnected.
+
+***** Sheet /Reader MEMs/
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(143.51 mm, 96.52 mm): Pin 4 (Input) of component MEMS1 is connected to 
+    @(234.95 mm, 73.66 mm): pin 1 (Unspecified) of component J_HST_4 (net 3).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(143.51 mm, 81.28 mm): Pin 13 (Input) of component MEMS1 is connected to 
+    @(212.09 mm, 73.66 mm): pin 1 (Unspecified) of component J_HST_3 (net 11).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(143.51 mm, 83.82 mm): Pin 14 (Bidirectional) of component MEMS1 is connected to 
+    @(214.63 mm, 73.66 mm): pin 2 (Unspecified) of component J_HST_3 (net 22).
+ErrType(4): Conflict problem between pins. Severity: warning
+    @(189.23 mm, 73.66 mm): Pin 8 (Power input) of component MEMS1 is connected to 
+    @(189.23 mm, 81.28 mm): pin 2 (Unspecified) of component Q_PSW_4 (net 98).
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(189.23 mm, 73.66 mm): Pin 8 (Power input) of component MEMS1 is not driven (Net 98).
+
+ ** ERC messages: 169  Errors 3  Warnings 166

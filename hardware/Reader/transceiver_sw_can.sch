@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 15 17
+Sheet 15 18
 Title "CANnect Reader | Single Wire CAN Transceiver"
 Date "2020-10-20"
-Rev "0.0.1"
+Rev "0.0.01"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -64,12 +64,12 @@ $EndComp
 $Comp
 L power:GND #PWR0183
 U 1 1 5FBCDB6B
-P 3650 4500
-F 0 "#PWR0183" H 3650 4250 50  0001 C CNN
-F 1 "GND" H 3655 4327 50  0000 C CNN
-F 2 "" H 3650 4500 50  0001 C CNN
-F 3 "" H 3650 4500 50  0001 C CNN
-	1    3650 4500
+P 3950 4500
+F 0 "#PWR0183" H 3950 4250 50  0001 C CNN
+F 1 "GND" H 3955 4327 50  0000 C CNN
+F 2 "" H 3950 4500 50  0001 C CNN
+F 3 "" H 3950 4500 50  0001 C CNN
+	1    3950 4500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -77,106 +77,80 @@ Wire Wire Line
 $Comp
 L Device:R_Small R_SWCAN_6
 U 1 1 5FBCE6CE
-P 2650 4100
-F 0 "R_SWCAN_6" H 2709 4146 50  0000 L CNN
-F 1 "130" H 2709 4055 50  0000 L CNN
-F 2 "footprints:RESC0603X26N" H 2650 4100 50  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_11.pdf" H 2650 4100 50  0001 C CNN
-F 4 "RC0201FR-07130RL" H 2650 4100 50  0001 C CNN "Part Name"
-	1    2650 4100
+P 2600 4550
+F 0 "R_SWCAN_6" H 2659 4596 50  0000 L CNN
+F 1 "130" H 2659 4505 50  0000 L CNN
+F 2 "footprints:RESC0603X26N" H 2600 4550 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_11.pdf" H 2600 4550 50  0001 C CNN
+F 4 "RC0201FR-07130RL" H 2600 4550 50  0001 C CNN "Part Name"
+	1    2600 4550
 	1    0    0    -1  
 $EndComp
-Text HLabel 1550 4700 0    50   BiDi ~ 0
+Text HLabel 1500 5150 0    50   BiDi ~ 0
 SW_CAN_LOAD
 $Comp
 L NX7002AK_215:NX7002AK,215 Q_SWCAN_1
 U 1 1 5FBCED49
-P 2550 4600
-F 0 "Q_SWCAN_1" H 2748 4596 50  0000 L CNN
-F 1 "NX7002AK,215" H 2748 4505 50  0000 L CNN
-F 2 "footprints:RESC0603X26N" H 2550 4600 50  0001 L BNN
-F 3 "1.1mm" H 2550 4600 50  0001 L BNN
-F 4 "Nexperia" H 2550 4600 50  0001 L BNN "Field4"
-F 5 "7" H 2550 4600 50  0001 L BNN "Field5"
-F 6 "IPC-7351B" H 2550 4600 50  0001 L BNN "Field6"
-	1    2550 4600
+P 2500 5050
+F 0 "Q_SWCAN_1" H 2698 5046 50  0000 L CNN
+F 1 "NX7002AK,215" H 2698 4955 50  0000 L CNN
+F 2 "footprints:SOT95P230X110-3N" H 2500 5050 50  0001 L BNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 2500 5050 50  0001 L BNN
+F 4 "Nexperia" H 2500 5050 50  0001 L BNN "Field4"
+F 5 "7" H 2500 5050 50  0001 L BNN "Field5"
+F 6 "IPC-7351B" H 2500 5050 50  0001 L BNN "Field6"
+	1    2500 5050
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R_Small R_SWCAN_7
 U 1 1 5FBCFFA6
-P 2000 4950
-F 0 "R_SWCAN_7" H 2059 4996 50  0000 L CNN
-F 1 "10k" H 2059 4905 50  0000 L CNN
-F 2 "footprints:RESC1608X55N" H 2000 4950 50  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 2000 4950 50  0001 C CNN
-F 4 "RT0603FRE0710KL" H 2000 4950 50  0001 C CNN "Part Name"
-	1    2000 4950
+P 1950 5400
+F 0 "R_SWCAN_7" H 2009 5446 50  0000 L CNN
+F 1 "10k" H 2009 5355 50  0000 L CNN
+F 2 "footprints:RESC1608X55N" H 1950 5400 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 1950 5400 50  0001 C CNN
+F 4 "RT0603FRE0710KL" H 1950 5400 50  0001 C CNN "Part Name"
+	1    1950 5400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1550 4700 2000 4700
+	1500 5150 1950 5150
 Wire Wire Line
-	2000 4850 2000 4700
-Connection ~ 2000 4700
+	1950 5300 1950 5150
+Connection ~ 1950 5150
 Wire Wire Line
-	2000 4700 2350 4700
+	1950 5150 2300 5150
 Wire Wire Line
-	2650 4400 2650 4200
-Wire Wire Line
-	2050 2650 2650 2650
-$Comp
-L Device:Jumper_NO_Small JP_SWCAN_1
-U 1 1 5FBD0A1B
-P 2650 3400
-F 0 "JP_SWCAN_1" V 2604 3448 50  0000 L CNN
-F 1 "Jumper_NO_Small" V 2695 3448 50  0000 L CNN
-F 2 "" H 2650 3400 50  0001 C CNN
-F 3 "~" H 2650 3400 50  0001 C CNN
-	1    2650 3400
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	2650 3300 2650 2650
-Connection ~ 2650 2650
-Wire Wire Line
-	2650 2650 2850 2650
-Wire Wire Line
-	2650 3500 2650 4000
+	2600 4850 2600 4650
 $Comp
 L power:GND #PWR0184
 U 1 1 5FBD183F
-P 2650 5200
-F 0 "#PWR0184" H 2650 4950 50  0001 C CNN
-F 1 "GND" H 2655 5027 50  0000 C CNN
-F 2 "" H 2650 5200 50  0001 C CNN
-F 3 "" H 2650 5200 50  0001 C CNN
-	1    2650 5200
+P 2600 5650
+F 0 "#PWR0184" H 2600 5400 50  0001 C CNN
+F 1 "GND" H 2605 5477 50  0000 C CNN
+F 2 "" H 2600 5650 50  0001 C CNN
+F 3 "" H 2600 5650 50  0001 C CNN
+	1    2600 5650
 	1    0    0    -1  
 $EndComp
 Wire Notes Line
-	2450 3150 3400 3150
+	900  6050 900  4650
 Wire Notes Line
-	3400 3150 3400 5600
+	900  4650 2400 4650
 Wire Notes Line
-	3400 5600 950  5600
-Wire Notes Line
-	950  5600 950  4200
-Wire Notes Line
-	950  4200 2450 4200
-Wire Notes Line
-	2450 4200 2450 3150
-Text Notes 3050 5550 2    50   ~ 0
-High-Speed Load Circuit - Omit this for Read-only
+	2400 4650 2400 3600
+Text Notes 3700 6000 2    50   ~ 0
+High-Speed Load Circuit - Do not connect J_SWCAN_1 for Read-only
 Wire Wire Line
-	2650 4900 2650 5100
+	2600 5350 2600 5550
 Wire Wire Line
-	2000 5050 2000 5100
+	1950 5500 1950 5550
 Wire Wire Line
-	2000 5100 2650 5100
-Connection ~ 2650 5100
+	1950 5550 2600 5550
+Connection ~ 2600 5550
 Wire Wire Line
-	2650 5100 2650 5200
+	2600 5550 2600 5650
 $Comp
 L Device:R_Small R_SWCAN_1
 U 1 1 5FBD3FD7
@@ -236,46 +210,42 @@ Wire Wire Line
 $Comp
 L Device:C C_SWCAN_2
 U 1 1 5FBD6B6E
-P 4000 3900
-F 0 "C_SWCAN_2" V 3748 3900 50  0000 C CNN
-F 1 "4.7uF 25V" V 3839 3900 50  0000 C CNN
-F 2 "footprints:C1206C475K3RACAUTO" H 4038 3750 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf" H 4000 3900 50  0001 C CNN
-F 4 "C1206C475K3RACAUTO" H 4000 3900 50  0001 C CNN "Part Name"
-	1    4000 3900
+P 4300 3900
+F 0 "C_SWCAN_2" V 4048 3900 50  0000 C CNN
+F 1 "4.7uF 25V" V 4139 3900 50  0000 C CNN
+F 2 "footprints:C1206C475K3RACAUTO" H 4338 3750 50  0001 C CNN
+F 3 "https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf" H 4300 3900 50  0001 C CNN
+F 4 "C1206C475K3RACAUTO" H 4300 3900 50  0001 C CNN "Part Name"
+	1    4300 3900
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	4150 3900 4250 3900
+	4450 3900 4550 3900
 Wire Wire Line
-	4250 3900 4250 2850
+	4550 3900 4550 2850
 $Comp
 L power:+12V #PWR0187
 U 1 1 5FBD853C
-P 4500 3500
-F 0 "#PWR0187" H 4500 3350 50  0001 C CNN
-F 1 "+12V" H 4515 3673 50  0000 C CNN
-F 2 "" H 4500 3500 50  0001 C CNN
-F 3 "" H 4500 3500 50  0001 C CNN
-	1    4500 3500
+P 4800 3500
+F 0 "#PWR0187" H 4800 3350 50  0001 C CNN
+F 1 "+12V" H 4815 3673 50  0000 C CNN
+F 2 "" H 4800 3500 50  0001 C CNN
+F 3 "" H 4800 3500 50  0001 C CNN
+	1    4800 3500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4250 3900 4500 3900
+	4550 3900 4800 3900
 Wire Wire Line
-	4500 3900 4500 3500
-Connection ~ 4250 3900
+	4800 3900 4800 3500
+Connection ~ 4550 3900
 Wire Wire Line
-	4250 2850 4750 2850
+	3950 3050 3950 3900
 Wire Wire Line
-	3650 3050 4750 3050
+	3950 3900 4150 3900
+Connection ~ 3950 3900
 Wire Wire Line
-	3650 3050 3650 3900
-Wire Wire Line
-	3650 3900 3850 3900
-Connection ~ 3650 3900
-Wire Wire Line
-	3650 3900 3650 4500
+	3950 3900 3950 4500
 $Comp
 L power:GND #PWR0188
 U 1 1 5FBDCE7D
@@ -425,4 +395,35 @@ Wire Wire Line
 	8150 2750 9650 2750
 Wire Wire Line
 	8150 3600 8750 3600
+$Comp
+L 2828322:282832-2 J_SWCAN_1
+U 1 1 5F9F941C
+P 2600 3750
+F 0 "J_SWCAN_1" H 3128 3806 60  0000 L CNN
+F 1 "282832-2" H 3128 3700 60  0000 L CNN
+F 2 "footprints:282832-2" H 3000 3690 60  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 3128 3594 60  0000 L CNN
+F 4 "282832-2" H 2600 3750 50  0001 C CNN "Part Name"
+	1    2600 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 3750 2600 2650
+Wire Wire Line
+	2050 2650 2600 2650
+Connection ~ 2600 2650
+Wire Wire Line
+	2600 2650 2850 2650
+Wire Wire Line
+	2600 3850 2600 4450
+Wire Wire Line
+	3950 3050 4750 3050
+Wire Wire Line
+	4550 2850 4750 2850
+Wire Notes Line
+	2400 3600 3650 3600
+Wire Notes Line
+	3650 3600 3650 6050
+Wire Notes Line
+	900  6050 3650 6050
 $EndSCHEMATC
