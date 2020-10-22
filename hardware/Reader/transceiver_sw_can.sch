@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 15 18
+Sheet 14 18
 Title "CANnect Reader | Single Wire CAN Transceiver"
 Date "2020-10-20"
 Rev "0.0.01"
@@ -402,7 +402,7 @@ P 2600 3750
 F 0 "J_SWCAN_1" H 3128 3806 60  0000 L CNN
 F 1 "282832-2" H 3128 3700 60  0000 L CNN
 F 2 "footprints:282832-2" H 3000 3690 60  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 3128 3594 60  0000 L CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 3128 3594 60  0001 L CNN
 F 4 "282832-2" H 2600 3750 50  0001 C CNN "Part Name"
 	1    2600 3750
 	1    0    0    -1  

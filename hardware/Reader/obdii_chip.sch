@@ -21,7 +21,7 @@ AR Path="/5F95F80B/5FC0708B" Ref="U?"  Part="1"
 AR Path="/5F95F80B/5FC0631B/5FC0708B" Ref="IC2"  Part="1" 
 F 0 "IC2" H 6250 3050 50  0000 L CNB
 F 1 "STN2120" H 6250 2950 50  0000 L CNB
-F 2 "Package_DFN_QFN:QFN-44-1EP_8x8mm_P0.65mm_EP6.45x6.45mm_ThermalVias" H 7750 2750 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-44-1EP_8x8mm_P0.65mm_EP6.45x6.45mm_ThermalVias" H 7750 2750 50  0001 C CNN
 F 3 "https://www.scantool.net/scantool/downloads/206/stn21xx_ds_c.pdf" H 6250 2850 50  0000 L CNN
 	1    6050 3350
 	1    0    0    -1  

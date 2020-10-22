@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 14 18
+Sheet 13 18
 Title "CANnect Reader | Comparative Transceiver"
 Date "2020-10-20"
 Rev "0.0.01"

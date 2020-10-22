@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 10 18
+Sheet 9 18
 Title "CANnect Reader | ISO 9141/ISO 14230 Transceiver"
 Date "2020-10-20"
 Rev "0.0.01"

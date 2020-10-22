@@ -191,9 +191,8 @@ P 2300 1800
 F 0 "J_PS_1" V 2489 1928 60  0000 L CNN
 F 1 "282832-2" V 2595 1928 60  0000 L CNN
 F 2 "footprints:282832-2" H 2700 1740 60  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 2300 1800 60  0000 C CNN
-F 4 "282832-2" V 2300 1800 50  0001 C CNN "Part Number"
-F 5 "282832-2" H 2300 1800 50  0001 C CNN "Part Name"
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 2300 1800 60  0001 C CNN
+F 4 "282832-2" H 2300 1800 50  0001 C CNN "Part Name"
 	1    2300 1800
 	0    1    1    0   
 $EndComp
@@ -204,9 +203,8 @@ P 7300 1650
 F 0 "J_PS_2" V 7489 1778 60  0000 L CNN
 F 1 "282832-2" V 7595 1778 60  0000 L CNN
 F 2 "footprints:282832-2" H 7700 1590 60  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 7300 1650 60  0000 C CNN
-F 4 "282832-2" V 7300 1650 50  0001 C CNN "Part Number"
-F 5 "282832-2" H 7300 1650 50  0001 C CNN "Part Name"
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 7300 1650 60  0001 C CNN
+F 4 "282832-2" H 7300 1650 50  0001 C CNN "Part Name"
 	1    7300 1650
 	0    1    1    0   
 $EndComp

@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 12 18
+Sheet 11 18
 Title "CANnect Reader | Medium Speed CAN Transceiver"
 Date "2020-10-20"
 Rev "0.0.01"
