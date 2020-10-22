@@ -38,14 +38,14 @@ public class Contact extends AppCompatActivity {
         Element adsElement = new Element();
         View aboutPage = new AboutPage(this)
                 .isRTL(false)
-                .setDescription(" Add descrition about your app")
+                .setDescription(" CANnect")
                 .addItem(new Element().setTitle("Version 1.0"))
                 .addGroup("CONNECT WITH US!")
                 .addEmail("Your mail id ")
+                .addGitHub("link to source code")
                 .addWebsite("Your website/")
                 .addYoutube("https://www.youtube.com/watch?v=w_xi4uaV3mE&feature=youtu.be&ab_channel=PoCDemosSummer2020")   //Enter your youtube link here (replace with my channel link)
                 .addPlayStore("com.cantech.cannect")   //Replace all this with your package name
-                .addInstagram("Your instagram id")    //Your instagram id
                 .addItem(createCopyright())
                 .create();
         setContentView(aboutPage);
@@ -53,7 +53,7 @@ public class Contact extends AppCompatActivity {
     private Element createCopyright()
     {
         Element copyright = new Element();
-        @SuppressLint("DefaultLocale") final String copyrightString = String.format("Copyright %d by Your Name", Calendar.getInstance().get(Calendar.YEAR));
+        @SuppressLint("DefaultLocale") final String copyrightString = String.format("Copyright %d by CANnect", Calendar.getInstance().get(Calendar.YEAR));
         copyright.setTitle(copyrightString);
         // copyright.setIcon(R.mipmap.ic_launcher);
         copyright.setGravity(Gravity.CENTER);

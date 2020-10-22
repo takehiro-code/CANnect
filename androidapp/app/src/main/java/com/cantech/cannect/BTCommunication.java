@@ -103,9 +103,13 @@ public class BTCommunication {
                         System.out.println("Incoming message string below:");
                         System.out.println(incomingMessage);
 
-                        Intent incomingMessageIntent = new Intent("incomingMessage");
-                        incomingMessageIntent.putExtra("theMessage", incomingMessage);
-                        LocalBroadcastManager.getInstance(mContext).sendBroadcast(incomingMessageIntent);
+                        if (incomingMessage.length() > 9) {
+                            Intent incomingMessageIntent = new Intent("incomingMessage");
+                            incomingMessageIntent.putExtra("theMessage", incomingMessage);
+                            LocalBroadcastManager.getInstance(mContext).sendBroadcast(incomingMessageIntent);
+                        } else {
+                            System.out.println("Sending message less than 4 characters will not be sent ...");
+                        }
 
                         // initialize String of incomingMessage after sending
                         incomingMessage = "";

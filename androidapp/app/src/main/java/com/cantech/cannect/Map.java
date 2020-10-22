@@ -9,6 +9,8 @@ import androidx.core.content.ContextCompat;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
@@ -20,6 +22,7 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -30,7 +33,13 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.Arrays;
 import java.util.List;
 import android.Manifest;
 
@@ -43,7 +52,11 @@ public class Map extends AppCompatActivity
     LocationRequest mLocationRequest;
     Location mLastLocation;
     Marker mCurrLocationMarker;
+    Marker marker;
     FusedLocationProviderClient mFusedLocationClient;
+    private DatabaseReference databaseReference;
+    private LocationListener locationListener;
+    private LocationManager locationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +78,42 @@ public class Map extends AppCompatActivity
 
         mapFrag = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.google_map);
         mapFrag.getMapAsync(this);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Location");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                try {
+                    System.out.println("inside database on datachange");
+                    String databaseLatitudeString = dataSnapshot.child("latitude").getValue().toString().substring(1,dataSnapshot.child("latitude").getValue().toString().length()-1);
+                    String databaseLongitudeString = dataSnapshot.child("longitude").getValue().toString().substring(1,dataSnapshot.child("longitude").getValue().toString().length()-1);
+
+                    String[] stringLat = databaseLatitudeString.split(", ");
+                    Arrays.sort(stringLat);
+                    String latitude = stringLat[stringLat.length-1].split("=")[1];
+
+                    String[] stringLong = databaseLongitudeString.split(", ");
+                    Arrays.sort(stringLong);
+                    String longitude = stringLong[stringLong.length-1].split("=")[1];
+
+                    LatLng latLng = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
+                    mCurrLocationMarker.remove();
+                    mCurrLocationMarker = mGoogleMap.addMarker(new MarkerOptions().position(latLng).title(latitude+", "+ longitude));
+                    mCurrLocationMarker.setPosition(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude)));
+                    mCurrLocationMarker.getPosition();
+                    mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+
+
+                }catch (Exception e){
+                    System.out.println("map database exception");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
@@ -81,29 +130,58 @@ public class Map extends AppCompatActivity
     public void onMapReady(GoogleMap googleMap) {
         mGoogleMap = googleMap;
         mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
         //mGoogleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN); // which one do you prefer?
 
-        mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(120000); // two minute interval
-        mLocationRequest.setFastestInterval(120000);
-        mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                System.out.println("inside database on datachange");
+                String databaseLatitudeString = dataSnapshot.child("latitude").getValue().toString().substring(1,dataSnapshot.child("latitude").getValue().toString().length()-1);
+                String databaseLongitudeString = dataSnapshot.child("longitude").getValue().toString().substring(1,dataSnapshot.child("longitude").getValue().toString().length()-1);
 
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ContextCompat.checkSelfPermission(this,
-                    Manifest.permission.ACCESS_FINE_LOCATION)
-                    == PackageManager.PERMISSION_GRANTED) {
-                //Location Permission already granted
-                mFusedLocationClient.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper());
-                mGoogleMap.setMyLocationEnabled(true);
-            } else {
-                //Request Location Permission
-                checkLocationPermission();
+                String[] stringLat = databaseLatitudeString.split(", ");
+                Arrays.sort(stringLat);
+                String latitude = stringLat[stringLat.length-1].split("=")[1];
+
+                String[] stringLong = databaseLongitudeString.split(", ");
+                Arrays.sort(stringLong);
+                String longitude = stringLong[stringLong.length-1].split("=")[1];
+
+                LatLng latLng = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
+                //mCurrLocationMarker.remove();
+                mCurrLocationMarker = mGoogleMap.addMarker(new MarkerOptions().position(latLng).title(latitude+", "+ longitude));
+                mCurrLocationMarker.setPosition(new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude)));
+                mCurrLocationMarker.getPosition();
+                mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             }
-        }
-        else {
-            mFusedLocationClient.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper());
-            mGoogleMap.setMyLocationEnabled(true);
-        }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+//        mLocationRequest = new LocationRequest();
+//        mLocationRequest.setInterval(120000); // two minute interval
+//        mLocationRequest.setFastestInterval(120000);
+//        mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+//
+//        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            if (ContextCompat.checkSelfPermission(this,
+//                    Manifest.permission.ACCESS_FINE_LOCATION)
+//                    == PackageManager.PERMISSION_GRANTED) {
+//                //Location Permission already granted
+//                mFusedLocationClient.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper());
+//                mGoogleMap.setMyLocationEnabled(true);
+//            } else {
+//                //Request Location Permission
+//                checkLocationPermission();
+//            }
+//        }
+//        else {
+//            mFusedLocationClient.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper());
+//            mGoogleMap.setMyLocationEnabled(true);
+//        }
     }
 
     LocationCallback mLocationCallback = new LocationCallback() {

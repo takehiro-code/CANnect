@@ -33,6 +33,7 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -285,14 +286,27 @@ public class Dashboard_chart extends AppCompatActivity {
             System.out.println(messages);
             System.out.println("messages size");
             System.out.println(messages.length());
-            String[] parsed;
-            parsed = dataParsing.convertOBD2FrameToUserFormat(messages.toString());
+            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(messages.substring(0, messages.length() - 10));//remove  \n255255\r\n and then parse
             System.out.println("parsed[0]");
             System.out.println(parsed[0]);
             System.out.println("parsed[1]");
             System.out.println(parsed[1]);
 
-            float value = Float.parseFloat(parsed[1]);
+            float value;
+            try {
+                if (parsed[1]!="UNDEFINED") {
+                    value = Float.parseFloat(parsed[1]);
+                } else {
+                    System.out.println("UNDEFINED string received ...");
+                    value = 0;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("Invalid conversion of value to float ...");
+                value = 0;
+            }
+
+
             if(previousPID.equals(toDisplay)) {
                 if(parsed[0].equals(toDisplay)) {
                     data.add(new Entry(lineDataSet.getEntryCount(), value));

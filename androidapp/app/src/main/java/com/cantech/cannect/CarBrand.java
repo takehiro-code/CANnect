@@ -37,6 +37,7 @@ public class CarBrand extends AppCompatActivity {
     String mDescription[] ={"Standard PIDs", "This protocol is usually used by Ford Motor Company", "This protocol is mostly used by General Motors","Asian, Chrysler, and European cars","Asian Cars","vehicles made after 2008"};
     private AlertDialog.Builder dialogBuilder;
     private  AlertDialog dialog;
+    int pid_counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,27 +67,27 @@ public class CarBrand extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
                 if (i == 0){
-                    Toast.makeText(CarBrand.this, "Standardized pids", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(CarBrand.this, "Standardized pids", Toast.LENGTH_SHORT).show();
                     createNewPidListDialog(i);
                 }
                 if (i == 1){
-                    Toast.makeText(CarBrand.this, "SAE J1850 VPW pids", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(CarBrand.this, "SAE J1850 VPW pids", Toast.LENGTH_SHORT).show();
                     createNewPidListDialog(i);
                 }
                 if (i == 2){
-                    Toast.makeText(CarBrand.this, "SAE J1850 PWM pids", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(CarBrand.this, "SAE J1850 PWM pids", Toast.LENGTH_SHORT).show();
                     createNewPidListDialog(i);
                 }
                 if (i == 3){
-                    Toast.makeText(CarBrand.this, "ISO 9141-2 pids", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(CarBrand.this, "ISO 9141-2 pids", Toast.LENGTH_SHORT).show();
                     createNewPidListDialog(i);
                 }
                 if (i == 4){
-                    Toast.makeText(CarBrand.this, "ISO 14230 KWP2000 pids", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(CarBrand.this, "ISO 14230 KWP2000 pids", Toast.LENGTH_SHORT).show();
                     createNewPidListDialog(i);
                 }
                 if (i == 5){
-                    Toast.makeText(CarBrand.this, "ISO 15765-4/SAE J2480 (CAN)", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(CarBrand.this, "ISO 15765-4/SAE J2480 (CAN)", Toast.LENGTH_SHORT).show();
                     createNewPidListDialog(i);
                 }
             }
@@ -126,8 +127,8 @@ public class CarBrand extends AppCompatActivity {
         String[] pids={};
         boolean[] checkedItems={};
         if (i==0){
-            pids = new String[]{"FUEL STATUS", "ENGINE COOLANT TEMP", "FUEL PRESSURE", "ENGINE RPM", "VEHICLE SPEED", "MAF SENSOR", "THROTTLE", "O2 VOLTAGE"};
-            checkedItems = new boolean[]{false, false, false, false, false, false, false, false};
+            pids = new String[]{"FUEL STATUS", "ENGINE COOLANT TEMP", "FUEL PRESSURE", "ENGINE RPM", "VEHICLE SPEED", "MAF SENSOR", "THROTTLE", "O2 VOLTAGE","Oxygen Sensor 1","Oxygen Sensor 2","Ethanol fuel %","Mass air flow sensor","Fuel Type","Engine reference torque"};
+            checkedItems = new boolean[]{false, false, false, false, false, false, false, false, false, false, false, false, false, false };
         }
         if (i==1){
             pids = new String[]{"FUEL STATUS", "ENGINE COOLANT TEMP", "FUEL PRESSURE", "ENGINE RPM", "VEHICLE SPEED", "MAF SENSOR", "THROTTLE", "O2 VOLTAGE", "SENSORA", "SENSORB"};
@@ -152,12 +153,22 @@ public class CarBrand extends AppCompatActivity {
 
         final String[] finalPids = pids;
         final boolean[] finalCheckedItems = checkedItems;
+
         dialogBuilder.setMultiChoiceItems(pids, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which, boolean isChecked) {
                 // user checked or unchecked a box
                 if (isChecked){
-                    finalCheckedItems[which] = true;
+                    pid_counter++;
+                    //Toast.makeText(CarBrand.this, "pid counter is"+ pid_counter, Toast.LENGTH_SHORT).show();
+
+                    if (pid_counter<5) {
+                        finalCheckedItems[which] = true;
+                    }
+                    if (pid_counter>5){
+                        //Toast.makeText(CarBrand.this, "You can not choose more than 5 items, the last item you chose will not be selected", Toast.LENGTH_SHORT).show();
+                        pid_counter--;
+                    }
                 }else{
                     finalCheckedItems[which] = false;
                 }
@@ -189,6 +200,7 @@ public class CarBrand extends AppCompatActivity {
                 SharedPreferences.Editor editorCheckMarks = settingCheckMarks.edit();
                 editorCheckMarks.putString("checkMarks", checkMarksString.toString());
                 editorCheckMarks.commit();
+                pid_counter = 0;
             }
         });
         dialogBuilder.setNegativeButton("Cancel", null);
@@ -197,5 +209,7 @@ public class CarBrand extends AppCompatActivity {
         dialog = dialogBuilder.create();
         dialog.show();
 
+
     }
+
 }

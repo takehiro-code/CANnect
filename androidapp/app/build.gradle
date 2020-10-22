@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
@@ -53,6 +53,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     androidTestImplementation 'androidx.test:rules:1.3.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    //firabase
+    implementation 'com.google.firebase:firebase-core:17.0.0'
+    implementation 'com.google.firebase:firebase-database:17.0.0'
 }
 
 buildscript {
@@ -62,7 +65,7 @@ buildscript {
         jcenter()
         maven {
             url "https://maven.google.com"
-            }
+        }
 
     }
     dependencies {
