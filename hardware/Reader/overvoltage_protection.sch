@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 4 18
+Sheet 19 19
 Title "CANnect Reader | Overvoltage Protection"
-Date "2020-10-20"
-Rev "0.0.01"
+Date "2020-10-25"
+Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"

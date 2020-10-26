@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 17 18
+Sheet 13 19
 Title "CANnect Reader | Host"
-Date "2020-10-20"
-Rev "0.0.01"
+Date "2020-10-25"
+Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 ""
@@ -94,8 +94,8 @@ L CANtech:NodeMCU_ESP32_DevKit IC?
 U 1 1 5F91DA68
 P 5550 6500
 AR Path="/5F91DA68" Ref="IC?"  Part="1" 
-AR Path="/5F91C7D3/5F91DA68" Ref="IC1"  Part="1" 
-F 0 "IC1" H 5725 10105 50  0000 C CNN
+AR Path="/5F91C7D3/5F91DA68" Ref="U_HST_1"  Part="1" 
+F 0 "U_HST_1" H 5725 10105 50  0000 C CNN
 F 1 "NodeMCU_ESP32_DevKit" H 5725 10014 50  0000 C CNN
 F 2 "" H 5550 6500 50  0001 C CNN
 F 3 "" H 5550 6500 50  0001 C CNN

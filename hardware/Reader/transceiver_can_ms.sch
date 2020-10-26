@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 11 18
+Sheet 6 19
 Title "CANnect Reader | Medium Speed CAN Transceiver"
-Date "2020-10-20"
-Rev "0.0.01"
+Date "2020-10-25"
+Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -18,66 +18,18 @@ MS_CAN_High
 Text HLabel 1600 3100 0    50   BiDi ~ 0
 MS_CAN_Low
 $Comp
-L PESD2CAN_215:PESD2CAN,215 D?
-U 1 1 5FB39FD5
-P 1750 4050
-AR Path="/5F95F80B/5FAEE035/5FB39FD5" Ref="D?"  Part="1" 
-AR Path="/5F95F80B/5FB34A7C/5FB39FD5" Ref="Q_MSCAN_2"  Part="1" 
-F 0 "Q_MSCAN_2" V 1704 4280 50  0000 L CNN
-F 1 "PESD2CAN,215" V 1795 4280 50  0000 L CNN
-F 2 "footprints:SOT95P230X110-3N" H 1750 4050 50  0001 L BNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/PESD2CAN.pdf" H 1750 4050 50  0001 L BNN
-	1    1750 4050
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	1600 3000 1850 3000
-$Comp
-L power:GND #PWR?
-U 1 1 5FB39FDC
-P 1750 4900
-AR Path="/5F95F80B/5FAEE035/5FB39FDC" Ref="#PWR?"  Part="1" 
-AR Path="/5F95F80B/5FB34A7C/5FB39FDC" Ref="#PWR0157"  Part="1" 
-F 0 "#PWR0157" H 1750 4650 50  0001 C CNN
-F 1 "GND" H 1755 4727 50  0000 C CNN
-F 2 "" H 1750 4900 50  0001 C CNN
-F 3 "" H 1750 4900 50  0001 C CNN
-	1    1750 4900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1750 4450 1750 4900
-Wire Notes Line
-	1450 5150 2600 5150
-Wire Notes Line
-	2600 5150 2600 3700
-Wire Notes Line
-	2600 3700 1450 3700
-Wire Notes Line
-	1450 3700 1450 5150
-Text Notes 1450 5300 0    50   ~ 0
-ESD Protection
-$Comp
 L MCP2562HMF:MCP2562-H_MF IC?
 U 1 1 5FB39FE8
 P 7200 2800
 AR Path="/5F95F80B/5FAEE035/5FB39FE8" Ref="IC?"  Part="1" 
-AR Path="/5F95F80B/5FB34A7C/5FB39FE8" Ref="IC5"  Part="1" 
-F 0 "IC5" H 8400 3293 60  0000 C CNN
+AR Path="/5F95F80B/5FB34A7C/5FB39FE8" Ref="U_MSCAN_1"  Part="1" 
+F 0 "U_MSCAN_1" H 8400 3293 60  0000 C CNN
 F 1 "MCP2562-H_MF" H 8400 3187 60  0000 C CNN
 F 2 "footprints:MCP2562-H&slash_MF" H 8400 3040 60  0001 C CNN
 F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/20005167C.pdf" H 8400 3081 60  0000 C CNN
 	1    7200 2800
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	1650 3100 1650 3650
-Connection ~ 1650 3100
-Wire Wire Line
-	1650 3100 1600 3100
-Connection ~ 1850 3000
-Wire Wire Line
-	1850 3000 1850 3650
 $Comp
 L Device:R_Small R?
 U 1 1 5FB39FF3
@@ -169,8 +121,6 @@ Wire Wire Line
 Wire Wire Line
 	2750 3850 2750 3100
 Connection ~ 2750 3100
-Wire Wire Line
-	1650 3100 2750 3100
 Wire Wire Line
 	7200 2900 7450 2900
 $Comp
@@ -346,10 +296,12 @@ Wire Wire Line
 Text HLabel 9250 3100 2    50   Output ~ 0
 MS_CAN_RX
 Wire Wire Line
-	1850 3000 3500 3000
-Wire Wire Line
 	3500 3850 3500 3000
 Connection ~ 3500 3000
 Wire Wire Line
 	3500 3000 4800 3000
+Wire Wire Line
+	1600 3100 2750 3100
+Wire Wire Line
+	1600 3000 3500 3000
 $EndSCHEMATC

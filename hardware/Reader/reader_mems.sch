@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 18 18
+Sheet 14 19
 Title "CANnect Reader | MEMs"
-Date "2020-10-20"
-Rev "0.0.01"
+Date "2020-10-25"
+Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 ""
@@ -18,8 +18,8 @@ L LSM6DSMTR:LSM6DSMTR MEMS?
 U 1 1 5F9A440D
 P 6550 3400
 AR Path="/5F9A440D" Ref="MEMS?"  Part="1" 
-AR Path="/5F988046/5F9A440D" Ref="MEMS1"  Part="1" 
-F 0 "MEMS1" H 6550 4167 50  0000 C CNN
+AR Path="/5F988046/5F9A440D" Ref="U_MM_1"  Part="1" 
+F 0 "U_MM_1" H 6550 4167 50  0000 C CNN
 F 1 "LSM6DSMTR" H 6550 4076 50  0000 C CNN
 F 2 "footprints:PQFN50P300X250X86-14N" H 6550 3400 50  0001 L BNN
 F 3 "STMicroelectronics" H 6550 3400 50  0001 L BNN

@@ -3,17 +3,17 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 14 18
+Sheet 9 19
 Title "CANnect Reader | Single Wire CAN Transceiver"
-Date "2020-10-20"
-Rev "0.0.01"
+Date "2020-10-25"
+Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
 Comment3 ""
 Comment4 "Component Identifier: SWCAN"
 $EndDescr
-Text HLabel 1550 2650 0    50   BiDi ~ 0
+Text HLabel 900  2650 0    50   BiDi ~ 0
 SW_CAN
 Text HLabel 9650 2550 2    50   Input ~ 0
 SW_CAN_TX
@@ -24,10 +24,10 @@ SW_CAN_MODE0
 Text HLabel 9650 2750 2    50   Input ~ 0
 SW_CAN_MODE1
 $Comp
-L TH8056KDCAAA014RE:TH8056KDC-AAA-014-RE IC6
+L TH8056KDCAAA014RE:TH8056KDC-AAA-014-RE U_SWCAN_1
 U 1 1 5FBCC1E0
 P 7150 2450
-F 0 "IC6" H 8350 2837 60  0000 C CNN
+F 0 "U_SWCAN_1" H 8350 2837 60  0000 C CNN
 F 1 "TH8056KDC-AAA-014-RE" H 8350 2731 60  0000 C CNN
 F 2 "footprints:TH8056KDC-AAA-014-RE" H 8350 2690 60  0001 C CNN
 F 3 "" H 7150 2450 60  0000 C CNN
@@ -35,30 +35,14 @@ F 3 "" H 7150 2450 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Device:C C_SWCAN_1
-U 1 1 5FBCCFA6
-P 2050 3050
-F 0 "C_SWCAN_1" H 2165 3096 50  0000 L CNN
-F 1 "150pF" H 2165 3005 50  0000 L CNN
-F 2 "footprints:CAPC1005X55N" H 2088 2900 50  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GP_NP0_16V-to-50V_18.pdf" H 2050 3050 50  0001 C CNN
-	1    2050 3050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1550 2650 2050 2650
-Wire Wire Line
-	2050 2650 2050 2900
-Connection ~ 2050 2650
-$Comp
 L power:GND #PWR0182
 U 1 1 5FBCD97D
-P 2050 3550
-F 0 "#PWR0182" H 2050 3300 50  0001 C CNN
-F 1 "GND" H 2055 3377 50  0000 C CNN
-F 2 "" H 2050 3550 50  0001 C CNN
-F 3 "" H 2050 3550 50  0001 C CNN
-	1    2050 3550
+P 2050 3450
+F 0 "#PWR0182" H 2050 3200 50  0001 C CNN
+F 1 "GND" H 2055 3277 50  0000 C CNN
+F 2 "" H 2050 3450 50  0001 C CNN
+F 3 "" H 2050 3450 50  0001 C CNN
+	1    2050 3450
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -72,8 +56,6 @@ F 3 "" H 3950 4500 50  0001 C CNN
 	1    3950 4500
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2050 3200 2050 3550
 $Comp
 L Device:R_Small R_SWCAN_6
 U 1 1 5FBCE6CE
@@ -409,8 +391,6 @@ F 4 "282832-2" H 2600 3750 50  0001 C CNN "Part Name"
 $EndComp
 Wire Wire Line
 	2600 3750 2600 2650
-Wire Wire Line
-	2050 2650 2600 2650
 Connection ~ 2600 2650
 Wire Wire Line
 	2600 2650 2850 2650
@@ -426,4 +406,24 @@ Wire Notes Line
 	3650 3600 3650 6050
 Wire Notes Line
 	900  6050 3650 6050
+Connection ~ 2050 2650
+Wire Wire Line
+	2050 2650 2600 2650
+Wire Wire Line
+	2050 3200 2050 3450
+Wire Wire Line
+	2050 2650 2050 2900
+$Comp
+L Device:C C_SWCAN_1
+U 1 1 5FBCCFA6
+P 2050 3050
+F 0 "C_SWCAN_1" H 2165 3096 50  0000 L CNN
+F 1 "150pF" H 2165 3005 50  0000 L CNN
+F 2 "footprints:CAPC1005X55N" H 2088 2900 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GP_NP0_16V-to-50V_18.pdf" H 2050 3050 50  0001 C CNN
+	1    2050 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	900  2650 2050 2650
 $EndSCHEMATC

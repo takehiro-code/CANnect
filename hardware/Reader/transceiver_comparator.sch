@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 13 18
+Sheet 8 19
 Title "CANnect Reader | Comparative Transceiver"
-Date "2020-10-20"
-Rev "0.0.01"
+Date "2020-10-25"
+Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -270,8 +270,8 @@ L LM339NNOPB:LM339N_NOPB U?
 U 1 1 5FB4E413
 P 4600 2200
 AR Path="/5F95F80B/5FA83833/5FB4E413" Ref="U?"  Part="1" 
-AR Path="/5F95F80B/5FB4CA84/5FB4E413" Ref="IC7"  Part="1" 
-F 0 "IC7" H 5800 2587 60  0000 C CNN
+AR Path="/5F95F80B/5FB4CA84/5FB4E413" Ref="U_COMP_1"  Part="1" 
+F 0 "U_COMP_1" H 5800 2587 60  0000 C CNN
 F 1 "LM339N_NOPB" H 5800 2481 60  0000 C CNN
 F 2 "footprints:LM339N&slash_NOPB" H 5800 2440 60  0001 C CNN
 F 3 "" H 4600 2200 60  0000 C CNN

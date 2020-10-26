@@ -3,23 +3,16 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 18
+Sheet 1 19
 Title "CANnect Reader"
-Date "2020-10-20"
-Rev "0.0.01"
+Date "2020-10-25"
+Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 2000 4450 750  250 
-U 5F8ADA45
-F0 "Power Supply" 50
-F1 "power_supply.sch" 50
-F2 "Analog_Voltage" O R 2750 4550 50 
-$EndSheet
 $Sheet
 S 4700 4350 1050 300 
 U 5FA56A4E
@@ -200,5 +193,12 @@ F4 "MEMS_INT1" I L 8100 2300 50
 F5 "MEMS_CS" I L 8100 2000 50 
 F6 "MEMS_SDO_SA0" B L 8100 2100 50 
 F7 "MEMS_INT2" I L 8100 2400 50 
+$EndSheet
+$Sheet
+S 2000 4450 750  250 
+U 5F8ADA45
+F0 "Power Supply" 50
+F1 "power_supply.sch" 50
+F2 "Analog_Voltage" O R 2750 4550 50 
 $EndSheet
 $EndSCHEMATC

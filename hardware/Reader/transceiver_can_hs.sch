@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 10 18
+Sheet 5 19
 Title "CANnect Reader | High Speed CAN Transceiver"
-Date "2020-10-20"
-Rev "0.0.01"
+Date "2020-10-25"
+Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -18,60 +18,16 @@ HS_CAN_High
 Text HLabel 1400 2800 0    50   BiDi ~ 0
 HS_CAN_Low
 $Comp
-L PESD2CAN_215:PESD2CAN,215 Q_HSCAN_2
-U 1 1 5FAF657F
-P 1550 3750
-F 0 "Q_HSCAN_2" V 1504 3980 50  0000 L CNN
-F 1 "PESD2CAN,215" V 1595 3980 50  0000 L CNN
-F 2 "footprints:SOT95P230X110-3N" H 1550 3750 50  0001 L BNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/PESD2CAN.pdf" H 1550 3750 50  0001 L BNN
-	1    1550 3750
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	1400 2700 1650 2700
-$Comp
-L power:GND #PWR0131
-U 1 1 5FAF7C00
-P 1550 4600
-F 0 "#PWR0131" H 1550 4350 50  0001 C CNN
-F 1 "GND" H 1555 4427 50  0000 C CNN
-F 2 "" H 1550 4600 50  0001 C CNN
-F 3 "" H 1550 4600 50  0001 C CNN
-	1    1550 4600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1550 4150 1550 4600
-Wire Notes Line
-	1250 4850 2400 4850
-Wire Notes Line
-	2400 4850 2400 3400
-Wire Notes Line
-	2400 3400 1250 3400
-Wire Notes Line
-	1250 3400 1250 4850
-Text Notes 1250 5000 0    50   ~ 0
-ESD Protection
-$Comp
-L MCP2562HMF:MCP2562-H_MF IC3
+L MCP2562HMF:MCP2562-H_MF U_HSCAN_1
 U 1 1 5FAF8CE0
 P 7000 2500
-F 0 "IC3" H 8200 2993 60  0000 C CNN
+F 0 "U_HSCAN_1" H 8200 2993 60  0000 C CNN
 F 1 "MCP2562-H_MF" H 8200 2887 60  0000 C CNN
 F 2 "footprints:MCP2562-H&slash_MF" H 8200 2740 60  0001 C CNN
 F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/20005167C.pdf" H 8200 2781 60  0000 C CNN
 	1    7000 2500
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	1450 2800 1450 3350
-Connection ~ 1450 2800
-Wire Wire Line
-	1450 2800 1400 2800
-Connection ~ 1650 2700
-Wire Wire Line
-	1650 2700 1650 3350
 $Comp
 L Device:R_Small R_HSCAN_2
 U 1 1 5FAFC15F
@@ -151,8 +107,6 @@ Wire Wire Line
 Wire Wire Line
 	2550 3550 2550 2800
 Connection ~ 2550 2800
-Wire Wire Line
-	1450 2800 2550 2800
 Wire Wire Line
 	7000 2600 7250 2600
 $Comp
@@ -312,10 +266,12 @@ Connection ~ 5300 1700
 Wire Wire Line
 	5300 1700 4250 1700
 Wire Wire Line
-	1650 2700 3250 2700
-Wire Wire Line
 	3250 3550 3250 2700
 Connection ~ 3250 2700
 Wire Wire Line
 	3250 2700 4600 2700
+Wire Wire Line
+	1400 2800 2550 2800
+Wire Wire Line
+	1400 2700 3250 2700
 $EndSCHEMATC

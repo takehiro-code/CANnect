@@ -1,12 +1,12 @@
 EESchema Schematic File Version 4
 EELAYER 30 0
 EELAYER END
-$Descr A4 11693 8268
+$Descr USLetter 11000 8500
 encoding utf-8
-Sheet 6 18
+Sheet 17 19
 Title "CANnect Reader | Voltage Regulator (3.3V)"
-Date "2020-10-20"
-Rev "0.0.01"
+Date "2020-10-25"
+Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 ""
@@ -18,8 +18,8 @@ L MAX25276ATCAVY:MAX25276ATCA_VY+ VR?
 U 1 1 5FF315FD
 P 4450 2300
 AR Path="/5F8ADA45/5F9EA8B0/5FF315FD" Ref="VR?"  Part="1" 
-AR Path="/5F8ADA45/5FF30350/5FF315FD" Ref="VR2"  Part="1" 
-F 0 "VR2" H 5250 2687 60  0000 C CNN
+AR Path="/5F8ADA45/5FF30350/5FF315FD" Ref="U_VR2"  Part="1" 
+F 0 "U_VR2" H 5250 2687 60  0000 C CNN
 F 1 "MAX25276ATCA_VY+" H 5250 2581 60  0000 C CNN
 F 2 "footprints:MAX25276ATCA&slash_VY&plus_" H 5250 2540 60  0001 C CNN
 F 3 "https://datasheets.maximintegrated.com/en/ds/MAX20075-MAX25276.pdf" H 5250 2850 60  0000 C CNN

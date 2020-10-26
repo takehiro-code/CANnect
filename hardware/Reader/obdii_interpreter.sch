@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 8 18
+Sheet 3 19
 Title "CANnect Reader | OBD-II Interpreter"
-Date "2020-10-20"
-Rev "0.0.01"
+Date "2020-10-25"
+Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -76,9 +76,9 @@ F0 "SAE J1850 VPW/PWM Transceiver" 50
 F1 "transceiver_sae71850.sch" 50
 F2 "~J1850_BUS+_VH~" I R 3800 1800 50 
 F3 "J1850_BUS+_TX" O R 3800 1900 50 
-F4 "J1850_BUS+" O L 2450 1800 50 
-F5 "J1850_BUS-_TX" I R 3800 2000 50 
-F6 "J1850_BUS-" O L 2450 1900 50 
+F4 "J1850_BUS-_TX" I R 3800 2000 50 
+F5 "J1850_BUS+" B L 2450 1800 50 
+F6 "J1850_BUS-" B L 2450 1900 50 
 $EndSheet
 $Sheet
 S 2450 2400 1350 400 
@@ -104,8 +104,6 @@ F5 "SW_CAN_MODE0" I R 3750 1100 50
 F6 "SW_CAN_MODE1" I R 3750 1200 50 
 F7 "SW_CAN_LOAD" B L 2450 1000 50 
 $EndSheet
-Text HLabel 1400 5300 0    50   Output ~ 0
-~PWR_CTRL~
 Wire Wire Line
 	1400 900  2450 900 
 Text HLabel 1400 6500 0    50   Input ~ 0
@@ -188,6 +186,37 @@ Wire Wire Line
 	3800 4600 4750 4600
 Wire Wire Line
 	4750 4700 3800 4700
+Wire Wire Line
+	1400 5300 2150 5300
+Wire Wire Line
+	2450 4900 2150 4900
+Wire Wire Line
+	2150 4900 2150 5300
+Wire Wire Line
+	1400 5950 4750 5950
+Wire Wire Line
+	4750 6050 1400 6050
+Text HLabel 1400 5850 0    50   Output ~ 0
+~SLEEP_OBD~
+Wire Wire Line
+	1400 5850 4750 5850
+Wire Wire Line
+	1400 6500 4750 6500
+Text HLabel 1400 6300 0    50   Output ~ 0
+RESET_OBD_SW
+Text HLabel 1400 6400 0    50   Output ~ 0
+~RESET_OBD_HW~
+Wire Wire Line
+	1400 6300 4750 6300
+Wire Wire Line
+	4750 6400 1400 6400
+Text HLabel 1400 3450 0    50   Input ~ 0
+PWR_CTRL
+Wire Wire Line
+	1400 3450 2450 3450
+Connection ~ 2150 5300
+Wire Wire Line
+	2150 5300 4750 5300
 $Sheet
 S 4750 800  1800 5800
 U 5FC0631B
@@ -221,35 +250,6 @@ F26 "SW_CAN_MODE1" O L 4750 1200 50
 F27 "SW_CAN_LOAD" O L 4750 1500 50 
 F28 "SW_CAN_MODE0" O L 4750 1100 50 
 $EndSheet
-Wire Wire Line
-	1400 5300 2150 5300
-Wire Wire Line
-	2450 4900 2150 4900
-Wire Wire Line
-	2150 4900 2150 5300
-Connection ~ 2150 5300
-Wire Wire Line
-	2150 5300 4750 5300
-Wire Wire Line
-	1400 5950 4750 5950
-Wire Wire Line
-	4750 6050 1400 6050
-Text HLabel 1400 5850 0    50   Output ~ 0
-~SLEEP_OBD~
-Wire Wire Line
-	1400 5850 4750 5850
-Wire Wire Line
-	1400 6500 4750 6500
-Text HLabel 1400 6300 0    50   Output ~ 0
-RESET_OBD_SW
-Text HLabel 1400 6400 0    50   Output ~ 0
-~RESET_OBD_HW~
-Wire Wire Line
-	1400 6300 4750 6300
-Wire Wire Line
-	4750 6400 1400 6400
-Text HLabel 1400 3450 0    50   Input ~ 0
-PWR_CTRL
-Wire Wire Line
-	1400 3450 2450 3450
+Text HLabel 1400 5300 0    50   Output ~ 0
+~PWR_CTRL~
 $EndSCHEMATC

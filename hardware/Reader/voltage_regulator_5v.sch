@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 3 18
+Sheet 18 19
 Title "CANnect Reader | Voltage Regulator (5V)"
-Date "2020-10-20"
-Rev "0.0.01"
+Date "2020-10-25"
+Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 ""
@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 "Component Identifier: VR1"
 $EndDescr
 $Comp
-L MAX25276ATCAVY:MAX25276ATCA_VY+ VR1
+L MAX25276ATCAVY:MAX25276ATCA_VY+ U_VR1
 U 1 1 5F9ECE66
 P 3800 2200
-F 0 "VR1" H 4600 2587 60  0000 C CNN
+F 0 "U_VR1" H 4600 2587 60  0000 C CNN
 F 1 "MAX25276ATCA_VY+" H 4600 2481 60  0000 C CNN
 F 2 "footprints:MAX25276ATCA&slash_VY&plus_" H 4600 2440 60  0001 C CNN
 F 3 "" H 3800 2200 60  0000 C CNN

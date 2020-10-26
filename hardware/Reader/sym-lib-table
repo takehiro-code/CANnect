@@ -37,4 +37,5 @@
   (lib (name RSC002P03T316)(type Legacy)(uri ${KIPRJMOD}/libraries/RSC002P03T316.lib)(options "")(descr ""))
   (lib (name RT0603FRE0710KL)(type Legacy)(uri ${KIPRJMOD}/libraries/RT0603FRE0710KL.lib)(options "")(descr ""))
   (lib (name TH8056KDCAAA014RE)(type Legacy)(uri ${KIPRJMOD}/libraries/TH8056KDCAAA014RE.lib)(options "")(descr ""))
+  (lib (name MMBZ27VCLFHT116)(type Legacy)(uri ${KIPRJMOD}/libraries/MMBZ27VCLFHT116.lib)(options "")(descr ""))
 )

@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 12 18
+Sheet 7 19
 Title "CANnect Reader | SAE J1850 VPW/PWM Transceiver"
-Date "2020-10-20"
-Rev "0.0.01"
+Date "2020-10-25"
+Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 "Component Identifier: J1850"
 $EndDescr
 $Comp
-L LM317LDR2G:LM317LDR2G IC8
+L LM317LDR2G:LM317LDR2G U_J1850_1
 U 1 1 5FB525E1
 P 4450 2100
-F 0 "IC8" H 4450 2570 50  0000 C CNN
+F 0 "U_J1850_1" H 4450 2570 50  0000 C CNN
 F 1 "LM317LDR2G" H 4450 2479 50  0000 C CNN
 F 2 "footprints:SOIC127P600X175-8N" H 4450 2100 50  0001 L BNN
 F 3 "https://www.onsemi.com/pub/Collateral/LM317L-D.PDF" H 4450 2100 50  0001 C CNN
@@ -275,7 +275,7 @@ F 3 "http://www.vishay.com/docs/85662/bat46.pdf" H 4050 5100 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3450 5100 3900 5100
-Text HLabel 4900 5100 2    50   Output ~ 0
+Text HLabel 5150 5100 2    50   BiDi ~ 0
 J1850_BUS+
 Wire Wire Line
 	4200 5100 4400 5100
@@ -305,8 +305,6 @@ $EndComp
 Wire Wire Line
 	4400 5200 4400 5100
 Connection ~ 4400 5100
-Wire Wire Line
-	4400 5100 4900 5100
 Wire Wire Line
 	4400 5400 4400 5750
 $Comp
@@ -383,7 +381,7 @@ F 3 "http://www.vishay.com/docs/85662/bat46.pdf" H 7800 1950 50  0001 C CNN
 	1    7800 1950
 	0    -1   -1   0   
 $EndComp
-Text HLabel 8750 2500 2    50   Output ~ 0
+Text HLabel 8750 2500 2    50   BiDi ~ 0
 J1850_BUS-
 Wire Wire Line
 	6850 3000 7200 3000
@@ -416,8 +414,6 @@ Wire Wire Line
 	7800 2700 7800 2500
 Wire Wire Line
 	7800 2150 7800 2100
-Wire Wire Line
-	8750 2500 7800 2500
 Connection ~ 7800 2500
 Wire Wire Line
 	7800 2500 7800 2350
@@ -462,4 +458,8 @@ Wire Wire Line
 Connection ~ 1600 6000
 Wire Wire Line
 	1600 6000 1850 6000
+Wire Wire Line
+	7800 2500 8750 2500
+Wire Wire Line
+	4400 5100 5150 5100
 $EndSCHEMATC

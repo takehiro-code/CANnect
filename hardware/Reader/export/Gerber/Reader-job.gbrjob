@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "(5.1.7)-1"
     },
-    "CreationDate":  "2020-10-22T11:39:08-07:00"
+    "CreationDate":  "2020-10-25T19:47:16-07:00"
   },
   "GeneralSpecs":
   {
@@ -22,13 +22,20 @@
       "X": 0.000,
       "Y": 0.000
     },
-    "LayerNumber": 2,
-    "BoardThickness":  1.600
+    "LayerNumber": 4,
+    "BoardThickness":  1.000
   },
   "DesignRules":
   [
     {
       "Layers": "Outer",
+      "PadToPad":  0.200,
+      "PadToTrack":  0.200,
+      "TrackToTrack":  0.200,
+      "MinLineWidth":  0.250
+    },
+    {
+      "Layers": "Inner",
       "PadToPad":  0.200,
       "PadToTrack":  0.200,
       "TrackToTrack":  0.200
@@ -42,8 +49,18 @@
       "FilePolarity":  "Positive"
     },
     {
+      "Path":  "Reader-In1_Cu.gbr",
+      "FileFunction":  "Copper,L2,Inr",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "Reader-In2_Cu.gbr",
+      "FileFunction":  "Copper,L3,Inr",
+      "FilePolarity":  "Positive"
+    },
+    {
       "Path":  "Reader-B_Cu.gbr",
-      "FileFunction":  "Copper,L2,Bot",
+      "FileFunction":  "Copper,L4,Bot",
       "FilePolarity":  "Positive"
     },
     {
@@ -104,6 +121,24 @@
       "Type":  "Dielectric",
       "Material":  "FR4",
       "Notes":  "Layers L1/L2"
+    },
+    {
+      "Type":  "Copper",
+      "Notes":  "Layer In1.Cu"
+    },
+    {
+      "Type":  "Dielectric",
+      "Material":  "FR4",
+      "Notes":  "Layers L2/L3"
+    },
+    {
+      "Type":  "Copper",
+      "Notes":  "Layer In2.Cu"
+    },
+    {
+      "Type":  "Dielectric",
+      "Material":  "FR4",
+      "Notes":  "Layers L3/L4"
     },
     {
       "Type":  "Copper",

@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 15 18
+Sheet 10 19
 Title "CANnect Reader | OBDII Chip (STN2110)"
-Date "2020-10-20"
-Rev "0.0.01"
+Date "2020-10-25"
+Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -18,11 +18,11 @@ L CANtech:STN2120 U?
 U 1 1 5FC0708B
 P 6050 3350
 AR Path="/5F95F80B/5FC0708B" Ref="U?"  Part="1" 
-AR Path="/5F95F80B/5FC0631B/5FC0708B" Ref="IC2"  Part="1" 
-F 0 "IC2" H 6250 3050 50  0000 L CNB
-F 1 "STN2120" H 6250 2950 50  0000 L CNB
+AR Path="/5F95F80B/5FC0631B/5FC0708B" Ref="U_STN_1"  Part="1" 
+F 0 "U_STN_1" H 6250 3000 50  0000 L CNB
+F 1 "STN2120" H 6250 2900 50  0000 L CNB
 F 2 "Package_DFN_QFN:QFN-44-1EP_8x8mm_P0.65mm_EP6.45x6.45mm_ThermalVias" H 7750 2750 50  0001 C CNN
-F 3 "https://www.scantool.net/scantool/downloads/206/stn21xx_ds_c.pdf" H 6250 2850 50  0000 L CNN
+F 3 "https://www.scantool.net/scantool/downloads/206/stn21xx_ds_c.pdf" H 6250 2800 50  0000 L CNN
 	1    6050 3350
 	1    0    0    -1  
 $EndComp
@@ -549,10 +549,10 @@ Wire Wire Line
 Wire Wire Line
 	7350 3300 9400 3300
 $Comp
-L ECS-2033-160-AU:ECS-2033-160-AU X1
+L ECS-2033-160-AU:ECS-2033-160-AU Y_STN_1
 U 1 1 5FDAE336
 P 8000 1250
-F 0 "X1" H 7975 1715 50  0000 C CNN
+F 0 "Y_STN_1" H 7975 1715 50  0000 C CNN
 F 1 "ECS-2033-160-AU (16MHz)" H 7975 1624 50  0000 C CNN
 F 2 "footprints:OSC_ECS-2033-160-AU" H 8000 1250 50  0001 L BNN
 F 3 "ECS Inc" H 8000 1250 50  0001 L BNN
@@ -774,17 +774,6 @@ F 4 "282832-2" H 5100 6200 50  0001 C CNN "Part Name"
 	1    5100 6200
 	0    1    1    0   
 $EndComp
-$Comp
-L PTS647SK38SMTR2LFS:PTS647SK38SMTR2LFS SW_STN_1
-U 1 1 5F93A6E5
-P 4250 5700
-F 0 "SW_STN_1" H 5050 6087 60  0000 C CNN
-F 1 "PTS647SK38SMTR2LFS" H 5050 5981 60  0000 C CNN
-F 2 "footprints:PTS647SK38SMTR2LFS" H 5050 5940 60  0001 C CNN
-F 3 "https://www.ckswitches.com/media/2567/pts647.pdf" H 4250 5700 60  0001 C CNN
-	1    4250 5700
-	1    0    0    -1  
-$EndComp
 Connection ~ 6250 5150
 Wire Wire Line
 	6150 4600 6150 5950
@@ -931,4 +920,15 @@ Wire Wire Line
 Connection ~ 4400 6200
 Wire Wire Line
 	4400 6200 4400 6550
+$Comp
+L PTS647SK38SMTR2LFS:PTS647SK38SMTR2LFS SW_STN_1
+U 1 1 5F93A6E5
+P 4250 5700
+F 0 "SW_STN_1" H 5050 6087 60  0000 C CNN
+F 1 "PTS647SK38SMTR2LFS" H 5050 5981 60  0000 C CNN
+F 2 "footprints:PTS647SK38SMTR2LFS" H 5050 5940 60  0001 C CNN
+F 3 "https://www.ckswitches.com/media/2567/pts647.pdf" H 4250 5700 60  0001 C CNN
+	1    4250 5700
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
