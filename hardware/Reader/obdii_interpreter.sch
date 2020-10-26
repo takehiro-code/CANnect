@@ -38,7 +38,6 @@ S 2450 3050 1350 500
 U 5FA83833
 F0 "ISO 9141/ISO 14230 Transceiver" 50
 F1 "transceiver_iso9141.sch" 50
-F2 "~ISO_RX~" O R 3800 3150 50 
 F3 "~ISO_K_TX~" I R 3800 3250 50 
 F4 "PWR_CTRL" I L 2450 3450 50 
 F5 "~ISO_L_TX~" I R 3800 3350 50 
@@ -131,8 +130,6 @@ Wire Wire Line
 	4750 1900 3800 1900
 Wire Wire Line
 	3800 2000 4750 2000
-Wire Wire Line
-	3800 3150 4750 3150
 Wire Wire Line
 	3800 3250 4750 3250
 Wire Wire Line
@@ -252,4 +249,15 @@ F28 "SW_CAN_MODE0" O L 4750 1100 50
 $EndSheet
 Text HLabel 1400 5300 0    50   Output ~ 0
 ~PWR_CTRL~
+Wire Wire Line
+	3800 2500 4200 2500
+Wire Wire Line
+	4200 2500 4200 3150
+Wire Wire Line
+	4200 3150 4750 3150
+Wire Wire Line
+	2150 4900 2150 4200
+Wire Wire Line
+	2150 4200 2450 4200
+Connection ~ 2150 4900
 $EndSCHEMATC

@@ -89,6 +89,10 @@ F 0 "CN1" H 8350 5095 60  0000 C CNN
 F 1 "AHDF15A-KG-TAXB" H 8350 4989 60  0000 C CNN
 F 2 "footprints:AHDF15A-KG-TAXB" H 8400 3890 60  0001 C CNN
 F 3 "http://www.assmann-wsw.com/fileadmin/datasheets/AHDxxxA-KG-TAxB.pdf" H 8350 4883 60  0000 C CNN
+F 4 "AHDF15A-KG-TAXB" H 8000 4650 50  0001 C CNN "Part Name"
+F 5 "AE11024-ND" H 8000 4650 50  0001 C CNN "digikeypn"
+F 6 "Assmann WSW Components" H 8000 4650 50  0001 C CNN "Manufacturer"
+F 7 "DigiKey Canada" H 8000 4650 50  0001 C CNN "Vendor"
 	1    8000 4650
 	1    0    0    -1  
 $EndComp
@@ -96,16 +100,12 @@ Text GLabel 8800 4800 2    50   BiDi ~ 0
 Pin6_ISO15765-4_CAN_BUS_High
 Text GLabel 8800 5000 2    50   BiDi ~ 0
 Pin14_ISO15765-4_CAN_BUS_Low
-Text GLabel 8800 5200 2    50   Input ~ 0
-Pin4_GnD_Chassis
 Text GLabel 8800 5400 2    50   BiDi ~ 0
 Pin9
 Text GLabel 8800 5600 2    50   BiDi ~ 0
 Pin12
-Text GLabel 8800 6150 2    50   Input ~ 0
+Text GLabel 8800 5200 2    50   Input ~ 0
 Pin4_GnD_Chassis
-Wire Wire Line
-	8350 6150 8350 5900
 Text Notes 8500 1250 2    50   ~ 0
 OBD Connector into Reader through DB15-HD
 $Bitmap
@@ -900,6 +900,9 @@ F 1 "282832-2" V 5445 1328 60  0000 L CNN
 F 2 "footprints:282832-2" H 5550 1140 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" V 5445 1328 60  0001 L CNN
 F 4 "282832-2" H 5150 1200 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 5150 1200 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 5150 1200 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 5150 1200 50  0001 C CNN "digikeypn"
 	1    5150 1200
 	0    -1   -1   0   
 $EndComp
@@ -912,6 +915,9 @@ F 1 "282832-2" V 6395 1328 60  0000 L CNN
 F 2 "footprints:282832-2" H 6500 1140 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" V 6395 1328 60  0001 L CNN
 F 4 "282832-2" H 6100 1200 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 6100 1200 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 6100 1200 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 6100 1200 50  0001 C CNN "digikeypn"
 	1    6100 1200
 	0    -1   -1   0   
 $EndComp
@@ -955,8 +961,6 @@ Text GLabel 7850 4800 0    50   BiDi ~ 0
 Pin2_SAE_J1850_BUS+
 Text GLabel 7850 4700 0    50   BiDi ~ 0
 Pin7_ISO9141_K-Line
-Wire Wire Line
-	8350 6150 8800 6150
 Wire Wire Line
 	8050 5600 7850 5600
 Wire Wire Line
@@ -1109,4 +1113,17 @@ F8 "L-Line" B L 5100 4900 50
 F9 "J1850_BUS+" B L 5100 5000 50 
 F10 "J1850_BUS-" B L 5100 5100 50 
 $EndSheet
+$Comp
+L power:GND #PWR0103
+U 1 1 5F9F2946
+P 9050 5900
+F 0 "#PWR0103" H 9050 5650 50  0001 C CNN
+F 1 "GND" H 9055 5727 50  0000 C CNN
+F 2 "" H 9050 5900 50  0001 C CNN
+F 3 "" H 9050 5900 50  0001 C CNN
+	1    9050 5900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8350 5900 9050 5900
 $EndSCHEMATC

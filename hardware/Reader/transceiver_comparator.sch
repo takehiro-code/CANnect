@@ -99,6 +99,9 @@ F 1 "10k" H 5309 3305 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 5250 3350 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 5250 3350 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 5250 3350 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 5250 3350 50  0001 C CNN "Vendor"
+F 6 "YAG2321CT-ND" H 5250 3350 50  0001 C CNN "digikeypn"
+F 7 "Yageo" H 5250 3350 50  0001 C CNN "Manufacturer"
 	1    5250 3350
 	1    0    0    -1  
 $EndComp
@@ -113,6 +116,9 @@ F 1 "10k" H 5309 3605 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 5250 3650 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 5250 3650 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 5250 3650 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 5250 3650 50  0001 C CNN "Vendor"
+F 6 "YAG2321CT-ND" H 5250 3650 50  0001 C CNN "digikeypn"
+F 7 "Yageo" H 5250 3650 50  0001 C CNN "Manufacturer"
 	1    5250 3650
 	1    0    0    -1  
 $EndComp
@@ -125,6 +131,9 @@ F 1 "10k" V 4945 1650 50  0000 C CNN
 F 2 "footprints:RESC1608X55N" H 5050 1650 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 5050 1650 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 5050 1650 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 5050 1650 50  0001 C CNN "Vendor"
+F 6 "YAG2321CT-ND" H 5050 1650 50  0001 C CNN "digikeypn"
+F 7 "Yageo" H 5050 1650 50  0001 C CNN "Manufacturer"
 	1    5050 1650
 	0    1    1    0   
 $EndComp
@@ -150,6 +159,9 @@ F 1 "10k" H 3591 1945 50  0000 R CNN
 F 2 "footprints:RESC1608X55N" H 3650 1900 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 3650 1900 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 3650 1900 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 3650 1900 50  0001 C CNN "Vendor"
+F 6 "YAG2321CT-ND" H 3650 1900 50  0001 C CNN "digikeypn"
+F 7 "Yageo" H 3650 1900 50  0001 C CNN "Manufacturer"
 	1    3650 1900
 	-1   0    0    1   
 $EndComp
@@ -162,6 +174,9 @@ F 1 "10k" H 3209 1855 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 3150 1900 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 3150 1900 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 3150 1900 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 3150 1900 50  0001 C CNN "Vendor"
+F 6 "YAG2321CT-ND" H 3150 1900 50  0001 C CNN "digikeypn"
+F 7 "Yageo" H 3150 1900 50  0001 C CNN "Manufacturer"
 	1    3150 1900
 	1    0    0    -1  
 $EndComp
@@ -178,6 +193,9 @@ F 1 "10k" H 7759 3205 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 7700 3250 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 7700 3250 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 7700 3250 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 7700 3250 50  0001 C CNN "Vendor"
+F 6 "YAG2321CT-ND" H 7700 3250 50  0001 C CNN "digikeypn"
+F 7 "Yageo" H 7700 3250 50  0001 C CNN "Manufacturer"
 	1    7700 3250
 	1    0    0    -1  
 $EndComp
@@ -196,6 +214,9 @@ F 1 "2.7k" H 6309 3305 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 6250 3350 50  0001 C CNN
 F 3 "https://www.vishay.com/docs/28773/crcwce3.pdf" H 6250 3350 50  0001 C CNN
 F 4 "CRCW06032K70FKEAC" H 6250 3350 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 6250 3350 50  0001 C CNN "Vendor"
+F 6 "Vishay Dale" H 6250 3350 50  0001 C CNN "Manufacturer"
+F 7 "541-5328-1-ND" H 6250 3350 50  0001 C CNN "digikeypn"
 	1    6250 3350
 	1    0    0    -1  
 $EndComp
@@ -208,6 +229,9 @@ F 1 "10k" H 6309 3605 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 6250 3650 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 6250 3650 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 6250 3650 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 6250 3650 50  0001 C CNN "Vendor"
+F 6 "YAG2321CT-ND" H 6250 3650 50  0001 C CNN "digikeypn"
+F 7 "Yageo" H 6250 3650 50  0001 C CNN "Manufacturer"
 	1    6250 3650
 	1    0    0    -1  
 $EndComp
@@ -274,7 +298,11 @@ AR Path="/5F95F80B/5FB4CA84/5FB4E413" Ref="U_COMP_1"  Part="1"
 F 0 "U_COMP_1" H 5800 2587 60  0000 C CNN
 F 1 "LM339N_NOPB" H 5800 2481 60  0000 C CNN
 F 2 "footprints:LM339N&slash_NOPB" H 5800 2440 60  0001 C CNN
-F 3 "" H 4600 2200 60  0000 C CNN
+F 3 "https://www.ti.com/lit/ds/symlink/lm339-n.pdf?ts=1603731355059" H 4600 2200 60  0000 C CNN
+F 4 "LM339N_NOPB" H 4600 2200 50  0001 C CNN "Part Name"
+F 5 "Texas Instruments" H 4600 2200 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 4600 2200 50  0001 C CNN "Vendor"
+F 7 "296-39010-5-ND" H 4600 2200 50  0001 C CNN "digikeypn"
 	1    4600 2200
 	1    0    0    -1  
 $EndComp
@@ -295,6 +323,9 @@ F 1 "10k" V 4945 1050 50  0000 C CNN
 F 2 "footprints:RESC1608X55N" H 5050 1050 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 5050 1050 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 5050 1050 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 5050 1050 50  0001 C CNN "Vendor"
+F 6 "YAG2321CT-ND" H 5050 1050 50  0001 C CNN "digikeypn"
+F 7 "Yageo" H 5050 1050 50  0001 C CNN "Manufacturer"
 	1    5050 1050
 	0    1    1    0   
 $EndComp
@@ -315,6 +346,9 @@ F 1 "10k" H 8459 1955 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 8400 2000 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 8400 2000 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 8400 2000 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 8400 2000 50  0001 C CNN "Vendor"
+F 6 "YAG2321CT-ND" H 8400 2000 50  0001 C CNN "digikeypn"
+F 7 "Yageo" H 8400 2000 50  0001 C CNN "Manufacturer"
 	1    8400 2000
 	1    0    0    -1  
 $EndComp
@@ -355,6 +389,9 @@ F 1 "10k" V 3395 2700 50  0000 C CNN
 F 2 "footprints:RESC1608X55N" H 3500 2700 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 3500 2700 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 3500 2700 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 3500 2700 50  0001 C CNN "Vendor"
+F 6 "YAG2321CT-ND" H 3500 2700 50  0001 C CNN "digikeypn"
+F 7 "Yageo" H 3500 2700 50  0001 C CNN "Manufacturer"
 	1    3500 2700
 	0    -1   -1   0   
 $EndComp

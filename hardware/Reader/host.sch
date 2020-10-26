@@ -100,6 +100,8 @@ F 1 "NodeMCU_ESP32_DevKit" H 5725 10014 50  0000 C CNN
 F 2 "" H 5550 6500 50  0001 C CNN
 F 3 "" H 5550 6500 50  0001 C CNN
 F 4 "https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf" H 5725 9923 50  0000 C CNN "Website"
+F 5 "NodeMCU_ESP32_DevKit" H 5550 6500 50  0001 C CNN "Part Name"
+F 6 "Amazon Canada" H 5550 6500 50  0001 C CNN "Vendor"
 	1    5550 6500
 	1    0    0    -1  
 $EndComp
@@ -123,6 +125,9 @@ F 1 "282832-2" V 2139 3122 60  0000 R CNN
 F 2 "footprints:282832-2" H 2350 3290 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 1950 3350 60  0001 C CNN
 F 4 "282832-2" H 1950 3350 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 1950 3350 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 1950 3350 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 1950 3350 50  0001 C CNN "digikeypn"
 	1    1950 3350
 	0    -1   -1   0   
 $EndComp
@@ -135,6 +140,9 @@ F 1 "282832-2" V 2989 3122 60  0000 R CNN
 F 2 "footprints:282832-2" H 3200 3290 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 2800 3350 60  0001 C CNN
 F 4 "282832-2" H 2800 3350 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 2800 3350 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 2800 3350 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 2800 3350 50  0001 C CNN "digikeypn"
 	1    2800 3350
 	0    -1   -1   0   
 $EndComp
@@ -147,6 +155,9 @@ F 1 "282832-2" V 2745 5628 60  0000 L CNN
 F 2 "footprints:282832-2" H 2850 5440 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 2450 5500 60  0001 C CNN
 F 4 "282832-2" H 2450 5500 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 2450 5500 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 2450 5500 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 2450 5500 50  0001 C CNN "digikeypn"
 	1    2450 5500
 	0    1    1    0   
 $EndComp
@@ -159,6 +170,9 @@ F 1 "282832-2" V 8539 2672 60  0000 R CNN
 F 2 "footprints:282832-2" H 8750 2840 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 8350 2900 60  0001 C CNN
 F 4 "282832-2" H 8350 2900 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 8350 2900 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 8350 2900 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 8350 2900 50  0001 C CNN "digikeypn"
 	1    8350 2900
 	0    -1   -1   0   
 $EndComp
@@ -171,6 +185,9 @@ F 1 "282832-2" V 9439 2672 60  0000 R CNN
 F 2 "footprints:282832-2" H 9650 2840 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 9250 2900 60  0001 C CNN
 F 4 "282832-2" H 9250 2900 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 9250 2900 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 9250 2900 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 9250 2900 50  0001 C CNN "digikeypn"
 	1    9250 2900
 	0    -1   -1   0   
 $EndComp
@@ -264,6 +281,9 @@ F 1 "282832-2" V 9145 4678 60  0000 L CNN
 F 2 "footprints:282832-2" H 9250 4490 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 8850 4550 60  0001 C CNN
 F 4 "282832-2" H 8850 4550 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 8850 4550 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 8850 4550 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 8850 4550 50  0001 C CNN "digikeypn"
 	1    8850 4550
 	0    1    1    0   
 $EndComp
@@ -279,4 +299,42 @@ Wire Wire Line
 Connection ~ 9600 4350
 Wire Wire Line
 	9600 4350 9600 5400
+NoConn ~ 4900 3250
+NoConn ~ 4900 3350
+NoConn ~ 4900 3450
+NoConn ~ 4900 3550
+NoConn ~ 4900 3650
+NoConn ~ 4900 3750
+NoConn ~ 4900 3850
+NoConn ~ 4900 3950
+NoConn ~ 4900 4050
+NoConn ~ 4900 4150
+NoConn ~ 4900 4250
+NoConn ~ 4900 4350
+NoConn ~ 4900 4450
+NoConn ~ 4900 4550
+NoConn ~ 4900 4650
+NoConn ~ 4900 4750
+NoConn ~ 4900 4850
+NoConn ~ 4900 4950
+NoConn ~ 4900 5050
+NoConn ~ 6150 5050
+NoConn ~ 6150 4950
+NoConn ~ 6150 4850
+NoConn ~ 6150 4750
+NoConn ~ 6150 4650
+NoConn ~ 6150 4550
+NoConn ~ 6150 4450
+NoConn ~ 6150 4350
+NoConn ~ 6150 4250
+NoConn ~ 6150 4150
+NoConn ~ 6150 4050
+NoConn ~ 6150 3950
+NoConn ~ 6150 3850
+NoConn ~ 6150 3750
+NoConn ~ 6150 3650
+NoConn ~ 6150 3550
+NoConn ~ 6150 3450
+NoConn ~ 6150 3350
+NoConn ~ 6150 3250
 $EndSCHEMATC

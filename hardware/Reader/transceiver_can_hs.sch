@@ -25,6 +25,10 @@ F 0 "U_HSCAN_1" H 8200 2993 60  0000 C CNN
 F 1 "MCP2562-H_MF" H 8200 2887 60  0000 C CNN
 F 2 "footprints:MCP2562-H&slash_MF" H 8200 2740 60  0001 C CNN
 F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/20005167C.pdf" H 8200 2781 60  0000 C CNN
+F 4 "MCP2562-H_MF" H 7000 2500 50  0001 C CNN "Part Name"
+F 5 "Microchip Technology" H 7000 2500 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 7000 2500 50  0001 C CNN "Vendor"
+F 7 "MCP2562-H/MF-ND" H 7000 2500 50  0001 C CNN "digikeypn"
 	1    7000 2500
 	-1   0    0    -1  
 $EndComp
@@ -37,6 +41,9 @@ F 1 "100" H 2609 3605 50  0000 L CNN
 F 2 "footprints:RESC3216X70N" H 2550 3650 50  0001 C CNN
 F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 2550 3650 50  0001 C CNN
 F 4 "ERJ-8ENF1000V" H 2550 3650 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 2550 3650 50  0001 C CNN "Vendor"
+F 6 "Panasonic Electronic Components" H 2550 3650 50  0001 C CNN "Manufacturer"
+F 7 "P100FCT-ND" H 2550 3650 50  0001 C CNN "digikeypn"
 	1    2550 3650
 	1    0    0    -1  
 $EndComp
@@ -49,6 +56,9 @@ F 1 "100" H 3309 3605 50  0000 L CNN
 F 2 "footprints:RESC3216X70N" H 3250 3650 50  0001 C CNN
 F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 3250 3650 50  0001 C CNN
 F 4 "ERJ-8ENF1000V" H 3250 3650 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 3250 3650 50  0001 C CNN "Vendor"
+F 6 "Panasonic Electronic Components" H 3250 3650 50  0001 C CNN "Manufacturer"
+F 7 "P100FCT-ND" H 3250 3650 50  0001 C CNN "digikeypn"
 	1    3250 3650
 	1    0    0    -1  
 $EndComp
@@ -60,6 +70,10 @@ F 0 "C_HSCAN_1" H 2665 4246 50  0000 L CNN
 F 1 "560pF" H 2665 4155 50  0000 L CNN
 F 2 "footprints:CAPC1608X90" H 2588 4050 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf" H 2550 4200 50  0001 C CNN
+F 4 "CC0603KRX7R9BB561" H 2550 4200 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 2550 4200 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 2550 4200 50  0001 C CNN "Vendor"
+F 7 "311-1079-1-ND" H 2550 4200 50  0001 C CNN "digikeypn"
 	1    2550 4200
 	1    0    0    -1  
 $EndComp
@@ -71,6 +85,10 @@ F 0 "C_HSCAN_2" H 3365 4246 50  0000 L CNN
 F 1 "560pF" H 3365 4155 50  0000 L CNN
 F 2 "footprints:CAPC1608X90" H 3288 4050 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf" H 3250 4200 50  0001 C CNN
+F 4 "CC0603KRX7R9BB561" H 3250 4200 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 3250 4200 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 3250 4200 50  0001 C CNN "Vendor"
+F 7 "311-1079-1-ND" H 3250 4200 50  0001 C CNN "digikeypn"
 	1    3250 4200
 	1    0    0    -1  
 $EndComp
@@ -133,6 +151,10 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 2350 1800 
 F 4 "Nexperia" H 2350 1800 50  0001 L BNN "Field4"
 F 5 "7" H 2350 1800 50  0001 L BNN "Field5"
 F 6 "IPC-7351B" H 2350 1800 50  0001 L BNN "Field6"
+F 7 "NX7002AK,215" H 2350 1800 50  0001 C CNN "Part Name"
+F 8 "Nexperia USA Inc." H 2350 1800 50  0001 C CNN "Manufacturer"
+F 9 "DigiKey Canada" H 2350 1800 50  0001 C CNN "Vendor"
+F 10 "1727-1289-1-ND" H 2350 1800 50  0001 C CNN "digikeypn"
 	1    2350 1800
 	1    0    0    -1  
 $EndComp
@@ -167,6 +189,9 @@ F 1 "100k" H 2509 1305 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 2450 1350 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 2450 1350 50  0001 C CNN
 F 4 "RT0603DRE07100KL" H 2450 1350 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 2450 1350 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 2450 1350 50  0001 C CNN "Vendor"
+F 7 "311-2395-1-ND" H 2450 1350 50  0001 C CNN "digikeypn"
 	1    2450 1350
 	1    0    0    -1  
 $EndComp
@@ -178,6 +203,10 @@ F 0 "C_HSCAN_3" V 7848 2150 50  0000 C CNN
 F 1 "1uF" V 7939 2150 50  0000 C CNN
 F 2 "footprints:0603" H 8138 2000 50  0001 C CNN
 F 3 "https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf" H 8100 2150 50  0001 C CNN
+F 4 "C0603C105K4RACTU" H 8100 2150 50  0001 C CNN "Part Name"
+F 5 "Kermet" H 8100 2150 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 8100 2150 50  0001 C CNN "Vendor"
+F 7 "399-7847-1-ND" H 8100 2150 50  0001 C CNN "digikeypn"
 	1    8100 2150
 	0    1    1    0   
 $EndComp

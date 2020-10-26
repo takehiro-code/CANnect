@@ -25,6 +25,10 @@ F 0 "D_ESD_2" V 4004 3680 50  0000 L CNN
 F 1 "PESD2CAN,215" V 4095 3680 50  0000 L CNN
 F 2 "footprints:SOT95P230X110-3N" H 4050 3450 50  0001 L BNN
 F 3 "https://assets.nexperia.com/documents/data-sheet/PESD2CAN.pdf" H 4050 3450 50  0001 L BNN
+F 4 "PESD2CAN,215" H 4050 3450 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 4050 3450 50  0001 C CNN "Vendor"
+F 6 "Nexperia USA Inc." H 4050 3450 50  0001 C CNN "Manufacturer"
+F 7 "1727-3891-1-ND" H 4050 3450 50  0001 C CNN "digikeypn"
 	1    4050 3450
 	0    1    1    0   
 $EndComp
@@ -113,6 +117,10 @@ F 0 "D_ESD_1" V 2954 3680 50  0000 L CNN
 F 1 "PESD2CAN,215" V 3045 3680 50  0000 L CNN
 F 2 "footprints:SOT95P230X110-3N" H 3000 3450 50  0001 L BNN
 F 3 "https://assets.nexperia.com/documents/data-sheet/PESD2CAN.pdf" H 3000 3450 50  0001 L BNN
+F 4 "PESD2CAN,215" H 3000 3450 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 3000 3450 50  0001 C CNN "Vendor"
+F 6 "Nexperia USA Inc." H 3000 3450 50  0001 C CNN "Manufacturer"
+F 7 "1727-3891-1-ND" H 3000 3450 50  0001 C CNN "digikeypn"
 	1    3000 3450
 	0    1    1    0   
 $EndComp
@@ -221,10 +229,14 @@ AR Path="/5FF6FE24/5FA6BC58/5FA8DC3F" Ref="D_ESD_4"  Part="1"
 F 0 "D_ESD_4" V 6354 3530 50  0000 L CNN
 F 1 "MMBZ27VALT3G" V 6445 3530 50  0000 L CNN
 F 2 "SOT95P237X111-3N" H 6350 3350 50  0001 L BNN
-F 3 "1.11mm" H 6350 3350 50  0001 L BNN
+F 3 "https://www.onsemi.com/pub/Collateral/MMBZ5V6ALT1-D.PDF" H 6350 3350 50  0001 L BNN
 F 4 "20" H 6350 3350 50  0001 L BNN "Field4"
 F 5 "IPC-7351B" H 6350 3350 50  0001 L BNN "Field5"
 F 6 "ON Semiconductor" H 6350 3350 50  0001 L BNN "Field6"
+F 7 "MMBZ27VALT3G" H 6350 3350 50  0001 C CNN "Part Name"
+F 8 "DigiKey Canada" H 6350 3350 50  0001 C CNN "Vendor"
+F 9 "ON Semiconductor" H 6350 3350 50  0001 C CNN "Manufacturer"
+F 10 "MMBZ27VALT3GOSCT-ND" H 6350 3350 50  0001 C CNN "digikeypn"
 	1    6350 3350
 	0    1    1    0   
 $EndComp
@@ -275,6 +287,10 @@ F 3 "https://www.onsemi.com/pub/Collateral/MMBZ5V6ALT1-D.PDF" H 7350 3350 50  00
 F 4 "20" H 7350 3350 50  0001 L BNN "Field4"
 F 5 "IPC-7351B" H 7350 3350 50  0001 L BNN "Field5"
 F 6 "ON Semiconductor" H 7350 3350 50  0001 L BNN "Field6"
+F 7 "MMBZ27VALT3G" H 7350 3350 50  0001 C CNN "Part Name"
+F 8 "DigiKey Canada" H 7350 3350 50  0001 C CNN "Vendor"
+F 9 "ON Semiconductor" H 7350 3350 50  0001 C CNN "Manufacturer"
+F 10 "MMBZ27VALT3GOSCT-ND" H 7350 3350 50  0001 C CNN "digikeypn"
 	1    7350 3350
 	0    1    1    0   
 $EndComp
@@ -290,6 +306,10 @@ F 0 "D_ESD_3" V 5897 2680 60  0000 L CNN
 F 1 "MMBZ27VCLFHT116" V 6003 2680 60  0000 L CNN
 F 2 "footprints:MMBZ27VCLFHT116" H 5800 2690 60  0001 C CNN
 F 3 "http://rohmfs.rohm.com/en/products/databook/datasheet/discrete/diode/zener/mmbz27vclfht116-e.pdf" V 6056 2680 60  0001 L CNN
+F 4 "MMBZ27VCLFHT116" H 5000 2450 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 5000 2450 50  0001 C CNN "Vendor"
+F 6 "Rohm Semiconductor" H 5000 2450 50  0001 C CNN "Manufacturer"
+F 7 "MMBZ27VCLFHT116CT-ND" H 5000 2450 50  0001 C CNN "digikeypn"
 	1    5000 2450
 	0    1    1    0   
 $EndComp

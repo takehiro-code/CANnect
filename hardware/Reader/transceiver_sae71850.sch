@@ -21,6 +21,10 @@ F 0 "U_J1850_1" H 4450 2570 50  0000 C CNN
 F 1 "LM317LDR2G" H 4450 2479 50  0000 C CNN
 F 2 "footprints:SOIC127P600X175-8N" H 4450 2100 50  0001 L BNN
 F 3 "https://www.onsemi.com/pub/Collateral/LM317L-D.PDF" H 4450 2100 50  0001 C CNN
+F 4 "LM317LDR2G" H 4450 2100 50  0001 C CNN "Part Name"
+F 5 "ON Semiconductor" H 4450 2100 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 4450 2100 50  0001 C CNN "Vendor"
+F 7 "LM317LDR2GOSCT-ND" H 4450 2100 50  0001 C CNN "digikeypn"
 	1    4450 2100
 	1    0    0    -1  
 $EndComp
@@ -32,6 +36,10 @@ F 0 "C_J1850_1" H 3615 3096 50  0000 L CNN
 F 1 "0.1uF" H 3615 3005 50  0000 L CNN
 F 2 "footprints:CAPC1608X90" H 3538 2900 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf" H 3500 3050 50  0001 C CNN
+F 4 "CC0603JRX7R8BB104" H 3500 3050 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 3500 3050 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 3500 3050 50  0001 C CNN "Vendor"
+F 7 "311-1777-1-ND" H 3500 3050 50  0001 C CNN "digikeypn"
 	1    3500 3050
 	1    0    0    -1  
 $EndComp
@@ -55,6 +63,9 @@ F 1 "240" V 4345 1400 50  0000 C CNN
 F 2 "footprints:RESC3216X70N" H 4450 1400 50  0001 C CNN
 F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 4450 1400 50  0001 C CNN
 F 4 "ERJ-8ENF2400V" H 4450 1400 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 4450 1400 50  0001 C CNN "Vendor"
+F 6 "Panasonic Electronic Components" H 4450 1400 50  0001 C CNN "Manufacturer"
+F 7 "P240FCT-ND" H 4450 1400 50  0001 C CNN "digikeypn"
 	1    4450 1400
 	0    1    1    0   
 $EndComp
@@ -67,6 +78,9 @@ F 1 "866" H 2841 2345 50  0000 R CNN
 F 2 "footprints:RESC3216X70N" H 2900 2300 50  0001 C CNN
 F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 2900 2300 50  0001 C CNN
 F 4 "ERJ-8ENF8660V" H 2900 2300 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 2900 2300 50  0001 C CNN "Vendor"
+F 6 "Panasonic Electronic Components" H 2900 2300 50  0001 C CNN "Manufacturer"
+F 7 "P866FCT-ND" H 2900 2300 50  0001 C CNN "digikeypn"
 	1    2900 2300
 	-1   0    0    1   
 $EndComp
@@ -90,6 +104,10 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 2000 3000 
 F 4 "Nexperia" H 2000 3000 50  0001 L BNN "Field4"
 F 5 "7" H 2000 3000 50  0001 L BNN "Field5"
 F 6 "IPC-7351B" H 2000 3000 50  0001 L BNN "Field6"
+F 7 "NX7002AK,215" H 2000 3000 50  0001 C CNN "Part Name"
+F 8 "Nexperia USA Inc." H 2000 3000 50  0001 C CNN "Manufacturer"
+F 9 "DigiKey Canada" H 2000 3000 50  0001 C CNN "Vendor"
+F 10 "1727-1289-1-ND" H 2000 3000 50  0001 C CNN "digikeypn"
 	1    2000 3000
 	1    0    0    -1  
 $EndComp
@@ -102,6 +120,9 @@ F 1 "374" H 2959 3005 50  0000 L CNN
 F 2 "footprints:RESC3216X70N" H 2900 3050 50  0001 C CNN
 F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 2900 3050 50  0001 C CNN
 F 4 "ERJ-8ENF3740V" H 2900 3050 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 2900 3050 50  0001 C CNN "Vendor"
+F 6 "Panasonic Electronic Components" H 2900 3050 50  0001 C CNN "Manufacturer"
+F 7 "P374FCT-ND" H 2900 3050 50  0001 C CNN "digikeypn"
 	1    2900 3050
 	1    0    0    -1  
 $EndComp
@@ -153,11 +174,6 @@ Wire Wire Line
 	5400 1050 5400 1400
 Wire Wire Line
 	4550 1400 5400 1400
-Connection ~ 5400 1400
-Wire Wire Line
-	5400 1400 5400 1900
-Wire Wire Line
-	5150 1900 5400 1900
 Wire Notes Line
 	650  4200 5700 4200
 Wire Notes Line
@@ -179,6 +195,10 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 2050 5900 
 F 4 "Nexperia" H 2050 5900 50  0001 L BNN "Field4"
 F 5 "7" H 2050 5900 50  0001 L BNN "Field5"
 F 6 "IPC-7351B" H 2050 5900 50  0001 L BNN "Field6"
+F 7 "NX7002AK,215" H 2050 5900 50  0001 C CNN "Part Name"
+F 8 "Nexperia USA Inc." H 2050 5900 50  0001 C CNN "Manufacturer"
+F 9 "DigiKey Canada" H 2050 5900 50  0001 C CNN "Vendor"
+F 10 "1727-1289-1-ND" H 2050 5900 50  0001 C CNN "digikeypn"
 	1    2050 5900
 	1    0    0    -1  
 $EndComp
@@ -190,6 +210,10 @@ F 0 "Q_J1850_4" V 3600 5700 60  0000 C CNN
 F 1 "RSC002P03T316" V 3500 5700 60  0000 C CNN
 F 2 "footprints:RSC002P03T316" H 3800 5690 60  0001 C CNN
 F 3 "http://rohmfs.rohm.com/en/products/databook/datasheet/discrete/transistor/mosfet/rsc002p03-e.pdf" H 3800 5731 60  0001 C CNN
+F 4 "RSC002P03T316" H 3000 5450 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 3000 5450 50  0001 C CNN "Vendor"
+F 6 "Rohm Semiconductor" H 3000 5450 50  0001 C CNN "Manufacturer"
+F 7 "RSC002P03T316CT-ND" H 3000 5450 50  0001 C CNN "digikeypn"
 	1    3000 5450
 	0    1    -1   0   
 $EndComp
@@ -202,6 +226,9 @@ F 1 "1.5k" H 2209 5255 50  0000 L CNN
 F 2 "footprints:RESC1607X60N" H 2150 5300 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_11.pdf" H 2150 5300 50  0001 C CNN
 F 4 "RC0603FR-071K5L" H 2150 5300 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 2150 5300 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 2150 5300 50  0001 C CNN "Vendor"
+F 7 "311-1.50KHRCT-ND" H 2150 5300 50  0001 C CNN "digikeypn"
 	1    2150 5300
 	1    0    0    -1  
 $EndComp
@@ -240,6 +267,9 @@ F 1 "10k" H 1659 6355 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 1600 6400 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 1600 6400 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 1600 6400 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 1600 6400 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 1600 6400 50  0001 C CNN "Vendor"
+F 7 "YAG2321CT-ND" H 1600 6400 50  0001 C CNN "digikeypn"
 	1    1600 6400
 	1    0    0    -1  
 $EndComp
@@ -270,6 +300,10 @@ F 0 "D_J1850_2" H 4050 4883 50  0000 C CNN
 F 1 "BAT46" H 4050 4974 50  0000 C CNN
 F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 4050 4925 50  0001 C CNN
 F 3 "http://www.vishay.com/docs/85662/bat46.pdf" H 4050 5100 50  0001 C CNN
+F 4 "BAT46" H 4050 5100 50  0001 C CNN "Part Name"
+F 5 "STMicroelectronics" H 4050 5100 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 4050 5100 50  0001 C CNN "Vendor"
+F 7 "497-3768-1-ND" H 4050 5100 50  0001 C CNN "digikeypn"
 	1    4050 5100
 	-1   0    0    1   
 $EndComp
@@ -288,6 +322,9 @@ F 1 "10k" H 4459 5255 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 4400 5300 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 4400 5300 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 4400 5300 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 4400 5300 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 4400 5300 50  0001 C CNN "Vendor"
+F 7 "YAG2321CT-ND" H 4400 5300 50  0001 C CNN "digikeypn"
 	1    4400 5300
 	1    0    0    -1  
 $EndComp
@@ -299,6 +336,10 @@ F 0 "D_J1850_3" V 4446 5820 50  0000 R CNN
 F 1 "BAT46" V 4355 5820 50  0000 R CNN
 F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 4400 5725 50  0001 C CNN
 F 3 "http://www.vishay.com/docs/85662/bat46.pdf" H 4400 5900 50  0001 C CNN
+F 4 "BAT46" H 4400 5900 50  0001 C CNN "Part Name"
+F 5 "STMicroelectronics" H 4400 5900 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 4400 5900 50  0001 C CNN "Vendor"
+F 7 "497-3768-1-ND" H 4400 5900 50  0001 C CNN "digikeypn"
 	1    4400 5900
 	0    -1   -1   0   
 $EndComp
@@ -343,6 +384,10 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 7700 2900 
 F 4 "Nexperia" H 7700 2900 50  0001 L BNN "Field4"
 F 5 "7" H 7700 2900 50  0001 L BNN "Field5"
 F 6 "IPC-7351B" H 7700 2900 50  0001 L BNN "Field6"
+F 7 "NX7002AK,215" H 7700 2900 50  0001 C CNN "Part Name"
+F 8 "Nexperia USA Inc." H 7700 2900 50  0001 C CNN "Manufacturer"
+F 9 "DigiKey Canada" H 7700 2900 50  0001 C CNN "Vendor"
+F 10 "1727-1289-1-ND" H 7700 2900 50  0001 C CNN "digikeypn"
 	1    7700 2900
 	1    0    0    -1  
 $EndComp
@@ -355,6 +400,9 @@ F 1 "10k" H 7259 3405 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 7200 3450 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 7200 3450 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 7200 3450 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 7200 3450 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 7200 3450 50  0001 C CNN "Vendor"
+F 7 "YAG2321CT-ND" H 7200 3450 50  0001 C CNN "digikeypn"
 	1    7200 3450
 	1    0    0    -1  
 $EndComp
@@ -367,6 +415,9 @@ F 1 "10k" H 7859 2205 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 7800 2250 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 7800 2250 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 7800 2250 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 7800 2250 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 7800 2250 50  0001 C CNN "Vendor"
+F 7 "YAG2321CT-ND" H 7800 2250 50  0001 C CNN "digikeypn"
 	1    7800 2250
 	1    0    0    -1  
 $EndComp
@@ -378,6 +429,10 @@ F 0 "D_J1850_1" V 7846 1870 50  0000 R CNN
 F 1 "BAT46" V 7755 1870 50  0000 R CNN
 F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 7800 1775 50  0001 C CNN
 F 3 "http://www.vishay.com/docs/85662/bat46.pdf" H 7800 1950 50  0001 C CNN
+F 4 "BAT46" H 7800 1950 50  0001 C CNN "Part Name"
+F 5 "STMicroelectronics" H 7800 1950 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 7800 1950 50  0001 C CNN "Vendor"
+F 7 "497-3768-1-ND" H 7800 1950 50  0001 C CNN "digikeypn"
 	1    7800 1950
 	0    -1   -1   0   
 $EndComp
@@ -440,7 +495,6 @@ Wire Notes Line
 	9350 1400 6100 1400
 Text Notes 7100 1550 2    50   ~ 0
 J1850 BUS- Transmitter
-NoConn ~ 3750 2200
 Wire Wire Line
 	3500 2000 3750 2000
 Wire Wire Line
@@ -462,4 +516,14 @@ Wire Wire Line
 	7800 2500 8750 2500
 Wire Wire Line
 	4400 5100 5150 5100
+NoConn ~ 3750 2200
+NoConn ~ 3750 2300
+NoConn ~ 5150 2000
+NoConn ~ 5150 2200
+NoConn ~ 5150 2300
+Wire Wire Line
+	5400 1400 5400 1850
+Wire Wire Line
+	5400 1850 5150 1850
+Connection ~ 5400 1400
 $EndSCHEMATC

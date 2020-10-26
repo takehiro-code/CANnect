@@ -22,9 +22,13 @@ P 5900 3500
 AR Path="/5F8ADA45/5FA57921" Ref="MOSFET?"  Part="1" 
 AR Path="/5FA56A4E/5FA57921" Ref="Q_PSW_3"  Part="1" 
 F 0 "Q_PSW_3" V 6489 3500 60  0000 C CNN
-F 1 "IRLML5103TRPBF" V 6383 3500 60  0000 C CNN
-F 2 "footprints:IRLML5103TRPBF" H 6350 3240 60  0001 C CNN
-F 3 "" H 5900 3500 60  0000 C CNN
+F 1 "NX7002AK,215" V 6383 3500 60  0000 C CNN
+F 2 "footprints:SOT95P230X110-3N" H 6350 3240 60  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 5900 3500 60  0000 C CNN
+F 4 "NX7002AK,215" H 5900 3500 50  0001 C CNN "Part Name"
+F 5 "Nexperia USA Inc." H 5900 3500 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 5900 3500 50  0001 C CNN "Vendor"
+F 7 "1727-1289-1-ND" H 5900 3500 50  0001 C CNN "digikeypn"
 	1    5900 3500
 	0    1    -1   0   
 $EndComp
@@ -35,9 +39,13 @@ P 7250 3500
 AR Path="/5F8ADA45/5FA57927" Ref="MOSFET?"  Part="1" 
 AR Path="/5FA56A4E/5FA57927" Ref="Q_PSW_4"  Part="1" 
 F 0 "Q_PSW_4" V 7839 3500 60  0000 C CNN
-F 1 "IRLML5103TRPBF" V 7733 3500 60  0000 C CNN
-F 2 "footprints:IRLML5103TRPBF" H 7700 3240 60  0001 C CNN
-F 3 "" H 7250 3500 60  0000 C CNN
+F 1 "NX7002AK,215" V 7733 3500 60  0000 C CNN
+F 2 "footprints:SOT95P230X110-3N" H 7700 3240 60  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 7250 3500 60  0000 C CNN
+F 4 "NX7002AK,215" H 7250 3500 50  0001 C CNN "Part Name"
+F 5 "Nexperia USA Inc." H 7250 3500 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 7250 3500 50  0001 C CNN "Vendor"
+F 7 "1727-1289-1-ND" H 7250 3500 50  0001 C CNN "digikeypn"
 	1    7250 3500
 	0    1    -1   0   
 $EndComp
@@ -52,6 +60,10 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 3350 3950 
 F 4 "Nexperia" H 3350 3950 50  0001 L BNN "Field4"
 F 5 "7" H 3350 3950 50  0001 L BNN "Field5"
 F 6 "IPC-7351B" H 3350 3950 50  0001 L BNN "Field6"
+F 7 "NX7002AK,215" H 3350 3950 50  0001 C CNN "Part Name"
+F 8 "Nexperia USA Inc." H 3350 3950 50  0001 C CNN "Manufacturer"
+F 9 "DigiKey Canada" H 3350 3950 50  0001 C CNN "Vendor"
+F 10 "1727-1289-1-ND" H 3350 3950 50  0001 C CNN "digikeypn"
 	1    3350 3950
 	1    0    0    -1  
 $EndComp
@@ -62,8 +74,11 @@ P 3450 3250
 F 0 "R_PSW_2" H 3509 3296 50  0000 L CNN
 F 1 "100k" H 3509 3205 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 3450 3250 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 3450 3250 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 3450 3250 50  0001 C CNN
 F 4 "RT0603DRE07100KL" H 3450 3250 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 3450 3250 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 3450 3250 50  0001 C CNN "Vendor"
+F 7 "311-2395-1-ND" H 3450 3250 50  0001 C CNN "digikeypn"
 	1    3450 3250
 	1    0    0    -1  
 $EndComp
@@ -74,8 +89,11 @@ P 2350 3550
 F 0 "R_PSW_1" H 2409 3596 50  0000 L CNN
 F 1 "100k" H 2409 3505 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 2350 3550 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 2350 3550 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 2350 3550 50  0001 C CNN
 F 4 "RT0603DRE07100KL" H 2350 3550 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 2350 3550 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 2350 3550 50  0001 C CNN "Vendor"
+F 7 "311-2395-1-ND" H 2350 3550 50  0001 C CNN "digikeypn"
 	1    2350 3550
 	1    0    0    -1  
 $EndComp
@@ -132,9 +150,13 @@ P 4650 3500
 AR Path="/5F8ADA45/5FA5791B" Ref="MOSFET?"  Part="1" 
 AR Path="/5FA56A4E/5FA5791B" Ref="Q_PSW_2"  Part="1" 
 F 0 "Q_PSW_2" V 5239 3500 60  0000 C CNN
-F 1 "IRLML5103TRPBF" V 5133 3500 60  0000 C CNN
-F 2 "footprints:IRLML5103TRPBF" H 5100 3240 60  0001 C CNN
-F 3 "" H 4650 3500 60  0000 C CNN
+F 1 "NX7002AK,215" V 5133 3500 60  0000 C CNN
+F 2 "footprints:SOT95P230X110-3N" H 5100 3240 60  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 4650 3500 60  0000 C CNN
+F 4 "NX7002AK,215" H 4650 3500 50  0001 C CNN "Part Name"
+F 5 "Nexperia USA Inc." H 4650 3500 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 4650 3500 50  0001 C CNN "Vendor"
+F 7 "1727-1289-1-ND" H 4650 3500 50  0001 C CNN "digikeypn"
 	1    4650 3500
 	0    1    -1   0   
 $EndComp
@@ -235,6 +257,9 @@ F 1 "282832-2" V 4995 2228 60  0000 L CNN
 F 2 "footprints:282832-2" H 5100 2040 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 4700 2100 60  0001 C CNN
 F 4 "282832-2" H 4700 2100 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 4700 2100 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 4700 2100 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 4700 2100 50  0001 C CNN "digikeypn"
 	1    4700 2100
 	0    1    1    0   
 $EndComp
@@ -271,6 +296,9 @@ F 1 "282832-2" V 6245 2228 60  0000 L CNN
 F 2 "footprints:282832-2" H 6350 2040 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 5950 2100 60  0001 C CNN
 F 4 "282832-2" H 5950 2100 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 5950 2100 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 5950 2100 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 5950 2100 50  0001 C CNN "digikeypn"
 	1    5950 2100
 	0    1    1    0   
 $EndComp
@@ -283,6 +311,9 @@ F 1 "282832-2" V 7595 2228 60  0000 L CNN
 F 2 "footprints:282832-2" H 7700 2040 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 7300 2100 60  0001 C CNN
 F 4 "282832-2" H 7300 2100 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 7300 2100 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 7300 2100 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 7300 2100 50  0001 C CNN "digikeypn"
 	1    7300 2100
 	0    1    1    0   
 $EndComp

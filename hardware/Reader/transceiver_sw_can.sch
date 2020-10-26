@@ -30,7 +30,11 @@ P 7150 2450
 F 0 "U_SWCAN_1" H 8350 2837 60  0000 C CNN
 F 1 "TH8056KDC-AAA-014-RE" H 8350 2731 60  0000 C CNN
 F 2 "footprints:TH8056KDC-AAA-014-RE" H 8350 2690 60  0001 C CNN
-F 3 "" H 7150 2450 60  0000 C CNN
+F 3 "https://www.melexis.com/-/media/files/documents/product-flyers/th8056-product-flyer-melexis.pdf" H 8550 2600 60  0000 C CNN
+F 4 "TH8056KDC-AAA-014-RE" H 7150 2450 50  0001 C CNN "Part Name"
+F 5 "Melexis Technologies NV" H 7150 2450 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 7150 2450 50  0001 C CNN "Vendor"
+F 7 "TH8056KDC-AAA-014-RECT-ND" H 7150 2450 50  0001 C CNN "digikeypn"
 	1    7150 2450
 	-1   0    0    -1  
 $EndComp
@@ -65,6 +69,9 @@ F 1 "130" H 2659 4505 50  0000 L CNN
 F 2 "footprints:RESC0603X26N" H 2600 4550 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_11.pdf" H 2600 4550 50  0001 C CNN
 F 4 "RC0201FR-07130RL" H 2600 4550 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 2600 4550 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 2600 4550 50  0001 C CNN "Vendor"
+F 7 "YAG2394CT-ND" H 2600 4550 50  0001 C CNN "digikeypn"
 	1    2600 4550
 	1    0    0    -1  
 $EndComp
@@ -81,6 +88,10 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 2500 5050 
 F 4 "Nexperia" H 2500 5050 50  0001 L BNN "Field4"
 F 5 "7" H 2500 5050 50  0001 L BNN "Field5"
 F 6 "IPC-7351B" H 2500 5050 50  0001 L BNN "Field6"
+F 7 "NX7002AK,215" H 2500 5050 50  0001 C CNN "Part Name"
+F 8 "Nexperia USA Inc." H 2500 5050 50  0001 C CNN "Manufacturer"
+F 9 "DigiKey Canada" H 2500 5050 50  0001 C CNN "Vendor"
+F 10 "1727-1289-1-ND" H 2500 5050 50  0001 C CNN "digikeypn"
 	1    2500 5050
 	1    0    0    -1  
 $EndComp
@@ -93,6 +104,9 @@ F 1 "10k" H 2009 5355 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 1950 5400 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 1950 5400 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 1950 5400 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 1950 5400 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 1950 5400 50  0001 C CNN "Vendor"
+F 7 "YAG2321CT-ND" H 1950 5400 50  0001 C CNN "digikeypn"
 	1    1950 5400
 	1    0    0    -1  
 $EndComp
@@ -142,6 +156,9 @@ F 1 "6.49k 0.12W" H 2909 2805 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 2850 2850 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 2850 2850 50  0001 C CNN
 F 4 "RC0805FR-076K49L" H 2850 2850 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 2850 2850 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 2850 2850 50  0001 C CNN "Vendor"
+F 7 "311-6.49KCRCT-ND" H 2850 2850 50  0001 C CNN "digikeypn"
 	1    2850 2850
 	1    0    0    -1  
 $EndComp
@@ -198,6 +215,9 @@ F 1 "4.7uF 25V" V 4139 3900 50  0000 C CNN
 F 2 "footprints:C1206C475K3RACAUTO" H 4338 3750 50  0001 C CNN
 F 3 "https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf" H 4300 3900 50  0001 C CNN
 F 4 "C1206C475K3RACAUTO" H 4300 3900 50  0001 C CNN "Part Name"
+F 5 "Kermet" H 4300 3900 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 4300 3900 50  0001 C CNN "Vendor"
+F 7 "399-7029-1-ND" H 4300 3900 50  0001 C CNN "digikeypn"
 	1    4300 3900
 	0    1    1    0   
 $EndComp
@@ -297,6 +317,9 @@ F 1 "10k" H 7491 3195 50  0000 R CNN
 F 2 "footprints:RESC1608X55N" H 7550 3150 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 7550 3150 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 7550 3150 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 7550 3150 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 7550 3150 50  0001 C CNN "Vendor"
+F 7 "YAG2321CT-ND" H 7550 3150 50  0001 C CNN "digikeypn"
 	1    7550 3150
 	-1   0    0    1   
 $EndComp
@@ -309,6 +332,9 @@ F 1 "1k" H 8291 2245 50  0000 R CNN
 F 2 "footprints:RC1608F102CS" H 8350 2200 50  0001 C CNN
 F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/RC_Series_ds.pdf" H 8350 2200 50  0001 C CNN
 F 4 "RC1608F102CS" H 8350 2200 50  0001 C CNN "Part Name"
+F 5 "Samsung Electro-Mechanics" H 8350 2200 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 8350 2200 50  0001 C CNN "Vendor"
+F 7 "1276-3484-1-ND" H 8350 2200 50  0001 C CNN "digikeypn"
 	1    8350 2200
 	-1   0    0    1   
 $EndComp
@@ -337,6 +363,9 @@ F 1 "1.5k" H 8891 2245 50  0000 R CNN
 F 2 "footprints:RESC1607X60N" H 8950 2200 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_11.pdf" H 8950 2200 50  0001 C CNN
 F 4 "RC0603FR-071K5L" H 8950 2200 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 8950 2200 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 8950 2200 50  0001 C CNN "Vendor"
+F 7 "311-1.50KHRCT-ND" H 8950 2200 50  0001 C CNN "digikeypn"
 	1    8950 2200
 	-1   0    0    1   
 $EndComp
@@ -364,6 +393,9 @@ F 1 "10k" H 8091 3195 50  0000 R CNN
 F 2 "footprints:RESC1608X55N" H 8150 3150 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 8150 3150 50  0001 C CNN
 F 4 "RT0603FRE0710KL" H 8150 3150 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 8150 3150 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 8150 3150 50  0001 C CNN "Vendor"
+F 7 "YAG2321CT-ND" H 8150 3150 50  0001 C CNN "digikeypn"
 	1    8150 3150
 	-1   0    0    1   
 $EndComp
@@ -386,6 +418,9 @@ F 1 "282832-2" H 3128 3700 60  0000 L CNN
 F 2 "footprints:282832-2" H 3000 3690 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 3128 3594 60  0001 L CNN
 F 4 "282832-2" H 2600 3750 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 2600 3750 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 2600 3750 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 2600 3750 50  0001 C CNN "digikeypn"
 	1    2600 3750
 	1    0    0    -1  
 $EndComp
@@ -421,6 +456,10 @@ F 0 "C_SWCAN_1" H 2165 3096 50  0000 L CNN
 F 1 "150pF" H 2165 3005 50  0000 L CNN
 F 2 "footprints:CAPC1005X55N" H 2088 2900 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GP_NP0_16V-to-50V_18.pdf" H 2050 3050 50  0001 C CNN
+F 4 "CC0402JRNPO8BN151" H 2050 3050 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 2050 3050 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 2050 3050 50  0001 C CNN "Vendor"
+F 7 "311-3747-1-ND" H 2050 3050 50  0001 C CNN "digikeypn"
 	1    2050 3050
 	1    0    0    -1  
 $EndComp

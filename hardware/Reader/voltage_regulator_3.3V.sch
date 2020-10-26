@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 17 19
+Sheet 19 19
 Title "CANnect Reader | Voltage Regulator (3.3V)"
 Date "2020-10-25"
 Rev "0.0.03"
@@ -23,6 +23,10 @@ F 0 "U_VR2" H 5250 2687 60  0000 C CNN
 F 1 "MAX25276ATCA_VY+" H 5250 2581 60  0000 C CNN
 F 2 "footprints:MAX25276ATCA&slash_VY&plus_" H 5250 2540 60  0001 C CNN
 F 3 "https://datasheets.maximintegrated.com/en/ds/MAX20075-MAX25276.pdf" H 5250 2850 60  0000 C CNN
+F 4 "MAX25276ATCA/VY+" H 4450 2300 50  0001 C CNN "Part Name"
+F 5 "Maxim Integrated" H 4450 2300 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 4450 2300 50  0001 C CNN "Vendor"
+F 7 "175-MAX25276ATCA/VY+-ND" H 4450 2300 50  0001 C CNN "digikeypn"
 	1    4450 2300
 	1    0    0    -1  
 $EndComp
@@ -84,6 +88,9 @@ F 1 "4.7uF" V 3239 2400 50  0000 C CNN
 F 2 "footprints:C1206C475K3RACAUTO" H 3438 2250 50  0001 C CNN
 F 3 "https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf" H 3400 2400 50  0001 C CNN
 F 4 "C1206C475K3RACAUTO" H 3400 2400 50  0001 C CNN "Part Name"
+F 5 "Kermet" H 3400 2400 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 3400 2400 50  0001 C CNN "Vendor"
+F 7 "399-7029-1-ND" H 3400 2400 50  0001 C CNN "digikeypn"
 	1    3400 2400
 	0    1    1    0   
 $EndComp
@@ -111,6 +118,10 @@ F 0 "L_VR2" H 7353 3096 50  0000 L CNN
 F 1 "4.7uH" H 7353 3005 50  0000 L CNN
 F 2 "footprints:CV201210-4R7K" H 7300 3050 50  0001 C CNN
 F 3 "https://www.bourns.com/docs/Product-Datasheets/CV201210.pdf" H 7300 3050 50  0001 C CNN
+F 4 "CV201210-4R7K" H 7300 3050 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 7300 3050 50  0001 C CNN "Vendor"
+F 6 "Bourns Inc." H 7300 3050 50  0001 C CNN "Manufacturer"
+F 7 "CV201210-4R7KCT-ND" H 7300 3050 50  0001 C CNN "digikeypn"
 	1    7300 3050
 	1    0    0    -1  
 $EndComp
@@ -129,6 +140,10 @@ F 0 "C_VR2_BST1" H 3715 3496 50  0000 L CNN
 F 1 "0.1uF" H 3715 3405 50  0000 L CNN
 F 2 "footprints:CAPC1608X90" H 3638 3300 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf" H 3600 3450 50  0001 C CNN
+F 4 "CC0603JRX7R8BB104" H 3600 3450 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 3600 3450 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 3600 3450 50  0001 C CNN "Vendor"
+F 7 "311-1777-1-ND" H 3600 3450 50  0001 C CNN "digikeypn"
 	1    3600 3450
 	1    0    0    -1  
 $EndComp
@@ -184,6 +199,10 @@ F 0 "C_VR2_BIAS1" H 3365 4346 50  0000 L CNN
 F 1 "1uF" H 3365 4255 50  0000 L CNN
 F 2 "footprints:0603" H 3288 4150 50  0001 C CNN
 F 3 "https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf" H 3250 4300 50  0001 C CNN
+F 4 "C0603C105K4RACTU" H 3250 4300 50  0001 C CNN "Part Name"
+F 5 "Kermet" H 3250 4300 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 3250 4300 50  0001 C CNN "Vendor"
+F 7 "399-7847-1-ND" H 3250 4300 50  0001 C CNN "digikeypn"
 	1    3250 4300
 	1    0    0    -1  
 $EndComp
@@ -211,6 +230,9 @@ F 1 "115k" H 6859 3055 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 6800 3100 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 6800 3100 50  0001 C CNN
 F 4 "RT0402DRE07115KL" H 6800 3100 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 6800 3100 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 6800 3100 50  0001 C CNN "Vendor"
+F 7 "311-2218-1-ND" H 6800 3100 50  0001 C CNN "digikeypn"
 	1    6800 3100
 	1    0    0    -1  
 $EndComp
@@ -223,6 +245,9 @@ F 1 "50k" V 6245 2300 50  0000 C CNN
 F 2 "footprints:RESC1608X55N" H 6350 2300 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 6350 2300 50  0001 C CNN
 F 4 "RT1206BRD0750KL" H 6350 2300 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 6350 2300 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 6350 2300 50  0001 C CNN "Vendor"
+F 7 "13-RT1206BRD0750KLCT-ND" H 6350 2300 50  0001 C CNN "digikeypn"
 	1    6350 2300
 	0    1    1    0   
 $EndComp

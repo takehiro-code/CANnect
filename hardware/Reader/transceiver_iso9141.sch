@@ -14,12 +14,6 @@ Comment3 ""
 Comment4 "Component Identifier: ISO"
 $EndDescr
 Wire Wire Line
-	4450 2250 5300 2250
-Wire Wire Line
-	4450 3400 4450 2250
-Wire Wire Line
-	4400 3400 4450 3400
-Wire Wire Line
 	5600 2050 5600 1900
 $Comp
 L power:+12V #PWR0124
@@ -44,8 +38,6 @@ F 3 "" H 5600 3900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5600 2800 5600 2850
-Wire Wire Line
 	5600 2600 5600 2450
 $Comp
 L Device:R_Small R_ISO_2
@@ -56,6 +48,9 @@ F 1 "510k/0.5W" H 5541 2745 50  0000 R CNN
 F 2 "footprints:RESC2012X70N" H 5600 2700 50  0001 C CNN
 F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDO0000/AOA0000C331.pdf" H 5600 2700 50  0001 C CNN
 F 4 "ERJ-P06J514V" H 5600 2700 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 5600 2700 50  0001 C CNN "Vendor"
+F 6 "Panasonic Electronic Components" H 5600 2700 50  0001 C CNN "Manufacturer"
+F 7 "P510KADCT-ND" H 5600 2700 50  0001 C CNN "digikeypn"
 	1    5600 2700
 	-1   0    0    1   
 $EndComp
@@ -74,18 +69,21 @@ F 1 "1k" V 4995 3150 50  0000 C CNN
 F 2 "footprints:RC1608F102CS" H 5100 3150 50  0001 C CNN
 F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/RC_Series_ds.pdf" H 5100 3150 50  0001 C CNN
 F 4 "RC1608F102CS" H 5100 3150 50  0001 C CNN "Part Name"
+F 5 "Samsung Electro-Mechanics" H 5100 3150 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 5100 3150 50  0001 C CNN "Vendor"
+F 7 "1276-3484-1-ND" H 5100 3150 50  0001 C CNN "digikeypn"
 	1    5100 3150
 	0    1    1    0   
 $EndComp
 $Comp
 L power:GND #PWR0126
 U 1 1 5FA99780
-P 5600 5350
-F 0 "#PWR0126" H 5600 5100 50  0001 C CNN
-F 1 "GND" H 5605 5177 50  0000 C CNN
-F 2 "" H 5600 5350 50  0001 C CNN
-F 3 "" H 5600 5350 50  0001 C CNN
-	1    5600 5350
+P 5600 5400
+F 0 "#PWR0126" H 5600 5150 50  0001 C CNN
+F 1 "GND" H 5605 5227 50  0000 C CNN
+F 2 "" H 5600 5400 50  0001 C CNN
+F 3 "" H 5600 5400 50  0001 C CNN
+	1    5600 5400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -104,12 +102,16 @@ Wire Wire Line
 $Comp
 L Transistor_BJT:MMBT3904 Q_ISO_5
 U 1 1 5FA953EB
-P 5500 5150
-F 0 "Q_ISO_5" H 5690 5196 50  0000 L CNN
-F 1 "MMBT3904WT1G" H 5690 5105 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 5700 5075 50  0001 L CIN
-F 3 "https://www.onsemi.com/pub/Collateral/MMBT3904WT1-D.PDF" H 5500 5150 50  0001 L CNN
-	1    5500 5150
+P 5500 5200
+F 0 "Q_ISO_5" H 5690 5246 50  0000 L CNN
+F 1 "MMBT3904WT1G" H 5690 5155 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 5700 5125 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/MMBT3904WT1-D.PDF" H 5500 5200 50  0001 L CNN
+F 4 "MMBT3904WT1G" H 5500 5200 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 5500 5200 50  0001 C CNN "Vendor"
+F 6 "ON Semiconductor" H 5500 5200 50  0001 C CNN "Manufacturer"
+F 7 "MMBT3904WT1GOSCT-ND" H 5500 5200 50  0001 C CNN "digikeypn"
+	1    5500 5200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -120,6 +122,10 @@ F 0 "Q_ISO_3" H 5690 3196 50  0000 L CNN
 F 1 "MMBT3904WT1G" H 5690 3105 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 5700 3075 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/MMBT3904WT1-D.PDF" H 5500 3150 50  0001 L CNN
+F 4 "MMBT3904WT1G" H 5500 3150 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 5500 3150 50  0001 C CNN "Vendor"
+F 6 "ON Semiconductor" H 5500 3150 50  0001 C CNN "Manufacturer"
+F 7 "MMBT3904WT1GOSCT-ND" H 5500 3150 50  0001 C CNN "digikeypn"
 	1    5500 3150
 	1    0    0    -1  
 $EndComp
@@ -132,6 +138,9 @@ F 1 "510k/0.5W" H 5541 4695 50  0000 R CNN
 F 2 "footprints:RESC2012X70N" H 5600 4650 50  0001 C CNN
 F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDO0000/AOA0000C331.pdf" H 5600 4650 50  0001 C CNN
 F 4 "ERJ-P06J514V" H 5600 4650 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 5600 4650 50  0001 C CNN "Vendor"
+F 6 "Panasonic Electronic Components" H 5600 4650 50  0001 C CNN "Manufacturer"
+F 7 "P510KADCT-ND" H 5600 4650 50  0001 C CNN "digikeypn"
 	1    5600 4650
 	-1   0    0    1   
 $EndComp
@@ -142,7 +151,11 @@ P 5300 4250
 F 0 "Q_ISO_4" H 5730 4197 60  0000 L CNN
 F 1 "IRLML5103TRPBF" H 5730 4303 60  0000 L CNN
 F 2 "footprints:IRLML5103TRPBF" H 5750 3990 60  0001 C CNN
-F 3 "" H 5300 4250 60  0000 C CNN
+F 3 "https://www.infineon.com/dgdl/irlml5103pbf.pdf?fileId=5546d462533600a401535668505d2617" H 5300 4250 60  0001 C CNN
+F 4 "IRLML5103TRPBF" H 5300 4250 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 5300 4250 50  0001 C CNN "Vendor"
+F 6 "Infineon Technologies" H 5300 4250 50  0001 C CNN "Manufacturer"
+F 7 "IRLML5103PBFCT-ND" H 5300 4250 50  0001 C CNN "digikeypn"
 	1    5300 4250
 	1    0    0    1   
 $EndComp
@@ -153,59 +166,66 @@ P 5300 2250
 F 0 "Q_ISO_1" H 5730 2197 60  0000 L CNN
 F 1 "IRLML5103TRPBF" H 5730 2303 60  0000 L CNN
 F 2 "footprints:IRLML5103TRPBF" H 5750 1990 60  0001 C CNN
-F 3 "" H 5300 2250 60  0000 C CNN
+F 3 "https://www.infineon.com/dgdl/irlml5103pbf.pdf?fileId=5546d462533600a401535668505d2617" H 5300 2250 60  0001 C CNN
+F 4 "IRLML5103TRPBF" H 5300 2250 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 5300 2250 50  0001 C CNN "Vendor"
+F 6 "Infineon Technologies" H 5300 2250 50  0001 C CNN "Manufacturer"
+F 7 "IRLML5103PBFCT-ND" H 5300 2250 50  0001 C CNN "digikeypn"
 	1    5300 2250
 	1    0    0    1   
 $EndComp
 Text HLabel 4900 3150 0    50   Input ~ 0
 ~ISO_K_TX~
-Text HLabel 4400 3400 0    50   Input ~ 0
-PWR_CTRL
-Connection ~ 5600 2850
-Wire Wire Line
-	5600 2850 5600 2950
-Wire Wire Line
-	4450 3400 4450 4250
-Wire Wire Line
-	4450 4250 5300 4250
-Connection ~ 4450 3400
-Text HLabel 4900 5150 0    50   Input ~ 0
+Text HLabel 4900 5200 0    50   Input ~ 0
 ~ISO_L_TX~
 $Comp
 L Device:R_Small R_ISO_4
 U 1 1 5FAABEED
-P 5100 5150
-F 0 "R_ISO_4" V 4904 5150 50  0000 C CNN
-F 1 "1k" V 4995 5150 50  0000 C CNN
-F 2 "footprints:RC1608F102CS" H 5100 5150 50  0001 C CNN
-F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/RC_Series_ds.pdf" H 5100 5150 50  0001 C CNN
-F 4 "RC1608F102CS" H 5100 5150 50  0001 C CNN "Part Name"
-	1    5100 5150
+P 5100 5200
+F 0 "R_ISO_4" V 4904 5200 50  0000 C CNN
+F 1 "1k" V 4995 5200 50  0000 C CNN
+F 2 "footprints:RC1608F102CS" H 5100 5200 50  0001 C CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/RC_Series_ds.pdf" H 5100 5200 50  0001 C CNN
+F 4 "RC1608F102CS" H 5100 5200 50  0001 C CNN "Part Name"
+F 5 "Samsung Electro-Mechanics" H 5100 5200 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 5100 5200 50  0001 C CNN "Vendor"
+F 7 "1276-3484-1-ND" H 5100 5200 50  0001 C CNN "digikeypn"
+	1    5100 5200
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	4900 5150 5000 5150
+	4900 5200 5000 5200
 Wire Wire Line
-	5200 5150 5300 5150
-Text HLabel 6800 3650 0    50   BiDi ~ 0
+	5200 5200 5300 5200
+Text HLabel 6700 2900 2    50   BiDi ~ 0
 K-Line
+Text HLabel 6700 4850 2    50   BiDi ~ 0
+L-Line
 Wire Wire Line
-	5600 2850 7150 2850
-Connection ~ 5600 4850
+	5600 2800 5600 2900
 Wire Wire Line
 	5600 4750 5600 4850
 Wire Wire Line
-	5600 4850 5600 4950
-Text HLabel 6800 3850 0    50   BiDi ~ 0
-L-Line
+	5600 2900 6700 2900
+Connection ~ 5600 2900
 Wire Wire Line
-	6800 3650 7150 3650
+	5600 2900 5600 2950
 Wire Wire Line
-	5600 4850 7150 4850
+	5600 4850 6700 4850
+Connection ~ 5600 4850
 Wire Wire Line
-	7150 3850 6800 3850
+	5600 4850 5600 5000
 Wire Wire Line
-	7150 4850 7150 3850
+	4450 4250 5300 4250
 Wire Wire Line
-	7150 3650 7150 2850
+	4450 2250 5300 2250
+Wire Wire Line
+	4450 3400 4450 2250
+Wire Wire Line
+	4400 3400 4450 3400
+Text HLabel 4400 3400 0    50   Input ~ 0
+PWR_CTRL
+Wire Wire Line
+	4450 3400 4450 4250
+Connection ~ 4450 3400
 $EndSCHEMATC

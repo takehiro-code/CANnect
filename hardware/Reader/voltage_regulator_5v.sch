@@ -20,7 +20,11 @@ P 3800 2200
 F 0 "U_VR1" H 4600 2587 60  0000 C CNN
 F 1 "MAX25276ATCA_VY+" H 4600 2481 60  0000 C CNN
 F 2 "footprints:MAX25276ATCA&slash_VY&plus_" H 4600 2440 60  0001 C CNN
-F 3 "" H 3800 2200 60  0000 C CNN
+F 3 "https://datasheets.maximintegrated.com/en/ds/MAX20075-MAX25276.pdf" H 3800 2200 60  0000 C CNN
+F 4 "MAX25276ATCA/VY+" H 3800 2200 50  0001 C CNN "Part Name"
+F 5 "Maxim Integrated" H 3800 2200 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 3800 2200 50  0001 C CNN "Vendor"
+F 7 "175-MAX25276ATCA/VY+-ND" H 3800 2200 50  0001 C CNN "digikeypn"
 	1    3800 2200
 	1    0    0    -1  
 $EndComp
@@ -80,6 +84,9 @@ F 1 "4.7uF" V 2589 2300 50  0000 C CNN
 F 2 "footprints:C1206C475K3RACAUTO" H 2788 2150 50  0001 C CNN
 F 3 "https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf" H 2750 2300 50  0001 C CNN
 F 4 "C1206C475K3RACAUTO" H 2750 2300 50  0001 C CNN "Part Name"
+F 5 "Kermet" H 2750 2300 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 2750 2300 50  0001 C CNN "Vendor"
+F 7 "399-7029-1-ND" H 2750 2300 50  0001 C CNN "digikeypn"
 	1    2750 2300
 	0    1    1    0   
 $EndComp
@@ -107,6 +114,10 @@ F 0 "L_VR1" H 6703 2996 50  0000 L CNN
 F 1 "4.7uH" H 6703 2905 50  0000 L CNN
 F 2 "footprints:CV201210-4R7K" H 6650 2950 50  0001 C CNN
 F 3 "https://www.bourns.com/docs/Product-Datasheets/CV201210.pdf" H 6650 2950 50  0001 C CNN
+F 4 "CV201210-4R7K" H 6650 2950 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 6650 2950 50  0001 C CNN "Vendor"
+F 6 "Bourns Inc." H 6650 2950 50  0001 C CNN "Manufacturer"
+F 7 "CV201210-4R7KCT-ND" H 6650 2950 50  0001 C CNN "digikeypn"
 	1    6650 2950
 	1    0    0    -1  
 $EndComp
@@ -123,6 +134,10 @@ F 0 "C_VR1_BST1" H 2865 3396 50  0000 L CNN
 F 1 "0.1uF" H 2865 3305 50  0000 L CNN
 F 2 "footprints:CAPC1608X90" H 2788 3200 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf" H 2750 3350 50  0001 C CNN
+F 4 "CC0603JRX7R8BB104" H 2750 3350 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 2750 3350 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 2750 3350 50  0001 C CNN "Vendor"
+F 7 "311-1777-1-ND" H 2750 3350 50  0001 C CNN "digikeypn"
 	1    2750 3350
 	1    0    0    -1  
 $EndComp
@@ -172,6 +187,10 @@ F 0 "C_VR1_BIAS1" H 6065 4546 50  0000 L CNN
 F 1 "1uF" H 6065 4455 50  0000 L CNN
 F 2 "footprints:0603" H 5988 4350 50  0001 C CNN
 F 3 "https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf" H 5950 4500 50  0001 C CNN
+F 4 "C0603C105K4RACTU" H 5950 4500 50  0001 C CNN "Part Name"
+F 5 "Kermet" H 5950 4500 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 5950 4500 50  0001 C CNN "Vendor"
+F 7 "399-7847-1-ND" H 5950 4500 50  0001 C CNN "digikeypn"
 	1    5950 4500
 	1    0    0    -1  
 $EndComp

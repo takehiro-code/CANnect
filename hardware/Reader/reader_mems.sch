@@ -22,10 +22,14 @@ AR Path="/5F988046/5F9A440D" Ref="U_MM_1"  Part="1"
 F 0 "U_MM_1" H 6550 4167 50  0000 C CNN
 F 1 "LSM6DSMTR" H 6550 4076 50  0000 C CNN
 F 2 "footprints:PQFN50P300X250X86-14N" H 6550 3400 50  0001 L BNN
-F 3 "STMicroelectronics" H 6550 3400 50  0001 L BNN
+F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/76/27/cf/88/c5/03/42/6b/DM00218116.pdf/files/DM00218116.pdf/jcr:content/translations/en.DM00218116.pdf" H 6550 3400 50  0001 L BNN
 F 4 "0.86 mm" H 6550 3400 50  0001 L BNN "Field4"
 F 5 "Rev 7" H 6550 3400 50  0001 L BNN "Field5"
 F 6 "IPC 7351B" H 6550 3400 50  0001 L BNN "Field6"
+F 7 "LSM6DSMTR" H 6550 3400 50  0001 C CNN "Part Name"
+F 8 "STMicroelectronics" H 6550 3400 50  0001 C CNN "Manufacturer"
+F 9 "DigiKey Canada" H 6550 3400 50  0001 C CNN "Vendor"
+F 10 "497-16696-1-ND" H 6550 3400 50  0001 C CNN "digikeypn"
 	1    6550 3400
 	1    0    0    -1  
 $EndComp
@@ -52,6 +56,10 @@ F 0 "C_MM_1" H 7865 3196 50  0000 L CNN
 F 1 "100nF" H 7865 3105 50  0000 L CNN
 F 2 "footprints:FA16C0G2A104JRU06" H 7788 3000 50  0001 C CNN
 F 3 "https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fa_en.pdf" H 7750 3150 50  0001 C CNN
+F 4 "C1608X7R2A103K080AA" H 7750 3150 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 7750 3150 50  0001 C CNN "Vendor"
+F 6 "TDK Corporation" H 7750 3150 50  0001 C CNN "Manufacturer"
+F 7 "445-1304-1-ND" H 7750 3150 50  0001 C CNN "digikeypn"
 	1    7750 3150
 	1    0    0    -1  
 $EndComp
