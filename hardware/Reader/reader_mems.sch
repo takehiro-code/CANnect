@@ -5,7 +5,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 14 19
 Title "CANnect Reader | MEMs"
-Date "2020-10-25"
+Date "2020-10-27"
 Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
@@ -101,12 +101,9 @@ $EndComp
 Wire Wire Line
 	7450 2900 7750 2900
 Wire Wire Line
-	7750 2900 7750 2800
-Wire Wire Line
 	7450 3000 7750 3000
 Wire Wire Line
 	7750 2900 7750 3000
-Connection ~ 7750 2900
 Connection ~ 7750 3000
 NoConn ~ 7450 3400
 NoConn ~ 7450 3500
@@ -122,17 +119,6 @@ Wire Wire Line
 	5650 3300 3100 3300
 Wire Wire Line
 	3100 3200 5650 3200
-$Comp
-L CANtech:+3.3V_SW #PWR089
-U 1 1 5FA73E29
-P 7750 2800
-F 0 "#PWR089" H 7750 3050 50  0001 C CNN
-F 1 "+3.3V_SW" H 7808 2837 50  0000 L CNN
-F 2 "" H 7000 3600 50  0001 C CNN
-F 3 "" H 7000 3600 50  0001 C CNN
-	1    7750 2800
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5650 3400 3100 3400
 Wire Wire Line
@@ -145,4 +131,18 @@ Text HLabel 3100 3900 0    50   Input ~ 0
 MEMS_INT2
 Wire Wire Line
 	3100 3900 5650 3900
+Connection ~ 7750 2900
+Wire Wire Line
+	7750 2900 7750 2800
+$Comp
+L power:+3.3V #PWR089
+U 1 1 5FC85156
+P 7750 2800
+F 0 "#PWR089" H 7750 2650 50  0001 C CNN
+F 1 "+3.3V" H 7765 2973 50  0000 C CNN
+F 2 "" H 7750 2800 50  0001 C CNN
+F 3 "" H 7750 2800 50  0001 C CNN
+	1    7750 2800
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

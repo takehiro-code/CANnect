@@ -5,7 +5,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 4 19
 Title "CANnect Reader | ISO 9141/ISO 14230 Transceiver"
-Date "2020-10-25"
+Date "2020-10-27"
 Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"

@@ -5,7 +5,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 13 19
 Title "CANnect Reader | Host"
-Date "2020-10-25"
+Date "2020-10-27"
 Rev "0.0.03"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
@@ -66,29 +66,27 @@ Wire Wire Line
 $Comp
 L power:GND #PWR084
 U 1 1 5F91E8F3
-P 1800 5400
-F 0 "#PWR084" H 1800 5150 50  0001 C CNN
-F 1 "GND" H 1805 5227 50  0000 C CNN
-F 2 "" H 1800 5400 50  0001 C CNN
-F 3 "" H 1800 5400 50  0001 C CNN
-	1    1800 5400
+P 1800 5600
+F 0 "#PWR084" H 1800 5350 50  0001 C CNN
+F 1 "GND" H 1805 5427 50  0000 C CNN
+F 2 "" H 1800 5600 50  0001 C CNN
+F 3 "" H 1800 5600 50  0001 C CNN
+	1    1800 5600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1800 5400 1800 5250
 $Comp
 L power:+5V #PWR085
 U 1 1 5F91DA5E
-P 2800 5400
-F 0 "#PWR085" H 2800 5250 50  0001 C CNN
-F 1 "+5V" H 2815 5573 50  0000 C CNN
-F 2 "" H 2800 5400 50  0001 C CNN
-F 3 "" H 2800 5400 50  0001 C CNN
-	1    2800 5400
+P 2800 5600
+F 0 "#PWR085" H 2800 5450 50  0001 C CNN
+F 1 "+5V" H 2815 5773 50  0000 C CNN
+F 2 "" H 2800 5600 50  0001 C CNN
+F 3 "" H 2800 5600 50  0001 C CNN
+	1    2800 5600
 	1    0    0    1   
 $EndComp
 Wire Wire Line
-	2800 5400 2800 5250
+	2800 5600 2800 5450
 $Comp
 L CANtech:NodeMCU_ESP32_DevKit U_HST_?
 U 1 1 5F91DA68
@@ -105,8 +103,6 @@ F 6 "Amazon Canada" H 5550 6500 50  0001 C CNN "Vendor"
 	1    5550 6500
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2800 5050 3200 5050
 Wire Wire Line
 	1800 4550 3200 4550
 NoConn ~ 3200 3950
@@ -132,10 +128,10 @@ F 7 "A113314-ND" H 1950 3350 50  0001 C CNN "digikeypn"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L 2828322:282832-2 J_HST_3
+L 2828322:282832-2 J_HST_2
 U 1 1 5F9D9258
 P 2800 3350
-F 0 "J_HST_3" V 3095 3122 60  0000 R CNN
+F 0 "J_HST_2" V 3095 3122 60  0000 R CNN
 F 1 "282832-2" V 2989 3122 60  0000 R CNN
 F 2 "footprints:282832-2" H 3200 3290 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 2800 3350 60  0001 C CNN
@@ -147,25 +143,25 @@ F 7 "A113314-ND" H 2800 3350 50  0001 C CNN "digikeypn"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L 2828322:282832-2 J_HST_2
+L 2828322:282832-2 J_HST_4
 U 1 1 5F9D9519
-P 2450 5500
-F 0 "J_HST_2" V 2639 5628 60  0000 L CNN
-F 1 "282832-2" V 2745 5628 60  0000 L CNN
-F 2 "footprints:282832-2" H 2850 5440 60  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 2450 5500 60  0001 C CNN
-F 4 "282832-2" H 2450 5500 50  0001 C CNN "Part Name"
-F 5 "DigiKey Canada" H 2450 5500 50  0001 C CNN "Vendor"
-F 6 "TE Connectivity AMP Connectors" H 2450 5500 50  0001 C CNN "Manufacturer"
-F 7 "A113314-ND" H 2450 5500 50  0001 C CNN "digikeypn"
-	1    2450 5500
+P 2450 5700
+F 0 "J_HST_4" V 2639 5828 60  0000 L CNN
+F 1 "282832-2" V 2745 5828 60  0000 L CNN
+F 2 "footprints:282832-2" H 2850 5640 60  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 2450 5700 60  0001 C CNN
+F 4 "282832-2" H 2450 5700 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 2450 5700 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 2450 5700 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 2450 5700 50  0001 C CNN "digikeypn"
+	1    2450 5700
 	0    1    1    0   
 $EndComp
 $Comp
-L 2828322:282832-2 J_HST_4
+L 2828322:282832-2 J_HST_5
 U 1 1 5F9DA91B
 P 8350 2900
-F 0 "J_HST_4" V 8645 2672 60  0000 R CNN
+F 0 "J_HST_5" V 8645 2672 60  0000 R CNN
 F 1 "282832-2" V 8539 2672 60  0000 R CNN
 F 2 "footprints:282832-2" H 8750 2840 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 8350 2900 60  0001 C CNN
@@ -232,19 +228,7 @@ NoConn ~ 7800 3750
 NoConn ~ 7800 3850
 NoConn ~ 7800 3950
 Wire Wire Line
-	2450 5500 2450 5250
-Wire Wire Line
-	2450 5250 2800 5250
-Connection ~ 2800 5250
-Wire Wire Line
-	2800 5250 2800 5050
-Wire Wire Line
-	2350 5500 2350 5250
-Wire Wire Line
-	2350 5250 1800 5250
-Connection ~ 1800 5250
-Wire Wire Line
-	1800 5250 1800 4550
+	2450 5700 2450 5450
 Wire Notes Line
 	3600 2150 3600 5550
 Wire Notes Line
@@ -273,10 +257,10 @@ NoConn ~ 7800 4150
 Wire Wire Line
 	7800 4150 9900 4150
 $Comp
-L 2828322:282832-2 J_HST_5
+L 2828322:282832-2 J_HST_7
 U 1 1 5F9F4BEC
 P 8850 4550
-F 0 "J_HST_5" V 9039 4678 60  0000 L CNN
+F 0 "J_HST_7" V 9039 4678 60  0000 L CNN
 F 1 "282832-2" V 9145 4678 60  0000 L CNN
 F 2 "footprints:282832-2" H 9250 4490 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 8850 4550 60  0001 C CNN
@@ -337,4 +321,68 @@ NoConn ~ 6150 3550
 NoConn ~ 6150 3450
 NoConn ~ 6150 3350
 NoConn ~ 6150 3250
+$Comp
+L Device:C_Small C_HST_1
+U 1 1 5FB5FEEA
+P 2350 5200
+F 0 "C_HST_1" V 2121 5200 50  0000 C CNN
+F 1 "1uF" V 2212 5200 50  0000 C CNN
+F 2 "footprints:0603" H 2350 5200 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf" H 2350 5200 50  0001 C CNN
+F 4 "Kermet" H 2350 5200 50  0001 C CNN "Manufacturer"
+F 5 "C0603C105K4RACTU" H 2350 5200 50  0001 C CNN "Part Name"
+F 6 "DigiKey Canada" H 2350 5200 50  0001 C CNN "Vendor"
+F 7 "399-7847-1-ND" H 2350 5200 50  0001 C CNN "digikeypn"
+	1    2350 5200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2800 5050 3200 5050
+Wire Wire Line
+	2450 5450 2800 5450
+Wire Wire Line
+	1800 4550 1800 5200
+Wire Wire Line
+	2800 5050 2800 5200
+Connection ~ 2800 5450
+$Comp
+L 2828322:282832-2 J_HST_3
+U 1 1 5FB693E7
+P 1600 5450
+F 0 "J_HST_3" V 1789 5578 60  0000 L CNN
+F 1 "282832-2" V 1895 5578 60  0000 L CNN
+F 2 "footprints:282832-2" H 2000 5390 60  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 1600 5450 60  0001 C CNN
+F 4 "282832-2" H 1600 5450 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 1600 5450 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 1600 5450 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 1600 5450 50  0001 C CNN "digikeypn"
+	1    1600 5450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1600 5450 1800 5450
+Connection ~ 1800 5450
+Wire Wire Line
+	1800 5450 1800 5600
+Wire Wire Line
+	2450 5200 2800 5200
+Connection ~ 2800 5200
+Wire Wire Line
+	2800 5200 2800 5450
+Wire Wire Line
+	2250 5200 1800 5200
+Connection ~ 1800 5200
+Wire Wire Line
+	1800 5200 1800 5350
+Wire Wire Line
+	1600 5350 1800 5350
+Connection ~ 1800 5350
+Wire Wire Line
+	1800 5350 1800 5450
+Wire Wire Line
+	2350 5700 2350 5450
+Wire Wire Line
+	2350 5450 2450 5450
+Connection ~ 2450 5450
 $EndSCHEMATC
