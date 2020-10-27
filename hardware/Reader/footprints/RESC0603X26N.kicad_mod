@@ -1,5 +1,5 @@
 
-(module RESC0603X26N (layer F.Cu) (tedit 5F8F6A24)
+(module RESC0603X26N (layer F.Cu) (tedit 5F978CC7)
   (descr "")
   (fp_text reference REF** (at 0.53 -0.76 0) (layer F.SilkS)
     (effects (font (size 0.393700787402 0.393700787402) (thickness 0.015)))
