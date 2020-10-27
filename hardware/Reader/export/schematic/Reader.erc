@@ -1,8 +1,10 @@
-ERC report (10/26/20 16:49:33, Encoding UTF8 )
+ERC report (10/26/20 20:56:27, Encoding UTF8 )
 
 ***** Sheet /
 
 ***** Sheet /Power Switch/
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(160.02 mm, 46.99 mm): Pin 1 (Power input) of component #PWR08 is not driven (Net 98).
 
 ***** Sheet /OBDII Interpreter/
 ErrType(7): A pin with a “no connection” flag is connected
@@ -11,32 +13,30 @@ ErrType(7): A pin with a “no connection” flag is connected
     @(166.37 mm, 97.79 mm): More than 1 pin connected to an UnConnect symbol.
 
 ***** Sheet /OBDII Interpreter/ISO 9141/ISO 14230 Transceiver/
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(142.24 mm, 48.26 mm): Pin 1 (Power input) of component #PWR011 is not driven (Net 33).
 
 ***** Sheet /OBDII Interpreter/High Speed CAN Transceiver/
 
 ***** Sheet /OBDII Interpreter/Medium Speed CAN Transceiver/
-ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(182.88 mm, 71.12 mm): Pin 1 (Input) of component U_MSCAN_1 is not driven (Net 76).
 
 ***** Sheet /OBDII Interpreter/SAE J1850 VPW/PWM Transceiver/
 
 ***** Sheet /OBDII Interpreter/Comparator Transceiver/
 ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(104.14 mm, 30.48 mm): Pin 1 (Power input) of component #PWR0176 is not driven (Net 98).
+    @(104.14 mm, 30.48 mm): Pin 1 (Power input) of component #PWR037 is not driven (Net 97).
 
 ***** Sheet /OBDII Interpreter/Single Wire CAN Transceiver/
-ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(121.92 mm, 88.90 mm): Pin 1 (Power input) of component #PWR0187 is not driven (Net 36).
-ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(222.25 mm, 78.74 mm): Pin 1 (Power input) of component #PWR0191 is not driven (Net 97).
 
 ***** Sheet /OBDII Interpreter/OBDII Chip/
 ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(252.73 mm, 64.77 mm): Pin 1 (Passive) of component C_STN_5 is not driven (Net 147).
+    @(120.65 mm, 101.60 mm): Pin 9 (Input) of component U_STN_1 is not driven (Net 78).
 ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(73.66 mm, 99.06 mm): Pin 1 (Passive) of component CP_STN_1 is not driven (Net 150).
+    @(252.73 mm, 64.77 mm): Pin 1 (Passive) of component C_STN_4 is not driven (Net 151).
 ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(228.60 mm, 161.29 mm): Pin 1 (Power input) of component #PWR0202 is not driven (Net 155).
+    @(120.65 mm, 96.52 mm): Pin 7 (Power input) of component U_STN_1 is not driven (Net 152).
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(228.60 mm, 161.29 mm): Pin 1 (Power input) of component #PWR066 is not driven (Net 154).
 
 ***** Sheet /OBD Connector/
 ErrType(8): Global label not connected to any other global label
@@ -58,9 +58,9 @@ ErrType(7): A pin with a “no connection” flag is connected
 ErrType(7): A pin with a “no connection” flag is connected
     @(81.28 mm, 123.19 mm): More than 1 pin connected to an UnConnect symbol.
 ErrType(7): A pin with a “no connection” flag is connected
-    @(198.12 mm, 82.55 mm): More than 1 pin connected to an UnConnect symbol.
-ErrType(7): A pin with a “no connection” flag is connected
     @(198.12 mm, 97.79 mm): More than 1 pin connected to an UnConnect symbol.
+ErrType(7): A pin with a “no connection” flag is connected
+    @(198.12 mm, 82.55 mm): More than 1 pin connected to an UnConnect symbol.
 ErrType(7): A pin with a “no connection” flag is connected
     @(81.28 mm, 115.57 mm): More than 1 pin connected to an UnConnect symbol.
 ErrType(7): A pin with a “no connection” flag is connected
@@ -74,15 +74,15 @@ ErrType(7): A pin with a “no connection” flag is connected
 
 ***** Sheet /Reader MEMs/
 ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(196.85 mm, 71.12 mm): Pin 1 (Power input) of component #PWR0143 is not driven (Net 94).
+    @(189.23 mm, 73.66 mm): Pin 8 (Power input) of component U_MM_1 is not driven (Net 96).
 
 ***** Sheet /Power Supply/
-ErrType(3): Pin connected to other pins, but not driven by any pin
-    @(27.94 mm, 35.56 mm): Pin 1 (Power input) of component #V0102 is not driven (Net 35).
 
 ***** Sheet /Power Supply/Overvoltage Protection/
 
 ***** Sheet /Power Supply/Voltage Sense/
+ErrType(3): Pin connected to other pins, but not driven by any pin
+    @(72.39 mm, 44.45 mm): Pin 1 (Power input) of component #V03 is not driven (Net 27).
 
 ***** Sheet /Power Supply/Voltage Regulator (5V)/
 

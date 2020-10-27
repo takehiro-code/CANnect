@@ -26,10 +26,10 @@ Wire Wire Line
 Wire Wire Line
 	7800 3450 8350 3450
 $Comp
-L power:GND #PWR05
+L power:GND #PWR086
 U 1 1 5F91E2ED
 P 9600 5400
-F 0 "#PWR05" H 9600 5150 50  0001 C CNN
+F 0 "#PWR086" H 9600 5150 50  0001 C CNN
 F 1 "GND" H 9605 5227 50  0000 C CNN
 F 2 "" H 9600 5400 50  0001 C CNN
 F 3 "" H 9600 5400 50  0001 C CNN
@@ -64,10 +64,10 @@ Wire Wire Line
 Wire Wire Line
 	1400 4150 2050 4150
 $Comp
-L power:GND #PWR03
+L power:GND #PWR084
 U 1 1 5F91E8F3
 P 1800 5400
-F 0 "#PWR03" H 1800 5150 50  0001 C CNN
+F 0 "#PWR084" H 1800 5150 50  0001 C CNN
 F 1 "GND" H 1805 5227 50  0000 C CNN
 F 2 "" H 1800 5400 50  0001 C CNN
 F 3 "" H 1800 5400 50  0001 C CNN
@@ -77,10 +77,10 @@ $EndComp
 Wire Wire Line
 	1800 5400 1800 5250
 $Comp
-L power:+5V #PWR04
+L power:+5V #PWR085
 U 1 1 5F91DA5E
 P 2800 5400
-F 0 "#PWR04" H 2800 5250 50  0001 C CNN
+F 0 "#PWR085" H 2800 5250 50  0001 C CNN
 F 1 "+5V" H 2815 5573 50  0000 C CNN
 F 2 "" H 2800 5400 50  0001 C CNN
 F 3 "" H 2800 5400 50  0001 C CNN
@@ -90,10 +90,10 @@ $EndComp
 Wire Wire Line
 	2800 5400 2800 5250
 $Comp
-L CANtech:NodeMCU_ESP32_DevKit IC?
+L CANtech:NodeMCU_ESP32_DevKit U_HST_?
 U 1 1 5F91DA68
 P 5550 6500
-AR Path="/5F91DA68" Ref="IC?"  Part="1" 
+AR Path="/5F91DA68" Ref="U_HST_?"  Part="1" 
 AR Path="/5F91C7D3/5F91DA68" Ref="U_HST_1"  Part="1" 
 F 0 "U_HST_1" H 5725 10105 50  0000 C CNN
 F 1 "NodeMCU_ESP32_DevKit" H 5725 10014 50  0000 C CNN
@@ -132,10 +132,10 @@ F 7 "A113314-ND" H 1950 3350 50  0001 C CNN "digikeypn"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L 2828322:282832-2 J_HST_2
+L 2828322:282832-2 J_HST_3
 U 1 1 5F9D9258
 P 2800 3350
-F 0 "J_HST_2" V 3095 3122 60  0000 R CNN
+F 0 "J_HST_3" V 3095 3122 60  0000 R CNN
 F 1 "282832-2" V 2989 3122 60  0000 R CNN
 F 2 "footprints:282832-2" H 3200 3290 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 2800 3350 60  0001 C CNN
@@ -147,10 +147,10 @@ F 7 "A113314-ND" H 2800 3350 50  0001 C CNN "digikeypn"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L 2828322:282832-2 J_HST_5
+L 2828322:282832-2 J_HST_2
 U 1 1 5F9D9519
 P 2450 5500
-F 0 "J_HST_5" V 2639 5628 60  0000 L CNN
+F 0 "J_HST_2" V 2639 5628 60  0000 L CNN
 F 1 "282832-2" V 2745 5628 60  0000 L CNN
 F 2 "footprints:282832-2" H 2850 5440 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 2450 5500 60  0001 C CNN
@@ -162,10 +162,10 @@ F 7 "A113314-ND" H 2450 5500 50  0001 C CNN "digikeypn"
 	0    1    1    0   
 $EndComp
 $Comp
-L 2828322:282832-2 J_HST_3
+L 2828322:282832-2 J_HST_4
 U 1 1 5F9DA91B
 P 8350 2900
-F 0 "J_HST_3" V 8645 2672 60  0000 R CNN
+F 0 "J_HST_4" V 8645 2672 60  0000 R CNN
 F 1 "282832-2" V 8539 2672 60  0000 R CNN
 F 2 "footprints:282832-2" H 8750 2840 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 8350 2900 60  0001 C CNN
@@ -177,10 +177,10 @@ F 7 "A113314-ND" H 8350 2900 50  0001 C CNN "digikeypn"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L 2828322:282832-2 J_HST_4
+L 2828322:282832-2 J_HST_6
 U 1 1 5F9DB09C
 P 9250 2900
-F 0 "J_HST_4" V 9545 2672 60  0000 R CNN
+F 0 "J_HST_6" V 9545 2672 60  0000 R CNN
 F 1 "282832-2" V 9439 2672 60  0000 R CNN
 F 2 "footprints:282832-2" H 9650 2840 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 9250 2900 60  0001 C CNN
@@ -273,10 +273,10 @@ NoConn ~ 7800 4150
 Wire Wire Line
 	7800 4150 9900 4150
 $Comp
-L 2828322:282832-2 J_HST_6
+L 2828322:282832-2 J_HST_5
 U 1 1 5F9F4BEC
 P 8850 4550
-F 0 "J_HST_6" V 9039 4678 60  0000 L CNN
+F 0 "J_HST_5" V 9039 4678 60  0000 L CNN
 F 1 "282832-2" V 9145 4678 60  0000 L CNN
 F 2 "footprints:282832-2" H 9250 4490 60  0001 C CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 8850 4550 60  0001 C CNN

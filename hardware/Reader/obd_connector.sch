@@ -13,44 +13,10 @@ Comment2 "Taken from STN21xx's datasheet for recommended configuration"
 Comment3 ""
 Comment4 "Component Identifier: CN"
 $EndDescr
-Text GLabel 2250 3800 0    50   Input ~ 0
-Pin16_Raw_+12V_Battery
-Text GLabel 2250 2000 0    50   Input ~ 0
-Pin4_GnD_Chassis
-Text GLabel 2250 2150 0    50   Input ~ 0
-Pin5_Gnd_Signal
-Text GLabel 2250 2750 0    50   BiDi ~ 0
-Pin9
-Text GLabel 2250 3200 0    50   BiDi ~ 0
-Pin12
-Text GLabel 2250 3350 0    50   BiDi ~ 0
-Pin13
-Text GLabel 2250 3050 0    50   BiDi ~ 0
-Pin11_MS_CAN_Low
-Text GLabel 2250 1850 0    50   BiDi ~ 0
-Pin3_MS_CAN_High
-Text GLabel 2250 2900 0    50   BiDi ~ 0
-Pin10_SAE_J1850_BUS-
-Text GLabel 2250 1700 0    50   BiDi ~ 0
-Pin2_SAE_J1850_BUS+
-Text GLabel 2250 3500 0    50   BiDi ~ 0
-Pin14_ISO15765-4_CAN_BUS_Low
-Text GLabel 2250 2300 0    50   BiDi ~ 0
-Pin6_ISO15765-4_CAN_BUS_High
-Text GLabel 2250 3650 0    50   Input ~ 0
-Pin15_ISO9141_L-Line
-Text GLabel 2250 2450 0    50   BiDi ~ 0
-Pin7_ISO9141_K-Line
-Text GLabel 2250 1550 0    50   BiDi ~ 0
-Pin1_SW_CAN
-Text Notes 850  1450 0    50   ~ 0
-OBD-II Connector/Data Link Connector
 Text HLabel 8600 1550 2    50   BiDi ~ 0
 SW_CAN
 Text HLabel 8600 3800 2    50   Output ~ 0
 Raw_12V
-Text GLabel 2250 2600 0    50   BiDi ~ 0
-Pin8
 Text HLabel 8600 1700 2    50   BiDi ~ 0
 J1850_BUS+
 Text HLabel 8600 1850 2    50   BiDi ~ 0
@@ -79,35 +45,99 @@ Text HLabel 8600 3500 2    50   BiDi ~ 0
 HS_CAN_Low
 Text HLabel 8600 3650 2    50   Output ~ 0
 L-Line
-$Comp
-L AHDF15AKGTAXB:AHDF15A-KG-TAXB CN?
-U 1 1 5FF7CC92
-P 8000 4650
-AR Path="/5FF7CC92" Ref="CN?"  Part="1" 
-AR Path="/5FF6FE24/5FF7CC92" Ref="CN1"  Part="1" 
-F 0 "CN1" H 8350 5095 60  0000 C CNN
-F 1 "AHDF15A-KG-TAXB" H 8350 4989 60  0000 C CNN
-F 2 "footprints:AHDF15A-KG-TAXB" H 8400 3890 60  0001 C CNN
-F 3 "http://www.assmann-wsw.com/fileadmin/datasheets/AHDxxxA-KG-TAxB.pdf" H 8350 4883 60  0000 C CNN
-F 4 "AHDF15A-KG-TAXB" H 8000 4650 50  0001 C CNN "Part Name"
-F 5 "AE11024-ND" H 8000 4650 50  0001 C CNN "digikeypn"
-F 6 "Assmann WSW Components" H 8000 4650 50  0001 C CNN "Manufacturer"
-F 7 "DigiKey Canada" H 8000 4650 50  0001 C CNN "Vendor"
-	1    8000 4650
-	1    0    0    -1  
-$EndComp
-Text GLabel 8800 4800 2    50   BiDi ~ 0
-Pin6_ISO15765-4_CAN_BUS_High
-Text GLabel 8800 5000 2    50   BiDi ~ 0
-Pin14_ISO15765-4_CAN_BUS_Low
-Text GLabel 8800 5400 2    50   BiDi ~ 0
-Pin9
-Text GLabel 8800 5600 2    50   BiDi ~ 0
-Pin12
-Text GLabel 8800 5200 2    50   Input ~ 0
-Pin4_GnD_Chassis
 Text Notes 8500 1250 2    50   ~ 0
 OBD Connector into Reader through DB15-HD
+Wire Notes Line
+	2600 5650 2600 1350
+Text Notes 4600 1250 2    50   ~ 0
+Reference: https://components101.com/sites/default/files/component_pin/OBD2-Connector-Pinout.png
+Wire Notes Line
+	6500 1150 6500 6250
+Wire Notes Line
+	6500 6250 10250 6250
+Wire Notes Line
+	10250 1150 6500 1150
+Connection ~ 5150 2300
+Wire Wire Line
+	5150 2300 8600 2300
+Wire Wire Line
+	6200 1200 6200 3650
+Connection ~ 6200 3650
+Wire Wire Line
+	6200 3650 8600 3650
+Wire Wire Line
+	2750 2300 2750 4300
+Wire Wire Line
+	2750 2300 5150 2300
+Wire Wire Line
+	2850 3500 2850 4400
+Wire Wire Line
+	2950 1850 2950 4500
+Wire Wire Line
+	2950 1850 8600 1850
+Wire Wire Line
+	3100 3050 3100 4600
+Connection ~ 3100 3050
+Wire Wire Line
+	3100 3050 8600 3050
+Wire Wire Line
+	3200 4700 3200 1550
+Wire Wire Line
+	3200 1550 8600 1550
+Wire Wire Line
+	3300 4800 3300 2450
+Wire Wire Line
+	3400 4900 3400 3650
+Wire Wire Line
+	3500 5000 3500 1700
+Wire Wire Line
+	3500 1700 8600 1700
+Wire Wire Line
+	3600 2900 3600 5100
+Wire Wire Line
+	3600 2900 8600 2900
+Wire Wire Line
+	3400 3650 6200 3650
+Wire Notes Line
+	10250 6250 10250 1150
+Wire Wire Line
+	2250 3050 3100 3050
+Connection ~ 2850 3500
+Connection ~ 3400 3650
+Connection ~ 3600 2900
+Connection ~ 3300 2450
+Connection ~ 2750 2300
+Connection ~ 2950 1850
+Connection ~ 3500 1700
+Connection ~ 3200 1550
+Wire Wire Line
+	2250 3200 8600 3200
+Wire Wire Line
+	2250 2900 3600 2900
+Wire Wire Line
+	2250 2750 8600 2750
+Wire Wire Line
+	2250 2000 8600 2000
+Wire Wire Line
+	2250 1850 2950 1850
+Wire Wire Line
+	2250 1700 3500 1700
+Wire Wire Line
+	2250 1550 3200 1550
+Text GLabel 2250 2600 0    50   BiDi ~ 0
+Pin8
+Text GLabel 2250 3350 0    50   BiDi ~ 0
+Pin13
+Text GLabel 2250 3200 0    50   BiDi ~ 0
+Pin12
+Text GLabel 2250 2750 0    50   BiDi ~ 0
+Pin9
+Wire Notes Line
+	2600 1350 600  1350
+Wire Notes Line
+	600  5650 2600 5650
+Wire Notes Line
+	600  1350 600  5650
 $Bitmap
 Pos 1600 4750
 Scale 1.000000
@@ -881,31 +911,138 @@ B1 37 41 3C 15 D1 8C D2 AE 48 CF 3B 56 40 EA 4E 62 58 44 44 44 44 44 44 44 44 44
 82 
 EndData
 $EndBitmap
-Wire Notes Line
-	600  1350 600  5650
-Wire Notes Line
-	600  5650 2600 5650
-Wire Notes Line
-	2600 5650 2600 1350
-Wire Notes Line
-	2600 1350 600  1350
-Text Notes 4600 1250 2    50   ~ 0
-Reference: https://components101.com/sites/default/files/component_pin/OBD2-Connector-Pinout.png
+Text Notes 850  1450 0    50   ~ 0
+OBD-II Connector/Data Link Connector
+Text GLabel 2250 1550 0    50   BiDi ~ 0
+Pin1_SW_CAN
+Text GLabel 2250 1700 0    50   BiDi ~ 0
+Pin2_SAE_J1850_BUS+
+Text GLabel 2250 2900 0    50   BiDi ~ 0
+Pin10_SAE_J1850_BUS-
+Text GLabel 2250 1850 0    50   BiDi ~ 0
+Pin3_MS_CAN_High
+Text GLabel 2250 3050 0    50   BiDi ~ 0
+Pin11_MS_CAN_Low
+Text GLabel 2250 2150 0    50   Input ~ 0
+Pin5_Gnd_Signal
+Text GLabel 2250 2000 0    50   Input ~ 0
+Pin4_GnD_Chassis
+Text GLabel 2250 3800 0    50   Input ~ 0
+Pin16_Raw_+12V_Battery
+Text GLabel 8800 5000 2    50   BiDi ~ 0
+Pin14_ISO15765_CAN_BUS_Low
+Text GLabel 8800 4800 2    50   BiDi ~ 0
+Pin6_ISO15765_CAN_BUS_High
+Text GLabel 7850 4900 0    50   Input ~ 0
+Pin15_ISO9141_L-Line
 $Comp
-L 2828322:282832-2 J_CN_1
-U 1 1 5F9847E5
-P 5150 1200
-F 0 "J_CN_1" V 5339 1328 60  0000 L CNN
-F 1 "282832-2" V 5445 1328 60  0000 L CNN
-F 2 "footprints:282832-2" H 5550 1140 60  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" V 5445 1328 60  0001 L CNN
-F 4 "282832-2" H 5150 1200 50  0001 C CNN "Part Name"
-F 5 "DigiKey Canada" H 5150 1200 50  0001 C CNN "Vendor"
-F 6 "TE Connectivity AMP Connectors" H 5150 1200 50  0001 C CNN "Manufacturer"
-F 7 "A113314-ND" H 5150 1200 50  0001 C CNN "digikeypn"
-	1    5150 1200
-	0    -1   -1   0   
+L AHDF15AKGTAXB:AHDF15A-KG-TAXB CN?
+U 1 1 5FF7CC92
+P 8000 4650
+AR Path="/5FF7CC92" Ref="CN?"  Part="1" 
+AR Path="/5FF6FE24/5FF7CC92" Ref="CN1"  Part="1" 
+F 0 "CN1" H 8350 5095 60  0000 C CNN
+F 1 "AHDF15A-KG-TAXB" H 8350 4989 60  0000 C CNN
+F 2 "footprints:AHDF15A-KG-TAXB" H 8400 3890 60  0001 C CNN
+F 3 "http://www.assmann-wsw.com/fileadmin/datasheets/AHDxxxA-KG-TAxB.pdf" H 8350 4883 60  0000 C CNN
+F 4 "AHDF15A-KG-TAXB" H 8000 4650 50  0001 C CNN "Part Name"
+F 5 "AE11024-ND" H 8000 4650 50  0001 C CNN "digikeypn"
+F 6 "Assmann WSW Components" H 8000 4650 50  0001 C CNN "Manufacturer"
+F 7 "DigiKey Canada" H 8000 4650 50  0001 C CNN "Vendor"
+	1    8000 4650
+	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	8350 5900 9050 5900
+Wire Wire Line
+	8800 4800 8650 4800
+Wire Wire Line
+	8800 5000 8650 5000
+Wire Wire Line
+	8800 5200 8650 5200
+Wire Wire Line
+	8800 5400 8650 5400
+Wire Wire Line
+	8800 5600 8650 5600
+$Comp
+L power:GND #PWR073
+U 1 1 5F9F2946
+P 9050 5900
+F 0 "#PWR073" H 9050 5650 50  0001 C CNN
+F 1 "GND" H 9055 5727 50  0000 C CNN
+F 2 "" H 9050 5900 50  0001 C CNN
+F 3 "" H 9050 5900 50  0001 C CNN
+	1    9050 5900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7850 4700 8050 4700
+Wire Wire Line
+	7850 4800 8050 4800
+Wire Wire Line
+	7850 4900 8050 4900
+Wire Wire Line
+	7850 5000 8050 5000
+Wire Wire Line
+	7850 5100 8050 5100
+Wire Wire Line
+	7850 5200 8050 5200
+Wire Wire Line
+	7850 5300 8050 5300
+Wire Wire Line
+	7850 5400 8050 5400
+Wire Wire Line
+	7850 5500 8050 5500
+Wire Wire Line
+	8050 5600 7850 5600
+Text GLabel 7850 4800 0    50   BiDi ~ 0
+Pin2_SAE_J1850_BUS+
+Text GLabel 7850 5000 0    50   BiDi ~ 0
+Pin10_SAE_J1850_BUS-
+Text GLabel 7850 5100 0    50   BiDi ~ 0
+Pin8
+Text GLabel 7850 5200 0    50   BiDi ~ 0
+Pin3_MS_CAN_High
+Text GLabel 7850 5300 0    50   BiDi ~ 0
+Pin1_SW_CAN
+Text GLabel 7850 5400 0    50   BiDi ~ 0
+Pin11_MS_CAN_Low
+Text GLabel 7850 5600 0    50   BiDi ~ 0
+Pin13
+Text GLabel 7850 5500 0    50   Input ~ 0
+Pin16_Raw_+12V_Battery
+Text GLabel 8800 5200 2    50   Input ~ 0
+Pin4_GnD_Chassis
+Text GLabel 8800 5600 2    50   BiDi ~ 0
+Pin12
+Text GLabel 8800 5400 2    50   BiDi ~ 0
+Pin9
+Wire Wire Line
+	2250 2150 8600 2150
+Wire Wire Line
+	2250 2300 2750 2300
+Wire Wire Line
+	2250 2600 8600 2600
+Wire Wire Line
+	2250 2450 3300 2450
+Wire Wire Line
+	2250 3350 8600 3350
+Wire Wire Line
+	2250 3500 2850 3500
+Wire Wire Line
+	2250 3800 8600 3800
+Wire Wire Line
+	2250 3650 3400 3650
+Text GLabel 2250 3650 0    50   Input ~ 0
+Pin15_ISO9141_L-Line
+Text GLabel 2250 2450 0    50   BiDi ~ 0
+Pin7_ISO9141_K-Line
+Text GLabel 2250 3500 0    50   BiDi ~ 0
+Pin14_ISO15765_CAN_BUS_Low
+Text GLabel 2250 2300 0    50   BiDi ~ 0
+Pin6_ISO15765_CAN_BUS_High
+Text GLabel 7850 4700 0    50   BiDi ~ 0
+Pin7_ISO9141_K-Line
 $Comp
 L 2828322:282832-2 J_CN_2
 U 1 1 5F984F05
@@ -922,182 +1059,54 @@ F 7 "A113314-ND" H 6100 1200 50  0001 C CNN "digikeypn"
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	2250 1550 3200 1550
-Wire Wire Line
-	2250 2000 8600 2000
-Wire Wire Line
-	2250 2150 8600 2150
-Wire Wire Line
-	2250 2600 8600 2600
-Wire Wire Line
-	2250 2750 8600 2750
-Wire Wire Line
-	2250 2900 3600 2900
-Wire Wire Line
-	2250 3050 3100 3050
-Wire Wire Line
-	2250 3200 8600 3200
-Wire Wire Line
-	2250 3350 8600 3350
-Wire Wire Line
-	2250 3800 8600 3800
-Text GLabel 7850 5500 0    50   Input ~ 0
-Pin16_Raw_+12V_Battery
-Text GLabel 7850 5600 0    50   BiDi ~ 0
-Pin13
-Text GLabel 7850 5400 0    50   BiDi ~ 0
-Pin11_MS_CAN_Low
-Text GLabel 7850 5300 0    50   BiDi ~ 0
-Pin1_SW_CAN
-Text GLabel 7850 5200 0    50   BiDi ~ 0
-Pin3_MS_CAN_High
-Text GLabel 7850 5100 0    50   BiDi ~ 0
-Pin8
-Text GLabel 7850 5000 0    50   BiDi ~ 0
-Pin10_SAE_J1850_BUS-
-Text GLabel 7850 4900 0    50   Input ~ 0
-Pin15_ISO9141_L-Line
-Text GLabel 7850 4800 0    50   BiDi ~ 0
-Pin2_SAE_J1850_BUS+
-Text GLabel 7850 4700 0    50   BiDi ~ 0
-Pin7_ISO9141_K-Line
-Wire Wire Line
-	8050 5600 7850 5600
-Wire Wire Line
-	7850 5500 8050 5500
-Wire Wire Line
-	7850 5400 8050 5400
-Wire Wire Line
-	7850 5300 8050 5300
-Wire Wire Line
-	7850 5200 8050 5200
-Wire Wire Line
-	7850 5100 8050 5100
-Wire Wire Line
-	7850 5000 8050 5000
-Wire Wire Line
-	7850 4900 8050 4900
-Wire Wire Line
-	7850 4800 8050 4800
-Wire Wire Line
-	7850 4700 8050 4700
-Wire Wire Line
-	8800 4800 8650 4800
-Wire Wire Line
-	8800 5000 8650 5000
-Wire Wire Line
-	8800 5200 8650 5200
-Wire Wire Line
-	8800 5400 8650 5400
-Wire Wire Line
-	8800 5600 8650 5600
-Wire Notes Line
-	6500 1150 6500 6250
-Wire Notes Line
-	6500 6250 10250 6250
-Wire Notes Line
-	10250 6250 10250 1150
-Wire Notes Line
-	10250 1150 6500 1150
-Wire Wire Line
-	2250 2450 3300 2450
-Wire Wire Line
-	2250 2300 2750 2300
-Wire Wire Line
-	6100 1200 6100 2450
-Connection ~ 6100 2450
-Wire Wire Line
-	6100 2450 8600 2450
-Wire Wire Line
-	2250 3500 2850 3500
-Wire Wire Line
-	2250 1850 2950 1850
-Wire Wire Line
 	5150 1200 5150 2300
-Connection ~ 5150 2300
-Wire Wire Line
-	5150 2300 8600 2300
-Wire Wire Line
-	5250 1200 5250 3500
-Connection ~ 5250 3500
-Wire Wire Line
-	5250 3500 8600 3500
-Wire Wire Line
-	6200 1200 6200 3650
-Connection ~ 6200 3650
-Wire Wire Line
-	6200 3650 8600 3650
-Wire Wire Line
-	2750 2300 2750 4300
-Wire Wire Line
-	2750 4300 5100 4300
-Connection ~ 2750 2300
-Wire Wire Line
-	2750 2300 5150 2300
-Wire Wire Line
-	2850 3500 2850 4400
-Wire Wire Line
-	2850 4400 5100 4400
-Connection ~ 2850 3500
-Wire Wire Line
-	2850 3500 5250 3500
-Wire Wire Line
-	2950 1850 2950 4500
-Wire Wire Line
-	2950 4500 5100 4500
-Connection ~ 2950 1850
-Wire Wire Line
-	2950 1850 8600 1850
-Wire Wire Line
-	3100 3050 3100 4600
-Wire Wire Line
-	3100 4600 5100 4600
-Connection ~ 3100 3050
-Wire Wire Line
-	3100 3050 8600 3050
-Wire Wire Line
-	5100 4700 3200 4700
-Wire Wire Line
-	3200 4700 3200 1550
-Connection ~ 3200 1550
-Wire Wire Line
-	3200 1550 8600 1550
-Wire Wire Line
-	5100 4800 3300 4800
-Wire Wire Line
-	3300 4800 3300 2450
-Connection ~ 3300 2450
 Wire Wire Line
 	3300 2450 6100 2450
 Wire Wire Line
-	2250 3650 3400 3650
+	6100 2450 8600 2450
+Connection ~ 6100 2450
 Wire Wire Line
-	5100 4300 5100 4400
+	6100 1200 6100 2450
 Wire Wire Line
-	5100 4800 5100 4900
+	2850 3500 5250 3500
+Wire Wire Line
+	5250 3500 8600 3500
+Connection ~ 5250 3500
+Wire Wire Line
+	5250 1200 5250 3500
+$Comp
+L 2828322:282832-2 J_CN_1
+U 1 1 5F9847E5
+P 5150 1200
+F 0 "J_CN_1" V 5339 1328 60  0000 L CNN
+F 1 "282832-2" V 5445 1328 60  0000 L CNN
+F 2 "footprints:282832-2" H 5550 1140 60  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" V 5445 1328 60  0001 L CNN
+F 4 "282832-2" H 5150 1200 50  0001 C CNN "Part Name"
+F 5 "DigiKey Canada" H 5150 1200 50  0001 C CNN "Vendor"
+F 6 "TE Connectivity AMP Connectors" H 5150 1200 50  0001 C CNN "Manufacturer"
+F 7 "A113314-ND" H 5150 1200 50  0001 C CNN "digikeypn"
+	1    5150 1200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2750 4300 5100 4300
+Wire Wire Line
+	2850 4400 5100 4400
+Wire Wire Line
+	2950 4500 5100 4500
+Wire Wire Line
+	3100 4600 5100 4600
+Wire Wire Line
+	5100 4700 3200 4700
+Wire Wire Line
+	5100 4800 3300 4800
 Wire Wire Line
 	5100 4900 3400 4900
 Wire Wire Line
-	3400 4900 3400 3650
-Connection ~ 3400 3650
-Wire Wire Line
-	2250 1700 3500 1700
-Wire Wire Line
 	5100 5000 3500 5000
 Wire Wire Line
-	3500 5000 3500 1700
-Connection ~ 3500 1700
-Wire Wire Line
-	3500 1700 8600 1700
-Wire Wire Line
-	3600 2900 3600 5100
-Wire Wire Line
 	3600 5100 5100 5100
-Connection ~ 3600 2900
-Wire Wire Line
-	3600 2900 8600 2900
-Wire Wire Line
-	3400 3650 6200 3650
 $Sheet
 S 5100 4200 900  1000
 U 5FA6BC58
@@ -1113,17 +1122,4 @@ F8 "L-Line" B L 5100 4900 50
 F9 "J1850_BUS+" B L 5100 5000 50 
 F10 "J1850_BUS-" B L 5100 5100 50 
 $EndSheet
-$Comp
-L power:GND #PWR0103
-U 1 1 5F9F2946
-P 9050 5900
-F 0 "#PWR0103" H 9050 5650 50  0001 C CNN
-F 1 "GND" H 9055 5727 50  0000 C CNN
-F 2 "" H 9050 5900 50  0001 C CNN
-F 3 "" H 9050 5900 50  0001 C CNN
-	1    9050 5900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8350 5900 9050 5900
 $EndSCHEMATC
