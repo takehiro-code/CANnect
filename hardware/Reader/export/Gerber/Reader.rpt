@@ -1,7 +1,106 @@
-** Drc report for C:/Users/Jin-Desktop/Documents/Projects/ensc-405w/hardware/Reader/Reader.kicad_pcb **
+** Drc report for C:\Users\Jin-Desktop\Documents\Projects\ensc-405w\hardware\Reader\Reader.kicad_pcb **
 ** Created on  **
 
-** Found 0 DRC errors **
+** Found 33 DRC errors **
+ErrType(19): Pad too close to pad
+    @(115.865 mm, 145.951 mm): Pad 4 of U_MSCAN_1 on F.Cu and others
+    @(116.840 mm, 147.320 mm): Pad 9 of U_MSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(115.865 mm, 148.689 mm): Pad 5 of U_MSCAN_1 on F.Cu and others
+    @(116.840 mm, 147.320 mm): Pad 9 of U_MSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(116.515 mm, 145.951 mm): Pad 3 of U_MSCAN_1 on F.Cu and others
+    @(116.840 mm, 147.320 mm): Pad 9 of U_MSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(116.515 mm, 148.689 mm): Pad 6 of U_MSCAN_1 on F.Cu and others
+    @(116.840 mm, 147.320 mm): Pad 9 of U_MSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(116.741 mm, 122.215 mm): Pad 8 of U_HSCAN_1 on B.Cu and others
+    @(118.110 mm, 123.190 mm): Pad 9 of U_HSCAN_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(116.741 mm, 122.865 mm): Pad 7 of U_HSCAN_1 on B.Cu and others
+    @(118.110 mm, 123.190 mm): Pad 9 of U_HSCAN_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(116.741 mm, 123.515 mm): Pad 6 of U_HSCAN_1 on B.Cu and others
+    @(118.110 mm, 123.190 mm): Pad 9 of U_HSCAN_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(116.741 mm, 124.165 mm): Pad 5 of U_HSCAN_1 on B.Cu and others
+    @(118.110 mm, 123.190 mm): Pad 9 of U_HSCAN_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(116.840 mm, 147.320 mm): Pad 9 of U_MSCAN_1 on F.Cu and others
+    @(117.165 mm, 148.689 mm): Pad 7 of U_MSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(118.110 mm, 123.190 mm): Pad 9 of U_HSCAN_1 on B.Cu and others
+    @(119.479 mm, 122.215 mm): Pad 1 of U_HSCAN_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(124.545 mm, 58.508 mm): Pad 4 of U_MM_1 on B.Cu and others
+    @(124.545 mm, 59.008 mm): Pad 3 of U_MM_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(124.545 mm, 59.508 mm): Pad 2 of U_MM_1 on B.Cu and others
+    @(124.545 mm, 60.008 mm): Pad 1 of U_MM_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(124.545 mm, 60.008 mm): Pad 1 of U_MM_1 on B.Cu and others
+    @(125.205 mm, 60.168 mm): Pad 14 of U_MM_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(125.205 mm, 58.348 mm): Pad 5 of U_MM_1 on B.Cu and others
+    @(125.705 mm, 58.348 mm): Pad 6 of U_MM_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(125.205 mm, 60.168 mm): Pad 14 of U_MM_1 on B.Cu and others
+    @(125.705 mm, 60.168 mm): Pad 13 of U_MM_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(125.705 mm, 60.168 mm): Pad 13 of U_MM_1 on B.Cu and others
+    @(126.205 mm, 60.168 mm): Pad 12 of U_MM_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(126.205 mm, 58.348 mm): Pad 7 of U_MM_1 on B.Cu and others
+    @(126.865 mm, 58.508 mm): Pad 8 of U_MM_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(126.205 mm, 60.168 mm): Pad 12 of U_MM_1 on B.Cu and others
+    @(126.865 mm, 60.008 mm): Pad 11 of U_MM_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(126.865 mm, 58.508 mm): Pad 8 of U_MM_1 on B.Cu and others
+    @(126.865 mm, 59.008 mm): Pad 9 of U_MM_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(126.865 mm, 59.008 mm): Pad 9 of U_MM_1 on B.Cu and others
+    @(126.865 mm, 59.508 mm): Pad 10 of U_MM_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(126.865 mm, 59.508 mm): Pad 10 of U_MM_1 on B.Cu and others
+    @(126.865 mm, 60.008 mm): Pad 11 of U_MM_1 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(133.200 mm, 140.990 mm): Pad 1 of U_VR2 on F.Cu and others
+    @(134.620 mm, 142.240 mm): Pad 13 of U_VR2 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(133.200 mm, 141.490 mm): Pad 2 of U_VR2 on F.Cu and others
+    @(134.620 mm, 142.240 mm): Pad 13 of U_VR2 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(133.200 mm, 141.990 mm): Pad 3 of U_VR2 on F.Cu and others
+    @(134.620 mm, 142.240 mm): Pad 13 of U_VR2 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(133.200 mm, 142.490 mm): Pad 4 of U_VR2 on F.Cu and others
+    @(134.620 mm, 142.240 mm): Pad 13 of U_VR2 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(133.200 mm, 142.990 mm): Pad 5 of U_VR2 on F.Cu and others
+    @(134.620 mm, 142.240 mm): Pad 13 of U_VR2 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(134.620 mm, 142.240 mm): Pad 13 of U_VR2 on F.Cu and others
+    @(136.040 mm, 140.990 mm): Pad 12 of U_VR2 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(150.980 mm, 139.720 mm): Pad 1 of U_VR1 on F.Cu and others
+    @(152.400 mm, 140.970 mm): Pad 13 of U_VR1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(150.980 mm, 140.220 mm): Pad 2 of U_VR1 on F.Cu and others
+    @(152.400 mm, 140.970 mm): Pad 13 of U_VR1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(150.980 mm, 140.720 mm): Pad 3 of U_VR1 on F.Cu and others
+    @(152.400 mm, 140.970 mm): Pad 13 of U_VR1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(150.980 mm, 141.220 mm): Pad 4 of U_VR1 on F.Cu and others
+    @(152.400 mm, 140.970 mm): Pad 13 of U_VR1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(150.980 mm, 141.720 mm): Pad 5 of U_VR1 on F.Cu and others
+    @(152.400 mm, 140.970 mm): Pad 13 of U_VR1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(152.400 mm, 140.970 mm): Pad 13 of U_VR1 on F.Cu and others
+    @(153.820 mm, 139.720 mm): Pad 12 of U_VR1 on F.Cu and others
 
 ** Found 0 unconnected pads **
 
