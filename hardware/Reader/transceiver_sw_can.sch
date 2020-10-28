@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 9 19
 Title "CANnect Reader | Single Wire CAN Transceiver"
-Date "2020-10-27"
-Rev "0.0.03"
+Date "2020-10-28"
+Rev "0.0.04"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -60,93 +60,6 @@ F 3 "" H 3950 4500 50  0001 C CNN
 	1    3950 4500
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:R_Small R_SWCAN_2
-U 1 1 5FBCE6CE
-P 2600 4550
-F 0 "R_SWCAN_2" H 2659 4596 50  0000 L CNN
-F 1 "130" H 2659 4505 50  0000 L CNN
-F 2 "footprints:RESC0603X26N" H 2600 4550 50  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_11.pdf" H 2600 4550 50  0001 C CNN
-F 4 "RC0201FR-07130RL" H 2600 4550 50  0001 C CNN "Part Name"
-F 5 "Yageo" H 2600 4550 50  0001 C CNN "Manufacturer"
-F 6 "DigiKey Canada" H 2600 4550 50  0001 C CNN "Vendor"
-F 7 "YAG2394CT-ND" H 2600 4550 50  0001 C CNN "digikeypn"
-	1    2600 4550
-	1    0    0    -1  
-$EndComp
-Text HLabel 1500 5150 0    50   BiDi ~ 0
-SW_CAN_LOAD
-$Comp
-L NX7002AK_215:NX7002AK,215 Q_SWCAN_1
-U 1 1 5FBCED49
-P 2500 5050
-F 0 "Q_SWCAN_1" H 2698 5046 50  0000 L CNN
-F 1 "NX7002AK,215" H 2698 4955 50  0000 L CNN
-F 2 "footprints:SOT95P230X110-3N" H 2500 5050 50  0001 L BNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 2500 5050 50  0001 L BNN
-F 4 "Nexperia" H 2500 5050 50  0001 L BNN "Field4"
-F 5 "7" H 2500 5050 50  0001 L BNN "Field5"
-F 6 "IPC-7351B" H 2500 5050 50  0001 L BNN "Field6"
-F 7 "NX7002AK,215" H 2500 5050 50  0001 C CNN "Part Name"
-F 8 "Nexperia USA Inc." H 2500 5050 50  0001 C CNN "Manufacturer"
-F 9 "DigiKey Canada" H 2500 5050 50  0001 C CNN "Vendor"
-F 10 "1727-1289-1-ND" H 2500 5050 50  0001 C CNN "digikeypn"
-	1    2500 5050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R_Small R_SWCAN_1
-U 1 1 5FBCFFA6
-P 1950 5400
-F 0 "R_SWCAN_1" H 2009 5446 50  0000 L CNN
-F 1 "10k" H 2009 5355 50  0000 L CNN
-F 2 "footprints:RESC1608X55N" H 1950 5400 50  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 1950 5400 50  0001 C CNN
-F 4 "RT0603FRE0710KL" H 1950 5400 50  0001 C CNN "Part Name"
-F 5 "Yageo" H 1950 5400 50  0001 C CNN "Manufacturer"
-F 6 "DigiKey Canada" H 1950 5400 50  0001 C CNN "Vendor"
-F 7 "YAG2321CT-ND" H 1950 5400 50  0001 C CNN "digikeypn"
-	1    1950 5400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1500 5150 1950 5150
-Wire Wire Line
-	1950 5300 1950 5150
-Connection ~ 1950 5150
-Wire Wire Line
-	1950 5150 2300 5150
-Wire Wire Line
-	2600 4850 2600 4650
-$Comp
-L power:GND #PWR047
-U 1 1 5FBD183F
-P 2600 5650
-F 0 "#PWR047" H 2600 5400 50  0001 C CNN
-F 1 "GND" H 2605 5477 50  0000 C CNN
-F 2 "" H 2600 5650 50  0001 C CNN
-F 3 "" H 2600 5650 50  0001 C CNN
-	1    2600 5650
-	1    0    0    -1  
-$EndComp
-Wire Notes Line
-	900  6050 900  4650
-Wire Notes Line
-	900  4650 2400 4650
-Wire Notes Line
-	2400 4650 2400 3600
-Text Notes 3700 6000 2    50   ~ 0
-High-Speed Load Circuit - Do not connect J_SWCAN_1 for Read-only
-Wire Wire Line
-	2600 5350 2600 5550
-Wire Wire Line
-	1950 5500 1950 5550
-Wire Wire Line
-	1950 5550 2600 5550
-Connection ~ 2600 5550
-Wire Wire Line
-	2600 5550 2600 5650
 $Comp
 L Device:R_Small R_SWCAN_3
 U 1 1 5FBD3FD7
@@ -409,41 +322,11 @@ Wire Wire Line
 	8150 2750 9650 2750
 Wire Wire Line
 	8150 3600 8750 3600
-$Comp
-L 2828322:282832-2 J_SWCAN_1
-U 1 1 5F9F941C
-P 2600 3750
-F 0 "J_SWCAN_1" H 3128 3806 60  0000 L CNN
-F 1 "282832-2" H 3128 3700 60  0000 L CNN
-F 2 "footprints:282832-2" H 3000 3690 60  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 3128 3594 60  0001 L CNN
-F 4 "282832-2" H 2600 3750 50  0001 C CNN "Part Name"
-F 5 "DigiKey Canada" H 2600 3750 50  0001 C CNN "Vendor"
-F 6 "TE Connectivity AMP Connectors" H 2600 3750 50  0001 C CNN "Manufacturer"
-F 7 "A113314-ND" H 2600 3750 50  0001 C CNN "digikeypn"
-	1    2600 3750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2600 3750 2600 2650
-Connection ~ 2600 2650
-Wire Wire Line
-	2600 2650 2850 2650
-Wire Wire Line
-	2600 3850 2600 4450
 Wire Wire Line
 	3950 3050 4750 3050
 Wire Wire Line
 	4550 2850 4750 2850
-Wire Notes Line
-	2400 3600 3650 3600
-Wire Notes Line
-	3650 3600 3650 6050
-Wire Notes Line
-	900  6050 3650 6050
 Connection ~ 2050 2650
-Wire Wire Line
-	2050 2650 2600 2650
 Wire Wire Line
 	2050 3200 2050 3450
 Wire Wire Line
@@ -465,4 +348,6 @@ F 7 "311-3747-1-ND" H 2050 3050 50  0001 C CNN "digikeypn"
 $EndComp
 Wire Wire Line
 	900  2650 2050 2650
+Wire Wire Line
+	2050 2650 2850 2650
 $EndSCHEMATC

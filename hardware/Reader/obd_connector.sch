@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 11 19
 Title "CANnect Reader | OBD Connector"
-Date "2020-10-27"
-Rev "0.0.03"
+Date "2020-10-28"
+Rev "0.0.04"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -61,11 +61,6 @@ Connection ~ 5150 2300
 Wire Wire Line
 	5150 2300 8600 2300
 Wire Wire Line
-	6200 1200 6200 3650
-Connection ~ 6200 3650
-Wire Wire Line
-	6200 3650 8600 3650
-Wire Wire Line
 	2750 2300 2750 4300
 Wire Wire Line
 	2750 2300 5150 2300
@@ -96,8 +91,6 @@ Wire Wire Line
 	3600 2900 3600 5100
 Wire Wire Line
 	3600 2900 8600 2900
-Wire Wire Line
-	3400 3650 6200 3650
 Wire Notes Line
 	10250 6250 10250 1150
 Wire Wire Line
@@ -1043,30 +1036,8 @@ Text GLabel 2250 2300 0    50   BiDi ~ 0
 Pin6_ISO15765_CAN_BUS_High
 Text GLabel 7850 4700 0    50   BiDi ~ 0
 Pin7_ISO9141_K-Line
-$Comp
-L 2828322:282832-2 J_CN_2
-U 1 1 5F984F05
-P 6100 1200
-F 0 "J_CN_2" V 6289 1328 60  0000 L CNN
-F 1 "282832-2" V 6395 1328 60  0000 L CNN
-F 2 "footprints:282832-2" H 6500 1140 60  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" V 6395 1328 60  0001 L CNN
-F 4 "282832-2" H 6100 1200 50  0001 C CNN "Part Name"
-F 5 "DigiKey Canada" H 6100 1200 50  0001 C CNN "Vendor"
-F 6 "TE Connectivity AMP Connectors" H 6100 1200 50  0001 C CNN "Manufacturer"
-F 7 "A113314-ND" H 6100 1200 50  0001 C CNN "digikeypn"
-	1    6100 1200
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	5150 1200 5150 2300
-Wire Wire Line
-	3300 2450 6100 2450
-Wire Wire Line
-	6100 2450 8600 2450
-Connection ~ 6100 2450
-Wire Wire Line
-	6100 1200 6100 2450
 Wire Wire Line
 	2850 3500 5250 3500
 Wire Wire Line
@@ -1074,21 +1045,6 @@ Wire Wire Line
 Connection ~ 5250 3500
 Wire Wire Line
 	5250 1200 5250 3500
-$Comp
-L 2828322:282832-2 J_CN_1
-U 1 1 5F9847E5
-P 5150 1200
-F 0 "J_CN_1" V 5339 1328 60  0000 L CNN
-F 1 "282832-2" V 5445 1328 60  0000 L CNN
-F 2 "footprints:282832-2" H 5550 1140 60  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" V 5445 1328 60  0001 L CNN
-F 4 "282832-2" H 5150 1200 50  0001 C CNN "Part Name"
-F 5 "DigiKey Canada" H 5150 1200 50  0001 C CNN "Vendor"
-F 6 "TE Connectivity AMP Connectors" H 5150 1200 50  0001 C CNN "Manufacturer"
-F 7 "A113314-ND" H 5150 1200 50  0001 C CNN "digikeypn"
-	1    5150 1200
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	2750 4300 5100 4300
 Wire Wire Line
@@ -1122,4 +1078,48 @@ F8 "L-Line" B L 5100 4900 50
 F9 "J1850_BUS+" B L 5100 5000 50 
 F10 "J1850_BUS-" B L 5100 5100 50 
 $EndSheet
+$Comp
+L 1546931-2:1546931-2 J_CN_1
+U 1 1 5FA0571B
+P 5250 800
+F 0 "J_CN_1" V 5189 670 50  0000 R CNN
+F 1 "1546931-2" V 5098 670 50  0000 R CNN
+F 2 "footprints:1546931-2" H 5250 800 50  0001 L BNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 5250 800 50  0001 L BNN
+F 4 "1546931-2" H 5250 800 50  0001 C CNN "Part Name"
+F 5 "TE Connectivity AMP Connectors" H 5250 800 50  0001 C CNN "Manufacturer"
+F 6 "Digikey Canada" H 5250 800 50  0001 C CNN "Vendor"
+F 7 "A97965-ND" H 5250 800 50  0001 C CNN "digikeypn"
+	1    5250 800 
+	0    -1   -1   0   
+$EndComp
+Connection ~ 6100 2450
+Wire Wire Line
+	6100 2450 8600 2450
+Wire Wire Line
+	3300 2450 6100 2450
+Wire Wire Line
+	3400 3650 6200 3650
+Wire Wire Line
+	6200 3650 8600 3650
+Connection ~ 6200 3650
+Wire Wire Line
+	6100 1200 6100 2450
+Wire Wire Line
+	6200 1200 6200 3650
+$Comp
+L 1546931-2:1546931-2 J_CN_2
+U 1 1 5FA083B3
+P 6200 800
+F 0 "J_CN_2" V 6139 670 50  0000 R CNN
+F 1 "1546931-2" V 6048 670 50  0000 R CNN
+F 2 "footprints:1546931-2" H 6200 800 50  0001 L BNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 6200 800 50  0001 L BNN
+F 4 "1546931-2" H 6200 800 50  0001 C CNN "Part Name"
+F 5 "TE Connectivity AMP Connectors" H 6200 800 50  0001 C CNN "Manufacturer"
+F 6 "Digikey Canada" H 6200 800 50  0001 C CNN "Vendor"
+F 7 "A97965-ND" H 6200 800 50  0001 C CNN "digikeypn"
+	1    6200 800 
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC

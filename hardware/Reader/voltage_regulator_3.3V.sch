@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 19 19
 Title "CANnect Reader | Voltage Regulator (3.3V)"
-Date "2020-10-27"
-Rev "0.0.03"
+Date "2020-10-28"
+Rev "0.0.04"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 ""
@@ -15,9 +15,7 @@ Comment4 "Component Identifier: VR2"
 $EndDescr
 Text HLabel 2450 1850 0    50   Input ~ 0
 Enable_Signal
-Text HLabel 2500 2400 0    50   Input ~ 0
-Supply_Voltage
-Text HLabel 2500 2600 0    50   Input ~ 0
+Text HLabel 2450 2600 0    50   Input ~ 0
 Sync_Signal
 Text HLabel 9750 2400 2    50   Output ~ 0
 3.3V
@@ -61,18 +59,18 @@ Wire Wire Line
 $Comp
 L Device:C C_VR2_in?
 U 1 1 5FF3161F
-P 3400 2400
+P 3900 2250
 AR Path="/5F8ADA45/5F9EA8B0/5FF3161F" Ref="C_VR2_in?"  Part="1" 
-AR Path="/5F8ADA45/5FF30350/5FF3161F" Ref="C_VR2_in1"  Part="1" 
-F 0 "C_VR2_in1" V 3148 2400 50  0000 C CNN
-F 1 "4.7uF" V 3239 2400 50  0000 C CNN
-F 2 "footprints:C1206C475K3RACAUTO" H 3438 2250 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf" H 3400 2400 50  0001 C CNN
-F 4 "C1206C475K3RACAUTO" H 3400 2400 50  0001 C CNN "Part Name"
-F 5 "Kermet" H 3400 2400 50  0001 C CNN "Manufacturer"
-F 6 "DigiKey Canada" H 3400 2400 50  0001 C CNN "Vendor"
-F 7 "399-7029-1-ND" H 3400 2400 50  0001 C CNN "digikeypn"
-	1    3400 2400
+AR Path="/5F8ADA45/5FF30350/5FF3161F" Ref="C_VR2_1"  Part="1" 
+F 0 "C_VR2_1" V 3648 2250 50  0000 C CNN
+F 1 "4.7uF" V 3739 2250 50  0000 C CNN
+F 2 "footprints:C1206C475K3RACAUTO" H 3938 2100 50  0001 C CNN
+F 3 "https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf" H 3900 2250 50  0001 C CNN
+F 4 "C1206C475K3RACAUTO" H 3900 2250 50  0001 C CNN "Part Name"
+F 5 "Kermet" H 3900 2250 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 3900 2250 50  0001 C CNN "Vendor"
+F 7 "399-7029-1-ND" H 3900 2250 50  0001 C CNN "digikeypn"
+	1    3900 2250
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -80,11 +78,7 @@ Wire Wire Line
 Wire Wire Line
 	4450 1850 4450 2300
 Wire Wire Line
-	2500 2400 3250 2400
-Wire Wire Line
-	3550 2400 4450 2400
-Wire Wire Line
-	2500 2600 4450 2600
+	2450 2600 4450 2600
 Wire Wire Line
 	4450 2600 4450 2500
 Wire Wire Line
@@ -113,8 +107,8 @@ L Device:C C_VR2_BST?
 U 1 1 5FF31636
 P 3600 3450
 AR Path="/5F8ADA45/5F9EA8B0/5FF31636" Ref="C_VR2_BST?"  Part="1" 
-AR Path="/5F8ADA45/5FF30350/5FF31636" Ref="C_VR2_BST1"  Part="1" 
-F 0 "C_VR2_BST1" H 3715 3496 50  0000 L CNN
+AR Path="/5F8ADA45/5FF30350/5FF31636" Ref="C_VR2_2"  Part="1" 
+F 0 "C_VR2_2" H 3715 3496 50  0000 L CNN
 F 1 "0.1uF" H 3715 3405 50  0000 L CNN
 F 2 "footprints:CAPC1608X90" H 3638 3300 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf" H 3600 3450 50  0001 C CNN
@@ -170,8 +164,8 @@ L Device:C C_VR2_BIAS?
 U 1 1 5FF31652
 P 3250 4300
 AR Path="/5F8ADA45/5F9EA8B0/5FF31652" Ref="C_VR2_BIAS?"  Part="1" 
-AR Path="/5F8ADA45/5FF30350/5FF31652" Ref="C_VR2_BIAS1"  Part="1" 
-F 0 "C_VR2_BIAS1" H 3365 4346 50  0000 L CNN
+AR Path="/5F8ADA45/5FF30350/5FF31652" Ref="C_VR2_3"  Part="1" 
+F 0 "C_VR2_3" H 3365 4346 50  0000 L CNN
 F 1 "1uF" H 3365 4255 50  0000 L CNN
 F 2 "footprints:0603" H 3288 4150 50  0001 C CNN
 F 3 "https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf" H 3250 4300 50  0001 C CNN
@@ -318,4 +312,23 @@ Wire Notes Line
 	6800 2600 8850 2600
 Wire Notes Line
 	8850 2600 8850 3650
+Wire Wire Line
+	4450 2400 4200 2400
+Wire Wire Line
+	4200 2400 4200 2250
+Wire Wire Line
+	4200 2250 4050 2250
+$Comp
+L power:GND #PWR0108
+U 1 1 5F99A55F
+P 3350 2250
+F 0 "#PWR0108" H 3350 2000 50  0001 C CNN
+F 1 "GND" H 3355 2077 50  0000 C CNN
+F 2 "" H 3350 2250 50  0001 C CNN
+F 3 "" H 3350 2250 50  0001 C CNN
+	1    3350 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 2250 3750 2250
 $EndSCHEMATC

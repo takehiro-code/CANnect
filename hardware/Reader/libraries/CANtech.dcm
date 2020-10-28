@@ -17,9 +17,21 @@ D Power symbol creates a global label with name "+V_J1850". Used to denote power
 K power-flag
 $ENDCMP
 #
+$CMP 4157
+F https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf
+$ENDCMP
+#
+$CMP ESP32_Holder
+D Header pins to hold a ESP32. Allows 40 pins (20 each side)
+$ENDCMP
+#
 $CMP STN2120
 D OBDII-to-UART Interpreter
 F https://www.scantool.net/scantool/downloads/206/stn21xx_ds_c.pdf
+$ENDCMP
+#
+$CMP SparkFun_ESP32_Thing
+F https://cdn.sparkfun.com/datasheets/Wireless/WiFi/ESP32ThingV1.pdf
 $ENDCMP
 #
 $CMP VRaw

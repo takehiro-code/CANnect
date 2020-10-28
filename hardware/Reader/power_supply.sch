@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 15 19
 Title "CANnect Reader | Power Supply"
-Date "2020-10-27"
-Rev "0.0.03"
+Date "2020-10-28"
+Rev "0.0.04"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 ""
@@ -24,8 +24,6 @@ F 3 "" H 3350 4350 50  0001 C CNN
 	1    3350 4350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3150 2800 3350 2800
 Wire Wire Line
 	3350 3200 3350 2800
 Connection ~ 3350 2800
@@ -54,26 +52,12 @@ $EndComp
 Wire Wire Line
 	1100 2800 1700 2800
 Wire Wire Line
-	4850 2800 4850 1750
-Wire Wire Line
 	4850 1650 5050 1650
-Wire Wire Line
-	5050 1750 4850 1750
-Connection ~ 4850 1750
-Wire Wire Line
-	4850 1750 4850 1650
 Wire Wire Line
 	4850 2800 4850 3150
 Wire Wire Line
 	4850 3150 5050 3150
 Connection ~ 4850 2800
-Wire Wire Line
-	5050 3150 5050 3250
-Wire Wire Line
-	4850 3150 4850 3250
-Wire Wire Line
-	4850 3250 5050 3250
-Connection ~ 4850 3150
 NoConn ~ 5050 3600
 NoConn ~ 5050 3700
 NoConn ~ 5050 2100
@@ -114,21 +98,6 @@ F 7 "399-7029-1-ND" H 3350 3350 50  0001 C CNN "digikeypn"
 	1    3350 3350
 	1    0    0    -1  
 $EndComp
-$Comp
-L 2828322:282832-2 J_PS_1
-U 1 1 5F928400
-P 5100 4700
-F 0 "J_PS_1" V 5289 4828 60  0000 L CNN
-F 1 "282832-2" V 5395 4828 60  0000 L CNN
-F 2 "footprints:282832-2" H 5500 4640 60  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 5100 4700 60  0001 C CNN
-F 4 "282832-2" H 5100 4700 50  0001 C CNN "Part Name"
-F 5 "DigiKey Canada" H 5100 4700 50  0001 C CNN "Vendor"
-F 6 "TE Connectivity AMP Connectors" H 5100 4700 50  0001 C CNN "Manufacturer"
-F 7 "A113314-ND" H 5100 4700 50  0001 C CNN "digikeypn"
-	1    5100 4700
-	1    0    0    -1  
-$EndComp
 $Sheet
 S 1750 4900 1550 450 
 U 5FD5D295
@@ -136,8 +105,6 @@ F0 "Voltage Sense" 50
 F1 "voltage_sense.sch" 50
 F2 "Analog_Voltage" O R 3300 5150 50 
 $EndSheet
-Wire Wire Line
-	3300 5150 4200 5150
 Text HLabel 6000 5150 2    50   Output ~ 0
 Analog_Voltage
 Wire Wire Line
@@ -197,14 +164,10 @@ NoConn ~ 6450 3500
 NoConn ~ 6450 2000
 Connection ~ 6850 3400
 Wire Wire Line
-	7250 2600 7600 2600
-Wire Wire Line
 	7250 3400 7250 2600
 Wire Wire Line
 	6850 3400 7250 3400
 Connection ~ 6850 1900
-Wire Wire Line
-	7250 2500 7600 2500
 Wire Wire Line
 	7250 1900 7250 2500
 Wire Wire Line
@@ -234,11 +197,10 @@ U 5F9EA8B0
 F0 "Voltage Regulator (5V)" 50
 F1 "voltage_regulator_5v.sch" 50
 F2 "Enable_Signal" I L 5050 1650 50 
-F3 "Supply_Voltage" I L 5050 1750 50 
-F4 "Sync_Signal" I L 5050 2100 50 
-F5 "Fixed_5V" O R 6450 1900 50 
-F6 "PGood" O R 6450 2000 50 
-F7 "Spread_Spectrum_Enable" I L 5050 2200 50 
+F3 "Sync_Signal" I L 5050 2100 50 
+F4 "Fixed_5V" O R 6450 1900 50 
+F5 "PGood" O R 6450 2000 50 
+F6 "Spread_Spectrum_Enable" I L 5050 2200 50 
 $EndSheet
 $Sheet
 S 5050 3050 1400 800 
@@ -246,27 +208,11 @@ U 5FF30350
 F0 "Voltage Regulator (3.3V)" 50
 F1 "voltage_regulator_3.3V.sch" 50
 F2 "Enable_Signal" I L 5050 3150 50 
-F3 "Supply_Voltage" I L 5050 3250 50 
-F4 "Sync_Signal" I L 5050 3600 50 
-F5 "3.3V" O R 6450 3400 50 
-F6 "PGood" O R 6450 3500 50 
-F7 "Spread_Spectrum_Enable" I L 5050 3700 50 
+F3 "Sync_Signal" I L 5050 3600 50 
+F4 "3.3V" O R 6450 3400 50 
+F5 "PGood" O R 6450 3500 50 
+F6 "Spread_Spectrum_Enable" I L 5050 3700 50 
 $EndSheet
-$Comp
-L 2828322:282832-2 J_PS_2
-U 1 1 5F9327D0
-P 7600 2500
-F 0 "J_PS_2" V 7789 2628 60  0000 L CNN
-F 1 "282832-2" V 7895 2628 60  0000 L CNN
-F 2 "footprints:282832-2" H 8000 2440 60  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 7600 2500 60  0001 C CNN
-F 4 "282832-2" H 7600 2500 50  0001 C CNN "Part Name"
-F 5 "DigiKey Canada" H 7600 2500 50  0001 C CNN "Vendor"
-F 6 "TE Connectivity AMP Connectors" H 7600 2500 50  0001 C CNN "Manufacturer"
-F 7 "A113314-ND" H 7600 2500 50  0001 C CNN "digikeypn"
-	1    7600 2500
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:+5V #PWR093
 U 1 1 5F9FC0C0
@@ -279,19 +225,30 @@ F 3 "" H 6850 1650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3350 2800 4200 2800
+	4850 1650 4850 2800
 Wire Wire Line
-	4200 2800 4200 4700
+	3350 2800 3200 2800
+$Comp
+L 1546931-2:1546931-2 J_PS_1
+U 1 1 5FA002EC
+P 7850 2600
+F 0 "J_PS_1" H 8080 2696 50  0000 L CNN
+F 1 "1546931-2" H 8080 2605 50  0000 L CNN
+F 2 "footprints:1546931-2" H 7850 2600 50  0001 L BNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 7850 2600 50  0001 L BNN
+F 4 "1546931-2" H 7850 2600 50  0001 C CNN "Part Name"
+F 5 "TE Connectivity AMP Connectors" H 7850 2600 50  0001 C CNN "Manufacturer"
+F 6 "Digikey Canada" H 7850 2600 50  0001 C CNN "Vendor"
+F 7 "A97965-ND" H 7850 2600 50  0001 C CNN "digikeypn"
+	1    7850 2600
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	4200 4700 5100 4700
-Connection ~ 4200 2800
+	7250 2500 7450 2500
 Wire Wire Line
-	4200 2800 4850 2800
+	7450 2600 7250 2600
 Wire Wire Line
-	5100 4800 4200 4800
+	3350 2800 4850 2800
 Wire Wire Line
-	4200 4800 4200 5150
-Connection ~ 4200 5150
-Wire Wire Line
-	4200 5150 6000 5150
+	3300 5150 6000 5150
 $EndSCHEMATC

@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 2 19
 Title "CANnect Reader | Power Switch"
-Date "2020-10-27"
-Rev "0.0.03"
+Date "2020-10-28"
+Rev "0.0.04"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -24,7 +24,7 @@ AR Path="/5FA56A4E/5FA57921" Ref="Q_PSW_3"  Part="1"
 F 0 "Q_PSW_3" V 6489 3500 60  0000 C CNN
 F 1 "NX7002AK,215" V 6383 3500 60  0000 C CNN
 F 2 "footprints:SOT95P230X110-3N" H 6350 3240 60  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 5900 3500 60  0000 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 5900 3500 60  0001 C CNN
 F 4 "NX7002AK,215" H 5900 3500 50  0001 C CNN "Part Name"
 F 5 "Nexperia USA Inc." H 5900 3500 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 5900 3500 50  0001 C CNN "Vendor"
@@ -41,7 +41,7 @@ AR Path="/5FA56A4E/5FA57927" Ref="Q_PSW_4"  Part="1"
 F 0 "Q_PSW_4" V 7839 3500 60  0000 C CNN
 F 1 "NX7002AK,215" V 7733 3500 60  0000 C CNN
 F 2 "footprints:SOT95P230X110-3N" H 7700 3240 60  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 7250 3500 60  0000 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 7250 3500 60  0001 C CNN
 F 4 "NX7002AK,215" H 7250 3500 50  0001 C CNN "Part Name"
 F 5 "Nexperia USA Inc." H 7250 3500 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 7250 3500 50  0001 C CNN "Vendor"
@@ -152,7 +152,7 @@ AR Path="/5FA56A4E/5FA5791B" Ref="Q_PSW_2"  Part="1"
 F 0 "Q_PSW_2" V 5239 3500 60  0000 C CNN
 F 1 "NX7002AK,215" V 5133 3500 60  0000 C CNN
 F 2 "footprints:SOT95P230X110-3N" H 5100 3240 60  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 4650 3500 60  0000 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 4650 3500 60  0001 C CNN
 F 4 "NX7002AK,215" H 4650 3500 50  0001 C CNN "Part Name"
 F 5 "Nexperia USA Inc." H 4650 3500 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 4650 3500 50  0001 C CNN "Vendor"
@@ -249,17 +249,19 @@ Wire Wire Line
 	7250 3650 8200 3650
 Connection ~ 7250 3650
 $Comp
-L 2828322:282832-2 J_PSW_1
+L Reader-rescue:282832-2-2828322 J_PSW_1
 U 1 1 5F9A0984
 P 4700 2100
+AR Path="/5F9A0984" Ref="J_PSW_1"  Part="1" 
+AR Path="/5FA56A4E/5F9A0984" Ref="J_PSW_1"  Part="1" 
 F 0 "J_PSW_1" V 4889 2228 60  0000 L CNN
-F 1 "282832-2" V 4995 2228 60  0000 L CNN
-F 2 "footprints:282832-2" H 5100 2040 60  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 4700 2100 60  0001 C CNN
-F 4 "282832-2" H 4700 2100 50  0001 C CNN "Part Name"
+F 1 "1546931-2" V 4995 2228 60  0000 L CNN
+F 2 "footprints:1546931-2" H 5100 2040 60  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 4700 2100 60  0001 C CNN
+F 4 "1546931-2" H 4700 2100 50  0001 C CNN "Part Name"
 F 5 "DigiKey Canada" H 4700 2100 50  0001 C CNN "Vendor"
 F 6 "TE Connectivity AMP Connectors" H 4700 2100 50  0001 C CNN "Manufacturer"
-F 7 "A113314-ND" H 4700 2100 50  0001 C CNN "digikeypn"
+F 7 "A97965-ND" H 4700 2100 50  0001 C CNN "digikeypn"
 	1    4700 2100
 	0    1    1    0   
 $EndComp
@@ -288,32 +290,36 @@ F 3 "" H 6900 2650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 2828322:282832-2 J_PSW_2
+L Reader-rescue:282832-2-2828322 J_PSW_2
 U 1 1 5F9A6466
 P 5950 2100
+AR Path="/5F9A6466" Ref="J_PSW_2"  Part="1" 
+AR Path="/5FA56A4E/5F9A6466" Ref="J_PSW_2"  Part="1" 
 F 0 "J_PSW_2" V 6139 2228 60  0000 L CNN
-F 1 "282832-2" V 6245 2228 60  0000 L CNN
-F 2 "footprints:282832-2" H 6350 2040 60  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 5950 2100 60  0001 C CNN
-F 4 "282832-2" H 5950 2100 50  0001 C CNN "Part Name"
+F 1 "1546931-2" V 6245 2228 60  0000 L CNN
+F 2 "footprints:1546931-2" H 6350 2040 60  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 5950 2100 60  0001 C CNN
+F 4 "1546931-2" H 5950 2100 50  0001 C CNN "Part Name"
 F 5 "DigiKey Canada" H 5950 2100 50  0001 C CNN "Vendor"
 F 6 "TE Connectivity AMP Connectors" H 5950 2100 50  0001 C CNN "Manufacturer"
-F 7 "A113314-ND" H 5950 2100 50  0001 C CNN "digikeypn"
+F 7 "A97965-ND" H 5950 2100 50  0001 C CNN "digikeypn"
 	1    5950 2100
 	0    1    1    0   
 $EndComp
 $Comp
-L 2828322:282832-2 J_PSW_3
+L Reader-rescue:282832-2-2828322 J_PSW_3
 U 1 1 5F9A673F
 P 7300 2100
+AR Path="/5F9A673F" Ref="J_PSW_3"  Part="1" 
+AR Path="/5FA56A4E/5F9A673F" Ref="J_PSW_3"  Part="1" 
 F 0 "J_PSW_3" V 7489 2228 60  0000 L CNN
-F 1 "282832-2" V 7595 2228 60  0000 L CNN
-F 2 "footprints:282832-2" H 7700 2040 60  0001 C CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=282832&DocType=Customer+Drawing&DocLang=English" H 7300 2100 60  0001 C CNN
-F 4 "282832-2" H 7300 2100 50  0001 C CNN "Part Name"
+F 1 "1546931-2" V 7595 2228 60  0000 L CNN
+F 2 "footprints:1546931-2" H 7700 2040 60  0001 C CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 7300 2100 60  0001 C CNN
+F 4 "1546931-2" H 7300 2100 50  0001 C CNN "Part Name"
 F 5 "DigiKey Canada" H 7300 2100 50  0001 C CNN "Vendor"
 F 6 "TE Connectivity AMP Connectors" H 7300 2100 50  0001 C CNN "Manufacturer"
-F 7 "A113314-ND" H 7300 2100 50  0001 C CNN "digikeypn"
+F 7 "A97965-ND" H 7300 2100 50  0001 C CNN "digikeypn"
 	1    7300 2100
 	0    1    1    0   
 $EndComp

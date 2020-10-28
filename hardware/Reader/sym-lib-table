@@ -1,4 +1,5 @@
 (sym_lib_table
+  (lib (name 1546931-2)(type Legacy)(uri ${KIPRJMOD}/libraries/1546931-2.lib)(options "")(descr ""))
   (lib (name 2828322)(type Legacy)(uri ${KIPRJMOD}/libraries/2828322.lib)(options "")(descr ""))
   (lib (name AHDF15AKGTAXB)(type Legacy)(uri ${KIPRJMOD}/libraries/AHDF15AKGTAXB.lib)(options "")(descr ""))
   (lib (name BAT46)(type Legacy)(uri ${KIPRJMOD}/libraries/BAT46.lib)(options "")(descr ""))
@@ -15,6 +16,7 @@
   (lib (name CRCW06032K70FKEAC)(type Legacy)(uri ${KIPRJMOD}/libraries/CRCW06032K70FKEAC.lib)(options "")(descr ""))
   (lib (name CV2012104R7K)(type Legacy)(uri ${KIPRJMOD}/libraries/CV2012104R7K.lib)(options "")(descr ""))
   (lib (name ECS-2033-160-AU)(type Legacy)(uri ${KIPRJMOD}/libraries/ECS-2033-160-AU.lib)(options "")(descr ""))
+  (lib (name ERJ-1GNJ513C)(type Legacy)(uri ${KIPRJMOD}/libraries/ERJ-1GNJ513C.lib)(options "")(descr ""))
   (lib (name ERJ-8ENF1000V)(type Legacy)(uri ${KIPRJMOD}/libraries/ERJ-8ENF1000V.lib)(options "")(descr ""))
   (lib (name ERJ-8ENF2400V)(type Legacy)(uri ${KIPRJMOD}/libraries/ERJ-8ENF2400V.lib)(options "")(descr ""))
   (lib (name ERJ-8ENF3300V)(type Legacy)(uri ${KIPRJMOD}/libraries/ERJ-8ENF3300V.lib)(options "")(descr ""))

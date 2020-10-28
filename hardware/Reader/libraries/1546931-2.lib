@@ -1,0 +1,25 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# 1546931-2
+#
+DEF 1546931-2 J 0 40 Y Y 1 F N
+F0 "J" -220 200 50 H V L BNN
+F1 "1546931-2" -200 -200 50 H V L BNN
+F2 "footprints:1546931-2" 0 0 50 H I L BNN
+F3 "" 0 0 50 H I L BNN
+F4 "1546931-2" 0 0 50 H I C CNN "Part Name"
+F5 "TE Connectivity AMP Connectors" 0 0 50 H I C CNN "Manufacturer"
+F6 "Digikey Canada" 0 0 50 H I C CNN "Vendor"
+F7 "A97965-ND" 0 0 50 H I C CNN "digikeypn"
+DRAW
+P 2 0 0 10 -200 -100 -200 200 N
+P 2 0 0 10 -200 200 200 200 N
+P 2 0 0 10 200 -100 -200 -100 N
+P 2 0 0 10 200 200 200 -100 N
+X 1 1 -400 100 200 R 40 40 0 0 P
+X 2 2 -400 0 200 R 40 40 0 0 P
+ENDDRAW
+ENDDEF
+#
+#End Library

@@ -1,4 +1,4 @@
-update=10/27/20 06:20:58
+update=10/28/20 09:07:35
 version=1
 last_client=kicad
 [general]
@@ -12,6 +12,16 @@ NetIExt=net
 version=1
 LibDir=
 [eeschema/libraries]
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=export/schematic/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=Pcbnew
+SpiceAjustPassiveValues=0
+LabSize=50
+ERC_TestSimilarLabels=1
 [pcbnew]
 version=1
 PageLayoutDescrFile=
@@ -28,9 +38,9 @@ MinViaDrill=0.3
 MinMicroViaDiameter=0.13
 MinMicroViaDrill=0.128
 MinHoleToHole=0.22
-TrackWidth1=0.25
+TrackWidth1=0.22
 ViaDiameter1=0.5
-ViaDrill1=0.4
+ViaDrill1=0.32
 dPairWidth1=0.3
 dPairGap1=0.25
 dPairViaGap1=0.25
@@ -228,9 +238,9 @@ Enabled=0
 [pcbnew/Netclasses/Default]
 Name=Default
 Clearance=0.2
-TrackWidth=0.25
+TrackWidth=0.22
 ViaDiameter=0.5
-ViaDrill=0.4
+ViaDrill=0.32
 uViaDiameter=0.3
 uViaDrill=0.129
 dPairWidth=0.3
@@ -239,21 +249,11 @@ dPairViaGap=0.25
 [pcbnew/Netclasses/1]
 Name=Power
 Clearance=0.2
-TrackWidth=0.7
+TrackWidth=0.5
 ViaDiameter=0.5
-ViaDrill=0.4
+ViaDrill=0.32
 uViaDiameter=0.3
 uViaDrill=0.129
 dPairWidth=1
 dPairGap=0.25
 dPairViaGap=0.25
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=export/schematic/
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=Pcbnew
-SpiceAjustPassiveValues=0
-LabSize=50
-ERC_TestSimilarLabels=1

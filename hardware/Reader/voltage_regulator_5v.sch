@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 18 19
 Title "CANnect Reader | Voltage Regulator (5V)"
-Date "2020-10-27"
-Rev "0.0.03"
+Date "2020-10-28"
+Rev "0.0.04"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 ""
@@ -20,7 +20,7 @@ P 3800 2200
 F 0 "U_VR1" H 4600 2587 60  0000 C CNN
 F 1 "MAX25276ATCA_VY+" H 4600 2481 60  0000 C CNN
 F 2 "footprints:MAX25276ATCA&slash_VY&plus_" H 4600 2440 60  0001 C CNN
-F 3 "https://datasheets.maximintegrated.com/en/ds/MAX20075-MAX25276.pdf" H 3800 2200 60  0000 C CNN
+F 3 "https://datasheets.maximintegrated.com/en/ds/MAX20075-MAX25276.pdf" H 4650 2400 60  0000 C CNN
 F 4 "MAX25276ATCA/VY+" H 3800 2200 50  0001 C CNN "Part Name"
 F 5 "Maxim Integrated" H 3800 2200 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 3800 2200 50  0001 C CNN "Vendor"
@@ -30,9 +30,7 @@ F 7 "175-MAX25276ATCA/VY+-ND" H 3800 2200 50  0001 C CNN "digikeypn"
 $EndComp
 Text HLabel 1800 1750 0    50   Input ~ 0
 Enable_Signal
-Text HLabel 1850 2300 0    50   Input ~ 0
-Supply_Voltage
-Text HLabel 1850 2500 0    50   Input ~ 0
+Text HLabel 1800 2500 0    50   Input ~ 0
 Sync_Signal
 Text HLabel 7450 2300 2    50   Output ~ 0
 Fixed_5V
@@ -76,30 +74,26 @@ Wire Wire Line
 Wire Wire Line
 	5950 4650 5950 4900
 $Comp
-L Device:C C_VR1_in1
+L Device:C C_VR1_1
 U 1 1 5F9F0C9F
-P 2750 2300
-F 0 "C_VR1_in1" V 2498 2300 50  0000 C CNN
-F 1 "4.7uF" V 2589 2300 50  0000 C CNN
-F 2 "footprints:C1206C475K3RACAUTO" H 2788 2150 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf" H 2750 2300 50  0001 C CNN
-F 4 "C1206C475K3RACAUTO" H 2750 2300 50  0001 C CNN "Part Name"
-F 5 "Kermet" H 2750 2300 50  0001 C CNN "Manufacturer"
-F 6 "DigiKey Canada" H 2750 2300 50  0001 C CNN "Vendor"
-F 7 "399-7029-1-ND" H 2750 2300 50  0001 C CNN "digikeypn"
-	1    2750 2300
-	0    1    1    0   
+P 3100 2150
+F 0 "C_VR1_1" V 2848 2150 50  0000 C CNN
+F 1 "4.7uF" V 2939 2150 50  0000 C CNN
+F 2 "footprints:C1206C475K3RACAUTO" H 3138 2000 50  0001 C CNN
+F 3 "https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf" H 3100 2150 50  0001 C CNN
+F 4 "C1206C475K3RACAUTO" H 3100 2150 50  0001 C CNN "Part Name"
+F 5 "Kermet" H 3100 2150 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 3100 2150 50  0001 C CNN "Vendor"
+F 7 "399-7029-1-ND" H 3100 2150 50  0001 C CNN "digikeypn"
+	1    3100 2150
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	1800 1750 3800 1750
 Wire Wire Line
 	3800 1750 3800 2200
 Wire Wire Line
-	1850 2300 2600 2300
-Wire Wire Line
-	2900 2300 3800 2300
-Wire Wire Line
-	1850 2500 3800 2500
+	1800 2500 3800 2500
 Wire Wire Line
 	3800 2500 3800 2400
 Wire Wire Line
@@ -127,10 +121,10 @@ Connection ~ 6650 2300
 Wire Wire Line
 	6650 2300 7450 2300
 $Comp
-L Device:C C_VR1_BST1
+L Device:C C_VR1_2
 U 1 1 5F9F38FF
 P 2750 3350
-F 0 "C_VR1_BST1" H 2865 3396 50  0000 L CNN
+F 0 "C_VR1_2" H 2865 3396 50  0000 L CNN
 F 1 "0.1uF" H 2865 3305 50  0000 L CNN
 F 2 "footprints:CAPC1608X90" H 2788 3200 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf" H 2750 3350 50  0001 C CNN
@@ -180,10 +174,10 @@ Spread_Spectrum_Enable
 Wire Wire Line
 	1800 3000 3800 3000
 $Comp
-L Device:C C_VR1_BIAS1
+L Device:C C_VR1_3
 U 1 1 5F9EFBD6
 P 5950 4500
-F 0 "C_VR1_BIAS1" H 6065 4546 50  0000 L CNN
+F 0 "C_VR1_3" H 6065 4546 50  0000 L CNN
 F 1 "1uF" H 6065 4455 50  0000 L CNN
 F 2 "footprints:0603" H 5988 4350 50  0001 C CNN
 F 3 "https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf" H 5950 4500 50  0001 C CNN
@@ -203,4 +197,23 @@ Wire Wire Line
 Connection ~ 5950 4000
 Wire Wire Line
 	5950 4000 5950 4350
+Wire Wire Line
+	3800 2300 3400 2300
+Wire Wire Line
+	3400 2300 3400 2150
+Wire Wire Line
+	3400 2150 3250 2150
+$Comp
+L power:GND #PWR0107
+U 1 1 5F994A83
+P 2700 2150
+F 0 "#PWR0107" H 2700 1900 50  0001 C CNN
+F 1 "GND" H 2705 1977 50  0000 C CNN
+F 2 "" H 2700 2150 50  0001 C CNN
+F 3 "" H 2700 2150 50  0001 C CNN
+	1    2700 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 2150 2950 2150
 $EndSCHEMATC
