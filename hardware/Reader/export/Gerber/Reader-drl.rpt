@@ -1,0 +1,32 @@
+Drill report for C:\Users\Jin-Desktop\Documents\Projects\ensc-405w\hardware\Reader\Reader.kicad_pcb
+Created on 10/28/20 09:37:05
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  In1.Cu                    in1
+    L3 :  In2.Cu                    in2
+    L4 :  B.Cu                      back
+
+
+Drill file 'Reader-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.20mm  0.008"  (36 holes)
+    T2  0.32mm  0.013"  (179 holes)
+    T3  0.61mm  0.024"  (2 holes)
+    T4  0.79mm  0.031"  (14 holes)
+    T5  0.80mm  0.031"  (10 holes)
+    T6  1.00mm  0.039"  (120 holes)
+    T7  1.04mm  0.041"  (15 holes)
+    T8  1.40mm  0.055"  (6 holes)
+    T9  3.30mm  0.130"  (2 holes)
+
+    Total plated holes count 384
+
+
+Drill file 'Reader-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+
+    Total unplated holes count 0

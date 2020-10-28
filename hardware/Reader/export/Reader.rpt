@@ -1,8 +1,116 @@
 ** Drc report for C:\Users\Jin-Desktop\Documents\Projects\ensc-405w\hardware\Reader\Reader.kicad_pcb **
 ** Created on  **
 
-** Found 0 DRC errors **
+** Found 34 DRC errors **
+ErrType(19): Pad too close to pad
+    @(118.342 mm, 95.849 mm): Pad 4 of U_MSCAN_1 on F.Cu and others
+    @(119.317 mm, 97.219 mm): Pad 9 of U_MSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(118.342 mm, 98.588 mm): Pad 5 of U_MSCAN_1 on F.Cu and others
+    @(119.317 mm, 97.219 mm): Pad 9 of U_MSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(118.784 mm, 86.700 mm): Pad 4 of U_HSCAN_1 on F.Cu and others
+    @(119.759 mm, 88.069 mm): Pad 9 of U_HSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(118.784 mm, 89.438 mm): Pad 5 of U_HSCAN_1 on F.Cu and others
+    @(119.759 mm, 88.069 mm): Pad 9 of U_HSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(118.991 mm, 95.849 mm): Pad 3 of U_MSCAN_1 on F.Cu and others
+    @(119.317 mm, 97.219 mm): Pad 9 of U_MSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(118.991 mm, 98.588 mm): Pad 6 of U_MSCAN_1 on F.Cu and others
+    @(119.317 mm, 97.219 mm): Pad 9 of U_MSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(119.317 mm, 97.219 mm): Pad 9 of U_MSCAN_1 on F.Cu and others
+    @(119.642 mm, 98.588 mm): Pad 7 of U_MSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(119.434 mm, 86.700 mm): Pad 3 of U_HSCAN_1 on F.Cu and others
+    @(119.759 mm, 88.069 mm): Pad 9 of U_HSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(119.434 mm, 89.438 mm): Pad 6 of U_HSCAN_1 on F.Cu and others
+    @(119.759 mm, 88.069 mm): Pad 9 of U_HSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(119.759 mm, 88.069 mm): Pad 9 of U_HSCAN_1 on F.Cu and others
+    @(120.084 mm, 89.438 mm): Pad 7 of U_HSCAN_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(133.200 mm, 131.076 mm): Pad 8 of U_VR2 on F.Cu and others
+    @(134.620 mm, 131.826 mm): Pad 13 of U_VR2 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(133.200 mm, 131.576 mm): Pad 9 of U_VR2 on F.Cu and others
+    @(134.620 mm, 131.826 mm): Pad 13 of U_VR2 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(133.200 mm, 132.076 mm): Pad 10 of U_VR2 on F.Cu and others
+    @(134.620 mm, 131.826 mm): Pad 13 of U_VR2 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(133.200 mm, 132.576 mm): Pad 11 of U_VR2 on F.Cu and others
+    @(134.620 mm, 131.826 mm): Pad 13 of U_VR2 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(133.200 mm, 133.076 mm): Pad 12 of U_VR2 on F.Cu and others
+    @(134.620 mm, 131.826 mm): Pad 13 of U_VR2 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(134.620 mm, 131.826 mm): Pad 13 of U_VR2 on F.Cu and others
+    @(136.040 mm, 131.076 mm): Pad 5 of U_VR2 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(140.516 mm, 72.275 mm): Pad 1 of U_MM_1 on F.Cu and others
+    @(140.516 mm, 72.775 mm): Pad 2 of U_MM_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(140.516 mm, 73.275 mm): Pad 3 of U_MM_1 on F.Cu and others
+    @(140.516 mm, 73.775 mm): Pad 4 of U_MM_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(140.516 mm, 73.775 mm): Pad 4 of U_MM_1 on F.Cu and others
+    @(141.176 mm, 73.935 mm): Pad 5 of U_MM_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(141.176 mm, 72.115 mm): Pad 14 of U_MM_1 on F.Cu and others
+    @(141.676 mm, 72.115 mm): Pad 13 of U_MM_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(141.176 mm, 73.935 mm): Pad 5 of U_MM_1 on F.Cu and others
+    @(141.676 mm, 73.935 mm): Pad 6 of U_MM_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(141.676 mm, 72.115 mm): Pad 13 of U_MM_1 on F.Cu and others
+    @(142.176 mm, 72.115 mm): Pad 12 of U_MM_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(141.986 mm, 65.759 mm): Pad 2 of R_SWCAN_2 on B.Cu and others
+    @(141.986 mm, 66.321 mm): Pad 1 of R_SWCAN_2 on B.Cu and others
+ErrType(19): Pad too close to pad
+    @(142.176 mm, 72.115 mm): Pad 12 of U_MM_1 on F.Cu and others
+    @(142.836 mm, 72.275 mm): Pad 11 of U_MM_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(142.176 mm, 73.935 mm): Pad 7 of U_MM_1 on F.Cu and others
+    @(142.836 mm, 73.775 mm): Pad 8 of U_MM_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(142.836 mm, 72.275 mm): Pad 11 of U_MM_1 on F.Cu and others
+    @(142.836 mm, 72.775 mm): Pad 10 of U_MM_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(142.836 mm, 72.775 mm): Pad 10 of U_MM_1 on F.Cu and others
+    @(142.836 mm, 73.275 mm): Pad 9 of U_MM_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(142.836 mm, 73.275 mm): Pad 9 of U_MM_1 on F.Cu and others
+    @(142.836 mm, 73.775 mm): Pad 8 of U_MM_1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(152.453 mm, 126.969 mm): Pad 1 of U_VR1 on F.Cu and others
+    @(153.873 mm, 128.219 mm): Pad 13 of U_VR1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(152.453 mm, 127.469 mm): Pad 2 of U_VR1 on F.Cu and others
+    @(153.873 mm, 128.219 mm): Pad 13 of U_VR1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(152.453 mm, 127.969 mm): Pad 3 of U_VR1 on F.Cu and others
+    @(153.873 mm, 128.219 mm): Pad 13 of U_VR1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(152.453 mm, 128.469 mm): Pad 4 of U_VR1 on F.Cu and others
+    @(153.873 mm, 128.219 mm): Pad 13 of U_VR1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(152.453 mm, 128.969 mm): Pad 5 of U_VR1 on F.Cu and others
+    @(153.873 mm, 128.219 mm): Pad 13 of U_VR1 on F.Cu and others
+ErrType(19): Pad too close to pad
+    @(153.873 mm, 128.219 mm): Pad 13 of U_VR1 on F.Cu and others
+    @(155.293 mm, 126.969 mm): Pad 12 of U_VR1 on F.Cu and others
 
-** Found 0 unconnected pads **
+** Found 2 unconnected pads **
+ErrType(2): Unconnected items
+    @(127.635 mm, 88.265 mm): Track 0.250 mm [/OBDII Interpreter/RESET_OBD_SW] on In2.Cu, length: 10.534 mm
+    @(128.920 mm, 86.900 mm): Track 0.300 mm [/OBDII Interpreter/RESET_OBD_SW] on F.Cu, length: 0.412 mm
+ErrType(2): Unconnected items
+    @(128.905 mm, 89.535 mm): Track 0.250 mm [/OBDII Interpreter/RESET_OBD_SW] on In2.Cu, length: 0.065 mm
+    @(132.894 mm, 90.874 mm): Track 0.300 mm [/OBDII Interpreter/RESET_OBD_SW] on F.Cu, length: 1.370 mm
 
 ** End of Report **

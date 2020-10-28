@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "(5.1.7)-1"
     },
-    "CreationDate":  "2020-10-27T12:51:00-07:00"
+    "CreationDate":  "2020-10-28T09:36:55-07:00"
   },
   "GeneralSpecs":
   {
@@ -15,12 +15,12 @@
     {
       "Name": "Reader",
       "GUID": "52656164-6572-42e6-9b69-6361645f7063",
-      "Revision": "0.0.01"
+      "Revision": "0.0.02"
     },
     "Size":
     {
-      "X": 66.775,
-      "Y": 104.875
+      "X": 53.440,
+      "Y": 125.195
     },
     "LayerNumber": 4,
     "BoardThickness":  1.000
@@ -32,14 +32,18 @@
       "PadToPad":  0.200,
       "PadToTrack":  0.200,
       "TrackToTrack":  0.200,
-      "MinLineWidth":  0.200
+      "MinLineWidth":  0.200,
+      "TrackToRegion":  0.508,
+      "RegionToRegion":  0.508
     },
     {
       "Layers": "Inner",
       "PadToPad":  0.200,
       "PadToTrack":  0.200,
       "TrackToTrack":  0.200,
-      "MinLineWidth":  0.200
+      "MinLineWidth":  0.220,
+      "TrackToRegion":  0.508,
+      "RegionToRegion":  0.508
     }
   ],
   "FilesAttributes":
