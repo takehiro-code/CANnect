@@ -77,3 +77,12 @@ fp-info-cache
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Rescue files
+*-rescue.cdm
+*-rescue.lib
+*-rescue
+
+# Zip Folders
+*.zip
+*.7zp
