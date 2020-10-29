@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "(5.1.7)-1"
     },
-    "CreationDate":  "2020-10-29T00:39:07-07:00"
+    "CreationDate":  "2020-10-29T00:47:00-07:00"
   },
   "GeneralSpecs":
   {
@@ -15,7 +15,7 @@
     {
       "Name": "Reader",
       "GUID": "52656164-6572-42e6-9b69-6361645f7063",
-      "Revision": "0.0.02"
+      "Revision": "0.0.03"
     },
     "Size":
     {

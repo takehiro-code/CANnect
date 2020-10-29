@@ -86,3 +86,6 @@ Thumbs.db
 # Zip Folders
 *.zip
 *.7zp
+
+# Report files
+*.rpt
