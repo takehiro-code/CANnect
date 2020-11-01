@@ -232,6 +232,7 @@ F 3 "https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf" H
 F 4 "DigiKey Canada" H 3200 3450 50  0001 C CNN "Vendor"
 F 5 "Adafruit Industries LLC" H 3200 3450 50  0001 C CNN "Manufacturer"
 F 6 "1528-2929-ND" H 3200 3450 50  0001 C CNN "digikeypn"
+F 7 "4157" H 3200 3450 50  0001 C CNN "Part Name"
 	1    3200 3450
 	1    0    0    -1  
 $EndComp
@@ -246,6 +247,7 @@ F 3 "https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf" H
 F 4 "DigiKey Canada" H 3850 4550 50  0001 C CNN "Vendor"
 F 5 "Adafruit Industries LLC" H 3850 4550 50  0001 C CNN "Manufacturer"
 F 6 "1528-2929-ND" H 3850 4550 50  0001 C CNN "digikeypn"
+F 7 "4157" H 3850 4550 50  0001 C CNN "Part Name"
 	1    3850 4550
 	-1   0    0    1   
 $EndComp
@@ -300,6 +302,7 @@ F 3 "https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf" H
 F 4 "DigiKey Canada" H 8550 4550 50  0001 C CNN "Vendor"
 F 5 "Adafruit Industries LLC" H 8550 4550 50  0001 C CNN "Manufacturer"
 F 6 "1528-2929-ND" H 8550 4550 50  0001 C CNN "digikeypn"
+F 7 "4157" H 8550 4550 50  0001 C CNN "Part Name"
 	1    8550 4550
 	-1   0    0    1   
 $EndComp
@@ -314,6 +317,7 @@ F 3 "https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf" H
 F 4 "DigiKey Canada" H 7900 3450 50  0001 C CNN "Vendor"
 F 5 "Adafruit Industries LLC" H 7900 3450 50  0001 C CNN "Manufacturer"
 F 6 "1528-2929-ND" H 7900 3450 50  0001 C CNN "digikeypn"
+F 7 "4157" H 7900 3450 50  0001 C CNN "Part Name"
 	1    7900 3450
 	1    0    0    -1  
 $EndComp

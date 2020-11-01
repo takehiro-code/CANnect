@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>C:\Users\Jin-Desktop\Documents\Projects\ensc-405w\hardware\Reader\Reader.sch</source>
-    <date>10/28/20 05:37:13</date>
+    <date>10/31/20 23:44:54</date>
     <tool>Eeschema (5.1.7)-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -1126,7 +1126,7 @@
       <tstamp>5FBD3FD7</tstamp>
     </comp>
     <comp ref="C_SWCAN_2">
-      <value>4.7uF 25V</value>
+      <value>4.7uF</value>
       <footprint>footprints:C1206C475K3RACAUTO</footprint>
       <datasheet>https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf</datasheet>
       <fields>
@@ -1650,6 +1650,7 @@
       <datasheet>https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf</datasheet>
       <fields>
         <field name="Manufacturer">Adafruit Industries LLC</field>
+        <field name="Part Name">4157</field>
         <field name="Vendor">DigiKey Canada</field>
         <field name="digikeypn">1528-2929-ND</field>
       </fields>
@@ -1663,6 +1664,7 @@
       <datasheet>https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf</datasheet>
       <fields>
         <field name="Manufacturer">Adafruit Industries LLC</field>
+        <field name="Part Name">4157</field>
         <field name="Vendor">DigiKey Canada</field>
         <field name="digikeypn">1528-2929-ND</field>
       </fields>
@@ -1676,6 +1678,7 @@
       <datasheet>https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf</datasheet>
       <fields>
         <field name="Manufacturer">Adafruit Industries LLC</field>
+        <field name="Part Name">4157</field>
         <field name="Vendor">DigiKey Canada</field>
         <field name="digikeypn">1528-2929-ND</field>
       </fields>
@@ -1689,6 +1692,7 @@
       <datasheet>https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf</datasheet>
       <fields>
         <field name="Manufacturer">Adafruit Industries LLC</field>
+        <field name="Part Name">4157</field>
         <field name="Vendor">DigiKey Canada</field>
         <field name="digikeypn">1528-2929-ND</field>
       </fields>
@@ -3066,8 +3070,8 @@
       <node ref="U_HST_1" pin="39"/>
     </net>
     <net code="40" name="Net-(J_HST_3-Pad2)">
-      <node ref="J_HST_3" pin="2"/>
       <node ref="U_HST_1" pin="22"/>
+      <node ref="J_HST_3" pin="2"/>
     </net>
     <net code="41" name="Net-(J_HST_3-Pad1)">
       <node ref="J_HST_3" pin="1"/>
@@ -3078,8 +3082,8 @@
       <node ref="J_HST_3" pin="9"/>
     </net>
     <net code="43" name="Net-(J_HST_3-Pad8)">
-      <node ref="U_HST_1" pin="28"/>
       <node ref="J_HST_3" pin="8"/>
+      <node ref="U_HST_1" pin="28"/>
     </net>
     <net code="44" name="Net-(J_HST_3-Pad7)">
       <node ref="J_HST_3" pin="7"/>
@@ -3087,22 +3091,22 @@
     </net>
     <net code="45" name="Net-(J_HST_3-Pad6)">
       <node ref="J_HST_3" pin="6"/>
-      <node ref="U_HST_1" pin="15"/>
+      <node ref="U_HST_1" pin="26"/>
     </net>
     <net code="46" name="Net-(J_HST_3-Pad5)">
       <node ref="U_HST_1" pin="25"/>
       <node ref="J_HST_3" pin="5"/>
     </net>
     <net code="47" name="Net-(J_HST_3-Pad20)">
-      <node ref="J_HST_3" pin="20"/>
       <node ref="U_HST_1" pin="40"/>
+      <node ref="J_HST_3" pin="20"/>
     </net>
     <net code="48" name="Net-(J_HST_3-Pad10)">
-      <node ref="U_HST_1" pin="11"/>
       <node ref="J_HST_3" pin="10"/>
+      <node ref="U_HST_1" pin="30"/>
     </net>
     <net code="49" name="Net-(J_HST_3-Pad11)">
-      <node ref="U_HST_1" pin="10"/>
+      <node ref="U_HST_1" pin="31"/>
       <node ref="J_HST_3" pin="11"/>
     </net>
     <net code="50" name="Net-(J_HST_3-Pad12)">
@@ -3110,12 +3114,12 @@
       <node ref="U_HST_1" pin="32"/>
     </net>
     <net code="51" name="Net-(J_HST_3-Pad13)">
-      <node ref="U_HST_1" pin="33"/>
       <node ref="J_HST_3" pin="13"/>
+      <node ref="U_HST_1" pin="33"/>
     </net>
     <net code="52" name="Net-(J_HST_3-Pad14)">
-      <node ref="J_HST_3" pin="14"/>
       <node ref="U_HST_1" pin="34"/>
+      <node ref="J_HST_3" pin="14"/>
     </net>
     <net code="53" name="Net-(J_HST_3-Pad15)">
       <node ref="U_HST_1" pin="35"/>
@@ -3130,96 +3134,99 @@
       <node ref="J_HST_3" pin="17"/>
     </net>
     <net code="56" name="Net-(J_HST_3-Pad18)">
-      <node ref="J_HST_3" pin="18"/>
       <node ref="U_HST_1" pin="38"/>
+      <node ref="J_HST_3" pin="18"/>
     </net>
-    <net code="57" name="Net-(J_HST_2-Pad11)">
-      <node ref="U_HST_1" pin="31"/>
-      <node ref="J_HST_2" pin="11"/>
-    </net>
-    <net code="58" name="Net-(J_HST_2-Pad10)">
-      <node ref="U_HST_1" pin="30"/>
-      <node ref="J_HST_2" pin="10"/>
-    </net>
-    <net code="59" name="Net-(J_HST_2-Pad6)">
-      <node ref="J_HST_2" pin="6"/>
-      <node ref="U_HST_1" pin="26"/>
-    </net>
-    <net code="60" name="Net-(J_HST_2-Pad1)">
+    <net code="57" name="Net-(J_HST_2-Pad1)">
       <node ref="U_HST_1" pin="20"/>
       <node ref="J_HST_2" pin="1"/>
     </net>
-    <net code="61" name="Net-(J_HST_2-Pad19)">
+    <net code="58" name="Net-(J_HST_2-Pad19)">
       <node ref="U_HST_1" pin="2"/>
       <node ref="J_HST_2" pin="19"/>
     </net>
-    <net code="62" name="Net-(J_HST_2-Pad2)">
-      <node ref="J_HST_2" pin="2"/>
+    <net code="59" name="Net-(J_HST_2-Pad2)">
       <node ref="U_HST_1" pin="19"/>
+      <node ref="J_HST_2" pin="2"/>
     </net>
-    <net code="63" name="Net-(J_HST_1-Pad16)">
+    <net code="60" name="Net-(J_HST_1-Pad16)">
       <node ref="J_HST_1" pin="16"/>
     </net>
-    <net code="64" name="Net-(J_HST_1-Pad15)">
+    <net code="61" name="Net-(J_HST_1-Pad15)">
       <node ref="J_HST_1" pin="15"/>
     </net>
-    <net code="65" name="Net-(J_HST_1-Pad14)">
+    <net code="62" name="Net-(J_HST_1-Pad14)">
       <node ref="J_HST_1" pin="14"/>
     </net>
-    <net code="66" name="Net-(J_HST_2-Pad3)">
+    <net code="63" name="Net-(J_HST_2-Pad3)">
       <node ref="U_HST_1" pin="18"/>
       <node ref="J_HST_2" pin="3"/>
     </net>
-    <net code="67" name="Net-(J_HST_4-Pad17)">
+    <net code="64" name="Net-(J_HST_4-Pad17)">
       <node ref="J_HST_4" pin="17"/>
     </net>
-    <net code="68" name="Net-(J_HST_1-Pad18)">
+    <net code="65" name="Net-(J_HST_1-Pad18)">
       <node ref="J_HST_1" pin="18"/>
     </net>
-    <net code="69" name="Net-(J_HST_4-Pad15)">
+    <net code="66" name="Net-(J_HST_4-Pad15)">
       <node ref="J_HST_4" pin="15"/>
     </net>
-    <net code="70" name="Net-(J_HST_4-Pad14)">
+    <net code="67" name="Net-(J_HST_4-Pad14)">
       <node ref="J_HST_4" pin="14"/>
     </net>
-    <net code="71" name="Net-(J_HST_4-Pad8)">
+    <net code="68" name="Net-(J_HST_4-Pad8)">
       <node ref="J_HST_4" pin="8"/>
     </net>
-    <net code="73" name="Net-(J_HST_4-Pad6)">
+    <net code="69" name="Net-(J_HST_4-Pad7)">
+      <node ref="J_HST_4" pin="7"/>
+    </net>
+    <net code="70" name="Net-(J_HST_4-Pad6)">
       <node ref="J_HST_4" pin="6"/>
     </net>
-    <net code="74" name="Net-(J_HST_4-Pad5)">
+    <net code="71" name="Net-(J_HST_4-Pad5)">
       <node ref="J_HST_4" pin="5"/>
     </net>
-    <net code="75" name="Net-(J_HST_4-Pad3)">
+    <net code="72" name="Net-(J_HST_4-Pad3)">
       <node ref="J_HST_4" pin="3"/>
     </net>
-    <net code="76" name="Net-(J_HST_4-Pad18)">
+    <net code="73" name="Net-(J_HST_4-Pad18)">
       <node ref="J_HST_4" pin="18"/>
     </net>
-    <net code="77" name="Net-(J_HST_2-Pad4)">
-      <node ref="U_HST_1" pin="17"/>
+    <net code="74" name="Net-(J_HST_2-Pad4)">
       <node ref="J_HST_2" pin="4"/>
+      <node ref="U_HST_1" pin="17"/>
     </net>
-    <net code="78" name="Net-(J_HST_2-Pad5)">
-      <node ref="J_HST_2" pin="5"/>
+    <net code="75" name="Net-(J_HST_2-Pad5)">
       <node ref="U_HST_1" pin="16"/>
+      <node ref="J_HST_2" pin="5"/>
     </net>
-    <net code="79" name="Net-(J_HST_2-Pad7)">
-      <node ref="J_HST_2" pin="7"/>
+    <net code="76" name="Net-(J_HST_2-Pad6)">
+      <node ref="U_HST_1" pin="15"/>
+      <node ref="J_HST_2" pin="6"/>
+    </net>
+    <net code="77" name="Net-(J_HST_2-Pad7)">
       <node ref="U_HST_1" pin="14"/>
+      <node ref="J_HST_2" pin="7"/>
     </net>
-    <net code="80" name="Net-(J_HST_2-Pad8)">
+    <net code="78" name="Net-(J_HST_2-Pad8)">
       <node ref="J_HST_2" pin="8"/>
       <node ref="U_HST_1" pin="13"/>
     </net>
-    <net code="81" name="Net-(J_HST_2-Pad9)">
-      <node ref="U_HST_1" pin="12"/>
+    <net code="79" name="Net-(J_HST_2-Pad9)">
       <node ref="J_HST_2" pin="9"/>
+      <node ref="U_HST_1" pin="12"/>
+    </net>
+    <net code="80" name="Net-(J_HST_2-Pad10)">
+      <node ref="U_HST_1" pin="11"/>
+      <node ref="J_HST_2" pin="10"/>
+    </net>
+    <net code="81" name="Net-(J_HST_2-Pad11)">
+      <node ref="J_HST_2" pin="11"/>
+      <node ref="U_HST_1" pin="10"/>
     </net>
     <net code="82" name="Net-(J_HST_2-Pad20)">
-      <node ref="U_HST_1" pin="1"/>
       <node ref="J_HST_2" pin="20"/>
+      <node ref="U_HST_1" pin="1"/>
     </net>
     <net code="83" name="Net-(J_HST_4-Pad13)">
       <node ref="J_HST_4" pin="13"/>
@@ -3242,109 +3249,106 @@
     <net code="89" name="Net-(J_HST_1-Pad9)">
       <node ref="J_HST_1" pin="9"/>
     </net>
-    <net code="90" name="Net-(J_HST_4-Pad7)">
-      <node ref="J_HST_4" pin="7"/>
-    </net>
-    <net code="91" name="Net-(J_HST_2-Pad17)">
+    <net code="90" name="Net-(J_HST_2-Pad17)">
       <node ref="U_HST_1" pin="4"/>
       <node ref="J_HST_2" pin="17"/>
     </net>
-    <net code="92" name="Net-(J_HST_2-Pad16)">
+    <net code="91" name="Net-(J_HST_2-Pad16)">
       <node ref="J_HST_2" pin="16"/>
       <node ref="U_HST_1" pin="5"/>
     </net>
-    <net code="93" name="Net-(J_HST_2-Pad15)">
+    <net code="92" name="Net-(J_HST_2-Pad15)">
       <node ref="U_HST_1" pin="6"/>
       <node ref="J_HST_2" pin="15"/>
     </net>
-    <net code="94" name="Net-(J_HST_2-Pad14)">
+    <net code="93" name="Net-(J_HST_2-Pad14)">
       <node ref="U_HST_1" pin="7"/>
       <node ref="J_HST_2" pin="14"/>
     </net>
-    <net code="95" name="Net-(J_HST_2-Pad13)">
+    <net code="94" name="Net-(J_HST_2-Pad13)">
       <node ref="J_HST_2" pin="13"/>
       <node ref="U_HST_1" pin="8"/>
     </net>
-    <net code="96" name="Net-(J_HST_2-Pad12)">
+    <net code="95" name="Net-(J_HST_2-Pad12)">
       <node ref="J_HST_2" pin="12"/>
       <node ref="U_HST_1" pin="9"/>
     </net>
-    <net code="97" name="Net-(J_HST_2-Pad18)">
+    <net code="96" name="Net-(J_HST_2-Pad18)">
       <node ref="J_HST_2" pin="18"/>
       <node ref="U_HST_1" pin="3"/>
     </net>
-    <net code="98" name="/OBDII Interpreter/OBDII Chip/SW_CAN_TX">
+    <net code="97" name="/OBDII Interpreter/OBDII Chip/SW_CAN_TX">
       <node ref="U_SWCAN_1" pin="2"/>
       <node ref="R_SWCAN_7" pin="1"/>
       <node ref="U_STN_1" pin="41"/>
     </net>
-    <net code="99" name="/OBDII Interpreter/OBDII Chip/SW_CAN_RX">
+    <net code="98" name="/OBDII Interpreter/OBDII Chip/SW_CAN_RX">
       <node ref="U_STN_1" pin="42"/>
       <node ref="U_SWCAN_1" pin="5"/>
       <node ref="R_SWCAN_6" pin="1"/>
     </net>
-    <net code="100" name="/OBDII Interpreter/OBDII Chip/SW_CAN_MODE0">
+    <net code="99" name="/OBDII Interpreter/OBDII Chip/SW_CAN_MODE0">
       <node ref="R_SWCAN_4" pin="2"/>
       <node ref="U_STN_1" pin="35"/>
       <node ref="U_SWCAN_1" pin="3"/>
     </net>
-    <net code="101" name="/OBDII Interpreter/OBDII Chip/SW_CAN_MODE1">
+    <net code="100" name="/OBDII Interpreter/OBDII Chip/SW_CAN_MODE1">
       <node ref="U_STN_1" pin="36"/>
       <node ref="U_SWCAN_1" pin="4"/>
       <node ref="R_SWCAN_5" pin="2"/>
     </net>
-    <net code="102" name="/OBDII Interpreter/OBDII Chip/~J1850_BUS+_VH~">
+    <net code="101" name="/OBDII Interpreter/OBDII Chip/~J1850_BUS+_VH~">
       <node ref="U_STN_1" pin="25"/>
       <node ref="Q_J1850_1" pin="1"/>
     </net>
-    <net code="103" name="/OBDII Interpreter/OBDII Chip/J1850_BUS+_TX">
+    <net code="102" name="/OBDII Interpreter/OBDII Chip/J1850_BUS+_TX">
       <node ref="Q_J1850_2" pin="1"/>
       <node ref="U_STN_1" pin="24"/>
       <node ref="R_J1850_1" pin="1"/>
     </net>
-    <net code="104" name="/OBDII Interpreter/OBDII Chip/J1850_BUS-_TX">
+    <net code="103" name="/OBDII Interpreter/OBDII Chip/J1850_BUS-_TX">
       <node ref="Q_J1850_4" pin="1"/>
       <node ref="R_J1850_7" pin="1"/>
       <node ref="U_STN_1" pin="33"/>
     </net>
-    <net code="105" name="/OBDII Interpreter/ISO 9141/ISO 14230 Transceiver/~ISO_K_TX~">
+    <net code="104" name="/OBDII Interpreter/ISO 9141/ISO 14230 Transceiver/~ISO_K_TX~">
       <node ref="R_ISO_1" pin="2"/>
       <node ref="U_STN_1" pin="43"/>
     </net>
-    <net code="106" name="/OBDII Interpreter/ISO 9141/ISO 14230 Transceiver/~ISO_L_TX~">
+    <net code="105" name="/OBDII Interpreter/ISO 9141/ISO 14230 Transceiver/~ISO_L_TX~">
       <node ref="R_ISO_2" pin="2"/>
       <node ref="U_STN_1" pin="44"/>
     </net>
-    <net code="107" name="/OBDII Interpreter/Medium Speed CAN Transceiver/MS_CAN_TX">
+    <net code="106" name="/OBDII Interpreter/Medium Speed CAN Transceiver/MS_CAN_TX">
       <node ref="U_STN_1" pin="9"/>
       <node ref="U_MSCAN_1" pin="1"/>
     </net>
-    <net code="108" name="/OBDII Interpreter/Medium Speed CAN Transceiver/MS_CAN_RX">
+    <net code="107" name="/OBDII Interpreter/Medium Speed CAN Transceiver/MS_CAN_RX">
       <node ref="U_STN_1" pin="11"/>
       <node ref="U_MSCAN_1" pin="4"/>
     </net>
-    <net code="109" name="/OBDII Interpreter/Comparator Transceiver/PWM_RX">
+    <net code="108" name="/OBDII Interpreter/Comparator Transceiver/PWM_RX">
       <node ref="U_STN_1" pin="23"/>
       <node ref="R_COMP_4" pin="2"/>
       <node ref="U_COMP_1" pin="2"/>
     </net>
-    <net code="110" name="/OBDII Interpreter/Comparator Transceiver/~ISO_RX~">
+    <net code="109" name="/OBDII Interpreter/Comparator Transceiver/~ISO_RX~">
       <node ref="R_COMP1" pin="2"/>
       <node ref="U_STN_1" pin="21"/>
       <node ref="U_COMP_1" pin="1"/>
     </net>
-    <net code="111" name="/OBDII Interpreter/OBDII Chip/SW_CAN_LOAD">
+    <net code="110" name="/OBDII Interpreter/OBDII Chip/SW_CAN_LOAD">
       <node ref="U_STN_1" pin="34"/>
     </net>
-    <net code="112" name="/OBDII Interpreter/Comparator Transceiver/VPW_RX">
+    <net code="111" name="/OBDII Interpreter/Comparator Transceiver/VPW_RX">
       <node ref="U_COMP_1" pin="14"/>
       <node ref="U_STN_1" pin="22"/>
       <node ref="R_COMP_10" pin="2"/>
     </net>
-    <net code="113" name="/OBDII Interpreter/OBDII Chip/~HOST_ACT_LED~">
+    <net code="112" name="/OBDII Interpreter/OBDII Chip/~HOST_ACT_LED~">
       <node ref="U_STN_1" pin="13"/>
     </net>
-    <net code="114" name="/OBDII Interpreter/~RESET_OBD_HW~">
+    <net code="113" name="/OBDII Interpreter/~RESET_OBD_HW~">
       <node ref="U_STN_1" pin="12"/>
       <node ref="R_STN_4" pin="2"/>
       <node ref="SW_STN_1" pin="2"/>
@@ -3352,262 +3356,262 @@
       <node ref="R_STN_2" pin="2"/>
       <node ref="J_HST_1" pin="11"/>
     </net>
-    <net code="115" name="/OBDII Interpreter/High Speed CAN Transceiver/HS_CAN_TX">
+    <net code="114" name="/OBDII Interpreter/High Speed CAN Transceiver/HS_CAN_TX">
       <node ref="U_HSCAN_1" pin="1"/>
       <node ref="U_STN_1" pin="8"/>
     </net>
-    <net code="116" name="/OBDII Interpreter/High Speed CAN Transceiver/HS_CAN_RX">
+    <net code="115" name="/OBDII Interpreter/High Speed CAN Transceiver/HS_CAN_RX">
       <node ref="U_STN_1" pin="10"/>
       <node ref="U_HSCAN_1" pin="4"/>
     </net>
-    <net code="117" name="/OBDII Interpreter/OBDII Chip/STATUS_LED">
+    <net code="116" name="/OBDII Interpreter/OBDII Chip/STATUS_LED">
       <node ref="R_STN_1" pin="2"/>
       <node ref="U_STN_1" pin="14"/>
     </net>
-    <net code="118" name="Net-(U_MM_1-Pad11)">
+    <net code="117" name="Net-(U_MM_1-Pad11)">
       <node ref="U_MM_1" pin="11"/>
     </net>
-    <net code="119" name="Net-(U_MM_1-Pad10)">
+    <net code="118" name="Net-(U_MM_1-Pad10)">
       <node ref="U_MM_1" pin="10"/>
     </net>
-    <net code="120" name="+5V_SW">
+    <net code="119" name="+5V_SW">
       <node ref="D_J1850_3" pin="2"/>
       <node ref="R_COMP_7" pin="1"/>
       <node ref="Q_PSW_3" pin="2"/>
       <node ref="R_SWCAN_5" pin="1"/>
       <node ref="R_SWCAN_4" pin="1"/>
     </net>
-    <net code="121" name="+3.3V_SW">
+    <net code="120" name="+3.3V_SW">
       <node ref="Q_PSW_4" pin="2"/>
     </net>
-    <net code="122" name="+12V_SW">
+    <net code="121" name="+12V_SW">
       <node ref="U_COMP_1" pin="3"/>
       <node ref="Q_PSW_2" pin="2"/>
       <node ref="R_COMP_5" pin="1"/>
     </net>
-    <net code="123" name="Net-(C_VR1_2-Pad1)">
+    <net code="122" name="Net-(C_VR1_2-Pad1)">
       <node ref="C_VR1_2" pin="1"/>
       <node ref="U_VR1" pin="3"/>
     </net>
-    <net code="124" name="Net-(C_VR1_1-Pad2)">
+    <net code="123" name="Net-(C_VR1_1-Pad2)">
       <node ref="C_VR1_1" pin="2"/>
       <node ref="U_VR1" pin="4"/>
     </net>
-    <net code="125" name="Net-(C_VR1_3-Pad1)">
+    <net code="124" name="Net-(C_VR1_3-Pad1)">
       <node ref="U_VR1" pin="10"/>
       <node ref="U_VR1" pin="8"/>
       <node ref="C_VR1_3" pin="1"/>
     </net>
-    <net code="126" name="Net-(C_VR1_2-Pad2)">
+    <net code="125" name="Net-(C_VR1_2-Pad2)">
       <node ref="U_VR1" pin="5"/>
       <node ref="C_VR1_2" pin="2"/>
       <node ref="L_VR1" pin="2"/>
     </net>
-    <net code="127" name="Net-(R_VR2_1-Pad2)">
+    <net code="126" name="Net-(R_VR2_1-Pad2)">
       <node ref="U_VR2" pin="8"/>
       <node ref="R_VR2_2" pin="1"/>
       <node ref="R_VR2_1" pin="2"/>
     </net>
-    <net code="128" name="Net-(C_VR2_1-Pad1)">
+    <net code="127" name="Net-(C_VR2_1-Pad1)">
       <node ref="U_VR2" pin="4"/>
       <node ref="C_VR2_1" pin="1"/>
     </net>
-    <net code="129" name="Net-(C_VR2_2-Pad1)">
+    <net code="128" name="Net-(C_VR2_2-Pad1)">
       <node ref="U_VR2" pin="3"/>
       <node ref="C_VR2_2" pin="1"/>
     </net>
-    <net code="130" name="Net-(C_VR2_2-Pad2)">
+    <net code="129" name="Net-(C_VR2_2-Pad2)">
       <node ref="U_VR2" pin="5"/>
       <node ref="C_VR2_2" pin="2"/>
       <node ref="L_VR2" pin="2"/>
     </net>
-    <net code="131" name="Net-(C_VR2_3-Pad1)">
+    <net code="130" name="Net-(C_VR2_3-Pad1)">
       <node ref="C_VR2_3" pin="1"/>
       <node ref="U_VR2" pin="10"/>
     </net>
-    <net code="132" name="Net-(Q_ISO_1-Pad2)">
+    <net code="131" name="Net-(Q_ISO_1-Pad2)">
       <node ref="Q_ISO_1" pin="2"/>
       <node ref="R_ISO_3" pin="2"/>
     </net>
-    <net code="133" name="Net-(Q_ISO_4-Pad1)">
+    <net code="132" name="Net-(Q_ISO_4-Pad1)">
       <node ref="R_ISO_2" pin="1"/>
       <node ref="Q_ISO_4" pin="1"/>
     </net>
-    <net code="134" name="Net-(Q_ISO_3-Pad1)">
+    <net code="133" name="Net-(Q_ISO_3-Pad1)">
       <node ref="R_ISO_1" pin="1"/>
       <node ref="Q_ISO_3" pin="1"/>
     </net>
-    <net code="135" name="Net-(Q_ISO_2-Pad2)">
+    <net code="134" name="Net-(Q_ISO_2-Pad2)">
       <node ref="R_ISO_4" pin="2"/>
       <node ref="Q_ISO_2" pin="2"/>
     </net>
-    <net code="136" name="Net-(Q_HSCAN_1-Pad3)">
+    <net code="135" name="Net-(Q_HSCAN_1-Pad3)">
       <node ref="U_HSCAN_1" pin="8"/>
       <node ref="R_HSCAN_1" pin="2"/>
       <node ref="Q_HSCAN_1" pin="3"/>
     </net>
-    <net code="137" name="Net-(C_HSCAN_2-Pad1)">
+    <net code="136" name="Net-(C_HSCAN_2-Pad1)">
       <node ref="C_HSCAN_2" pin="1"/>
       <node ref="R_HSCAN_3" pin="2"/>
     </net>
-    <net code="138" name="Net-(C_HSCAN_1-Pad1)">
+    <net code="137" name="Net-(C_HSCAN_1-Pad1)">
       <node ref="C_HSCAN_1" pin="1"/>
       <node ref="R_HSCAN_2" pin="2"/>
     </net>
-    <net code="139" name="Net-(Q_MSCAN_1-Pad3)">
+    <net code="138" name="Net-(Q_MSCAN_1-Pad3)">
       <node ref="U_MSCAN_1" pin="8"/>
       <node ref="Q_MSCAN_1" pin="3"/>
       <node ref="R_MSCAN_1" pin="2"/>
     </net>
-    <net code="140" name="Net-(C_MSCAN_2-Pad1)">
+    <net code="139" name="Net-(C_MSCAN_2-Pad1)">
       <node ref="R_MSCAN_3" pin="2"/>
       <node ref="C_MSCAN_2" pin="1"/>
     </net>
-    <net code="141" name="Net-(C_MSCAN_1-Pad1)">
+    <net code="140" name="Net-(C_MSCAN_1-Pad1)">
       <node ref="C_MSCAN_1" pin="1"/>
       <node ref="R_MSCAN_2" pin="2"/>
     </net>
-    <net code="142" name="Net-(D_J1850_3-Pad1)">
+    <net code="141" name="Net-(D_J1850_3-Pad1)">
       <node ref="D_J1850_3" pin="1"/>
       <node ref="R_J1850_8" pin="1"/>
     </net>
-    <net code="143" name="Net-(D_J1850_1-Pad2)">
+    <net code="142" name="Net-(D_J1850_1-Pad2)">
       <node ref="D_J1850_1" pin="2"/>
       <node ref="Q_J1850_3" pin="3"/>
     </net>
-    <net code="144" name="Net-(D_J1850_2-Pad2)">
+    <net code="143" name="Net-(D_J1850_2-Pad2)">
       <node ref="D_J1850_2" pin="2"/>
       <node ref="R_J1850_5" pin="2"/>
     </net>
-    <net code="145" name="Net-(U_J1850_1-Pad8)">
+    <net code="144" name="Net-(U_J1850_1-Pad8)">
       <node ref="U_J1850_1" pin="8"/>
     </net>
-    <net code="146" name="Net-(U_J1850_1-Pad5)">
+    <net code="145" name="Net-(U_J1850_1-Pad5)">
       <node ref="U_J1850_1" pin="5"/>
     </net>
-    <net code="147" name="Net-(U_J1850_1-Pad3)">
+    <net code="146" name="Net-(U_J1850_1-Pad3)">
       <node ref="U_J1850_1" pin="3"/>
     </net>
-    <net code="148" name="Net-(U_J1850_1-Pad6)">
+    <net code="147" name="Net-(U_J1850_1-Pad6)">
       <node ref="U_J1850_1" pin="6"/>
     </net>
-    <net code="149" name="Net-(U_J1850_1-Pad7)">
+    <net code="148" name="Net-(U_J1850_1-Pad7)">
       <node ref="U_J1850_1" pin="7"/>
     </net>
-    <net code="150" name="Net-(C_J1850_1-Pad1)">
+    <net code="149" name="Net-(C_J1850_1-Pad1)">
       <node ref="U_J1850_1" pin="1"/>
       <node ref="C_J1850_1" pin="1"/>
     </net>
-    <net code="151" name="Net-(R_J1850_3-Pad2)">
+    <net code="150" name="Net-(R_J1850_3-Pad2)">
       <node ref="R_J1850_3" pin="2"/>
       <node ref="R_J1850_6" pin="2"/>
       <node ref="U_J1850_1" pin="4"/>
     </net>
-    <net code="152" name="Net-(Q_J1850_1-Pad3)">
+    <net code="151" name="Net-(Q_J1850_1-Pad3)">
       <node ref="R_J1850_3" pin="1"/>
       <node ref="Q_J1850_1" pin="3"/>
       <node ref="R_J1850_4" pin="1"/>
     </net>
-    <net code="153" name="+V_J1850">
+    <net code="152" name="+V_J1850">
       <node ref="U_J1850_1" pin="2"/>
       <node ref="R_J1850_2" pin="1"/>
       <node ref="R_J1850_6" pin="1"/>
       <node ref="Q_J1850_3" pin="2"/>
     </net>
-    <net code="154" name="Net-(Q_J1850_2-Pad3)">
+    <net code="153" name="Net-(Q_J1850_2-Pad3)">
       <node ref="R_J1850_2" pin="2"/>
       <node ref="Q_J1850_3" pin="1"/>
       <node ref="Q_J1850_2" pin="3"/>
     </net>
-    <net code="155" name="Net-(U_COMP_1-Pad10)">
+    <net code="154" name="Net-(U_COMP_1-Pad10)">
       <node ref="U_COMP_1" pin="10"/>
     </net>
-    <net code="156" name="Net-(U_COMP_1-Pad11)">
+    <net code="155" name="Net-(U_COMP_1-Pad11)">
       <node ref="U_COMP_1" pin="11"/>
     </net>
-    <net code="157" name="Net-(U_COMP_1-Pad13)">
+    <net code="156" name="Net-(U_COMP_1-Pad13)">
       <node ref="U_COMP_1" pin="13"/>
     </net>
-    <net code="158" name="Net-(R_COMP_1-Pad2)">
+    <net code="157" name="Net-(R_COMP_1-Pad2)">
       <node ref="R_COMP_1" pin="2"/>
       <node ref="U_COMP_1" pin="5"/>
     </net>
-    <net code="159" name="Net-(R_COMP_2-Pad2)">
+    <net code="158" name="Net-(R_COMP_2-Pad2)">
       <node ref="R_COMP_2" pin="2"/>
       <node ref="U_COMP_1" pin="6"/>
     </net>
-    <net code="160" name="Net-(R_COMP_3-Pad1)">
+    <net code="159" name="Net-(R_COMP_3-Pad1)">
       <node ref="R_COMP_3" pin="1"/>
       <node ref="U_COMP_1" pin="4"/>
     </net>
-    <net code="161" name="Net-(R_COMP_5-Pad2)">
+    <net code="160" name="Net-(R_COMP_5-Pad2)">
       <node ref="R_COMP_5" pin="2"/>
       <node ref="R_COMP_6" pin="1"/>
       <node ref="U_COMP_1" pin="7"/>
     </net>
-    <net code="162" name="Net-(R_COMP_7-Pad2)">
+    <net code="161" name="Net-(R_COMP_7-Pad2)">
       <node ref="R_COMP_7" pin="2"/>
       <node ref="R_COMP_8" pin="1"/>
       <node ref="U_COMP_1" pin="8"/>
     </net>
-    <net code="163" name="Net-(R_COMP_9-Pad1)">
+    <net code="162" name="Net-(R_COMP_9-Pad1)">
       <node ref="R_COMP_9" pin="1"/>
       <node ref="U_COMP_1" pin="9"/>
     </net>
-    <net code="164" name="Net-(U_SWCAN_1-Pad9)">
+    <net code="163" name="Net-(U_SWCAN_1-Pad9)">
       <node ref="U_SWCAN_1" pin="9"/>
     </net>
-    <net code="165" name="Net-(U_SWCAN_1-Pad6)">
+    <net code="164" name="Net-(U_SWCAN_1-Pad6)">
       <node ref="U_SWCAN_1" pin="6"/>
     </net>
-    <net code="166" name="Net-(U_SWCAN_1-Pad13)">
+    <net code="165" name="Net-(U_SWCAN_1-Pad13)">
       <node ref="U_SWCAN_1" pin="13"/>
     </net>
-    <net code="167" name="Net-(R_SWCAN_3-Pad2)">
+    <net code="166" name="Net-(R_SWCAN_3-Pad2)">
       <node ref="U_SWCAN_1" pin="11"/>
       <node ref="R_SWCAN_3" pin="2"/>
     </net>
-    <net code="168" name="VDDA">
+    <net code="167" name="VDDA">
       <node ref="R_STN_7" pin="2"/>
       <node ref="U_STN_1" pin="17"/>
     </net>
-    <net code="169" name="Net-(SW_STN_1-Pad3)">
+    <net code="168" name="Net-(SW_STN_1-Pad3)">
       <node ref="SW_STN_1" pin="3"/>
     </net>
-    <net code="170" name="Net-(SW_STN_1-Pad4)">
+    <net code="169" name="Net-(SW_STN_1-Pad4)">
       <node ref="SW_STN_1" pin="4"/>
     </net>
-    <net code="171" name="Net-(C_STN_4-Pad1)">
+    <net code="170" name="Net-(C_STN_4-Pad1)">
       <node ref="C_STN_4" pin="1"/>
       <node ref="U_STN_1" pin="29"/>
     </net>
-    <net code="172" name="Net-(C_STN_3-Pad1)">
+    <net code="171" name="Net-(C_STN_3-Pad1)">
       <node ref="U_STN_1" pin="30"/>
       <node ref="Y_STN_1" pin="3"/>
       <node ref="C_STN_3" pin="1"/>
     </net>
-    <net code="173" name="Net-(C_STN_2-Pad2)">
+    <net code="172" name="Net-(C_STN_2-Pad2)">
       <node ref="U_STN_1" pin="31"/>
       <node ref="C_STN_2" pin="2"/>
       <node ref="Y_STN_1" pin="1"/>
     </net>
-    <net code="174" name="Net-(CP_STN_1-Pad1)">
+    <net code="173" name="Net-(CP_STN_1-Pad1)">
       <node ref="CP_STN_1" pin="1"/>
       <node ref="U_STN_1" pin="7"/>
     </net>
-    <net code="175" name="Net-(LED_STN_3-Pad1)">
+    <net code="174" name="Net-(LED_STN_3-Pad1)">
       <node ref="R_STN_4" pin="1"/>
       <node ref="LED_STN_3" pin="1"/>
     </net>
-    <net code="176" name="Net-(LED_STN_1-Pad1)">
+    <net code="175" name="Net-(LED_STN_1-Pad1)">
       <node ref="R_STN_1" pin="1"/>
       <node ref="LED_STN_1" pin="1"/>
     </net>
-    <net code="177" name="Net-(LED_STN_2-Pad1)">
+    <net code="176" name="Net-(LED_STN_2-Pad1)">
       <node ref="R_STN_2" pin="1"/>
       <node ref="LED_STN_2" pin="1"/>
     </net>
-    <net code="178" name="Net-(D_ESD_3-Pad3)">
+    <net code="177" name="Net-(D_ESD_3-Pad3)">
       <node ref="D_ESD_3" pin="3"/>
     </net>
   </nets>
