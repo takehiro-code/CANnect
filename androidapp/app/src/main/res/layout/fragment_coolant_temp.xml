@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:gauge="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/backgroundcolor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.Coolant_temp_fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_gravity="center_vertical|center_horizontal">
+        <com.github.anastr.speedviewlib.SpeedView
+            android:id="@+id/coolantTempView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            gauge:sv_centerCircleColor="@color/Turquoise"
+            gauge:sv_endDegree="340"
+            gauge:sv_markStyle="ROUND"
+            gauge:sv_maxSpeed="120"
+            gauge:sv_minSpeed="40"
+            gauge:sv_textSize="10dp"
+            gauge:sv_speedTextColor="@color/Turquoise"
+            gauge:sv_startDegree="200"
+            gauge:sv_textColor="@color/Turquoise"
+            gauge:sv_tickNumber="3"
+            gauge:sv_unit="°C"
+            gauge:sv_unitTextColor="@color/Turquoise" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temp"
+            android:textColor="@color/Turquoise"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+</FrameLayout>

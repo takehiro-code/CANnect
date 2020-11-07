@@ -6,8 +6,11 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
-    <permission android:name="android.permission.BLUETOOTH" android:label="BLUETOOTH" />
+    <permission
+        android:name="android.permission.BLUETOOTH"
+        android:label="BLUETOOTH" />
     <permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -19,27 +22,48 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CarBrand"
+            android:parentActivityName=".Settings" />
+        <activity android:name=".Contact"
+            android:parentActivityName=".Settings" />
+        <activity android:name=".Help"
+            android:parentActivityName=".Settings" />
+        <activity android:name=".About"
+            android:parentActivityName=".Settings" />
+        <activity android:name=".Preferences"
+            android:parentActivityName=".Settings"/>
 
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDyylvznCT58-xZeyrUUQ14NSGjwjPeQLk" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".Dashboard_gauge"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Dashboard_chart"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Connect"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Map"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Settings"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Dashboard"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Diagnostics"
-            android:parentActivityName=".MainActivity"/>
-
-
-
-        <activity android:name=".MainActivity"
-                  android:theme="@style/AppTheme.NoActionBar">
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

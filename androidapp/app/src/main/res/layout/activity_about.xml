@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/backgroundcolor"
+    tools:context=".About">
+
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/ic_about"
+        android:id="@+id/setting_list_row_image"
+        />
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="?attr/cardBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:textStyle="bold"
+                android:text="About Us"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This app was developed by capstone students working in Cantech.
+Cannect does not store or collect any personal data. This product is licensed under C."
+                android:textColor="?attr/textcolor"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
