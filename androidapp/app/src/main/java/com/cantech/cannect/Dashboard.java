@@ -3,6 +3,7 @@ package com.cantech.cannect;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.FileProvider;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.bluetooth.BluetoothSocket;
 
@@ -11,8 +12,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -20,7 +25,13 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Dashboard extends AppCompatActivity {
     SharedPref sharedPref;
@@ -40,6 +51,15 @@ public class Dashboard extends AppCompatActivity {
     Data O2_VOLTAGE;
     Data newData;
     DataParsing dataParsing;
+    //for export log
+    Calendar calendar;
+    SimpleDateFormat simpleDateFormat;
+    String dateTime;
+    boolean isExport;
+    String exportData;
+    long seconds;
+    long duration;
+    final ExportLoadingDialog exportLoadingDialog = new ExportLoadingDialog(Dashboard.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +124,13 @@ public class Dashboard extends AppCompatActivity {
         //    e.printStackTrace();
         //}
 
+        //for export log
+        calendar = Calendar.getInstance();
+        //simpleDateFormat = new SimpleDateFormat("ss");
+        //dateTime = simpleDateFormat.format(calendar.getTime());
+        //seconds = System.currentTimeMillis();
+        isExport = false;
+        exportData = "";
         //Below code is for page navigation
         //initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -133,25 +160,39 @@ public class Dashboard extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater=getMenuInflater();
+        menuInflater.inflate(R.menu.export_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.export_10s:
+                start_export(10);
+                return true;
+            case R.id.export_30s:
+                start_export(30);
+                return true;
+            case R.id.export_60s:
+                start_export(60);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     //Below code is for updating the table
 
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("theMessage");
-            messages+=text; //.append(text+"\n");
-            System.out.println("inside dashboard, messages");
-            System.out.println(messages);
+            messages+=text;
             String[] parsed = dataParsing.convertOBD2FrameToUserFormat(messages.substring(0, messages.length() - 10));//remove  \n255255\r\n and then parse
-            System.out.println("messages");
-            System.out.println(messages);
-            System.out.println("substring2");
-            System.out.println(messages.substring(0, messages.length() - 10));
-            System.out.println("parsed[0]");
-            System.out.println(parsed[0]);
-            System.out.println("parsed[1]");
-            System.out.println(parsed[1]);
-            
+
             switch(parsed[0])
             {
                 case "FUEL STATUS":
@@ -245,15 +286,28 @@ public class Dashboard extends AppCompatActivity {
                 default:
                     System.out.println("default");
             }
+            if (isExport){
+                System.out.println("we are in isExport!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                //append
+                calendar.setTimeInMillis(seconds);
+                exportData+="\n"+calendar.getTime()+","+messages.substring(0, messages.length() - 10)+","+parsed[0]+","+parsed[1];
+                //update the timer
+                // check if time ran out
+                //calendar = Calendar.getInstance();
+                //simpleDateFormat = new SimpleDateFormat("ss");
+                //dateTime = simpleDateFormat.format(calendar.getTime());
+                //seconds = Integer.parseInt(dateTime);
+                seconds = System.currentTimeMillis();
+                System.out.println("seconds is");
+                System.out.println(seconds);
+                if (seconds>duration){
+                    isExport = false;
+                    finish_export();
+                }
+            }
             if (messages.contains("FF") || messages.contains("255255")){//(messages.length()>=28){
                 //Toast.makeText(Dashboard.this, messages, Toast.LENGTH_LONG).show();
-                System.out.println("the end");
-                System.out.println(messages);
-                //messages.setLength(0);
-                //messages = new StringBuilder();
                 messages="";
-                System.out.println("the beginnig");
-                System.out.println(messages);
             }
         }
     };
@@ -270,12 +324,6 @@ public class Dashboard extends AppCompatActivity {
         super.onStart();
         //register broadcast receiver
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-
-        // sending data example; send data whenever you visit dashboard
-//        String writeMsg = "hello from dashboard";
-//        Intent sendingMessageIntent = new Intent("sendingMessage");
-//        sendingMessageIntent.putExtra("theMessage", writeMsg);
-//        LocalBroadcastManager.getInstance(this).sendBroadcast(sendingMessageIntent);
     }
 
     // called whenever Dashboard leaves
@@ -285,6 +333,44 @@ public class Dashboard extends AppCompatActivity {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
     }
 
+    public void start_export(int Duration){
+        isExport = true;
+        exportData="";
+        exportData+="Time, OBD2 message, Pid, Value";
+        //calendar = Calendar.getInstance();
+        //simpleDateFormat = new SimpleDateFormat("ss");
+        //dateTime = simpleDateFormat.format(calendar.getTime());
+        //seconds = Integer.parseInt(dateTime);
+        seconds = System.currentTimeMillis();
+        duration = seconds+Duration*1000;
+        System.out.println("duration is");
+        System.out.println(duration);
+        exportLoadingDialog.startLoadingDialog();
+    }
+    public void finish_export(){
+        try{
+            //writing to a file
+            FileOutputStream out = openFileOutput("data.csv", Context.MODE_PRIVATE);
+            out.write(exportData.getBytes());
+            out.close();
+            //exporting
+            Context context =getApplicationContext();
+            File filelocation = new File(getFilesDir(),"data.csv");
+            Uri path = FileProvider.getUriForFile(context, "com.cantech.cannect.FileProvider", filelocation);
+            Intent fileIntent = new Intent(Intent.ACTION_SEND);
+            fileIntent.setType("text/csv");
+            fileIntent.putExtra(Intent.EXTRA_SUBJECT,"data");
+            fileIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            fileIntent.putExtra(Intent.EXTRA_STREAM,path);
+            startActivity(Intent.createChooser(fileIntent,"Send mail"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        exportData="";
+        exportLoadingDialog.stopLoadingDialog();
+    }
     // don't worry about this lifecycle
 //    @Override
 //    protected void onResume() {
