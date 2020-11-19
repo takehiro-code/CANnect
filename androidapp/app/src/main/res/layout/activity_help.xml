@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Help">
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="?attr/cardBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:textStyle="bold"
+                android:text="Compatibility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Use the same reader code as the method for sending the data may vary between devices. Do not use other adapters.
+Cannect is compatible with OBDII compliant cars. Most of modern cars are OBDII comlaint. Cannect reader module, and the software
+app was tested with a Toyota car and verified its functionality. However, we cannot guarantee correct connetion with other cars."
+                android:textColor="?attr/textcolor"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:layout_marginTop="200dp"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:textStyle="bold"
+                android:text="Diagnostics error codes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OBD is short for onboard diagnostics. It refers to a vehicle's electronic system that performs self-diagnosis and reporting. Whenever a problem is detected the system records it as a unique code. That code is known as a diagnostic trouble code (DTC)."
+                android:textColor="?attr/textcolor"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:layout_marginTop="400dp"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:textStyle="bold"
+                android:text="Diagnostics Tests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Instead of doing a tailpipe emissions check on a dynamometer, an OBD II check is a simple plug-in test that takes only seconds.The Malfunction Indicator Lamp (MIL), which may be labeled Check Engine or Service Engine Soon or a symbol of an engine with the word Check in the middle, is supposed to alert the driver when a problem occurs. Depending on how the system is configured and the nature of the problem, the lamp may come on and go off, remain on continuously or flash - all of which can be very confusing to the motorist because he has no way of knowing what the light means. Is it a serious problem or not? If the engine seems to be running okay, the motorist may simply ignore the light. With OBD II, the Check Engine light will come on only for emissions-related failures. A separate warning light must be used for other non-emissions problems such as low oil pressure, charging system problems, etc."
+                android:textColor="?attr/textcolor"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:layout_marginTop="800dp"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="?attr/textcolor"
+                android:textStyle="bold"
+                android:text="Dashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data logging is the ability to view all major parameters that relate to engine operation. ... It will also allow you to monitor all the engine vitals (sensor information like fuel pressure, oil pressure, knock sensor, etc). OBD2 data lets you e.g. monitor/optimize driving behavior and tune your car. OEMs can use the data to analyze the performance of new prototype parts in the field"
+                android:textColor="?attr/textcolor"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</ScrollView>

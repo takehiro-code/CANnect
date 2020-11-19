@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:gauge="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="?attr/backgroundcolor"
+tools:context=".fragment.Speedgauge_fragment">
+
+<!-- TODO: Update blank fragment layout -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp"
+    android:layout_gravity="center_vertical|center_horizontal">
+
+    <com.github.anastr.speedviewlib.SpeedView
+        android:id="@+id/speedView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        gauge:needleShadow="true"
+        gauge:sv_centerCircleColor="@color/Yellow"
+        gauge:sv_indicator="KiteIndicator"
+        gauge:sv_indicatorColor="@color/Blue"
+        gauge:sv_markStyle="ROUND"
+        gauge:sv_maxSpeed="120"
+        gauge:sv_minSpeed="0"
+        app:sv_speedTextSize="10dp"
+        gauge:sv_speedTextColor="@color/Turquoise"
+        gauge:sv_textColor="@color/Turquoise"
+        gauge:sv_textSize="5dp"
+        gauge:sv_tickNumber="7"
+        gauge:sv_unit="km/h"
+        gauge:sv_unitTextColor="@color/Turquoise"
+        gauge:sv_unitTextSize="5dp"
+        app:sv_trembleDegree="0"
+        gauge:sv_unitUnderSpeedText="true"
+        gauge:sv_withIndicatorLight="false" />
+
+    <TextView
+        android:id="@+id/textview_fragment1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speed"
+        android:textColor="@color/Turquoise"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+</LinearLayout>
+
+</FrameLayout>

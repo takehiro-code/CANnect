@@ -8,10 +8,25 @@
     <string name="diag">Diagnostics</string>
     <string name="connect">Connect</string>
     <string name="status">Connected</string>
-    <string name="car_speed">Current Speed</string>
 
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_connect">Connect</string>
+    <string name="title_activity_dashboard2">Dashboard2</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+    <!--    for spinner-->
+    <string-array name="PIDs">
+        <item>VEHICLE SPEED</item>
+        <item>FUEL PRESSURE</item>
+        <item>ENGINE RPM</item>
+        <item>ENGINE COOLANT TEMP</item>
+        <item>MAF SENSOR</item>
+        <item>O2 VOLTAGE</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

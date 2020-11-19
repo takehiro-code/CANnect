@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "950039486686",
+    "firebase_url": "https://cannect-cfe24.firebaseio.com",
+    "project_id": "cannect-cfe24",
+    "storage_bucket": "cannect-cfe24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950039486686:android:64f8a2f08b286b1f0ba24f",
+        "android_client_info": {
+          "package_name": "com.cantech.cannect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950039486686-t4g4lqicbvpgptrkv4jkfj5j8dvhhcjk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI7c9nkQi-6mJcMQLJNNFXzTFsfrp_GQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950039486686-t4g4lqicbvpgptrkv4jkfj5j8dvhhcjk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
