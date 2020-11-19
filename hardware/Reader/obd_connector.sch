@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 11 19
 Title "CANnect Reader | OBD Connector"
-Date "2020-10-28"
-Rev "0.0.04"
+Date "2020-11-19"
+Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -57,13 +57,8 @@ Wire Notes Line
 	6500 6250 10250 6250
 Wire Notes Line
 	10250 1150 6500 1150
-Connection ~ 5150 2300
-Wire Wire Line
-	5150 2300 8600 2300
 Wire Wire Line
 	2750 2300 2750 4300
-Wire Wire Line
-	2750 2300 5150 2300
 Wire Wire Line
 	2850 3500 2850 4400
 Wire Wire Line
@@ -71,52 +66,18 @@ Wire Wire Line
 Wire Wire Line
 	2950 1850 8600 1850
 Wire Wire Line
-	3100 3050 3100 4600
-Connection ~ 3100 3050
-Wire Wire Line
-	3100 3050 8600 3050
-Wire Wire Line
-	3200 4700 3200 1550
-Wire Wire Line
-	3200 1550 8600 1550
-Wire Wire Line
-	3300 4800 3300 2450
-Wire Wire Line
-	3400 4900 3400 3650
-Wire Wire Line
-	3500 5000 3500 1700
-Wire Wire Line
-	3500 1700 8600 1700
-Wire Wire Line
-	3600 2900 3600 5100
-Wire Wire Line
-	3600 2900 8600 2900
+	3250 4800 3250 2450
 Wire Notes Line
 	10250 6250 10250 1150
-Wire Wire Line
-	2250 3050 3100 3050
 Connection ~ 2850 3500
-Connection ~ 3400 3650
-Connection ~ 3600 2900
-Connection ~ 3300 2450
 Connection ~ 2750 2300
 Connection ~ 2950 1850
-Connection ~ 3500 1700
-Connection ~ 3200 1550
 Wire Wire Line
-	2250 3200 8600 3200
+	2250 2900 3550 2900
 Wire Wire Line
-	2250 2900 3600 2900
-Wire Wire Line
-	2250 2750 8600 2750
-Wire Wire Line
-	2250 2000 8600 2000
+	2250 2000 4250 2000
 Wire Wire Line
 	2250 1850 2950 1850
-Wire Wire Line
-	2250 1700 3500 1700
-Wire Wire Line
-	2250 1550 3200 1550
 Text GLabel 2250 2600 0    50   BiDi ~ 0
 Pin8
 Text GLabel 2250 3350 0    50   BiDi ~ 0
@@ -1011,21 +972,17 @@ Pin12
 Text GLabel 8800 5400 2    50   BiDi ~ 0
 Pin9
 Wire Wire Line
-	2250 2150 8600 2150
+	2250 2150 4150 2150
 Wire Wire Line
 	2250 2300 2750 2300
 Wire Wire Line
-	2250 2600 8600 2600
+	2250 2600 4050 2600
 Wire Wire Line
-	2250 2450 3300 2450
+	2250 2450 3250 2450
 Wire Wire Line
-	2250 3350 8600 3350
+	2250 3350 3650 3350
 Wire Wire Line
 	2250 3500 2850 3500
-Wire Wire Line
-	2250 3800 8600 3800
-Wire Wire Line
-	2250 3650 3400 3650
 Text GLabel 2250 3650 0    50   Input ~ 0
 Pin15_ISO9141_L-Line
 Text GLabel 2250 2450 0    50   BiDi ~ 0
@@ -1037,32 +994,11 @@ Pin6_ISO15765_CAN_BUS_High
 Text GLabel 7850 4700 0    50   BiDi ~ 0
 Pin7_ISO9141_K-Line
 Wire Wire Line
-	5150 1200 5150 2300
-Wire Wire Line
-	2850 3500 5250 3500
-Wire Wire Line
-	5250 3500 8600 3500
-Connection ~ 5250 3500
-Wire Wire Line
-	5250 1200 5250 3500
-Wire Wire Line
 	2750 4300 5100 4300
 Wire Wire Line
 	2850 4400 5100 4400
 Wire Wire Line
 	2950 4500 5100 4500
-Wire Wire Line
-	3100 4600 5100 4600
-Wire Wire Line
-	5100 4700 3200 4700
-Wire Wire Line
-	5100 4800 3300 4800
-Wire Wire Line
-	5100 4900 3400 4900
-Wire Wire Line
-	5100 5000 3500 5000
-Wire Wire Line
-	3600 5100 5100 5100
 $Sheet
 S 5100 4200 900  1000
 U 5FA6BC58
@@ -1079,47 +1015,141 @@ F9 "J1850_BUS+" B L 5100 5000 50
 F10 "J1850_BUS-" B L 5100 5100 50 
 $EndSheet
 $Comp
-L 1546931-2:1546931-2 J_CN_1
-U 1 1 5FA0571B
-P 5250 800
-F 0 "J_CN_1" V 5189 670 50  0000 R CNN
-F 1 "1546931-2" V 5098 670 50  0000 R CNN
-F 2 "footprints:1546931-2" H 5250 800 50  0001 L BNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 5250 800 50  0001 L BNN
-F 4 "1546931-2" H 5250 800 50  0001 C CNN "Part Name"
-F 5 "TE Connectivity AMP Connectors" H 5250 800 50  0001 C CNN "Manufacturer"
-F 6 "Digikey Canada" H 5250 800 50  0001 C CNN "Vendor"
-F 7 "A97965-ND" H 5250 800 50  0001 C CNN "digikeypn"
-	1    5250 800 
-	0    -1   -1   0   
+L CANtech:4157 J_CN_1
+U 1 1 5FBE1A85
+P 4250 5850
+F 0 "J_CN_1" V 4663 5304 50  0000 C CNN
+F 1 "4157" V 4754 5304 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical" H 4250 5850 50  0001 C CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf" H 4250 5850 50  0001 C CNN
+F 4 "DigiKey Canada" H 4250 5850 50  0001 C CNN "Vendor"
+F 5 "Adafruit Industries LLC" H 4250 5850 50  0001 C CNN "Manufacturer"
+F 6 "1528-2929-ND" H 4250 5850 50  0001 C CNN "digikeypn"
+	1    4250 5850
+	0    1    1    0   
 $EndComp
-Connection ~ 6100 2450
 Wire Wire Line
-	6100 2450 8600 2450
+	2750 2300 8600 2300
 Wire Wire Line
-	3300 2450 6100 2450
+	2850 3500 8600 3500
 Wire Wire Line
-	3400 3650 6200 3650
+	2750 4300 2750 5700
+Connection ~ 2750 4300
 Wire Wire Line
-	6200 3650 8600 3650
-Connection ~ 6200 3650
+	2850 5700 2850 4400
+Connection ~ 2850 4400
 Wire Wire Line
-	6100 1200 6100 2450
+	2950 4500 2950 5700
+Connection ~ 2950 4500
 Wire Wire Line
-	6200 1200 6200 3650
-$Comp
-L 1546931-2:1546931-2 J_CN_2
-U 1 1 5FA083B3
-P 6200 800
-F 0 "J_CN_2" V 6139 670 50  0000 R CNN
-F 1 "1546931-2" V 6048 670 50  0000 R CNN
-F 2 "footprints:1546931-2" H 6200 800 50  0001 L BNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 6200 800 50  0001 L BNN
-F 4 "1546931-2" H 6200 800 50  0001 C CNN "Part Name"
-F 5 "TE Connectivity AMP Connectors" H 6200 800 50  0001 C CNN "Manufacturer"
-F 6 "Digikey Canada" H 6200 800 50  0001 C CNN "Vendor"
-F 7 "A97965-ND" H 6200 800 50  0001 C CNN "digikeypn"
-	1    6200 800 
-	0    -1   -1   0   
-$EndComp
+	2250 3050 3050 3050
+Wire Wire Line
+	3050 3050 3050 4600
+Connection ~ 3050 3050
+Wire Wire Line
+	3050 3050 8600 3050
+Wire Wire Line
+	3050 4600 5100 4600
+Connection ~ 3050 4600
+Wire Wire Line
+	3050 4600 3050 5700
+Wire Wire Line
+	2250 1550 3150 1550
+Connection ~ 3150 1550
+Wire Wire Line
+	3150 1550 8600 1550
+Wire Wire Line
+	3150 1550 3150 4700
+Wire Wire Line
+	3150 4700 5100 4700
+Connection ~ 3150 4700
+Wire Wire Line
+	3150 4700 3150 5700
+Connection ~ 3250 2450
+Wire Wire Line
+	3250 2450 8600 2450
+Wire Wire Line
+	3250 4800 5100 4800
+Wire Wire Line
+	3250 4800 3250 5700
+Connection ~ 3250 4800
+Wire Wire Line
+	2250 3650 3350 3650
+Wire Wire Line
+	3350 5700 3350 4900
+Connection ~ 3350 3650
+Wire Wire Line
+	3350 3650 8600 3650
+Wire Wire Line
+	3350 4900 5100 4900
+Connection ~ 3350 4900
+Wire Wire Line
+	3350 4900 3350 3650
+Wire Wire Line
+	2250 1700 3450 1700
+Wire Wire Line
+	3450 1700 3450 5000
+Connection ~ 3450 1700
+Wire Wire Line
+	3450 1700 8600 1700
+Wire Wire Line
+	3450 5000 5100 5000
+Connection ~ 3450 5000
+Wire Wire Line
+	3450 5000 3450 5700
+Connection ~ 3550 2900
+Wire Wire Line
+	3550 2900 8600 2900
+Wire Wire Line
+	3550 2900 3550 5100
+Wire Wire Line
+	3550 5100 5100 5100
+Connection ~ 3550 5100
+Wire Wire Line
+	3550 5100 3550 5700
+Wire Wire Line
+	3650 5700 3650 3350
+Connection ~ 3650 3350
+Wire Wire Line
+	3650 3350 8600 3350
+Wire Wire Line
+	2250 2750 3950 2750
+Wire Wire Line
+	2250 3200 3750 3200
+Wire Wire Line
+	2250 3800 3850 3800
+Wire Wire Line
+	3750 5700 3750 3200
+Connection ~ 3750 3200
+Wire Wire Line
+	3750 3200 8600 3200
+Wire Wire Line
+	3850 5700 3850 3800
+Connection ~ 3850 3800
+Wire Wire Line
+	3850 3800 8600 3800
+Wire Wire Line
+	3950 5700 3950 2750
+Connection ~ 3950 2750
+Wire Wire Line
+	3950 2750 8600 2750
+Wire Wire Line
+	4050 5700 4050 2600
+Connection ~ 4050 2600
+Wire Wire Line
+	4050 2600 8600 2600
+Wire Wire Line
+	4150 5700 4150 2150
+Connection ~ 4150 2150
+Wire Wire Line
+	4150 2150 8600 2150
+Wire Wire Line
+	4250 2000 4250 5700
+Connection ~ 4250 2000
+Wire Wire Line
+	4250 2000 8600 2000
+NoConn ~ 4350 5700
+NoConn ~ 4450 5700
+NoConn ~ 4550 5700
+NoConn ~ 4650 5700
 $EndSCHEMATC

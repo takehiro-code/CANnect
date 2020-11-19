@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 9 19
 Title "CANnect Reader | Single Wire CAN Transceiver"
-Date "2020-10-28"
-Rev "0.0.04"
+Date "2020-11-19"
+Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -65,7 +65,7 @@ L Device:R_Small R_SWCAN_3
 U 1 1 5FBD3FD7
 P 2850 2850
 F 0 "R_SWCAN_3" H 2909 2896 50  0000 L CNN
-F 1 "6.49k 0.12W" H 2909 2805 50  0000 L CNN
+F 1 "6.49k" H 2909 2805 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 2850 2850 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 2850 2850 50  0001 C CNN
 F 4 "RC0805FR-076K49L" H 2850 2850 50  0001 C CNN "Part Name"

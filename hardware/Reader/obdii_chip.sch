@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 10 19
 Title "CANnect Reader | OBDII Chip (STN2110)"
-Date "2020-10-28"
-Rev "0.0.04"
+Date "2020-11-19"
+Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
@@ -140,8 +140,8 @@ $Comp
 L Device:R_Small R_STN_5
 U 1 1 5FC10F0A
 P 5650 6950
-F 0 "R_STN_5" H 5709 6996 50  0000 L CNN
-F 1 "100k" H 5709 6905 50  0000 L CNN
+F 0 "R_STN_5" H 5250 7000 50  0000 L CNN
+F 1 "100k" H 5350 6900 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 5650 6950 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 5650 6950 50  0001 C CNN
 F 4 "RT0603DRE07100KL" H 5650 6950 50  0001 C CNN "Part Name"
@@ -154,12 +154,12 @@ $EndComp
 $Comp
 L power:+3.3V #PWR064
 U 1 1 5FC11757
-P 6150 7050
-F 0 "#PWR064" H 6150 6900 50  0001 C CNN
-F 1 "+3.3V" H 6165 7223 50  0000 C CNN
-F 2 "" H 6150 7050 50  0001 C CNN
-F 3 "" H 6150 7050 50  0001 C CNN
-	1    6150 7050
+P 5900 7050
+F 0 "#PWR064" H 5900 6900 50  0001 C CNN
+F 1 "+3.3V" H 5915 7223 50  0000 C CNN
+F 2 "" H 5900 7050 50  0001 C CNN
+F 3 "" H 5900 7050 50  0001 C CNN
+	1    5900 7050
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -317,8 +317,6 @@ Wire Wire Line
 	1450 5200 1450 6150
 Wire Wire Line
 	2500 5000 2500 6150
-Wire Wire Line
-	3600 5000 3600 6150
 Wire Wire Line
 	3600 6900 3300 6900
 Wire Wire Line
@@ -717,7 +715,7 @@ Wire Wire Line
 Wire Wire Line
 	1350 4800 5650 4800
 Wire Wire Line
-	1350 5100 5750 5100
+	1350 5100 3600 5100
 Wire Wire Line
 	1350 5200 1450 5200
 Wire Notes Line
@@ -872,13 +870,8 @@ Connection ~ 1450 5200
 Connection ~ 2500 5000
 Wire Wire Line
 	2500 5000 1350 5000
-Connection ~ 3600 5000
-Wire Wire Line
-	2500 5000 3600 5000
 Wire Wire Line
 	1450 5200 5850 5200
-Wire Wire Line
-	3600 5000 5650 5000
 Wire Notes Line
 	700  7000 4250 7000
 Wire Notes Line
@@ -890,37 +883,6 @@ Wire Wire Line
 Wire Wire Line
 	5050 4700 4400 4700
 Wire Wire Line
-	4400 4700 4400 5700
-Wire Wire Line
-	5650 5000 5650 5700
-Wire Wire Line
-	5450 5700 5650 5700
-Connection ~ 5650 5700
-Wire Wire Line
-	4650 5700 4400 5700
-Connection ~ 4400 5700
-Wire Wire Line
-	5650 7200 6150 7200
-Wire Wire Line
-	6150 7200 6150 7050
-$Comp
-L PTS647SK38SMTR2LFS:PTS647SK38SMTR2LFS SW_STN_1
-U 1 1 5F93A6E5
-P 4250 5700
-F 0 "SW_STN_1" H 5050 6087 60  0000 C CNN
-F 1 "PTS647SK38SMTR2LFS" H 5050 5981 60  0000 C CNN
-F 2 "footprints:PTS647SK38SMTR2LFS" H 5050 5940 60  0001 C CNN
-F 3 "https://www.ckswitches.com/media/2567/pts647.pdf" H 4250 5700 60  0001 C CNN
-F 4 "PTS647SK38SMTR2LFS" H 4250 5700 50  0001 C CNN "Part Name"
-F 5 "C&K" H 4250 5700 50  0001 C CNN "Manufacturer"
-F 6 "DigiKey Canada" H 4250 5700 50  0001 C CNN "Vendor"
-F 7 "PTS647SK38SMTR2LFSCT-ND" H 4250 5700 50  0001 C CNN "digikeypn"
-	1    4250 5700
-	1    0    0    -1  
-$EndComp
-NoConn ~ 4650 5800
-NoConn ~ 5450 5800
-Wire Wire Line
 	3950 3900 4750 3900
 Wire Wire Line
 	3950 4100 4750 4100
@@ -929,7 +891,38 @@ Wire Wire Line
 Wire Wire Line
 	7100 3200 9450 3200
 Wire Wire Line
-	5650 5700 5650 6850
+	2500 5000 5650 5000
+Wire Wire Line
+	3600 6150 3600 5100
+Connection ~ 3600 5100
+Wire Wire Line
+	3600 5100 5750 5100
 Wire Wire Line
 	4400 5700 4400 6550
+Wire Wire Line
+	4400 4700 4400 5700
+Connection ~ 4400 5700
+Wire Wire Line
+	4650 5700 4400 5700
+Wire Wire Line
+	5650 5700 5650 6850
+Wire Wire Line
+	5650 5000 5650 5700
+Connection ~ 5650 5700
+Wire Wire Line
+	5450 5700 5650 5700
+Wire Notes Line
+	4550 5450 4550 6000
+Wire Notes Line
+	4550 6000 5550 6000
+Wire Notes Line
+	5550 6000 5550 5450
+Wire Notes Line
+	5550 5450 4550 5450
+Text Notes 4700 5850 0    50   ~ 0
+Insert jumper here
+Wire Wire Line
+	5650 7200 5900 7200
+Wire Wire Line
+	5900 7200 5900 7050
 $EndSCHEMATC

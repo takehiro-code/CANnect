@@ -3,10 +3,10 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 15 19
+Sheet 13 19
 Title "CANnect Reader | Power Supply"
-Date "2020-10-28"
-Rev "0.0.04"
+Date "2020-11-19"
+Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 ""
@@ -74,7 +74,7 @@ F 3 "" H 6850 4000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3350 3500 3350 4350
+	3350 3500 3350 3700
 $Sheet
 S 1700 2450 1500 750 
 U 5F9AE5F2
@@ -115,8 +115,6 @@ Wire Wire Line
 	6850 2050 6850 1900
 Wire Wire Line
 	6850 3550 6850 3400
-Wire Wire Line
-	6850 2500 6850 2350
 Wire Wire Line
 	6850 4000 6850 3850
 $Comp
@@ -163,15 +161,7 @@ $EndComp
 NoConn ~ 6450 3500
 NoConn ~ 6450 2000
 Connection ~ 6850 3400
-Wire Wire Line
-	7250 3400 7250 2600
-Wire Wire Line
-	6850 3400 7250 3400
 Connection ~ 6850 1900
-Wire Wire Line
-	7250 1900 7250 2500
-Wire Wire Line
-	6850 1900 7250 1900
 Wire Wire Line
 	6850 1900 6850 1650
 Wire Wire Line
@@ -231,24 +221,76 @@ Wire Wire Line
 $Comp
 L 1546931-2:1546931-2 J_PS_1
 U 1 1 5FA002EC
-P 7850 2600
-F 0 "J_PS_1" H 8080 2696 50  0000 L CNN
-F 1 "1546931-2" H 8080 2605 50  0000 L CNN
-F 2 "footprints:1546931-2" H 7850 2600 50  0001 L BNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 7850 2600 50  0001 L BNN
-F 4 "1546931-2" H 7850 2600 50  0001 C CNN "Part Name"
-F 5 "TE Connectivity AMP Connectors" H 7850 2600 50  0001 C CNN "Manufacturer"
-F 6 "Digikey Canada" H 7850 2600 50  0001 C CNN "Vendor"
-F 7 "A97965-ND" H 7850 2600 50  0001 C CNN "digikeypn"
-	1    7850 2600
+P 4250 3700
+F 0 "J_PS_1" H 4480 3796 50  0000 L CNN
+F 1 "1546931-2" H 4480 3705 50  0000 L CNN
+F 2 "footprints:1546931-2" H 4250 3700 50  0001 L BNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 4250 3700 50  0001 L BNN
+F 4 "1546931-2" H 4250 3700 50  0001 C CNN "Part Name"
+F 5 "TE Connectivity AMP Connectors" H 4250 3700 50  0001 C CNN "Manufacturer"
+F 6 "Digikey Canada" H 4250 3700 50  0001 C CNN "Vendor"
+F 7 "A97965-ND" H 4250 3700 50  0001 C CNN "digikeypn"
+	1    4250 3700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7250 2500 7450 2500
-Wire Wire Line
-	7450 2600 7250 2600
-Wire Wire Line
-	3350 2800 4850 2800
+	3350 2800 3850 2800
 Wire Wire Line
 	3300 5150 6000 5150
+$Comp
+L 1546931-2:1546931-2 J_PS_2
+U 1 1 5FBD8B3B
+P 7850 2000
+F 0 "J_PS_2" H 8080 2096 50  0000 L CNN
+F 1 "1546931-2" H 8080 2005 50  0000 L CNN
+F 2 "footprints:1546931-2" H 7850 2000 50  0001 L BNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 7850 2000 50  0001 L BNN
+F 4 "1546931-2" H 7850 2000 50  0001 C CNN "Part Name"
+F 5 "TE Connectivity AMP Connectors" H 7850 2000 50  0001 C CNN "Manufacturer"
+F 6 "Digikey Canada" H 7850 2000 50  0001 C CNN "Vendor"
+F 7 "A97965-ND" H 7850 2000 50  0001 C CNN "digikeypn"
+	1    7850 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L 1546931-2:1546931-2 J_PS_3
+U 1 1 5FBD9454
+P 7850 3500
+F 0 "J_PS_3" H 8080 3596 50  0000 L CNN
+F 1 "1546931-2" H 8080 3505 50  0000 L CNN
+F 2 "footprints:1546931-2" H 7850 3500 50  0001 L BNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 7850 3500 50  0001 L BNN
+F 4 "1546931-2" H 7850 3500 50  0001 C CNN "Part Name"
+F 5 "TE Connectivity AMP Connectors" H 7850 3500 50  0001 C CNN "Manufacturer"
+F 6 "Digikey Canada" H 7850 3500 50  0001 C CNN "Vendor"
+F 7 "A97965-ND" H 7850 3500 50  0001 C CNN "digikeypn"
+	1    7850 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 1900 7450 1900
+Wire Wire Line
+	3850 3600 3850 2800
+Connection ~ 3850 2800
+Wire Wire Line
+	3850 2800 4850 2800
+Wire Wire Line
+	3850 3700 3350 3700
+Connection ~ 3350 3700
+Wire Wire Line
+	3350 3700 3350 4350
+Wire Wire Line
+	6850 3400 7450 3400
+Wire Wire Line
+	6850 2350 6850 2500
+Wire Wire Line
+	6850 2500 7450 2500
+Wire Wire Line
+	7450 2500 7450 2000
+Connection ~ 6850 2500
+Wire Wire Line
+	6850 4000 7450 4000
+Wire Wire Line
+	7450 4000 7450 3500
+Connection ~ 6850 4000
 $EndSCHEMATC

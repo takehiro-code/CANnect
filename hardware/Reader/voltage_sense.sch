@@ -3,26 +3,16 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 17 19
+Sheet 15 19
 Title "CANnect Reader | Voltage Sense"
-Date "2020-10-28"
-Rev "0.0.04"
+Date "2020-11-19"
+Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
 Comment2 "Taken from STN21xx's datasheet for recommended configuration"
 Comment3 ""
 Comment4 "Component Identifier: VS"
 $EndDescr
-Wire Notes Line
-	1750 1350 1750 4150
-Wire Notes Line
-	1750 4150 4650 4150
-Wire Notes Line
-	4650 4150 4650 1350
-Wire Notes Line
-	4650 1350 1750 1350
-Text Notes 2050 1500 2    50   ~ 0
-Typical
 Wire Wire Line
 	2850 2050 2850 1750
 $Comp
@@ -69,8 +59,6 @@ $EndComp
 Wire Wire Line
 	3400 2500 3400 2700
 Wire Wire Line
-	3400 2500 3950 2500
-Wire Wire Line
 	2850 2500 3400 2500
 Connection ~ 3400 2500
 Wire Wire Line
@@ -105,8 +93,6 @@ F 7 "497-3768-1-ND" H 3400 2850 50  0001 C CNN "digikeypn"
 	1    3400 2850
 	0    1    1    0   
 $EndComp
-Text HLabel 3950 2500 2    50   Output ~ 0
-Analog_Voltage
 $Comp
 L power:GND #PWR097
 U 1 1 5FD5EC70
@@ -177,4 +163,18 @@ F 7 "P122414CT-ND" H 2850 2800 50  0001 C CNN "digikeypn"
 	1    2850 2800
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	3400 2500 3950 2500
+Wire Notes Line
+	1750 4150 4650 4150
+Text Notes 2050 1500 2    50   ~ 0
+Typical
+Wire Notes Line
+	1750 1350 1750 4150
+Wire Notes Line
+	4650 1350 1750 1350
+Wire Notes Line
+	4650 4150 4650 1350
+Text HLabel 3950 2500 2    50   Output ~ 0
+Analog_Voltage
 $EndSCHEMATC
