@@ -46,6 +46,12 @@ public class Fuel_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    public interface FromFuelLevelGauge{
+        void sendFuelLevelPID(String string);
+    }
+
+    FromFuelLevelGauge mCallback;
+
     public Fuel_fragment() {
         // Required empty public constructor
     }
@@ -66,6 +72,18 @@ public class Fuel_fragment extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mContext = context;
+        if (context instanceof FromFuelLevelGauge){
+            mCallback = (FromFuelLevelGauge) context;
+        }else{
+            throw new ClassCastException(context.toString() + "must implement sendFuelLevelPID");
+        }
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
     @Override
@@ -95,12 +113,43 @@ public class Fuel_fragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_fuel, container, false);
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         fuellevel = (ProgressiveGauge) view.findViewById(R.id.fuel_level);
         fuellevel.setTrembleDegree(0);
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
+        super.onPause();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mContext = null;
+        mCallback = null;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -111,50 +160,21 @@ public class Fuel_fragment extends Fragment {
             Log.d(TAG, parsed[0]);
             try {
                 switch (parsed[0]) {
-
                     case "FUEL LEVEL":
                         //changing string to float.
                         fuellevel.speedTo(Float.parseFloat(parsed[1]));
                         break;
 
                     default:
+                        mCallback.sendFuelLevelPID("FUELLEVEL_PID");
                         break;
                 }
             }catch (Exception e){
                 e.printStackTrace();
             }
-
             if (data_message.length()>=32){
                 data_message.setLength(0);
             }
         }
     };
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        mContext = context;
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mContext = null;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
 }

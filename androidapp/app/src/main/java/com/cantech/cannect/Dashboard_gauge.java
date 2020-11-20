@@ -5,10 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -17,33 +14,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.cantech.cannect.fragment.Absolute_Load_Fragment;
+import com.cantech.cannect.fragment.Actual_Engine_Torque_Fragment;
 import com.cantech.cannect.fragment.Air_temp_fragment;
+import com.cantech.cannect.fragment.Calculate_Engine_Load_Fragment;
 import com.cantech.cannect.fragment.Coolant_temp_fragment;
+import com.cantech.cannect.fragment.Demand_Engine_Torque_Fragment;
 import com.cantech.cannect.fragment.Fuel_Pressure_fragment;
 import com.cantech.cannect.fragment.Fuel_fragment;
 import com.cantech.cannect.fragment.Fuel_type_Fragment;
 import com.cantech.cannect.fragment.MAF_Fragment;
 import com.cantech.cannect.fragment.RPMgauge_fragment;
 import com.cantech.cannect.fragment.Speedgauge_fragment;
-import com.github.anastr.speedviewlib.ProgressiveGauge;
+import com.cantech.cannect.fragment.Throttle_Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import com.github.anastr.speedviewlib.Speedometer;
-import com.github.anastr.speedviewlib.TubeSpeedometer;
 
-public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fragment.FromSpeedGauge {
+public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fragment.FromSpeedGauge, MAF_Fragment.FromMAFGauge, Fuel_fragment.FromFuelLevelGauge, Actual_Engine_Torque_Fragment.FromActualTorque,
+                                                                RPMgauge_fragment.FromRPMGauge, Air_temp_fragment.FromAirTempGauge, Coolant_temp_fragment.FromCoolantTempGauge,
+                                                                Throttle_Fragment.FromThrottleGauge, Fuel_type_Fragment.FromFuelTypeGauge, Fuel_Pressure_fragment.FromFuelPressureGauge,
+                                                                Demand_Engine_Torque_Fragment.FromDemandTorque, Absolute_Load_Fragment.FromAbsLoad, Calculate_Engine_Load_Fragment.FromEngineLoad{
     private static final String TAG = "Dashboard_gauge";
-    private static final int SPEED_GAUGE = 0;
-    private static final int RPM_GAUGE = 1;
-    private static final int COOLANT_GAUGE = 2;
     DataParsing dataParsing;
     StringBuilder data_message;
     SharedPref sharedPref;
-
-    TubeSpeedometer engineRPM;
-    Speedometer carSpeed;
-    Speedometer engineTempView;
-    ProgressiveGauge fuelstatusView;
 
     Speedgauge_fragment speedgauge = new Speedgauge_fragment();
     RPMgauge_fragment rpmgauge = new RPMgauge_fragment();
@@ -53,13 +47,22 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
     Air_temp_fragment airtemptextview = new Air_temp_fragment();
     MAF_Fragment maftextview = new MAF_Fragment();
     Fuel_type_Fragment fuelTypeFragment = new Fuel_type_Fragment();
-    String speed;
+    Throttle_Fragment throttle_fragment = new Throttle_Fragment();
+    Calculate_Engine_Load_Fragment calELoad_fragment = new Calculate_Engine_Load_Fragment();
+    Absolute_Load_Fragment absLoad_fragment = new Absolute_Load_Fragment();
+    Demand_Engine_Torque_Fragment demandETorque_fragment = new Demand_Engine_Torque_Fragment();
+    Actual_Engine_Torque_Fragment actualETorque_fragment = new Actual_Engine_Torque_Fragment();
+
+    //speed 0, fuelpressure 1, throttle 2, rpm 3, airtemp 4
+    //coolant 5, fueltype 6, fuellevel 7, maf 8, calELoad 9
+    //absLoad 10, demandETorque 11, actualETorque 12
+    private String[] str = new String[13];
+
 
     FrameLayout frameLayout1;
     FrameLayout frameLayout2;
     FrameLayout frameLayout3;
     FrameLayout frameLayout4;
-
 
     FragmentTransaction ft1;
 
@@ -78,7 +81,6 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
 
         getSupportActionBar().setTitle("Dashboard");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().hide();
 
         frameLayout1 = findViewById(R.id.gauge_container1);
         frameLayout2 = findViewById(R.id.gauge_container2);
@@ -92,8 +94,9 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
 
         data_message = new StringBuilder();
 
-        //LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-
+        for(int i = 0; i < str.length; i++){
+            str[i] = "";
+        }
         //initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         //Set Table selected
@@ -116,10 +119,6 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
         ft1.commit();
 
 
-//        ft.addToBackStack(null);
-//        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
-
-
         //perform itemselectedlistener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -139,8 +138,6 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
                 return false;
             }
         });
-
-
     }
 
     @Override
@@ -166,106 +163,140 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
                 break;
         }
         menu.setHeaderTitle("Select To View");
-
     }
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         ft1 = getSupportFragmentManager().beginTransaction();
+        Intent sendingMessageIntent = new Intent("sendingMessage");
         switch (item.getItemId()) {
             case R.id.speedView_menu:
                 ft1.replace(R.id.gauge_container1, speedgauge);
                 ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 0);
                 return true;
 
             case R.id.fuelpressure_menu:
                 ft1.replace(R.id.gauge_container1, fuelpressuregauge);
                 ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 1);
                 return true;
 
             case R.id.RPMView_menu:
                 ft1.replace(R.id.gauge_container2, rpmgauge);
                 ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 3);
                 return true;
 
             case R.id.TEMPView_menu:
                 ft1.replace(R.id.gauge_container3, coolantgauge);
                 ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 5);
                 return true;
 
             case R.id.IntakAirTemp_menu:
                 ft1.replace(R.id.gauge_container2, airtemptextview);
                 ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 4);
                 return true;
 
             case R.id.MAF_menu:
                 ft1.replace(R.id.gauge_container4, maftextview);
                 ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 8);
                 return true;
 
             case R.id.Fuel_type_menu:
                 ft1.replace(R.id.gauge_container3, fuelTypeFragment);
                 ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 6);
                 return true;
 
             case R.id.Fuel_levle_menu:
                 ft1.replace(R.id.gauge_container4, fuelgauge);
                 ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 7);
                 return true;
 
+            case R.id.throttle_menu:
+                ft1.replace(R.id.gauge_container1, throttle_fragment);
+                ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 2);
+                return true;
+
+            case R.id.CalELoad_menu:
+                ft1.replace(R.id.gauge_container3, calELoad_fragment);
+                ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 9);
+                return true;
+
+            case R.id.AbsLoad_menu:
+                ft1.replace(R.id.gauge_container3, absLoad_fragment);
+                ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 10);
+                return true;
+
+            case R.id.DemandTorque_menu:
+                ft1.replace(R.id.gauge_container4, demandETorque_fragment);
+                ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 11);
+                return true;
+
+            case R.id.ActualTorque_menu:
+                ft1.replace(R.id.gauge_container4, actualETorque_fragment);
+                ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 12);
+                return true;
             default:
                 return super.onContextItemSelected(item);
         }
     }
 
-    @Override
-    public void sendSpeedPID(String string) {
-        speed = string;
-    }
-
-//
-//    BroadcastReceiver mReceiver = new BroadcastReceiver() {
-//        @Override
-//        public void onReceive(Context context, Intent intent) {
-//            //needs to be modified, received value is a string. also add multiple datasets
-//            String text = intent.getStringExtra("theMessage");
-//            data_message.append(text + "\n");
-//            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
-//
-//
-//        }
-//    };
-
-    // called whenever Dashboard visited
-    @Override
-    protected void onStart() {
-        super.onStart();
-        //register broadcast receiver
-//        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
- //sending data example; send data whenever you visit dashboard
-        Intent sendingMessageIntent = new Intent("sendingMessage");
-        sendingMessageIntent.putExtra("theMessage", speed);
+    private void sendingPID2BT(Intent sendingMessageIntent, int i) {
+        sendingMessageIntent.putExtra("theMessage", str[i]);
+        Log.d("dtc", str[i]);
         LocalBroadcastManager.getInstance(this).sendBroadcast(sendingMessageIntent);
+        str[i] = "";
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-//        LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
-    }
+    public void sendSpeedPID(String string) { str[0] = string;}
 
     @Override
-    protected void onResume() {
-        super.onResume();
-//        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-    }
+    public void sendFuelPressurePID(String string) { str[1] = string;}
 
-    // called whenever Dashboard leaves
     @Override
-    protected void onStop() {
-        super.onStop();
-//        LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
-    }
+    public void sendThrottlePID(String string) { str[2] = string;}
+
+    @Override
+    public void sendRPMPID(String string) { str[3] = string;}
+
+    @Override
+    public void sendAirTempPID(String string) { str[4] = string;}
+
+    @Override
+    public void sendCoolantTempPID(String string) { str[5] = string;}
+
+    @Override
+    public void sendFuelTypePID(String string) { str[6] = string;}
+
+    @Override
+    public void sendFuelLevelPID(String string) { str[7] = string;}
+
+    @Override
+    public void sendMAFPID(String string) { str[8] = string;}
+
+    @Override
+    public void sendCalculatedEngineLoadPID(String string) { str[9] = string;}
+
+    @Override
+    public void sendAbsoluteLoadPID(String string) { str[10] = string;}
+
+    @Override
+    public void sendDemandETorquePID(String string) { str[11] = string;}
+
+    @Override
+    public void sendActualETorquePID(String string) { str[12] = string;}
 }
 
 

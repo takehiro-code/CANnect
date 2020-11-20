@@ -45,6 +45,12 @@ public class Coolant_temp_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    public interface FromCoolantTempGauge{
+        void sendCoolantTempPID(String string);
+    }
+
+    FromCoolantTempGauge mCallback;
+
     public Coolant_temp_fragment() {
         // Required empty public constructor
     }
@@ -65,6 +71,18 @@ public class Coolant_temp_fragment extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mContext = context;
+        if(context instanceof FromCoolantTempGauge){
+            mCallback = (FromCoolantTempGauge) context;
+        }else{
+            throw new ClassCastException(context.toString() + "must implement sendCoolantTempPID");
+        }
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
     @Override
@@ -89,8 +107,7 @@ public class Coolant_temp_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView started");
-        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-        // Inflate the layout for this fragment
+         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_coolant_temp, container, false);
     }
 
@@ -106,6 +123,35 @@ public class Coolant_temp_fragment extends Fragment {
         coolantTemp.setSpeedometerWidth(30);
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
+        super.onPause();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mContext = null;
+        mCallback = null;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -116,46 +162,20 @@ public class Coolant_temp_fragment extends Fragment {
             Log.d(TAG, parsed[0]);
             try {
                 switch (parsed[0]) {
-
                     case "ENGINE COOLANT TEMP":
                         //changing string to float.
                         coolantTemp.speedTo(Float.parseFloat(parsed[1]));
                         break;
-
                     default:
+                        mCallback.sendCoolantTempPID("COOLANTTEMP_PID");
                         break;
                 }
             }catch (Exception e){
                 e.printStackTrace();
             }
-
             if (data_message.length()>=32){
                 data_message.setLength(0);
             }
         }
     };
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        mContext = context;
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mContext = null;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
-    }
 }

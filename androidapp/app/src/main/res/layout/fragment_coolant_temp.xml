@@ -36,7 +36,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Temp"
+            android:text="Coolant Temp"
             android:textColor="@color/Turquoise"
             android:textStyle="bold"
             android:textAlignment="center"/>

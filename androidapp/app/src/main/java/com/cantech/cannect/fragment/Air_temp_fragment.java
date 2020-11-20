@@ -44,6 +44,13 @@ public class Air_temp_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    //interface to dashboard_gauge activity
+    public interface FromAirTempGauge{
+        void sendAirTempPID(String string);
+    }
+
+    FromAirTempGauge mCallback;
+
     public Air_temp_fragment() {
         // Required empty public constructor
     }
@@ -70,12 +77,12 @@ public class Air_temp_fragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(mContext);
         mContext = context;
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mContext = null;
+        if(context instanceof FromAirTempGauge){
+            mCallback = (FromAirTempGauge) context;
+        }else{
+            throw new ClassCastException(context.toString() + "must implement sendAirTempPID");
+        }
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
     @Override
@@ -95,6 +102,50 @@ public class Air_temp_fragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_air_temp, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        airtemp = (TextView) view.findViewById(R.id.airtemp_TextView);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
+        super.onPause();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mContext = null;
+        mCallback = null;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+
+
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -108,51 +159,16 @@ public class Air_temp_fragment extends Fragment {
                         //changing string to float.
                         airtemp.setText(parsed[1]);
                         break;
-
                     default:
-
+                        mCallback.sendAirTempPID("AIRTEMP_PID");
                         break;
                 }
             }catch (Exception e){
                 e.printStackTrace();
             }
-
             if (data_message.length()>=32){
                 data_message.setLength(0);
             }
         }
     };
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
-        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-        return inflater.inflate(R.layout.fragment_air_temp, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        airtemp = (TextView) view.findViewById(R.id.airtemp_TextView);
-
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
-    }
-
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
 }

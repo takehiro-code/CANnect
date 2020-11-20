@@ -44,6 +44,11 @@ public class RPMgauge_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    public interface FromRPMGauge{
+        void sendRPMPID(String string);
+    }
+
+    FromRPMGauge mCallback;
     public RPMgauge_fragment() {
         // Required empty public constructor
     }
@@ -67,6 +72,19 @@ public class RPMgauge_fragment extends Fragment {
     }
 
     @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext = context;
+        if (context instanceof FromRPMGauge) {
+            mCallback = (FromRPMGauge) context;
+        } else {
+            throw new ClassCastException(context.toString() + "must implement sendRPMPID");
+
+        }
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         sharedPref = new SharedPref(mContext);
         //set theme
@@ -84,38 +102,9 @@ public class RPMgauge_fragment extends Fragment {
         }
     }
 
-    BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            //needs to be modified, received value is a string. also add multiple datasets
-            String text = intent.getStringExtra("theMessage");
-            data_message.append(text + "\n");
-            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
-            Log.d(TAG, parsed[0]);
-            try {
-                switch (parsed[0]) {
-
-                    case "ENGINE RPM":
-                        //changing string to float.
-                        engineRPM.speedTo(Float.parseFloat(parsed[1])/1000.00f);
-                        break;
-
-                    default:
-                        break;
-                }
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-            if (data_message.length()>=32){
-                data_message.setLength(0);
-            }
-        }
-    };
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d(TAG, "OnCreateView started.");
-        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_rpmgauge, container, false);
     }
@@ -137,20 +126,8 @@ public class RPMgauge_fragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        mContext = context;
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mContext = null;
-    }
-    @Override
-    public void onPause() {
-        LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
-        super.onPause();
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
 
     @Override
@@ -158,4 +135,49 @@ public class RPMgauge_fragment extends Fragment {
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
         super.onResume();
     }
+
+    @Override
+    public void onPause() {
+        LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
+        super.onPause();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mContext = null;
+        mCallback = null;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+
+    BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            //needs to be modified, received value is a string. also add multiple datasets
+            String text = intent.getStringExtra("theMessage");
+            data_message.append(text + "\n");
+
+            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
+            try {
+                switch (parsed[0]) {
+                    case "ENGINE RPM":
+                        //changing string to float.
+                        engineRPM.speedTo(Float.parseFloat(parsed[1]) / 1000.00f);
+                        break;
+                    default:
+                        mCallback.sendRPMPID("RPM_PID");
+                        break;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            if (data_message.length() >= 32) {
+                data_message.setLength(0);
+            }
+        }
+    };
 }

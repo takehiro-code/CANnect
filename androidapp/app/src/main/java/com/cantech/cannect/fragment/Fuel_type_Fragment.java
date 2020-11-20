@@ -43,6 +43,12 @@ public class Fuel_type_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    public interface FromFuelTypeGauge{
+        void sendFuelTypePID(String string);
+    }
+
+    FromFuelTypeGauge mCallback;
+
     public Fuel_type_Fragment() {
         // Required empty public constructor
     }
@@ -66,6 +72,18 @@ public class Fuel_type_Fragment extends Fragment {
     }
 
     @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mContext = context;
+        if (context instanceof FromFuelTypeGauge){
+            mCallback = (FromFuelTypeGauge) context;
+        }else{
+            throw new ClassCastException(context.toString() + "must implement sendSpeedPID");
+        }
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         sharedPref = new SharedPref(mContext);
         //set theme
@@ -83,6 +101,51 @@ public class Fuel_type_Fragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        Log.d(TAG, "onCreateView started");
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_fuel_type, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        fueltypetextview = view.findViewById(R.id.Fueltype_TextView);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
+        super.onPause();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mContext = null;
+        mCallback = null;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -92,62 +155,21 @@ public class Fuel_type_Fragment extends Fragment {
             String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
             try {
                 switch (parsed[0]) {
-                    case "VEHICLE SPEED":
+                    case "FUEL STATUS":
                         //changing string to float.
                         fueltypetextview.setText(parsed[1]);
                         break;
 
                     default:
+                        mCallback.sendFuelTypePID("FUELTYPE_PID");
                         break;
                 }
             }catch (Exception e){
                 e.printStackTrace();
             }
-
             if (data_message.length()>=32){
                 data_message.setLength(0);
             }
         }
     };
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView started");
-        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fuel_type, container, false);
-    }
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        fueltypetextview = (TextView) view.findViewById(R.id.Fueltype_TextView);
-    }
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        mContext = context;
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mContext = null;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
 }

@@ -6,4 +6,10 @@
     <item
         android:id="@+id/Fuel_type_menu"
         android:title="Fuel Type"/>
+    <item
+        android:id="@+id/CalELoad_menu"
+        android:title="Calculated Engine Load"/>
+    <item
+        android:id="@+id/AbsLoad_menu"
+        android:title="Absolute Load Value"/>
 </menu>
