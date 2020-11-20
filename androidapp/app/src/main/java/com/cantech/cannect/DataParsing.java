@@ -42,6 +42,11 @@ public class DataParsing extends AppCompatActivity{
     private static final String MAF_SENSOR = "10";
     private static final String THROTTLE = "11";
     private static final String O2_VOLTAGE = "14";
+    private static final String FUEL_LEVEL = "2F";
+    private static final String CAL_ENGINE_LOAD = "04";
+    private static final String ABS_LOAD_VALUE = "43";
+    private static final String DEMAND_ENGINE_TORQUE = "61";
+    private static final String ACTUAL_ENGINE_TORQUE = "62";
 
     public static final String FUEL_STATUS_STRING = "FUEL STATUS";
     public static final String ENGINE_COOLANT_TEMP_STRING = "ENGINE COOLANT TEMP";
@@ -51,6 +56,11 @@ public class DataParsing extends AppCompatActivity{
     public static final String MAF_SENSOR_STRING = "MAF SENSOR";
     public static final String THROTTLE_STRING = "THROTTLE";
     public static final String O2_VOLTAGE_STRING = "O2 VOLTAGE";
+    public static final String FUEL_LEVEL_STRING = "FUEL LEVEL";
+    public static final String CAL_ENGINE_LOAD_STRING = "CALCULATED ENGINE LOAD";
+    public static final String ABS_LOAD_VALUE_STRING = "ABSOLUTE LOAD VALUE";
+    public static final String DEMAND_ENGINE_TORQUE_STRING = "DEMAND ENGINE TORQUE";
+    public static final String ACTUAL_ENGINE_TORQUE_STRING = "ACTUAL ENGINE TORQUE";
 
     public static final String PID_CURRENT_DATA = "41";
     public static final String PID_FREEZE_DATA = "42";
@@ -135,6 +145,28 @@ public class DataParsing extends AppCompatActivity{
                 result[0] = O2_VOLTAGE_STRING;
                 result[1] = Float.toString(convertA / 255.000f);
                 break;
+            case FUEL_LEVEL:
+                result[0] = FUEL_LEVEL_STRING;
+                result[1] = Float.toString((convertA*100)/255.000f);
+                break;
+            case CAL_ENGINE_LOAD:
+                result[0] = CAL_ENGINE_LOAD_STRING;
+                result[1] = Float.toString((convertA*100)/255.000f);
+                break;
+            case ABS_LOAD_VALUE:
+                result[0] = ABS_LOAD_VALUE_STRING;
+                result[1] = Float.toString((100/255.000f)*(256*convertA + convertB));
+                break;
+            case DEMAND_ENGINE_TORQUE:
+                result[0] = DEMAND_ENGINE_TORQUE_STRING;
+                result[1] = Float.toString(convertA - 125);
+                break;
+
+            case ACTUAL_ENGINE_TORQUE:
+                result[0] = ACTUAL_ENGINE_TORQUE_STRING;
+                result[1] = Float.toString(convertA - 125);
+                break;
+
             default:
                 result[0] = "UNDEFINED: " + splitobd2msg[3];
                 result[1] = "UNDEFINED: " + splitobd2msg[4] + " " + splitobd2msg[5] + " " + splitobd2msg[6] + " " + splitobd2msg[7];

@@ -42,6 +42,12 @@ public class MAF_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    public interface FromMAFGauge{
+        void sendMAFPID(String string);
+    }
+
+    FromMAFGauge mCallback;
+
     public MAF_Fragment() {
         // Required empty public constructor
     }
@@ -63,32 +69,19 @@ public class MAF_Fragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-    BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String text = intent.getStringExtra("theMessage");
-            Log.d(TAG, text);
-            data_message.append(text + "\n");
-            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
-            try {
-                switch (parsed[0]) {
-                    case "VEHICLE SPEED":
-                        //changing string to float.
-                        mafsenosr.setText(parsed[1]);
-                        break;
 
-                    default:
-                        break;
-                }
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-
-            if (data_message.length()>=32){
-                data_message.setLength(0);
-            }
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(mContext);
+        mContext = context;
+        if(context instanceof FromMAFGauge){
+            mCallback = (FromMAFGauge) context;
+        }else{
+            throw new ClassCastException(context.toString() + "must implement sendMAFPID");
         }
-    };
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         sharedPref = new SharedPref(mContext);
@@ -111,43 +104,68 @@ public class MAF_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
         return inflater.inflate(R.layout.fragment_maf, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mafsenosr = (TextView) view.findViewById(R.id.MAF_TextView);
+        mafsenosr = view.findViewById(R.id.MAF_TextView);
 
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
 
     @Override
     public void onResume() {
-        super.onResume();
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+        super.onResume();
     }
 
     @Override
     public void onPause() {
-        super.onPause();
         LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
-    }
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(mContext);
-        mContext = context;
+        super.onPause();
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
         mContext = null;
+        mCallback = null;
     }
-
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
     }
+
+    BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String text = intent.getStringExtra("theMessage");
+            Log.d(TAG, text);
+            data_message.append(text + "\n");
+            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
+            try {
+                switch (parsed[0]) {
+                    case "MAF SENSOR":
+                        //changing string to float.
+                        mafsenosr.setText(parsed[1]);
+                        break;
+                    default:
+                        mCallback.sendMAFPID("MAF_PID");
+                        break;
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            if (data_message.length()>=32){
+                data_message.setLength(0);
+            }
+        }
+    };
 }

@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.cantech.cannect.Dashboard_gauge;
 import com.cantech.cannect.DataParsing;
 import com.cantech.cannect.R;
 import com.cantech.cannect.SharedPref;
@@ -35,7 +36,6 @@ import com.github.anastr.speedviewlib.components.Section;
  */
 
 public class Speedgauge_fragment extends Fragment {
-
 
     private static final String TAG = "Speedgauge fragment";
     Speedometer carSpeed;
@@ -55,13 +55,10 @@ public class Speedgauge_fragment extends Fragment {
 
     //interface to the dashboard_gauge activity
     public interface FromSpeedGauge {
-        public void sendSpeedPID(String string);
+        void sendSpeedPID(String string);
     }
 
     FromSpeedGauge mCallback;
-
-
-
 
     public Speedgauge_fragment() {
         // Required empty public constructor
@@ -85,6 +82,17 @@ public class Speedgauge_fragment extends Fragment {
         return fragment;
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext = context;
+        if (context instanceof FromSpeedGauge){
+            mCallback = (FromSpeedGauge) context;
+        }else{
+            throw new ClassCastException(context.toString() + "must implement sendSpeedPID");
+        }
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -103,77 +111,11 @@ public class Speedgauge_fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
-    }
-    BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            //needs to be modified, received value is a string. also add multiple datasets
-            String text = intent.getStringExtra("theMessage");
-            data_message.append(text + "\n");
-            String[] message = text.split("\n");
-            for(int i = 0; i < message.length; i++){
-
-                String[] parsed = dataParsing.convertOBD2FrameToUserFormat(message[i]);
-                try {
-                    switch (parsed[0]) {
-                        case "VEHICLE SPEED":
-                            //changing string to float
-                            carSpeed.speedTo(Float.parseFloat(parsed[1]), 0);
-                            break;
-                        default:
-                            mCallback.sendSpeedPID("ASDFGHJKWERTYUIXCVBN/");
-
-                            break;
-                    }
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-        }
-    };
-
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        mContext = context;
-        Activity activity;
-
-        if (context instanceof Activity){
-            activity=(Activity) context;
-            try{
-                mCallback = (FromSpeedGauge) activity;
-            }catch (ClassCastException e){
-                throw new ClassCastException(activity.toString() + "must implement sendSpeedPID:");
-            }
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mContext = null;
-        mCallback = null;
-    }
-    @Override
-    public void onPause() {
-        LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
-        super.onPause();
-    }
-
-    @Override
-    public void onResume() {
-        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-        super.onResume();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView started");
-        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_speedgauge, container, false);
     }
@@ -193,25 +135,55 @@ public class Speedgauge_fragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mCallback.sendSpeedPID("SpeedPID");
     }
 
-    //    @Override
-//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-//        MenuItem item;
-//        int i = 0;
-//        for(; i < menu.size(); i++){
-//            item = menu.getItem(i);
-//            if(item.toString() == "Speed")
-//                break;
-//        }
-//        menu.removeItem(i);
-//        inflater.inflate(R.menu.option_for_container2, menu);
-//        super.onCreateOptionsMenu(menu, inflater);
-//    }
+    @Override
+    public void onResume() {
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
+        super.onPause();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mContext = null;
+        mCallback = null;
+    }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
     }
+
+    BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            //needs to be modified, received value is a string. also add multiple datasets
+            String text = intent.getStringExtra("theMessage");
+            data_message.append(text + "\n");
+            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
+            try {
+                switch (parsed[0]) {
+                    case "VEHICLE SPEED":
+                        //changing string to float
+                        carSpeed.speedTo(Float.parseFloat(parsed[1]), 0);
+                        break;
+                    default:
+                        mCallback.sendSpeedPID("SPEED_PID");
+                        break;
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            if (data_message.length()>=32){
+                data_message.setLength(0);
+            }
+        }
+    };
 }

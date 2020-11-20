@@ -44,6 +44,11 @@ public class Fuel_Pressure_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    public interface FromFuelPressureGauge{
+        void sendFuelPressurePID(String string);
+    }
+
+    FromFuelPressureGauge mCallback;
     public Fuel_Pressure_fragment() {
         // Required empty public constructor
     }
@@ -67,6 +72,18 @@ public class Fuel_Pressure_fragment extends Fragment {
     }
 
     @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mContext = context;
+        if(context instanceof FromFuelPressureGauge){
+            mCallback = (FromFuelPressureGauge) context;
+        }else{
+            throw new ClassCastException(context.toString() + "must implement sendFuelPressurePID");
+        }
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         sharedPref = new SharedPref(mContext);
         //set theme
@@ -83,58 +100,6 @@ public class Fuel_Pressure_fragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String text = intent.getStringExtra("theMessage");
-            Log.d(TAG, text);
-            data_message.append(text + "\n");
-            String[] message = text.split("\n");
-            for(int i = 0; i < message.length; i++){
-
-            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(message[i]);
-            try {
-                switch (parsed[0]) {
-                    case "FUEL PRESSURE":
-                        //changing string to float
-                        fuelpressure.moveToValue(Float.parseFloat(parsed[1])/1000.00f);
-                        break;
-
-                    default:
-                        break;
-                }
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-            }
-
-        }
-
-    };
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        mContext = context;
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mContext = null;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -150,4 +115,60 @@ public class Fuel_Pressure_fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         fuelpressure = (Gauge) view.findViewById(R.id.fuelpressure_view);
     }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        LocalBroadcastManager.getInstance(mContext).unregisterReceiver(mReceiver);
+        super.onPause();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mContext = null;
+        mCallback = null;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+
+    BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String text = intent.getStringExtra("theMessage");
+            Log.d(TAG, text);
+            data_message.append(text + "\n");
+            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
+            try {
+                switch (parsed[0]) {
+                    case "FUEL PRESSURE":
+                        //changing string to float
+                        fuelpressure.moveToValue(Float.parseFloat(parsed[1])/1000.00f);
+                        break;
+
+                    default:
+                        mCallback.sendFuelPressurePID("FUELPRESSURE_PID");
+                        break;
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            if (data_message.length()>=32){
+                data_message.setLength(0);
+            }
+        }
+    };
 }
