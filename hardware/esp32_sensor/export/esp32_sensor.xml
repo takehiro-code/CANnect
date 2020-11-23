@@ -1,0 +1,1554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>C:\Users\Jin-Desktop\Documents\Projects\esp32\esp32_sensor\kicad\esp32_sensor.sch</source>
+    <date>11/23/20 07:22:22</date>
+    <tool>Eeschema (5.1.7)-1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>ESP32 Sensor Module</title>
+        <company>Created by Choong Jin Ng | jin3838@gmail.com</company>
+        <rev>v0.0.1</rev>
+        <date>2020-11-23</date>
+        <source>esp32_sensor.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value="Component Identifier: "/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Power/" tstamps="/5FB6755E/">
+      <title_block>
+        <title>ESP32 Sensor Module | Power Supply</title>
+        <company>Created by Choong Jin Ng | jin3838@gmail.com</company>
+        <rev>v0.0.1</rev>
+        <date>2020-11-23</date>
+        <source>power.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value="Component Identifier: PW"/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/ESP32 Chip/" tstamps="/5FB6782A/">
+      <title_block>
+        <title>ESP32 Sensor Module | ESP32 Chip</title>
+        <company>Created by Choong Jin Ng | jin3838@gmail.com</company>
+        <rev>v0.0.1</rev>
+        <date>2020-11-23</date>
+        <source>esp32_chip.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value="Component Identifier: ESP"/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/IMU/" tstamps="/5FBC6BA3/">
+      <title_block>
+        <title>ESP32 Sensor Module | Inertia Measurement Unit</title>
+        <company>Created by Choong Jin Ng | jin3838@gmail.com</company>
+        <rev>v0.0.1</rev>
+        <date>2020-11-23</date>
+        <source>imu.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value="Component Identifier: IMU"/>
+      </title_block>
+    </sheet>
+    <sheet number="5" name="/Battery/" tstamps="/5FE12D18/">
+      <title_block>
+        <title>ESP32 Sensor Module</title>
+        <company>Created by Choong Jin Ng | jin3838@gmail.com</company>
+        <rev>v0.0.1</rev>
+        <date>2020-11-23</date>
+        <source>battery.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value="Component Identifier: BAT"/>
+      </title_block>
+    </sheet>
+    <sheet number="6" name="/Connector/" tstamps="/5FE142C5/">
+      <title_block>
+        <title>ESP32 Sensor Module | Connector</title>
+        <company>Created by Choong Jin Ng | jin3838@gmail.com</company>
+        <rev>v0.0.1</rev>
+        <date>2020-11-23</date>
+        <source>connnector.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value="Component Identifier: CN"/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="D_PW_2">
+      <value>BAT20JFILM</value>
+      <footprint>footprints:BAT20JFILM</footprint>
+      <datasheet>https://www.st.com/content/ccc/resource/technical/document/datasheet/group1/81/a4/1f/0e/ca/8c/47/ba/CD00012201/files/CD00012201.pdf/jcr:content/translations/en.CD00012201.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">STMicroelectronics</field>
+        <field name="PROD_ID">DIO-11623</field>
+        <field name="Part Name">BAT20JFILM</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">497-3381-1-ND</field>
+      </fields>
+      <libsource lib="BAT20JFILM" part="BAT20JFILM" description=""/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FB6CB70</tstamp>
+    </comp>
+    <comp ref="C_PW_3">
+      <value>1uF</value>
+      <footprint>footprints:0603</footprint>
+      <datasheet>https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Kermet</field>
+        <field name="Part Name">C0603C105K4RACTU</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">399-7847-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FB999E8</tstamp>
+    </comp>
+    <comp ref="C_PW_4">
+      <value>0.1uF</value>
+      <footprint>footprints:CAPC1608X90</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">CC0603JRX7R8BB104</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">311-1777-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FB9A925</tstamp>
+    </comp>
+    <comp ref="D_PW_1">
+      <value>BAT20JFILM</value>
+      <footprint>footprints:BAT20JFILM</footprint>
+      <datasheet>https://www.st.com/content/ccc/resource/technical/document/datasheet/group1/81/a4/1f/0e/ca/8c/47/ba/CD00012201/files/CD00012201.pdf/jcr:content/translations/en.CD00012201.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">STMicroelectronics</field>
+        <field name="PROD_ID">DIO-11623</field>
+        <field name="Part Name">BAT20JFILM</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">497-3381-1-ND</field>
+      </fields>
+      <libsource lib="BAT20JFILM" part="BAT20JFILM" description=""/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FBA2994</tstamp>
+    </comp>
+    <comp ref="H_PW_1">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FC3A660</tstamp>
+    </comp>
+    <comp ref="C_PW_1">
+      <value>1uF</value>
+      <footprint>footprints:0603</footprint>
+      <datasheet>https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Kermet</field>
+        <field name="Part Name">C0603C105K4RACTU</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">399-7847-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FC80FAE</tstamp>
+    </comp>
+    <comp ref="R_PW_1">
+      <value>10k</value>
+      <footprint>footprints:RESC1608X55N</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">RT0603FRE0710KL</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">YAG2321CT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FCA5D73</tstamp>
+    </comp>
+    <comp ref="Q_PW_1">
+      <value>IRLML5103TRPBF</value>
+      <footprint>footprints:IRLML5103TRPBF</footprint>
+      <datasheet>https://www.infineon.com/dgdl/irlml5103pbf.pdf?fileId=5546d462533600a401535668505d2617</datasheet>
+      <fields>
+        <field name="Manufacturer">Infineon Technologies</field>
+        <field name="Part Name">IRLML5103TRPBF</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">IRLML5103PBFCT-ND</field>
+      </fields>
+      <libsource lib="IRLML5103TRPBF" part="IRLML5103TRPBF" description=""/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FCCF77B</tstamp>
+    </comp>
+    <comp ref="H_PW_3">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FC32A45</tstamp>
+    </comp>
+    <comp ref="D_PW_3">
+      <value>BAT20JFILM</value>
+      <footprint>footprints:BAT20JFILM</footprint>
+      <datasheet>https://www.st.com/content/ccc/resource/technical/document/datasheet/group1/81/a4/1f/0e/ca/8c/47/ba/CD00012201/files/CD00012201.pdf/jcr:content/translations/en.CD00012201.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">STMicroelectronics</field>
+        <field name="PROD_ID">DIO-11623</field>
+        <field name="Part Name">BAT20JFILM</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">497-3381-1-ND</field>
+      </fields>
+      <libsource lib="BAT20JFILM" part="BAT20JFILM" description=""/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FBC7B36</tstamp>
+    </comp>
+    <comp ref="L_PW_1">
+      <value>4.7uH</value>
+      <footprint>footprints:CV201210-4R7K</footprint>
+      <datasheet>https://www.bourns.com/docs/Product-Datasheets/CV201210.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Bourns Inc.</field>
+        <field name="Part Name">CV201210-4R7K</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">CV201210-4R7KCT-ND</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FBB0C68</tstamp>
+    </comp>
+    <comp ref="R_PW_4">
+      <value>115k</value>
+      <footprint>footprints:RESC1608X55N</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">RT0402DRE07115KL</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">311-2218-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FBACEEE</tstamp>
+    </comp>
+    <comp ref="R_PW_3">
+      <value>100k</value>
+      <footprint>footprints:RESC1608X55N</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">RT0603DRE07100KL</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">311-2395-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FBAC365</tstamp>
+    </comp>
+    <comp ref="R_PW_2">
+      <value>100k</value>
+      <footprint>footprints:RESC1608X55N</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">RT0603DRE07100KL</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">311-2395-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FBAB9C1</tstamp>
+    </comp>
+    <comp ref="C_PW_5">
+      <value>4.7uF</value>
+      <footprint>footprints:C1206C475K3RACAUTO</footprint>
+      <datasheet>https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Kermet</field>
+        <field name="Part Name">C1206C475K3RACAUTO</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">399-7029-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FB71E3B</tstamp>
+    </comp>
+    <comp ref="U_PW_1">
+      <value>MAX25276ATCA_VY+</value>
+      <footprint>footprints:MAX25276ATCAVY</footprint>
+      <datasheet>https://datasheets.maximintegrated.com/en/ds/MAX20075-MAX25276.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Maxim Integrated</field>
+        <field name="Part Name">MAX25276ATCA_VY+</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">175-MAX25276ATCA/VY+-ND</field>
+      </fields>
+      <libsource lib="MAX25276ATCAVY" part="MAX25276ATCA_VY+" description=""/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FB76385</tstamp>
+    </comp>
+    <comp ref="C_PW_2">
+      <value>4.7uF</value>
+      <footprint>footprints:C1206C475K3RACAUTO</footprint>
+      <datasheet>https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Kermet</field>
+        <field name="Part Name">C1206C475K3RACAUTO</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">399-7029-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FDD78CA</tstamp>
+    </comp>
+    <comp ref="H_PW_2">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/Power/" tstamps="/5FB6755E/"/>
+      <tstamp>5FDE97E8</tstamp>
+    </comp>
+    <comp ref="U_ESP_1">
+      <value>ESP32-WROOM-32D</value>
+      <footprint>RF_Module:ESP32-WROOM-32</footprint>
+      <datasheet>https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Espressif Systems</field>
+        <field name="Part Name">USB4110-GF-A</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">1965-ESP32-WROOM-32D(4MB)CT-ND</field>
+      </fields>
+      <libsource lib="RF_Module" part="ESP32-WROOM-32D" description="RF Module, ESP32-D0WD SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 2.7-3.6V, onboard antenna, SMD"/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FB67AD8</tstamp>
+    </comp>
+    <comp ref="CP_ESP_1">
+      <value>100uF</value>
+      <footprint>footprints:UCB0J101MCL1GS</footprint>
+      <datasheet>https://www.nichicon.co.jp/english/products/pdfs/e-ucb.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Nichicon</field>
+        <field name="Part Name">UCB0J101MCL1GS</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">493-9357-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="CP" description="Polarized capacitor"/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FB6D16F</tstamp>
+    </comp>
+    <comp ref="J_ESP_2">
+      <value>4157</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical</footprint>
+      <datasheet>https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Adafruit Industries LLC</field>
+        <field name="Part Name">4157</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">1528-2929-ND</field>
+      </fields>
+      <libsource lib="CANtech" part="4157" description=""/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FBB9F84</tstamp>
+    </comp>
+    <comp ref="R_ESP_2">
+      <value>10k</value>
+      <footprint>footprints:RESC1608X55N</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">RT0603FRE0710KL</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">YAG2321CT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FC15A8C</tstamp>
+    </comp>
+    <comp ref="R_ESP_1">
+      <value>500</value>
+      <footprint>footprints:RESC1508X55N</footprint>
+      <datasheet>https://www.vishay.com/docs/28916/mcxhp.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Part Name">MCT0603PD4990DP500</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">749-1523-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FC16B69</tstamp>
+    </comp>
+    <comp ref="R_ESP_4">
+      <value>10k</value>
+      <footprint>footprints:RESC1608X55N</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">RT0603FRE0710KL</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">YAG2321CT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FC1CA19</tstamp>
+    </comp>
+    <comp ref="R_ESP_5">
+      <value>500</value>
+      <footprint>footprints:RESC1508X55N</footprint>
+      <datasheet>https://www.vishay.com/docs/28916/mcxhp.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Part Name">MCT0603PD4990DP500</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">749-1523-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FC1D091</tstamp>
+    </comp>
+    <comp ref="H_ESP_3">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FC1F433</tstamp>
+    </comp>
+    <comp ref="LED_ESP_1">
+      <value>LED</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>https://katalog.we-online.de/led/datasheet/150060YS75000.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Würth Elektronik</field>
+        <field name="Part Name">150060YS75000</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">732-4981-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FC240FF</tstamp>
+    </comp>
+    <comp ref="R_ESP_3">
+      <value>500</value>
+      <footprint>footprints:RESC1508X55N</footprint>
+      <datasheet>https://www.vishay.com/docs/28916/mcxhp.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Part Name">MCT0603PD4990DP500</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">749-1523-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FC24DF2</tstamp>
+    </comp>
+    <comp ref="SW_ESP_2">
+      <value>PTS647SK38SMTR2LFS</value>
+      <footprint>footprints:PTS647SK38SMTR2LFS</footprint>
+      <datasheet>https://www.ckswitches.com/media/2567/pts647.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">C&amp;K</field>
+        <field name="Part Name">PTS 647 SK38 SMTR2 LFS</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">PTS647SK38SMTR2LFSCT-ND</field>
+      </fields>
+      <libsource lib="PTS647SK38SMTR2LFS" part="PTS647SK38SMTR2LFS" description=""/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FC31D43</tstamp>
+    </comp>
+    <comp ref="H_ESP_1">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FC3624B</tstamp>
+    </comp>
+    <comp ref="SW_ESP_1">
+      <value>PTS647SK38SMTR2LFS</value>
+      <footprint>footprints:PTS647SK38SMTR2LFS</footprint>
+      <datasheet>https://www.ckswitches.com/media/2567/pts647.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">C&amp;K</field>
+        <field name="Part Name">PTS 647 SK38 SMTR2 LFS</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">PTS647SK38SMTR2LFSCT-ND</field>
+      </fields>
+      <libsource lib="PTS647SK38SMTR2LFS" part="PTS647SK38SMTR2LFS" description=""/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FC3FB15</tstamp>
+    </comp>
+    <comp ref="J_ESP_1">
+      <value>4157</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical</footprint>
+      <datasheet>https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Adafruit Industries LLC</field>
+        <field name="Part Name">4157</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">1528-2929-ND</field>
+      </fields>
+      <libsource lib="CANtech" part="4157" description=""/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FBBFD6B</tstamp>
+    </comp>
+    <comp ref="H_ESP_2">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FCBDB3B</tstamp>
+    </comp>
+    <comp ref="C_ESP_1">
+      <value>100nF</value>
+      <footprint>footprints:CAPC1608X90N</footprint>
+      <datasheet>https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">TDK Corporation</field>
+        <field name="Part Name">C1608X7R2A103K080AA</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">445-1304-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/ESP32 Chip/" tstamps="/5FB6782A/"/>
+      <tstamp>5FBE54E3</tstamp>
+    </comp>
+    <comp ref="C_IMU_5">
+      <value>100nF</value>
+      <footprint>footprints:CAPC1608X90N</footprint>
+      <datasheet>https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">TDK Corporation</field>
+        <field name="Part Name">C1608X7R2A103K080AA</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">445-1304-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/IMU/" tstamps="/5FBC6BA3/"/>
+      <tstamp>5FBCABEC</tstamp>
+    </comp>
+    <comp ref="R_IMU_1">
+      <value>4.7k</value>
+      <footprint>footprints:RESC1608X55N</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">RT0603DRD074K7L</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">311-4.7KDCT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/IMU/" tstamps="/5FBC6BA3/"/>
+      <tstamp>5FBD70B7</tstamp>
+    </comp>
+    <comp ref="R_IMU_2">
+      <value>4.7k</value>
+      <footprint>footprints:RESC1608X55N</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">RT0603DRD074K7L</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">311-4.7KDCT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/IMU/" tstamps="/5FBC6BA3/"/>
+      <tstamp>5FBD7CED</tstamp>
+    </comp>
+    <comp ref="C_IMU_1">
+      <value>100nF</value>
+      <footprint>footprints:CAPC1608X90N</footprint>
+      <datasheet>https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">TDK Corporation</field>
+        <field name="Part Name">C1608X7R2A103K080AA</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">445-1304-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/IMU/" tstamps="/5FBC6BA3/"/>
+      <tstamp>5FBF0F45</tstamp>
+    </comp>
+    <comp ref="C_IMU_4">
+      <value>100nF</value>
+      <footprint>footprints:CAPC1608X90N</footprint>
+      <datasheet>https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">TDK Corporation</field>
+        <field name="Part Name">C1608X7R2A103K080AA</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">445-1304-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/IMU/" tstamps="/5FBC6BA3/"/>
+      <tstamp>5FBF7A62</tstamp>
+    </comp>
+    <comp ref="U_IMU_1">
+      <value>LSM6DSMTR</value>
+      <footprint>footprints:LSM6DSMTR</footprint>
+      <datasheet>https://www.st.com/content/ccc/resource/technical/document/datasheet/76/27/cf/88/c5/03/42/6b/DM00218116.pdf/files/DM00218116.pdf/jcr:content/translations/en.DM00218116.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">STMicroelectronics</field>
+        <field name="Part Name">LSM6DSMTR</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">497-16696-1-ND</field>
+      </fields>
+      <libsource lib="LSM6DSMTR" part="LSM6DSMTR" description=""/>
+      <sheetpath names="/IMU/" tstamps="/5FBC6BA3/"/>
+      <tstamp>5FBC7503</tstamp>
+    </comp>
+    <comp ref="C_IMU_3">
+      <value>100nF</value>
+      <footprint>footprints:CAPC1608X90N</footprint>
+      <datasheet>https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">TDK Corporation</field>
+        <field name="Part Name">C1608X7R2A103K080AA</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">445-1304-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/IMU/" tstamps="/5FBC6BA3/"/>
+      <tstamp>5FBFE448</tstamp>
+    </comp>
+    <comp ref="C_IMU_2">
+      <value>100nF</value>
+      <footprint>footprints:CAPC1608X90N</footprint>
+      <datasheet>https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">TDK Corporation</field>
+        <field name="Part Name">C1608X7R2A103K080AA</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">445-1304-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <sheetpath names="/IMU/" tstamps="/5FBC6BA3/"/>
+      <tstamp>5FC045BE</tstamp>
+    </comp>
+    <comp ref="H_IMU_1">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/IMU/" tstamps="/5FBC6BA3/"/>
+      <tstamp>5FD93D24</tstamp>
+    </comp>
+    <comp ref="H_IMU_3">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/IMU/" tstamps="/5FBC6BA3/"/>
+      <tstamp>5FD94A28</tstamp>
+    </comp>
+    <comp ref="H_IMU_2">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/IMU/" tstamps="/5FBC6BA3/"/>
+      <tstamp>5FD97AB3</tstamp>
+    </comp>
+    <comp ref="H_BAT_1">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/Battery/" tstamps="/5FE12D18/"/>
+      <tstamp>5FBD174D</tstamp>
+    </comp>
+    <comp ref="U_CN_1">
+      <value>USB4110-GF-A</value>
+      <footprint>footprints:USB4110-GF-A</footprint>
+      <datasheet>https://gct.co/files/drawings/usb4110.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">GCT</field>
+        <field name="PARTREV">A</field>
+        <field name="Part Name">PTS647SK38SMTR2LFS</field>
+        <field name="STANDARD">Manufacturer Recommendations</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">2073-USB4110-GF-A-1-ND</field>
+      </fields>
+      <libsource lib="USB4110-GF-A" part="USB4110-GF-A" description=""/>
+      <sheetpath names="/Connector/" tstamps="/5FE142C5/"/>
+      <tstamp>5FBBD3FA</tstamp>
+    </comp>
+    <comp ref="H_CN_3">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/Connector/" tstamps="/5FE142C5/"/>
+      <tstamp>5FBBC0D8</tstamp>
+    </comp>
+    <comp ref="H_CN_4">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/Connector/" tstamps="/5FE142C5/"/>
+      <tstamp>5FBBC878</tstamp>
+    </comp>
+    <comp ref="H_CN_5">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/Connector/" tstamps="/5FE142C5/"/>
+      <tstamp>5FBBEB75</tstamp>
+    </comp>
+    <comp ref="H_CN_2">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/Connector/" tstamps="/5FE142C5/"/>
+      <tstamp>5FBBEFA2</tstamp>
+    </comp>
+    <comp ref="H_CN_1">
+      <value>1546931-2</value>
+      <footprint>footprints:1546931-2</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&amp;DocNm=1-1773458-1_EURO_STYLE_QRG&amp;DocType=DS&amp;DocLang=English</datasheet>
+      <fields>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="Vendor Part Name">A97965-ND</field>
+      </fields>
+      <libsource lib="1546931-2" part="1546931-2" description=""/>
+      <sheetpath names="/Connector/" tstamps="/5FE142C5/"/>
+      <tstamp>5FBC057F</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="1546931-2" part="1546931-2">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">1546931-2</field>
+        <field name="Footprint">footprints:1546931-2</field>
+        <field name="Part Name">1546931-2</field>
+        <field name="Manufacturer">TE Connectivity AMP Connectors</field>
+        <field name="Vendor">Digikey Canada</field>
+        <field name="digikeypn">A97965-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="BAT20JFILM" part="BAT20JFILM">
+      <docs>https://www.st.com/content/ccc/resource/technical/document/datasheet/group1/81/a4/1f/0e/ca/8c/47/ba/CD00012201/files/CD00012201.pdf/jcr:content/translations/en.CD00012201.pdf</docs>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">BAT20JFILM</field>
+        <field name="Footprint">SOD-323</field>
+        <field name="PROD_ID">DIO-11623</field>
+        <field name="VALUE">BAT20JFILM</field>
+      </fields>
+      <pins>
+        <pin num="A" name="~" type="passive"/>
+        <pin num="C" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="CANtech" part="4157">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">4157</field>
+        <field name="Footprint">Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Manufacturer">Adafruit Industries LLC</field>
+        <field name="digikeypn">1528-2929-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+        <pin num="9" name="Pin_9" type="passive"/>
+        <pin num="10" name="Pin_10" type="passive"/>
+        <pin num="11" name="Pin_11" type="passive"/>
+        <pin num="12" name="Pin_12" type="passive"/>
+        <pin num="13" name="Pin_13" type="passive"/>
+        <pin num="14" name="Pin_14" type="passive"/>
+        <pin num="15" name="Pin_15" type="passive"/>
+        <pin num="16" name="Pin_16" type="passive"/>
+        <pin num="17" name="Pin_17" type="passive"/>
+        <pin num="18" name="Pin_18" type="passive"/>
+        <pin num="19" name="Pin_19" type="passive"/>
+        <pin num="20" name="Pin_20" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="CP">
+      <description>Polarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>CP_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CP</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Small">
+      <description>Unpolarized capacitor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="L">
+      <description>Inductor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED">
+      <description>Light emitting diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_Small">
+      <description>Resistor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="IRLML5103TRPBF" part="IRLML5103TRPBF">
+      <footprints>
+        <fp>MICRO3_SOT23_INF</fp>
+        <fp>MICRO3_SOT23_INF-M</fp>
+        <fp>MICRO3_SOT23_INF-L</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">MOSFET</field>
+        <field name="Value">IRLML5103TRPBF</field>
+        <field name="Footprint">MICRO3_SOT23_INF</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspc"/>
+        <pin num="2" name="2" type="unspc"/>
+        <pin num="3" name="3" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="LSM6DSMTR" part="LSM6DSMTR">
+      <docs>https://www.st.com/content/ccc/resource/technical/document/datasheet/76/27/cf/88/c5/03/42/6b/DM00218116.pdf/files/DM00218116.pdf/jcr:content/translations/en.DM00218116.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LSM6DSMTR</field>
+        <field name="Footprint">footprints:LSM6DSMTR</field>
+        <field name="Part Name">LSM6DSMTR</field>
+        <field name="Manufacturer">STMicroelectronics</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="Vendor Part Name">497-16696-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="SDO/SA0" type="BiDi"/>
+        <pin num="2" name="SDX" type="BiDi"/>
+        <pin num="3" name="SCX" type="BiDi"/>
+        <pin num="4" name="INT1" type="input"/>
+        <pin num="5" name="VDDIO" type="power_in"/>
+        <pin num="6" name="GND" type="power_in"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="8" name="VDD" type="power_in"/>
+        <pin num="9" name="INT2/DEN/MDRDY" type="input"/>
+        <pin num="10" name="OCS_AUX" type="input"/>
+        <pin num="11" name="SDO_AUX" type="BiDi"/>
+        <pin num="12" name="CS" type="input"/>
+        <pin num="13" name="SCL/SPC" type="input"/>
+        <pin num="14" name="SDA/SDI/SDO" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="MAX25276ATCAVY" part="MAX25276ATCA_VY+">
+      <docs>https://datasheets.maximintegrated.com/en/ds/MAX20075-MAX25276.pdf</docs>
+      <footprints>
+        <fp>21-100284A_TD1233Y+3C_MXM</fp>
+        <fp>21-100284A_TD1233Y+3C_MXM-M</fp>
+        <fp>21-100284A_TD1233Y+3C_MXM-L</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MAX25276ATCA_VY+</field>
+        <field name="Footprint">footprints:MAX25276ATCAVY</field>
+        <field name="Vendor">Digikey</field>
+        <field name="Vendor Part Number">175-MAX25276ATCA/VY+-ND</field>
+        <field name="Manufacturer">Maxim Integrated</field>
+      </fields>
+      <pins>
+        <pin num="1" name="SPS" type="unspc"/>
+        <pin num="2" name="EN" type="input"/>
+        <pin num="3" name="BST" type="unspc"/>
+        <pin num="4" name="SUP" type="input"/>
+        <pin num="5" name="LX" type="unspc"/>
+        <pin num="6" name="PGND" type="power_in"/>
+        <pin num="7" name="AGND" type="power_in"/>
+        <pin num="8" name="FB" type="output"/>
+        <pin num="9" name="OUT" type="output"/>
+        <pin num="10" name="BIAS" type="unspc"/>
+        <pin num="11" name="SYNC" type="input"/>
+        <pin num="12" name="PGOOD" type="output"/>
+        <pin num="13" name="EPAD" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="PTS647SK38SMTR2LFS" part="PTS647SK38SMTR2LFS">
+      <footprints>
+        <fp>PTS647SK38SMTR2LFS_CNK</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">PTS647SK38SMTR2LFS</field>
+        <field name="Footprint">footprints:PTS647SK38SMTR2LFS</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspc"/>
+        <pin num="2" name="2" type="unspc"/>
+        <pin num="3" name="3" type="unspc"/>
+        <pin num="4" name="4" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="RF_Module" part="ESP32-WROOM-32">
+      <aliases>
+        <alias>ESP32-WROOM-32D</alias>
+      </aliases>
+      <description>RF Module, ESP32-D0WDQ6 SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 2.7-3.6V, onboard antenna, SMD</description>
+      <docs>https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf</docs>
+      <footprints>
+        <fp>ESP32?WROOM?32*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ESP32-WROOM-32</field>
+        <field name="Footprint">RF_Module:ESP32-WROOM-32</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="power_in"/>
+        <pin num="2" name="VDD" type="power_in"/>
+        <pin num="3" name="EN" type="input"/>
+        <pin num="4" name="SENSOR_VP" type="input"/>
+        <pin num="5" name="SENSOR_VN" type="input"/>
+        <pin num="6" name="IO34" type="input"/>
+        <pin num="7" name="IO35" type="input"/>
+        <pin num="8" name="IO32" type="BiDi"/>
+        <pin num="9" name="IO33" type="BiDi"/>
+        <pin num="10" name="IO25" type="BiDi"/>
+        <pin num="11" name="IO26" type="BiDi"/>
+        <pin num="12" name="IO27" type="BiDi"/>
+        <pin num="13" name="IO14" type="BiDi"/>
+        <pin num="14" name="IO12" type="BiDi"/>
+        <pin num="15" name="GND" type="passive"/>
+        <pin num="16" name="IO13" type="BiDi"/>
+        <pin num="17" name="SHD/SD2" type="BiDi"/>
+        <pin num="18" name="SWP/SD3" type="BiDi"/>
+        <pin num="19" name="SCS/CMD" type="BiDi"/>
+        <pin num="20" name="SCK/CLK" type="BiDi"/>
+        <pin num="21" name="SDO/SD0" type="BiDi"/>
+        <pin num="22" name="SDI/SD1" type="BiDi"/>
+        <pin num="23" name="IO15" type="BiDi"/>
+        <pin num="24" name="IO2" type="BiDi"/>
+        <pin num="25" name="IO0" type="BiDi"/>
+        <pin num="26" name="IO4" type="BiDi"/>
+        <pin num="27" name="IO16" type="BiDi"/>
+        <pin num="28" name="IO17" type="BiDi"/>
+        <pin num="29" name="IO5" type="BiDi"/>
+        <pin num="30" name="IO18" type="BiDi"/>
+        <pin num="31" name="IO19" type="BiDi"/>
+        <pin num="32" name="NC" type="NotConnected"/>
+        <pin num="33" name="IO21" type="BiDi"/>
+        <pin num="34" name="RXD0/IO3" type="BiDi"/>
+        <pin num="35" name="TXD0/IO1" type="BiDi"/>
+        <pin num="36" name="IO22" type="BiDi"/>
+        <pin num="37" name="IO23" type="BiDi"/>
+        <pin num="38" name="GND" type="passive"/>
+        <pin num="39" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="USB4110-GF-A" part="USB4110-GF-A">
+      <docs>https://gct.co/files/drawings/usb4110.pdf</docs>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">USB4110-GF-A</field>
+        <field name="Footprint">footprints:USB4110-GF-A</field>
+        <field name="PARTREV">A</field>
+        <field name="STANDARD">Manufacturer Recommendations</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">3.26 mm</field>
+        <field name="MANUFACTURER">GCT</field>
+      </fields>
+      <pins>
+        <pin num="A5" name="CC1" type="BiDi"/>
+        <pin num="A6" name="DP1" type="BiDi"/>
+        <pin num="A7" name="DN1" type="BiDi"/>
+        <pin num="A8" name="SBU1" type="BiDi"/>
+        <pin num="A1/B12" name="GND" type="power_in"/>
+        <pin num="A4/B9" name="VBUS" type="power_in"/>
+        <pin num="B5" name="CC2" type="BiDi"/>
+        <pin num="B6" name="DP2" type="BiDi"/>
+        <pin num="B7" name="DN2" type="BiDi"/>
+        <pin num="B8" name="SBU2" type="BiDi"/>
+        <pin num="B1/A12" name="GND" type="power_in"/>
+        <pin num="B4/A9" name="VBUS" type="power_in"/>
+        <pin num="S1" name="GND" type="power_in"/>
+        <pin num="S2" name="GND" type="power_in"/>
+        <pin num="S3" name="GND" type="power_in"/>
+        <pin num="S4" name="GND" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="1546931-2">
+      <uri>C:\Users\Jin-Desktop\Documents\Projects\esp32\esp32_sensor\kicad/schematics/1546931-2.lib</uri>
+    </library>
+    <library logical="BAT20JFILM">
+      <uri>C:\Users\Jin-Desktop\Documents\Projects\esp32\esp32_sensor\kicad/schematics/BAT20JFILM.lib</uri>
+    </library>
+    <library logical="CANtech">
+      <uri>C:\Users\Jin-Desktop\Documents\Projects\esp32\esp32_sensor\kicad/schematics/CANtech.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Device.lib</uri>
+    </library>
+    <library logical="IRLML5103TRPBF">
+      <uri>C:\Users\Jin-Desktop\Documents\Projects\esp32\esp32_sensor\kicad/schematics/IRLML5103TRPBF.lib</uri>
+    </library>
+    <library logical="LSM6DSMTR">
+      <uri>C:\Users\Jin-Desktop\Documents\Projects\esp32\esp32_sensor\kicad/schematics/LSM6DSMTR.lib</uri>
+    </library>
+    <library logical="MAX25276ATCAVY">
+      <uri>C:\Users\Jin-Desktop\Documents\Projects\esp32\esp32_sensor\kicad/schematics/MAX25276ATCAVY.lib</uri>
+    </library>
+    <library logical="PTS647SK38SMTR2LFS">
+      <uri>C:\Users\Jin-Desktop\Documents\Projects\esp32\esp32_sensor\kicad/schematics/PTS647SK38SMTR2LFS.lib</uri>
+    </library>
+    <library logical="RF_Module">
+      <uri>C:\Program Files\KiCad\share\kicad\library/RF_Module.lib</uri>
+    </library>
+    <library logical="USB4110-GF-A">
+      <uri>C:\Users\Jin-Desktop\Documents\Projects\esp32\esp32_sensor\kicad/schematics/USB4110-GF-A.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/ESP32 Chip/IMU_SDA">
+      <node ref="H_IMU_1" pin="1"/>
+      <node ref="U_ESP_1" pin="14"/>
+      <node ref="R_IMU_2" pin="2"/>
+      <node ref="J_ESP_2" pin="7"/>
+      <node ref="U_IMU_1" pin="14"/>
+    </net>
+    <net code="2" name="/ESP32 Chip/IMU_SCL">
+      <node ref="J_ESP_2" pin="9"/>
+      <node ref="U_IMU_1" pin="13"/>
+      <node ref="R_IMU_1" pin="1"/>
+      <node ref="U_ESP_1" pin="13"/>
+      <node ref="H_IMU_1" pin="2"/>
+    </net>
+    <net code="3" name="/ESP32 Chip/IMU_INT2">
+      <node ref="H_IMU_2" pin="2"/>
+      <node ref="U_IMU_1" pin="9"/>
+      <node ref="J_ESP_2" pin="19"/>
+      <node ref="U_ESP_1" pin="11"/>
+    </net>
+    <net code="4" name="/ESP32 Chip/IMU_INT1">
+      <node ref="U_IMU_1" pin="4"/>
+      <node ref="J_ESP_2" pin="20"/>
+      <node ref="H_IMU_2" pin="1"/>
+      <node ref="U_ESP_1" pin="12"/>
+    </net>
+    <net code="5" name="/ESP32 Chip/IMU_SDO_SAO">
+      <node ref="U_ESP_1" pin="27"/>
+      <node ref="H_IMU_3" pin="2"/>
+      <node ref="J_ESP_2" pin="11"/>
+      <node ref="U_IMU_1" pin="1"/>
+    </net>
+    <net code="6" name="Net-(U_PW_1-Pad1)">
+      <node ref="U_PW_1" pin="1"/>
+    </net>
+    <net code="7" name="Net-(U_PW_1-Pad12)">
+      <node ref="U_PW_1" pin="12"/>
+    </net>
+    <net code="8" name="Net-(U_PW_1-Pad11)">
+      <node ref="U_PW_1" pin="11"/>
+    </net>
+    <net code="9" name="GND">
+      <node ref="H_PW_3" pin="2"/>
+      <node ref="U_CN_1" pin="S1"/>
+      <node ref="C_IMU_4" pin="2"/>
+      <node ref="C_IMU_5" pin="2"/>
+      <node ref="H_BAT_1" pin="1"/>
+      <node ref="C_IMU_3" pin="2"/>
+      <node ref="C_IMU_2" pin="1"/>
+      <node ref="CP_ESP_1" pin="2"/>
+      <node ref="R_ESP_5" pin="2"/>
+      <node ref="U_CN_1" pin="B1/A12"/>
+      <node ref="U_CN_1" pin="A1/B12"/>
+      <node ref="U_CN_1" pin="S3"/>
+      <node ref="J_ESP_1" pin="12"/>
+      <node ref="U_CN_1" pin="S4"/>
+      <node ref="H_CN_3" pin="2"/>
+      <node ref="C_ESP_1" pin="1"/>
+      <node ref="U_CN_1" pin="S2"/>
+      <node ref="R_ESP_1" pin="2"/>
+      <node ref="LED_ESP_1" pin="1"/>
+      <node ref="C_IMU_1" pin="2"/>
+      <node ref="C_PW_2" pin="2"/>
+      <node ref="H_PW_2" pin="2"/>
+      <node ref="C_PW_3" pin="1"/>
+      <node ref="R_PW_3" pin="1"/>
+      <node ref="C_PW_5" pin="2"/>
+      <node ref="U_PW_1" pin="13"/>
+      <node ref="R_PW_1" pin="2"/>
+      <node ref="U_PW_1" pin="6"/>
+      <node ref="C_PW_1" pin="1"/>
+      <node ref="U_PW_1" pin="7"/>
+      <node ref="R_PW_2" pin="1"/>
+    </net>
+    <net code="10" name="Net-(R_PW_2-Pad2)">
+      <node ref="R_PW_3" pin="2"/>
+      <node ref="R_PW_4" pin="2"/>
+      <node ref="R_PW_2" pin="2"/>
+      <node ref="U_PW_1" pin="8"/>
+    </net>
+    <net code="11" name="Net-(C_PW_2-Pad1)">
+      <node ref="U_PW_1" pin="4"/>
+      <node ref="C_PW_2" pin="1"/>
+    </net>
+    <net code="12" name="Net-(C_PW_3-Pad2)">
+      <node ref="C_PW_3" pin="2"/>
+      <node ref="U_PW_1" pin="10"/>
+    </net>
+    <net code="13" name="VDD">
+      <node ref="U_PW_1" pin="2"/>
+      <node ref="C_PW_1" pin="2"/>
+      <node ref="H_PW_2" pin="1"/>
+      <node ref="D_PW_2" pin="C"/>
+    </net>
+    <net code="14" name="+BATT">
+      <node ref="H_BAT_1" pin="2"/>
+      <node ref="Q_PW_1" pin="2"/>
+      <node ref="H_PW_1" pin="2"/>
+    </net>
+    <net code="15" name="Net-(D_PW_1-PadC)">
+      <node ref="D_PW_1" pin="C"/>
+      <node ref="D_PW_2" pin="A"/>
+      <node ref="Q_PW_1" pin="3"/>
+    </net>
+    <net code="16" name="Net-(C_PW_4-Pad1)">
+      <node ref="L_PW_1" pin="2"/>
+      <node ref="C_PW_4" pin="1"/>
+      <node ref="U_PW_1" pin="5"/>
+    </net>
+    <net code="17" name="Net-(C_PW_4-Pad2)">
+      <node ref="C_PW_4" pin="2"/>
+      <node ref="U_PW_1" pin="3"/>
+    </net>
+    <net code="18" name="VS">
+      <node ref="J_ESP_1" pin="14"/>
+      <node ref="H_PW_1" pin="1"/>
+      <node ref="U_CN_1" pin="B4/A9"/>
+      <node ref="U_CN_1" pin="A4/B9"/>
+      <node ref="Q_PW_1" pin="1"/>
+      <node ref="R_PW_1" pin="1"/>
+      <node ref="H_CN_3" pin="1"/>
+      <node ref="D_PW_1" pin="A"/>
+    </net>
+    <net code="19" name="Net-(C_PW_5-Pad1)">
+      <node ref="L_PW_1" pin="1"/>
+      <node ref="U_PW_1" pin="9"/>
+      <node ref="D_PW_3" pin="A"/>
+      <node ref="R_PW_4" pin="1"/>
+      <node ref="C_PW_5" pin="1"/>
+    </net>
+    <net code="20" name="+3V3">
+      <node ref="R_IMU_2" pin="1"/>
+      <node ref="U_IMU_1" pin="8"/>
+      <node ref="H_ESP_1" pin="2"/>
+      <node ref="U_IMU_1" pin="5"/>
+      <node ref="H_IMU_3" pin="1"/>
+      <node ref="C_IMU_1" pin="1"/>
+      <node ref="C_IMU_5" pin="1"/>
+      <node ref="R_ESP_2" pin="1"/>
+      <node ref="R_IMU_1" pin="2"/>
+      <node ref="C_IMU_4" pin="1"/>
+      <node ref="R_ESP_4" pin="2"/>
+      <node ref="U_IMU_1" pin="12"/>
+      <node ref="J_ESP_1" pin="16"/>
+      <node ref="U_ESP_1" pin="2"/>
+      <node ref="CP_ESP_1" pin="1"/>
+      <node ref="H_PW_3" pin="1"/>
+      <node ref="D_PW_3" pin="C"/>
+    </net>
+    <net code="21" name="Net-(J_ESP_1-Pad2)">
+      <node ref="U_ESP_1" pin="9"/>
+      <node ref="J_ESP_1" pin="2"/>
+    </net>
+    <net code="22" name="Net-(J_ESP_1-Pad1)">
+      <node ref="J_ESP_1" pin="1"/>
+      <node ref="U_ESP_1" pin="8"/>
+    </net>
+    <net code="23" name="Net-(SW_ESP_1-Pad1)">
+      <node ref="SW_ESP_1" pin="1"/>
+    </net>
+    <net code="24" name="Net-(R_ESP_2-Pad2)">
+      <node ref="R_ESP_2" pin="2"/>
+      <node ref="SW_ESP_1" pin="4"/>
+    </net>
+    <net code="25" name="Net-(J_ESP_1-Pad18)">
+      <node ref="J_ESP_1" pin="18"/>
+      <node ref="U_ESP_1" pin="5"/>
+    </net>
+    <net code="26" name="Net-(J_ESP_1-Pad19)">
+      <node ref="J_ESP_1" pin="19"/>
+      <node ref="U_ESP_1" pin="4"/>
+    </net>
+    <net code="27" name="Net-(C_ESP_1-Pad2)">
+      <node ref="J_ESP_1" pin="5"/>
+      <node ref="U_ESP_1" pin="39"/>
+      <node ref="C_ESP_1" pin="2"/>
+      <node ref="U_ESP_1" pin="38"/>
+      <node ref="U_ESP_1" pin="1"/>
+      <node ref="U_ESP_1" pin="15"/>
+    </net>
+    <net code="28" name="Net-(J_ESP_1-Pad7)">
+      <node ref="J_ESP_1" pin="7"/>
+      <node ref="U_ESP_1" pin="20"/>
+    </net>
+    <net code="29" name="Net-(J_ESP_1-Pad6)">
+      <node ref="U_ESP_1" pin="19"/>
+      <node ref="J_ESP_1" pin="6"/>
+    </net>
+    <net code="30" name="Net-(J_ESP_1-Pad4)">
+      <node ref="J_ESP_1" pin="4"/>
+      <node ref="U_ESP_1" pin="7"/>
+    </net>
+    <net code="31" name="Net-(J_ESP_1-Pad3)">
+      <node ref="J_ESP_1" pin="3"/>
+      <node ref="U_ESP_1" pin="6"/>
+    </net>
+    <net code="32" name="Net-(J_ESP_2-Pad17)">
+      <node ref="J_ESP_2" pin="17"/>
+      <node ref="U_ESP_1" pin="37"/>
+    </net>
+    <net code="33" name="Net-(J_ESP_1-Pad10)">
+      <node ref="J_ESP_1" pin="10"/>
+      <node ref="U_ESP_1" pin="22"/>
+    </net>
+    <net code="34" name="Net-(J_ESP_2-Pad18)">
+      <node ref="J_ESP_2" pin="18"/>
+      <node ref="U_ESP_1" pin="10"/>
+    </net>
+    <net code="35" name="Net-(J_ESP_1-Pad11)">
+      <node ref="J_ESP_1" pin="11"/>
+      <node ref="U_ESP_1" pin="21"/>
+    </net>
+    <net code="36" name="Net-(J_ESP_2-Pad16)">
+      <node ref="U_ESP_1" pin="36"/>
+      <node ref="J_ESP_2" pin="16"/>
+    </net>
+    <net code="37" name="Net-(J_ESP_2-Pad15)">
+      <node ref="J_ESP_2" pin="15"/>
+      <node ref="U_ESP_1" pin="33"/>
+    </net>
+    <net code="38" name="Net-(J_ESP_2-Pad14)">
+      <node ref="U_ESP_1" pin="31"/>
+      <node ref="J_ESP_2" pin="14"/>
+    </net>
+    <net code="39" name="Net-(J_ESP_2-Pad13)">
+      <node ref="U_ESP_1" pin="30"/>
+      <node ref="J_ESP_2" pin="13"/>
+    </net>
+    <net code="40" name="Net-(J_ESP_1-Pad8)">
+      <node ref="J_ESP_1" pin="8"/>
+      <node ref="U_ESP_1" pin="18"/>
+    </net>
+    <net code="41" name="Net-(J_ESP_1-Pad9)">
+      <node ref="U_ESP_1" pin="17"/>
+      <node ref="J_ESP_1" pin="9"/>
+    </net>
+    <net code="42" name="Net-(J_ESP_1-Pad17)">
+      <node ref="J_ESP_1" pin="17"/>
+    </net>
+    <net code="43" name="Net-(J_ESP_1-Pad15)">
+      <node ref="J_ESP_1" pin="15"/>
+    </net>
+    <net code="44" name="Net-(J_ESP_1-Pad13)">
+      <node ref="J_ESP_1" pin="13"/>
+    </net>
+    <net code="45" name="Net-(LED_ESP_1-Pad2)">
+      <node ref="R_ESP_3" pin="2"/>
+      <node ref="LED_ESP_1" pin="2"/>
+    </net>
+    <net code="46" name="Net-(SW_ESP_2-Pad2)">
+      <node ref="SW_ESP_2" pin="2"/>
+    </net>
+    <net code="47" name="Net-(H_ESP_1-Pad1)">
+      <node ref="U_ESP_1" pin="3"/>
+      <node ref="H_ESP_1" pin="1"/>
+      <node ref="SW_ESP_1" pin="3"/>
+      <node ref="J_ESP_1" pin="20"/>
+    </net>
+    <net code="48" name="Net-(R_ESP_5-Pad1)">
+      <node ref="SW_ESP_2" pin="1"/>
+      <node ref="R_ESP_5" pin="1"/>
+    </net>
+    <net code="49" name="Net-(R_ESP_4-Pad1)">
+      <node ref="SW_ESP_2" pin="3"/>
+      <node ref="R_ESP_4" pin="1"/>
+    </net>
+    <net code="50" name="Net-(H_ESP_2-Pad1)">
+      <node ref="SW_ESP_2" pin="4"/>
+      <node ref="U_ESP_1" pin="25"/>
+      <node ref="J_ESP_2" pin="1"/>
+      <node ref="H_ESP_2" pin="1"/>
+    </net>
+    <net code="51" name="Net-(J_ESP_2-Pad10)">
+      <node ref="J_ESP_2" pin="10"/>
+      <node ref="U_ESP_1" pin="23"/>
+    </net>
+    <net code="52" name="Net-(J_ESP_2-Pad8)">
+      <node ref="J_ESP_2" pin="8"/>
+      <node ref="U_ESP_1" pin="16"/>
+    </net>
+    <net code="53" name="Net-(J_ESP_2-Pad6)">
+      <node ref="U_ESP_1" pin="29"/>
+      <node ref="J_ESP_2" pin="6"/>
+    </net>
+    <net code="54" name="Net-(J_ESP_2-Pad5)">
+      <node ref="J_ESP_2" pin="5"/>
+      <node ref="U_ESP_1" pin="26"/>
+    </net>
+    <net code="55" name="Net-(H_ESP_3-Pad2)">
+      <node ref="U_ESP_1" pin="34"/>
+      <node ref="H_ESP_3" pin="2"/>
+      <node ref="J_ESP_2" pin="4"/>
+    </net>
+    <net code="56" name="Net-(H_ESP_3-Pad1)">
+      <node ref="H_ESP_3" pin="1"/>
+      <node ref="U_ESP_1" pin="35"/>
+      <node ref="J_ESP_2" pin="2"/>
+    </net>
+    <net code="57" name="Net-(H_ESP_2-Pad2)">
+      <node ref="H_ESP_2" pin="2"/>
+      <node ref="R_ESP_3" pin="1"/>
+      <node ref="J_ESP_2" pin="3"/>
+      <node ref="U_ESP_1" pin="24"/>
+    </net>
+    <net code="58" name="Net-(U_ESP_1-Pad32)">
+      <node ref="U_ESP_1" pin="32"/>
+    </net>
+    <net code="59" name="Net-(J_ESP_2-Pad12)">
+      <node ref="U_ESP_1" pin="28"/>
+      <node ref="J_ESP_2" pin="12"/>
+    </net>
+    <net code="60" name="Net-(R_ESP_1-Pad1)">
+      <node ref="SW_ESP_1" pin="2"/>
+      <node ref="R_ESP_1" pin="1"/>
+    </net>
+    <net code="61" name="Net-(C_IMU_3-Pad1)">
+      <node ref="C_IMU_3" pin="1"/>
+      <node ref="U_IMU_1" pin="7"/>
+      <node ref="U_IMU_1" pin="6"/>
+    </net>
+    <net code="62" name="Net-(C_IMU_2-Pad2)">
+      <node ref="C_IMU_2" pin="2"/>
+      <node ref="U_IMU_1" pin="2"/>
+      <node ref="U_IMU_1" pin="3"/>
+    </net>
+    <net code="63" name="Net-(U_IMU_1-Pad11)">
+      <node ref="U_IMU_1" pin="11"/>
+    </net>
+    <net code="64" name="Net-(U_IMU_1-Pad10)">
+      <node ref="U_IMU_1" pin="10"/>
+    </net>
+    <net code="65" name="Net-(H_CN_2-Pad1)">
+      <node ref="H_CN_2" pin="1"/>
+      <node ref="U_CN_1" pin="A8"/>
+    </net>
+    <net code="66" name="Net-(H_CN_2-Pad2)">
+      <node ref="H_CN_2" pin="2"/>
+      <node ref="U_CN_1" pin="A7"/>
+    </net>
+    <net code="67" name="Net-(H_CN_1-Pad2)">
+      <node ref="U_CN_1" pin="A5"/>
+      <node ref="H_CN_1" pin="2"/>
+    </net>
+    <net code="68" name="Net-(H_CN_1-Pad1)">
+      <node ref="H_CN_1" pin="1"/>
+      <node ref="U_CN_1" pin="A6"/>
+    </net>
+    <net code="69" name="Net-(H_CN_4-Pad2)">
+      <node ref="U_CN_1" pin="B5"/>
+      <node ref="H_CN_4" pin="2"/>
+    </net>
+    <net code="70" name="Net-(H_CN_4-Pad1)">
+      <node ref="H_CN_4" pin="1"/>
+      <node ref="U_CN_1" pin="B6"/>
+    </net>
+    <net code="71" name="Net-(H_CN_5-Pad1)">
+      <node ref="U_CN_1" pin="B7"/>
+      <node ref="H_CN_5" pin="1"/>
+    </net>
+    <net code="72" name="Net-(H_CN_5-Pad2)">
+      <node ref="U_CN_1" pin="B8"/>
+      <node ref="H_CN_5" pin="2"/>
+    </net>
+  </nets>
+</export>

@@ -1,0 +1,12 @@
+(sym_lib_table
+  (lib (name 1546931-2)(type Legacy)(uri ${KIPRJMOD}/schematics/1546931-2.lib)(options "")(descr ""))
+  (lib (name BAT20JFILM)(type Legacy)(uri ${KIPRJMOD}/schematics/BAT20JFILM.lib)(options "")(descr ""))
+  (lib (name CANtech)(type Legacy)(uri ${KIPRJMOD}/schematics/CANtech.lib)(options "")(descr ""))
+  (lib (name IRLML5103TRPBF)(type Legacy)(uri ${KIPRJMOD}/schematics/IRLML5103TRPBF.lib)(options "")(descr ""))
+  (lib (name LSM6DSMTR)(type Legacy)(uri ${KIPRJMOD}/schematics/LSM6DSMTR.lib)(options "")(descr ""))
+  (lib (name MAX25276ATCAVY)(type Legacy)(uri ${KIPRJMOD}/schematics/MAX25276ATCAVY.lib)(options "")(descr ""))
+  (lib (name NX7002AK_215)(type Legacy)(uri ${KIPRJMOD}/schematics/NX7002AK_215.lib)(options "")(descr ""))
+  (lib (name PTS647SK38SMTR2LFS)(type Legacy)(uri ${KIPRJMOD}/schematics/PTS647SK38SMTR2LFS.lib)(options "")(descr ""))
+  (lib (name UCB0J101MCL1GS)(type Legacy)(uri ${KIPRJMOD}/schematics/UCB0J101MCL1GS.lib)(options "")(descr ""))
+  (lib (name USB4110-GF-A)(type Legacy)(uri ${KIPRJMOD}/schematics/USB4110-GF-A.lib)(options "")(descr ""))
+)
