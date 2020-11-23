@@ -44,13 +44,13 @@ L Device:R_Small R_ISO_3
 U 1 1 5FA9DCCB
 P 4900 4000
 F 0 "R_ISO_3" H 4841 3954 50  0000 R CNN
-F 1 "510k/0.5W" H 4841 4045 50  0000 R CNN
-F 2 "footprints:RESC2012X70N" H 4900 4000 50  0001 C CNN
-F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDO0000/AOA0000C331.pdf" H 4900 4000 50  0001 C CNN
-F 4 "ERJ-P06J514V" H 4900 4000 50  0001 C CNN "Part Name"
+F 1 "510k" H 4841 4045 50  0000 R CNN
+F 2 "footprints:RESC2012X50N" H 4900 4000 50  0001 C CNN
+F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 4900 4000 50  0001 C CNN
+F 4 "RR1220P-514-D" H 4900 4000 50  0001 C CNN "Part Name"
 F 5 "DigiKey Canada" H 4900 4000 50  0001 C CNN "Vendor"
-F 6 "Panasonic Electronic Components" H 4900 4000 50  0001 C CNN "Manufacturer"
-F 7 "P510KADCT-ND" H 4900 4000 50  0001 C CNN "digikeypn"
+F 6 "Susumu" H 4900 4000 50  0001 C CNN "Manufacturer"
+F 7 "RR12P510KDCT-ND" H 4900 4000 50  0001 C CNN "digikeypn"
 	1    4900 4000
 	-1   0    0    -1  
 $EndComp
@@ -134,13 +134,13 @@ L Device:R_Small R_ISO_4
 U 1 1 5FA9021C
 P 4900 2050
 F 0 "R_ISO_4" H 4841 2004 50  0000 R CNN
-F 1 "510k/0.5W" H 4841 2095 50  0000 R CNN
-F 2 "footprints:RESC2012X70N" H 4900 2050 50  0001 C CNN
-F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDO0000/AOA0000C331.pdf" H 4900 2050 50  0001 C CNN
-F 4 "ERJ-P06J514V" H 4900 2050 50  0001 C CNN "Part Name"
+F 1 "510k" H 4841 2095 50  0000 R CNN
+F 2 "footprints:RESC2012X50N" H 4900 2050 50  0001 C CNN
+F 3 "https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf" H 4900 2050 50  0001 C CNN
+F 4 "RR1220P-514-D" H 4900 2050 50  0001 C CNN "Part Name"
 F 5 "DigiKey Canada" H 4900 2050 50  0001 C CNN "Vendor"
-F 6 "Panasonic Electronic Components" H 4900 2050 50  0001 C CNN "Manufacturer"
-F 7 "P510KADCT-ND" H 4900 2050 50  0001 C CNN "digikeypn"
+F 6 "Susumu" H 4900 2050 50  0001 C CNN "Manufacturer"
+F 7 "RR12P510KDCT-ND" H 4900 2050 50  0001 C CNN "digikeypn"
 	1    4900 2050
 	-1   0    0    -1  
 $EndComp

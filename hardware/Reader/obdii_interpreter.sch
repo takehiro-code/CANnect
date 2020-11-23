@@ -181,6 +181,7 @@ F 3 "https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf" H
 F 4 "DigiKey Canada" H 5650 7500 50  0001 C CNN "Vendor"
 F 5 "Adafruit Industries LLC" H 5650 7500 50  0001 C CNN "Manufacturer"
 F 6 "1528-2929-ND" H 5650 7500 50  0001 C CNN "digikeypn"
+F 7 "4157" H 5650 7500 50  0001 C CNN "Part Name"
 	1    5650 7500
 	0    1    1    0   
 $EndComp

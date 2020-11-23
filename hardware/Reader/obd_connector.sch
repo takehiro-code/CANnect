@@ -894,8 +894,8 @@ L AHDF15AKGTAXB:AHDF15A-KG-TAXB CN?
 U 1 1 5FF7CC92
 P 8000 4650
 AR Path="/5FF7CC92" Ref="CN?"  Part="1" 
-AR Path="/5FF6FE24/5FF7CC92" Ref="CN1"  Part="1" 
-F 0 "CN1" H 8350 5095 60  0000 C CNN
+AR Path="/5FF6FE24/5FF7CC92" Ref="U_CN_1"  Part="1" 
+F 0 "U_CN_1" H 8350 5095 60  0000 C CNN
 F 1 "AHDF15A-KG-TAXB" H 8350 4989 60  0000 C CNN
 F 2 "footprints:AHDF15A-KG-TAXB" H 8400 3890 60  0001 C CNN
 F 3 "http://www.assmann-wsw.com/fileadmin/datasheets/AHDxxxA-KG-TAxB.pdf" H 8350 4883 60  0000 C CNN
@@ -1025,6 +1025,7 @@ F 3 "https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf" H
 F 4 "DigiKey Canada" H 4250 5850 50  0001 C CNN "Vendor"
 F 5 "Adafruit Industries LLC" H 4250 5850 50  0001 C CNN "Manufacturer"
 F 6 "1528-2929-ND" H 4250 5850 50  0001 C CNN "digikeypn"
+F 7 "4157" H 4250 5850 50  0001 C CNN "Part Name"
 	1    4250 5850
 	0    1    1    0   
 $EndComp

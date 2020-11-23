@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 18 19
+Sheet 13 19
 Title "CANnect Reader | Host"
 Date "2020-11-19"
 Rev "0.0.05"
@@ -29,10 +29,10 @@ F 7 "399-7847-1-ND" H 6200 2000 50  0001 C CNN "digikeypn"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0109
 U 1 1 5FBAC756
 P 6550 2000
-F 0 "#PWR?" H 6550 1750 50  0001 C CNN
+F 0 "#PWR0109" H 6550 1750 50  0001 C CNN
 F 1 "GND" H 6555 1827 50  0000 C CNN
 F 2 "" H 6550 2000 50  0001 C CNN
 F 3 "" H 6550 2000 50  0001 C CNN
@@ -89,6 +89,7 @@ F 3 "https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf" H
 F 4 "DigiKey Canada" H 8650 5700 50  0001 C CNN "Vendor"
 F 5 "Adafruit Industries LLC" H 8650 5700 50  0001 C CNN "Manufacturer"
 F 6 "1528-2929-ND" H 8650 5700 50  0001 C CNN "digikeypn"
+F 7 "4157" H 8650 5700 50  0001 C CNN "Part Name"
 	1    8650 5700
 	0    1    1    0   
 $EndComp
@@ -103,6 +104,7 @@ F 3 "https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf" H
 F 4 "DigiKey Canada" H 3500 5700 50  0001 C CNN "Vendor"
 F 5 "Adafruit Industries LLC" H 3500 5700 50  0001 C CNN "Manufacturer"
 F 6 "1528-2929-ND" H 3500 5700 50  0001 C CNN "digikeypn"
+F 7 "4157" H 3500 5700 50  0001 C CNN "Part Name"
 	1    3500 5700
 	0    1    1    0   
 $EndComp
@@ -111,10 +113,10 @@ Wire Wire Line
 Wire Wire Line
 	6200 3750 8950 3750
 $Comp
-L power:+3.3V #PWR?
+L power:+3.3V #PWR0110
 U 1 1 5FBD4973
 P 2000 1100
-F 0 "#PWR?" H 2000 950 50  0001 C CNN
+F 0 "#PWR0110" H 2000 950 50  0001 C CNN
 F 1 "+3.3V" H 2015 1273 50  0000 C CNN
 F 2 "" H 2000 1100 50  0001 C CNN
 F 3 "" H 2000 1100 50  0001 C CNN
@@ -122,18 +124,16 @@ F 3 "" H 2000 1100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0111
 U 1 1 5FBD4DBB
 P 3900 1100
-F 0 "#PWR?" H 3900 850 50  0001 C CNN
+F 0 "#PWR0111" H 3900 850 50  0001 C CNN
 F 1 "GND" H 3905 927 50  0000 C CNN
 F 2 "" H 3900 1100 50  0001 C CNN
 F 3 "" H 3900 1100 50  0001 C CNN
 	1    3900 1100
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	3250 2650 5000 2650
 Wire Wire Line
 	6300 2000 6550 2000
 Wire Wire Line
@@ -153,8 +153,6 @@ Head Jumpers
 Connection ~ 2000 2650
 Wire Wire Line
 	2000 2650 2000 5550
-Wire Wire Line
-	2000 2650 3050 2650
 Wire Wire Line
 	2000 1100 2000 2000
 Wire Wire Line
@@ -181,10 +179,10 @@ Connection ~ 3900 5400
 Wire Wire Line
 	3900 5400 3900 5550
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0112
 U 1 1 5FD0C84B
 P 1150 3250
-F 0 "#PWR?" H 1150 3000 50  0001 C CNN
+F 0 "#PWR0112" H 1150 3000 50  0001 C CNN
 F 1 "GND" H 1155 3077 50  0000 C CNN
 F 2 "" H 1150 3250 50  0001 C CNN
 F 3 "" H 1150 3250 50  0001 C CNN
@@ -194,24 +192,17 @@ $EndComp
 Wire Wire Line
 	1150 2650 2000 2650
 $Comp
-L Device:R_Small R_HST_?
-U 1 1 5FD1041C
-P 3150 2650
-F 0 "R_HST_?" V 2954 2650 50  0000 C CNN
-F 1 "100k" V 3045 2650 50  0000 C CNN
-F 2 "footprints:RESC1608X55N" H 3150 2650 50  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 3150 2650 50  0001 C CNN
-	1    3150 2650
-	0    1    1    0   
-$EndComp
-$Comp
 L Device:CP CP_HST_1
 U 1 1 5FD11692
 P 1150 2950
 F 0 "CP_HST_1" H 1268 2996 50  0000 L CNN
 F 1 "100uF" H 1268 2905 50  0000 L CNN
-F 2 "" H 1188 2800 50  0001 C CNN
-F 3 "~" H 1150 2950 50  0001 C CNN
+F 2 "footprints:UCB0J101MCL1GS" H 1188 2800 50  0001 C CNN
+F 3 "https://www.nichicon.co.jp/english/products/pdfs/e-ucb.pdf" H 1150 2950 50  0001 C CNN
+F 4 "Nichicon" H 1150 2950 50  0001 C CNN "Manufacturer"
+F 5 "UCB0J101MCL1GS" H 1150 2950 50  0001 C CNN "Part Name"
+F 6 "DigiKey Canada" H 1150 2950 50  0001 C CNN "Vendor"
+F 7 "493-9357-1-ND" H 1150 2950 50  0001 C CNN "digikeypn"
 	1    1150 2950
 	1    0    0    -1  
 $EndComp
@@ -219,4 +210,6 @@ Wire Wire Line
 	1150 3100 1150 3250
 Wire Wire Line
 	1150 2800 1150 2650
+Wire Wire Line
+	2000 2650 5000 2650
 $EndSCHEMATC

@@ -1,5 +1,5 @@
 
-(module CAPC1608X90N (layer F.Cu) (tedit 5F8F64B5)
+(module CAPC1608X90N (layer F.Cu) (tedit 5FB6AF7F)
   (descr "")
   (fp_text reference REF** (at -0.21 -1.05 0) (layer F.SilkS)
     (effects (font (size 0.393700787402 0.393700787402) (thickness 0.015)))

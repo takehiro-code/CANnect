@@ -400,13 +400,6 @@ F 3 "" H 9400 3550 50  0001 C CNN
 	1    9400 3550
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7100 3100 7350 3100
-Wire Wire Line
-	7350 3100 7350 3300
-Wire Wire Line
-	7100 3300 7350 3300
-Connection ~ 7350 3300
 Text HLabel 7850 2600 2    50   Output ~ 0
 J1850_BUS-_TX
 Text HLabel 7850 2700 2    50   Output ~ 0
@@ -582,8 +575,6 @@ Text HLabel 10050 3200 2    50   Input ~ 0
 ~SLEEP~
 Wire Wire Line
 	9400 3300 9400 3550
-Wire Wire Line
-	7350 3300 9400 3300
 $Comp
 L ECS-2033-160-AU:ECS-2033-160-AU Y_STN_1
 U 1 1 5FDAE336
@@ -653,8 +644,6 @@ Wire Wire Line
 	7100 1350 7350 1350
 Wire Wire Line
 	7100 1350 7100 2150
-Wire Wire Line
-	9450 2550 9450 2150
 Wire Wire Line
 	9450 2850 9450 3200
 Wire Wire Line
@@ -747,11 +736,7 @@ Connection ~ 9450 3200
 Wire Wire Line
 	9450 3200 10050 3200
 Wire Wire Line
-	7100 3000 9150 3000
-Wire Wire Line
-	9150 3000 9150 2300
-Wire Wire Line
-	9150 2300 9950 2300
+	9150 2300 9450 2300
 Wire Wire Line
 	3950 4000 4750 4000
 Wire Wire Line
@@ -925,4 +910,24 @@ Wire Wire Line
 	5650 7200 5900 7200
 Wire Wire Line
 	5900 7200 5900 7050
+Wire Wire Line
+	7100 3300 7300 3300
+Wire Wire Line
+	7100 3000 7300 3000
+Wire Wire Line
+	7300 3000 7300 3300
+Connection ~ 7300 3300
+Wire Wire Line
+	7300 3300 9400 3300
+Wire Wire Line
+	7100 3100 9150 3100
+Wire Wire Line
+	9150 2300 9150 3100
+Wire Wire Line
+	9450 2150 9450 2300
+Connection ~ 9450 2300
+Wire Wire Line
+	9450 2300 9950 2300
+Wire Wire Line
+	9450 2550 9450 2300
 $EndSCHEMATC

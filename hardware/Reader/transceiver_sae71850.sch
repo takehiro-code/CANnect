@@ -297,13 +297,13 @@ L Diode:BAT46 D_J1850_1
 U 1 1 5FB795A0
 P 4050 5100
 F 0 "D_J1850_1" H 4050 4883 50  0000 C CNN
-F 1 "BAT46" H 4050 4974 50  0000 C CNN
-F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 4050 4925 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/85662/bat46.pdf" H 4050 5100 50  0001 C CNN
-F 4 "BAT46" H 4050 5100 50  0001 C CNN "Part Name"
+F 1 "BAT46JFILM" H 4050 4974 50  0000 C CNN
+F 2 "footprints:BAT46JFILM" H 4050 4925 50  0001 C CNN
+F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/c6/32/d4/4a/28/d3/4b/11/CD00004930.pdf/files/CD00004930.pdf/jcr:content/translations/en.CD00004930.pdf" H 4050 5100 50  0001 C CNN
+F 4 "BAT46JFILM" H 4050 5100 50  0001 C CNN "Part Name"
 F 5 "STMicroelectronics" H 4050 5100 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 4050 5100 50  0001 C CNN "Vendor"
-F 7 "497-3768-1-ND" H 4050 5100 50  0001 C CNN "digikeypn"
+F 7 "497-6653-1-ND" H 4050 5100 50  0001 C CNN "digikeypn"
 	1    4050 5100
 	-1   0    0    1   
 $EndComp
@@ -333,13 +333,13 @@ L Diode:BAT46 D_J1850_2
 U 1 1 5FB7D020
 P 4400 5900
 F 0 "D_J1850_2" V 4446 5820 50  0000 R CNN
-F 1 "BAT46" V 4355 5820 50  0000 R CNN
-F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 4400 5725 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/85662/bat46.pdf" H 4400 5900 50  0001 C CNN
-F 4 "BAT46" H 4400 5900 50  0001 C CNN "Part Name"
+F 1 "BAT46JFILM" V 4355 5820 50  0000 R CNN
+F 2 "footprints:BAT46JFILM" H 4400 5725 50  0001 C CNN
+F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/c6/32/d4/4a/28/d3/4b/11/CD00004930.pdf/files/CD00004930.pdf/jcr:content/translations/en.CD00004930.pdf" H 4400 5900 50  0001 C CNN
+F 4 "BAT46JFILM" H 4400 5900 50  0001 C CNN "Part Name"
 F 5 "STMicroelectronics" H 4400 5900 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 4400 5900 50  0001 C CNN "Vendor"
-F 7 "497-3768-1-ND" H 4400 5900 50  0001 C CNN "digikeypn"
+F 7 "497-6653-1-ND" H 4400 5900 50  0001 C CNN "digikeypn"
 	1    4400 5900
 	0    -1   -1   0   
 $EndComp
@@ -426,13 +426,13 @@ L Diode:BAT46 D_J1850_3
 U 1 1 5FB86936
 P 7800 1950
 F 0 "D_J1850_3" V 7846 1870 50  0000 R CNN
-F 1 "BAT46" V 7755 1870 50  0000 R CNN
-F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 7800 1775 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/85662/bat46.pdf" H 7800 1950 50  0001 C CNN
-F 4 "BAT46" H 7800 1950 50  0001 C CNN "Part Name"
+F 1 "BAT46JFILM" V 7755 1870 50  0000 R CNN
+F 2 "footprints:BAT46JFILM" H 7800 1775 50  0001 C CNN
+F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/c6/32/d4/4a/28/d3/4b/11/CD00004930.pdf/files/CD00004930.pdf/jcr:content/translations/en.CD00004930.pdf" H 7800 1950 50  0001 C CNN
+F 4 "BAT46JFILM" H 7800 1950 50  0001 C CNN "Part Name"
 F 5 "STMicroelectronics" H 7800 1950 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 7800 1950 50  0001 C CNN "Vendor"
-F 7 "497-3768-1-ND" H 7800 1950 50  0001 C CNN "digikeypn"
+F 7 "497-6653-1-ND" H 7800 1950 50  0001 C CNN "digikeypn"
 	1    7800 1950
 	0    -1   -1   0   
 $EndComp

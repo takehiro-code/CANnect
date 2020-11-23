@@ -20,13 +20,13 @@ L Device:R_Small R_VS_1
 U 1 1 6007733F
 P 2850 2150
 F 0 "R_VS_1" H 2909 2196 50  0000 L CNN
-F 1 "62k 1%" H 2909 2105 50  0000 L CNN
-F 2 "footprints:RESC3216X70N" H 2850 2150 50  0001 C CNN
-F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 2850 2150 50  0001 C CNN
-F 4 "ERJ-1GNF6202C" H 2850 2150 50  0001 C CNN "Part Name"
-F 5 "Panasonic Electronic Components" H 2850 2150 50  0001 C CNN "Manufacturer"
+F 1 "62k" H 2909 2105 50  0000 L CNN
+F 2 "footprints:RESC2012X60N" H 2850 2150 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 2850 2150 50  0001 C CNN
+F 4 "RT0805FRE0762KL" H 2850 2150 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 2850 2150 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 2850 2150 50  0001 C CNN "Vendor"
-F 7 "P123106CT-ND" H 2850 2150 50  0001 C CNN "digikeypn"
+F 7 "13-RT0805FRE0762KLCT-ND" H 2850 2150 50  0001 C CNN "digikeypn"
 	1    2850 2150
 	1    0    0    -1  
 $EndComp
@@ -68,13 +68,13 @@ L Diode:BAT46 D_VS_1
 U 1 1 5FD600B9
 P 3400 2150
 F 0 "D_VS_1" V 3354 2230 50  0000 L CNN
-F 1 "BAT46" V 3445 2230 50  0000 L CNN
-F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 3400 1975 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/85662/bat46.pdf" H 3400 2150 50  0001 C CNN
-F 4 "BAT46" H 3400 2150 50  0001 C CNN "Part Name"
+F 1 "BAT46JFILM" V 3445 2230 50  0000 L CNN
+F 2 "footprints:BAT46JFILM" H 3400 1975 50  0001 C CNN
+F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/c6/32/d4/4a/28/d3/4b/11/CD00004930.pdf/files/CD00004930.pdf/jcr:content/translations/en.CD00004930.pdf" H 3400 2150 50  0001 C CNN
+F 4 "BAT46JFILM" H 3400 2150 50  0001 C CNN "Part Name"
 F 5 "STMicroelectronics" H 3400 2150 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 3400 2150 50  0001 C CNN "Vendor"
-F 7 "497-3768-1-ND" H 3400 2150 50  0001 C CNN "digikeypn"
+F 7 "497-6653-1-ND" H 3400 2150 50  0001 C CNN "digikeypn"
 	1    3400 2150
 	0    1    1    0   
 $EndComp
@@ -83,13 +83,13 @@ L Diode:BAT46 D_VS_2
 U 1 1 5FD5FBA4
 P 3400 2850
 F 0 "D_VS_2" V 3354 2930 50  0000 L CNN
-F 1 "BAT46" V 3445 2930 50  0000 L CNN
-F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 3400 2675 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/85662/bat46.pdf" H 3400 2850 50  0001 C CNN
-F 4 "BAT46" H 3400 2850 50  0001 C CNN "Part Name"
+F 1 "BAT46JFILM" V 3445 2930 50  0000 L CNN
+F 2 "footprints:BAT46JFILM" H 3400 2675 50  0001 C CNN
+F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/c6/32/d4/4a/28/d3/4b/11/CD00004930.pdf/files/CD00004930.pdf/jcr:content/translations/en.CD00004930.pdf" H 3400 2850 50  0001 C CNN
+F 4 "BAT46JFILM" H 3400 2850 50  0001 C CNN "Part Name"
 F 5 "STMicroelectronics" H 3400 2850 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 3400 2850 50  0001 C CNN "Vendor"
-F 7 "497-3768-1-ND" H 3400 2850 50  0001 C CNN "digikeypn"
+F 7 "497-6653-1-ND" H 3400 2850 50  0001 C CNN "digikeypn"
 	1    3400 2850
 	0    1    1    0   
 $EndComp
@@ -153,13 +153,13 @@ L Device:R_Small R_VS_2
 U 1 1 5FD5DF8C
 P 2850 2800
 F 0 "R_VS_2" H 2909 2846 50  0000 L CNN
-F 1 "10k 1%" H 2909 2755 50  0000 L CNN
-F 2 "footprints:RESC3216X70N" H 2850 2800 50  0001 C CNN
-F 3 "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf" H 2850 2800 50  0001 C CNN
-F 4 "ERJ-1GNF1002C" H 2850 2800 50  0001 C CNN "Part Name"
-F 5 "Panasonic Electronic Components" H 2850 2800 50  0001 C CNN "Manufacturer"
+F 1 "10k" H 2909 2755 50  0000 L CNN
+F 2 "footprints:RESC1608X55N" H 2850 2800 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 2850 2800 50  0001 C CNN
+F 4 "RT0603FRE0710KL" H 2850 2800 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 2850 2800 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 2850 2800 50  0001 C CNN "Vendor"
-F 7 "P122414CT-ND" H 2850 2800 50  0001 C CNN "digikeypn"
+F 7 "YAG2321CT-ND" H 2850 2800 50  0001 C CNN "digikeypn"
 	1    2850 2800
 	1    0    0    -1  
 $EndComp

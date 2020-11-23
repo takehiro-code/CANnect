@@ -155,15 +155,6 @@ Wire Wire Line
 	6500 3150 4450 3150
 Wire Wire Line
 	4450 3050 6500 3050
-$Sheet
-S 2000 4450 750  250 
-U 5F8ADA45
-F0 "Power Supply" 50
-F1 "power_supply.sch" 50
-F2 "Analog_Voltage" O R 2750 4550 50 
-$EndSheet
-Wire Wire Line
-	2950 4550 2950 4900
 Wire Wire Line
 	2950 4900 6500 4900
 Connection ~ 2950 4550
@@ -218,5 +209,14 @@ F4 "MEMS_INT1" I L 8100 2300 50
 F5 "MEMS_CS" I L 8100 2000 50 
 F6 "MEMS_SDO_SA0" B L 8100 2100 50 
 F7 "MEMS_INT2" I L 8100 2400 50 
+$EndSheet
+Wire Wire Line
+	2950 4550 2950 4900
+$Sheet
+S 2000 4450 750  250 
+U 5F8ADA45
+F0 "Power Supply" 50
+F1 "power_supply.sch" 50
+F2 "Analog_Voltage" O R 2750 4550 50 
 $EndSheet
 $EndSCHEMATC

@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 19 19
+Sheet 14 19
 Title "CANnect Reader | MEMs"
 Date "2020-11-19"
 Rev "0.0.05"
@@ -13,6 +13,18 @@ Comment2 ""
 Comment3 ""
 Comment4 "Component Identifier: MM"
 $EndDescr
+Text HLabel 3100 3900 0    50   Input ~ 0
+MEMS_INT2
+Text HLabel 3100 3400 0    50   BiDi ~ 0
+MEMS_SDO_SA0
+Text HLabel 3100 3100 0    50   Input ~ 0
+MEMS_CS
+Text HLabel 3100 3800 0    50   Input ~ 0
+MEMS_INT1
+Text HLabel 3100 3300 0    50   BiDi ~ 0
+MEMS_SDA
+Text HLabel 3100 3200 0    50   BiDi ~ 0
+MEMS_SCL
 $Comp
 L power:+3.3V #PWR089
 U 1 1 5FC85156
@@ -79,8 +91,8 @@ AR Path="/5F9A441F" Ref="C_MM_?"  Part="1"
 AR Path="/5F988046/5F9A441F" Ref="C_MM_1"  Part="1" 
 F 0 "C_MM_1" H 7865 3196 50  0000 L CNN
 F 1 "100nF" H 7865 3105 50  0000 L CNN
-F 2 "footprints:FA16C0G2A104JRU06" H 7788 3000 50  0001 C CNN
-F 3 "https://product.tdk.com/info/en/catalog/datasheets/leadmlcc_halogenfree_fa_en.pdf" H 7750 3150 50  0001 C CNN
+F 2 "footprints:CAPC1608X90N" H 7788 3000 50  0001 C CNN
+F 3 "https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf" H 7750 3150 50  0001 C CNN
 F 4 "C1608X7R2A103K080AA" H 7750 3150 50  0001 C CNN "Part Name"
 F 5 "DigiKey Canada" H 7750 3150 50  0001 C CNN "Vendor"
 F 6 "TDK Corporation" H 7750 3150 50  0001 C CNN "Manufacturer"
@@ -121,18 +133,6 @@ F 10 "497-16696-1-ND" H 6550 3400 50  0001 C CNN "digikeypn"
 	1    6550 3400
 	1    0    0    -1  
 $EndComp
-Text HLabel 3100 3900 0    50   Input ~ 0
-MEMS_INT2
-Text HLabel 3100 3400 0    50   BiDi ~ 0
-MEMS_SDO_SA0
-Text HLabel 3100 3100 0    50   Input ~ 0
-MEMS_CS
-Text HLabel 3100 3800 0    50   Input ~ 0
-MEMS_INT1
-Text HLabel 3100 3300 0    50   BiDi ~ 0
-MEMS_SDA
-Text HLabel 3100 3200 0    50   BiDi ~ 0
-MEMS_SCL
 Wire Wire Line
 	3100 3900 5650 3900
 Wire Wire Line
