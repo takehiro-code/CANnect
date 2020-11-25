@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 4 5
 Title "ESP32 Sensor Module | Connector"
-Date "2020-11-24"
-Rev "v0.0.2"
+Date "2020-11-25"
+Rev "v0.0.3"
 Comp "Created by Choong Jin Ng | jin3838@gmail.com"
 Comment1 ""
 Comment2 ""

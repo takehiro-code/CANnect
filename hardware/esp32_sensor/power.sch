@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 5
 Title "ESP32 Sensor Module | Power Supply"
-Date "2020-11-24"
-Rev "v0.0.2"
+Date "2020-11-25"
+Rev "v0.0.3"
 Comp "Created by Choong Jin Ng | jin3838@gmail.com"
 Comment1 ""
 Comment2 ""
