@@ -1,4 +1,4 @@
-update=11/23/20 11:30:32
+update=11/24/20 16:24:40
 version=1
 last_client=kicad
 [general]
@@ -16,7 +16,7 @@ LibDir=
 version=1
 PageLayoutDescrFile=
 LastNetListRead=export/esp32_sensor.net
-CopperLayerCount=4
+CopperLayerCount=2
 BoardThickness=1
 AllowMicroVias=0
 AllowBlindVias=0
@@ -35,15 +35,15 @@ dPairWidth1=0.3
 dPairGap1=0.25
 dPairViaGap1=0.25
 SilkLineWidth=0.12
-SilkTextSizeV=1
-SilkTextSizeH=1
-SilkTextSizeThickness=0.15
+SilkTextSizeV=0.5
+SilkTextSizeH=0.5
+SilkTextSizeThickness=0.06999999999999999
 SilkTextItalic=0
 SilkTextUpright=1
 CopperLineWidth=0.2
-CopperTextSizeV=1.5
-CopperTextSizeH=1.5
-CopperTextThickness=0.3
+CopperTextSizeV=1.2
+CopperTextSizeH=1.2
+CopperTextThickness=0.2
 CopperTextItalic=0
 CopperTextUpright=1
 EdgeCutLineWidth=0.05
@@ -60,16 +60,16 @@ SolderPasteClearance=0
 SolderPasteRatio=-0
 [pcbnew/Layer.F.Cu]
 Name=F.Cu
-Type=0
+Type=2
 Enabled=1
 [pcbnew/Layer.In1.Cu]
 Name=In1.Cu
-Type=1
-Enabled=1
+Type=0
+Enabled=0
 [pcbnew/Layer.In2.Cu]
 Name=In2.Cu
-Type=2
-Enabled=1
+Type=0
+Enabled=0
 [pcbnew/Layer.In3.Cu]
 Name=In3.Cu
 Type=0
@@ -184,7 +184,7 @@ Type=0
 Enabled=0
 [pcbnew/Layer.B.Cu]
 Name=B.Cu
-Type=1
+Type=2
 Enabled=1
 [pcbnew/Layer.B.Adhes]
 Enabled=1
@@ -237,6 +237,17 @@ dPairWidth=0.3
 dPairGap=0.25
 dPairViaGap=0.25
 [pcbnew/Netclasses/1]
+Name=GnD
+Clearance=0.2
+TrackWidth=0.4
+ViaDiameter=0.5
+ViaDrill=0.32
+uViaDiameter=0.3
+uViaDrill=0.129
+dPairWidth=0.3
+dPairGap=0.25
+dPairViaGap=0.25
+[pcbnew/Netclasses/2]
 Name=Power
 Clearance=0.2
 TrackWidth=0.35
@@ -244,7 +255,7 @@ ViaDiameter=0.5
 ViaDrill=0.32
 uViaDiameter=0.3
 uViaDrill=0.129
-dPairWidth=1
+dPairWidth=0.3
 dPairGap=0.25
 dPairViaGap=0.25
 [schematic_editor]
