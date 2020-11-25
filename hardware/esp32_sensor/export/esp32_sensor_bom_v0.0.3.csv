@@ -1,0 +1,45 @@
+Component,Description,Part,References,Value,Footprint,Quantity Per PCB,Datasheet,Vendor,Vendor Part Name,Part Name,Manufacturer,PROD_ID,digikeypn,PARTREV,STANDARD
+1,Unpolarized capacitor,C,C_ESP_1 C_PW_4,0.1uF,CAPC1608X90,2,https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf,DigiKey Canada,311-1777-1-ND,CC0603JRX7R8BB104,Yageo,,,,
+2,"Unpolarized capacitor, small symbol",C_Small,C_IMU_1 C_IMU_2 C_IMU_3,100nF,CAPC1608X90N,3,https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf,DigiKey Canada,445-1304-1-ND,C1608X7R2A103K080AA,TDK Corporation,,,,
+3,Unpolarized capacitor,C,C_PW_1 C_PW_3,1uF,0603,2,https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf,DigiKey Canada,399-7847-1-ND,C0603C105K4RACTU,Kermet,,,,
+4,"Unpolarized capacitor, small symbol",C_Small,C_PW_2 C_PW_5,4.7uF,C1206C475K3RACAUTO,2,https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf,DigiKey Canada,399-7029-1-ND,C1206C475K3RACAUTO,Kermet,,,,
+5,Polarized capacitor,CP,CP_ESP_1,100uF,UCB0J101MCL1GS,1,https://www.nichicon.co.jp/english/products/pdfs/e-ucb.pdf,DigiKey Canada,493-9357-1-ND,UCB0J101MCL1GS,Nichicon,,,,
+6,,BAT20JFILM,D_PW_1 D_PW_2 D_PW_3,BAT20JFILM,BAT20JFILM,3,https://www.st.com/content/ccc/resource/technical/document/datasheet/group1/81/a4/1f/0e/ca/8c/47/ba/CD00012201/files/CD00012201.pdf/jcr:content/translations/en.CD00012201.pdf,DigiKey Canada,497-3381-1-ND,BAT20JFILM,STMicroelectronics,DIO-11623,,,
+7,,4157,J_1 J_2,4157,PinSocket_1x20_P2.54mm_Vertical,2,,DigiKey Canada,,,Adafruit Industries LLC,,1528-2929-ND,,
+8,,Header_Pin_1,J_CN_3 J_CN_4 J_PW_3,Header_Pin_1,PinHeader_1x01_P2.54mm_Vertical,3,,,,,,,,,
+9,,Header_Pin_2,J_PW_1 J_PW_2,Header_Pin_2,PinHeader_1x02_P2.54mm_Vertical,2,,,,,,,,,
+10,,Header_Pin_4,J_CN_1 J_CN_2,Header_Pin_4,PinHeader_1x04_P2.54mm_Vertical,2,,,,,,,,,
+11,,Header_Pin_2,J_5,IMU_INT1,PinHeader_1x02_P2.54mm_Vertical,1,,,,,,,,,
+12,,Header_Pin_2,J_4,IMU_INT2,PinHeader_1x02_P2.54mm_Vertical,1,,,,,,,,,
+13,,Header_Pin_2,J_6,IMU_SCL,PinHeader_1x02_P2.54mm_Vertical,1,,,,,,,,,
+14,,Header_Pin_2,J_7,IMU_SDA,PinHeader_1x02_P2.54mm_Vertical,1,,,,,,,,,
+15,,Header_Pin_8,J_3,SPI,PinHeader_1x08_P2.54mm_Vertical,1,,,,,,,,,
+16,Inductor,L,L_PW_1,4.7uH,CV201210-4R7K,1,https://www.bourns.com/docs/Product-Datasheets/CV201210.pdf,DigiKey Canada,CV201210-4R7KCT-ND,CV201210-4R7K,Bourns Inc.,,,,
+17,Light emitting diode,LED,LED_ESP_1,LED,LED_0603_1608Metric,1,https://katalog.we-online.de/led/datasheet/150060YS75000.pdf,DigiKey Canada,732-4981-1-ND,150060YS75000,Würth Elektronik,,,,
+18,,IRLML5103TRPBF,Q_PW_1,IRLML5103TRPBF,IRLML5103TRPBF,1,https://www.infineon.com/dgdl/irlml5103pbf.pdf?fileId=5546d462533600a401535668505d2617,DigiKey Canada,IRLML5103PBFCT-ND,IRLML5103TRPBF,Infineon Technologies,,,,
+19,"Resistor, small symbol",R_Small,R_ESP_1 R_ESP_3 R_ESP_5,500,RESC1508X55N,3,https://www.vishay.com/docs/28916/mcxhp.pdf,DigiKey Canada,749-1523-1-ND,MCT0603PD4990DP500,Vishay,,,,
+20,"Resistor, small symbol",R_Small,R_IMU_1 R_IMU_2,4.7k,RESC1608X55N,2,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf,DigiKey Canada,311-4.7KDCT-ND,RT0603DRD074K7L,Yageo,,,,
+21,"Resistor, small symbol",R_Small,R_ESP_2 R_ESP_4 R_PW_1,10k,RESC1608X55N,3,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf,DigiKey Canada,YAG2321CT-ND,RT0603FRE0710KL,Yageo,,,,
+22,"Resistor, small symbol",R_Small,R_PW_2 R_PW_3,100k,RESC1608X55N,2,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf,DigiKey Canada,311-2395-1-ND,RT0603DRE07100KL,Yageo,,,,
+23,"Resistor, small symbol",R_Small,R_PW_4,115k,RESC1608X55N,1,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf,DigiKey Canada,311-2218-1-ND,RT0402DRE07115KL,Yageo,,,,
+24,,PTS647SK38SMTR2LFS,SW_ESP_1 SW_ESP_2,PTS647SK38SMTR2LFS,PTS647SK38SMTR2LFS,2,https://www.ckswitches.com/media/2567/pts647.pdf,DigiKey Canada,PTS647SK38SMTR2LFSCT-ND,PTS 647 SK38 SMTR2 LFS,C&K,,,,
+25,"RF Module, ESP32-D0WD SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 2.7-3.6V, onboard antenna, SMD",ESP32-WROOM-32D,U_ESP_1,ESP32-WROOM-32D,ESP32-WROOM-32,1,https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf,DigiKey Canada,1965-ESP32-WROOM-32D(4MB)CT-ND,USB4110-GF-A,Espressif Systems,,,,
+26,,LSM6DSMTR,U_IMU_1,LSM6DSMTR,LSM6DSMTR,1,https://www.st.com/content/ccc/resource/technical/document/datasheet/76/27/cf/88/c5/03/42/6b/DM00218116.pdf/files/DM00218116.pdf/jcr:content/translations/en.DM00218116.pdf,DigiKey Canada,497-16696-1-ND,LSM6DSMTR,STMicroelectronics,,,,
+27,,MAX25276ATCA_VY+,U_PW_1,MAX25276ATCA_VY+,MAX25276ATCAVY,1,https://datasheets.maximintegrated.com/en/ds/MAX20075-MAX25276.pdf,DigiKey Canada,175-MAX25276ATCA/VY+-ND,MAX25276ATCA_VY+,Maxim Integrated,,,,
+28,,USB4110-GF-A,U_CN_1,USB4110-GF-A,USB4110-GF-A,1,https://gct.co/files/drawings/usb4110.pdf,DigiKey Canada,2073-USB4110-GF-A-1-ND,PTS647SK38SMTR2LFS,GCT,,,A,Manufacturer Recommendations
+
+
+
+
+
+Component Groups:,28
+Component Count:,47
+Fitted Components:,47
+Number of PCBs:,1
+Total components:,47
+Schematic Version:,v0.0.3
+Schematic Date:,2020-11-25
+PCB Variant:,default
+BoM Date:,11/25/20 11:44:30
+Schematic Source:,esp32_sensor.sch
+KiCad Version:,Eeschema (5.1.7)-1

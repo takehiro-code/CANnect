@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "(5.1.7)-1"
     },
-    "CreationDate":  "2020-11-25T11:18:57-08:00"
+    "CreationDate":  "2020-11-25T11:44:14-08:00"
   },
   "GeneralSpecs":
   {
@@ -15,7 +15,7 @@
     {
       "Name": "esp32_sensor",
       "GUID": "65737033-325f-4736-956e-736f722e6b69",
-      "Revision": "v0.0.3"
+      "Revision": "v0.0.3b"
     },
     "Size":
     {
@@ -47,6 +47,16 @@
     {
       "Path":  "esp32_sensor-B_Cu.gbr",
       "FileFunction":  "Copper,L2,Bot",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "esp32_sensor-F_Adhes.gbr",
+      "FileFunction":  "Glue,Top",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "esp32_sensor-B_Adhes.gbr",
+      "FileFunction":  "Glue,Bot",
       "FilePolarity":  "Positive"
     },
     {
@@ -82,6 +92,16 @@
     {
       "Path":  "esp32_sensor-Edge_Cuts.gbr",
       "FileFunction":  "Profile",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "esp32_sensor-F_Fab.gbr",
+      "FileFunction":  "AssemblyDrawing,Top",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "esp32_sensor-B_Fab.gbr",
+      "FileFunction":  "AssemblyDrawing,Bot",
       "FilePolarity":  "Positive"
     }
   ],

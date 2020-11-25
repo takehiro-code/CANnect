@@ -2,14 +2,14 @@
 <export version="D">
   <design>
     <source>C:\Users\Jin-Desktop\Documents\Projects\esp32\esp32_sensor\kicad\esp32_sensor.sch</source>
-    <date>11/24/20 16:37:52</date>
+    <date>11/25/20 11:44:30</date>
     <tool>Eeschema (5.1.7)-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>ESP32 Sensor Module</title>
         <company>Created by Choong Jin Ng | jin3838@gmail.com</company>
-        <rev>v0.0.2</rev>
-        <date>2020-11-24</date>
+        <rev>v0.0.3</rev>
+        <date>2020-11-25</date>
         <source>esp32_sensor.sch</source>
         <comment number="1" value=""/>
         <comment number="2" value=""/>
@@ -21,8 +21,8 @@
       <title_block>
         <title>ESP32 Sensor Module | Power Supply</title>
         <company>Created by Choong Jin Ng | jin3838@gmail.com</company>
-        <rev>v0.0.2</rev>
-        <date>2020-11-24</date>
+        <rev>v0.0.3</rev>
+        <date>2020-11-25</date>
         <source>power.sch</source>
         <comment number="1" value=""/>
         <comment number="2" value=""/>
@@ -34,8 +34,8 @@
       <title_block>
         <title>ESP32 Sensor Module | Inertia Measurement Unit</title>
         <company>Created by Choong Jin Ng | jin3838@gmail.com</company>
-        <rev>v0.0.2</rev>
-        <date>2020-11-24</date>
+        <rev>v0.0.3</rev>
+        <date>2020-11-25</date>
         <source>imu.sch</source>
         <comment number="1" value=""/>
         <comment number="2" value=""/>
@@ -47,8 +47,8 @@
       <title_block>
         <title>ESP32 Sensor Module | Connector</title>
         <company>Created by Choong Jin Ng | jin3838@gmail.com</company>
-        <rev>v0.0.2</rev>
-        <date>2020-11-24</date>
+        <rev>v0.0.3</rev>
+        <date>2020-11-25</date>
         <source>connnector.sch</source>
         <comment number="1" value=""/>
         <comment number="2" value=""/>
@@ -60,8 +60,8 @@
       <title_block>
         <title>ESP32 Sensor Module | ESP32 Chip</title>
         <company>Created by Choong Jin Ng | jin3838@gmail.com</company>
-        <rev>v0.0.2</rev>
-        <date>2020-11-24</date>
+        <rev>v0.0.3</rev>
+        <date>2020-11-25</date>
         <source>esp32_chip.sch</source>
         <comment number="1" value=""/>
         <comment number="2" value=""/>
