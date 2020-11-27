@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class Dashboard extends AppCompatActivity {
     SharedPref sharedPref;
@@ -102,6 +104,9 @@ public class Dashboard extends AppCompatActivity {
         //dataArrayList.add(O2_VOLTAGE);
 
         //get saved pids in settings
+        //title
+        newData = new Data("PIDS");
+        dataArrayList.add(newData);
         SharedPreferences PrefPids = getSharedPreferences("checked_pids_list",Context.MODE_PRIVATE);
         String PrefPidss = PrefPids.getString("pids","");
         String[] checkedPids = PrefPidss.split(",");
@@ -111,24 +116,28 @@ public class Dashboard extends AppCompatActivity {
             newData = new Data(checkedPids[i],"0");
             dataArrayList.add(newData);
         }
+        //add sensor data
+        //title
+        newData = new Data("6DOF");
+        dataArrayList.add(newData);
+        newData = new Data("Acceleration-x","0");
+        dataArrayList.add(newData);
+        newData = new Data("Acceleration-y","0");
+        dataArrayList.add(newData);
+        newData = new Data("Acceleration-z","0");
+        dataArrayList.add(newData);
+        newData = new Data("pitch","0");
+        dataArrayList.add(newData);
+        newData = new Data("roll","0");
+        dataArrayList.add(newData);
+        newData = new Data("yaw","0");
+        dataArrayList.add(newData);
 
         adapter = new DataListAdapter(this, R.layout.adapter_view_pidstable_layout, dataArrayList);
         listPids.setAdapter(adapter);
 
-        //pass the socket into Dashboard activity
-        //try {
-        //    mBTSocket = SocketHandler.getSocket();
-        //    mConnectedThread = new BTCommunication.ConnectedThread(mBTSocket, Dashboard.this);
-        //    mConnectedThread.start();
-        //} catch (Exception e) {//dashboard opened without connecting to device
-        //    e.printStackTrace();
-        //}
-
         //for export log
         calendar = Calendar.getInstance();
-        //simpleDateFormat = new SimpleDateFormat("ss");
-        //dateTime = simpleDateFormat.format(calendar.getTime());
-        //seconds = System.currentTimeMillis();
         isExport = false;
         exportData = "";
         //Below code is for page navigation
@@ -190,8 +199,11 @@ public class Dashboard extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("theMessage");
-            messages+=text;
-            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(messages.substring(0, messages.length() - 10));//remove  \n255255\r\n and then parse
+            messages =text;
+            //remove  \n255255\r\n and then parse
+            messages = messages.substring(0, messages.length() - 6);
+            messages = messages.trim();
+            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(messages);
 
             switch(parsed[0])
             {
@@ -283,20 +295,47 @@ public class Dashboard extends AppCompatActivity {
                     }
                     adapter.notifyDataSetChanged();
                     break;
+                case "acc_x":
+                    newData = new Data("Acceleration-x",parsed[1]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("Acceleration-x")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    adapter.notifyDataSetChanged();
+                    break;
+                case "acc_y":
+                    newData = new Data("Acceleration-y",parsed[1]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("Acceleration-y")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    adapter.notifyDataSetChanged();
+                    break;
+                case "acc_z":
+                    newData = new Data("Acceleration-z",parsed[1]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("Acceleration-z")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    adapter.notifyDataSetChanged();
+                    break;
                 default:
                     System.out.println("default");
             }
             if (isExport){
-                System.out.println("we are in isExport!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 //append
                 calendar.setTimeInMillis(seconds);
                 exportData+="\n"+calendar.getTime()+","+messages.substring(0, messages.length() - 10)+","+parsed[0]+","+parsed[1];
                 //update the timer
-                // check if time ran out
-                //calendar = Calendar.getInstance();
-                //simpleDateFormat = new SimpleDateFormat("ss");
-                //dateTime = simpleDateFormat.format(calendar.getTime());
-                //seconds = Integer.parseInt(dateTime);
                 seconds = System.currentTimeMillis();
                 System.out.println("seconds is");
                 System.out.println(seconds);

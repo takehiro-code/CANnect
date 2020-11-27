@@ -24,8 +24,6 @@
 #include "BluetoothSerial.h"
 #include <SPI.h>
 #include "mcp_can.h"
-#include "WiFi.h"
-#include <esp_now.h>
 
 /**
    ESP32 Pins
@@ -45,44 +43,24 @@
 #define SETUP_DELAY               100
 #define INITIALISATION_ATTEMPTS   5
 #define MESSAGE_END               0xFF
-#define ESP32_WIFI_MODE           WIFI_STA
-
-typedef struct canTechMsg {
-  float accX;
-  float accY;
-  float accZ;
-
-  float temperature;
-
-  float gyroX;
-  float gyroY;
-  float gyroZ;
-};
 
 /**
    Global Variables
 */
 MCP_CAN CAN(VSPI_SS);
 BluetoothSerial SerialBT;
-uint8_t broadcastAddress[] = {0xF0, 0x08, 0xD1, 0xD3, 0x6D, 0xA0}; // sensor's address - hard-coded for now
-String success;
-canTechMsg incomingData;
-
-float accX, accY, accZ;
-float gyroX, gyroY, gyroZ;
-float temperature;
 
 /**
    Setup
 */
 void setup() {
   Serial.begin(BAUD_RATE);
-  setupBluetooth();
+
+  SerialBT.begin(ESP32_BL_NAME); //Bluetooth device name
+  Serial.println("The device started, now you can pair it with bluetooth!");
 
 #ifndef ALPHA_VERSION
   setupCANBus();
-  setupWiFi();
-  setupESPNow();
 #endif
 }
 
@@ -116,8 +94,8 @@ void writeSerialToBluetooth(void) {
       delay(MESSAGE_DELAY);
     }
     SerialBT.print(MESSAGE_END);
-    //    SerialBT.print(MESSAGE_END);
-    //    SerialBT.println(" ");
+    SerialBT.print(MESSAGE_END);
+    SerialBT.println(" ");
   }
 }
 
@@ -129,15 +107,17 @@ void writeCANToBluetooth(void) {
     CAN.readMsgBuf(&len, buf);
 
     unsigned long canId = CAN.getCanId();
-    SerialBT.print(canId, HEX);
+
+    SerialBT.print("Data from ID 0x");
+    SerialBT.println(canId, HEX);
 
     for (int i = 0; i < len; i++) {
       SerialBT.print(buf[i]);
-      //      SerialBT.print("\t");
+      SerialBT.print("\t");
     }
     SerialBT.print(MESSAGE_END);
-    //    SerialBT.print(MESSAGE_END);
-    //    SerialBT.println(" ");
+    SerialBT.print(MESSAGE_END);
+    SerialBT.println();
   }
 }
 
@@ -152,49 +132,12 @@ void setupCANBus(void) {
     attempt++;
   }
 
-  Serial.println("CAN BUS Init OK!");
-}
-
-/**
-   WiFi Setup
-*/
-void setupWiFi(void) {
-  WiFi.mode(ESP32_WIFI_MODE);
-  Serial.println(WiFi.macAddress());
-}
-
-void setupESPNow(void) {
-    // Init ESP-NOW
-  if (esp_now_init() != ESP_OK) {
-    Serial.println("Error initializing ESP-NOW");
-    return;
+  if (attempt < INITIALISATION_ATTEMPTS) {
+    Serial.println("CAN BUS Init Failed");
   }
-
-  // Once ESPNow is successfully Init, we will register for Send CB to
-  // get the status of Trasnmitted packet
-  esp_now_register_send_cb(OnDataSent);
-  
-  // Register peer
-  esp_now_peer_info_t peerInfo;
-  memcpy(peerInfo.peer_addr, broadcastAddress, 6);
-  peerInfo.channel = 0;  
-  peerInfo.encrypt = false;
-  
-  // Add peer        
-  if (esp_now_add_peer(&peerInfo) != ESP_OK){
-    Serial.println("Failed to add peer");
-    return;
+  else {
+    Serial.println("CAN BUS Init OK!");
   }
-  // Register for a callback function that will be called when data is received
-  esp_now_register_recv_cb(OnDataRecv);  
-}
-
-/**
-   Bluetooth Setup
-*/
-void setupBluetooth(void) {
-  SerialBT.begin(ESP32_BL_NAME); //Bluetooth device name
-  Serial.println("The device started, now you can pair it with bluetooth!");
 }
 
 void receiveFromBluetooth(void) {
@@ -218,64 +161,4 @@ uint8_t convertCharToUint8(char* string) {
 
 char convertUint8ToChar(int number) {
   return (char)number;
-}
-
-// Callback when data is sent
-void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
-  Serial.print("\r\nLast Packet Send Status:\t");
-  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
-  if (status == 0) {
-    success = "Delivery Success :)";
-  }
-  else {
-    success = "Delivery Fail :(";
-  }
-}
-
-// Callback when data is received
-void OnDataRecv(const uint8_t * mac, const uint8_t *incomingD, int len) {
-  memcpy(&incomingData, incomingD, sizeof(incomingData));
-  uint8_t sensorMacAddress[6];
-  memcpy(&sensorMacAddress, mac, sizeof(mac));
-  
-  Serial.print("Mac Address: ");
-  Serial.print(sensorMacAddress[0], HEX);
-  Serial.print(sensorMacAddress[1], HEX);
-  Serial.print(sensorMacAddress[2], HEX);
-  Serial.print(sensorMacAddress[3], HEX);
-  Serial.print(sensorMacAddress[4], HEX);
-  Serial.print(sensorMacAddress[5], HEX);
-  Serial.print(" | Bytes received: ");
-  Serial.print(len);
-
-  accX = incomingData.accX;
-  accY = incomingData.accY;
-  accZ = incomingData.accZ;
-
-  temperature = incomingData.temperature;
-
-  gyroX = incomingData.gyroX;
-  gyroY = incomingData.gyroY;
-  gyroZ = incomingData.gyroZ;
-
-  Serial.print(" | aX = "); Serial.print(accX);
-  Serial.print(" | aY = "); Serial.print(accY);
-  Serial.print(" | aZ = "); Serial.print(accZ);
-
-  Serial.print(" | tmp = "); Serial.print(temperature);
-  Serial.print(" | gX = "); Serial.print(gyroX);
-  Serial.print(" | gY = "); Serial.print(gyroY);
-  Serial.print(" | gZ = "); Serial.print(gyroZ);
-  Serial.println();
-  
-//
-//  // print out data to Bluetooth
-//  SerialBT.print("aX = "); SerialBT.print(accX);
-//  SerialBT.print(" | aY = "); SerialBT.print(accY);
-//  SerialBT.print(" | aZ = "); SerialBT.print(accZ);
-//  SerialBT.print(" | tmp = "); SerialBT.print(temperature);
-//  SerialBT.print(" | gX = "); SerialBT.print(gyroX);
-//  SerialBT.print(" | gY = "); SerialBT.print(gyroY);
-//  SerialBT.print(" | gZ = "); SerialBT.print(gyroZ);
-//  SerialBT.println();
 }
