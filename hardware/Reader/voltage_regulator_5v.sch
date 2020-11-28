@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 16 19
+Sheet 7 17
 Title "CANnect Reader | Voltage Regulator (5V)"
-Date "2020-11-19"
+Date "2020-11-27"
 Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
@@ -20,7 +20,7 @@ P 3800 2200
 F 0 "U_VR1" H 4600 2587 60  0000 C CNN
 F 1 "MAX25276ATCA_VY+" H 4600 2481 60  0000 C CNN
 F 2 "footprints:MAX25276ATCA&slash_VY&plus_" H 4600 2440 60  0001 C CNN
-F 3 "https://datasheets.maximintegrated.com/en/ds/MAX20075-MAX25276.pdf" H 4650 2400 60  0000 C CNN
+F 3 "https://datasheets.maximintegrated.com/en/ds/MAX20075-MAX25276.pdf" H 4650 2400 60  0001 C CNN
 F 4 "MAX25276ATCA/VY+" H 3800 2200 50  0001 C CNN "Part Name"
 F 5 "Maxim Integrated" H 3800 2200 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 3800 2200 50  0001 C CNN "Vendor"
@@ -30,12 +30,8 @@ F 7 "175-MAX25276ATCA/VY+-ND" H 3800 2200 50  0001 C CNN "digikeypn"
 $EndComp
 Text HLabel 1800 1750 0    50   Input ~ 0
 Enable_Signal
-Text HLabel 1800 2500 0    50   Input ~ 0
-Sync_Signal
 Text HLabel 7450 2300 2    50   Output ~ 0
 Fixed_5V
-Text HLabel 7450 4150 2    50   Output ~ 0
-PGood
 Wire Wire Line
 	5400 2300 6650 2300
 $Comp
@@ -92,14 +88,6 @@ Wire Wire Line
 	1800 1750 3800 1750
 Wire Wire Line
 	3800 1750 3800 2200
-Wire Wire Line
-	1800 2500 3800 2500
-Wire Wire Line
-	3800 2500 3800 2400
-Wire Wire Line
-	3800 3300 3800 4150
-Wire Wire Line
-	3800 4150 7450 4150
 $Comp
 L Device:L L_VR1
 U 1 1 5F9F2ADC
@@ -166,10 +154,6 @@ Wire Wire Line
 Connection ~ 3300 3700
 Wire Wire Line
 	3300 3700 6650 3700
-Text HLabel 1800 3000 0    50   Input ~ 0
-Spread_Spectrum_Enable
-Wire Wire Line
-	1800 3000 3800 3000
 $Comp
 L Device:C C_VR1_3
 U 1 1 5F9EFBD6
@@ -233,4 +217,7 @@ Wire Wire Line
 Connection ~ 6650 2300
 Wire Wire Line
 	7300 2300 7450 2300
+NoConn ~ 3800 2400
+NoConn ~ 3800 3000
+NoConn ~ 3800 3300
 $EndSCHEMATC

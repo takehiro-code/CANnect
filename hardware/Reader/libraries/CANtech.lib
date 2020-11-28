@@ -63,8 +63,8 @@ ENDDEF
 #
 # +V_USB
 #
-DEF +V_USB V 0 40 Y Y 1 F N
-F0 "V" 0 0 50 H V C CNN
+DEF +V_USB V 0 40 Y Y 1 F P
+F0 "V" 0 0 50 H I C CNN
 F1 "+V_USB" 0 0 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
@@ -224,6 +224,90 @@ X Pin_9 9 -450 -900 150 R 50 50 1 1 U
 ENDDRAW
 ENDDEF
 #
+# Header_Pin_1
+#
+DEF Header_Pin_1 J 0 40 Y Y 1 F N
+F0 "J" 0 -300 50 H V C CNN
+F1 "Header_Pin_1" 0 0 50 H I C CNN
+F2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S -100 -50 100 -250 0 1 0 N
+X ~ 1 0 50 100 D 50 50 1 1 B
+ENDDRAW
+ENDDEF
+#
+# Header_Pin_2
+#
+DEF Header_Pin_2 J 0 40 Y Y 1 F N
+F0 "J" 0 -300 50 H V C CNN
+F1 "Header_Pin_2" 0 0 50 H I C CNN
+F2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S -100 -50 100 -250 0 1 0 N
+X ~ 1 -50 50 100 D 50 50 1 1 B
+X ~ 2 50 50 100 D 50 50 1 1 B
+ENDDRAW
+ENDDEF
+#
+# Header_Pin_4
+#
+DEF Header_Pin_4 J 0 40 Y Y 1 F N
+F0 "J" 0 -400 50 H V C CNN
+F1 "Header_Pin_4" 0 0 50 H I C CNN
+F2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S -250 -150 250 -350 0 1 0 N
+X ~ 1 -200 -50 100 D 50 50 1 1 B
+X ~ 2 -100 -50 100 D 50 50 1 1 B
+X ~ 3 100 -50 100 D 50 50 1 1 B
+X ~ 4 200 -50 100 D 50 50 1 1 B
+ENDDRAW
+ENDDEF
+#
+# Header_Pin_8
+#
+DEF Header_Pin_8 J 0 40 Y Y 1 F N
+F0 "J" 0 -400 50 H V C CNN
+F1 "Header_Pin_8" 0 0 50 H I C CNN
+F2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S -450 -150 450 -350 0 1 0 N
+X ~ 1 -400 -50 100 D 50 50 1 1 B
+X ~ 2 -300 -50 100 D 50 50 1 1 B
+X ~ 3 -200 -50 100 D 50 50 1 1 B
+X ~ 4 -100 -50 100 D 50 50 1 1 B
+X ~ 5 100 -50 100 D 50 50 1 1 B
+X ~ 6 200 -50 100 D 50 50 1 1 B
+X ~ 7 300 -50 100 D 50 50 1 1 B
+X ~ 8 400 -50 100 D 50 50 1 1 B
+ENDDRAW
+ENDDEF
+#
+# Header_Pin_9
+#
+DEF Header_Pin_9 J 0 40 Y Y 1 F N
+F0 "J" 0 -400 50 H V C CNN
+F1 "Header_Pin_9" 0 0 50 H I C CNN
+F2 "Connector_PinHeader_2.54mm:PinHeader_1x09_P2.54mm_Vertical" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S -450 -150 450 -350 0 1 0 N
+X ~ 1 -400 -50 100 D 50 50 1 1 B
+X ~ 2 -300 -50 100 D 50 50 1 1 B
+X ~ 3 -200 -50 100 D 50 50 1 1 B
+X ~ 4 -100 -50 100 D 50 50 1 1 B
+X ~ 5 0 -50 100 D 50 50 1 1 B
+X ~ 6 100 -50 100 D 50 50 1 1 B
+X ~ 7 200 -50 100 D 50 50 1 1 B
+X ~ 8 300 -50 100 D 50 50 1 1 B
+X ~ 9 400 -50 100 D 50 50 1 1 B
+ENDDRAW
+ENDDEF
+#
 # NodeMCU_ESP32
 #
 DEF NodeMCU_ESP32 U 0 40 Y Y 1 F N
@@ -281,7 +365,7 @@ ENDDEF
 DEF STN2120 U 0 20 Y Y 1 F N
 F0 "U" -100 100 50 H V C CNB
 F1 "STN2120" -100 0 50 H V C CNB
-F2 "Package_DFN_QFN:QFN-44-1EP_8x8mm_P0.65mm_EP6.45x6.45mm_ThermalVias" 300 -350 50 H V C CNN
+F2 "footprints:CANtech-STN2120-QFN-44-1EP_8x8mm" 300 -350 50 H I C CNN
 F3 "" 300 -350 50 H V C CNN
 F4 "STN2120" 0 0 50 H V C CNN "Part Name"
 F5 "OBD Solutions" 0 0 50 H V C CNN "Vendor"

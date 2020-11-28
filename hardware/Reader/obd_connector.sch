@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 11 19
+Sheet 10 17
 Title "CANnect Reader | OBD Connector"
-Date "2020-11-19"
+Date "2020-11-27"
 Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
@@ -13,14 +13,10 @@ Comment2 "Taken from STN21xx's datasheet for recommended configuration"
 Comment3 ""
 Comment4 "Component Identifier: CN"
 $EndDescr
-Text HLabel 8600 1550 2    50   BiDi ~ 0
-SW_CAN
 Text HLabel 8600 3800 2    50   Output ~ 0
 Raw_12V
 Text HLabel 8600 1700 2    50   BiDi ~ 0
 J1850_BUS+
-Text HLabel 8600 1850 2    50   BiDi ~ 0
-MS_CAN_High
 Text HLabel 8600 2000 2    50   Output ~ 0
 GnD_Chassis
 Text HLabel 8600 2150 2    50   Output ~ 0
@@ -29,18 +25,8 @@ Text HLabel 8600 2300 2    50   BiDi ~ 0
 HS_CAN_High
 Text HLabel 8600 2450 2    50   BiDi ~ 0
 K-Line
-Text HLabel 8600 2600 2    50   BiDi ~ 0
-OBD_PIN_8
-Text HLabel 8600 2750 2    50   BiDi ~ 0
-OBD_PIN_9
 Text HLabel 8600 2900 2    50   BiDi ~ 0
 J1850_BUS-
-Text HLabel 8600 3050 2    50   BiDi ~ 0
-MS_CAN_Low
-Text HLabel 8600 3200 2    50   BiDi ~ 0
-OBD_PIN_12
-Text HLabel 8600 3350 2    50   BiDi ~ 0
-OBD_PIN_13
 Text HLabel 8600 3500 2    50   BiDi ~ 0
 HS_CAN_Low
 Text HLabel 8600 3650 2    50   Output ~ 0
@@ -57,27 +43,8 @@ Wire Notes Line
 	6500 6250 10250 6250
 Wire Notes Line
 	10250 1150 6500 1150
-Wire Wire Line
-	2750 2300 2750 4300
-Wire Wire Line
-	2850 3500 2850 4400
-Wire Wire Line
-	2950 1850 2950 4500
-Wire Wire Line
-	2950 1850 8600 1850
-Wire Wire Line
-	3250 4800 3250 2450
 Wire Notes Line
 	10250 6250 10250 1150
-Connection ~ 2850 3500
-Connection ~ 2750 2300
-Connection ~ 2950 1850
-Wire Wire Line
-	2250 2900 3550 2900
-Wire Wire Line
-	2250 2000 4250 2000
-Wire Wire Line
-	2250 1850 2950 1850
 Text GLabel 2250 2600 0    50   BiDi ~ 0
 Pin8
 Text GLabel 2250 3350 0    50   BiDi ~ 0
@@ -971,18 +938,6 @@ Text GLabel 8800 5600 2    50   BiDi ~ 0
 Pin12
 Text GLabel 8800 5400 2    50   BiDi ~ 0
 Pin9
-Wire Wire Line
-	2250 2150 4150 2150
-Wire Wire Line
-	2250 2300 2750 2300
-Wire Wire Line
-	2250 2600 4050 2600
-Wire Wire Line
-	2250 2450 3250 2450
-Wire Wire Line
-	2250 3350 3650 3350
-Wire Wire Line
-	2250 3500 2850 3500
 Text GLabel 2250 3650 0    50   Input ~ 0
 Pin15_ISO9141_L-Line
 Text GLabel 2250 2450 0    50   BiDi ~ 0
@@ -993,27 +948,49 @@ Text GLabel 2250 2300 0    50   BiDi ~ 0
 Pin6_ISO15765_CAN_BUS_High
 Text GLabel 7850 4700 0    50   BiDi ~ 0
 Pin7_ISO9141_K-Line
-Wire Wire Line
-	2750 4300 5100 4300
-Wire Wire Line
-	2850 4400 5100 4400
-Wire Wire Line
-	2950 4500 5100 4500
 $Sheet
 S 5100 4200 900  1000
 U 5FA6BC58
 F0 "ESD Protection" 50
 F1 "esd_protection.sch" 50
-F2 "HS_CAN_High" B L 5100 4300 50 
-F3 "HS_CAN_Low" B L 5100 4400 50 
-F4 "MS_CAN_High" B L 5100 4500 50 
-F5 "MS_CAN_Low" B L 5100 4600 50 
+F2 "HS_CAN_High" B L 5100 5100 50 
+F3 "HS_CAN_Low" B L 5100 5000 50 
+F4 "MS_CAN_High" B L 5100 4900 50 
+F5 "MS_CAN_Low" B L 5100 4800 50 
 F6 "SW_CAN" B L 5100 4700 50 
-F7 "K-Line" B L 5100 4800 50 
-F8 "L-Line" B L 5100 4900 50 
-F9 "J1850_BUS+" B L 5100 5000 50 
-F10 "J1850_BUS-" B L 5100 5100 50 
+F7 "K-Line" B L 5100 4600 50 
+F8 "L-Line" B L 5100 4500 50 
+F9 "J1850_BUS+" B L 5100 4400 50 
+F10 "J1850_BUS-" B L 5100 4300 50 
 $EndSheet
+Wire Wire Line
+	2250 2000 3450 2000
+Wire Wire Line
+	2250 2150 3650 2150
+Wire Wire Line
+	2250 1550 4350 1550
+Wire Wire Line
+	2250 3800 3550 3800
+Wire Wire Line
+	2250 1700 2750 1700
+Wire Wire Line
+	2250 3350 4650 3350
+Wire Wire Line
+	2250 2900 2850 2900
+Wire Wire Line
+	2250 2750 4050 2750
+Wire Wire Line
+	2250 3650 3150 3650
+Wire Wire Line
+	2250 3500 3350 3500
+Wire Wire Line
+	2250 1850 2950 1850
+Wire Wire Line
+	2250 2300 3250 2300
+Wire Wire Line
+	2250 2450 3050 2450
+Wire Wire Line
+	2250 3050 4550 3050
 $Comp
 L CANtech:4157 J_CN_1
 U 1 1 5FBE1A85
@@ -1030,127 +1007,131 @@ F 7 "4157" H 4250 5850 50  0001 C CNN "Part Name"
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2750 2300 8600 2300
+	2750 5700 2750 4400
+Connection ~ 2750 1700
 Wire Wire Line
-	2850 3500 8600 3500
+	2750 1700 8600 1700
 Wire Wire Line
-	2750 4300 2750 5700
-Connection ~ 2750 4300
+	2850 5700 2850 4300
+Connection ~ 2850 2900
 Wire Wire Line
-	2850 5700 2850 4400
-Connection ~ 2850 4400
+	2850 2900 8600 2900
 Wire Wire Line
-	2950 4500 2950 5700
-Connection ~ 2950 4500
+	2950 5700 2950 4900
 Wire Wire Line
-	2250 3050 3050 3050
+	3050 5700 3050 4600
+Connection ~ 3050 2450
 Wire Wire Line
-	3050 3050 3050 4600
-Connection ~ 3050 3050
+	3050 2450 8600 2450
 Wire Wire Line
-	3050 3050 8600 3050
+	3150 5700 3150 4500
+Connection ~ 3150 3650
 Wire Wire Line
-	3050 4600 5100 4600
-Connection ~ 3050 4600
+	3150 3650 8600 3650
 Wire Wire Line
-	3050 4600 3050 5700
+	4650 5700 4650 3350
 Wire Wire Line
-	2250 1550 3150 1550
-Connection ~ 3150 1550
+	4550 3050 4550 4800
 Wire Wire Line
-	3150 1550 8600 1550
+	4450 5700 4450 3800
+Connection ~ 4450 3800
 Wire Wire Line
-	3150 1550 3150 4700
+	4450 3800 8600 3800
 Wire Wire Line
-	3150 4700 5100 4700
-Connection ~ 3150 4700
+	4350 5700 4350 4700
 Wire Wire Line
-	3150 4700 3150 5700
-Connection ~ 3250 2450
+	4250 5700 4250 2600
 Wire Wire Line
-	3250 2450 8600 2450
+	2250 2600 4250 2600
 Wire Wire Line
-	3250 4800 5100 4800
+	4150 5700 4150 3200
 Wire Wire Line
-	3250 4800 3250 5700
-Connection ~ 3250 4800
+	2250 3200 4150 3200
 Wire Wire Line
-	2250 3650 3350 3650
+	4050 5700 4050 2750
 Wire Wire Line
-	3350 5700 3350 4900
-Connection ~ 3350 3650
+	3250 5700 3250 5100
+Connection ~ 3250 2300
 Wire Wire Line
-	3350 3650 8600 3650
+	3250 2300 8600 2300
 Wire Wire Line
-	3350 4900 5100 4900
-Connection ~ 3350 4900
+	3350 5700 3350 5000
+Connection ~ 3350 3500
 Wire Wire Line
-	3350 4900 3350 3650
+	3350 3500 8600 3500
 Wire Wire Line
-	2250 1700 3450 1700
+	3450 5700 3450 2000
+Connection ~ 3450 2000
 Wire Wire Line
-	3450 1700 3450 5000
-Connection ~ 3450 1700
+	3450 2000 3950 2000
 Wire Wire Line
-	3450 1700 8600 1700
+	3950 5700 3950 2000
+Connection ~ 3950 2000
 Wire Wire Line
-	3450 5000 5100 5000
-Connection ~ 3450 5000
+	3950 2000 8600 2000
 Wire Wire Line
-	3450 5000 3450 5700
-Connection ~ 3550 2900
+	3550 5700 3550 3800
+Connection ~ 3550 3800
 Wire Wire Line
-	3550 2900 8600 2900
-Wire Wire Line
-	3550 2900 3550 5100
-Wire Wire Line
-	3550 5100 5100 5100
-Connection ~ 3550 5100
-Wire Wire Line
-	3550 5100 3550 5700
-Wire Wire Line
-	3650 5700 3650 3350
-Connection ~ 3650 3350
-Wire Wire Line
-	3650 3350 8600 3350
-Wire Wire Line
-	2250 2750 3950 2750
-Wire Wire Line
-	2250 3200 3750 3200
-Wire Wire Line
-	2250 3800 3850 3800
-Wire Wire Line
-	3750 5700 3750 3200
-Connection ~ 3750 3200
-Wire Wire Line
-	3750 3200 8600 3200
+	3550 3800 3850 3800
 Wire Wire Line
 	3850 5700 3850 3800
 Connection ~ 3850 3800
 Wire Wire Line
-	3850 3800 8600 3800
+	3850 3800 4450 3800
 Wire Wire Line
-	3950 5700 3950 2750
-Connection ~ 3950 2750
+	3650 5700 3650 2150
+Connection ~ 3650 2150
 Wire Wire Line
-	3950 2750 8600 2750
+	3650 2150 3750 2150
 Wire Wire Line
-	4050 5700 4050 2600
-Connection ~ 4050 2600
+	3750 2150 3750 5700
+Connection ~ 3750 2150
 Wire Wire Line
-	4050 2600 8600 2600
+	3750 2150 8600 2150
 Wire Wire Line
-	4150 5700 4150 2150
-Connection ~ 4150 2150
+	5100 4300 2850 4300
+Connection ~ 2850 4300
 Wire Wire Line
-	4150 2150 8600 2150
+	2850 4300 2850 2900
 Wire Wire Line
-	4250 2000 4250 5700
-Connection ~ 4250 2000
+	5100 4400 2750 4400
+Connection ~ 2750 4400
 Wire Wire Line
-	4250 2000 8600 2000
-NoConn ~ 4350 5700
-NoConn ~ 4450 5700
-NoConn ~ 4550 5700
-NoConn ~ 4650 5700
+	2750 4400 2750 1700
+Wire Wire Line
+	5100 4500 3150 4500
+Connection ~ 3150 4500
+Wire Wire Line
+	3150 4500 3150 3650
+Wire Wire Line
+	5100 4600 3050 4600
+Connection ~ 3050 4600
+Wire Wire Line
+	3050 4600 3050 2450
+Wire Wire Line
+	5100 4700 4350 4700
+Connection ~ 4350 4700
+Wire Wire Line
+	4350 4700 4350 1550
+Wire Wire Line
+	5100 4800 4550 4800
+Connection ~ 4550 4800
+Wire Wire Line
+	4550 4800 4550 5700
+Wire Wire Line
+	5100 4900 2950 4900
+Connection ~ 2950 4900
+Wire Wire Line
+	2950 4900 2950 1850
+Wire Wire Line
+	5100 5000 3350 5000
+Connection ~ 3350 5000
+Wire Wire Line
+	3350 5000 3350 3500
+Wire Wire Line
+	5100 5100 3250 5100
+Connection ~ 3250 5100
+Wire Wire Line
+	3250 5100 3250 2300
 $EndSCHEMATC

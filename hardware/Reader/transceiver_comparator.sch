@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 8 19
+Sheet 16 17
 Title "CANnect Reader | Comparative Transceiver"
-Date "2020-11-19"
+Date "2020-11-27"
 Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
@@ -93,8 +93,8 @@ L Device:R_Small R_COMP_?
 U 1 1 5FB4E408
 P 5250 3350
 AR Path="/5F95F80B/5FA83833/5FB4E408" Ref="R_COMP_?"  Part="1" 
-AR Path="/5F95F80B/5FB4CA84/5FB4E408" Ref="R_COMP_5"  Part="1" 
-F 0 "R_COMP_5" H 5309 3396 50  0000 L CNN
+AR Path="/5F95F80B/5FB4CA84/5FB4E408" Ref="R_COMP_6"  Part="1" 
+F 0 "R_COMP_6" H 5309 3396 50  0000 L CNN
 F 1 "10k" H 5309 3305 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 5250 3350 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 5250 3350 50  0001 C CNN
@@ -110,8 +110,8 @@ L Device:R_Small R_COMP_?
 U 1 1 5FB4E431
 P 5250 3650
 AR Path="/5F95F80B/5FA83833/5FB4E431" Ref="R_COMP_?"  Part="1" 
-AR Path="/5F95F80B/5FB4CA84/5FB4E431" Ref="R_COMP_6"  Part="1" 
-F 0 "R_COMP_6" H 5309 3696 50  0000 L CNN
+AR Path="/5F95F80B/5FB4CA84/5FB4E431" Ref="R_COMP_7"  Part="1" 
+F 0 "R_COMP_7" H 5309 3696 50  0000 L CNN
 F 1 "10k" H 5309 3605 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 5250 3650 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 5250 3650 50  0001 C CNN
@@ -123,10 +123,10 @@ F 7 "Yageo" H 5250 3650 50  0001 C CNN "Manufacturer"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_Small R_COMP1
+L Device:R_Small R_COMP_5
 U 1 1 5FBAA6D5
 P 5050 1650
-F 0 "R_COMP1" V 4854 1650 50  0000 C CNN
+F 0 "R_COMP_5" V 4854 1650 50  0000 C CNN
 F 1 "10k" V 4945 1650 50  0000 C CNN
 F 2 "footprints:RESC1608X55N" H 5050 1650 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 5050 1650 50  0001 C CNN
@@ -185,10 +185,10 @@ Wire Wire Line
 Text HLabel 7600 3750 0    50   Input ~ 0
 J1850_BUS+
 $Comp
-L Device:R_Small R_COMP_9
+L Device:R_Small R_COMP_10
 U 1 1 5FBAD28A
 P 7700 3250
-F 0 "R_COMP_9" H 7759 3296 50  0000 L CNN
+F 0 "R_COMP_10" H 7759 3296 50  0000 L CNN
 F 1 "10k" H 7759 3205 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 7700 3250 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 7700 3250 50  0001 C CNN
@@ -206,10 +206,10 @@ Wire Wire Line
 Wire Wire Line
 	7700 2700 7700 3150
 $Comp
-L Device:R_Small R_COMP_7
+L Device:R_Small R_COMP_8
 U 1 1 5FBB49DF
 P 6250 3350
-F 0 "R_COMP_7" H 6309 3396 50  0000 L CNN
+F 0 "R_COMP_8" H 6309 3396 50  0000 L CNN
 F 1 "2.7k" H 6309 3305 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 6250 3350 50  0001 C CNN
 F 3 "https://www.vishay.com/docs/28773/crcwce3.pdf" H 6250 3350 50  0001 C CNN
@@ -221,10 +221,10 @@ F 7 "541-5328-1-ND" H 6250 3350 50  0001 C CNN "digikeypn"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_Small R_COMP_8
+L Device:R_Small R_COMP_9
 U 1 1 5FBB4DBB
 P 6250 3650
-F 0 "R_COMP_8" H 6309 3696 50  0000 L CNN
+F 0 "R_COMP_9" H 6309 3696 50  0000 L CNN
 F 1 "10k" H 6309 3605 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 6250 3650 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 6250 3650 50  0001 C CNN
@@ -298,7 +298,7 @@ AR Path="/5F95F80B/5FB4CA84/5FB4E413" Ref="U_COMP_1"  Part="1"
 F 0 "U_COMP_1" H 5800 2587 60  0000 C CNN
 F 1 "LM339N_NOPB" H 5800 2481 60  0000 C CNN
 F 2 "footprints:LM339N&slash_NOPB" H 5800 2440 60  0001 C CNN
-F 3 "https://www.ti.com/lit/ds/symlink/lm339-n.pdf?ts=1603731355059" H 4600 2200 60  0000 C CNN
+F 3 "https://www.ti.com/lit/ds/symlink/lm339-n.pdf?ts=1603731355059" H 4600 2200 60  0001 C CNN
 F 4 "LM339N_NOPB" H 4600 2200 50  0001 C CNN "Part Name"
 F 5 "Texas Instruments" H 4600 2200 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 4600 2200 50  0001 C CNN "Vendor"
@@ -338,10 +338,10 @@ Wire Wire Line
 	4850 1250 5100 1250
 NoConn ~ 7000 2300
 $Comp
-L Device:R_Small R_COMP_10
+L Device:R_Small R_COMP_11
 U 1 1 5FBC1B65
 P 8400 2000
-F 0 "R_COMP_10" H 8459 2046 50  0000 L CNN
+F 0 "R_COMP_11" H 8459 2046 50  0000 L CNN
 F 1 "10k" H 8459 1955 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" H 8400 2000 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 8400 2000 50  0001 C CNN

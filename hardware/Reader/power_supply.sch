@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 15 19
+Sheet 4 17
 Title "CANnect Reader | Power Supply"
-Date "2020-11-19"
+Date "2020-11-27"
 Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
@@ -16,12 +16,12 @@ $EndDescr
 $Comp
 L power:GND #PWR092
 U 1 1 5F9CD91F
-P 3350 4350
-F 0 "#PWR092" H 3350 4100 50  0001 C CNN
-F 1 "GND" H 3355 4177 50  0000 C CNN
-F 2 "" H 3350 4350 50  0001 C CNN
-F 3 "" H 3350 4350 50  0001 C CNN
-	1    3350 4350
+P 3350 3900
+F 0 "#PWR092" H 3350 3650 50  0001 C CNN
+F 1 "GND" H 3355 3727 50  0000 C CNN
+F 2 "" H 3350 3900 50  0001 C CNN
+F 3 "" H 3350 3900 50  0001 C CNN
+	1    3350 3900
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -30,23 +30,23 @@ Connection ~ 3350 2800
 $Comp
 L power:+12V #PWR091
 U 1 1 5FA66599
-P 3350 1400
-F 0 "#PWR091" H 3350 1250 50  0001 C CNN
-F 1 "+12V" H 3365 1573 50  0000 C CNN
-F 2 "" H 3350 1400 50  0001 C CNN
-F 3 "" H 3350 1400 50  0001 C CNN
-	1    3350 1400
+P 3350 1650
+F 0 "#PWR091" H 3350 1500 50  0001 C CNN
+F 1 "+12V" H 3365 1823 50  0000 C CNN
+F 2 "" H 3350 1650 50  0001 C CNN
+F 3 "" H 3350 1650 50  0001 C CNN
+	1    3350 1650
 	1    0    0    -1  
 $EndComp
 $Comp
 L CANtech:VRaw #V02
 U 1 1 5FD5C101
-P 1100 1350
-F 0 "#V02" H 1100 1350 50  0001 C CNN
-F 1 "VRaw" H 1158 1337 50  0000 L CNN
-F 2 "" H 1100 1350 50  0001 C CNN
-F 3 "" H 1100 1350 50  0001 C CNN
-	1    1100 1350
+P 1100 1600
+F 0 "#V02" H 1100 1600 50  0001 C CNN
+F 1 "VRaw" H 1158 1587 50  0000 L CNN
+F 2 "" H 1100 1600 50  0001 C CNN
+F 3 "" H 1100 1600 50  0001 C CNN
+	1    1100 1600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -58,23 +58,17 @@ Wire Wire Line
 Wire Wire Line
 	4850 3150 5050 3150
 Connection ~ 4850 2800
-NoConn ~ 5050 3600
-NoConn ~ 5050 3700
-NoConn ~ 5050 2100
-NoConn ~ 5050 2200
 $Comp
 L power:GND #PWR096
 U 1 1 5F96A5B0
-P 6850 4050
-F 0 "#PWR096" H 6850 3800 50  0001 C CNN
-F 1 "GND" H 6855 3877 50  0000 C CNN
-F 2 "" H 6850 4050 50  0001 C CNN
-F 3 "" H 6850 4050 50  0001 C CNN
-	1    6850 4050
+P 6850 3900
+F 0 "#PWR096" H 6850 3650 50  0001 C CNN
+F 1 "GND" H 6855 3727 50  0000 C CNN
+F 2 "" H 6850 3900 50  0001 C CNN
+F 3 "" H 6850 3900 50  0001 C CNN
+	1    6850 3900
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3350 3500 3350 3700
 $Sheet
 S 1700 2450 1500 750 
 U 5F9AE5F2
@@ -99,24 +93,22 @@ F 7 "399-7029-1-ND" H 3350 3350 50  0001 C CNN "digikeypn"
 	1    0    0    -1  
 $EndComp
 $Sheet
-S 1750 4900 1550 450 
+S 7450 2700 1550 450 
 U 5FD5D295
 F0 "Voltage Sense" 50
 F1 "voltage_sense.sch" 50
-F2 "Analog_Voltage" O R 3300 5150 50 
+F2 "Analog_Voltage" O R 9000 2950 50 
 $EndSheet
-Text HLabel 6000 5150 2    50   Output ~ 0
+Text HLabel 9350 2950 2    50   Output ~ 0
 Analog_Voltage
 Wire Wire Line
-	1100 1400 1100 2800
+	1100 1650 1100 2800
 Wire Wire Line
-	3350 1400 3350 2800
+	3350 1650 3350 2800
 Wire Wire Line
 	6850 2050 6850 1900
 Wire Wire Line
 	6850 3550 6850 3400
-Wire Wire Line
-	6850 4050 6850 3950
 $Comp
 L power:GND #PWR094
 U 1 1 5F9698CD
@@ -158,8 +150,6 @@ F 7 "399-7029-1-ND" H 6850 3700 50  0001 C CNN "digikeypn"
 	1    6850 3700
 	1    0    0    -1  
 $EndComp
-NoConn ~ 6450 3500
-NoConn ~ 6450 2000
 Connection ~ 6850 3400
 Connection ~ 6850 1900
 Wire Wire Line
@@ -187,10 +177,7 @@ U 5F9EA8B0
 F0 "Voltage Regulator (5V)" 50
 F1 "voltage_regulator_5v.sch" 50
 F2 "Enable_Signal" I L 5050 1650 50 
-F3 "Sync_Signal" I L 5050 2100 50 
-F4 "Fixed_5V" O R 6450 1900 50 
-F5 "PGood" O R 6450 2000 50 
-F6 "Spread_Spectrum_Enable" I L 5050 2200 50 
+F3 "Fixed_5V" O R 6450 1900 50 
 $EndSheet
 $Sheet
 S 5050 3050 1400 800 
@@ -198,10 +185,7 @@ U 5FF30350
 F0 "Voltage Regulator (3.3V)" 50
 F1 "voltage_regulator_3.3V.sch" 50
 F2 "Enable_Signal" I L 5050 3150 50 
-F3 "Sync_Signal" I L 5050 3600 50 
-F4 "3.3V" O R 6450 3400 50 
-F5 "PGood" O R 6450 3500 50 
-F6 "Spread_Spectrum_Enable" I L 5050 3700 50 
+F3 "3.3V" O R 6450 3400 50 
 $EndSheet
 $Comp
 L power:+5V #PWR093
@@ -218,83 +202,421 @@ Wire Wire Line
 	4850 1650 4850 2800
 Wire Wire Line
 	3350 2800 3200 2800
+Wire Wire Line
+	6850 2350 6850 2550
+Wire Wire Line
+	6850 3850 6850 3900
+Wire Wire Line
+	9000 2950 9350 2950
+Text HLabel 2950 5950 0    50   Input ~ 0
+~PWR_CTRL~
 $Comp
-L 1546931-2:1546931-2 J_PS_1
-U 1 1 5FA002EC
-P 4250 3700
-F 0 "J_PS_1" H 4480 3796 50  0000 L CNN
-F 1 "1546931-2" H 4480 3705 50  0000 L CNN
-F 2 "footprints:1546931-2" H 4250 3700 50  0001 L BNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 4250 3700 50  0001 L BNN
-F 4 "1546931-2" H 4250 3700 50  0001 C CNN "Part Name"
-F 5 "TE Connectivity AMP Connectors" H 4250 3700 50  0001 C CNN "Manufacturer"
-F 6 "Digikey Canada" H 4250 3700 50  0001 C CNN "Vendor"
-F 7 "A97965-ND" H 4250 3700 50  0001 C CNN "digikeypn"
-	1    4250 3700
+L IRLML5103TRPBF:IRLML5103TRPBF Q_PS_3
+U 1 1 5FE0013C
+P 6900 5400
+AR Path="/5F8ADA45/5FE0013C" Ref="Q_PS_3"  Part="1" 
+AR Path="/5FA56A4E/5FE0013C" Ref="Q_PSW_?"  Part="1" 
+F 0 "Q_PS_3" V 7489 5400 60  0000 C CNN
+F 1 "NX7002AK,215" V 7383 5400 60  0000 C CNN
+F 2 "footprints:SOT95P230X110-3N" H 7350 5140 60  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 6900 5400 60  0001 C CNN
+F 4 "NX7002AK,215" H 6900 5400 50  0001 C CNN "Part Name"
+F 5 "Nexperia USA Inc." H 6900 5400 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 6900 5400 50  0001 C CNN "Vendor"
+F 7 "1727-1289-1-ND" H 6900 5400 50  0001 C CNN "digikeypn"
+	1    6900 5400
+	0    1    -1   0   
+$EndComp
+$Comp
+L IRLML5103TRPBF:IRLML5103TRPBF Q_PS_4
+U 1 1 5FE00146
+P 8250 5400
+AR Path="/5F8ADA45/5FE00146" Ref="Q_PS_4"  Part="1" 
+AR Path="/5FA56A4E/5FE00146" Ref="Q_PSW_?"  Part="1" 
+F 0 "Q_PS_4" V 8839 5400 60  0000 C CNN
+F 1 "NX7002AK,215" V 8733 5400 60  0000 C CNN
+F 2 "footprints:SOT95P230X110-3N" H 8700 5140 60  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 8250 5400 60  0001 C CNN
+F 4 "NX7002AK,215" H 8250 5400 50  0001 C CNN "Part Name"
+F 5 "Nexperia USA Inc." H 8250 5400 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 8250 5400 50  0001 C CNN "Vendor"
+F 7 "1727-1289-1-ND" H 8250 5400 50  0001 C CNN "digikeypn"
+	1    8250 5400
+	0    1    -1   0   
+$EndComp
+$Comp
+L NX7002AK_215:NX7002AK,215 Q_PSW_?
+U 1 1 5FE00153
+P 4350 5850
+AR Path="/5FA56A4E/5FE00153" Ref="Q_PSW_?"  Part="1" 
+AR Path="/5F8ADA45/5FE00153" Ref="Q_PS_1"  Part="1" 
+F 0 "Q_PS_1" H 4548 5846 50  0000 L CNN
+F 1 "NX7002AK,215" H 4548 5755 50  0000 L CNN
+F 2 "footprints:SOT95P230X110-3N" H 4350 5850 50  0001 L BNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 4350 5850 50  0001 L BNN
+F 4 "Nexperia" H 4350 5850 50  0001 L BNN "Field4"
+F 5 "7" H 4350 5850 50  0001 L BNN "Field5"
+F 6 "IPC-7351B" H 4350 5850 50  0001 L BNN "Field6"
+F 7 "NX7002AK,215" H 4350 5850 50  0001 C CNN "Part Name"
+F 8 "Nexperia USA Inc." H 4350 5850 50  0001 C CNN "Manufacturer"
+F 9 "DigiKey Canada" H 4350 5850 50  0001 C CNN "Vendor"
+F 10 "1727-1289-1-ND" H 4350 5850 50  0001 C CNN "digikeypn"
+	1    4350 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R_PSW_?
+U 1 1 5FE0015D
+P 4450 5150
+AR Path="/5FA56A4E/5FE0015D" Ref="R_PSW_?"  Part="1" 
+AR Path="/5F8ADA45/5FE0015D" Ref="R_PS_2"  Part="1" 
+F 0 "R_PS_2" H 4509 5196 50  0000 L CNN
+F 1 "100k" H 4509 5105 50  0000 L CNN
+F 2 "footprints:RESC1608X55N" H 4450 5150 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 4450 5150 50  0001 C CNN
+F 4 "RT0603DRE07100KL" H 4450 5150 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 4450 5150 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 4450 5150 50  0001 C CNN "Vendor"
+F 7 "311-2395-1-ND" H 4450 5150 50  0001 C CNN "digikeypn"
+	1    4450 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R_PSW_?
+U 1 1 5FE00167
+P 3350 5450
+AR Path="/5FA56A4E/5FE00167" Ref="R_PSW_?"  Part="1" 
+AR Path="/5F8ADA45/5FE00167" Ref="R_PS_1"  Part="1" 
+F 0 "R_PS_1" H 3409 5496 50  0000 L CNN
+F 1 "100k" H 3409 5405 50  0000 L CNN
+F 2 "footprints:RESC1608X55N" H 3350 5450 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 3350 5450 50  0001 C CNN
+F 4 "RT0603DRE07100KL" H 3350 5450 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 3350 5450 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 3350 5450 50  0001 C CNN "Vendor"
+F 7 "311-2395-1-ND" H 3350 5450 50  0001 C CNN "digikeypn"
+	1    3350 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FE0016D
+P 3350 4500
+AR Path="/5FA56A4E/5FE0016D" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE0016D" Ref="#PWR0127"  Part="1" 
+F 0 "#PWR0127" H 3350 4350 50  0001 C CNN
+F 1 "+3.3V" H 3365 4673 50  0000 C CNN
+F 2 "" H 3350 4500 50  0001 C CNN
+F 3 "" H 3350 4500 50  0001 C CNN
+	1    3350 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FE00173
+P 7850 4500
+AR Path="/5FA56A4E/5FE00173" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE00173" Ref="#PWR0128"  Part="1" 
+F 0 "#PWR0128" H 7850 4350 50  0001 C CNN
+F 1 "+3.3V" H 7865 4673 50  0000 C CNN
+F 2 "" H 7850 4500 50  0001 C CNN
+F 3 "" H 7850 4500 50  0001 C CNN
+	1    7850 4500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3350 2800 3850 2800
+	3350 5950 3350 5550
 Wire Wire Line
-	3300 5150 6000 5150
+	3350 5350 3350 4500
+Wire Wire Line
+	4450 5650 4450 5550
+Wire Wire Line
+	3350 5950 4150 5950
 $Comp
-L 1546931-2:1546931-2 J_PS_2
-U 1 1 5FBD8B3B
-P 7850 2000
-F 0 "J_PS_2" H 8080 2096 50  0000 L CNN
-F 1 "1546931-2" H 8080 2005 50  0000 L CNN
-F 2 "footprints:1546931-2" H 7850 2000 50  0001 L BNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 7850 2000 50  0001 L BNN
-F 4 "1546931-2" H 7850 2000 50  0001 C CNN "Part Name"
-F 5 "TE Connectivity AMP Connectors" H 7850 2000 50  0001 C CNN "Manufacturer"
-F 6 "Digikey Canada" H 7850 2000 50  0001 C CNN "Vendor"
-F 7 "A97965-ND" H 7850 2000 50  0001 C CNN "digikeypn"
-	1    7850 2000
-	1    0    0    -1  
-$EndComp
-$Comp
-L 1546931-2:1546931-2 J_PS_3
-U 1 1 5FBD9454
-P 7850 3500
-F 0 "J_PS_3" H 8080 3596 50  0000 L CNN
-F 1 "1546931-2" H 8080 3505 50  0000 L CNN
-F 2 "footprints:1546931-2" H 7850 3500 50  0001 L BNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 7850 3500 50  0001 L BNN
-F 4 "1546931-2" H 7850 3500 50  0001 C CNN "Part Name"
-F 5 "TE Connectivity AMP Connectors" H 7850 3500 50  0001 C CNN "Manufacturer"
-F 6 "Digikey Canada" H 7850 3500 50  0001 C CNN "Vendor"
-F 7 "A97965-ND" H 7850 3500 50  0001 C CNN "digikeypn"
-	1    7850 3500
+L power:GND #PWR?
+U 1 1 5FE0017D
+P 4450 6400
+AR Path="/5FA56A4E/5FE0017D" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE0017D" Ref="#PWR0129"  Part="1" 
+F 0 "#PWR0129" H 4450 6150 50  0001 C CNN
+F 1 "GND" H 4455 6227 50  0000 C CNN
+F 2 "" H 4450 6400 50  0001 C CNN
+F 3 "" H 4450 6400 50  0001 C CNN
+	1    4450 6400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6850 1900 7450 1900
+	4450 6150 4450 6400
+Connection ~ 4450 5550
 Wire Wire Line
-	3850 3600 3850 2800
-Connection ~ 3850 2800
+	4450 5550 4450 5250
+$Comp
+L IRLML5103TRPBF:IRLML5103TRPBF Q_PS_2
+U 1 1 5FE0018A
+P 5650 5400
+AR Path="/5F8ADA45/5FE0018A" Ref="Q_PS_2"  Part="1" 
+AR Path="/5FA56A4E/5FE0018A" Ref="Q_PSW_?"  Part="1" 
+F 0 "Q_PS_2" V 6239 5400 60  0000 C CNN
+F 1 "NX7002AK,215" V 6133 5400 60  0000 C CNN
+F 2 "footprints:SOT95P230X110-3N" H 6100 5140 60  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf" H 5650 5400 60  0001 C CNN
+F 4 "NX7002AK,215" H 5650 5400 50  0001 C CNN "Part Name"
+F 5 "Nexperia USA Inc." H 5650 5400 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 5650 5400 50  0001 C CNN "Vendor"
+F 7 "1727-1289-1-ND" H 5650 5400 50  0001 C CNN "digikeypn"
+	1    5650 5400
+	0    1    -1   0   
+$EndComp
 Wire Wire Line
-	3850 2800 4850 2800
+	4450 5550 5650 5550
 Wire Wire Line
-	3850 3700 3350 3700
-Connection ~ 3350 3700
+	5650 5550 5650 5400
+Connection ~ 5650 5550
 Wire Wire Line
-	3350 3700 3350 4350
+	8250 5550 8250 5400
+$Comp
+L CANtech:+5V_SW #PWR?
+U 1 1 5FE00194
+P 7300 4500
+AR Path="/5FA56A4E/5FE00194" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE00194" Ref="#PWR0130"  Part="1" 
+F 0 "#PWR0130" H 7300 4750 50  0001 C CNN
+F 1 "+5V_SW" H 7150 4650 50  0000 L CNN
+F 2 "" H 6550 5300 50  0001 C CNN
+F 3 "" H 6550 5300 50  0001 C CNN
+	1    7300 4500
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	6850 3400 7450 3400
+	8450 5100 8650 5100
 Wire Wire Line
-	6850 2350 6850 2450
+	8050 5100 7850 5100
+$Comp
+L power:+5V #PWR?
+U 1 1 5FE0019D
+P 6500 4500
+AR Path="/5FA56A4E/5FE0019D" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE0019D" Ref="#PWR0131"  Part="1" 
+F 0 "#PWR0131" H 6500 4350 50  0001 C CNN
+F 1 "+5V" H 6515 4673 50  0000 C CNN
+F 2 "" H 6500 4500 50  0001 C CNN
+F 3 "" H 6500 4500 50  0001 C CNN
+	1    6500 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 5FE001A3
+P 5250 4500
+AR Path="/5FA56A4E/5FE001A3" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE001A3" Ref="#PWR0132"  Part="1" 
+F 0 "#PWR0132" H 5250 4350 50  0001 C CNN
+F 1 "+12V" H 5265 4673 50  0000 C CNN
+F 2 "" H 5250 4500 50  0001 C CNN
+F 3 "" H 5250 4500 50  0001 C CNN
+	1    5250 4500
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	6850 3950 7450 3950
-Connection ~ 6850 3950
+	5450 5100 5250 5100
 Wire Wire Line
-	6850 3950 6850 3850
+	5850 5100 6050 5100
 Wire Wire Line
-	7450 3950 7450 3500
+	6700 5100 6500 5100
 Wire Wire Line
-	6850 2450 7450 2450
-Connection ~ 6850 2450
+	7100 5100 7300 5100
 Wire Wire Line
-	6850 2450 6850 2550
+	5650 5550 6900 5550
 Wire Wire Line
-	7450 2450 7450 2000
+	6900 5400 6900 5550
+Connection ~ 6900 5550
+Wire Wire Line
+	6900 5550 8250 5550
+$Comp
+L CANtech:+12V_SW #PWR?
+U 1 1 5FE001B5
+P 6050 4500
+AR Path="/5FA56A4E/5FE001B5" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE001B5" Ref="#PWR0133"  Part="1" 
+F 0 "#PWR0133" H 6050 4750 50  0001 C CNN
+F 1 "+12V_SW" H 5850 4700 50  0000 L CNN
+F 2 "" H 5300 5300 50  0001 C CNN
+F 3 "" H 5300 5300 50  0001 C CNN
+	1    6050 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 5950 3350 5950
+Connection ~ 3350 5950
+Text HLabel 9200 5550 2    50   Output ~ 0
+PWR_CTRL
+Wire Wire Line
+	8250 5550 9200 5550
+Connection ~ 8250 5550
+$Comp
+L CANtech:Header_Pin_8 J_PSW_?
+U 1 1 5FE00204
+P 2350 7100
+AR Path="/5FA56A4E/5FE00204" Ref="J_PSW_?"  Part="1" 
+AR Path="/5F8ADA45/5FE00204" Ref="J_PS_1"  Part="1" 
+F 0 "J_PS_1" V 2345 6722 50  0000 R CNN
+F 1 "Header_Pin_8" H 2350 7100 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 2350 7100 50  0001 C CNN
+F 3 "" H 2350 7100 50  0001 C CNN
+	1    2350 7100
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7850 4500 7850 5100
+Wire Wire Line
+	6500 4500 6500 5100
+Wire Wire Line
+	7300 4500 7300 5100
+Wire Wire Line
+	5250 4500 5250 5100
+Wire Wire Line
+	6050 4500 6050 5100
+Wire Wire Line
+	4450 5050 4450 4500
+$Comp
+L power:+12V #PWR?
+U 1 1 5FE001C1
+P 4450 4500
+AR Path="/5FA56A4E/5FE001C1" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE001C1" Ref="#PWR0134"  Part="1" 
+F 0 "#PWR0134" H 4450 4350 50  0001 C CNN
+F 1 "+12V" H 4465 4673 50  0000 C CNN
+F 2 "" H 4450 4500 50  0001 C CNN
+F 3 "" H 4450 4500 50  0001 C CNN
+	1    4450 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8650 4500 8650 5100
+$Comp
+L CANtech:+3.3V_SW #PWR?
+U 1 1 5FE001C7
+P 8650 4500
+AR Path="/5FA56A4E/5FE001C7" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE001C7" Ref="#PWR0135"  Part="1" 
+F 0 "#PWR0135" H 8650 4750 50  0001 C CNN
+F 1 "+3.3V_SW" H 8450 4650 50  0000 L CNN
+F 2 "" H 7900 5300 50  0001 C CNN
+F 3 "" H 7900 5300 50  0001 C CNN
+	1    8650 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 2800 4850 2800
+Wire Wire Line
+	3350 3500 3350 3900
+$Comp
+L power:+3.3V #PWR0136
+U 1 1 5FE31E35
+P 1300 6800
+F 0 "#PWR0136" H 1300 6650 50  0001 C CNN
+F 1 "+3.3V" H 1315 6973 50  0000 C CNN
+F 2 "" H 1300 6800 50  0001 C CNN
+F 3 "" H 1300 6800 50  0001 C CNN
+	1    1300 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L CANtech:+3.3V_SW #PWR?
+U 1 1 5FE3210E
+P 700 7000
+AR Path="/5FA56A4E/5FE3210E" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE3210E" Ref="#PWR0137"  Part="1" 
+F 0 "#PWR0137" H 700 7250 50  0001 C CNN
+F 1 "+3.3V_SW" H 500 7150 50  0000 L CNN
+F 2 "" H -50 7800 50  0001 C CNN
+F 3 "" H -50 7800 50  0001 C CNN
+	1    700  7000
+	1    0    0    -1  
+$EndComp
+$Comp
+L CANtech:+12V_SW #PWR?
+U 1 1 5FE3CA53
+P 1550 7300
+AR Path="/5FA56A4E/5FE3CA53" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE3CA53" Ref="#PWR0138"  Part="1" 
+F 0 "#PWR0138" H 1550 7550 50  0001 C CNN
+F 1 "+12V_SW" H 1350 7500 50  0000 L CNN
+F 2 "" H 800 8100 50  0001 C CNN
+F 3 "" H 800 8100 50  0001 C CNN
+	1    1550 7300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 5FE3CF26
+P 1950 7200
+AR Path="/5FA56A4E/5FE3CF26" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE3CF26" Ref="#PWR0139"  Part="1" 
+F 0 "#PWR0139" H 1950 7050 50  0001 C CNN
+F 1 "+12V" H 1965 7373 50  0000 C CNN
+F 2 "" H 1950 7200 50  0001 C CNN
+F 3 "" H 1950 7200 50  0001 C CNN
+	1    1950 7200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 7500 1000 7500
+Wire Wire Line
+	1250 7400 2400 7400
+Wire Wire Line
+	1000 6900 2400 6900
+Wire Wire Line
+	1950 7200 2400 7200
+$Comp
+L CANtech:+5V_SW #PWR?
+U 1 1 5FE37ACC
+P 1250 7400
+AR Path="/5FA56A4E/5FE37ACC" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE37ACC" Ref="#PWR0140"  Part="1" 
+F 0 "#PWR0140" H 1250 7650 50  0001 C CNN
+F 1 "+5V_SW" H 1100 7550 50  0000 L CNN
+F 2 "" H 500 8200 50  0001 C CNN
+F 3 "" H 500 8200 50  0001 C CNN
+	1    1250 7400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5FE36533
+P 1000 7500
+AR Path="/5FA56A4E/5FE36533" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE36533" Ref="#PWR0141"  Part="1" 
+F 0 "#PWR0141" H 1000 7350 50  0001 C CNN
+F 1 "+5V" H 1015 7673 50  0000 C CNN
+F 2 "" H 1000 7500 50  0001 C CNN
+F 3 "" H 1000 7500 50  0001 C CNN
+	1    1000 7500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 6800 1300 6800
+$Comp
+L power:GND #PWR0142
+U 1 1 5FE4C4FA
+P 1000 6900
+F 0 "#PWR0142" H 1000 6650 50  0001 C CNN
+F 1 "GND" H 1005 6727 50  0000 C CNN
+F 2 "" H 1000 6900 50  0001 C CNN
+F 3 "" H 1000 6900 50  0001 C CNN
+	1    1000 6900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3350 5950 3350 6350
+Wire Wire Line
+	2050 6700 2400 6700
+Wire Wire Line
+	2400 7300 1550 7300
+Wire Wire Line
+	700  7000 2400 7000
+Wire Wire Line
+	2050 6350 2050 6700
+Wire Wire Line
+	2050 6350 3350 6350
 $EndSCHEMATC

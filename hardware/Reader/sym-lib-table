@@ -21,7 +21,6 @@
   (lib (name ERJ-8ENF2400V)(type Legacy)(uri ${KIPRJMOD}/libraries/ERJ-8ENF2400V.lib)(options "")(descr ""))
   (lib (name ERJ-8ENF3300V)(type Legacy)(uri ${KIPRJMOD}/libraries/ERJ-8ENF3300V.lib)(options "")(descr ""))
   (lib (name ERJ-P06J514V)(type Legacy)(uri ${KIPRJMOD}/libraries/ERJ-P06J514V.lib)(options "")(descr ""))
-  (lib (name ESP32)(type Legacy)(uri ${KIPRJMOD}/libraries/ESP32.lib)(options "")(descr ""))
   (lib (name FA16C0G2A104JRU06)(type Legacy)(uri ${KIPRJMOD}/libraries/FA16C0G2A104JRU06.lib)(options "")(descr ""))
   (lib (name IRLML5103TRPBF)(type Legacy)(uri ${KIPRJMOD}/libraries/IRLML5103TRPBF.lib)(options "")(descr ""))
   (lib (name LM317LDR2G)(type Legacy)(uri ${KIPRJMOD}/libraries/LM317LDR2G.lib)(options "")(descr ""))

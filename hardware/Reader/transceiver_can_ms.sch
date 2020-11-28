@@ -5,7 +5,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 6 19
 Title "CANnect Reader | Medium Speed CAN Transceiver"
-Date "2020-11-19"
+Date "2020-11-27"
 Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"

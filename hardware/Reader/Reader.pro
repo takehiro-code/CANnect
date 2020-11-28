@@ -1,4 +1,4 @@
-update=10/28/20 09:07:35
+update=11/27/20 15:58:31
 version=1
 last_client=kicad
 [general]
@@ -33,21 +33,21 @@ AllowBlindVias=0
 RequireCourtyardDefinitions=0
 ProhibitOverlappingCourtyards=1
 MinTrackWidth=0.2
-MinViaDiameter=0.2
+MinViaDiameter=0.6
 MinViaDrill=0.3
 MinMicroViaDiameter=0.13
 MinMicroViaDrill=0.128
 MinHoleToHole=0.22
-TrackWidth1=0.22
-ViaDiameter1=0.5
+TrackWidth1=0.2
+ViaDiameter1=0.6
 ViaDrill1=0.32
 dPairWidth1=0.3
 dPairGap1=0.25
 dPairViaGap1=0.25
 SilkLineWidth=0.12
-SilkTextSizeV=1
-SilkTextSizeH=1
-SilkTextSizeThickness=0.15
+SilkTextSizeV=0.6
+SilkTextSizeH=0.6
+SilkTextSizeThickness=0.06999999999999999
 SilkTextItalic=0
 SilkTextUpright=1
 CopperLineWidth=0.2
@@ -70,11 +70,11 @@ SolderPasteClearance=0
 SolderPasteRatio=-0
 [pcbnew/Layer.F.Cu]
 Name=F.Cu
-Type=2
+Type=0
 Enabled=1
 [pcbnew/Layer.In1.Cu]
 Name=In1.Cu
-Type=2
+Type=1
 Enabled=1
 [pcbnew/Layer.In2.Cu]
 Name=In2.Cu
@@ -238,8 +238,8 @@ Enabled=0
 [pcbnew/Netclasses/Default]
 Name=Default
 Clearance=0.2
-TrackWidth=0.22
-ViaDiameter=0.5
+TrackWidth=0.2
+ViaDiameter=0.6
 ViaDrill=0.32
 uViaDiameter=0.3
 uViaDrill=0.129
@@ -250,7 +250,7 @@ dPairViaGap=0.25
 Name=Power
 Clearance=0.2
 TrackWidth=0.5
-ViaDiameter=0.5
+ViaDiameter=0.6
 ViaDrill=0.32
 uViaDiameter=0.3
 uViaDrill=0.129

@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 17 19
+Sheet 8 17
 Title "CANnect Reader | Voltage Regulator (3.3V)"
-Date "2020-11-19"
+Date "2020-11-27"
 Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
@@ -15,8 +15,6 @@ Comment4 "Component Identifier: VR2"
 $EndDescr
 Text HLabel 9750 2400 2    50   Output ~ 0
 3.3V
-Text HLabel 9750 4250 2    50   Output ~ 0
-PGood
 $Comp
 L power:GND #PWR?
 U 1 1 5FF31609
@@ -41,10 +39,6 @@ Wire Wire Line
 	6250 2900 6250 3100
 Wire Wire Line
 	4450 1850 4450 2300
-Wire Wire Line
-	4450 2600 4450 2500
-Wire Wire Line
-	4450 3400 4450 4250
 $Comp
 L Device:L L_VR?
 U 1 1 5FF3162D
@@ -65,23 +59,6 @@ $EndComp
 Wire Wire Line
 	9150 2900 9150 2400
 $Comp
-L Device:C C_VR2_BST?
-U 1 1 5FF31636
-P 3600 3450
-AR Path="/5F8ADA45/5F9EA8B0/5FF31636" Ref="C_VR2_BST?"  Part="1" 
-AR Path="/5F8ADA45/5FF30350/5FF31636" Ref="C_VR2_2"  Part="1" 
-F 0 "C_VR2_2" H 3715 3496 50  0000 L CNN
-F 1 "0.1uF" H 3715 3405 50  0000 L CNN
-F 2 "footprints:CAPC1608X90" H 3638 3300 50  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf" H 3600 3450 50  0001 C CNN
-F 4 "CC0603JRX7R8BB104" H 3600 3450 50  0001 C CNN "Part Name"
-F 5 "Yageo" H 3600 3450 50  0001 C CNN "Manufacturer"
-F 6 "DigiKey Canada" H 3600 3450 50  0001 C CNN "Vendor"
-F 7 "311-1777-1-ND" H 3600 3450 50  0001 C CNN "digikeypn"
-	1    3600 3450
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR?
 U 1 1 5FF3163C
 P 4300 3550
@@ -98,14 +75,6 @@ Wire Wire Line
 	4300 3550 4300 2900
 Wire Wire Line
 	4300 2900 4450 2900
-Wire Wire Line
-	4450 2800 3600 2800
-Wire Wire Line
-	3600 2800 3600 3300
-Wire Wire Line
-	3600 3600 3600 3800
-Wire Wire Line
-	3600 3800 3950 3800
 Wire Wire Line
 	9150 3800 9150 3200
 Wire Wire Line
@@ -186,29 +155,6 @@ Wire Wire Line
 Wire Wire Line
 	7350 3550 7350 3450
 Connection ~ 7450 3550
-$Comp
-L MAX25276ATCAVY:MAX25276ATCA_VY+ U_VR?
-U 1 1 5FF315FD
-P 4450 2300
-AR Path="/5F8ADA45/5F9EA8B0/5FF315FD" Ref="U_VR?"  Part="1" 
-AR Path="/5F8ADA45/5FF30350/5FF315FD" Ref="U_VR2"  Part="1" 
-F 0 "U_VR2" H 5250 2700 60  0000 C CNN
-F 1 "MAX25276ATCA_VY+" H 5250 2581 60  0000 C CNN
-F 2 "footprints:MAX25276ATCA&slash_VY&plus_" H 5250 2540 60  0001 C CNN
-F 3 "https://datasheets.maximintegrated.com/en/ds/MAX20075-MAX25276.pdf" H 5300 2950 60  0000 C CNN
-F 4 "MAX25276ATCA/VY+" H 4450 2300 50  0001 C CNN "Part Name"
-F 5 "Maxim Integrated" H 4450 2300 50  0001 C CNN "Manufacturer"
-F 6 "DigiKey Canada" H 4450 2300 50  0001 C CNN "Vendor"
-F 7 "175-MAX25276ATCA/VY+-ND" H 4450 2300 50  0001 C CNN "digikeypn"
-	1    4450 2300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4450 2400 4200 2400
-Wire Wire Line
-	4200 2400 4200 2250
-Wire Wire Line
-	4450 4250 9750 4250
 Wire Wire Line
 	6050 2300 7450 2300
 Wire Wire Line
@@ -282,46 +228,34 @@ F 3 "" H 3250 4700 50  0001 C CNN
 	1    3250 4700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4200 2250 4050 2250
 $Comp
 L Device:C C_VR2_in?
 U 1 1 5FF3161F
-P 3900 2250
+P 3800 2400
 AR Path="/5F8ADA45/5F9EA8B0/5FF3161F" Ref="C_VR2_in?"  Part="1" 
 AR Path="/5F8ADA45/5FF30350/5FF3161F" Ref="C_VR2_1"  Part="1" 
-F 0 "C_VR2_1" V 3648 2250 50  0000 C CNN
-F 1 "4.7uF" V 3739 2250 50  0000 C CNN
-F 2 "footprints:C1206C475K3RACAUTO" H 3938 2100 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf" H 3900 2250 50  0001 C CNN
-F 4 "C1206C475K3RACAUTO" H 3900 2250 50  0001 C CNN "Part Name"
-F 5 "Kermet" H 3900 2250 50  0001 C CNN "Manufacturer"
-F 6 "DigiKey Canada" H 3900 2250 50  0001 C CNN "Vendor"
-F 7 "399-7029-1-ND" H 3900 2250 50  0001 C CNN "digikeypn"
-	1    3900 2250
+F 0 "C_VR2_1" V 3548 2400 50  0000 C CNN
+F 1 "4.7uF" V 3639 2400 50  0000 C CNN
+F 2 "footprints:C1206C475K3RACAUTO" H 3838 2250 50  0001 C CNN
+F 3 "https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf" H 3800 2400 50  0001 C CNN
+F 4 "C1206C475K3RACAUTO" H 3800 2400 50  0001 C CNN "Part Name"
+F 5 "Kermet" H 3800 2400 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 3800 2400 50  0001 C CNN "Vendor"
+F 7 "399-7029-1-ND" H 3800 2400 50  0001 C CNN "digikeypn"
+	1    3800 2400
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	3350 2250 3750 2250
 $Comp
 L power:GND #PWR0108
 U 1 1 5F99A55F
-P 3350 2250
-F 0 "#PWR0108" H 3350 2000 50  0001 C CNN
-F 1 "GND" H 3355 2077 50  0000 C CNN
-F 2 "" H 3350 2250 50  0001 C CNN
-F 3 "" H 3350 2250 50  0001 C CNN
-	1    3350 2250
+P 2800 2400
+F 0 "#PWR0108" H 2800 2150 50  0001 C CNN
+F 1 "GND" H 2805 2227 50  0000 C CNN
+F 2 "" H 2800 2400 50  0001 C CNN
+F 3 "" H 2800 2400 50  0001 C CNN
+	1    2800 2400
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2450 3100 4450 3100
-Text HLabel 2450 3100 0    50   Input ~ 0
-Spread_Spectrum_Enable
-Wire Wire Line
-	2450 2600 4450 2600
-Text HLabel 2450 2600 0    50   Input ~ 0
-Sync_Signal
 Wire Wire Line
 	2450 1850 4450 1850
 Text HLabel 2450 1850 0    50   Input ~ 0
@@ -346,4 +280,53 @@ Wire Wire Line
 Connection ~ 9150 2400
 Wire Wire Line
 	9650 2400 9750 2400
+NoConn ~ 4450 3100
+NoConn ~ 4450 3400
+Wire Wire Line
+	3500 3600 3500 3800
+Wire Wire Line
+	3500 2800 3500 3300
+$Comp
+L Device:C C_VR2_BST?
+U 1 1 5FF31636
+P 3500 3450
+AR Path="/5F8ADA45/5F9EA8B0/5FF31636" Ref="C_VR2_BST?"  Part="1" 
+AR Path="/5F8ADA45/5FF30350/5FF31636" Ref="C_VR2_2"  Part="1" 
+F 0 "C_VR2_2" H 3615 3496 50  0000 L CNN
+F 1 "0.1uF" H 3615 3405 50  0000 L CNN
+F 2 "footprints:CAPC1608X90" H 3538 3300 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf" H 3500 3450 50  0001 C CNN
+F 4 "CC0603JRX7R8BB104" H 3500 3450 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 3500 3450 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 3500 3450 50  0001 C CNN "Vendor"
+F 7 "311-1777-1-ND" H 3500 3450 50  0001 C CNN "digikeypn"
+	1    3500 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 2800 4450 2800
+Wire Wire Line
+	3500 3800 3950 3800
+$Comp
+L MAX25276ATCAVY:MAX25276ATCA_VY+ U_VR?
+U 1 1 5FF315FD
+P 4450 2300
+AR Path="/5F8ADA45/5F9EA8B0/5FF315FD" Ref="U_VR?"  Part="1" 
+AR Path="/5F8ADA45/5FF30350/5FF315FD" Ref="U_VR2"  Part="1" 
+F 0 "U_VR2" H 5250 2700 60  0000 C CNN
+F 1 "MAX25276ATCA_VY+" H 5250 2581 60  0000 C CNN
+F 2 "footprints:MAX25276ATCA&slash_VY&plus_" H 5250 2540 60  0001 C CNN
+F 3 "https://datasheets.maximintegrated.com/en/ds/MAX20075-MAX25276.pdf" H 5300 2950 60  0001 C CNN
+F 4 "MAX25276ATCA/VY+" H 4450 2300 50  0001 C CNN "Part Name"
+F 5 "Maxim Integrated" H 4450 2300 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 4450 2300 50  0001 C CNN "Vendor"
+F 7 "175-MAX25276ATCA/VY+-ND" H 4450 2300 50  0001 C CNN "digikeypn"
+	1    4450 2300
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4450 2500
+Wire Wire Line
+	3950 2400 4450 2400
+Wire Wire Line
+	3650 2400 2800 2400
 $EndSCHEMATC

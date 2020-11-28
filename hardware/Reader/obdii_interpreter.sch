@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 3 19
+Sheet 12 17
 Title "CANnect Reader | OBD-II Interpreter"
-Date "2020-11-19"
+Date "2020-11-27"
 Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
@@ -21,16 +21,10 @@ Text HLabel 1400 4600 0    50   BiDi ~ 0
 HS_CAN_High
 Text HLabel 1400 4700 0    50   BiDi ~ 0
 HS_CAN_Low
-Text HLabel 1400 900  0    50   Input ~ 0
-SW_CAN
 Text HLabel 1400 1800 0    50   BiDi ~ 0
 J1850_BUS+
 Text HLabel 1400 1900 0    50   BiDi ~ 0
 J1850_BUS-
-Text HLabel 1400 3900 0    50   BiDi ~ 0
-MS_CAN_High
-Text HLabel 1400 4000 0    50   BiDi ~ 0
-MS_CAN_Low
 Text HLabel 1400 5950 0    50   Output ~ 0
 STN2110_TX
 $Sheet
@@ -58,17 +52,6 @@ $EndSheet
 Text HLabel 1400 6050 0    50   Input ~ 0
 STN2110_RX
 $Sheet
-S 2450 3800 1350 500 
-U 5FB34A7C
-F0 "Medium Speed CAN Transceiver" 50
-F1 "transceiver_can_ms.sch" 50
-F2 "MS_CAN_High" B L 2450 3900 50 
-F3 "MS_CAN_Low" B L 2450 4000 50 
-F4 "~PWR_CTRL~" I L 2450 4200 50 
-F5 "MS_CAN_TX" I R 3800 3900 50 
-F6 "MS_CAN_RX" O R 3800 4000 50 
-$EndSheet
-$Sheet
 S 2450 1700 1350 400 
 U 5FB3FEAD
 F0 "SAE J1850 VPW/PWM Transceiver" 50
@@ -91,27 +74,6 @@ F5 "J1850_BUS-" I L 2450 2700 50
 F6 "PWM_RX" O R 3800 2600 50 
 F7 "VPW_RX" O R 3800 2700 50 
 $EndSheet
-$Sheet
-S 2450 800  1300 500 
-U 5FBCBEA5
-F0 "Single Wire CAN Transceiver" 50
-F1 "transceiver_sw_can.sch" 50
-F2 "SW_CAN" B L 2450 900 50 
-F3 "SW_CAN_TX" I R 3750 900 50 
-F4 "SW_CAN_RX" O R 3750 1000 50 
-F5 "SW_CAN_MODE0" I R 3750 1100 50 
-F6 "SW_CAN_MODE1" I R 3750 1200 50 
-$EndSheet
-Wire Wire Line
-	3800 1800 6050 1800
-Wire Wire Line
-	7300 1900 5650 1900
-Wire Wire Line
-	3800 2000 5850 2000
-Wire Wire Line
-	3800 3250 5750 3250
-Wire Wire Line
-	7300 3350 5950 3350
 Wire Wire Line
 	1400 1800 1950 1800
 Wire Wire Line
@@ -146,10 +108,6 @@ Wire Wire Line
 Wire Wire Line
 	2450 4700 1400 4700
 Wire Wire Line
-	3800 4600 5150 4600
-Wire Wire Line
-	7300 4700 5250 4700
-Wire Wire Line
 	1400 5300 2150 5300
 Wire Wire Line
 	2450 4900 2150 4900
@@ -169,127 +127,11 @@ Wire Wire Line
 Wire Wire Line
 	4200 2500 4200 3150
 Wire Wire Line
-	4200 3150 5550 3150
-$Comp
-L CANtech:4157 J_OBD_2
-U 1 1 5FC28259
-P 5650 7500
-F 0 "J_OBD_2" V 5600 5750 50  0000 C CNN
-F 1 "4157" V 5700 5750 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical" H 5650 7500 50  0001 C CNN
-F 3 "https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf" H 5650 7500 50  0001 C CNN
-F 4 "DigiKey Canada" H 5650 7500 50  0001 C CNN "Vendor"
-F 5 "Adafruit Industries LLC" H 5650 7500 50  0001 C CNN "Manufacturer"
-F 6 "1528-2929-ND" H 5650 7500 50  0001 C CNN "digikeypn"
-F 7 "4157" H 5650 7500 50  0001 C CNN "Part Name"
-	1    5650 7500
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4150 7350 4150 4200
-Wire Wire Line
-	4150 4200 7300 4200
-Wire Wire Line
-	7300 4300 4250 4300
-Wire Wire Line
-	4250 4300 4250 7350
-Wire Wire Line
 	7300 4400 4350 4400
-Wire Wire Line
-	4350 4400 4350 7350
-Wire Wire Line
-	5150 7350 5150 4600
-Connection ~ 5150 4600
-Wire Wire Line
-	5150 4600 7300 4600
-Wire Wire Line
-	5250 7350 5250 4700
-Connection ~ 5250 4700
-Wire Wire Line
-	5250 4700 3800 4700
-Wire Wire Line
-	3800 2600 4950 2600
-Wire Wire Line
-	3800 2700 5050 2700
-Wire Wire Line
-	5550 7350 5550 3150
-Connection ~ 5550 3150
-Wire Wire Line
-	5550 3150 7300 3150
-Wire Wire Line
-	5750 3250 5750 7350
-Connection ~ 5750 3250
-Wire Wire Line
-	5750 3250 7300 3250
-Wire Wire Line
-	5950 7350 5950 3350
-Connection ~ 5950 3350
-Wire Wire Line
-	5950 3350 3800 3350
-NoConn ~ 1400 900 
-NoConn ~ 2450 900 
-NoConn ~ 3750 900 
-NoConn ~ 3750 1000
-NoConn ~ 3750 1100
-NoConn ~ 3750 1200
-NoConn ~ 3800 3900
-NoConn ~ 3800 4000
-NoConn ~ 2450 4200
-NoConn ~ 2450 4000
-NoConn ~ 2450 3900
-NoConn ~ 1400 3900
-NoConn ~ 1400 4000
-Wire Wire Line
-	4950 7350 4950 2600
-Connection ~ 4950 2600
-Wire Wire Line
-	4950 2600 7300 2600
-Wire Wire Line
-	5050 7350 5050 2700
-Connection ~ 5050 2700
-Wire Wire Line
-	5050 2700 7300 2700
-Wire Wire Line
-	5650 7350 5650 1900
-Connection ~ 5650 1900
-Wire Wire Line
-	5650 1900 3800 1900
-Wire Wire Line
-	5850 2000 5850 7350
-Connection ~ 5850 2000
-Wire Wire Line
-	5850 2000 7300 2000
-Wire Wire Line
-	6050 1800 6050 7350
-Connection ~ 6050 1800
-Wire Wire Line
-	6050 1800 7300 1800
 Wire Wire Line
 	1400 5950 7300 5950
 Wire Wire Line
 	1400 6050 7300 6050
-Wire Wire Line
-	7300 3900 5350 3900
-Wire Wire Line
-	5350 3900 5350 7350
-Wire Wire Line
-	5450 7350 5450 4000
-Wire Wire Line
-	5450 4000 7300 4000
-Wire Wire Line
-	7300 900  4550 900 
-Wire Wire Line
-	4550 900  4550 7350
-Wire Wire Line
-	4650 7350 4650 1000
-Wire Wire Line
-	4650 1000 7300 1000
-Wire Wire Line
-	2150 5300 7300 5300
-Wire Wire Line
-	4750 7350 4750 1500
-Wire Wire Line
-	4750 1500 7300 1500
 $Sheet
 S 7300 800  1800 5800
 U 5FC0631B
@@ -298,35 +140,26 @@ F1 "obdii_chip.sch" 50
 F2 "UART_TX" O L 7300 6050 50 
 F3 "UART_RX" I L 7300 5950 50 
 F4 "HS_CAN_TX" O L 7300 4700 50 
-F5 "MS_CAN_TX" O L 7300 3900 50 
-F6 "HS_CAN_RX" I L 7300 4600 50 
-F7 "MS_CAN_RX" I L 7300 4000 50 
-F8 "~OBD_ACT_LED~" O L 7300 4400 50 
-F9 "~RESET_HW~" O L 7300 6400 50 
-F10 "~HOST_ACT_LED~" O L 7300 4300 50 
-F11 "STATUS_LED" O L 7300 4200 50 
-F12 "RESET_SW" I L 7300 6300 50 
-F13 "ANALOG_IN" I L 7300 6500 50 
-F14 "~ISO_RX~" I L 7300 3150 50 
-F15 "~VPW_RX~" I L 7300 2700 50 
-F16 "~SLEEP~" I L 7300 5850 50 
-F17 "PWM_RX" I L 7300 2600 50 
-F18 "J1850_BUS+_TX" O L 7300 1900 50 
-F19 "~J1850_BUS+_VH~" O L 7300 1800 50 
-F20 "J1850_BUS-_TX" O L 7300 2000 50 
-F21 "~PWR_CTRL~" O L 7300 5300 50 
-F22 "~ISO_L_TX~" O L 7300 3350 50 
-F23 "~ISO_K_TX~" O L 7300 3250 50 
-F24 "SW_CAN_RX" I L 7300 1000 50 
-F25 "SW_CAN_TX" O L 7300 900 50 
-F26 "SW_CAN_MODE1" O L 7300 1200 50 
-F27 "SW_CAN_LOAD" O L 7300 1500 50 
-F28 "SW_CAN_MODE0" O L 7300 1100 50 
+F5 "HS_CAN_RX" I L 7300 4600 50 
+F6 "~OBD_ACT_LED~" O L 7300 4400 50 
+F7 "~RESET_HW~" O L 7300 6400 50 
+F8 "~HOST_ACT_LED~" O L 7300 4300 50 
+F9 "STATUS_LED" O L 7300 4200 50 
+F10 "RESET_SW" I L 7300 6300 50 
+F11 "ANALOG_IN" I L 7300 6500 50 
+F12 "~ISO_RX~" I L 7300 3150 50 
+F13 "~VPW_RX~" I L 7300 2700 50 
+F14 "~SLEEP~" I L 7300 5850 50 
+F15 "PWM_RX" I L 7300 2600 50 
+F16 "J1850_BUS+_TX" O L 7300 1900 50 
+F17 "~J1850_BUS+_VH~" O L 7300 1800 50 
+F18 "J1850_BUS-_TX" O L 7300 2000 50 
+F19 "~PWR_CTRL~" O L 7300 5300 50 
+F20 "~ISO_L_TX~" O L 7300 3350 50 
+F21 "~ISO_K_TX~" O L 7300 3250 50 
 $EndSheet
 Wire Wire Line
-	1400 6400 2750 6400
-Wire Wire Line
-	1400 6500 7300 6500
+	1400 6500 4750 6500
 Text HLabel 1400 6400 0    50   Output ~ 0
 ~RESET_OBD_HW~
 Text HLabel 1400 6300 0    50   Output ~ 0
@@ -334,40 +167,108 @@ RESET_OBD_SW
 Text HLabel 1400 6500 0    50   Input ~ 0
 Analog_Voltage
 Wire Wire Line
-	1400 6300 2850 6300
+	3800 4600 7300 4600
 Wire Wire Line
-	4450 7350 4450 1100
+	3800 4700 7300 4700
 Wire Wire Line
-	4450 1100 7300 1100
+	4200 3150 7300 3150
 Wire Wire Line
-	1400 5850 7300 5850
+	3800 3250 7300 3250
 Wire Wire Line
-	4850 7350 4850 1200
+	3800 3350 7300 3350
 Wire Wire Line
-	4850 1200 7300 1200
+	3800 2600 7300 2600
+Wire Wire Line
+	3800 2700 7300 2700
+Wire Wire Line
+	3800 1900 7300 1900
+Wire Wire Line
+	3800 2000 7300 2000
+Wire Wire Line
+	3800 1800 7300 1800
 $Comp
-L 1546931-2:1546931-2 J_OBD_1
-U 1 1 5FCDB51D
-P 2750 7450
-F 0 "J_OBD_1" V 2597 7680 50  0000 L CNN
-F 1 "1546931-2" V 2688 7680 50  0000 L CNN
-F 2 "footprints:1546931-2" H 2750 7450 50  0001 L BNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773458-1_EURO_STYLE_QRG&DocType=DS&DocLang=English" H 2750 7450 50  0001 L BNN
-F 4 "1546931-2" H 2750 7450 50  0001 C CNN "Part Name"
-F 5 "TE Connectivity AMP Connectors" H 2750 7450 50  0001 C CNN "Manufacturer"
-F 6 "Digikey Canada" H 2750 7450 50  0001 C CNN "Vendor"
-F 7 "A97965-ND" H 2750 7450 50  0001 C CNN "digikeypn"
-	1    2750 7450
-	0    1    1    0   
+L CANtech:Header_Pin_4 J_OBD_2
+U 1 1 5FCDCC00
+P 5450 6750
+F 0 "J_OBD_2" H 5728 6558 50  0000 L CNN
+F 1 "Header_Pin_4" H 5450 6750 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 5450 6750 50  0001 C CNN
+F 3 "" H 5450 6750 50  0001 C CNN
+	1    5450 6750
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2750 7050 2750 6400
-Connection ~ 2750 6400
+	5250 6800 5250 5300
 Wire Wire Line
-	2750 6400 7300 6400
+	5350 6800 5350 5850
 Wire Wire Line
-	2850 7050 2850 6300
-Connection ~ 2850 6300
+	5550 6800 5550 6300
 Wire Wire Line
-	2850 6300 7300 6300
+	5650 6400 5650 6800
+Connection ~ 5250 5300
+Wire Wire Line
+	5250 5300 7300 5300
+Connection ~ 5350 5850
+Wire Wire Line
+	5350 5850 7300 5850
+Connection ~ 5550 6300
+Wire Wire Line
+	5550 6300 7300 6300
+Connection ~ 5650 6400
+Wire Wire Line
+	5650 6400 7300 6400
+Wire Wire Line
+	1400 5850 5350 5850
+Wire Wire Line
+	2150 5300 5250 5300
+Wire Wire Line
+	1400 6300 5550 6300
+Wire Wire Line
+	1400 6400 5650 6400
+Wire Wire Line
+	4450 4200 7300 4200
+Wire Wire Line
+	4650 4300 7300 4300
+Wire Wire Line
+	4650 4300 4650 6800
+Wire Wire Line
+	4450 6800 4450 4200
+Wire Wire Line
+	4350 6800 4350 4400
+$Comp
+L CANtech:Header_Pin_4 J_OBD_1
+U 1 1 5FCEC5FD
+P 4550 6750
+F 0 "J_OBD_1" H 4828 6558 50  0000 L CNN
+F 1 "Header_Pin_4" H 4550 6750 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 4550 6750 50  0001 C CNN
+F 3 "" H 4550 6750 50  0001 C CNN
+	1    4550 6750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 6800 4750 6500
+Connection ~ 4750 6500
+Wire Wire Line
+	4750 6500 7300 6500
+Wire Notes Line
+	2450 750  2450 1250
+Wire Notes Line
+	2450 1250 3800 1250
+Wire Notes Line
+	3800 1250 3800 750 
+Wire Notes Line
+	3800 750  2450 750 
+Text Notes 2550 900  0    50   ~ 0
+SW CAN Transceiver removed
+Wire Notes Line
+	2450 3750 2450 4250
+Wire Notes Line
+	2450 4250 3800 4250
+Wire Notes Line
+	3800 4250 3800 3750
+Wire Notes Line
+	3800 3750 2450 3750
+Text Notes 2550 3900 0    50   ~ 0
+MS CAN Transceiver removed
 $EndSCHEMATC

@@ -1,0 +1,70 @@
+Component,Description,Part,References,Value,Footprint,Quantity Per PCB,Datasheet,Vendor,Part Name,digikeypn,Manufacturer,Comments,Field4,Field6,Field5
+1,Unpolarized capacitor,C,C_STN_2 C_STN_3,30pF,CAPC1608X90N,2,https://content.kemet.com/datasheets/KEM_C1007_X8R_ULTRA_150C_SMD.pdf,DigiKey Canada,C0603C300J5GACTU,399-9057-1-ND,Kermet,,,,
+2,Unpolarized capacitor,C,C_HSCAN_1 C_HSCAN_2,560pF,CAPC1608X90,2,https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf,DigiKey Canada,CC0603KRX7R9BB561,311-1079-1-ND,Yageo,,,,
+3,Unpolarized capacitor,C,C_ESP_1 C_ESP_2 C_J1850_1 C_VR1_2 C_VR2_2 C_VS_1,0.1uF,CAPC1608X90,6,https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf,DigiKey Canada,CC0603JRX7R8BB104,311-1777-1-ND,Yageo,,,,
+4,Unpolarized capacitor,C,C_IMU_1 C_IMU_2 C_IMU_3,100nF,CAPC1608X90N,3,https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf,DigiKey Canada,C1608X7R2A103K080AA,445-1304-1-ND,TDK Corporation,,,,
+5,Unpolarized capacitor,C,C_HSCAN_3 C_STN_1 C_STN_4 C_STN_5 C_VR1_3 C_VR2_3,1uF,0603,6,https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf,DigiKey Canada,C0603C105K4RACTU,399-7847-1-ND,Kermet,,,,
+6,Unpolarized capacitor,C,C_PS_1 C_PS_2 C_PS_3 C_VR1_1 C_VR2_1,4.7uF,C1206C475K3RACAUTO,5,https://api.kemet.com/component-edge/download/specsheet/C1206C475K3RACAUTO.pdf,DigiKey Canada,C1206C475K3RACAUTO,399-7029-1-ND,Kermet,,,,
+7,Polarized capacitor,CP,CP_ESP_1,100uF,UCB0J101MCL1GS,1,https://www.nichicon.co.jp/english/products/pdfs/e-ucb.pdf,DigiKey Canada,UCB0J101MCL1GS,493-9357-1-ND,Nichicon,,,,
+8,Polarized capacitor,CP,CP_STN_1,10uF,CP_Elec_4x5.8,1,https://industrial.panasonic.com/ww/products/capacitors/aluminum-capacitors/aluminum-cap-smd/models/EEEFP1E100AR,DigiKey Canada,EEEFP1E100AR,PCE4539CT-ND,Panasonic Electronic Components,ESR<1,,,
+9,"100V 0.15A Small Signal Schottky Diode, DO-35",BAT46,D_J1850_1 D_J1850_2 D_J1850_3 D_VS_1 D_VS_2,BAT46JFILM,BAT46JFILM,5,https://www.st.com/content/ccc/resource/technical/document/datasheet/c6/32/d4/4a/28/d3/4b/11/CD00004930.pdf/files/CD00004930.pdf/jcr:content/translations/en.CD00004930.pdf,DigiKey Canada,BAT46JFILM,497-6653-1-ND,STMicroelectronics,,,,
+10,,BAT46,D_VR1_1 D_VR2_1,BAT46JFILM,BAT46JFILM,2,https://www.st.com/content/ccc/resource/technical/document/datasheet/c6/32/d4/4a/28/d3/4b/11/CD00004930.pdf/files/CD00004930.pdf/jcr:content/translations/en.CD00004930.pdf,DigiKey Canada,BAT46JFILM,497-6653-1-ND,STMicroelectronics,,,,
+11,,MMBZ27VALT3G,D_ESD_4 D_ESD_5,MMBZ27VALT3G,SOT95P237X111-3N,2,https://www.onsemi.com/pub/Collateral/MMBZ5V6ALT1-D.PDF,DigiKey Canada,MMBZ27VALT3G,MMBZ27VALT3GOSCT-ND,ON Semiconductor,,20,ON Semiconductor,IPC-7351B
+12,,MMBZ27VCLFHT116,D_ESD_3,MMBZ27VCLFHT116,MMBZ27VCLFHT116,1,http://rohmfs.rohm.com/en/products/databook/datasheet/discrete/diode/zener/mmbz27vclfht116-e.pdf,DigiKey Canada,MMBZ27VCLFHT116,MMBZ27VCLFHT116CT-ND,Rohm Semiconductor,,,,
+13,,"PESD2CAN,215",D_ESD_1 D_ESD_2,"PESD2CAN,215",SOT95P230X110-3N,2,https://assets.nexperia.com/documents/data-sheet/PESD2CAN.pdf,DigiKey Canada,"PESD2CAN,215",1727-3891-1-ND,Nexperia USA Inc.,,,,
+14,,4157,J_CN_1 J_ESP_1 J_ESP_2,4157,PinSocket_1x20_P2.54mm_Vertical,3,https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf,DigiKey Canada,4157,1528-2929-ND,Adafruit Industries LLC,,,,
+15,,Header_Pin_2,J_STN_1 J_STN_2 J_STN_4 J_STN_5 J_STN_6,Header_Pin_2,PinHeader_1x02_P2.54mm_Vertical,5,,,,,,,,,
+16,,Header_Pin_4,J_OBD_1 J_OBD_2,Header_Pin_4,PinHeader_1x04_P2.54mm_Vertical,2,,,,,,,,,
+17,,Header_Pin_8,J_ESP_3 J_PS_1,Header_Pin_8,PinHeader_1x08_P2.54mm_Vertical,2,,,,,,,,,
+18,Inductor,L,L_VR1 L_VR2,4.7uH,CV201210-4R7K,2,https://www.bourns.com/docs/Product-Datasheets/CV201210.pdf,DigiKey Canada,CV201210-4R7K,CV201210-4R7KCT-ND,Bourns Inc.,,,,
+19,Light emitting diode,LED,LED_STN_3,Host Activity,LED_0603_1608Metric,1,https://www.we-online.de/katalog/datasheet/150060VS75000.pdf,DigiKey Canada,150060VS75000,732-4980-1-ND,Würth Elektronik,,,,
+20,Light emitting diode,LED,LED_ESP_1,LED,LED_0603_1608Metric,1,https://www.we-online.de/katalog/datasheet/150060VS75000.pdf,DigiKey Canada,150060VS75000,732-4980-1-ND,Würth Elektronik,,,,
+21,Light emitting diode,LED,LED_STN_2,OBD Activity,LED_0603_1608Metric,1,https://katalog.we-online.de/led/datasheet/150060YS75000.pdf,DigiKey Canada,150060YS75000,732-4981-1-ND,Würth Elektronik,,,,
+22,Light emitting diode,LED,LED_STN_1,Status,LED_0603_1608Metric,1,https://katalog.we-online.de/led/datasheet/150060RS75000.pdf,DigiKey Canada,150060RS75000,732-4978-1-ND,Würth Elektronik,,,,
+23,,IRLML5103TRPBF,Q_ISO_1 Q_ISO_2,IRLML5103TRPBF,IRLML5103TRPBF,2,https://www.infineon.com/dgdl/irlml5103pbf.pdf?fileId=5546d462533600a401535668505d2617,DigiKey Canada,IRLML5103TRPBF,IRLML5103PBFCT-ND,Infineon Technologies,,,,
+24,"0.2A Ic, 40V Vce, Small Signal NPN Transistor, SOT-23",MMBT3904,Q_ISO_3 Q_ISO_4,MMBT3904WT1G,SOT-23,2,https://www.onsemi.com/pub/Collateral/MMBT3904WT1-D.PDF,DigiKey Canada,MMBT3904WT1G,MMBT3904WT1GOSCT-ND,ON Semiconductor,,,,
+25,,"NX7002AK,215",Q_HSCAN_1 Q_J1850_1 Q_J1850_2 Q_J1850_4 Q_PS_1,"NX7002AK,215",SOT95P230X110-3N,5,https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf,DigiKey Canada,"NX7002AK,215",1727-1289-1-ND,Nexperia USA Inc.,,Nexperia,IPC-7351B,7
+26,,IRLML5103TRPBF,Q_PS_2 Q_PS_3 Q_PS_4,"NX7002AK,215",SOT95P230X110-3N,3,https://assets.nexperia.com/documents/data-sheet/NX7002AK.pdf,DigiKey Canada,"NX7002AK,215",1727-1289-1-ND,Nexperia USA Inc.,,,,
+27,,RSC002P03T316,Q_J1850_3,RSC002P03T316,RSC002P03T316,1,http://rohmfs.rohm.com/en/products/databook/datasheet/discrete/transistor/mosfet/rsc002p03-e.pdf,DigiKey Canada,RSC002P03T316,RSC002P03T316CT-ND,Rohm Semiconductor,,,,
+28,Resistor,R,R_STN_11,10,RESC1608X55N,1,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RE_105_RoHS_L_6.pdf,DigiKey Canada,RE0603FRE0710RL,13-RE0603FRE0710RLCT-ND,Yageo,,,,
+29,"Resistor, small symbol",R_Small,R_HSCAN_2 R_HSCAN_3,100,RESC3216X70N,2,https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf,DigiKey Canada,ERJ-8ENF1000V,P100FCT-ND,Panasonic Electronic Components,,,,
+30,"Resistor, small symbol",R_Small,R_J1850_6,240,RESC3216X70N,1,https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf,DigiKey Canada,ERJ-8ENF2400V,P240FCT-ND,Panasonic Electronic Components,,,,
+31,"Resistor, small symbol",R_Small,R_STN_1 R_STN_2 R_STN_3,330,RESC3216X70N,3,https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf,DigiKey Canada,ERJ-8ENF3300V,P330FCT-ND,Panasonic Electronic Components,,,,
+32,"Resistor, small symbol",R_Small,R_J1850_4,374,RESC3216X70N,1,https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf,DigiKey Canada,ERJ-8ENF3740V,P374FCT-ND,Panasonic Electronic Components,,,,
+33,"Resistor, small symbol",R_Small,R_ESP_2 R_ESP_3 R_ESP_5,500,RESC1508X55N,3,https://www.vishay.com/docs/28916/mcxhp.pdf,DigiKey Canada,MCT0603PD4990DP500,749-1523-1-ND,Vishay,,,,
+34,"Resistor, small symbol",R_Small,R_J1850_3,866,RESC3216X70N,1,https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf,DigiKey Canada,ERJ-8ENF8660V,P866FCT-ND,Panasonic Electronic Components,,,,
+35,"Resistor, small symbol",R_Small,R_ISO_1 R_ISO_2 R_STN_4,1k,RC1608F102CS,3,https://media.digikey.com/pdf/Data%20Sheets/Samsung%20PDFs/RC_Series_ds.pdf,DigiKey Canada,RC1608F102CS,1276-3484-1-ND,Samsung Electro-Mechanics,,,,
+36,"Resistor, small symbol",R_Small,R_J1850_2 R_STN_7 R_STN_8,1.5k,RESC1607X60N,3,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RC_Group_51_RoHS_L_11.pdf,DigiKey Canada,RC0603FR-071K5L,311-1.50KHRCT-ND,Yageo,,,,
+37,"Resistor, small symbol",R_Small,R_COMP_7,2.7k,RESC1608X55N,1,https://www.vishay.com/docs/28773/crcwce3.pdf,DigiKey Canada,CRCW06032K70FKEAC,541-5328-1-ND,Vishay Dale,,,,
+38,"Resistor, small symbol",R_Small,R_IMU_1 R_IMU_2,4.7k,RESC1608X55N,2,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf,DigiKey Canada,RT0603DRD074K7L,311-4.7KDCT-ND,Yageo,,,,
+39,"Resistor, small symbol",R_Small,R_COMP1 R_COMP_1 R_COMP_2 R_COMP_3 R_COMP_4 R_COMP_5 R_COMP_6 R_COMP_8 R_COMP_9 R_COMP_10 R_ESP_1 R_ESP_4 R_J1850_1 R_J1850_5 R_J1850_7 R_J1850_8 R_STN_10 R_VS_2,10k,RESC1608X55N,18,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf,DigiKey Canada,RT0603FRE0710KL,YAG2321CT-ND,Yageo,,,,
+40,"Resistor, small symbol",R_Small,R_VS_1,62k,RESC2012X60N,1,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf,DigiKey Canada,RT0805FRE0762KL,13-RT0805FRE0762KLCT-ND,Yageo,,,,
+41,"Resistor, small symbol",R_Small,R_HSCAN_1 R_PS_1 R_PS_2 R_STN_5 R_STN_6 R_STN_9 R_STN_12 R_VR2_1 R_VR2_2,100k,RESC1608X55N,9,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf,DigiKey Canada,RT0603DRE07100KL,311-2395-1-ND,Yageo,,,,
+42,"Resistor, small symbol",R_Small,R_VR2_3,115k,RESC1608X55N,1,https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf,DigiKey Canada,RT0402DRE07115KL,311-2218-1-ND,Yageo,,,,
+43,"Resistor, small symbol",R_Small,R_ISO_3 R_ISO_4,510k,RESC2012X50N,2,https://www.susumu.co.jp/common/pdf/n_catalog_partition05_en.pdf,DigiKey Canada,RR1220P-514-D,RR12P510KDCT-ND,Susumu,,,,
+44,,PTS647SK38SMTR2LFS,SW_ESP_1 SW_ESP_2 SW_STN_1,PTS647SK38SMTR2LFS,PTS647SK38SMTR2LFS,3,https://www.ckswitches.com/media/2567/pts647.pdf,DigiKey Canada,PTS 647 SK38 SMTR2 LFS,PTS647SK38SMTR2LFSCT-ND,C&K,,,,
+45,,AHDF15A-KG-TAXB,U_CN_1,AHDF15A-KG-TAXB,AHDF15A-KG-TAXB,1,http://www.assmann-wsw.com/fileadmin/datasheets/AHDxxxA-KG-TAxB.pdf,DigiKey Canada,AHDF15A-KG-TAXB,AE11024-ND,Assmann WSW Components,,,,
+46,"RF Module, ESP32-D0WD SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 2.7-3.6V, onboard antenna, SMD",ESP32-WROOM-32D,U_ESP_1,ESP32-WROOM-32D,CANtech-ESP32-WROOM-32,1,https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf,DigiKey Canada,USB4110-GF-A,1965-ESP32-WROOM-32D(4MB)CT-ND,Espressif Systems,,,,
+47,,LM317LDR2G,U_J1850_1,LM317LDR2G,SOIC127P600X175-8N,1,https://www.onsemi.com/pub/Collateral/LM317L-D.PDF,DigiKey Canada,LM317LDR2G,LM317LDR2GOSCT-ND,ON Semiconductor,,,,
+48,,LM339N_NOPB,U_COMP_1,LM339N_NOPB,LM339N&slash_NOPB,1,https://www.ti.com/lit/ds/symlink/lm339-n.pdf?ts=1603731355059,DigiKey Canada,LM339N_NOPB,296-39010-5-ND,Texas Instruments,,,,
+49,,LSM6DSMTR,U_IMU_1,LSM6DSMTR,PQFN50P300X250X86-14N,1,https://www.st.com/content/ccc/resource/technical/document/datasheet/76/27/cf/88/c5/03/42/6b/DM00218116.pdf/files/DM00218116.pdf/jcr:content/translations/en.DM00218116.pdf,DigiKey Canada,LSM6DSMTR,497-16696-1-ND,STMicroelectronics,,0.86 mm,IPC 7351B,Rev 7
+50,,MAX25276ATCA_VY+,U_VR1 U_VR2,MAX25276ATCA_VY+,MAX25276ATCA&slash_VY&plus_,2,https://datasheets.maximintegrated.com/en/ds/MAX20075-MAX25276.pdf,DigiKey Canada,MAX25276ATCA/VY+,175-MAX25276ATCA/VY+-ND,Maxim Integrated,,,,
+51,,MCP2562-H_MF,U_HSCAN_1,MCP2562-H_MF,MCP2562-H&slash_MF,1,https://ww1.microchip.com/downloads/en/DeviceDoc/20005167C.pdf,DigiKey Canada,MCP2562-H_MF,MCP2562-H/MF-ND,Microchip Technology,,,,
+52,OBDII-to-UART Interpreter,STN2120,U_STN_1,STN2120,CANtech-STN2120-QFN-44-1EP_8x8mm,1,https://www.scantool.net/scantool/downloads/206/stn21xx_ds_c.pdf,OBD Solutions,STN2120,,OBD Solutions,,,,
+53,,ECS-2033-160-AU,Y_STN_1,ECS-2033-160-AU (16MHz),OSC_ECS-2033-160-AU,1,https://ecsxtal.com/store/pdf/ecs-2025-2033.pdf,DigiKey Canada,ECS-2033-160-AU (16MHz),XC1858CT-ND,ECS Inc.,,11/15/13,,Manufacturer Recommendations
+
+
+
+
+
+Component Groups:,53
+Component Count:,134
+Fitted Components:,134
+Number of PCBs:,1
+Total components:,134
+Schematic Version:,0.0.05
+Schematic Date:,2020-11-27
+PCB Variant:,[u'default']
+BoM Date:,11/27/20 13:25:19
+Schematic Source:,Reader.sch
+KiCad Version:,Eeschema (5.1.7)-1
