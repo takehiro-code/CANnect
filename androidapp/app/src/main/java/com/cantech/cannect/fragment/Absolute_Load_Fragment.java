@@ -159,7 +159,7 @@ public class Absolute_Load_Fragment extends Fragment {
                         AbsLoad.setText(parsed[1]);
                         break;
                     default:
-                        mCallback.sendAbsoluteLoadPID("ABSLOAD_PID");
+                        mCallback.sendAbsoluteLoadPID("43");
                         break;
                 }
             }catch (Exception e){

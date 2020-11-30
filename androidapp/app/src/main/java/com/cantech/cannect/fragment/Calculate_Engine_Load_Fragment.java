@@ -159,7 +159,7 @@ public class Calculate_Engine_Load_Fragment extends Fragment {
                         calEngineLoad.setText(parsed[1]);
                         break;
                     default:
-                        mCallback.sendCalculatedEngineLoadPID("CALENGINELOAD_PID");
+                        //mCallback.sendCalculatedEngineLoadPID("04");
                         break;
                 }
             }catch (Exception e){

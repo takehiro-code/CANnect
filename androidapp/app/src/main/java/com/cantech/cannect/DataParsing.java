@@ -32,7 +32,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.app.ActivityCompat;
 
-
+//sample input: 7E8 03 41 10 47 AA AA AA255255
 public class DataParsing extends AppCompatActivity{
     private static final String FUEL_STATUS = "03";
     private static final String ENGINE_COOLANT_TEMP = "05";
@@ -47,6 +47,7 @@ public class DataParsing extends AppCompatActivity{
     private static final String ABS_LOAD_VALUE = "43";
     private static final String DEMAND_ENGINE_TORQUE = "61";
     private static final String ACTUAL_ENGINE_TORQUE = "62";
+    private static final String AMBIENT_AIR_TEMP = "46";
 
     public static final String FUEL_STATUS_STRING = "FUEL STATUS";
     public static final String ENGINE_COOLANT_TEMP_STRING = "ENGINE COOLANT TEMP";
@@ -61,6 +62,7 @@ public class DataParsing extends AppCompatActivity{
     public static final String ABS_LOAD_VALUE_STRING = "ABSOLUTE LOAD VALUE";
     public static final String DEMAND_ENGINE_TORQUE_STRING = "DEMAND ENGINE TORQUE";
     public static final String ACTUAL_ENGINE_TORQUE_STRING = "ACTUAL ENGINE TORQUE";
+    public static final String AMBIENT_AIR_TEMP_STRING = "AMBIENT AIR TEMP";
 
     public static final String PID_CURRENT_DATA = "41";
     public static final String PID_FREEZE_DATA = "42";
@@ -107,6 +109,7 @@ public class DataParsing extends AppCompatActivity{
     private static String[] convertOBD2PIDToUserFormat(String[] splitobd2msg)
     {
         String[] result = {"",""};
+        float x = 0;
         float convertA = (float) (Integer.parseInt(splitobd2msg[4], 16));
         float convertB = (float) (Integer.parseInt(splitobd2msg[5], 16));
         switch(splitobd2msg[3])
@@ -139,7 +142,8 @@ public class DataParsing extends AppCompatActivity{
                 break;
             case THROTTLE:
                 result[0] = THROTTLE_STRING;
-                result[1] = Float.toString(convertA * (100.0000f/256.000f));
+                x = (convertA * (100.0000f/256.000f));
+                result[1] = Integer.toString((int) x);
                 break;
             case O2_VOLTAGE:
                 result[0] = O2_VOLTAGE_STRING;
@@ -151,22 +155,28 @@ public class DataParsing extends AppCompatActivity{
                 break;
             case CAL_ENGINE_LOAD:
                 result[0] = CAL_ENGINE_LOAD_STRING;
-                result[1] = Float.toString((convertA*100)/255.000f);
+                x = ((convertA*100)/255.000f);
+                result[1] = Integer.toString((int) x);
                 break;
             case ABS_LOAD_VALUE:
                 result[0] = ABS_LOAD_VALUE_STRING;
-                result[1] = Float.toString((100/255.000f)*(256*convertA + convertB));
+                x = ((100/255.000f)*(256*convertA + convertB));
+                result[1] = Integer.toString((int) x);
                 break;
             case DEMAND_ENGINE_TORQUE:
                 result[0] = DEMAND_ENGINE_TORQUE_STRING;
-                result[1] = Float.toString(convertA - 125);
+                x = (convertA - 125);
+                result[1] = Integer.toString((int) x);
                 break;
-
             case ACTUAL_ENGINE_TORQUE:
                 result[0] = ACTUAL_ENGINE_TORQUE_STRING;
-                result[1] = Float.toString(convertA - 125);
+                x = (convertA - 125);
+                result[1] = Integer.toString((int) x);
                 break;
-
+            case AMBIENT_AIR_TEMP:
+                result[0] = AMBIENT_AIR_TEMP_STRING;
+                result[1] = Float.toString(convertA - 40);
+                break;
             default:
                 result[0] = "UNDEFINED: " + splitobd2msg[3];
                 result[1] = "UNDEFINED: " + splitobd2msg[4] + " " + splitobd2msg[5] + " " + splitobd2msg[6] + " " + splitobd2msg[7];

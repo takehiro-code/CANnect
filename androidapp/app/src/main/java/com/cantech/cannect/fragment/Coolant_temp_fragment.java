@@ -167,7 +167,7 @@ public class Coolant_temp_fragment extends Fragment {
                         coolantTemp.speedTo(Float.parseFloat(parsed[1]));
                         break;
                     default:
-                        mCallback.sendCoolantTempPID("COOLANTTEMP_PID");
+                        //mCallback.sendCoolantTempPID("05");
                         break;
                 }
             }catch (Exception e){

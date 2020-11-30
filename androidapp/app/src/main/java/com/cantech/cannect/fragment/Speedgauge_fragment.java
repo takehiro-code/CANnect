@@ -172,10 +172,10 @@ public class Speedgauge_fragment extends Fragment {
                 switch (parsed[0]) {
                     case "VEHICLE SPEED":
                         //changing string to float
-                        carSpeed.speedTo(Float.parseFloat(parsed[1]), 0);
+                        carSpeed.speedTo(Float.parseFloat(parsed[1]), 1000);
                         break;
                     default:
-                        mCallback.sendSpeedPID("SPEED_PID");
+                        //mCallback.sendSpeedPID("0D");
                         break;
                 }
             }catch (Exception e){

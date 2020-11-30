@@ -166,7 +166,7 @@ public class Fuel_fragment extends Fragment {
                         break;
 
                     default:
-                        mCallback.sendFuelLevelPID("FUELLEVEL_PID");
+                        //mCallback.sendFuelLevelPID("2F");
                         break;
                 }
             }catch (Exception e){

@@ -169,7 +169,7 @@ public class RPMgauge_fragment extends Fragment {
                         engineRPM.speedTo(Float.parseFloat(parsed[1]) / 1000.00f);
                         break;
                     default:
-                        mCallback.sendRPMPID("RPM_PID");
+                        //mCallback.sendRPMPID("0C");
                         break;
                 }
             } catch (Exception e) {

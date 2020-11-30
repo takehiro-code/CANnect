@@ -4,12 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,6 +70,9 @@ public class CarBrand extends AppCompatActivity {
                 Intent intent;
                 if (i == 0){
                     //Toast.makeText(CarBrand.this, "Standardized pids", Toast.LENGTH_SHORT).show();
+//                    Intent sendingMessageIntent = new Intent("sendingMessage");
+//                    sendingMessageIntent.putExtra("theMessage", "stp 35 >");
+//                    LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
                     createNewPidListDialog(i);
                 }
                 if (i == 1){
@@ -76,10 +81,16 @@ public class CarBrand extends AppCompatActivity {
                 }
                 if (i == 2){
                     //Toast.makeText(CarBrand.this, "SAE J1850 PWM pids", Toast.LENGTH_SHORT).show();
+//                    Intent sendingMessageIntent = new Intent("sendingMessage");
+//                    sendingMessageIntent.putExtra("theMessage", "stp 11 >");
+//                    LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
                     createNewPidListDialog(i);
                 }
                 if (i == 3){
                     //Toast.makeText(CarBrand.this, "ISO 9141-2 pids", Toast.LENGTH_SHORT).show();
+//                    Intent sendingMessageIntent = new Intent("sendingMessage");
+//                    sendingMessageIntent.putExtra("theMessage", "stp 22 >");
+//                    LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
                     createNewPidListDialog(i);
                 }
                 if (i == 4){
@@ -88,6 +99,9 @@ public class CarBrand extends AppCompatActivity {
                 }
                 if (i == 5){
                     //Toast.makeText(CarBrand.this, "ISO 15765-4/SAE J2480 (CAN)", Toast.LENGTH_SHORT).show();
+                    Intent sendingMessageIntent = new Intent("sendingMessage");
+                    sendingMessageIntent.putExtra("theMessage", "stp 35 >");
+                    LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
                     createNewPidListDialog(i);
                 }
             }
@@ -127,8 +141,9 @@ public class CarBrand extends AppCompatActivity {
         String[] pids={};
         boolean[] checkedItems={};
         if (i==0){
-            pids = new String[]{"FUEL STATUS", "ENGINE COOLANT TEMP", "FUEL PRESSURE", "ENGINE RPM", "VEHICLE SPEED", "MAF SENSOR", "THROTTLE", "O2 VOLTAGE","Oxygen Sensor 1","Oxygen Sensor 2","Ethanol fuel %","Mass air flow sensor","Fuel Type","Engine reference torque"};
-            checkedItems = new boolean[]{false, false, false, false, false, false, false, false, false, false, false, false, false, false };
+            pids = new String[]{"ENGINE COOLANT TEMP", "FUEL PRESSURE", "ENGINE RPM", "VEHICLE SPEED", "MAF SENSOR", "THROTTLE", "O2 VOLTAGE","Fuel Type", "Fuel Level", "Driver Demand Engine Torque"
+                                ,"Actual Engine Torque", "Calculated Engine Load", "Absolute Engine Load", "Ambient Air Temperature"};
+            checkedItems = new boolean[]{ false, false, false, false, false, false, false, false, false, false, false, false, false, false};
         }
         if (i==1){
             pids = new String[]{"FUEL STATUS", "ENGINE COOLANT TEMP", "FUEL PRESSURE", "ENGINE RPM", "VEHICLE SPEED", "MAF SENSOR", "THROTTLE", "O2 VOLTAGE", "SENSORA", "SENSORB"};
@@ -166,8 +181,9 @@ public class CarBrand extends AppCompatActivity {
                         finalCheckedItems[which] = true;
                     }
                     if (pid_counter>5){
-                        //Toast.makeText(CarBrand.this, "You can not choose more than 5 items, the last item you chose will not be selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CarBrand.this, "You can not choose more than 5 items, the last item you chose will not be selected", Toast.LENGTH_SHORT).show();
                         pid_counter--;
+                        finalCheckedItems[which] = false;
                     }
                 }else{
                     finalCheckedItems[which] = false;

@@ -159,7 +159,7 @@ public class Demand_Engine_Torque_Fragment extends Fragment {
                         demandETorque.setText(parsed[1]);
                         break;
                     default:
-                        mCallback.sendDemandETorquePID("DEMANDENGINETORQUE_PID");
+                        //mCallback.sendDemandETorquePID("11");
                         break;
                 }
             }catch (Exception e){
