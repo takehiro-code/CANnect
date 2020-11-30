@@ -27,7 +27,7 @@ tools:context=".fragment.Speedgauge_fragment">
         gauge:sv_indicator="KiteIndicator"
         gauge:sv_indicatorColor="@color/Blue"
         gauge:sv_markStyle="ROUND"
-        gauge:sv_maxSpeed="120"
+        gauge:sv_maxSpeed="225"
         gauge:sv_minSpeed="0"
         app:sv_speedTextSize="10dp"
         gauge:sv_speedTextColor="@color/Turquoise"
@@ -37,7 +37,7 @@ tools:context=".fragment.Speedgauge_fragment">
         gauge:sv_unit="km/h"
         gauge:sv_unitTextColor="@color/Turquoise"
         gauge:sv_unitTextSize="7dp"
-        app:sv_trembleDegree="0"
+        app:sv_withTremble="false"
         gauge:sv_unitUnderSpeedText="true"
         gauge:sv_withIndicatorLight="false" />
 

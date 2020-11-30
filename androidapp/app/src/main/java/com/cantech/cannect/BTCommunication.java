@@ -97,7 +97,7 @@ public class BTCommunication {
                     // found end message
                     if(incomingMessage.endsWith("255255")) {
 
-                        SystemClock.sleep(100); //pause and wait for rest of data. Adjust this depending on your sending speed.
+                        SystemClock.sleep(50); //pause and wait for rest of data. Adjust this depending on your sending speed.
                         // clean white spaces. Without this, I got white bunch of spaces at the first.
                         incomingMessage = incomingMessage.trim();
                         System.out.println("Incoming message string below:");

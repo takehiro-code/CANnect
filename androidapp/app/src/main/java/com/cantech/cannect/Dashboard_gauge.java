@@ -2,6 +2,7 @@ package com.cantech.cannect;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
@@ -12,6 +13,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewDebug;
 import android.widget.FrameLayout;
 
 import com.cantech.cannect.fragment.Absolute_Load_Fragment;
@@ -29,6 +31,7 @@ import com.cantech.cannect.fragment.Speedgauge_fragment;
 import com.cantech.cannect.fragment.Throttle_Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Set;
 
 public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fragment.FromSpeedGauge, MAF_Fragment.FromMAFGauge, Fuel_fragment.FromFuelLevelGauge, Actual_Engine_Torque_Fragment.FromActualTorque,
                                                                 RPMgauge_fragment.FromRPMGauge, Air_temp_fragment.FromAirTempGauge, Coolant_temp_fragment.FromCoolantTempGauge,
@@ -38,6 +41,7 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
     DataParsing dataParsing;
     StringBuilder data_message;
     SharedPref sharedPref;
+    private boolean[] flagArray = {false, false, false, false};
 
     Speedgauge_fragment speedgauge = new Speedgauge_fragment();
     RPMgauge_fragment rpmgauge = new RPMgauge_fragment();
@@ -56,7 +60,8 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
     //speed 0, fuelpressure 1, throttle 2, rpm 3, airtemp 4
     //coolant 5, fueltype 6, fuellevel 7, maf 8, calELoad 9
     //absLoad 10, demandETorque 11, actualETorque 12
-    private String[] str = new String[13];
+    private String[] PIDS = {"0D ", "0A ", "11 ", "0C ", "46 ", "05 ", "03 ", "2F ", "10 ", "04 ", "43 ", "61 ", "62 "};
+    private String[] initialPIDs = {"0D ", "0C ", "05 ", "2F "};
 
 
     FrameLayout frameLayout1;
@@ -70,7 +75,7 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
     protected void onCreate(Bundle savedInstanceState) {
         sharedPref = new SharedPref(this);
         //set theme
-        if(sharedPref.loadDarkModeState()==true){
+        if(sharedPref.loadDarkModeState()){
             setTheme(R.style.darkTheme);
         }else{
             setTheme(R.style.AppTheme);
@@ -94,9 +99,6 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
 
         data_message = new StringBuilder();
 
-        for(int i = 0; i < str.length; i++){
-            str[i] = "";
-        }
         //initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         //Set Table selected
@@ -116,8 +118,32 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
 
         ft1 = getSupportFragmentManager().beginTransaction();
         ft1.add(R.id.gauge_container4, fuelgauge);
-        ft1.commit();
+        ft1.commitNow();
 
+        for(int i = 0; i < 4; i++){
+            final int finalI = i;
+            Thread t = new Thread(Integer.toString(i)){
+                public void run() {
+                    Intent sendingMessageIntent = new Intent("sendingMessage");
+                    while(true){
+                        if(flagArray[finalI]) {
+                            flagArray[finalI] = false;
+                            break;
+                        }
+                        sendingMessageIntent.putExtra("theMessage", "01 " + initialPIDs[finalI] + ">");
+                        LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                        Log.d("BT", initialPIDs[finalI]);
+                    }
+                }
+            };
+            t.start();
+        }
 
         //perform itemselectedlistener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -172,131 +198,207 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
         switch (item.getItemId()) {
             case R.id.speedView_menu:
                 ft1.replace(R.id.gauge_container1, speedgauge);
+                ft1.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 0);
-                return true;
+                break;
 
             case R.id.fuelpressure_menu:
                 ft1.replace(R.id.gauge_container1, fuelpressuregauge);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 1);
-                return true;
+                break;
 
             case R.id.RPMView_menu:
                 ft1.replace(R.id.gauge_container2, rpmgauge);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 3);
-                return true;
+                break;
 
             case R.id.TEMPView_menu:
                 ft1.replace(R.id.gauge_container3, coolantgauge);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 5);
-                return true;
+                break;
 
-            case R.id.IntakAirTemp_menu:
+            case R.id.AmbientAirTemp_menu:
                 ft1.replace(R.id.gauge_container2, airtemptextview);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 4);
-                return true;
+                break;
 
             case R.id.MAF_menu:
                 ft1.replace(R.id.gauge_container4, maftextview);
-                ft1.commit();
+                ft1.commitNow();
                 sendingPID2BT(sendingMessageIntent, 8);
-                return true;
+                break;
 
             case R.id.Fuel_type_menu:
                 ft1.replace(R.id.gauge_container3, fuelTypeFragment);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 6);
-                return true;
+                break;
 
             case R.id.Fuel_levle_menu:
                 ft1.replace(R.id.gauge_container4, fuelgauge);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 7);
-                return true;
+                break;
 
             case R.id.throttle_menu:
                 ft1.replace(R.id.gauge_container1, throttle_fragment);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 2);
-                return true;
+                break;
 
             case R.id.CalELoad_menu:
                 ft1.replace(R.id.gauge_container3, calELoad_fragment);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 9);
-                return true;
+                break;
 
             case R.id.AbsLoad_menu:
                 ft1.replace(R.id.gauge_container3, absLoad_fragment);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 10);
-                return true;
+                break;
 
             case R.id.DemandTorque_menu:
                 ft1.replace(R.id.gauge_container4, demandETorque_fragment);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 11);
-                return true;
+                break;
 
             case R.id.ActualTorque_menu:
                 ft1.replace(R.id.gauge_container4, actualETorque_fragment);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 12);
-                return true;
+                break;
             default:
-                return super.onContextItemSelected(item);
+                break;
+
+        }
+        return super.onContextItemSelected(item);
+    }
+
+    private void sendingPID2BT(final Intent sendingMessageIntent, final int i) {
+        sendingMessageIntent.putExtra("theMessage", "01 " + PIDS[i]  + ">");
+        int threadnum = -1;
+        Log.d("dtcount", Integer.toString(Thread.activeCount()));
+
+        if(i == 0 || i == 1 || i == 2){
+            threadnum = 0;
+        }else if(i == 3 || i == 4){
+            threadnum = 1;
+        }else if(i == 5 || i == 6 || i == 9 || i == 10){
+            threadnum = 2;
+        }else{
+            threadnum = 3;
+        }
+        flagArray[threadnum] = true;
+        final int finalThreadnum = threadnum;
+        Thread t = new Thread(Integer.toString(threadnum)){
+            public void run(){
+                while (true) {
+                    LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                    Log.d("BTS", PIDS[i]);
+                    Log.d("thread", Integer.toString(Thread.activeCount()));
+                    if(flagArray[finalThreadnum]) {
+                        flagArray[finalThreadnum] = false;
+                        break;
+                    }
+                }
+            }
+        };
+        t.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        for(int i = 0; i < 4; i++){
+            flagArray[i] = true;
         }
     }
 
-    private void sendingPID2BT(Intent sendingMessageIntent, int i) {
-        sendingMessageIntent.putExtra("theMessage", str[i]);
-        Log.d("dtc", str[i]);
-        LocalBroadcastManager.getInstance(this).sendBroadcast(sendingMessageIntent);
-        str[i] = "";
+    @Override
+    protected void onResume() {
+        super.onResume();
+        for(int i = 0; i < 4; i++){
+            flagArray[i] = false;
+        }
     }
 
     @Override
-    public void sendSpeedPID(String string) { str[0] = string;}
+    public void sendAbsoluteLoadPID(String string) {
+
+    }
 
     @Override
-    public void sendFuelPressurePID(String string) { str[1] = string;}
+    public void sendActualETorquePID(String string) {
+
+    }
 
     @Override
-    public void sendThrottlePID(String string) { str[2] = string;}
+    public void sendAirTempPID(String string) {
+
+    }
 
     @Override
-    public void sendRPMPID(String string) { str[3] = string;}
+    public void sendCalculatedEngineLoadPID(String string) {
+
+    }
 
     @Override
-    public void sendAirTempPID(String string) { str[4] = string;}
+    public void sendCoolantTempPID(String string) {
+
+    }
 
     @Override
-    public void sendCoolantTempPID(String string) { str[5] = string;}
+    public void sendDemandETorquePID(String string) {
+
+    }
 
     @Override
-    public void sendFuelTypePID(String string) { str[6] = string;}
+    public void sendFuelPressurePID(String string) {
+
+    }
 
     @Override
-    public void sendFuelLevelPID(String string) { str[7] = string;}
+    public void sendFuelLevelPID(String string) {
+
+    }
 
     @Override
-    public void sendMAFPID(String string) { str[8] = string;}
+    public void sendFuelTypePID(String string) {
+
+    }
 
     @Override
-    public void sendCalculatedEngineLoadPID(String string) { str[9] = string;}
+    public void sendMAFPID(String string) {
+
+    }
 
     @Override
-    public void sendAbsoluteLoadPID(String string) { str[10] = string;}
+    public void sendRPMPID(String string) {
+
+    }
 
     @Override
-    public void sendDemandETorquePID(String string) { str[11] = string;}
+    public void sendSpeedPID(String string) {
+
+    }
 
     @Override
-    public void sendActualETorquePID(String string) { str[12] = string;}
+    public void sendThrottlePID(String string) {
+
+    }
 }
 
 
