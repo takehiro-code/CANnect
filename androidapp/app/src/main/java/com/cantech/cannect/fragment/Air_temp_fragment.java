@@ -155,12 +155,12 @@ public class Air_temp_fragment extends Fragment {
             String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
             try {
                 switch (parsed[0]) {
-                    case "AMBIENT AIR TEMP":
+                    case "AIR TEMP":
                         //changing string to float.
                         airtemp.setText(parsed[1]);
                         break;
                     default:
-                        mCallback.sendAirTempPID("46");
+                        mCallback.sendAirTempPID("AIRTEMP_PID");
                         break;
                 }
             }catch (Exception e){

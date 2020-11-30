@@ -19,17 +19,12 @@
 
     <!--    for spinner-->
     <string-array name="PIDs">
-        <item>Choose...</item>
         <item>VEHICLE SPEED</item>
         <item>FUEL PRESSURE</item>
         <item>ENGINE RPM</item>
         <item>ENGINE COOLANT TEMP</item>
         <item>MAF SENSOR</item>
-        <item>THROTTLE POSITION</item>
-        <item>DEMAND ENGINE TORQUE</item>
-        <item>ACTUAL ENGINE TORQUE</item>
-        <item>CALCULATED ENGINE LOAD</item>
-        <item>ABSOLUTE ENGINE LOAD</item>
+        <item>O2 VOLTAGE</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->

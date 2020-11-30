@@ -160,7 +160,7 @@ public class Fuel_Pressure_fragment extends Fragment {
                         break;
 
                     default:
-                       //mCallback.sendFuelPressurePID("0A");
+                        mCallback.sendFuelPressurePID("FUELPRESSURE_PID");
                         break;
                 }
             }catch (Exception e){

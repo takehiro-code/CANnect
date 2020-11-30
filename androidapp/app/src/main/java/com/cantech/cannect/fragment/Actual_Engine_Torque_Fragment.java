@@ -154,12 +154,12 @@ public class Actual_Engine_Torque_Fragment extends Fragment {
             String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
             try {
                 switch (parsed[0]) {
-                    case "ACTUAL ENGINE TORQUE":
+                    case "ACTUAL_ENGINE_TORQUE":
                         //changing string to float.
                         actualETorque.setText(parsed[1]);
                         break;
                     default:
-                        mCallback.sendActualETorquePID("62");
+                        mCallback.sendActualETorquePID("ACTUALENGINETORQUE_PID");
                         break;
                 }
             }catch (Exception e){

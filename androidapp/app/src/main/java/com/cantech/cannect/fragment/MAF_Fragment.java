@@ -157,7 +157,7 @@ public class MAF_Fragment extends Fragment {
                         mafsenosr.setText(parsed[1]);
                         break;
                     default:
-                        //mCallback.sendMAFPID("10");
+                        mCallback.sendMAFPID("MAF_PID");
                         break;
                 }
             }catch (Exception e){

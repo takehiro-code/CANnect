@@ -157,7 +157,7 @@ public class Throttle_Fragment extends Fragment {
                         throttle.setText(parsed[1]);
                         break;
                     default:
-                        //mCallback.sendThrottlePID("11");
+                        mCallback.sendThrottlePID("THROTTLE_PID");
                         break;
                 }
             }catch (Exception e){

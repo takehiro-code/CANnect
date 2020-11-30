@@ -14,7 +14,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
@@ -24,11 +23,9 @@ import android.widget.TextView;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.IntentFilter;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -43,10 +40,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // object for bottom bar (connect)
     private RelativeLayout connectBar;
     private BluetoothSocket mBTSocket = null; // bi-directional client-to-client data path
-    //list of protocols
-    ArrayList<String> protocolList = new ArrayList<>();
-    boolean alreadyRun = false;
-    boolean protocolFound = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,15 +53,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // 33 ISO 15765 CAN 500Kps // 11bits
-        // 34 ISO 15765 CAN 500Kps // 29bits
-        // 35 ISO 15765 CAN 250Kps // 11bits
-        // 36 ISO 15765 CAN 250Kps // 29bits
-        // 22 ISO 9141 - 2
-        // 11 J1850 PWM
-        // 12 J1850 VPW
-        protocolList.addAll(Arrays.asList("33" , "34", "35", "36", "22", "11", "12"));
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
@@ -92,24 +76,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         connectBar = (RelativeLayout)findViewById(R.id.connect_bar);
         //add click listener to the bar
         connectBar.setOnClickListener(this);
-        if(!alreadyRun){
-            runOnce();
-        }
     }
 
-    public void runOnce(){
-        Thread t = new Thread(){
-            public void run(){
-                int i = 0;
-                Intent sendingMessageIntent = new Intent("sendingMessage");
-                while(i < protocolList.size() || !protocolFound){
-                    sendingMessageIntent.putExtra("stp", protocolList.get(i)  + ">");
-                    LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
-                }
-
-            }
-        };
-    }
     @Override
     public void onClick(View view) {
         //will be called everytime we click a card
@@ -147,12 +115,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
             BTstatus = (TextView)findViewById(R.id.status_text);
-
-            String text = intent.getStringExtra("theMessage");
-            if(text != null){
-                Log.d("main", text);
-                protocolFound = true;
-            }
 
             if (action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
                 final int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE,
@@ -208,16 +170,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onResume() {
         super.onResume();
-        for(String s:protocolList){
-           Log.d("main", s);
-        }
         connectionStatusUpdate();
-        alreadyRun = true;
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
     }
 
     @Override

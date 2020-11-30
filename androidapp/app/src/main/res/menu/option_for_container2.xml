@@ -7,8 +7,8 @@
         android:id="@+id/RPMView_menu"
         android:title="RPM" />
     <item
-        android:id="@+id/AmbientAirTemp_menu"
-        android:title="Ambient Air Temperature"/>
+        android:id="@+id/IntakAirTemp_menu"
+        android:title="Intake Air Temperature"/>
 
 
 </menu>

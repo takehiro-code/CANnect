@@ -161,7 +161,7 @@ public class Fuel_type_Fragment extends Fragment {
                         break;
 
                     default:
-                        //mCallback.sendFuelTypePID("03");
+                        mCallback.sendFuelTypePID("FUELTYPE_PID");
                         break;
                 }
             }catch (Exception e){
