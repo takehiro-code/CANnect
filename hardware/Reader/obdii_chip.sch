@@ -5,7 +5,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 17 17
 Title "CANnect Reader | OBDII Chip (STN2110)"
-Date "2020-11-27"
+Date "2020-11-29"
 Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
@@ -67,25 +67,14 @@ HS_CAN_TX
 Text HLabel 3000 4100 0    50   Input ~ 0
 HS_CAN_RX
 $Comp
-L power:GND #PWR061
-U 1 1 5FC1071B
-P 4500 6550
-F 0 "#PWR061" H 4500 6300 50  0001 C CNN
-F 1 "GND" H 4505 6377 50  0000 C CNN
-F 2 "" H 4500 6550 50  0001 C CNN
-F 3 "" H 4500 6550 50  0001 C CNN
-	1    4500 6550
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+3.3V #PWR064
 U 1 1 5FC11757
-P 4850 5700
-F 0 "#PWR064" H 4850 5550 50  0001 C CNN
-F 1 "+3.3V" H 4865 5873 50  0000 C CNN
-F 2 "" H 4850 5700 50  0001 C CNN
-F 3 "" H 4850 5700 50  0001 C CNN
-	1    4850 5700
+P 4500 5650
+F 0 "#PWR064" H 4500 5500 50  0001 C CNN
+F 1 "+3.3V" H 4515 5823 50  0000 C CNN
+F 2 "" H 4500 5650 50  0001 C CNN
+F 3 "" H 4500 5650 50  0001 C CNN
+	1    4500 5650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -168,7 +157,7 @@ F 3 "" H 10200 4900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 9600 5150 2    50   Input ~ 0
-RESET_SW
+~RESET_SW~
 Text HLabel 9600 5050 2    50   Input ~ 0
 ANALOG_IN
 Wire Wire Line
@@ -400,22 +389,12 @@ Wire Wire Line
 Wire Wire Line
 	5650 4800 5650 5000
 Connection ~ 5650 4800
-Text HLabel 1350 5200 0    50   Output ~ 0
-STATUS_LED
-Text HLabel 1350 5100 0    50   Output ~ 0
-~HOST_ACT_LED~
 Text HLabel 1350 4800 0    50   Output ~ 0
 ~RESET_HW~
-Text HLabel 1350 5000 0    50   Output ~ 0
-~OBD_ACT_LED~
 Wire Wire Line
 	1150 6900 1450 6900
 Wire Wire Line
 	1350 4800 5650 4800
-Wire Wire Line
-	1350 5100 3600 5100
-Wire Wire Line
-	1350 5200 1450 5200
 Wire Notes Line
 	700  4900 700  7000
 Wire Wire Line
@@ -492,10 +471,6 @@ Wire Wire Line
 	6150 6550 9000 6550
 Wire Wire Line
 	6150 5950 6150 6550
-Connection ~ 1450 5200
-Connection ~ 2500 5000
-Wire Wire Line
-	2500 5000 1350 5000
 Wire Wire Line
 	1450 5200 5850 5200
 Wire Notes Line
@@ -505,8 +480,6 @@ Wire Notes Line
 Wire Notes Line
 	4250 4900 700  4900
 Wire Wire Line
-	5050 4600 5050 4700
-Wire Wire Line
 	7100 2700 7850 2700
 Wire Wire Line
 	7100 3200 9450 3200
@@ -514,7 +487,6 @@ Wire Wire Line
 	2500 5000 5650 5000
 Wire Wire Line
 	3600 6150 3600 5100
-Connection ~ 3600 5100
 Wire Wire Line
 	3600 5100 5750 5100
 Wire Wire Line
@@ -606,16 +578,16 @@ $EndComp
 $Comp
 L Device:R_Small R_STN_9
 U 1 1 5FC10F0A
-P 4850 5900
-F 0 "R_STN_9" H 4450 5950 50  0000 L CNN
-F 1 "100k" H 4550 5850 50  0000 L CNN
-F 2 "footprints:RESC1608X55N" H 4850 5900 50  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 4850 5900 50  0001 C CNN
-F 4 "RT0603DRE07100KL" H 4850 5900 50  0001 C CNN "Part Name"
-F 5 "Yageo" H 4850 5900 50  0001 C CNN "Manufacturer"
-F 6 "DigiKey Canada" H 4850 5900 50  0001 C CNN "Vendor"
-F 7 "311-2395-1-ND" H 4850 5900 50  0001 C CNN "digikeypn"
-	1    4850 5900
+P 4500 5900
+F 0 "R_STN_9" H 4100 5950 50  0000 L CNN
+F 1 "100k" H 4200 5850 50  0000 L CNN
+F 2 "footprints:RESC1608X55N" H 4500 5900 50  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 4500 5900 50  0001 C CNN
+F 4 "RT0603DRE07100KL" H 4500 5900 50  0001 C CNN "Part Name"
+F 5 "Yageo" H 4500 5900 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 4500 5900 50  0001 C CNN "Vendor"
+F 7 "311-2395-1-ND" H 4500 5900 50  0001 C CNN "digikeypn"
+	1    4500 5900
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -712,10 +684,10 @@ F 7 "P330FCT-ND" H 3600 6250 50  0001 C CNN "digikeypn"
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:R R_STN_12
+L Device:R R_STN_13
 U 1 1 5FCC1888
 P 9450 2700
-F 0 "R_STN_12" H 9520 2746 50  0000 L CNN
+F 0 "R_STN_13" H 9520 2746 50  0000 L CNN
 F 1 "100k" H 9520 2655 50  0000 L CNN
 F 2 "footprints:RESC1608X55N" V 9380 2700 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 9450 2700 50  0001 C CNN
@@ -727,10 +699,10 @@ F 7 "311-2395-1-ND" H 9450 2700 50  0001 C CNN "digikeypn"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C_STN_4
+L Device:C C_STN_5
 U 1 1 5FCC9B8F
 P 10050 2700
-F 0 "C_STN_4" H 10165 2746 50  0000 L CNN
+F 0 "C_STN_5" H 10165 2746 50  0000 L CNN
 F 1 "1uF" H 10165 2655 50  0000 L CNN
 F 2 "footprints:0603" H 10088 2550 50  0001 C CNN
 F 3 "https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf" H 10050 2700 50  0001 C CNN
@@ -804,10 +776,10 @@ F 7 "399-7847-1-ND" H 5450 1200 50  0001 C CNN "digikeypn"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C_STN_5
+L Device:C C_STN_6
 U 1 1 5FC6BE46
 P 10050 6200
-F 0 "C_STN_5" H 10165 6246 50  0000 L CNN
+F 0 "C_STN_6" H 10165 6246 50  0000 L CNN
 F 1 "1uF" H 10165 6155 50  0000 L CNN
 F 2 "footprints:0603" H 10088 6050 50  0001 C CNN
 F 3 "https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf" H 10050 6200 50  0001 C CNN
@@ -819,10 +791,10 @@ F 7 "399-7847-1-ND" H 10050 6200 50  0001 C CNN "digikeypn"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R_STN_10
+L Device:R R_STN_11
 U 1 1 5FC6FB41
 P 9250 5600
-F 0 "R_STN_10" V 9043 5600 50  0000 C CNN
+F 0 "R_STN_11" V 9043 5600 50  0000 C CNN
 F 1 "10k" V 9134 5600 50  0000 C CNN
 F 2 "footprints:RESC1608X55N" V 9180 5600 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf" H 9250 5600 50  0001 C CNN
@@ -834,10 +806,10 @@ F 7 "YAG2321CT-ND" H 9250 5600 50  0001 C CNN "digikeypn"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R_STN_11
+L Device:R R_STN_12
 U 1 1 5FC6FCEB
 P 9250 5950
-F 0 "R_STN_11" V 9043 5950 50  0000 C CNN
+F 0 "R_STN_12" V 9043 5950 50  0000 C CNN
 F 1 "10" V 9134 5950 50  0000 C CNN
 F 2 "footprints:RESC1608X55N" V 9180 5950 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RE_105_RoHS_L_6.pdf" H 9250 5950 50  0001 C CNN
@@ -1077,25 +1049,8 @@ Wire Wire Line
 Connection ~ 4150 4550
 Wire Wire Line
 	4150 4550 4650 4550
-Wire Notes Line
-	4350 5350 4350 6850
-Wire Notes Line
-	4350 6850 6000 6850
-Wire Notes Line
-	6000 6850 6000 5350
-Wire Notes Line
-	6000 5350 4350 5350
-Text Notes 5150 5450 0    50   ~ 0
+Text Notes 4900 5500 0    50   ~ 0
 Reset button
-Wire Wire Line
-	5050 4700 4500 4700
-Wire Wire Line
-	4500 4700 4500 6350
-Connection ~ 4500 6350
-Wire Wire Line
-	4500 6350 4500 6550
-Wire Wire Line
-	5650 5000 5650 6250
 $Comp
 L PTS647SK38SMTR2LFS:PTS647SK38SMTR2LFS SW_STN_1
 U 1 1 5FE0EC14
@@ -1113,9 +1068,101 @@ F 7 "PTS647SK38SMTR2LFSCT-ND" H 4450 6250 50  0001 C CNN "digikeypn"
 $EndComp
 Wire Wire Line
 	4500 6350 4850 6350
-Wire Wire Line
-	4850 5700 4850 5800
-Wire Wire Line
-	4850 6000 4850 6250
 NoConn ~ 5650 6350
+$Comp
+L Device:R_Small R_STN_10
+U 1 1 5FC65094
+P 4500 6950
+F 0 "R_STN_10" H 4559 6996 50  0000 L CNN
+F 1 "500" H 4559 6905 50  0000 L CNN
+F 2 "footprints:RESC1508X55N" H 4500 6950 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/28916/mcxhp.pdf" H 4500 6950 50  0001 C CNN
+F 4 "Vishay" H 4500 6950 50  0001 C CNN "Manufacturer"
+F 5 "MCT0603PD4990DP500" H 4500 6950 50  0001 C CNN "Part Name"
+F 6 "DigiKey Canada" H 4500 6950 50  0001 C CNN "Vendor"
+F 7 "749-1523-1-ND" H 4500 6950 50  0001 C CNN "digikeypn"
+	1    4500 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 6350 4500 6850
+Wire Wire Line
+	4500 7050 4500 7200
+$Comp
+L power:GND #PWR061
+U 1 1 5FC1071B
+P 4500 7200
+F 0 "#PWR061" H 4500 6950 50  0001 C CNN
+F 1 "GND" H 4505 7027 50  0000 C CNN
+F 2 "" H 4500 7200 50  0001 C CNN
+F 3 "" H 4500 7200 50  0001 C CNN
+	1    4500 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0113
+U 1 1 5FC920A5
+P 5050 4600
+F 0 "#PWR0113" H 5050 4350 50  0001 C CNN
+F 1 "GND" H 5055 4427 50  0000 C CNN
+F 2 "" H 5050 4600 50  0001 C CNN
+F 3 "" H 5050 4600 50  0001 C CNN
+	1    5050 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 6000 4500 6250
+Wire Wire Line
+	4500 6250 4850 6250
+Wire Wire Line
+	4500 5650 4500 5800
+$Comp
+L Device:C C_STN_4
+U 1 1 5FCA7216
+P 5800 6950
+F 0 "C_STN_4" H 5915 6996 50  0000 L CNN
+F 1 "1uF" H 5915 6905 50  0000 L CNN
+F 2 "footprints:0603" H 5838 6800 50  0001 C CNN
+F 3 "https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf" H 5800 6950 50  0001 C CNN
+F 4 "C0603C105K4RACTU" H 5800 6950 50  0001 C CNN "Part Name"
+F 5 "Kermet" H 5800 6950 50  0001 C CNN "Manufacturer"
+F 6 "DigiKey Canada" H 5800 6950 50  0001 C CNN "Vendor"
+F 7 "399-7847-1-ND" H 5800 6950 50  0001 C CNN "digikeypn"
+	1    5800 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 5000 5650 6050
+Wire Wire Line
+	5800 6800 5800 6050
+Wire Wire Line
+	5800 6050 5650 6050
+Connection ~ 5650 6050
+Wire Wire Line
+	5650 6050 5650 6250
+$Comp
+L power:GND #PWR0114
+U 1 1 5FCB987A
+P 5800 7200
+F 0 "#PWR0114" H 5800 6950 50  0001 C CNN
+F 1 "GND" H 5805 7027 50  0000 C CNN
+F 2 "" H 5800 7200 50  0001 C CNN
+F 3 "" H 5800 7200 50  0001 C CNN
+	1    5800 7200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 7200 5800 7100
+Wire Notes Line
+	4400 5400 4400 7450
+Wire Notes Line
+	4400 7450 6250 7450
+Wire Notes Line
+	6250 7450 6250 6650
+Wire Notes Line
+	6250 6650 5900 6650
+Wire Notes Line
+	5900 6650 5900 5400
+Wire Notes Line
+	5900 5400 4400 5400
 $EndSCHEMATC

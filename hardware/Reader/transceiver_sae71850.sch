@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 5 17
+Sheet 15 17
 Title "CANnect Reader | SAE J1850 VPW/PWM Transceiver"
-Date "2020-11-27"
+Date "2020-11-29"
 Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"

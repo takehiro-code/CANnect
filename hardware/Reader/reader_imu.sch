@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 9 17
+Sheet 11 17
 Title "CANnect Reader | IMU"
-Date "2020-11-27"
+Date "2020-11-29"
 Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
@@ -74,14 +74,10 @@ Text HLabel 3300 3450 0    50   BiDi ~ 0
 IMU_SDA
 Text HLabel 3300 3950 0    50   Output ~ 0
 IMU_INT1
-Text HLabel 3300 3550 0    50   Output ~ 0
-IMU_SDO_SA0
 Text HLabel 3300 4050 0    50   Output ~ 0
 IMU_INT2
 Wire Wire Line
 	3300 3450 5550 3450
-Wire Wire Line
-	5850 3550 3300 3550
 Wire Wire Line
 	5850 3950 3300 3950
 Wire Wire Line
@@ -133,15 +129,12 @@ Wire Wire Line
 Connection ~ 5000 2450
 Wire Wire Line
 	5550 2700 5550 2450
-Connection ~ 5550 2450
 Wire Wire Line
 	5550 2450 5000 2450
 Wire Wire Line
-	8200 3150 8200 2450
+	8200 3150 8200 3050
 Wire Wire Line
 	7650 3150 8200 3150
-Wire Wire Line
-	5550 2450 8200 2450
 Wire Wire Line
 	8200 4400 8200 3150
 Connection ~ 8200 3150
@@ -160,20 +153,6 @@ F 3 "" H 4450 4900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
-U 1 1 5FC30E64
-P 8800 4900
-AR Path="/5FC30E64" Ref="#PWR?"  Part="1" 
-AR Path="/5F988046/5FC30E64" Ref="#PWR?"  Part="1" 
-AR Path="/5FC2797A/5FC30E64" Ref="#PWR0145"  Part="1" 
-F 0 "#PWR0145" H 8800 4650 50  0001 C CNN
-F 1 "GND" H 8805 4727 50  0000 C CNN
-F 2 "" H 8800 4900 50  0001 C CNN
-F 3 "" H 8800 4900 50  0001 C CNN
-	1    8800 4900
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C C_IMU_2
 U 1 1 5FC32770
 P 8200 4550
@@ -188,25 +167,8 @@ F 7 "445-1304-1-ND" H 8200 4550 50  0001 C CNN "digikeypn"
 	1    8200 4550
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:C C_IMU_3
-U 1 1 5FC32983
-P 8800 4550
-F 0 "C_IMU_3" H 8915 4596 50  0000 L CNN
-F 1 "100nF" H 8915 4505 50  0000 L CNN
-F 2 "footprints:CAPC1608X90N" H 8838 4400 50  0001 C CNN
-F 3 "https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf" H 8800 4550 50  0001 C CNN
-F 4 "TDK Corporation" H 8800 4550 50  0001 C CNN "Manufacturer"
-F 5 "C1608X7R2A103K080AA" H 8800 4550 50  0001 C CNN "Part Name"
-F 6 "DigiKey Canada" H 8800 4550 50  0001 C CNN "Vendor"
-F 7 "445-1304-1-ND" H 8800 4550 50  0001 C CNN "digikeypn"
-	1    8800 4550
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8200 4700 8200 4900
-Wire Wire Line
-	8800 4900 8800 4700
 $Comp
 L power:GND #PWR?
 U 1 1 5FC34A44
@@ -223,13 +185,6 @@ F 3 "" H 7650 4900 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7650 4150 7650 4900
-Wire Wire Line
-	7650 3050 8800 3050
-Wire Wire Line
-	8800 3050 8800 4400
-Wire Wire Line
-	8800 2150 8800 3050
-Connection ~ 8800 3050
 Wire Wire Line
 	4450 3250 5850 3250
 Wire Wire Line
@@ -271,9 +226,7 @@ Connection ~ 5550 3750
 Wire Wire Line
 	5550 3750 5550 4900
 Wire Wire Line
-	4450 2150 4450 3250
-Wire Wire Line
-	5000 2150 5000 2450
+	4450 2150 4450 2450
 $Comp
 L power:+3.3V #PWR0148
 U 1 1 5FE5F93E
@@ -286,25 +239,28 @@ F 3 "" H 4450 2150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+3.3V #PWR0149
-U 1 1 5FE5FC30
-P 5000 2150
-F 0 "#PWR0149" H 5000 2000 50  0001 C CNN
-F 1 "+3.3V" H 5015 2323 50  0000 C CNN
-F 2 "" H 5000 2150 50  0001 C CNN
-F 3 "" H 5000 2150 50  0001 C CNN
-	1    5000 2150
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+3.3V #PWR0150
 U 1 1 5FE5FDC5
-P 8800 2150
-F 0 "#PWR0150" H 8800 2000 50  0001 C CNN
-F 1 "+3.3V" H 8815 2323 50  0000 C CNN
-F 2 "" H 8800 2150 50  0001 C CNN
-F 3 "" H 8800 2150 50  0001 C CNN
-	1    8800 2150
+P 8200 2150
+F 0 "#PWR0150" H 8200 2000 50  0001 C CNN
+F 1 "+3.3V" H 8215 2323 50  0000 C CNN
+F 2 "" H 8200 2150 50  0001 C CNN
+F 3 "" H 8200 2150 50  0001 C CNN
+	1    8200 2150
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	7650 3050 8200 3050
+Wire Wire Line
+	8200 2150 8200 3050
+Connection ~ 8200 3050
+Wire Wire Line
+	5000 2450 4450 2450
+Connection ~ 4450 2450
+Wire Wire Line
+	4450 2450 4450 3250
+Text HLabel 3300 3550 0    50   Output ~ 0
+IMU_SDO_SA0
+Wire Wire Line
+	5850 3550 3300 3550
 $EndSCHEMATC

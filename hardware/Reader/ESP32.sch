@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 17
+Sheet 10 17
 Title "CANnect Reader | ESP32"
-Date "2020-11-27"
+Date "2020-11-29"
 Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
@@ -306,62 +306,9 @@ F 3 "" H 8850 3300 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8850 3300 8850 3050
-$Comp
-L Device:LED LED_ESP_1
-U 1 1 5FD157F7
-P 8100 1500
-F 0 "LED_ESP_1" V 8047 1580 50  0000 L CNN
-F 1 "LED" V 8138 1580 50  0000 L CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 8100 1500 50  0001 C CNN
-F 3 "https://www.we-online.de/katalog/datasheet/150060VS75000.pdf" H 8100 1500 50  0001 C CNN
-F 4 "Würth Elektronik" H 8100 1500 50  0001 C CNN "Manufacturer"
-F 5 "150060VS75000" H 8100 1500 50  0001 C CNN "Part Name"
-F 6 "DigiKey Canada" H 8100 1500 50  0001 C CNN "Vendor"
-F 7 "732-4980-1-ND" H 8100 1500 50  0001 C CNN "digikeypn"
-	1    8100 1500
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R_Small R_ESP_3
-U 1 1 5FD162BA
-P 8100 1950
-F 0 "R_ESP_3" H 8159 1996 50  0000 L CNN
-F 1 "500" H 8159 1905 50  0000 L CNN
-F 2 "footprints:RESC1508X55N" H 8100 1950 50  0001 C CNN
-F 3 "https://www.vishay.com/docs/28916/mcxhp.pdf" H 8100 1950 50  0001 C CNN
-F 4 "Vishay" H 8100 1950 50  0001 C CNN "Manufacturer"
-F 5 "MCT0603PD4990DP500" H 8100 1950 50  0001 C CNN "Part Name"
-F 6 "DigiKey Canada" H 8100 1950 50  0001 C CNN "Vendor"
-F 7 "749-1523-1-ND" H 8100 1950 50  0001 C CNN "digikeypn"
-	1    8100 1950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6450 2650 8100 2650
-Wire Wire Line
-	8100 2650 8100 2050
-Wire Wire Line
-	8100 1650 8100 1850
-$Comp
-L power:GND #PWR0125
-U 1 1 5FD17BE0
-P 8100 1100
-F 0 "#PWR0125" H 8100 850 50  0001 C CNN
-F 1 "GND" H 8105 927 50  0000 C CNN
-F 2 "" H 8100 1100 50  0001 C CNN
-F 3 "" H 8100 1100 50  0001 C CNN
-	1    8100 1100
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	8100 1100 8100 1350
 Connection ~ 4100 2450
 Wire Wire Line
 	4100 2450 5250 2450
-Text HLabel 3950 2650 0    50   BiDi ~ 0
-ESP32_Pin4
-Text HLabel 3950 2750 0    50   BiDi ~ 0
-ESP32_Pin5
 Connection ~ 3050 2450
 Wire Wire Line
 	3050 2450 4100 2450
@@ -369,18 +316,6 @@ Wire Wire Line
 	5250 2650 3950 2650
 Wire Wire Line
 	3950 2750 5250 2750
-Text HLabel 3950 3650 0    50   BiDi ~ 0
-ESP32_Pin21
-Text HLabel 3950 3750 0    50   BiDi ~ 0
-ESP32_Pin22
-Text HLabel 3950 3850 0    50   BiDi ~ 0
-ESP32_Pin17
-Text HLabel 3950 3950 0    50   BiDi ~ 0
-ESP32_Pin18
-Text HLabel 3950 4050 0    50   BiDi ~ 0
-ESP32_Pin20
-Text HLabel 3950 4150 0    50   BiDi ~ 0
-ESP32_Pin19
 Wire Wire Line
 	5250 3650 3950 3650
 Wire Wire Line
@@ -413,8 +348,6 @@ Wire Wire Line
 Connection ~ 5850 5150
 Wire Wire Line
 	5850 5150 5850 5250
-Text HLabel 7450 2350 2    50   BiDi ~ 0
-ESP32_Pin25
 Text HLabel 7450 2550 2    50   Output ~ 0
 ESP32_TXD0
 Wire Wire Line
@@ -426,58 +359,18 @@ Wire Wire Line
 	7300 2450 8850 2450
 Wire Wire Line
 	7450 2550 6450 2550
-Text HLabel 7450 2750 2    50   Input ~ 0
-ESP32_RXD0
 Wire Wire Line
 	7450 2750 6450 2750
 Text HLabel 7450 2850 2    50   BiDi ~ 0
 ESP32_Pin26
 Wire Wire Line
 	6450 2850 7450 2850
-Text HLabel 7450 2950 2    50   BiDi ~ 0
-ESP32_Pin29
 Wire Wire Line
 	7450 2950 6450 2950
-Text HLabel 7450 3050 2    50   BiDi ~ 0
-ESP32_Pin14
 Wire Wire Line
 	7450 3050 6450 3050
-Text HLabel 7450 3150 2    50   BiDi ~ 0
-ESP32_Pin16
 Wire Wire Line
 	7450 3150 6450 3150
-Text HLabel 7450 3250 2    50   BiDi ~ 0
-ESP32_Pin13
-Text HLabel 7450 3350 2    50   BiDi ~ 0
-ESP32_Pin23
-Text HLabel 7450 3450 2    50   BiDi ~ 0
-ESP32_Pin27
-Text HLabel 7450 3550 2    50   BiDi ~ 0
-ESP32_Pin28
-Text HLabel 7450 3650 2    50   BiDi ~ 0
-ESP32_Pin30
-Text HLabel 7450 3750 2    50   BiDi ~ 0
-ESP32_Pin31
-Text HLabel 7450 3850 2    50   BiDi ~ 0
-ESP32_Pin33
-Text HLabel 7450 3950 2    50   BiDi ~ 0
-ESP32_Pin36
-Text HLabel 7450 4050 2    50   BiDi ~ 0
-ESP32_Pin37
-Text HLabel 7450 4150 2    50   BiDi ~ 0
-ESP32_Pin10
-Text HLabel 7450 4250 2    50   BiDi ~ 0
-ESP32_Pin11
-Text HLabel 7450 4350 2    50   BiDi ~ 0
-ESP32_Pin12
-Text HLabel 7450 4450 2    50   BiDi ~ 0
-ESP32_Pin8
-Text HLabel 7450 4550 2    50   BiDi ~ 0
-ESP32_Pin9
-Text HLabel 7450 4650 2    50   BiDi ~ 0
-ESP32_Pin6
-Text HLabel 7450 4750 2    50   BiDi ~ 0
-ESP32_Pin7
 Wire Wire Line
 	7450 4750 6450 4750
 Wire Wire Line
@@ -510,14 +403,121 @@ Wire Wire Line
 	7450 3250 6450 3250
 Wire Wire Line
 	7450 3350 6450 3350
-Text HLabel 8200 2650 2    50   BiDi ~ 0
-ESP32_Pin24
-Wire Wire Line
-	8200 2650 8100 2650
-Connection ~ 8100 2650
 Wire Wire Line
 	8850 2750 8850 2450
 Connection ~ 8850 2450
 Wire Wire Line
 	8850 2450 9300 2450
+Text HLabel 7450 2750 2    50   Input ~ 0
+ESP32_RXD0
+Text HLabel 7450 4450 2    50   BiDi ~ 0
+ESP32_Pin8
+Text HLabel 7450 3950 2    50   BiDi ~ 0
+ESP32_Pin36
+Text HLabel 7450 3850 2    50   BiDi ~ 0
+ESP32_Pin33
+Text HLabel 7450 3750 2    50   BiDi ~ 0
+ESP32_Pin31
+Text HLabel 7450 3650 2    50   BiDi ~ 0
+ESP32_Pin30
+Text HLabel 7450 3550 2    50   BiDi ~ 0
+ESP32_Pin28
+Text HLabel 7450 3450 2    50   BiDi ~ 0
+ESP32_Pin27
+Text HLabel 7450 3350 2    50   BiDi ~ 0
+ESP32_Pin23
+Text HLabel 7450 3250 2    50   BiDi ~ 0
+ESP32_Pin13
+Text HLabel 7450 3150 2    50   BiDi ~ 0
+ESP32_Pin16
+Text HLabel 7450 3050 2    50   BiDi ~ 0
+ESP32_Pin14
+Text HLabel 7450 2950 2    50   BiDi ~ 0
+ESP32_Pin29
+$Comp
+L power:GND #PWR0125
+U 1 1 5FD17BE0
+P 7150 1100
+F 0 "#PWR0125" H 7150 850 50  0001 C CNN
+F 1 "GND" H 7155 927 50  0000 C CNN
+F 2 "" H 7150 1100 50  0001 C CNN
+F 3 "" H 7150 1100 50  0001 C CNN
+	1    7150 1100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6450 2650 7150 2650
+Wire Wire Line
+	7150 1100 7150 1350
+Wire Wire Line
+	7150 1650 7150 1850
+Wire Wire Line
+	7150 2650 7150 2050
+$Comp
+L Device:R_Small R_ESP_3
+U 1 1 5FD162BA
+P 7150 1950
+F 0 "R_ESP_3" H 7209 1996 50  0000 L CNN
+F 1 "500" H 7209 1905 50  0000 L CNN
+F 2 "footprints:RESC1508X55N" H 7150 1950 50  0001 C CNN
+F 3 "https://www.vishay.com/docs/28916/mcxhp.pdf" H 7150 1950 50  0001 C CNN
+F 4 "Vishay" H 7150 1950 50  0001 C CNN "Manufacturer"
+F 5 "MCT0603PD4990DP500" H 7150 1950 50  0001 C CNN "Part Name"
+F 6 "DigiKey Canada" H 7150 1950 50  0001 C CNN "Vendor"
+F 7 "749-1523-1-ND" H 7150 1950 50  0001 C CNN "digikeypn"
+	1    7150 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED LED_ESP_1
+U 1 1 5FD157F7
+P 7150 1500
+F 0 "LED_ESP_1" V 7097 1580 50  0000 L CNN
+F 1 "Bluetooth Status" V 7188 1580 50  0000 L CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 7150 1500 50  0001 C CNN
+F 3 "https://www.we-online.de/katalog/datasheet/150060VS75000.pdf" H 7150 1500 50  0001 C CNN
+F 4 "Würth Elektronik" H 7150 1500 50  0001 C CNN "Manufacturer"
+F 5 "150060VS75000" H 7150 1500 50  0001 C CNN "Part Name"
+F 6 "DigiKey Canada" H 7150 1500 50  0001 C CNN "Vendor"
+F 7 "732-4980-1-ND" H 7150 1500 50  0001 C CNN "digikeypn"
+	1    7150 1500
+	0    1    1    0   
+$EndComp
+Text HLabel 3950 4150 0    50   BiDi ~ 0
+ESP32_Pin19
+Text HLabel 3950 4050 0    50   BiDi ~ 0
+ESP32_Pin20
+Text HLabel 3950 3950 0    50   BiDi ~ 0
+ESP32_Pin18
+Text HLabel 3950 3850 0    50   BiDi ~ 0
+ESP32_Pin17
+Text HLabel 3950 3750 0    50   BiDi ~ 0
+ESP32_Pin22
+Text HLabel 3950 3650 0    50   BiDi ~ 0
+ESP32_Pin21
+Text HLabel 3950 2750 0    50   BiDi ~ 0
+ESP32_Pin5
+Text HLabel 3950 2650 0    50   BiDi ~ 0
+ESP32_Pin4
+Text HLabel 7450 4050 2    50   BiDi ~ 0
+ESP32_Pin37
+Text HLabel 7450 4150 2    50   BiDi ~ 0
+ESP32_Pin10
+Text HLabel 7450 4250 2    50   BiDi ~ 0
+ESP32_Pin11
+Text HLabel 7450 4350 2    50   BiDi ~ 0
+ESP32_Pin12
+Text HLabel 7450 4550 2    50   BiDi ~ 0
+ESP32_Pin9
+Text HLabel 7450 4750 2    50   BiDi ~ 0
+ESP32_Pin7
+Text HLabel 7450 4650 2    50   BiDi ~ 0
+ESP32_Pin6
+Text HLabel 7450 2650 2    50   BiDi ~ 0
+ESP32_Pin24
+Text HLabel 7450 2350 2    50   BiDi ~ 0
+ESP32_Pin25
+Connection ~ 7150 2650
+Wire Wire Line
+	7150 2650 7450 2650
 $EndSCHEMATC

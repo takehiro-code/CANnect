@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 7 17
+Sheet 5 17
 Title "CANnect Reader | Voltage Regulator (5V)"
-Date "2020-11-27"
+Date "2020-11-29"
 Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
@@ -197,27 +197,10 @@ F 3 "" H 2700 2150 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2700 2150 2950 2150
-$Comp
-L BAT46:BAT46 D_VR1_1
-U 1 1 5FB92426
-P 6900 2300
-F 0 "D_VR1_1" H 7100 2563 60  0000 C CNN
-F 1 "BAT46JFILM" H 7100 2457 60  0000 C CNN
-F 2 "footprints:BAT46JFILM" H 7100 1940 60  0001 C CNN
-F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/c6/32/d4/4a/28/d3/4b/11/CD00004930.pdf/files/CD00004930.pdf/jcr:content/translations/en.CD00004930.pdf" H 7100 2457 60  0001 C CNN
-F 4 "STMicroelectronics" H 6900 2300 50  0001 C CNN "Manufacturer"
-F 5 "BAT46JFILM" H 6900 2300 50  0001 C CNN "Part Name"
-F 6 "DigiKey Canada" H 6900 2300 50  0001 C CNN "Vendor"
-F 7 "497-6653-1-ND" H 6900 2300 50  0001 C CNN "digikeypn"
-	1    6900 2300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6650 2300 6900 2300
 Connection ~ 6650 2300
-Wire Wire Line
-	7300 2300 7450 2300
 NoConn ~ 3800 2400
 NoConn ~ 3800 3000
 NoConn ~ 3800 3300
+Wire Wire Line
+	6650 2300 7450 2300
 $EndSCHEMATC

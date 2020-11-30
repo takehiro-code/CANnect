@@ -3,9 +3,9 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 4 17
+Sheet 2 17
 Title "CANnect Reader | Power Supply"
-Date "2020-11-27"
+Date "2020-11-29"
 Rev "0.0.05"
 Comp "CANtech"
 Comment1 "Created by Choong Jin Ng | jin8383@gmail.com"
@@ -522,19 +522,6 @@ F 3 "" H 1300 6800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CANtech:+3.3V_SW #PWR?
-U 1 1 5FE3210E
-P 700 7000
-AR Path="/5FA56A4E/5FE3210E" Ref="#PWR?"  Part="1" 
-AR Path="/5F8ADA45/5FE3210E" Ref="#PWR0137"  Part="1" 
-F 0 "#PWR0137" H 700 7250 50  0001 C CNN
-F 1 "+3.3V_SW" H 500 7150 50  0000 L CNN
-F 2 "" H -50 7800 50  0001 C CNN
-F 3 "" H -50 7800 50  0001 C CNN
-	1    700  7000
-	1    0    0    -1  
-$EndComp
-$Comp
 L CANtech:+12V_SW #PWR?
 U 1 1 5FE3CA53
 P 1550 7300
@@ -563,24 +550,9 @@ $EndComp
 Wire Wire Line
 	2400 7500 1000 7500
 Wire Wire Line
-	1250 7400 2400 7400
-Wire Wire Line
 	1000 6900 2400 6900
 Wire Wire Line
 	1950 7200 2400 7200
-$Comp
-L CANtech:+5V_SW #PWR?
-U 1 1 5FE37ACC
-P 1250 7400
-AR Path="/5FA56A4E/5FE37ACC" Ref="#PWR?"  Part="1" 
-AR Path="/5F8ADA45/5FE37ACC" Ref="#PWR0140"  Part="1" 
-F 0 "#PWR0140" H 1250 7650 50  0001 C CNN
-F 1 "+5V_SW" H 1100 7550 50  0000 L CNN
-F 2 "" H 500 8200 50  0001 C CNN
-F 3 "" H 500 8200 50  0001 C CNN
-	1    1250 7400
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:+5V #PWR?
 U 1 1 5FE36533
@@ -614,9 +586,37 @@ Wire Wire Line
 Wire Wire Line
 	2400 7300 1550 7300
 Wire Wire Line
-	700  7000 2400 7000
-Wire Wire Line
 	2050 6350 2050 6700
 Wire Wire Line
 	2050 6350 3350 6350
+Wire Wire Line
+	1250 7400 2400 7400
+$Comp
+L CANtech:+5V_SW #PWR?
+U 1 1 5FE37ACC
+P 1250 7400
+AR Path="/5FA56A4E/5FE37ACC" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE37ACC" Ref="#PWR0140"  Part="1" 
+F 0 "#PWR0140" H 1250 7650 50  0001 C CNN
+F 1 "+5V_SW" H 1100 7550 50  0000 L CNN
+F 2 "" H 500 8200 50  0001 C CNN
+F 3 "" H 500 8200 50  0001 C CNN
+	1    1250 7400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	700  7000 2400 7000
+$Comp
+L CANtech:+3.3V_SW #PWR?
+U 1 1 5FE3210E
+P 700 7000
+AR Path="/5FA56A4E/5FE3210E" Ref="#PWR?"  Part="1" 
+AR Path="/5F8ADA45/5FE3210E" Ref="#PWR0137"  Part="1" 
+F 0 "#PWR0137" H 700 7250 50  0001 C CNN
+F 1 "+3.3V_SW" H 500 7150 50  0000 L CNN
+F 2 "" H -50 7800 50  0001 C CNN
+F 3 "" H -50 7800 50  0001 C CNN
+	1    700  7000
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

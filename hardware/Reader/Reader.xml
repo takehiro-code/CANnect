@@ -2,14 +2,14 @@
 <export version="D">
   <design>
     <source>C:\Users\Jin-Desktop\Documents\Projects\ensc-405w\hardware\Reader\Reader.sch</source>
-    <date>11/27/20 13:25:19</date>
+    <date>11/29/20 23:53:44</date>
     <tool>Eeschema (5.1.7)-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>CANnect Reader</title>
         <company>CANtech</company>
         <rev>0.0.05</rev>
-        <date>2020-11-27</date>
+        <date>2020-11-29</date>
         <source>Reader.sch</source>
         <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
         <comment number="2" value=""/>
@@ -17,38 +17,12 @@
         <comment number="4" value="Component Identifier: "/>
       </title_block>
     </sheet>
-    <sheet number="2" name="/Host/" tstamps="/5F91C7D3/">
-      <title_block>
-        <title>CANnect Reader | Host</title>
-        <company>CANtech</company>
-        <rev>0.0.05</rev>
-        <date>2020-11-27</date>
-        <source>host.sch</source>
-        <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
-        <comment number="2" value=""/>
-        <comment number="3" value="Inspired by https://www.smart-prototyping.com/image/data/2_components/development_board/101839%20NodMCU-32S/1.png"/>
-        <comment number="4" value="Component Identifier: HST"/>
-      </title_block>
-    </sheet>
-    <sheet number="3" name="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/">
-      <title_block>
-        <title>CANnect Reader | ESP32</title>
-        <company>CANtech</company>
-        <rev>0.0.05</rev>
-        <date>2020-11-27</date>
-        <source>ESP32.sch</source>
-        <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
-        <comment number="2" value=""/>
-        <comment number="3" value=""/>
-        <comment number="4" value="Component Identifier: ESP"/>
-      </title_block>
-    </sheet>
-    <sheet number="4" name="/Power Supply/" tstamps="/5F8ADA45/">
+    <sheet number="2" name="/Power Supply/" tstamps="/5F8ADA45/">
       <title_block>
         <title>CANnect Reader | Power Supply</title>
         <company>CANtech</company>
         <rev>0.0.05</rev>
-        <date>2020-11-27</date>
+        <date>2020-11-29</date>
         <source>power_supply.sch</source>
         <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
         <comment number="2" value=""/>
@@ -56,12 +30,12 @@
         <comment number="4" value="Component Identifier: PS"/>
       </title_block>
     </sheet>
-    <sheet number="5" name="/Power Supply/Overvoltage Protection/" tstamps="/5F8ADA45/5F9AE5F2/">
+    <sheet number="3" name="/Power Supply/Overvoltage Protection/" tstamps="/5F8ADA45/5F9AE5F2/">
       <title_block>
         <title>CANnect Reader | Overvoltage Protection</title>
         <company>CANtech</company>
         <rev>0.0.05</rev>
-        <date>2020-11-27</date>
+        <date>2020-11-29</date>
         <source>overvoltage_protection.sch</source>
         <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
         <comment number="2" value="Taken from STN21xx's datasheet for recommended configuration"/>
@@ -69,12 +43,12 @@
         <comment number="4" value="Component Identifier: OVP"/>
       </title_block>
     </sheet>
-    <sheet number="6" name="/Power Supply/Voltage Sense/" tstamps="/5F8ADA45/5FD5D295/">
+    <sheet number="4" name="/Power Supply/Voltage Sense/" tstamps="/5F8ADA45/5FD5D295/">
       <title_block>
         <title>CANnect Reader | Voltage Sense</title>
         <company>CANtech</company>
         <rev>0.0.05</rev>
-        <date>2020-11-27</date>
+        <date>2020-11-29</date>
         <source>voltage_sense.sch</source>
         <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
         <comment number="2" value="Taken from STN21xx's datasheet for recommended configuration"/>
@@ -82,12 +56,12 @@
         <comment number="4" value="Component Identifier: VS"/>
       </title_block>
     </sheet>
-    <sheet number="7" name="/Power Supply/Voltage Regulator (5V)/" tstamps="/5F8ADA45/5F9EA8B0/">
+    <sheet number="5" name="/Power Supply/Voltage Regulator (5V)/" tstamps="/5F8ADA45/5F9EA8B0/">
       <title_block>
         <title>CANnect Reader | Voltage Regulator (5V)</title>
         <company>CANtech</company>
         <rev>0.0.05</rev>
-        <date>2020-11-27</date>
+        <date>2020-11-29</date>
         <source>voltage_regulator_5v.sch</source>
         <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
         <comment number="2" value=""/>
@@ -95,12 +69,12 @@
         <comment number="4" value="Component Identifier: VR1"/>
       </title_block>
     </sheet>
-    <sheet number="8" name="/Power Supply/Voltage Regulator (3.3V)/" tstamps="/5F8ADA45/5FF30350/">
+    <sheet number="6" name="/Power Supply/Voltage Regulator (3.3V)/" tstamps="/5F8ADA45/5FF30350/">
       <title_block>
         <title>CANnect Reader | Voltage Regulator (3.3V)</title>
         <company>CANtech</company>
         <rev>0.0.05</rev>
-        <date>2020-11-27</date>
+        <date>2020-11-29</date>
         <source>voltage_regulator_3.3V.sch</source>
         <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
         <comment number="2" value=""/>
@@ -108,25 +82,12 @@
         <comment number="4" value="Component Identifier: VR2"/>
       </title_block>
     </sheet>
-    <sheet number="9" name="/Reader IMU/" tstamps="/5FC2797A/">
-      <title_block>
-        <title>CANnect Reader | IMU</title>
-        <company>CANtech</company>
-        <rev>0.0.05</rev>
-        <date>2020-11-27</date>
-        <source>reader_imu.sch</source>
-        <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
-        <comment number="2" value=""/>
-        <comment number="3" value=""/>
-        <comment number="4" value="Component Identifier: IMU"/>
-      </title_block>
-    </sheet>
-    <sheet number="10" name="/OBD Connector/" tstamps="/5FF6FE24/">
+    <sheet number="7" name="/OBD Connector/" tstamps="/5FF6FE24/">
       <title_block>
         <title>CANnect Reader | OBD Connector</title>
         <company>CANtech</company>
         <rev>0.0.05</rev>
-        <date>2020-11-27</date>
+        <date>2020-11-29</date>
         <source>obd_connector.sch</source>
         <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
         <comment number="2" value="Taken from STN21xx's datasheet for recommended configuration"/>
@@ -134,12 +95,12 @@
         <comment number="4" value="Component Identifier: CN"/>
       </title_block>
     </sheet>
-    <sheet number="11" name="/OBD Connector/ESD Protection/" tstamps="/5FF6FE24/5FA6BC58/">
+    <sheet number="8" name="/OBD Connector/ESD Protection/" tstamps="/5FF6FE24/5FA6BC58/">
       <title_block>
         <title>CANnect Reader | ESD Protection</title>
         <company>CANtech</company>
         <rev>0.0.05</rev>
-        <date>2020-11-27</date>
+        <date>2020-11-29</date>
         <source>esd_protection.sch</source>
         <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
         <comment number="2" value=""/>
@@ -147,12 +108,51 @@
         <comment number="4" value="Component Identifier: ESD"/>
       </title_block>
     </sheet>
+    <sheet number="9" name="/Host/" tstamps="/5F91C7D3/">
+      <title_block>
+        <title>CANnect Reader | Host</title>
+        <company>CANtech</company>
+        <rev>0.0.05</rev>
+        <date>2020-11-29</date>
+        <source>host.sch</source>
+        <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
+        <comment number="2" value=""/>
+        <comment number="3" value="Inspired by https://www.smart-prototyping.com/image/data/2_components/development_board/101839%20NodMCU-32S/1.png"/>
+        <comment number="4" value="Component Identifier: HST"/>
+      </title_block>
+    </sheet>
+    <sheet number="10" name="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/">
+      <title_block>
+        <title>CANnect Reader | ESP32</title>
+        <company>CANtech</company>
+        <rev>0.0.05</rev>
+        <date>2020-11-29</date>
+        <source>ESP32.sch</source>
+        <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value="Component Identifier: ESP"/>
+      </title_block>
+    </sheet>
+    <sheet number="11" name="/Reader IMU/" tstamps="/5FC2797A/">
+      <title_block>
+        <title>CANnect Reader | IMU</title>
+        <company>CANtech</company>
+        <rev>0.0.05</rev>
+        <date>2020-11-29</date>
+        <source>reader_imu.sch</source>
+        <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value="Component Identifier: IMU"/>
+      </title_block>
+    </sheet>
     <sheet number="12" name="/OBDII Interpreter/" tstamps="/5F95F80B/">
       <title_block>
         <title>CANnect Reader | OBD-II Interpreter</title>
         <company>CANtech</company>
         <rev>0.0.05</rev>
-        <date>2020-11-27</date>
+        <date>2020-11-29</date>
         <source>obdii_interpreter.sch</source>
         <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
         <comment number="2" value="Taken from STN21xx's datasheet for recommended configuration"/>
@@ -165,7 +165,7 @@
         <title>CANnect Reader | ISO 9141/ISO 14230 Transceiver</title>
         <company>CANtech</company>
         <rev>0.0.05</rev>
-        <date>2020-11-27</date>
+        <date>2020-11-29</date>
         <source>transceiver_iso9141.sch</source>
         <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
         <comment number="2" value="Taken from STN21xx's datasheet for recommended configuration"/>
@@ -178,7 +178,7 @@
         <title>CANnect Reader | High Speed CAN Transceiver</title>
         <company>CANtech</company>
         <rev>0.0.05</rev>
-        <date>2020-11-27</date>
+        <date>2020-11-29</date>
         <source>transceiver_can_hs.sch</source>
         <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
         <comment number="2" value="Taken from STN21xx's datasheet for recommended configuration"/>
@@ -191,7 +191,7 @@
         <title>CANnect Reader | SAE J1850 VPW/PWM Transceiver</title>
         <company>CANtech</company>
         <rev>0.0.05</rev>
-        <date>2020-11-27</date>
+        <date>2020-11-29</date>
         <source>transceiver_sae71850.sch</source>
         <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
         <comment number="2" value="Taken from STN21xx's datasheet for recommended configuration"/>
@@ -204,7 +204,7 @@
         <title>CANnect Reader | Comparative Transceiver</title>
         <company>CANtech</company>
         <rev>0.0.05</rev>
-        <date>2020-11-27</date>
+        <date>2020-11-29</date>
         <source>transceiver_comparator.sch</source>
         <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
         <comment number="2" value="Taken from STN21xx's datasheet for recommended configuration"/>
@@ -217,7 +217,7 @@
         <title>CANnect Reader | OBDII Chip (STN2110)</title>
         <company>CANtech</company>
         <rev>0.0.05</rev>
-        <date>2020-11-27</date>
+        <date>2020-11-29</date>
         <source>obdii_chip.sch</source>
         <comment number="1" value="Created by Choong Jin Ng | jin8383@gmail.com"/>
         <comment number="2" value="Taken from STN21xx's datasheet for recommended configuration"/>
@@ -227,209 +227,6 @@
     </sheet>
   </design>
   <components>
-    <comp ref="J_ESP_1">
-      <value>4157</value>
-      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical</footprint>
-      <datasheet>https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">Adafruit Industries LLC</field>
-        <field name="Part Name">4157</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">1528-2929-ND</field>
-      </fields>
-      <libsource lib="CANtech" part="4157" description=""/>
-      <sheetpath names="/Host/" tstamps="/5F91C7D3/"/>
-      <tstamp>5FD4474A</tstamp>
-    </comp>
-    <comp ref="J_ESP_2">
-      <value>4157</value>
-      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical</footprint>
-      <datasheet>https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">Adafruit Industries LLC</field>
-        <field name="Part Name">4157</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">1528-2929-ND</field>
-      </fields>
-      <libsource lib="CANtech" part="4157" description=""/>
-      <sheetpath names="/Host/" tstamps="/5F91C7D3/"/>
-      <tstamp>5FD49391</tstamp>
-    </comp>
-    <comp ref="J_ESP_3">
-      <value>Header_Pin_8</value>
-      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical</footprint>
-      <libsource lib="CANtech" part="Header_Pin_8" description=""/>
-      <sheetpath names="/Host/" tstamps="/5F91C7D3/"/>
-      <tstamp>5FD549FB</tstamp>
-    </comp>
-    <comp ref="U_ESP_1">
-      <value>ESP32-WROOM-32D</value>
-      <footprint>footprints:CANtech-ESP32-WROOM-32</footprint>
-      <datasheet>https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">Espressif Systems</field>
-        <field name="Part Name">USB4110-GF-A</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">1965-ESP32-WROOM-32D(4MB)CT-ND</field>
-      </fields>
-      <libsource lib="RF_Module" part="ESP32-WROOM-32D" description="RF Module, ESP32-D0WD SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 2.7-3.6V, onboard antenna, SMD"/>
-      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
-      <tstamp>5FCFD4CB</tstamp>
-    </comp>
-    <comp ref="CP_ESP_1">
-      <value>100uF</value>
-      <footprint>footprints:UCB0J101MCL1GS</footprint>
-      <datasheet>https://www.nichicon.co.jp/english/products/pdfs/e-ucb.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">Nichicon</field>
-        <field name="Part Name">UCB0J101MCL1GS</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">493-9357-1-ND</field>
-      </fields>
-      <libsource lib="Device" part="CP" description="Polarized capacitor"/>
-      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
-      <tstamp>5FD016DA</tstamp>
-    </comp>
-    <comp ref="SW_ESP_1">
-      <value>PTS647SK38SMTR2LFS</value>
-      <footprint>footprints:PTS647SK38SMTR2LFS</footprint>
-      <datasheet>https://www.ckswitches.com/media/2567/pts647.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">C&amp;K</field>
-        <field name="Part Name">PTS 647 SK38 SMTR2 LFS</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">PTS647SK38SMTR2LFSCT-ND</field>
-      </fields>
-      <libsource lib="PTS647SK38SMTR2LFS" part="PTS647SK38SMTR2LFS" description=""/>
-      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
-      <tstamp>5FD049C3</tstamp>
-    </comp>
-    <comp ref="R_ESP_1">
-      <value>10k</value>
-      <footprint>footprints:RESC1608X55N</footprint>
-      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">Yageo</field>
-        <field name="Part Name">RT0603FRE0710KL</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">YAG2321CT-ND</field>
-      </fields>
-      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
-      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
-      <tstamp>5FD05D99</tstamp>
-    </comp>
-    <comp ref="R_ESP_2">
-      <value>500</value>
-      <footprint>footprints:RESC1508X55N</footprint>
-      <datasheet>https://www.vishay.com/docs/28916/mcxhp.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">Vishay</field>
-        <field name="Part Name">MCT0603PD4990DP500</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">749-1523-1-ND</field>
-      </fields>
-      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
-      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
-      <tstamp>5FD05EF5</tstamp>
-    </comp>
-    <comp ref="SW_ESP_2">
-      <value>PTS647SK38SMTR2LFS</value>
-      <footprint>footprints:PTS647SK38SMTR2LFS</footprint>
-      <datasheet>https://www.ckswitches.com/media/2567/pts647.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">C&amp;K</field>
-        <field name="Part Name">PTS 647 SK38 SMTR2 LFS</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">PTS647SK38SMTR2LFSCT-ND</field>
-      </fields>
-      <libsource lib="PTS647SK38SMTR2LFS" part="PTS647SK38SMTR2LFS" description=""/>
-      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
-      <tstamp>5FD07B0B</tstamp>
-    </comp>
-    <comp ref="R_ESP_4">
-      <value>10k</value>
-      <footprint>footprints:RESC1608X55N</footprint>
-      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">Yageo</field>
-        <field name="Part Name">RT0603FRE0710KL</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">YAG2321CT-ND</field>
-      </fields>
-      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
-      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
-      <tstamp>5FD0B524</tstamp>
-    </comp>
-    <comp ref="R_ESP_5">
-      <value>500</value>
-      <footprint>footprints:RESC1508X55N</footprint>
-      <datasheet>https://www.vishay.com/docs/28916/mcxhp.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">Vishay</field>
-        <field name="Part Name">MCT0603PD4990DP500</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">749-1523-1-ND</field>
-      </fields>
-      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
-      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
-      <tstamp>5FD0B52A</tstamp>
-    </comp>
-    <comp ref="C_ESP_1">
-      <value>0.1uF</value>
-      <footprint>footprints:CAPC1608X90</footprint>
-      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">Yageo</field>
-        <field name="Part Name">CC0603JRX7R8BB104</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">311-1777-1-ND</field>
-      </fields>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
-      <tstamp>5FD0E127</tstamp>
-    </comp>
-    <comp ref="C_ESP_2">
-      <value>0.1uF</value>
-      <footprint>footprints:CAPC1608X90</footprint>
-      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">Yageo</field>
-        <field name="Part Name">CC0603JRX7R8BB104</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">311-1777-1-ND</field>
-      </fields>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
-      <tstamp>5FD1259B</tstamp>
-    </comp>
-    <comp ref="LED_ESP_1">
-      <value>LED</value>
-      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
-      <datasheet>https://www.we-online.de/katalog/datasheet/150060VS75000.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">Würth Elektronik</field>
-        <field name="Part Name">150060VS75000</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">732-4980-1-ND</field>
-      </fields>
-      <libsource lib="Device" part="LED" description="Light emitting diode"/>
-      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
-      <tstamp>5FD157F7</tstamp>
-    </comp>
-    <comp ref="R_ESP_3">
-      <value>500</value>
-      <footprint>footprints:RESC1508X55N</footprint>
-      <datasheet>https://www.vishay.com/docs/28916/mcxhp.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">Vishay</field>
-        <field name="Part Name">MCT0603PD4990DP500</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">749-1523-1-ND</field>
-      </fields>
-      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
-      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
-      <tstamp>5FD162BA</tstamp>
-    </comp>
     <comp ref="C_PS_1">
       <value>4.7uF</value>
       <footprint>footprints:C1206C475K3RACAUTO</footprint>
@@ -706,20 +503,6 @@
       <sheetpath names="/Power Supply/Voltage Regulator (5V)/" tstamps="/5F8ADA45/5F9EA8B0/"/>
       <tstamp>5F9EFBD6</tstamp>
     </comp>
-    <comp ref="D_VR1_1">
-      <value>BAT46JFILM</value>
-      <footprint>footprints:BAT46JFILM</footprint>
-      <datasheet>https://www.st.com/content/ccc/resource/technical/document/datasheet/c6/32/d4/4a/28/d3/4b/11/CD00004930.pdf/files/CD00004930.pdf/jcr:content/translations/en.CD00004930.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">STMicroelectronics</field>
-        <field name="Part Name">BAT46JFILM</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">497-6653-1-ND</field>
-      </fields>
-      <libsource lib="BAT46" part="BAT46" description=""/>
-      <sheetpath names="/Power Supply/Voltage Regulator (5V)/" tstamps="/5F8ADA45/5F9EA8B0/"/>
-      <tstamp>5FB92426</tstamp>
-    </comp>
     <comp ref="L_VR2">
       <value>4.7uH</value>
       <footprint>footprints:CV201210-4R7K</footprint>
@@ -804,20 +587,6 @@
       <sheetpath names="/Power Supply/Voltage Regulator (3.3V)/" tstamps="/5F8ADA45/5FF30350/"/>
       <tstamp>5FF3161F</tstamp>
     </comp>
-    <comp ref="D_VR2_1">
-      <value>BAT46JFILM</value>
-      <footprint>footprints:BAT46JFILM</footprint>
-      <datasheet>https://www.st.com/content/ccc/resource/technical/document/datasheet/c6/32/d4/4a/28/d3/4b/11/CD00004930.pdf/files/CD00004930.pdf/jcr:content/translations/en.CD00004930.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">STMicroelectronics</field>
-        <field name="Part Name">BAT46JFILM</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">497-6653-1-ND</field>
-      </fields>
-      <libsource lib="BAT46" part="BAT46" description=""/>
-      <sheetpath names="/Power Supply/Voltage Regulator (3.3V)/" tstamps="/5F8ADA45/5FF30350/"/>
-      <tstamp>5FB95099</tstamp>
-    </comp>
     <comp ref="C_VR2_2">
       <value>0.1uF</value>
       <footprint>footprints:CAPC1608X90</footprint>
@@ -845,93 +614,6 @@
       <libsource lib="MAX25276ATCAVY" part="MAX25276ATCA_VY+" description=""/>
       <sheetpath names="/Power Supply/Voltage Regulator (3.3V)/" tstamps="/5F8ADA45/5FF30350/"/>
       <tstamp>5FF315FD</tstamp>
-    </comp>
-    <comp ref="U_IMU_1">
-      <value>LSM6DSMTR</value>
-      <footprint>footprints:PQFN50P300X250X86-14N</footprint>
-      <datasheet>https://www.st.com/content/ccc/resource/technical/document/datasheet/76/27/cf/88/c5/03/42/6b/DM00218116.pdf/files/DM00218116.pdf/jcr:content/translations/en.DM00218116.pdf</datasheet>
-      <fields>
-        <field name="Field4">0.86 mm</field>
-        <field name="Field5">Rev 7</field>
-        <field name="Field6">IPC 7351B</field>
-        <field name="Manufacturer">STMicroelectronics</field>
-        <field name="Part Name">LSM6DSMTR</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">497-16696-1-ND</field>
-      </fields>
-      <libsource lib="LSM6DSMTR" part="LSM6DSMTR" description=""/>
-      <sheetpath names="/Reader IMU/" tstamps="/5FC2797A/"/>
-      <tstamp>5FC2823C</tstamp>
-    </comp>
-    <comp ref="C_IMU_1">
-      <value>100nF</value>
-      <footprint>footprints:CAPC1608X90N</footprint>
-      <datasheet>https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">TDK Corporation</field>
-        <field name="Part Name">C1608X7R2A103K080AA</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">445-1304-1-ND</field>
-      </fields>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/Reader IMU/" tstamps="/5FC2797A/"/>
-      <tstamp>5FC2824C</tstamp>
-    </comp>
-    <comp ref="R_IMU_1">
-      <value>4.7k</value>
-      <footprint>footprints:RESC1608X55N</footprint>
-      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">Yageo</field>
-        <field name="Part Name">RT0603DRD074K7L</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">311-4.7KDCT-ND</field>
-      </fields>
-      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
-      <sheetpath names="/Reader IMU/" tstamps="/5FC2797A/"/>
-      <tstamp>5FC2E281</tstamp>
-    </comp>
-    <comp ref="R_IMU_2">
-      <value>4.7k</value>
-      <footprint>footprints:RESC1608X55N</footprint>
-      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">Yageo</field>
-        <field name="Part Name">RT0603DRD074K7L</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">311-4.7KDCT-ND</field>
-      </fields>
-      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
-      <sheetpath names="/Reader IMU/" tstamps="/5FC2797A/"/>
-      <tstamp>5FC2E5A5</tstamp>
-    </comp>
-    <comp ref="C_IMU_2">
-      <value>100nF</value>
-      <footprint>footprints:CAPC1608X90N</footprint>
-      <datasheet>https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">TDK Corporation</field>
-        <field name="Part Name">C1608X7R2A103K080AA</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">445-1304-1-ND</field>
-      </fields>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/Reader IMU/" tstamps="/5FC2797A/"/>
-      <tstamp>5FC32770</tstamp>
-    </comp>
-    <comp ref="C_IMU_3">
-      <value>100nF</value>
-      <footprint>footprints:CAPC1608X90N</footprint>
-      <datasheet>https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf</datasheet>
-      <fields>
-        <field name="Manufacturer">TDK Corporation</field>
-        <field name="Part Name">C1608X7R2A103K080AA</field>
-        <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">445-1304-1-ND</field>
-      </fields>
-      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <sheetpath names="/Reader IMU/" tstamps="/5FC2797A/"/>
-      <tstamp>5FC32983</tstamp>
     </comp>
     <comp ref="U_CN_1">
       <value>AHDF15A-KG-TAXB</value>
@@ -1037,19 +719,281 @@
       <sheetpath names="/OBD Connector/ESD Protection/" tstamps="/5FF6FE24/5FA6BC58/"/>
       <tstamp>5FA2A1C7</tstamp>
     </comp>
-    <comp ref="J_OBD_2">
-      <value>Header_Pin_4</value>
-      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical</footprint>
-      <libsource lib="CANtech" part="Header_Pin_4" description=""/>
-      <sheetpath names="/OBDII Interpreter/" tstamps="/5F95F80B/"/>
-      <tstamp>5FCDCC00</tstamp>
+    <comp ref="J_ESP_1">
+      <value>4157</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical</footprint>
+      <datasheet>https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Adafruit Industries LLC</field>
+        <field name="Part Name">4157</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">1528-2929-ND</field>
+      </fields>
+      <libsource lib="CANtech" part="4157" description=""/>
+      <sheetpath names="/Host/" tstamps="/5F91C7D3/"/>
+      <tstamp>5FD4474A</tstamp>
     </comp>
-    <comp ref="J_OBD_1">
-      <value>Header_Pin_4</value>
-      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical</footprint>
-      <libsource lib="CANtech" part="Header_Pin_4" description=""/>
-      <sheetpath names="/OBDII Interpreter/" tstamps="/5F95F80B/"/>
-      <tstamp>5FCEC5FD</tstamp>
+    <comp ref="J_ESP_2">
+      <value>4157</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x20_P2.54mm_Vertical</footprint>
+      <datasheet>https://media.digikey.com/pdf/Data%20Sheets/Adafruit%20PDFs/4157_Web.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Adafruit Industries LLC</field>
+        <field name="Part Name">4157</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">1528-2929-ND</field>
+      </fields>
+      <libsource lib="CANtech" part="4157" description=""/>
+      <sheetpath names="/Host/" tstamps="/5F91C7D3/"/>
+      <tstamp>5FD49391</tstamp>
+    </comp>
+    <comp ref="J_ESP_3">
+      <value>Header_Pin_8</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical</footprint>
+      <libsource lib="CANtech" part="Header_Pin_8" description=""/>
+      <sheetpath names="/Host/" tstamps="/5F91C7D3/"/>
+      <tstamp>5FD549FB</tstamp>
+    </comp>
+    <comp ref="U_ESP_1">
+      <value>ESP32-WROOM-32D</value>
+      <footprint>footprints:CANtech-ESP32-WROOM-32</footprint>
+      <datasheet>https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Espressif Systems</field>
+        <field name="Part Name">USB4110-GF-A</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">1965-ESP32-WROOM-32D(4MB)CT-ND</field>
+      </fields>
+      <libsource lib="RF_Module" part="ESP32-WROOM-32D" description="RF Module, ESP32-D0WD SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 2.7-3.6V, onboard antenna, SMD"/>
+      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
+      <tstamp>5FCFD4CB</tstamp>
+    </comp>
+    <comp ref="CP_ESP_1">
+      <value>100uF</value>
+      <footprint>footprints:UCB0J101MCL1GS</footprint>
+      <datasheet>https://www.nichicon.co.jp/english/products/pdfs/e-ucb.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Nichicon</field>
+        <field name="Part Name">UCB0J101MCL1GS</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">493-9357-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="CP" description="Polarized capacitor"/>
+      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
+      <tstamp>5FD016DA</tstamp>
+    </comp>
+    <comp ref="SW_ESP_1">
+      <value>PTS647SK38SMTR2LFS</value>
+      <footprint>footprints:PTS647SK38SMTR2LFS</footprint>
+      <datasheet>https://www.ckswitches.com/media/2567/pts647.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">C&amp;K</field>
+        <field name="Part Name">PTS 647 SK38 SMTR2 LFS</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">PTS647SK38SMTR2LFSCT-ND</field>
+      </fields>
+      <libsource lib="PTS647SK38SMTR2LFS" part="PTS647SK38SMTR2LFS" description=""/>
+      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
+      <tstamp>5FD049C3</tstamp>
+    </comp>
+    <comp ref="R_ESP_1">
+      <value>10k</value>
+      <footprint>footprints:RESC1608X55N</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">RT0603FRE0710KL</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">YAG2321CT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
+      <tstamp>5FD05D99</tstamp>
+    </comp>
+    <comp ref="R_ESP_2">
+      <value>500</value>
+      <footprint>footprints:RESC1508X55N</footprint>
+      <datasheet>https://www.vishay.com/docs/28916/mcxhp.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Part Name">MCT0603PD4990DP500</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">749-1523-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
+      <tstamp>5FD05EF5</tstamp>
+    </comp>
+    <comp ref="SW_ESP_2">
+      <value>PTS647SK38SMTR2LFS</value>
+      <footprint>footprints:PTS647SK38SMTR2LFS</footprint>
+      <datasheet>https://www.ckswitches.com/media/2567/pts647.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">C&amp;K</field>
+        <field name="Part Name">PTS 647 SK38 SMTR2 LFS</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">PTS647SK38SMTR2LFSCT-ND</field>
+      </fields>
+      <libsource lib="PTS647SK38SMTR2LFS" part="PTS647SK38SMTR2LFS" description=""/>
+      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
+      <tstamp>5FD07B0B</tstamp>
+    </comp>
+    <comp ref="R_ESP_4">
+      <value>10k</value>
+      <footprint>footprints:RESC1608X55N</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">RT0603FRE0710KL</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">YAG2321CT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
+      <tstamp>5FD0B524</tstamp>
+    </comp>
+    <comp ref="R_ESP_5">
+      <value>500</value>
+      <footprint>footprints:RESC1508X55N</footprint>
+      <datasheet>https://www.vishay.com/docs/28916/mcxhp.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Part Name">MCT0603PD4990DP500</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">749-1523-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
+      <tstamp>5FD0B52A</tstamp>
+    </comp>
+    <comp ref="C_ESP_1">
+      <value>0.1uF</value>
+      <footprint>footprints:CAPC1608X90</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">CC0603JRX7R8BB104</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">311-1777-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
+      <tstamp>5FD0E127</tstamp>
+    </comp>
+    <comp ref="C_ESP_2">
+      <value>0.1uF</value>
+      <footprint>footprints:CAPC1608X90</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">CC0603JRX7R8BB104</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">311-1777-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
+      <tstamp>5FD1259B</tstamp>
+    </comp>
+    <comp ref="R_ESP_3">
+      <value>500</value>
+      <footprint>footprints:RESC1508X55N</footprint>
+      <datasheet>https://www.vishay.com/docs/28916/mcxhp.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Part Name">MCT0603PD4990DP500</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">749-1523-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
+      <tstamp>5FD162BA</tstamp>
+    </comp>
+    <comp ref="LED_ESP_1">
+      <value>Bluetooth Status</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>https://www.we-online.de/katalog/datasheet/150060VS75000.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Würth Elektronik</field>
+        <field name="Part Name">150060VS75000</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">732-4980-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <sheetpath names="/Host/ESP32/" tstamps="/5F91C7D3/5FCFC955/"/>
+      <tstamp>5FD157F7</tstamp>
+    </comp>
+    <comp ref="U_IMU_1">
+      <value>LSM6DSMTR</value>
+      <footprint>footprints:PQFN50P300X250X86-14N</footprint>
+      <datasheet>https://www.st.com/content/ccc/resource/technical/document/datasheet/76/27/cf/88/c5/03/42/6b/DM00218116.pdf/files/DM00218116.pdf/jcr:content/translations/en.DM00218116.pdf</datasheet>
+      <fields>
+        <field name="Field4">0.86 mm</field>
+        <field name="Field5">Rev 7</field>
+        <field name="Field6">IPC 7351B</field>
+        <field name="Manufacturer">STMicroelectronics</field>
+        <field name="Part Name">LSM6DSMTR</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">497-16696-1-ND</field>
+      </fields>
+      <libsource lib="LSM6DSMTR" part="LSM6DSMTR" description=""/>
+      <sheetpath names="/Reader IMU/" tstamps="/5FC2797A/"/>
+      <tstamp>5FC2823C</tstamp>
+    </comp>
+    <comp ref="C_IMU_1">
+      <value>100nF</value>
+      <footprint>footprints:CAPC1608X90N</footprint>
+      <datasheet>https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">TDK Corporation</field>
+        <field name="Part Name">C1608X7R2A103K080AA</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">445-1304-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Reader IMU/" tstamps="/5FC2797A/"/>
+      <tstamp>5FC2824C</tstamp>
+    </comp>
+    <comp ref="R_IMU_1">
+      <value>4.7k</value>
+      <footprint>footprints:RESC1608X55N</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">RT0603DRD074K7L</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">311-4.7KDCT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/Reader IMU/" tstamps="/5FC2797A/"/>
+      <tstamp>5FC2E281</tstamp>
+    </comp>
+    <comp ref="R_IMU_2">
+      <value>4.7k</value>
+      <footprint>footprints:RESC1608X55N</footprint>
+      <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Part Name">RT0603DRD074K7L</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">311-4.7KDCT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/Reader IMU/" tstamps="/5FC2797A/"/>
+      <tstamp>5FC2E5A5</tstamp>
+    </comp>
+    <comp ref="C_IMU_2">
+      <value>100nF</value>
+      <footprint>footprints:CAPC1608X90N</footprint>
+      <datasheet>https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">TDK Corporation</field>
+        <field name="Part Name">C1608X7R2A103K080AA</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">445-1304-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Reader IMU/" tstamps="/5FC2797A/"/>
+      <tstamp>5FC32770</tstamp>
     </comp>
     <comp ref="R_ISO_3">
       <value>510k</value>
@@ -1525,7 +1469,7 @@
       <sheetpath names="/OBDII Interpreter/SAE J1850 VPW/PWM Transceiver/" tstamps="/5F95F80B/5FB3FEAD/"/>
       <tstamp>5FB86936</tstamp>
     </comp>
-    <comp ref="R_COMP_5">
+    <comp ref="R_COMP_6">
       <value>10k</value>
       <footprint>footprints:RESC1608X55N</footprint>
       <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
@@ -1539,7 +1483,7 @@
       <sheetpath names="/OBDII Interpreter/Comparator Transceiver/" tstamps="/5F95F80B/5FB4CA84/"/>
       <tstamp>5FB4E408</tstamp>
     </comp>
-    <comp ref="R_COMP_6">
+    <comp ref="R_COMP_7">
       <value>10k</value>
       <footprint>footprints:RESC1608X55N</footprint>
       <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
@@ -1553,7 +1497,7 @@
       <sheetpath names="/OBDII Interpreter/Comparator Transceiver/" tstamps="/5F95F80B/5FB4CA84/"/>
       <tstamp>5FB4E431</tstamp>
     </comp>
-    <comp ref="R_COMP1">
+    <comp ref="R_COMP_5">
       <value>10k</value>
       <footprint>footprints:RESC1608X55N</footprint>
       <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
@@ -1595,7 +1539,7 @@
       <sheetpath names="/OBDII Interpreter/Comparator Transceiver/" tstamps="/5F95F80B/5FB4CA84/"/>
       <tstamp>5FBACEC6</tstamp>
     </comp>
-    <comp ref="R_COMP_9">
+    <comp ref="R_COMP_10">
       <value>10k</value>
       <footprint>footprints:RESC1608X55N</footprint>
       <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
@@ -1609,7 +1553,7 @@
       <sheetpath names="/OBDII Interpreter/Comparator Transceiver/" tstamps="/5F95F80B/5FB4CA84/"/>
       <tstamp>5FBAD28A</tstamp>
     </comp>
-    <comp ref="R_COMP_7">
+    <comp ref="R_COMP_8">
       <value>2.7k</value>
       <footprint>footprints:RESC1608X55N</footprint>
       <datasheet>https://www.vishay.com/docs/28773/crcwce3.pdf</datasheet>
@@ -1623,7 +1567,7 @@
       <sheetpath names="/OBDII Interpreter/Comparator Transceiver/" tstamps="/5F95F80B/5FB4CA84/"/>
       <tstamp>5FBB49DF</tstamp>
     </comp>
-    <comp ref="R_COMP_8">
+    <comp ref="R_COMP_9">
       <value>10k</value>
       <footprint>footprints:RESC1608X55N</footprint>
       <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
@@ -1665,7 +1609,7 @@
       <sheetpath names="/OBDII Interpreter/Comparator Transceiver/" tstamps="/5F95F80B/5FB4CA84/"/>
       <tstamp>5FBBEB81</tstamp>
     </comp>
-    <comp ref="R_COMP_10">
+    <comp ref="R_COMP_11">
       <value>10k</value>
       <footprint>footprints:RESC1608X55N</footprint>
       <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
@@ -1820,7 +1764,7 @@
       <sheetpath names="/OBDII Interpreter/OBDII Chip/" tstamps="/5F95F80B/5FC0631B/"/>
       <tstamp>5FC46401</tstamp>
     </comp>
-    <comp ref="R_STN_12">
+    <comp ref="R_STN_13">
       <value>100k</value>
       <footprint>footprints:RESC1608X55N</footprint>
       <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
@@ -1834,7 +1778,7 @@
       <sheetpath names="/OBDII Interpreter/OBDII Chip/" tstamps="/5F95F80B/5FC0631B/"/>
       <tstamp>5FCC1888</tstamp>
     </comp>
-    <comp ref="C_STN_4">
+    <comp ref="C_STN_5">
       <value>1uF</value>
       <footprint>footprints:0603</footprint>
       <datasheet>https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf</datasheet>
@@ -1906,7 +1850,7 @@
       <sheetpath names="/OBDII Interpreter/OBDII Chip/" tstamps="/5F95F80B/5FC0631B/"/>
       <tstamp>5FCFC133</tstamp>
     </comp>
-    <comp ref="C_STN_5">
+    <comp ref="C_STN_6">
       <value>1uF</value>
       <footprint>footprints:0603</footprint>
       <datasheet>https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf</datasheet>
@@ -1920,7 +1864,7 @@
       <sheetpath names="/OBDII Interpreter/OBDII Chip/" tstamps="/5F95F80B/5FC0631B/"/>
       <tstamp>5FC6BE46</tstamp>
     </comp>
-    <comp ref="R_STN_10">
+    <comp ref="R_STN_11">
       <value>10k</value>
       <footprint>footprints:RESC1608X55N</footprint>
       <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RT_1-to-0.01_RoHS_L_12.pdf</datasheet>
@@ -1934,7 +1878,7 @@
       <sheetpath names="/OBDII Interpreter/OBDII Chip/" tstamps="/5F95F80B/5FC0631B/"/>
       <tstamp>5FC6FB41</tstamp>
     </comp>
-    <comp ref="R_STN_11">
+    <comp ref="R_STN_12">
       <value>10</value>
       <footprint>footprints:RESC1608X55N</footprint>
       <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RE_105_RoHS_L_6.pdf</datasheet>
@@ -2066,6 +2010,34 @@
       <sheetpath names="/OBDII Interpreter/OBDII Chip/" tstamps="/5F95F80B/5FC0631B/"/>
       <tstamp>5FE0EC14</tstamp>
     </comp>
+    <comp ref="R_STN_10">
+      <value>500</value>
+      <footprint>footprints:RESC1508X55N</footprint>
+      <datasheet>https://www.vishay.com/docs/28916/mcxhp.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Part Name">MCT0603PD4990DP500</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">749-1523-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <sheetpath names="/OBDII Interpreter/OBDII Chip/" tstamps="/5F95F80B/5FC0631B/"/>
+      <tstamp>5FC65094</tstamp>
+    </comp>
+    <comp ref="C_STN_4">
+      <value>1uF</value>
+      <footprint>footprints:0603</footprint>
+      <datasheet>https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Kermet</field>
+        <field name="Part Name">C0603C105K4RACTU</field>
+        <field name="Vendor">DigiKey Canada</field>
+        <field name="digikeypn">399-7847-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/OBDII Interpreter/OBDII Chip/" tstamps="/5F95F80B/5FC0631B/"/>
+      <tstamp>5FCA7216</tstamp>
+    </comp>
   </components>
   <libparts>
     <libpart lib="AHDF15AKGTAXB" part="AHDF15A-KG-TAXB">
@@ -2094,21 +2066,6 @@
         <pin num="13" name="~" type="passive"/>
         <pin num="14" name="~" type="passive"/>
         <pin num="15" name="~" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="BAT46" part="BAT46">
-      <docs>https://www.st.com/content/ccc/resource/technical/document/datasheet/group1/11/76/e4/a3/df/07/49/14/CD00000767/files/CD00000767.pdf/jcr:content/translations/en.CD00000767.pdf</docs>
-      <footprints>
-        <fp>DO-35_STM</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">CR</field>
-        <field name="Value">BAT46</field>
-        <field name="Footprint">DO-35_STM</field>
-      </fields>
-      <pins>
-        <pin num="1" name="1" type="unspc"/>
-        <pin num="2" name="2" type="unspc"/>
       </pins>
     </libpart>
     <libpart lib="CANtech" part="4157">
@@ -2153,19 +2110,6 @@
       <pins>
         <pin num="1" name="~" type="BiDi"/>
         <pin num="2" name="~" type="BiDi"/>
-      </pins>
-    </libpart>
-    <libpart lib="CANtech" part="Header_Pin_4">
-      <fields>
-        <field name="Reference">J</field>
-        <field name="Value">Header_Pin_4</field>
-        <field name="Footprint">Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical</field>
-      </fields>
-      <pins>
-        <pin num="1" name="~" type="BiDi"/>
-        <pin num="2" name="~" type="BiDi"/>
-        <pin num="3" name="~" type="BiDi"/>
-        <pin num="4" name="~" type="BiDi"/>
       </pins>
     </libpart>
     <libpart lib="CANtech" part="Header_Pin_8">
@@ -2710,9 +2654,6 @@
     <library logical="AHDF15AKGTAXB">
       <uri>C:\Users\Jin-Desktop\Documents\Projects\ensc-405w\hardware\Reader/libraries/AHDF15AKGTAXB.lib</uri>
     </library>
-    <library logical="BAT46">
-      <uri>C:\Users\Jin-Desktop\Documents\Projects\ensc-405w\hardware\Reader/libraries/BAT46.lib</uri>
-    </library>
     <library logical="CANtech">
       <uri>C:\Users\Jin-Desktop\Documents\Projects\ensc-405w\hardware\Reader/libraries/CANtech.lib</uri>
     </library>
@@ -2769,490 +2710,482 @@
     </library>
   </libraries>
   <nets>
-    <net code="1" name="/Host/HST_TX">
-      <node ref="J_ESP_2" pin="11"/>
-      <node ref="U_ESP_1" pin="28"/>
-      <node ref="R_STN_4" pin="2"/>
-      <node ref="J_STN_1" pin="2"/>
-      <node ref="U_STN_1" pin="4"/>
-    </net>
-    <net code="2" name="/Host/HST_RX">
-      <node ref="J_STN_1" pin="1"/>
-      <node ref="U_STN_1" pin="5"/>
-      <node ref="J_ESP_2" pin="12"/>
-      <node ref="U_ESP_1" pin="27"/>
-    </net>
-    <net code="3" name="/Host/~SLEEP_OBD~">
-      <node ref="R_STN_12" pin="2"/>
-      <node ref="J_OBD_2" pin="2"/>
-      <node ref="J_ESP_2" pin="14"/>
-      <node ref="SW_ESP_2" pin="3"/>
-      <node ref="U_ESP_1" pin="25"/>
-      <node ref="U_STN_1" pin="27"/>
-    </net>
-    <net code="4" name="/OBDII Interpreter/RESET_OBD_SW">
-      <node ref="J_STN_6" pin="1"/>
-      <node ref="R_STN_10" pin="2"/>
-      <node ref="J_OBD_2" pin="3"/>
-      <node ref="U_STN_1" pin="18"/>
-      <node ref="J_ESP_2" pin="15"/>
-      <node ref="U_ESP_1" pin="24"/>
-      <node ref="R_ESP_3" pin="2"/>
-    </net>
-    <net code="5" name="/Host/~RESET_OBD_HW~">
-      <node ref="SW_STN_1" pin="2"/>
-      <node ref="J_ESP_2" pin="16"/>
-      <node ref="R_STN_2" pin="2"/>
-      <node ref="U_STN_1" pin="12"/>
-      <node ref="J_OBD_2" pin="4"/>
-      <node ref="J_OBD_1" pin="1"/>
-      <node ref="U_ESP_1" pin="23"/>
-    </net>
-    <net code="6" name="/Host/~PWR_CTRL~">
-      <node ref="J_OBD_2" pin="1"/>
-      <node ref="Q_PS_1" pin="1"/>
-      <node ref="J_PS_1" pin="8"/>
-      <node ref="R_PS_1" pin="2"/>
-      <node ref="Q_HSCAN_1" pin="1"/>
-      <node ref="U_STN_1" pin="32"/>
-      <node ref="U_ESP_1" pin="26"/>
-      <node ref="J_ESP_2" pin="13"/>
-    </net>
-    <net code="7" name="/OBDII Interpreter/PWR_CTRL">
-      <node ref="Q_PS_3" pin="1"/>
-      <node ref="Q_PS_4" pin="1"/>
-      <node ref="Q_ISO_2" pin="1"/>
-      <node ref="Q_ISO_1" pin="1"/>
-      <node ref="Q_PS_1" pin="3"/>
-      <node ref="R_PS_2" pin="2"/>
-      <node ref="Q_PS_2" pin="1"/>
-    </net>
-    <net code="8" name="/OBDII Interpreter/Analog_Voltage">
-      <node ref="R_VS_1" pin="2"/>
-      <node ref="R_VS_2" pin="1"/>
-      <node ref="C_VS_1" pin="1"/>
-      <node ref="U_STN_1" pin="19"/>
-      <node ref="J_OBD_1" pin="4"/>
-      <node ref="D_VS_2" pin="1"/>
-      <node ref="D_VS_1" pin="2"/>
-    </net>
-    <net code="9" name="/Host/IMU_INT2">
-      <node ref="J_ESP_1" pin="11"/>
-      <node ref="U_IMU_1" pin="9"/>
-      <node ref="U_ESP_1" pin="11"/>
-    </net>
-    <net code="10" name="Pin6_ISO15765_CAN_BUS_High">
-      <node ref="D_ESD_1" pin="1"/>
-      <node ref="R_HSCAN_3" pin="1"/>
-      <node ref="J_CN_1" pin="15"/>
-      <node ref="U_CN_1" pin="11"/>
-      <node ref="U_HSCAN_1" pin="7"/>
-    </net>
-    <net code="11" name="Pin2_SAE_J1850_BUS+">
-      <node ref="U_CN_1" pin="1"/>
-      <node ref="R_COMP_9" pin="2"/>
-      <node ref="R_COMP_1" pin="1"/>
-      <node ref="J_CN_1" pin="20"/>
-      <node ref="R_J1850_5" pin="1"/>
-      <node ref="D_J1850_1" pin="1"/>
-      <node ref="D_ESD_5" pin="1"/>
-    </net>
-    <net code="12" name="Pin10_SAE_J1850_BUS-">
-      <node ref="R_COMP_3" pin="2"/>
-      <node ref="R_J1850_8" pin="2"/>
-      <node ref="J_CN_1" pin="19"/>
-      <node ref="Q_J1850_4" pin="3"/>
-      <node ref="U_CN_1" pin="2"/>
-      <node ref="D_ESD_5" pin="2"/>
-    </net>
-    <net code="13" name="Pin15_ISO9141_L-Line">
-      <node ref="D_ESD_4" pin="2"/>
-      <node ref="U_CN_1" pin="7"/>
-      <node ref="Q_ISO_4" pin="3"/>
-      <node ref="R_ISO_4" pin="1"/>
-      <node ref="J_CN_1" pin="16"/>
-    </net>
-    <net code="14" name="Pin14_ISO15765_CAN_BUS_Low">
-      <node ref="J_CN_1" pin="14"/>
-      <node ref="U_CN_1" pin="12"/>
-      <node ref="U_HSCAN_1" pin="6"/>
-      <node ref="R_HSCAN_2" pin="1"/>
-      <node ref="D_ESD_1" pin="2"/>
-    </net>
-    <net code="15" name="Pin7_ISO9141_K-Line">
-      <node ref="U_CN_1" pin="6"/>
-      <node ref="D_ESD_4" pin="1"/>
-      <node ref="J_CN_1" pin="17"/>
-      <node ref="Q_ISO_3" pin="3"/>
-      <node ref="R_COMP_2" pin="1"/>
-      <node ref="R_ISO_3" pin="1"/>
-    </net>
-    <net code="16" name="/Host/IMU_INT1">
-      <node ref="U_ESP_1" pin="12"/>
-      <node ref="U_IMU_1" pin="4"/>
-      <node ref="J_ESP_1" pin="12"/>
-    </net>
-    <net code="17" name="/Host/IMU_SA0">
+    <net code="1" name="/Host/IMU_SA0">
       <node ref="U_ESP_1" pin="16"/>
       <node ref="U_IMU_1" pin="1"/>
       <node ref="J_ESP_1" pin="16"/>
     </net>
-    <net code="18" name="/Host/IMU_SDA">
-      <node ref="U_ESP_1" pin="14"/>
-      <node ref="R_IMU_2" pin="2"/>
-      <node ref="U_IMU_1" pin="14"/>
-      <node ref="J_ESP_1" pin="14"/>
-    </net>
-    <net code="19" name="/Host/IMU_SCL">
-      <node ref="J_ESP_1" pin="13"/>
+    <net code="2" name="/Host/IMU_SCL">
+      <node ref="R_IMU_1" pin="2"/>
       <node ref="U_ESP_1" pin="13"/>
       <node ref="U_IMU_1" pin="13"/>
-      <node ref="R_IMU_1" pin="2"/>
+      <node ref="J_ESP_1" pin="13"/>
     </net>
-    <net code="20" name="+3.3V_SW">
-      <node ref="Q_PS_4" pin="2"/>
-      <node ref="J_ESP_2" pin="18"/>
-      <node ref="J_PS_1" pin="5"/>
+    <net code="3" name="Pin6_ISO15765_CAN_BUS_High">
+      <node ref="R_HSCAN_3" pin="1"/>
+      <node ref="U_HSCAN_1" pin="7"/>
+      <node ref="D_ESD_1" pin="1"/>
+      <node ref="J_CN_1" pin="15"/>
+      <node ref="U_CN_1" pin="11"/>
     </net>
-    <net code="21" name="+12V_SW">
-      <node ref="Q_PS_2" pin="2"/>
-      <node ref="J_PS_1" pin="1"/>
-      <node ref="U_COMP_1" pin="3"/>
-      <node ref="R_COMP_5" pin="1"/>
-    </net>
-    <net code="22" name="Pin16_Raw_+12V_Battery">
-      <node ref="Q_ISO_1" pin="3"/>
-      <node ref="Q_ISO_2" pin="3"/>
-      <node ref="Q_PS_2" pin="3"/>
-      <node ref="J_CN_1" pin="12"/>
-      <node ref="U_CN_1" pin="10"/>
-      <node ref="U_VR2" pin="2"/>
-      <node ref="J_CN_1" pin="3"/>
-      <node ref="J_CN_1" pin="9"/>
-      <node ref="U_VR1" pin="2"/>
-      <node ref="C_PS_1" pin="1"/>
-      <node ref="R_PS_2" pin="1"/>
-      <node ref="R_VS_1" pin="1"/>
-      <node ref="J_PS_1" pin="2"/>
-    </net>
-    <net code="23" name="+5V">
-      <node ref="Q_PS_3" pin="3"/>
-      <node ref="D_VR1_1" pin="1"/>
-      <node ref="J_ESP_1" pin="20"/>
-      <node ref="U_HSCAN_1" pin="3"/>
-      <node ref="J_PS_1" pin="3"/>
-      <node ref="C_PS_2" pin="1"/>
-      <node ref="C_HSCAN_3" pin="2"/>
-    </net>
-    <net code="24" name="+5V_SW">
-      <node ref="J_PS_1" pin="4"/>
-      <node ref="D_J1850_3" pin="2"/>
-      <node ref="J_ESP_1" pin="17"/>
-      <node ref="R_COMP_7" pin="1"/>
-      <node ref="Q_PS_3" pin="2"/>
-    </net>
-    <net code="25" name="Net-(J_ESP_2-Pad7)">
-      <node ref="J_ESP_2" pin="7"/>
-    </net>
-    <net code="26" name="Net-(J_ESP_2-Pad19)">
-      <node ref="J_ESP_2" pin="19"/>
-    </net>
-    <net code="27" name="Pin4_GnD_Chassis">
-      <node ref="CP_ESP_1" pin="2"/>
-      <node ref="U_ESP_1" pin="39"/>
-      <node ref="C_HSCAN_1" pin="2"/>
-      <node ref="U_HSCAN_1" pin="9"/>
-      <node ref="D_ESD_1" pin="3"/>
-      <node ref="Q_ISO_3" pin="2"/>
-      <node ref="Q_ISO_4" pin="2"/>
-      <node ref="U_ESP_1" pin="1"/>
-      <node ref="U_ESP_1" pin="15"/>
-      <node ref="U_ESP_1" pin="38"/>
-      <node ref="LED_ESP_1" pin="1"/>
-      <node ref="C_ESP_2" pin="2"/>
-      <node ref="U_HSCAN_1" pin="2"/>
-      <node ref="Q_HSCAN_1" pin="2"/>
-      <node ref="R_VR2_1" pin="1"/>
-      <node ref="R_VR2_2" pin="2"/>
-      <node ref="R_ESP_2" pin="2"/>
-      <node ref="C_HSCAN_2" pin="2"/>
-      <node ref="R_ESP_5" pin="2"/>
-      <node ref="C_ESP_1" pin="2"/>
-      <node ref="D_ESD_4" pin="3"/>
-      <node ref="U_STN_1" pin="6"/>
-      <node ref="U_STN_1" pin="45"/>
-      <node ref="SW_STN_1" pin="1"/>
-      <node ref="U_STN_1" pin="39"/>
-      <node ref="U_STN_1" pin="38"/>
-      <node ref="U_STN_1" pin="37"/>
-      <node ref="U_STN_1" pin="3"/>
-      <node ref="U_STN_1" pin="29"/>
-      <node ref="U_STN_1" pin="26"/>
-      <node ref="U_STN_1" pin="20"/>
-      <node ref="U_STN_1" pin="2"/>
-      <node ref="U_STN_1" pin="16"/>
-      <node ref="U_STN_1" pin="15"/>
-      <node ref="R_J1850_1" pin="2"/>
-      <node ref="R_J1850_7" pin="2"/>
-      <node ref="Q_J1850_4" pin="2"/>
-      <node ref="D_ESD_2" pin="3"/>
-      <node ref="C_HSCAN_3" pin="1"/>
-      <node ref="Q_J1850_2" pin="2"/>
-      <node ref="Y_STN_1" pin="2"/>
-      <node ref="CP_STN_1" pin="2"/>
-      <node ref="D_ESD_3" pin="1"/>
-      <node ref="U_STN_1" pin="1"/>
-      <node ref="J_STN_6" pin="2"/>
-      <node ref="J_STN_5" pin="2"/>
-      <node ref="J_STN_4" pin="1"/>
-      <node ref="C_STN_5" pin="2"/>
-      <node ref="C_STN_1" pin="2"/>
-      <node ref="C_STN_3" pin="2"/>
-      <node ref="C_STN_2" pin="1"/>
-      <node ref="C_STN_4" pin="2"/>
-      <node ref="R_COMP_8" pin="2"/>
-      <node ref="D_J1850_2" pin="1"/>
-      <node ref="C_J1850_1" pin="2"/>
-      <node ref="R_J1850_4" pin="2"/>
-      <node ref="Q_J1850_1" pin="2"/>
-      <node ref="R_COMP_6" pin="2"/>
-      <node ref="U_COMP_1" pin="12"/>
-      <node ref="D_ESD_5" pin="3"/>
-      <node ref="J_CN_1" pin="13"/>
-      <node ref="J_CN_1" pin="11"/>
-      <node ref="J_CN_1" pin="10"/>
-      <node ref="U_CN_1" pin="13"/>
-      <node ref="U_CN_1" pin="0"/>
-      <node ref="U_IMU_1" pin="7"/>
-      <node ref="U_IMU_1" pin="6"/>
-      <node ref="U_IMU_1" pin="3"/>
-      <node ref="J_CN_1" pin="8"/>
-      <node ref="R_VS_2" pin="2"/>
-      <node ref="U_VR1" pin="6"/>
-      <node ref="U_VR1" pin="7"/>
-      <node ref="D_VS_2" pin="2"/>
-      <node ref="U_VR1" pin="13"/>
-      <node ref="C_VS_1" pin="2"/>
-      <node ref="C_VR1_1" pin="1"/>
-      <node ref="C_VR1_3" pin="2"/>
-      <node ref="C_PS_2" pin="2"/>
-      <node ref="C_PS_3" pin="2"/>
-      <node ref="C_PS_1" pin="2"/>
-      <node ref="Q_PS_1" pin="2"/>
-      <node ref="J_ESP_2" pin="20"/>
-      <node ref="J_ESP_2" pin="1"/>
-      <node ref="J_ESP_3" pin="4"/>
-      <node ref="J_PS_1" pin="7"/>
-      <node ref="U_IMU_1" pin="2"/>
-      <node ref="C_IMU_2" pin="2"/>
-      <node ref="C_IMU_3" pin="2"/>
-      <node ref="J_ESP_1" pin="19"/>
-      <node ref="J_ESP_1" pin="15"/>
-      <node ref="J_ESP_1" pin="1"/>
-      <node ref="C_IMU_1" pin="2"/>
-      <node ref="C_VR2_1" pin="2"/>
-      <node ref="C_VR2_3" pin="2"/>
-      <node ref="U_VR2" pin="13"/>
-      <node ref="U_VR2" pin="6"/>
-      <node ref="U_VR2" pin="7"/>
-    </net>
-    <net code="28" name="/Host/ESP32/ESP32_Pin9">
-      <node ref="J_ESP_1" pin="9"/>
-      <node ref="U_ESP_1" pin="9"/>
-    </net>
-    <net code="29" name="/Host/ESP32/ESP32_Pin8">
-      <node ref="U_ESP_1" pin="8"/>
-      <node ref="J_ESP_1" pin="8"/>
-    </net>
-    <net code="30" name="/Host/ESP32/ESP32_Pin7">
-      <node ref="J_ESP_1" pin="7"/>
-      <node ref="U_ESP_1" pin="7"/>
-    </net>
-    <net code="31" name="/Host/ESP32/ESP32_Pin6">
-      <node ref="J_ESP_1" pin="6"/>
-      <node ref="U_ESP_1" pin="6"/>
-    </net>
-    <net code="32" name="/Host/ESP32/ESP32_Pin5">
-      <node ref="J_ESP_1" pin="5"/>
-      <node ref="U_ESP_1" pin="5"/>
-    </net>
-    <net code="33" name="/Host/ESP32/ESP32_Pin4">
-      <node ref="U_ESP_1" pin="4"/>
-      <node ref="J_ESP_1" pin="4"/>
-    </net>
-    <net code="34" name="/Host/ESP32/ESP32_Pin18">
-      <node ref="U_ESP_1" pin="18"/>
-      <node ref="J_ESP_3" pin="2"/>
-    </net>
-    <net code="35" name="/Host/ESP32/ESP32_Pin17">
-      <node ref="U_ESP_1" pin="17"/>
-      <node ref="J_ESP_3" pin="1"/>
-    </net>
-    <net code="36" name="/Host/ESP32/ESP32_Pin20">
-      <node ref="J_ESP_3" pin="6"/>
-      <node ref="U_ESP_1" pin="20"/>
-    </net>
-    <net code="37" name="/Host/ESP32/ESP32_Pin21">
-      <node ref="J_ESP_3" pin="7"/>
-      <node ref="U_ESP_1" pin="21"/>
-    </net>
-    <net code="38" name="/Host/ESP32/ESP32_Pin22">
-      <node ref="U_ESP_1" pin="22"/>
-      <node ref="J_ESP_3" pin="8"/>
-    </net>
-    <net code="39" name="/Host/ESP32/ESP32_EN">
-      <node ref="C_ESP_1" pin="1"/>
-      <node ref="U_ESP_1" pin="3"/>
-      <node ref="SW_ESP_1" pin="2"/>
-      <node ref="J_ESP_1" pin="3"/>
-    </net>
-    <net code="40" name="+3V3">
-      <node ref="R_STN_10" pin="1"/>
-      <node ref="J_STN_4" pin="2"/>
-      <node ref="J_STN_5" pin="1"/>
-      <node ref="R_PS_1" pin="1"/>
-      <node ref="R_STN_11" pin="1"/>
-      <node ref="C_IMU_3" pin="1"/>
-      <node ref="R_STN_4" pin="1"/>
-      <node ref="R_STN_9" pin="2"/>
-      <node ref="Y_STN_1" pin="4"/>
-      <node ref="C_STN_1" pin="1"/>
-      <node ref="R_STN_12" pin="1"/>
-      <node ref="C_STN_5" pin="1"/>
-      <node ref="J_PS_1" pin="6"/>
-      <node ref="C_IMU_1" pin="1"/>
-      <node ref="U_IMU_1" pin="12"/>
-      <node ref="R_COMP1" pin="1"/>
-      <node ref="U_IMU_1" pin="5"/>
-      <node ref="U_IMU_1" pin="8"/>
-      <node ref="R_IMU_1" pin="1"/>
-      <node ref="C_STN_4" pin="1"/>
-      <node ref="LED_STN_3" pin="2"/>
-      <node ref="LED_STN_1" pin="2"/>
-      <node ref="C_IMU_2" pin="1"/>
-      <node ref="R_IMU_2" pin="1"/>
-      <node ref="LED_STN_2" pin="2"/>
-      <node ref="R_COMP_10" pin="1"/>
-      <node ref="R_COMP_4" pin="1"/>
-      <node ref="R_ESP_4" pin="1"/>
-      <node ref="J_ESP_1" pin="2"/>
-      <node ref="D_VR2_1" pin="1"/>
-      <node ref="J_ESP_2" pin="17"/>
-      <node ref="J_ESP_3" pin="5"/>
-      <node ref="C_PS_3" pin="1"/>
-      <node ref="R_STN_7" pin="1"/>
-      <node ref="R_STN_8" pin="1"/>
-      <node ref="R_STN_5" pin="2"/>
-      <node ref="R_STN_6" pin="2"/>
-      <node ref="U_STN_1" pin="40"/>
-      <node ref="U_STN_1" pin="28"/>
-      <node ref="Q_PS_4" pin="3"/>
-      <node ref="CP_ESP_1" pin="1"/>
-      <node ref="D_VS_1" pin="1"/>
-      <node ref="R_ESP_1" pin="1"/>
-      <node ref="U_ESP_1" pin="2"/>
-      <node ref="R_HSCAN_1" pin="1"/>
-      <node ref="U_HSCAN_1" pin="5"/>
-    </net>
-    <net code="41" name="/Host/ESP32/ESP32_Pin10">
-      <node ref="U_ESP_1" pin="10"/>
-      <node ref="J_ESP_1" pin="10"/>
-    </net>
-    <net code="42" name="/Host/ESP32/ESP32_Pin29">
+    <net code="4" name="/Host/~SLEEP_OBD~">
+      <node ref="U_STN_1" pin="27"/>
+      <node ref="R_STN_13" pin="2"/>
       <node ref="J_ESP_2" pin="10"/>
       <node ref="U_ESP_1" pin="29"/>
     </net>
-    <net code="43" name="/Host/ESP32/ESP32_RXD0">
-      <node ref="J_ESP_2" pin="5"/>
-      <node ref="U_ESP_1" pin="34"/>
-    </net>
-    <net code="44" name="/Host/ESP32/ESP32_TXD0">
-      <node ref="U_ESP_1" pin="35"/>
-      <node ref="J_ESP_2" pin="4"/>
-    </net>
-    <net code="45" name="/Host/ESP32/ESP32_Pin19">
-      <node ref="U_ESP_1" pin="19"/>
-      <node ref="J_ESP_3" pin="3"/>
-    </net>
-    <net code="46" name="Net-(J_ESP_1-Pad18)">
-      <node ref="J_ESP_1" pin="18"/>
-    </net>
-    <net code="47" name="/Host/ESP32/ESP32_Pin37">
-      <node ref="U_ESP_1" pin="37"/>
-      <node ref="J_ESP_2" pin="2"/>
-    </net>
-    <net code="48" name="/Host/ESP32/ESP32_Pin36">
-      <node ref="J_ESP_2" pin="3"/>
-      <node ref="U_ESP_1" pin="36"/>
-    </net>
-    <net code="49" name="/Host/ESP32/ESP32_Pin33">
-      <node ref="J_ESP_2" pin="6"/>
-      <node ref="U_ESP_1" pin="33"/>
-    </net>
-    <net code="50" name="/Host/ESP32/ESP32_Pin31">
-      <node ref="J_ESP_2" pin="8"/>
-      <node ref="U_ESP_1" pin="31"/>
-    </net>
-    <net code="51" name="/Host/ESP32/ESP32_Pin30">
+    <net code="5" name="/Host/~RESET_OBD_SW~">
+      <node ref="R_STN_11" pin="2"/>
+      <node ref="J_STN_6" pin="1"/>
+      <node ref="U_STN_1" pin="18"/>
       <node ref="J_ESP_2" pin="9"/>
       <node ref="U_ESP_1" pin="30"/>
     </net>
-    <net code="52" name="/OBDII Interpreter/OBDII Chip/J1850_BUS+_TX">
+    <net code="6" name="/Host/~RESET_OBD_HW~">
+      <node ref="U_STN_1" pin="12"/>
+      <node ref="SW_STN_1" pin="2"/>
+      <node ref="C_STN_4" pin="1"/>
+      <node ref="U_ESP_1" pin="10"/>
+      <node ref="R_STN_2" pin="2"/>
+      <node ref="J_ESP_1" pin="10"/>
+    </net>
+    <net code="7" name="/Host/HST_TX">
+      <node ref="J_STN_1" pin="2"/>
+      <node ref="J_ESP_2" pin="11"/>
+      <node ref="U_ESP_1" pin="28"/>
+      <node ref="U_STN_1" pin="4"/>
+      <node ref="R_STN_4" pin="2"/>
+    </net>
+    <net code="8" name="Pin14_ISO15765_CAN_BUS_Low">
+      <node ref="U_CN_1" pin="12"/>
+      <node ref="U_HSCAN_1" pin="6"/>
+      <node ref="R_HSCAN_2" pin="1"/>
+      <node ref="D_ESD_1" pin="2"/>
+      <node ref="J_CN_1" pin="14"/>
+    </net>
+    <net code="9" name="/Host/HST_RX">
+      <node ref="U_ESP_1" pin="27"/>
+      <node ref="U_STN_1" pin="5"/>
+      <node ref="J_STN_1" pin="1"/>
+      <node ref="J_ESP_2" pin="12"/>
+    </net>
+    <net code="10" name="Pin10_SAE_J1850_BUS-">
+      <node ref="J_CN_1" pin="19"/>
+      <node ref="R_COMP_3" pin="2"/>
+      <node ref="R_J1850_8" pin="2"/>
+      <node ref="Q_J1850_4" pin="3"/>
+      <node ref="U_CN_1" pin="2"/>
+      <node ref="D_ESD_5" pin="2"/>
+    </net>
+    <net code="11" name="Pin2_SAE_J1850_BUS+">
+      <node ref="R_COMP_10" pin="2"/>
+      <node ref="R_COMP_1" pin="1"/>
+      <node ref="J_CN_1" pin="20"/>
+      <node ref="D_ESD_5" pin="1"/>
+      <node ref="R_J1850_5" pin="1"/>
+      <node ref="D_J1850_1" pin="1"/>
+      <node ref="U_CN_1" pin="1"/>
+    </net>
+    <net code="12" name="Pin15_ISO9141_L-Line">
+      <node ref="R_ISO_4" pin="1"/>
+      <node ref="Q_ISO_4" pin="3"/>
+      <node ref="J_CN_1" pin="16"/>
+      <node ref="U_CN_1" pin="7"/>
+      <node ref="D_ESD_4" pin="2"/>
+    </net>
+    <net code="13" name="Pin7_ISO9141_K-Line">
+      <node ref="U_CN_1" pin="6"/>
+      <node ref="D_ESD_4" pin="1"/>
+      <node ref="Q_ISO_3" pin="3"/>
+      <node ref="R_ISO_3" pin="1"/>
+      <node ref="R_COMP_2" pin="1"/>
+      <node ref="J_CN_1" pin="17"/>
+    </net>
+    <net code="14" name="/Host/IMU_INT2">
+      <node ref="U_IMU_1" pin="9"/>
+      <node ref="J_ESP_1" pin="11"/>
+      <node ref="U_ESP_1" pin="11"/>
+    </net>
+    <net code="15" name="/Host/IMU_INT1">
+      <node ref="J_ESP_1" pin="12"/>
+      <node ref="U_ESP_1" pin="12"/>
+      <node ref="U_IMU_1" pin="4"/>
+    </net>
+    <net code="16" name="/Host/IMU_SDA">
+      <node ref="U_ESP_1" pin="14"/>
+      <node ref="U_IMU_1" pin="14"/>
+      <node ref="R_IMU_2" pin="2"/>
+      <node ref="J_ESP_1" pin="14"/>
+    </net>
+    <net code="17" name="/Host/~PWR_CTRL~">
+      <node ref="U_ESP_1" pin="9"/>
+      <node ref="J_ESP_1" pin="9"/>
+      <node ref="Q_PS_1" pin="1"/>
+      <node ref="J_PS_1" pin="8"/>
+      <node ref="R_PS_1" pin="2"/>
+      <node ref="U_STN_1" pin="32"/>
+      <node ref="Q_HSCAN_1" pin="1"/>
+    </net>
+    <net code="18" name="/OBDII Interpreter/Analog_Voltage">
+      <node ref="D_VS_1" pin="2"/>
+      <node ref="D_VS_2" pin="1"/>
+      <node ref="R_VS_1" pin="2"/>
+      <node ref="R_VS_2" pin="1"/>
+      <node ref="C_VS_1" pin="1"/>
+      <node ref="U_STN_1" pin="19"/>
+    </net>
+    <net code="19" name="/OBDII Interpreter/PWR_CTRL">
+      <node ref="Q_PS_4" pin="1"/>
+      <node ref="Q_ISO_2" pin="1"/>
+      <node ref="Q_ISO_1" pin="1"/>
+      <node ref="Q_PS_2" pin="1"/>
+      <node ref="R_PS_2" pin="2"/>
+      <node ref="Q_PS_1" pin="3"/>
+      <node ref="Q_PS_3" pin="1"/>
+    </net>
+    <net code="20" name="+3.3V_SW">
+      <node ref="J_PS_1" pin="5"/>
+      <node ref="Q_PS_4" pin="2"/>
+    </net>
+    <net code="21" name="+12V_SW">
+      <node ref="U_COMP_1" pin="3"/>
+      <node ref="R_COMP_6" pin="1"/>
+      <node ref="Q_PS_2" pin="2"/>
+      <node ref="J_PS_1" pin="3"/>
+    </net>
+    <net code="22" name="Pin16_Raw_+12V_Battery">
+      <node ref="J_CN_1" pin="12"/>
+      <node ref="R_PS_2" pin="1"/>
+      <node ref="Q_PS_2" pin="3"/>
+      <node ref="U_CN_1" pin="10"/>
+      <node ref="J_PS_1" pin="4"/>
+      <node ref="J_CN_1" pin="9"/>
+      <node ref="J_CN_1" pin="3"/>
+      <node ref="C_PS_1" pin="1"/>
+      <node ref="U_VR1" pin="2"/>
+      <node ref="R_VS_1" pin="1"/>
+      <node ref="U_VR2" pin="2"/>
+      <node ref="Q_ISO_2" pin="3"/>
+      <node ref="Q_ISO_1" pin="3"/>
+    </net>
+    <net code="23" name="+5V_SW">
+      <node ref="D_J1850_3" pin="2"/>
+      <node ref="R_COMP_8" pin="1"/>
+      <node ref="J_PS_1" pin="2"/>
+      <node ref="Q_PS_3" pin="2"/>
+    </net>
+    <net code="24" name="+5V">
+      <node ref="Q_PS_3" pin="3"/>
+      <node ref="C_HSCAN_3" pin="2"/>
+      <node ref="U_HSCAN_1" pin="3"/>
+      <node ref="L_VR1" pin="1"/>
+      <node ref="J_PS_1" pin="1"/>
+      <node ref="U_VR1" pin="9"/>
+      <node ref="J_ESP_2" pin="17"/>
+      <node ref="C_PS_2" pin="1"/>
+    </net>
+    <net code="25" name="/Host/ESP32/ESP32_Pin31">
+      <node ref="U_ESP_1" pin="31"/>
+      <node ref="J_ESP_2" pin="8"/>
+    </net>
+    <net code="26" name="Net-(J_ESP_2-Pad7)">
+      <node ref="J_ESP_2" pin="7"/>
+    </net>
+    <net code="27" name="/Host/ESP32/ESP32_Pin25">
+      <node ref="U_ESP_1" pin="25"/>
+      <node ref="J_ESP_2" pin="14"/>
+      <node ref="C_ESP_2" pin="1"/>
+      <node ref="SW_ESP_2" pin="3"/>
+    </net>
+    <net code="28" name="Net-(J_ESP_1-Pad17)">
+      <node ref="J_ESP_1" pin="17"/>
+    </net>
+    <net code="29" name="+3V3">
+      <node ref="R_STN_8" pin="1"/>
+      <node ref="R_STN_7" pin="1"/>
+      <node ref="L_VR2" pin="1"/>
+      <node ref="R_STN_6" pin="2"/>
+      <node ref="U_STN_1" pin="28"/>
+      <node ref="U_VR2" pin="9"/>
+      <node ref="U_STN_1" pin="40"/>
+      <node ref="C_IMU_2" pin="1"/>
+      <node ref="D_VS_1" pin="1"/>
+      <node ref="R_COMP_5" pin="1"/>
+      <node ref="J_STN_4" pin="2"/>
+      <node ref="C_STN_5" pin="1"/>
+      <node ref="C_STN_6" pin="1"/>
+      <node ref="R_STN_13" pin="1"/>
+      <node ref="J_STN_5" pin="1"/>
+      <node ref="R_STN_12" pin="1"/>
+      <node ref="U_ESP_1" pin="2"/>
+      <node ref="R_STN_11" pin="1"/>
+      <node ref="U_IMU_1" pin="5"/>
+      <node ref="R_ESP_1" pin="1"/>
+      <node ref="C_STN_1" pin="1"/>
+      <node ref="LED_STN_3" pin="2"/>
+      <node ref="LED_STN_1" pin="2"/>
+      <node ref="LED_STN_2" pin="2"/>
+      <node ref="R_STN_9" pin="2"/>
+      <node ref="U_IMU_1" pin="8"/>
+      <node ref="CP_ESP_1" pin="1"/>
+      <node ref="Y_STN_1" pin="4"/>
+      <node ref="R_COMP_4" pin="1"/>
+      <node ref="R_VR2_3" pin="1"/>
+      <node ref="R_IMU_1" pin="1"/>
+      <node ref="U_IMU_1" pin="12"/>
+      <node ref="C_IMU_1" pin="1"/>
+      <node ref="R_IMU_2" pin="1"/>
+      <node ref="R_STN_4" pin="1"/>
+      <node ref="R_STN_5" pin="2"/>
+      <node ref="R_COMP_11" pin="1"/>
+      <node ref="J_ESP_3" pin="5"/>
+      <node ref="J_PS_1" pin="7"/>
+      <node ref="C_PS_3" pin="1"/>
+      <node ref="R_PS_1" pin="1"/>
+      <node ref="J_ESP_1" pin="20"/>
+      <node ref="U_HSCAN_1" pin="5"/>
+      <node ref="R_HSCAN_1" pin="1"/>
+      <node ref="R_ESP_4" pin="1"/>
+      <node ref="Q_PS_4" pin="3"/>
+      <node ref="J_ESP_1" pin="2"/>
+    </net>
+    <net code="30" name="/Host/ESP32/ESP32_EN">
+      <node ref="J_ESP_1" pin="3"/>
+      <node ref="U_ESP_1" pin="3"/>
+      <node ref="SW_ESP_1" pin="2"/>
+      <node ref="C_ESP_1" pin="1"/>
+    </net>
+    <net code="31" name="/Host/ESP32/ESP32_Pin4">
+      <node ref="J_ESP_1" pin="4"/>
+      <node ref="U_ESP_1" pin="4"/>
+    </net>
+    <net code="32" name="/Host/ESP32/ESP32_Pin5">
+      <node ref="U_ESP_1" pin="5"/>
+      <node ref="J_ESP_1" pin="5"/>
+    </net>
+    <net code="33" name="/Host/ESP32/ESP32_Pin18">
+      <node ref="U_ESP_1" pin="18"/>
+      <node ref="J_ESP_3" pin="2"/>
+    </net>
+    <net code="34" name="/Host/ESP32/ESP32_Pin20">
+      <node ref="U_ESP_1" pin="20"/>
+      <node ref="J_ESP_3" pin="6"/>
+    </net>
+    <net code="35" name="Pin4_GnD_Chassis">
+      <node ref="U_HSCAN_1" pin="9"/>
+      <node ref="C_HSCAN_3" pin="1"/>
+      <node ref="C_STN_2" pin="1"/>
+      <node ref="Q_HSCAN_1" pin="2"/>
+      <node ref="U_HSCAN_1" pin="2"/>
+      <node ref="C_HSCAN_1" pin="2"/>
+      <node ref="Y_STN_1" pin="2"/>
+      <node ref="C_STN_5" pin="2"/>
+      <node ref="C_HSCAN_2" pin="2"/>
+      <node ref="J_ESP_2" pin="1"/>
+      <node ref="R_J1850_4" pin="2"/>
+      <node ref="R_COMP_7" pin="2"/>
+      <node ref="U_COMP_1" pin="12"/>
+      <node ref="R_J1850_7" pin="2"/>
+      <node ref="Q_J1850_4" pin="2"/>
+      <node ref="R_J1850_1" pin="2"/>
+      <node ref="D_J1850_2" pin="1"/>
+      <node ref="Q_J1850_2" pin="2"/>
+      <node ref="J_ESP_3" pin="4"/>
+      <node ref="Q_J1850_1" pin="2"/>
+      <node ref="C_J1850_1" pin="2"/>
+      <node ref="R_COMP_9" pin="2"/>
+      <node ref="C_PS_3" pin="2"/>
+      <node ref="C_PS_1" pin="2"/>
+      <node ref="D_ESD_1" pin="3"/>
+      <node ref="Q_PS_1" pin="2"/>
+      <node ref="J_PS_1" pin="6"/>
+      <node ref="D_ESD_4" pin="3"/>
+      <node ref="C_PS_2" pin="2"/>
+      <node ref="D_ESD_2" pin="3"/>
+      <node ref="D_ESD_5" pin="3"/>
+      <node ref="D_ESD_3" pin="1"/>
+      <node ref="CP_STN_1" pin="2"/>
+      <node ref="C_STN_4" pin="2"/>
+      <node ref="J_STN_4" pin="1"/>
+      <node ref="C_STN_1" pin="2"/>
+      <node ref="U_STN_1" pin="1"/>
+      <node ref="U_STN_1" pin="20"/>
+      <node ref="U_STN_1" pin="2"/>
+      <node ref="J_ESP_2" pin="20"/>
+      <node ref="U_STN_1" pin="16"/>
+      <node ref="U_STN_1" pin="15"/>
+      <node ref="J_STN_6" pin="2"/>
+      <node ref="J_STN_5" pin="2"/>
+      <node ref="C_STN_6" pin="2"/>
+      <node ref="U_STN_1" pin="37"/>
+      <node ref="R_STN_10" pin="2"/>
+      <node ref="U_STN_1" pin="6"/>
+      <node ref="U_STN_1" pin="45"/>
+      <node ref="U_STN_1" pin="39"/>
+      <node ref="U_STN_1" pin="38"/>
+      <node ref="C_STN_3" pin="2"/>
+      <node ref="U_STN_1" pin="3"/>
+      <node ref="U_STN_1" pin="29"/>
+      <node ref="U_STN_1" pin="26"/>
+      <node ref="R_VR2_1" pin="1"/>
+      <node ref="R_VR2_2" pin="2"/>
+      <node ref="U_VR2" pin="6"/>
+      <node ref="C_VR2_1" pin="2"/>
+      <node ref="C_VR2_3" pin="2"/>
+      <node ref="U_VR2" pin="7"/>
+      <node ref="U_VR2" pin="13"/>
+      <node ref="U_ESP_1" pin="38"/>
+      <node ref="U_ESP_1" pin="39"/>
+      <node ref="R_ESP_5" pin="2"/>
+      <node ref="C_ESP_2" pin="2"/>
+      <node ref="C_IMU_1" pin="2"/>
+      <node ref="U_IMU_1" pin="7"/>
+      <node ref="U_IMU_1" pin="6"/>
+      <node ref="LED_ESP_1" pin="1"/>
+      <node ref="CP_ESP_1" pin="2"/>
+      <node ref="R_ESP_2" pin="2"/>
+      <node ref="U_IMU_1" pin="3"/>
+      <node ref="U_ESP_1" pin="15"/>
+      <node ref="U_IMU_1" pin="2"/>
+      <node ref="U_ESP_1" pin="1"/>
+      <node ref="J_CN_1" pin="8"/>
+      <node ref="J_CN_1" pin="13"/>
+      <node ref="J_CN_1" pin="11"/>
+      <node ref="C_VR1_1" pin="1"/>
+      <node ref="U_CN_1" pin="0"/>
+      <node ref="U_CN_1" pin="13"/>
+      <node ref="J_CN_1" pin="10"/>
+      <node ref="R_VS_2" pin="2"/>
+      <node ref="C_IMU_2" pin="2"/>
+      <node ref="D_VS_2" pin="2"/>
+      <node ref="C_VS_1" pin="2"/>
+      <node ref="C_VR1_3" pin="2"/>
+      <node ref="J_ESP_1" pin="1"/>
+      <node ref="U_VR1" pin="6"/>
+      <node ref="U_VR1" pin="13"/>
+      <node ref="U_VR1" pin="7"/>
+      <node ref="Q_ISO_4" pin="2"/>
+      <node ref="C_ESP_1" pin="2"/>
+      <node ref="J_ESP_1" pin="15"/>
+      <node ref="Q_ISO_3" pin="2"/>
+      <node ref="J_ESP_1" pin="19"/>
+    </net>
+    <net code="36" name="/Host/ESP32/ESP32_Pin36">
+      <node ref="U_ESP_1" pin="36"/>
+      <node ref="J_ESP_2" pin="3"/>
+    </net>
+    <net code="37" name="/Host/ESP32/ESP32_TXD0">
+      <node ref="J_ESP_2" pin="4"/>
+      <node ref="U_ESP_1" pin="35"/>
+    </net>
+    <net code="38" name="/Host/ESP32/ESP32_RXD0">
+      <node ref="U_ESP_1" pin="34"/>
+      <node ref="J_ESP_2" pin="5"/>
+    </net>
+    <net code="39" name="/Host/ESP32/ESP32_Pin33">
+      <node ref="J_ESP_2" pin="6"/>
+      <node ref="U_ESP_1" pin="33"/>
+    </net>
+    <net code="40" name="/Host/ESP32/ESP32_Pin37">
+      <node ref="J_ESP_2" pin="2"/>
+      <node ref="U_ESP_1" pin="37"/>
+    </net>
+    <net code="41" name="/Host/ESP32/ESP32_Pin17">
+      <node ref="J_ESP_3" pin="1"/>
+      <node ref="U_ESP_1" pin="17"/>
+    </net>
+    <net code="42" name="/Host/ESP32/ESP32_Pin6">
+      <node ref="U_ESP_1" pin="6"/>
+      <node ref="J_ESP_1" pin="6"/>
+    </net>
+    <net code="43" name="/Host/ESP32/ESP32_Pin8">
+      <node ref="J_ESP_1" pin="8"/>
+      <node ref="U_ESP_1" pin="8"/>
+    </net>
+    <net code="44" name="/Host/ESP32/ESP32_Pin26">
+      <node ref="U_ESP_1" pin="26"/>
+      <node ref="J_ESP_2" pin="13"/>
+    </net>
+    <net code="45" name="/Host/ESP32/ESP32_Pin23">
+      <node ref="J_ESP_2" pin="16"/>
+      <node ref="U_ESP_1" pin="23"/>
+    </net>
+    <net code="46" name="Net-(J_ESP_2-Pad18)">
+      <node ref="J_ESP_2" pin="18"/>
+    </net>
+    <net code="47" name="Net-(J_ESP_2-Pad19)">
+      <node ref="J_ESP_2" pin="19"/>
+    </net>
+    <net code="48" name="/Host/ESP32/ESP32_Pin19">
+      <node ref="U_ESP_1" pin="19"/>
+      <node ref="J_ESP_3" pin="3"/>
+    </net>
+    <net code="49" name="/Host/ESP32/ESP32_Pin21">
+      <node ref="U_ESP_1" pin="21"/>
+      <node ref="J_ESP_3" pin="7"/>
+    </net>
+    <net code="50" name="/Host/ESP32/ESP32_Pin22">
+      <node ref="U_ESP_1" pin="22"/>
+      <node ref="J_ESP_3" pin="8"/>
+    </net>
+    <net code="51" name="Net-(J_ESP_1-Pad18)">
+      <node ref="J_ESP_1" pin="18"/>
+    </net>
+    <net code="52" name="/Host/ESP32/ESP32_Pin7">
+      <node ref="J_ESP_1" pin="7"/>
+      <node ref="U_ESP_1" pin="7"/>
+    </net>
+    <net code="53" name="/Host/ESP32/ESP32_Pin24">
+      <node ref="U_ESP_1" pin="24"/>
+      <node ref="R_ESP_3" pin="2"/>
+      <node ref="J_ESP_2" pin="15"/>
+    </net>
+    <net code="54" name="/OBDII Interpreter/ISO 9141/ISO 14230 Transceiver/~ISO_K_TX~">
+      <node ref="R_ISO_1" pin="2"/>
+      <node ref="U_STN_1" pin="43"/>
+    </net>
+    <net code="55" name="/OBDII Interpreter/ISO 9141/ISO 14230 Transceiver/~ISO_L_TX~">
+      <node ref="R_ISO_2" pin="2"/>
+      <node ref="U_STN_1" pin="44"/>
+    </net>
+    <net code="56" name="/OBDII Interpreter/OBDII Chip/J1850_BUS-_TX">
+      <node ref="U_STN_1" pin="33"/>
+      <node ref="Q_J1850_4" pin="1"/>
+      <node ref="R_J1850_7" pin="1"/>
+    </net>
+    <net code="57" name="/OBDII Interpreter/OBDII Chip/~J1850_BUS+_VH~">
+      <node ref="U_STN_1" pin="25"/>
+      <node ref="Q_J1850_1" pin="1"/>
+    </net>
+    <net code="58" name="/OBDII Interpreter/OBDII Chip/J1850_BUS+_TX">
       <node ref="U_STN_1" pin="24"/>
       <node ref="R_J1850_1" pin="1"/>
       <node ref="Q_J1850_2" pin="1"/>
     </net>
-    <net code="53" name="/OBDII Interpreter/High Speed CAN Transceiver/HS_CAN_RX">
-      <node ref="U_HSCAN_1" pin="4"/>
-      <node ref="U_STN_1" pin="10"/>
-      <node ref="J_STN_2" pin="2"/>
-    </net>
-    <net code="54" name="/OBDII Interpreter/High Speed CAN Transceiver/HS_CAN_TX">
-      <node ref="U_STN_1" pin="8"/>
-      <node ref="U_HSCAN_1" pin="1"/>
-      <node ref="J_STN_2" pin="1"/>
-    </net>
-    <net code="55" name="/OBDII Interpreter/OBDII Chip/~HOST_ACT_LED~">
-      <node ref="U_STN_1" pin="13"/>
-      <node ref="J_OBD_1" pin="3"/>
-      <node ref="R_STN_3" pin="2"/>
-    </net>
-    <net code="56" name="/OBDII Interpreter/OBDII Chip/STATUS_LED">
-      <node ref="J_OBD_1" pin="2"/>
-      <node ref="R_STN_1" pin="2"/>
-      <node ref="U_STN_1" pin="14"/>
-    </net>
-    <net code="57" name="/OBDII Interpreter/Comparator Transceiver/~ISO_RX~">
-      <node ref="R_COMP1" pin="2"/>
-      <node ref="U_COMP_1" pin="1"/>
-      <node ref="U_STN_1" pin="21"/>
-    </net>
-    <net code="58" name="/OBDII Interpreter/Comparator Transceiver/VPW_RX">
-      <node ref="R_COMP_10" pin="2"/>
-      <node ref="U_COMP_1" pin="14"/>
-      <node ref="U_STN_1" pin="22"/>
-    </net>
     <net code="59" name="/OBDII Interpreter/Comparator Transceiver/PWM_RX">
-      <node ref="U_STN_1" pin="23"/>
       <node ref="U_COMP_1" pin="2"/>
+      <node ref="U_STN_1" pin="23"/>
       <node ref="R_COMP_4" pin="2"/>
     </net>
-    <net code="60" name="/OBDII Interpreter/OBDII Chip/~J1850_BUS+_VH~">
-      <node ref="Q_J1850_1" pin="1"/>
-      <node ref="U_STN_1" pin="25"/>
+    <net code="60" name="/OBDII Interpreter/Comparator Transceiver/VPW_RX">
+      <node ref="U_STN_1" pin="22"/>
+      <node ref="R_COMP_11" pin="2"/>
+      <node ref="U_COMP_1" pin="14"/>
     </net>
-    <net code="61" name="/OBDII Interpreter/OBDII Chip/J1850_BUS-_TX">
-      <node ref="R_J1850_7" pin="1"/>
-      <node ref="Q_J1850_4" pin="1"/>
-      <node ref="U_STN_1" pin="33"/>
+    <net code="61" name="/OBDII Interpreter/High Speed CAN Transceiver/HS_CAN_RX">
+      <node ref="U_STN_1" pin="10"/>
+      <node ref="J_STN_2" pin="2"/>
+      <node ref="U_HSCAN_1" pin="4"/>
     </net>
-    <net code="62" name="/OBDII Interpreter/ISO 9141/ISO 14230 Transceiver/~ISO_L_TX~">
-      <node ref="U_STN_1" pin="44"/>
-      <node ref="R_ISO_2" pin="2"/>
+    <net code="62" name="/OBDII Interpreter/High Speed CAN Transceiver/HS_CAN_TX">
+      <node ref="U_HSCAN_1" pin="1"/>
+      <node ref="U_STN_1" pin="8"/>
+      <node ref="J_STN_2" pin="1"/>
     </net>
-    <net code="63" name="/OBDII Interpreter/ISO 9141/ISO 14230 Transceiver/~ISO_K_TX~">
-      <node ref="R_ISO_1" pin="2"/>
-      <node ref="U_STN_1" pin="43"/>
+    <net code="63" name="/OBDII Interpreter/Comparator Transceiver/~ISO_RX~">
+      <node ref="U_COMP_1" pin="1"/>
+      <node ref="R_COMP_5" pin="2"/>
+      <node ref="U_STN_1" pin="21"/>
     </net>
     <net code="64" name="Net-(U_IMU_1-Pad10)">
       <node ref="U_IMU_1" pin="10"/>
@@ -3260,270 +3193,269 @@
     <net code="65" name="Net-(U_IMU_1-Pad11)">
       <node ref="U_IMU_1" pin="11"/>
     </net>
-    <net code="66" name="Pin8">
-      <node ref="J_CN_1" pin="5"/>
-      <node ref="U_CN_1" pin="8"/>
+    <net code="66" name="Pin9">
+      <node ref="U_CN_1" pin="14"/>
+      <node ref="J_CN_1" pin="7"/>
     </net>
-    <net code="67" name="Pin13">
-      <node ref="J_CN_1" pin="1"/>
+    <net code="67" name="Pin12">
+      <node ref="U_CN_1" pin="15"/>
+      <node ref="J_CN_1" pin="6"/>
+    </net>
+    <net code="68" name="Pin13">
       <node ref="U_CN_1" pin="5"/>
+      <node ref="J_CN_1" pin="1"/>
     </net>
-    <net code="68" name="Pin11_MS_CAN_Low">
+    <net code="69" name="Pin11_MS_CAN_Low">
       <node ref="J_CN_1" pin="2"/>
-      <node ref="U_CN_1" pin="4"/>
       <node ref="D_ESD_2" pin="2"/>
+      <node ref="U_CN_1" pin="4"/>
     </net>
-    <net code="69" name="Pin1_SW_CAN">
+    <net code="70" name="Pin1_SW_CAN">
       <node ref="U_CN_1" pin="9"/>
       <node ref="J_CN_1" pin="4"/>
       <node ref="D_ESD_3" pin="2"/>
     </net>
-    <net code="70" name="Pin12">
-      <node ref="J_CN_1" pin="6"/>
-      <node ref="U_CN_1" pin="15"/>
-    </net>
-    <net code="71" name="Pin9">
-      <node ref="U_CN_1" pin="14"/>
-      <node ref="J_CN_1" pin="7"/>
-    </net>
-    <net code="72" name="Pin3_MS_CAN_High">
-      <node ref="U_CN_1" pin="3"/>
+    <net code="71" name="Pin3_MS_CAN_High">
       <node ref="D_ESD_2" pin="1"/>
       <node ref="J_CN_1" pin="18"/>
+      <node ref="U_CN_1" pin="3"/>
     </net>
-    <net code="73" name="Net-(C_VR1_2-Pad1)">
-      <node ref="U_VR1" pin="3"/>
-      <node ref="C_VR1_2" pin="1"/>
+    <net code="72" name="Pin8">
+      <node ref="U_CN_1" pin="8"/>
+      <node ref="J_CN_1" pin="5"/>
     </net>
-    <net code="74" name="Net-(U_VR1-Pad1)">
-      <node ref="U_VR1" pin="1"/>
-    </net>
-    <net code="75" name="Net-(C_VR1_3-Pad1)">
+    <net code="73" name="Net-(C_VR1_3-Pad1)">
+      <node ref="C_VR1_3" pin="1"/>
       <node ref="U_VR1" pin="10"/>
       <node ref="U_VR1" pin="8"/>
-      <node ref="C_VR1_3" pin="1"/>
     </net>
-    <net code="76" name="Net-(C_VR1_2-Pad2)">
+    <net code="74" name="Net-(C_VR1_1-Pad2)">
+      <node ref="U_VR1" pin="4"/>
+      <node ref="C_VR1_1" pin="2"/>
+    </net>
+    <net code="75" name="Net-(C_VR1_2-Pad2)">
       <node ref="C_VR1_2" pin="2"/>
       <node ref="L_VR1" pin="2"/>
       <node ref="U_VR1" pin="5"/>
     </net>
-    <net code="77" name="Net-(C_VR1_1-Pad2)">
-      <node ref="C_VR1_1" pin="2"/>
-      <node ref="U_VR1" pin="4"/>
+    <net code="76" name="Net-(C_VR1_2-Pad1)">
+      <node ref="C_VR1_2" pin="1"/>
+      <node ref="U_VR1" pin="3"/>
     </net>
-    <net code="78" name="Net-(D_VR1_1-Pad2)">
-      <node ref="L_VR1" pin="1"/>
-      <node ref="D_VR1_1" pin="2"/>
-      <node ref="U_VR1" pin="9"/>
-    </net>
-    <net code="79" name="Net-(U_VR1-Pad11)">
+    <net code="77" name="Net-(U_VR1-Pad11)">
       <node ref="U_VR1" pin="11"/>
     </net>
-    <net code="80" name="Net-(U_VR1-Pad12)">
+    <net code="78" name="Net-(U_VR1-Pad1)">
+      <node ref="U_VR1" pin="1"/>
+    </net>
+    <net code="79" name="Net-(U_VR1-Pad12)">
       <node ref="U_VR1" pin="12"/>
     </net>
-    <net code="81" name="Net-(C_VR2_1-Pad1)">
+    <net code="80" name="Net-(C_VR2_1-Pad1)">
       <node ref="C_VR2_1" pin="1"/>
       <node ref="U_VR2" pin="4"/>
     </net>
-    <net code="82" name="Net-(D_VR2_1-Pad2)">
-      <node ref="D_VR2_1" pin="2"/>
-      <node ref="R_VR2_3" pin="1"/>
-      <node ref="L_VR2" pin="1"/>
-      <node ref="U_VR2" pin="9"/>
-    </net>
-    <net code="83" name="Net-(U_VR2-Pad1)">
-      <node ref="U_VR2" pin="1"/>
-    </net>
-    <net code="84" name="Net-(C_VR2_3-Pad1)">
-      <node ref="C_VR2_3" pin="1"/>
-      <node ref="U_VR2" pin="10"/>
-    </net>
-    <net code="85" name="Net-(R_VR2_1-Pad2)">
-      <node ref="U_VR2" pin="8"/>
-      <node ref="R_VR2_3" pin="2"/>
-      <node ref="R_VR2_2" pin="1"/>
-      <node ref="R_VR2_1" pin="2"/>
-    </net>
-    <net code="86" name="Net-(U_VR2-Pad11)">
-      <node ref="U_VR2" pin="11"/>
-    </net>
-    <net code="87" name="Net-(U_VR2-Pad12)">
+    <net code="81" name="Net-(U_VR2-Pad12)">
       <node ref="U_VR2" pin="12"/>
     </net>
-    <net code="88" name="Net-(C_VR2_2-Pad1)">
-      <node ref="C_VR2_2" pin="1"/>
+    <net code="82" name="Net-(U_VR2-Pad1)">
+      <node ref="U_VR2" pin="1"/>
+    </net>
+    <net code="83" name="Net-(C_VR2_3-Pad1)">
+      <node ref="U_VR2" pin="10"/>
+      <node ref="C_VR2_3" pin="1"/>
+    </net>
+    <net code="84" name="Net-(U_VR2-Pad11)">
+      <node ref="U_VR2" pin="11"/>
+    </net>
+    <net code="85" name="Net-(C_VR2_2-Pad1)">
       <node ref="U_VR2" pin="3"/>
+      <node ref="C_VR2_2" pin="1"/>
     </net>
-    <net code="89" name="Net-(C_VR2_2-Pad2)">
+    <net code="86" name="Net-(C_VR2_2-Pad2)">
       <node ref="U_VR2" pin="5"/>
-      <node ref="L_VR2" pin="2"/>
       <node ref="C_VR2_2" pin="2"/>
+      <node ref="L_VR2" pin="2"/>
     </net>
-    <net code="90" name="Net-(R_ESP_5-Pad1)">
-      <node ref="R_ESP_5" pin="1"/>
-      <node ref="SW_ESP_2" pin="2"/>
+    <net code="87" name="Net-(R_VR2_1-Pad2)">
+      <node ref="R_VR2_2" pin="1"/>
+      <node ref="R_VR2_1" pin="2"/>
+      <node ref="R_VR2_3" pin="2"/>
+      <node ref="U_VR2" pin="8"/>
     </net>
-    <net code="91" name="Net-(R_ESP_4-Pad2)">
-      <node ref="R_ESP_4" pin="2"/>
-      <node ref="SW_ESP_2" pin="4"/>
+    <net code="88" name="Net-(LED_ESP_1-Pad2)">
+      <node ref="R_ESP_3" pin="1"/>
+      <node ref="LED_ESP_1" pin="2"/>
     </net>
-    <net code="92" name="Net-(SW_ESP_2-Pad1)">
-      <node ref="SW_ESP_2" pin="1"/>
-    </net>
-    <net code="93" name="Net-(R_ESP_2-Pad1)">
+    <net code="89" name="Net-(R_ESP_2-Pad1)">
       <node ref="SW_ESP_1" pin="3"/>
       <node ref="R_ESP_2" pin="1"/>
     </net>
-    <net code="94" name="Net-(R_ESP_1-Pad2)">
+    <net code="90" name="Net-(R_ESP_1-Pad2)">
       <node ref="R_ESP_1" pin="2"/>
       <node ref="SW_ESP_1" pin="1"/>
     </net>
-    <net code="95" name="Net-(LED_ESP_1-Pad2)">
-      <node ref="LED_ESP_1" pin="2"/>
-      <node ref="R_ESP_3" pin="1"/>
-    </net>
-    <net code="96" name="Net-(SW_ESP_1-Pad4)">
+    <net code="91" name="Net-(SW_ESP_1-Pad4)">
       <node ref="SW_ESP_1" pin="4"/>
     </net>
-    <net code="97" name="Net-(C_ESP_2-Pad1)">
-      <node ref="C_ESP_2" pin="1"/>
-    </net>
-    <net code="98" name="Net-(U_ESP_1-Pad32)">
+    <net code="92" name="Net-(U_ESP_1-Pad32)">
       <node ref="U_ESP_1" pin="32"/>
     </net>
-    <net code="99" name="Net-(Q_ISO_3-Pad1)">
-      <node ref="Q_ISO_3" pin="1"/>
-      <node ref="R_ISO_1" pin="1"/>
+    <net code="93" name="Net-(R_ESP_4-Pad2)">
+      <node ref="R_ESP_4" pin="2"/>
+      <node ref="SW_ESP_2" pin="4"/>
     </net>
-    <net code="100" name="Net-(Q_ISO_1-Pad2)">
-      <node ref="Q_ISO_1" pin="2"/>
-      <node ref="R_ISO_3" pin="2"/>
+    <net code="94" name="Net-(R_ESP_5-Pad1)">
+      <node ref="R_ESP_5" pin="1"/>
+      <node ref="SW_ESP_2" pin="2"/>
     </net>
-    <net code="101" name="Net-(Q_ISO_4-Pad1)">
-      <node ref="Q_ISO_4" pin="1"/>
-      <node ref="R_ISO_2" pin="1"/>
+    <net code="95" name="Net-(SW_ESP_2-Pad1)">
+      <node ref="SW_ESP_2" pin="1"/>
     </net>
-    <net code="102" name="Net-(Q_ISO_2-Pad2)">
-      <node ref="R_ISO_4" pin="2"/>
+    <net code="96" name="Net-(Q_ISO_2-Pad2)">
       <node ref="Q_ISO_2" pin="2"/>
+      <node ref="R_ISO_4" pin="2"/>
     </net>
-    <net code="103" name="Net-(C_HSCAN_1-Pad1)">
+    <net code="97" name="Net-(Q_ISO_4-Pad1)">
+      <node ref="R_ISO_2" pin="1"/>
+      <node ref="Q_ISO_4" pin="1"/>
+    </net>
+    <net code="98" name="Net-(Q_ISO_3-Pad1)">
+      <node ref="R_ISO_1" pin="1"/>
+      <node ref="Q_ISO_3" pin="1"/>
+    </net>
+    <net code="99" name="Net-(Q_ISO_1-Pad2)">
+      <node ref="R_ISO_3" pin="2"/>
+      <node ref="Q_ISO_1" pin="2"/>
+    </net>
+    <net code="100" name="Net-(C_HSCAN_1-Pad1)">
       <node ref="C_HSCAN_1" pin="1"/>
       <node ref="R_HSCAN_2" pin="2"/>
     </net>
-    <net code="104" name="Net-(C_HSCAN_2-Pad1)">
-      <node ref="C_HSCAN_2" pin="1"/>
+    <net code="101" name="Net-(C_HSCAN_2-Pad1)">
       <node ref="R_HSCAN_3" pin="2"/>
+      <node ref="C_HSCAN_2" pin="1"/>
     </net>
-    <net code="105" name="Net-(Q_HSCAN_1-Pad3)">
+    <net code="102" name="Net-(Q_HSCAN_1-Pad3)">
       <node ref="Q_HSCAN_1" pin="3"/>
       <node ref="U_HSCAN_1" pin="8"/>
       <node ref="R_HSCAN_1" pin="2"/>
     </net>
-    <net code="106" name="Net-(Q_J1850_1-Pad3)">
-      <node ref="Q_J1850_1" pin="3"/>
-      <node ref="R_J1850_3" pin="1"/>
-      <node ref="R_J1850_4" pin="1"/>
-    </net>
-    <net code="107" name="Net-(D_J1850_1-Pad2)">
+    <net code="103" name="Net-(D_J1850_1-Pad2)">
       <node ref="D_J1850_1" pin="2"/>
       <node ref="Q_J1850_3" pin="3"/>
     </net>
-    <net code="108" name="Net-(Q_J1850_2-Pad3)">
-      <node ref="Q_J1850_3" pin="1"/>
-      <node ref="Q_J1850_2" pin="3"/>
+    <net code="104" name="Net-(Q_J1850_2-Pad3)">
       <node ref="R_J1850_2" pin="2"/>
+      <node ref="Q_J1850_2" pin="3"/>
+      <node ref="Q_J1850_3" pin="1"/>
     </net>
-    <net code="109" name="Net-(D_J1850_3-Pad1)">
+    <net code="105" name="+V_J1850">
+      <node ref="R_J1850_6" pin="1"/>
+      <node ref="Q_J1850_3" pin="2"/>
+      <node ref="U_J1850_1" pin="2"/>
+      <node ref="R_J1850_2" pin="1"/>
+    </net>
+    <net code="106" name="Net-(R_J1850_3-Pad2)">
+      <node ref="R_J1850_6" pin="2"/>
+      <node ref="R_J1850_3" pin="2"/>
+      <node ref="U_J1850_1" pin="4"/>
+    </net>
+    <net code="107" name="Net-(U_J1850_1-Pad8)">
+      <node ref="U_J1850_1" pin="8"/>
+    </net>
+    <net code="108" name="Net-(U_J1850_1-Pad7)">
+      <node ref="U_J1850_1" pin="7"/>
+    </net>
+    <net code="109" name="Net-(U_J1850_1-Pad6)">
+      <node ref="U_J1850_1" pin="6"/>
+    </net>
+    <net code="110" name="Net-(U_J1850_1-Pad5)">
+      <node ref="U_J1850_1" pin="5"/>
+    </net>
+    <net code="111" name="Net-(Q_J1850_1-Pad3)">
+      <node ref="R_J1850_3" pin="1"/>
+      <node ref="R_J1850_4" pin="1"/>
+      <node ref="Q_J1850_1" pin="3"/>
+    </net>
+    <net code="112" name="Net-(U_J1850_1-Pad3)">
+      <node ref="U_J1850_1" pin="3"/>
+    </net>
+    <net code="113" name="Net-(D_J1850_3-Pad1)">
       <node ref="D_J1850_3" pin="1"/>
       <node ref="R_J1850_8" pin="1"/>
     </net>
-    <net code="110" name="Net-(C_J1850_1-Pad1)">
+    <net code="114" name="Net-(C_J1850_1-Pad1)">
       <node ref="C_J1850_1" pin="1"/>
       <node ref="U_J1850_1" pin="1"/>
     </net>
-    <net code="111" name="+V_J1850">
-      <node ref="Q_J1850_3" pin="2"/>
-      <node ref="R_J1850_2" pin="1"/>
-      <node ref="R_J1850_6" pin="1"/>
-      <node ref="U_J1850_1" pin="2"/>
-    </net>
-    <net code="112" name="Net-(U_J1850_1-Pad7)">
-      <node ref="U_J1850_1" pin="7"/>
-    </net>
-    <net code="113" name="Net-(U_J1850_1-Pad6)">
-      <node ref="U_J1850_1" pin="6"/>
-    </net>
-    <net code="114" name="Net-(U_J1850_1-Pad3)">
-      <node ref="U_J1850_1" pin="3"/>
-    </net>
-    <net code="115" name="Net-(U_J1850_1-Pad8)">
-      <node ref="U_J1850_1" pin="8"/>
-    </net>
-    <net code="116" name="Net-(U_J1850_1-Pad5)">
-      <node ref="U_J1850_1" pin="5"/>
-    </net>
-    <net code="117" name="Net-(D_J1850_2-Pad2)">
-      <node ref="D_J1850_2" pin="2"/>
+    <net code="115" name="Net-(D_J1850_2-Pad2)">
       <node ref="R_J1850_5" pin="2"/>
+      <node ref="D_J1850_2" pin="2"/>
     </net>
-    <net code="118" name="Net-(R_J1850_3-Pad2)">
-      <node ref="R_J1850_3" pin="2"/>
-      <node ref="R_J1850_6" pin="2"/>
-      <node ref="U_J1850_1" pin="4"/>
-    </net>
-    <net code="119" name="Net-(R_COMP_7-Pad2)">
-      <node ref="R_COMP_8" pin="1"/>
-      <node ref="R_COMP_7" pin="2"/>
-      <node ref="U_COMP_1" pin="8"/>
-    </net>
-    <net code="120" name="Net-(R_COMP_3-Pad1)">
-      <node ref="R_COMP_3" pin="1"/>
+    <net code="116" name="Net-(R_COMP_3-Pad1)">
       <node ref="U_COMP_1" pin="4"/>
+      <node ref="R_COMP_3" pin="1"/>
     </net>
-    <net code="121" name="Net-(R_COMP_5-Pad2)">
-      <node ref="U_COMP_1" pin="7"/>
-      <node ref="R_COMP_5" pin="2"/>
-      <node ref="R_COMP_6" pin="1"/>
-    </net>
-    <net code="122" name="Net-(R_COMP_1-Pad2)">
+    <net code="117" name="Net-(R_COMP_1-Pad2)">
       <node ref="R_COMP_1" pin="2"/>
       <node ref="U_COMP_1" pin="5"/>
     </net>
-    <net code="123" name="Net-(R_COMP_9-Pad1)">
-      <node ref="R_COMP_9" pin="1"/>
+    <net code="118" name="Net-(R_COMP_6-Pad2)">
+      <node ref="U_COMP_1" pin="7"/>
+      <node ref="R_COMP_7" pin="1"/>
+      <node ref="R_COMP_6" pin="2"/>
+    </net>
+    <net code="119" name="Net-(R_COMP_10-Pad1)">
       <node ref="U_COMP_1" pin="9"/>
+      <node ref="R_COMP_10" pin="1"/>
+    </net>
+    <net code="120" name="Net-(U_COMP_1-Pad10)">
+      <node ref="U_COMP_1" pin="10"/>
+    </net>
+    <net code="121" name="Net-(U_COMP_1-Pad11)">
+      <node ref="U_COMP_1" pin="11"/>
+    </net>
+    <net code="122" name="Net-(U_COMP_1-Pad13)">
+      <node ref="U_COMP_1" pin="13"/>
+    </net>
+    <net code="123" name="Net-(R_COMP_8-Pad2)">
+      <node ref="R_COMP_8" pin="2"/>
+      <node ref="R_COMP_9" pin="1"/>
+      <node ref="U_COMP_1" pin="8"/>
     </net>
     <net code="124" name="Net-(R_COMP_2-Pad2)">
       <node ref="U_COMP_1" pin="6"/>
       <node ref="R_COMP_2" pin="2"/>
     </net>
-    <net code="125" name="Net-(U_COMP_1-Pad10)">
-      <node ref="U_COMP_1" pin="10"/>
+    <net code="125" name="Net-(C_STN_3-Pad1)">
+      <node ref="Y_STN_1" pin="3"/>
+      <node ref="C_STN_3" pin="1"/>
+      <node ref="U_STN_1" pin="30"/>
     </net>
-    <net code="126" name="Net-(U_COMP_1-Pad11)">
-      <node ref="U_COMP_1" pin="11"/>
-    </net>
-    <net code="127" name="Net-(U_COMP_1-Pad13)">
-      <node ref="U_COMP_1" pin="13"/>
-    </net>
-    <net code="128" name="Net-(LED_STN_1-Pad1)">
-      <node ref="R_STN_1" pin="1"/>
-      <node ref="LED_STN_1" pin="1"/>
-    </net>
-    <net code="129" name="Net-(LED_STN_3-Pad1)">
+    <net code="126" name="Net-(LED_STN_3-Pad1)">
       <node ref="LED_STN_3" pin="1"/>
       <node ref="R_STN_3" pin="1"/>
     </net>
-    <net code="130" name="Net-(LED_STN_2-Pad1)">
+    <net code="127" name="Net-(LED_STN_1-Pad1)">
+      <node ref="R_STN_1" pin="1"/>
+      <node ref="LED_STN_1" pin="1"/>
+    </net>
+    <net code="128" name="Net-(LED_STN_2-Pad1)">
       <node ref="LED_STN_2" pin="1"/>
       <node ref="R_STN_2" pin="1"/>
     </net>
-    <net code="131" name="Net-(R_STN_9-Pad1)">
-      <node ref="SW_STN_1" pin="4"/>
-      <node ref="R_STN_9" pin="1"/>
+    <net code="129" name="VDDA">
+      <node ref="U_STN_1" pin="17"/>
+      <node ref="R_STN_12" pin="2"/>
+    </net>
+    <net code="130" name="Net-(R_STN_3-Pad2)">
+      <node ref="U_STN_1" pin="13"/>
+      <node ref="R_STN_3" pin="2"/>
+    </net>
+    <net code="131" name="Net-(R_STN_1-Pad2)">
+      <node ref="U_STN_1" pin="14"/>
+      <node ref="R_STN_1" pin="2"/>
     </net>
     <net code="132" name="Net-(CP_STN_1-Pad1)">
       <node ref="U_STN_1" pin="7"/>
@@ -3533,19 +3465,20 @@
       <node ref="U_STN_1" pin="11"/>
       <node ref="R_STN_6" pin="1"/>
     </net>
-    <net code="134" name="VDDA">
-      <node ref="U_STN_1" pin="17"/>
-      <node ref="R_STN_11" pin="2"/>
-    </net>
-    <net code="135" name="Net-(R_STN_5-Pad1)">
-      <node ref="U_STN_1" pin="9"/>
+    <net code="134" name="Net-(R_STN_5-Pad1)">
       <node ref="R_STN_5" pin="1"/>
+      <node ref="U_STN_1" pin="9"/>
     </net>
-    <net code="136" name="Net-(U_STN_1-Pad34)">
-      <node ref="U_STN_1" pin="34"/>
+    <net code="135" name="Net-(R_STN_9-Pad1)">
+      <node ref="R_STN_9" pin="1"/>
+      <node ref="SW_STN_1" pin="1"/>
     </net>
-    <net code="137" name="Net-(U_STN_1-Pad35)">
-      <node ref="U_STN_1" pin="35"/>
+    <net code="136" name="Net-(R_STN_10-Pad1)">
+      <node ref="R_STN_10" pin="1"/>
+      <node ref="SW_STN_1" pin="3"/>
+    </net>
+    <net code="137" name="Net-(SW_STN_1-Pad4)">
+      <node ref="SW_STN_1" pin="4"/>
     </net>
     <net code="138" name="Net-(U_STN_1-Pad36)">
       <node ref="U_STN_1" pin="36"/>
@@ -3554,22 +3487,20 @@
       <node ref="U_STN_1" pin="41"/>
       <node ref="R_STN_8" pin="2"/>
     </net>
-    <net code="140" name="Net-(R_STN_7-Pad2)">
-      <node ref="U_STN_1" pin="42"/>
-      <node ref="R_STN_7" pin="2"/>
+    <net code="140" name="Net-(U_STN_1-Pad35)">
+      <node ref="U_STN_1" pin="35"/>
     </net>
-    <net code="141" name="Net-(C_STN_2-Pad2)">
-      <node ref="C_STN_2" pin="2"/>
+    <net code="141" name="Net-(U_STN_1-Pad34)">
+      <node ref="U_STN_1" pin="34"/>
+    </net>
+    <net code="142" name="Net-(C_STN_2-Pad2)">
       <node ref="Y_STN_1" pin="1"/>
       <node ref="U_STN_1" pin="31"/>
+      <node ref="C_STN_2" pin="2"/>
     </net>
-    <net code="142" name="Net-(SW_STN_1-Pad3)">
-      <node ref="SW_STN_1" pin="3"/>
-    </net>
-    <net code="143" name="Net-(C_STN_3-Pad1)">
-      <node ref="Y_STN_1" pin="3"/>
-      <node ref="C_STN_3" pin="1"/>
-      <node ref="U_STN_1" pin="30"/>
+    <net code="143" name="Net-(R_STN_7-Pad2)">
+      <node ref="R_STN_7" pin="2"/>
+      <node ref="U_STN_1" pin="42"/>
     </net>
     <net code="144" name="Net-(D_ESD_3-Pad3)">
       <node ref="D_ESD_3" pin="3"/>
