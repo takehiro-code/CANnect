@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/backgroundcolor"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill"
+        android:layout_margin="8dp">
+
+    <TextView
+        android:gravity="start"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/tvDiagnostics"
+        android:textColor="?attr/textcolor" />
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
