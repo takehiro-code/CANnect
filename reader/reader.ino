@@ -19,12 +19,18 @@
 #endif
 
 /**
+ * Flags
+ * Change this depending on hardware/version setup
+ */
+//#define STN_CHIP_CONNECTED // comment this out if you're not connected to the STN chip
+
+/**
    Libraries
 */
 #include "BluetoothSerial.h"
 #include <SPI.h>
 //#include "mcp_can.h"
-#include "WiFi.h"
+#include <WiFi.h>
 #include <esp_now.h>
 
 /**
@@ -35,6 +41,24 @@
 //#define VSPI_SCLK    18
 #define VSPI_SS      5
 //#define VSPI_INT     21
+
+/**
+ * Structures
+ */
+typedef struct imuMsg {
+  String msgID = "6DOF";
+  //  char[10] sensorModuleMACAddress;
+
+  float accX;
+  float accY;
+  float accZ;
+
+  float gyroX;
+  float gyroY;
+  float gyroZ;
+
+  float temperature;
+};
 
 /**
    Constants
@@ -72,11 +96,10 @@ canTechMsg incomingData;
 float accX, accY, accZ;
 float gyroX, gyroY, gyroZ;
 float temperature;
-
+boolean protocolFlag = false;
 char c43[] = "43";
 char error[] = "ERROR";
 char noData[] = "NO DATA";
-boolean protocolFlag = false;
 const byte numChars = 32;
 char charArray[numChars];
 char protocolArray[numChars];
@@ -109,6 +132,11 @@ void setup() {
 
   pinMode(22, OUTPUT);
   pinMode(23, OUTPUT);
+
+  #ifndef STN_CHIP_CONNECTED
+    // Do not search for protocol if not connected
+    protocolFlag = true;
+  #endif
 
   while (!protocolFlag) {
     digitalWrite(23, HIGH);
@@ -302,7 +330,7 @@ void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingD, int len) {
   memcpy(&incomingData, incomingD, sizeof(incomingData));
   uint8_t sensorMacAddress[6];
-  memcpy(&sensorMacAddress, mac, sizeof(mac));
+  memcpy(&sensorMacAddress, mac, sizeof(sensorMacAddress));
 
   Serial.print("Mac Address: ");
   Serial.print(sensorMacAddress[0], HEX);
@@ -318,11 +346,11 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingD, int len) {
   accY = incomingData.accY;
   accZ = incomingData.accZ;
 
-  temperature = incomingData.temperature;
-
   gyroX = incomingData.gyroX;
   gyroY = incomingData.gyroY;
   gyroZ = incomingData.gyroZ;
+
+  temperature = incomingData.temperature;
 
   Serial.print(" | aX = "); Serial.print(accX);
   Serial.print(" | aY = "); Serial.print(accY);
@@ -511,26 +539,33 @@ void getDTC(String str) {
 // returns 0 if string not found
 char StrContains(char *str, char *sfind)
 {
-  char found = 0;
-  char index = 0;
-  char len;
-
-  len = strlen(str);
-
-  if (strlen(sfind) > len) {
-    return -1;
-  }
-  while (index < len) {
-    if (str[index] == sfind[found]) {
-      found++;
-      if (strlen(sfind) == found) {
-        return index;
-      }
-    }
-    else {
-      found = 0;
-    }
-    index++;
+  // Better way to search
+  // Commented out previous code for legacy reasons
+  if (strstr(str, sfind) != NULL) {
+    return 1;
   }
   return 0;
+  
+//  char found = 0;
+//  char index = 0;
+//  char len;
+//
+//  len = strlen(str);
+//
+//  if (strlen(sfind) > len) {
+//    return -1;
+//  }
+//  while (index < len) {
+//    if (str[index] == sfind[found]) {
+//      found++;
+//      if (strlen(sfind) == found) {
+//        return index;
+//      }
+//    }
+//    else {
+//      found = 0;
+//    }
+//    index++;
+//  }
+//  return 0;
 }
