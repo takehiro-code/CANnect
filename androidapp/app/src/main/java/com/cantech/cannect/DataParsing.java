@@ -65,6 +65,15 @@ public class DataParsing extends AppCompatActivity{
     public static final String PID_CURRENT_DATA = "41";
     public static final String PID_FREEZE_DATA = "42";
 
+    //sensor data
+    public static final String acc_x = "acc_x";
+    public static final String acc_y = "acc_y";
+    public static final String acc_z = "acc_z";
+    public static final String pitch = "pitch";
+    public static final String roll = "roll";
+    public static final String yaw = "yaw";
+    public static final String DOF = "6DOF";
+
     // OBD2 Stub Function for different Modes
     // Input a set of 8 segments separated by space (eg. "00 00 00 00 00 00 00 00")
     // Return: User friendly format (Name of field and actual value)
@@ -80,6 +89,21 @@ public class DataParsing extends AppCompatActivity{
         //added try-except clause because sometimes the incoming messages are weird characters
         //this may not be the case with a real car - need to test and see
         try {
+            //sensor data conversion
+            String[] splitdatamsg = obd2message.split(":");
+            switch (splitdatamsg[0]) {
+                case DOF:
+                    result[0] = DOF;
+                    result[1] = splitdatamsg[1];
+                    System.out.println("result[0]");
+                    System.out.println(result[0]);
+                    System.out.println(result[1]);
+                    return result;
+                default:
+                    result[0] = "UNDEFINED";
+                    result[1] = "UNDEFINED";
+            }
+            //obd2 data
             switch (splitobd2msg[2]) {
                 case PID_CURRENT_DATA:
                     result = convertOBD2PIDToUserFormat(splitobd2msg);
