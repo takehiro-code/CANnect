@@ -1,6 +1,6 @@
 Component,Description,Part,References,Value,Footprint,Quantity Per PCB,Datasheet,Vendor,Part Name,digikeypn,Manufacturer,Comments,Field4,Field6,Field5
 1,Unpolarized capacitor,C,C_STN_2 C_STN_3,30pF,CAPC1608X90N,2,https://content.kemet.com/datasheets/KEM_C1007_X8R_ULTRA_150C_SMD.pdf,DigiKey Canada,C0603C300J5GACTU,399-9057-1-ND,Kermet,,,,
-2,Unpolarized capacitor,C,C_HSCAN_1 C_HSCAN_2,560pF,CAPC1608X90,2,https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf,DigiKey Canada,CC0603KRX7R9BB561,311-1079-1-ND,Yageo,,,,
+2,Unpolarized capacitor,C,C_HSCAN_1 C_HSCAN_2,560pF,CAPC1608X90,2,https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf,DigiKey Canada,CC0603JRX7R9BB561,311-4020-1-ND‎,Yageo,,,,
 3,Unpolarized capacitor,C,C_ESP_1 C_ESP_2 C_J1850_1 C_VR1_2 C_VR2_2 C_VS_1,0.1uF,CAPC1608X90,6,https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf,DigiKey Canada,CC0603JRX7R8BB104,311-1777-1-ND,Yageo,,,,
 4,Unpolarized capacitor,C,C_IMU_1 C_IMU_2,100nF,CAPC1608X90N,2,https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_midvoltage_en.pdf,DigiKey Canada,C1608X7R2A103K080AA,445-1304-1-ND,TDK Corporation,,,,
 5,Unpolarized capacitor,C,C_HSCAN_3 C_STN_1 C_STN_4 C_STN_5 C_STN_6 C_VR1_3 C_VR2_3,1uF,0603,7,https://content.kemet.com/datasheets/KEM_C1002_X7R_SMD.pdf,DigiKey Canada,C0603C105K4RACTU,399-7847-1-ND,Kermet,,,,
@@ -63,6 +63,6 @@ Total components:,131
 Schematic Version:,0.0.05
 Schematic Date:,2020-11-29
 PCB Variant:,[u'default']
-BoM Date:,11/29/20 23:53:44
+BoM Date:,12/02/20 16:09:37
 Schematic Source:,Reader.sch
 KiCad Version:,Eeschema (5.1.7)-1

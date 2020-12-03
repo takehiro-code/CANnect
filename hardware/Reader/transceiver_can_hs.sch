@@ -70,10 +70,10 @@ F 0 "C_HSCAN_1" H 2665 4246 50  0000 L CNN
 F 1 "560pF" H 2665 4155 50  0000 L CNN
 F 2 "footprints:CAPC1608X90" H 2588 4050 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf" H 2550 4200 50  0001 C CNN
-F 4 "CC0603KRX7R9BB561" H 2550 4200 50  0001 C CNN "Part Name"
+F 4 "CC0603JRX7R9BB561" H 2550 4200 50  0001 C CNN "Part Name"
 F 5 "Yageo" H 2550 4200 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 2550 4200 50  0001 C CNN "Vendor"
-F 7 "311-1079-1-ND" H 2550 4200 50  0001 C CNN "digikeypn"
+F 7 "311-4020-1-ND‎" H 2550 4200 50  0001 C CNN "digikeypn"
 	1    2550 4200
 	1    0    0    -1  
 $EndComp
@@ -85,10 +85,10 @@ F 0 "C_HSCAN_2" H 3365 4246 50  0000 L CNN
 F 1 "560pF" H 3365 4155 50  0000 L CNN
 F 2 "footprints:CAPC1608X90" H 3288 4050 50  0001 C CNN
 F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf" H 3250 4200 50  0001 C CNN
-F 4 "CC0603KRX7R9BB561" H 3250 4200 50  0001 C CNN "Part Name"
+F 4 "CC0603JRX7R9BB561" H 3250 4200 50  0001 C CNN "Part Name"
 F 5 "Yageo" H 3250 4200 50  0001 C CNN "Manufacturer"
 F 6 "DigiKey Canada" H 3250 4200 50  0001 C CNN "Vendor"
-F 7 "311-1079-1-ND" H 3250 4200 50  0001 C CNN "digikeypn"
+F 7 "311-4020-1-ND‎" H 3250 4200 50  0001 C CNN "digikeypn"
 	1    3250 4200
 	1    0    0    -1  
 $EndComp
