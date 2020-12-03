@@ -9,43 +9,43 @@
 /**
    Metadata
 */
-//#define ALPHA_VERSION // uncomment this if you're working on the alpha-phase reader
 #define CURRENT_VERSION "0.0.1"
-
-#ifdef ALPHA_VERSION
-#define ESP32_BL_NAME "ESP32Alpha"
-#else
 #define ESP32_BL_NAME "CANnectReader"
-#endif
 
 /**
- * Flags
- * Change this depending on hardware/version setup
- */
+   Flags
+   Change this depending on hardware/version setup
+*/
 //#define STN_CHIP_CONNECTED // comment this out if you're not connected to the STN chip
 
 /**
    Libraries
 */
 #include "BluetoothSerial.h"
-#include <SPI.h>
-//#include "mcp_can.h"
 #include <WiFi.h>
 #include <esp_now.h>
 
 /**
    ESP32 Pins
 */
-//#define VSPI_MISO    19
-//#define VSPI_MOSI    23
-//#define VSPI_SCLK    18
-#define VSPI_SS      5
-//#define VSPI_INT     21
+#define ESP32_BLUETOOTH_LED_PIN     22
+#define ESP32_OBD_ACT_LED_PIN       23
+
+#define ESP32_RX_STN_PIN            17 // STN to ESP32
+#define ESP32_TX_STN_PIN            16 // ESP32 to STN
+
+#define ESP32_IMU_SCL               14 // Pin13               
+#define ESP32_IMU_SDA               12 // Pin14 
+#define ESP32_IMU_INT2              26 // Pin11 
+#define ESP32_IMU_INT1              27 // Pin12 
+//#define ESP32_IMU_SDO_SAO           13 // Pin16 - Unlikely to use
 
 /**
- * Structures
- */
-typedef struct imuMsg {
+   Structures
+*/
+
+// IMU Msg Data
+typedef struct IMU_MSG {
   String msgID = "6DOF";
   //  char[10] sensorModuleMACAddress;
 
@@ -66,7 +66,7 @@ typedef struct imuMsg {
 #define MESSAGE_INTERVAL          1000 // 1000 ms
 #define MESSAGE_DELAY             20
 #define BAUD_RATE                 115200
-#define BAUD                      9600
+#define STN_BAUD_RATE             9600
 #define SETUP_DELAY               100
 #define INITIALISATION_ATTEMPTS   5
 #define MESSAGE_END               0xFF
@@ -87,7 +87,6 @@ typedef struct canTechMsg {
 /**
    Global Variables
 */
-//MCP_CAN CAN(VSPI_SS);
 BluetoothSerial SerialBT;
 uint8_t broadcastAddress[] = {0xF0, 0x08, 0xD1, 0xD3, 0x6D, 0xA0}; // sensor's address - hard-coded for now
 String success;
@@ -103,7 +102,7 @@ char noData[] = "NO DATA";
 const byte numChars = 32;
 char charArray[numChars];
 char protocolArray[numChars];
-int iso9141 = 100;
+int iso9141Delay = 100; // imperically defined
 String str1 = "";
 unsigned long programStarted = 0;
 const long interval = 500;
@@ -112,123 +111,38 @@ const long interval = 500;
    Setup
 */
 void setup() {
+  pinMode(ESP32_BLUETOOTH_LED_PIN, OUTPUT); // Red LED - Bluetooth
+  pinMode(ESP32_OBD_ACT_LED_PIN, OUTPUT); // Green LED - OBD-II activitiy
+
+  digitalWrite(ESP32_BLUETOOTH_LED_PIN, LOW);
+  digitalWrite(ESP32_OBD_ACT_LED_PIN, LOW);
   Serial.begin(BAUD_RATE);
+
   setupReader();
   setupBluetooth();
 
   while (!Serial2) {
-    ;
     Serial.println("Connect to the reader");
   }
 
-  while (!SerialBT.available()) {
-    ;
-    digitalWrite(22, HIGH);
-    delay(500);
-    digitalWrite(22, LOW);
-    delay(500);
-    Serial.println("pair up the BT");
-  }
-
-  pinMode(22, OUTPUT);
-  pinMode(23, OUTPUT);
-
-  #ifndef STN_CHIP_CONNECTED
-    // Do not search for protocol if not connected
-    protocolFlag = true;
-  #endif
-
-  while (!protocolFlag) {
-    digitalWrite(23, HIGH);
-
-    findCorrectProtocol();
-    flushBuffers();
-    if (str1 == "22") {
-      Serial2.println("01 0D");
-      iso9141 = 500;
-      delay(500);
-    }
-  }
-  digitalWrite(22, HIGH);
-  digitalWrite(23, HIGH);
-
-#ifndef ALPHA_VERSION
-  setupWiFi();
-  setupESPNow();
-#endif
+  waitForBluetoothConnection();
+  initialiseReaderConnection();
 }
 
 /**
    Loop
 */
 void loop() {
-
   unsigned long currentMillis = millis();
 
   if (currentMillis - programStarted >= interval) {
     programStarted = currentMillis;
     receivedFromApp();
+
+    IMU_MSG sampleIMUMsg = generateSampleIMUMsg();
+    sendSensorModuleData(sampleIMUMsg);
   }
 }
-
-
-///***For old version of reader***///
-
-//#ifdef ALPHA_VERSION
-//  if (SerialBT.available()) {
-//    while (SerialBT.available()) {
-//      Serial.write(SerialBT.read());
-//      delay(MESSAGE_DELAY);
-//    }
-//    SerialBT.print(MESSAGE_END);
-//    SerialBT.print(MESSAGE_END);
-//    Serial.println(" ");
-//  }
-//  #else
-//  writeCANToBluetooth();
-//  receiveFromBluetooth();
-//#endif
-//  writeSerialToBluetooth();
-//#else
-//writeCANToBluetooth();
-//receiveFromBluetooth();
-//#endif
-//writeSerialToBluetooth();
-//}
-
-//void writeSerialToBluetooth(void) {
-//  if (Serial.available()) {
-//    while (Serial.available()) {
-//
-//      SerialBT.write(Serial.read());
-//      delay(MESSAGE_DELAY);
-//    }
-//    SerialBT.print(MESSAGE_END);
-//    //    SerialBT.print(MESSAGE_END);
-//    //    SerialBT.println(" ");
-//  }
-//}
-
-//void writeCANToBluetooth(void) {
-//  unsigned char len = 0;
-//  unsigned char buf[64];
-//
-//  if (CAN_MSGAVAIL == CAN.checkReceive()) {
-//    CAN.readMsgBuf(&len, buf);
-//
-//    unsigned long canId = CAN.getCanId();
-//    SerialBT.print(canId, HEX);
-//
-//    for (int i = 0; i < len; i++) {
-//      SerialBT.print(buf[i]);
-//      //      SerialBT.print("\t");
-//    }
-//    SerialBT.print(MESSAGE_END);
-//    //    SerialBT.print(MESSAGE_END);
-//    //    SerialBT.println(" ");
-//  }
-//}
-///////////////////////////////////////////////////////////
 
 /**
    CAN Bus Setup
@@ -253,6 +167,10 @@ void setupWiFi(void) {
   Serial.println(WiFi.macAddress());
 }
 
+
+/**
+   ESP-NOW Setup
+*/
 void setupESPNow(void) {
   // Init ESP-NOW
   if (esp_now_init() != ESP_OK) {
@@ -287,8 +205,9 @@ void setupBluetooth(void) {
   Serial.println("The device started, now you can pair it with bluetooth!");
 }
 
+
 void setupReader(void) {
-  Serial2.begin(BAUD, SERIAL_8N1, 17, 16);
+  Serial2.begin(STN_BAUD_RATE, SERIAL_8N1, ESP32_RX_STN_PIN, ESP32_TX_STN_PIN);
 }
 
 //void receiveFromBluetooth(void) {
@@ -305,6 +224,40 @@ void setupReader(void) {
 //    Serial.println(" ");
 //  }
 //}
+
+void waitForBluetoothConnection(void) {
+  digitalWrite(ESP32_BLUETOOTH_LED_PIN, LOW);
+
+  while (!SerialBT.available()) {
+    digitalWrite(ESP32_BLUETOOTH_LED_PIN, HIGH);
+    delay(500);
+    digitalWrite(ESP32_BLUETOOTH_LED_PIN, LOW);
+    delay(500);
+    Serial.println("pair up the BT");
+  }
+
+  digitalWrite(ESP32_BLUETOOTH_LED_PIN, HIGH);
+  digitalWrite(ESP32_BLUETOOTH_LED_PIN, HIGH);
+}
+
+void initialiseReaderConnection(void) {
+#ifndef STN_CHIP_CONNECTED
+  // Do not search for protocol if not connected to STN chip
+  protocolFlag = true;
+#endif
+
+  while (!protocolFlag) {
+    digitalWrite(ESP32_OBD_ACT_LED_PIN, HIGH);
+
+    findCorrectProtocol();
+    flushBuffers();
+    if (str1 == "22") {
+      Serial2.println("01 0D");
+      iso9141Delay = 500;
+      delay(iso9141Delay);
+    }
+  }
+}
 
 uint8_t convertCharToUint8(char* string) {
   return (uint8_t)atoi(string);
@@ -374,8 +327,6 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingD, int len) {
   //  SerialBT.println();
 }
 
-
-
 void findCorrectProtocol() {
   while (SerialBT.available()) {
     char c = SerialBT.read();
@@ -398,7 +349,7 @@ void findCorrectProtocol() {
       }
       str1 = "";
     }
-    digitalWrite(22, LOW);
+    digitalWrite(ESP32_BLUETOOTH_LED_PIN, LOW);
   }
 }
 
@@ -432,8 +383,12 @@ void receivedFromApp(void) {
 }
 
 void FromOBD() {
+  #ifndef STN_CHIP_CONNECTED
+    return;
+  #endif
+  
   if (Serial2.available()) {
-    digitalWrite(23, LOW);
+    digitalWrite(ESP32_OBD_ACT_LED_PIN, LOW);
     String str = "";
     String subString = "";
 
@@ -455,8 +410,8 @@ void FromOBD() {
       SerialBT.println(str);
     }
   }
-  digitalWrite(23, HIGH);
-  delay(iso9141);
+  digitalWrite(ESP32_OBD_ACT_LED_PIN, HIGH);
+  delay(iso9141Delay);
 }
 
 
@@ -545,27 +500,68 @@ char StrContains(char *str, char *sfind)
     return 1;
   }
   return 0;
-  
-//  char found = 0;
-//  char index = 0;
-//  char len;
-//
-//  len = strlen(str);
-//
-//  if (strlen(sfind) > len) {
-//    return -1;
-//  }
-//  while (index < len) {
-//    if (str[index] == sfind[found]) {
-//      found++;
-//      if (strlen(sfind) == found) {
-//        return index;
-//      }
-//    }
-//    else {
-//      found = 0;
-//    }
-//    index++;
-//  }
-//  return 0;
+
+  //  char found = 0;
+  //  char index = 0;
+  //  char len;
+  //
+  //  len = strlen(str);
+  //
+  //  if (strlen(sfind) > len) {
+  //    return -1;
+  //  }
+  //  while (index < len) {
+  //    if (str[index] == sfind[found]) {
+  //      found++;
+  //      if (strlen(sfind) == found) {
+  //        return index;
+  //      }
+  //    }
+  //    else {
+  //      found = 0;
+  //    }
+  //    index++;
+  //  }
+  //  return 0;
+}
+
+
+/**
+ * Send IMU data to the app via Bluetooth
+ */
+void sendSensorModuleData(IMU_MSG msgData) {
+  SerialBT.print(msgData.msgID);
+
+  SerialBT.print(msgData.accX);
+  SerialBT.print(msgData.accY);
+  SerialBT.print(msgData.accZ);
+
+  SerialBT.print(msgData.gyroX);
+  SerialBT.print(msgData.gyroY);
+  SerialBT.print(msgData.gyroZ);
+
+  SerialBT.print(msgData.temperature);
+
+  SerialBT.println("255255"); // end of Msg  
+}
+
+IMU_MSG generateSampleIMUMsg(void) {
+  IMU_MSG sample;
+
+  sample.msgID = "6DOF";
+
+  // Acceleration range is -2g to +2g
+  sample.accX = random(400)*0.01 - 200.0; // m/s^2
+  sample.accY = random(400)*0.01 - 200.0; // m/s^2
+  sample.accZ = random(400)*0.01 - 200.0; // m/s^2
+
+  // Gyroscope data range may change
+  sample.gyroX = random(124*2)*0.1 - 125.0 + 0.01*random(100);
+  sample.gyroY = random(124*2)*0.1 - 125.0 + 0.01*random(100);
+  sample.gyroZ = random(124*2)*0.1 - 125.0 + 0.01*random(100);
+
+  // range from -40C to +85C
+  sample.temperature = random(-40, 85) + 0.01*random(100);
+
+  return sample;
 }
