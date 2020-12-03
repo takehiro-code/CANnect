@@ -33,6 +33,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
+
 public class Dashboard extends AppCompatActivity {
     SharedPref sharedPref;
     private BluetoothSocket mBTSocket = null;
@@ -101,6 +104,9 @@ public class Dashboard extends AppCompatActivity {
         //dataArrayList.add(THROTTLE);
         //dataArrayList.add(O2_VOLTAGE);
 
+        //title
+        newData = new Data("PIDS");
+        dataArrayList.add(newData);
         //get saved pids in settings
         SharedPreferences PrefPids = getSharedPreferences("checked_pids_list",Context.MODE_PRIVATE);
         String PrefPidss = PrefPids.getString("pids","");
@@ -112,23 +118,28 @@ public class Dashboard extends AppCompatActivity {
             dataArrayList.add(newData);
         }
 
+        //add sensor data
+        //title
+        newData = new Data("6DOF");
+        dataArrayList.add(newData);
+        newData = new Data("Acceleration-x","0");
+        dataArrayList.add(newData);
+        newData = new Data("Acceleration-y","0");
+        dataArrayList.add(newData);
+        newData = new Data("Acceleration-z","0");
+        dataArrayList.add(newData);
+        newData = new Data("pitch","0");
+        dataArrayList.add(newData);
+        newData = new Data("roll","0");
+        dataArrayList.add(newData);
+        //newData = new Data("yaw","0");
+        //dataArrayList.add(newData);
+
         adapter = new DataListAdapter(this, R.layout.adapter_view_pidstable_layout, dataArrayList);
         listPids.setAdapter(adapter);
 
-        //pass the socket into Dashboard activity
-        //try {
-        //    mBTSocket = SocketHandler.getSocket();
-        //    mConnectedThread = new BTCommunication.ConnectedThread(mBTSocket, Dashboard.this);
-        //    mConnectedThread.start();
-        //} catch (Exception e) {//dashboard opened without connecting to device
-        //    e.printStackTrace();
-        //}
-
         //for export log
         calendar = Calendar.getInstance();
-        //simpleDateFormat = new SimpleDateFormat("ss");
-        //dateTime = simpleDateFormat.format(calendar.getTime());
-        //seconds = System.currentTimeMillis();
         isExport = false;
         exportData = "";
         //Below code is for page navigation
@@ -151,6 +162,10 @@ public class Dashboard extends AppCompatActivity {
                         return true;
                     case R.id.Gauge:
                         startActivity(new Intent(getApplicationContext(),Dashboard_gauge.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.DOF:
+                        startActivity(new Intent(getApplicationContext(),FrictionCircle.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -283,20 +298,69 @@ public class Dashboard extends AppCompatActivity {
                     }
                     adapter.notifyDataSetChanged();
                     break;
+                case "6DOF":
+                    String[] data = parsed[1].split(",");
+                    newData = new Data("Acceleration-x",data[0]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("Acceleration-x")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    newData = new Data("Acceleration-y",data[1]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("Acceleration-y")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    newData = new Data("Acceleration-z",data[2]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("Acceleration-z")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    double xAxis = Double.parseDouble(data[0]);
+                    double yAxis = Double.parseDouble(data[1]);
+                    double zAxis = Double.parseDouble(data[2]);
+                    // apply trigonometry to get the pitch and roll
+                    double pitch = Math.atan(xAxis/sqrt(pow(yAxis,2) + pow(zAxis,2)));
+                    double roll = Math.atan(yAxis/sqrt(pow(xAxis,2) + pow(zAxis,2)));
+                    //convert radians into degrees
+                    pitch = pitch * (180.0/3.14);
+                    roll = roll * (180.0/3.14);
+                    String pitch_S = String.valueOf(pitch);
+                    String roll_S = String.valueOf(roll);
+                    newData = new Data("pitch",pitch_S);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("pitch")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    newData = new Data("roll",roll_S);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("roll")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    adapter.notifyDataSetChanged();
+                    break;
                 default:
                     System.out.println("default");
             }
             if (isExport){
-                System.out.println("we are in isExport!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 //append
                 calendar.setTimeInMillis(seconds);
                 exportData+="\n"+calendar.getTime()+","+messages.substring(0, messages.length() - 10)+","+parsed[0]+","+parsed[1];
                 //update the timer
-                // check if time ran out
-                //calendar = Calendar.getInstance();
-                //simpleDateFormat = new SimpleDateFormat("ss");
-                //dateTime = simpleDateFormat.format(calendar.getTime());
-                //seconds = Integer.parseInt(dateTime);
                 seconds = System.currentTimeMillis();
                 System.out.println("seconds is");
                 System.out.println(seconds);
