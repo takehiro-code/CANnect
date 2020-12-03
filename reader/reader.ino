@@ -139,6 +139,8 @@ void loop() {
     programStarted = currentMillis;
     receivedFromApp();
 
+    // Generate sample IMU messages that will arrive from sensor module
+    // We may want to move this out and onto the the main loop ideally
     IMU_MSG sampleIMUMsg = generateSampleIMUMsg();
     sendSensorModuleData(sampleIMUMsg);
   }
@@ -545,6 +547,9 @@ void sendSensorModuleData(IMU_MSG msgData) {
   SerialBT.println("255255"); // end of Msg  
 }
 
+/**
+ * Generate sample IMU Messages
+ */
 IMU_MSG generateSampleIMUMsg(void) {
   IMU_MSG sample;
 
