@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name 6DOF-Sensor)(type Legacy)(uri "${KIPRJMOD}/Schematic Symbol Libraries/6DOF-Sensor.lib")(options "")(descr ""))
+  (lib (name Buck-Converter)(type Legacy)(uri "${KIPRJMOD}/Schematic Symbol Libraries/Buck-Converter.lib")(options "")(descr ""))
+  (lib (name ESP32-Dev)(type Legacy)(uri "${KIPRJMOD}/Schematic Symbol Libraries/ESP32-Dev.lib")(options "")(descr ""))
+)

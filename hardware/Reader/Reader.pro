@@ -1,4 +1,4 @@
-update=11/29/20 23:52:34
+update=12/02/20 23:52:41
 version=1
 last_client=kicad
 [general]
@@ -16,20 +16,20 @@ LibDir=
 version=1
 PageLayoutDescrFile=
 LastNetListRead=Reader.net
-CopperLayerCount=4
+CopperLayerCount=2
 BoardThickness=1
 AllowMicroVias=0
 AllowBlindVias=0
 RequireCourtyardDefinitions=0
 ProhibitOverlappingCourtyards=1
 MinTrackWidth=0.2
-MinViaDiameter=0.6
+MinViaDiameter=0.5
 MinViaDrill=0.3
 MinMicroViaDiameter=0.13
 MinMicroViaDrill=0.128
 MinHoleToHole=0.22
 TrackWidth1=0.2
-ViaDiameter1=0.6
+ViaDiameter1=0.5
 ViaDrill1=0.32
 dPairWidth1=0.3
 dPairGap1=0.25
@@ -60,16 +60,16 @@ SolderPasteClearance=0
 SolderPasteRatio=-0
 [pcbnew/Layer.F.Cu]
 Name=F.Cu
-Type=0
+Type=2
 Enabled=1
 [pcbnew/Layer.In1.Cu]
 Name=In1.Cu
-Type=1
-Enabled=1
+Type=0
+Enabled=0
 [pcbnew/Layer.In2.Cu]
 Name=In2.Cu
-Type=2
-Enabled=1
+Type=0
+Enabled=0
 [pcbnew/Layer.In3.Cu]
 Name=In3.Cu
 Type=0
@@ -229,7 +229,7 @@ Enabled=0
 Name=Default
 Clearance=0.2
 TrackWidth=0.2
-ViaDiameter=0.6
+ViaDiameter=0.5
 ViaDrill=0.32
 uViaDiameter=0.3
 uViaDrill=0.129
@@ -239,8 +239,8 @@ dPairViaGap=0.25
 [pcbnew/Netclasses/1]
 Name=Power
 Clearance=0.2
-TrackWidth=0.5
-ViaDiameter=0.6
+TrackWidth=0.4
+ViaDiameter=0.5
 ViaDrill=0.32
 uViaDiameter=0.3
 uViaDrill=0.129
