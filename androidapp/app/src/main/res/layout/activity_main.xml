@@ -23,9 +23,22 @@
             android:textColor="?attr/textcolor"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></TextView>
+            android:layout_height="wrap_content" />
 
     </RelativeLayout>
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <TextView-->
+<!--            android:id="@+id/protocol_text"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--&lt;!&ndash;            android:text="Connect to find Protocol"&ndash;&gt;-->
+<!--            android:textColor="?attr/textcolor"-->
+<!--            android:textSize="20sp" />-->
+<!--    </RelativeLayout>-->
 
     <!-- menu list-->
     <GridLayout
@@ -35,6 +48,7 @@
         android:columnOrderPreserved="false"
         android:layout_weight="8"
         android:layout_width="match_parent"
+
         android:layout_height="250sp"
         android:padding="14dp">
 
@@ -216,6 +230,7 @@
 
     </GridLayout>
 
+
     <!--bottom bar -->
     <RelativeLayout
         android:id="@+id/connect_bar"
@@ -246,4 +261,5 @@
             android:layout_height="wrap_content"></TextView>
 
     </RelativeLayout>
+
 </LinearLayout>

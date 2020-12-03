@@ -4,7 +4,7 @@
     android:background="?attr/backgroundcolor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Demand_Engine_Torque_Fragment">
+    tools:context=".fragment.Engine_fuel_rate_fragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -18,22 +18,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/demanETorque_TextView"
+            android:id="@+id/fuelRate_TextView"
             android:shadowColor="#000022"
             android:shadowDx="0.1"
             android:shadowDy="0.1"
             android:shadowRadius="10"
-            android:textColor="@color/LightBlue"
+            android:textColor="@color/DarkGreen"
             android:textSize="40sp"
             android:textStyle="bold|italic"
             tools:layout_editor_absoluteX="38dp"
             tools:layout_editor_absoluteY="419dp" />
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Demand Engine Torque (%)"
+            android:text="Engine Fuel Rate (L/hr)"
             android:textColor="@color/Turquoise"
             android:textStyle="bold"
             android:textAlignment="center"/>

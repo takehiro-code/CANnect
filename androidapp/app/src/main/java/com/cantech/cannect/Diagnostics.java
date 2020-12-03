@@ -26,6 +26,7 @@ import com.cantech.cannect.database.DataBase;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Diagnostics extends AppCompatActivity {
@@ -35,11 +36,12 @@ public class Diagnostics extends AppCompatActivity {
     final Context context = this;
     private static String DBName = "data.db";
     ListView dtclv;
-
+    int counter = 0;
     SQLiteDatabase sqLiteDatabase;
-    ArrayAdapter<String> arrayAdapterDTC;
-    String[] DTCCode = {"P0000"};
+    DTCArrayAdapter arrayAdapterDTC;
+    ArrayList<String> codes = new ArrayList<>();
     ArrayList<String> arrayListDTC;
+    boolean noData = false;
 
     @SuppressLint("WrongConstant")
     @Override
@@ -67,66 +69,85 @@ public class Diagnostics extends AppCompatActivity {
             throw new Error("Database not created.");
         }
 
-
-        try{
-            dataBase.openingDB();
-        }catch (SQLException sqle){
-            throw sqle;
-        }
+        dataBase.openingDB();
 
         arrayListDTC = new ArrayList<>();
-        arrayAdapterDTC = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayListDTC);
+        arrayAdapterDTC = new DTCArrayAdapter(this, R.layout.adapter_view_dtc, arrayListDTC);
         dtclv.setAdapter(arrayAdapterDTC);
+        codes.add("P1234");
         sqLiteDatabase = openOrCreateDatabase("data.db", SQLiteDatabase.CREATE_IF_NECESSARY, null);
 
+        displayDTC();
+        arrayAdapterDTC.notifyDataSetChanged();
+        Intent sendingMessageIntent = new Intent("sendingMessage");
+        sendingMessageIntent.putExtra("theMessage", "03 >");
+        LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
     }
+
+
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("theMessage");
             Log.d("Diagnositc", text);
             text = text.substring(0, 5);  //getting rid off 255255;
-            if(text.charAt(0) == 'B' || text.charAt(0) == 'P' || text.charAt(0) == 'U'
-                || text.charAt(0) == 'C'){
-                if(DTCCode[0] != text){
-                    DTCCode[0] = text;
-                    displayDTC();
-                    arrayAdapterDTC.notifyDataSetChanged();
-                }
+            Log.d("Diagnositc", text);
+            noData = true;
+            if(!text.equals("P0000")){
+                codes.add(text);
+                displayDTC();
+                arrayAdapterDTC.notifyDataSetChanged();
             }
+
+
+
         }
     };
+
+
     @Override
     public void onPause() {
-        LocalBroadcastManager.getInstance(context).unregisterReceiver(mReceiver);
         super.onPause();
+        LocalBroadcastManager.getInstance(context).unregisterReceiver(mReceiver);
     }
 
     @Override
     public void onResume() {
-        LocalBroadcastManager.getInstance(context).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
         super.onResume();
+        LocalBroadcastManager.getInstance(context).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
 
-    public void displayDTC(){
-        Cursor cursor = sqLiteDatabase.rawQuery("select * from DTCdata_Sheet1 where DTC == ?", DTCCode);
-
-        cursor.moveToFirst();
-        while(!cursor.isAfterLast()){
-            String temp = "";
-            String field1 = cursor.getString(0);
-            String field2 = cursor.getString(1);
-            temp = temp + "\nDTC:\t" + field1 + "\nDescription:\t" + field2;
-            Log.d("displayDTC", temp);
-
-//            TextView textView = new TextView(this);
-//            textView.setText(temp);
-//            textView.setTextColor(getResources().getColor(R.color.Turquoise));
-//            textView.setPadding(5, 5, 5, 5);
-//            linearLayout.addView(textView);
-            arrayListDTC.add(temp);
-            cursor.moveToNext();
+    public void displayDTC() {
+        Log.d("Diagnositc", "indisplay");
+        if(codes.isEmpty() && noData){
+            codes.add("P0000");
         }
+        for (String s : codes) {
+            String[] str = {s};
+            Log.d("Diagnositc", Arrays.toString(str));
+            String query="select * from DTCdata_Sheet1 where DTC == ?";
+            Cursor cursor = sqLiteDatabase.rawQuery(query, str);
+            if (cursor != null) {
+                cursor.moveToFirst();
+                while (!cursor.isAfterLast()) {
+                    String temp = "";
+                    String field1 = cursor.getString(0);
+                    String field2 = cursor.getString(1);
+                    temp = temp + "\nDTC:\t" + field1 + "\nDescription:\t" + field2;
+                    //            TextView textView = new TextView(this);
+                    //            textView.setText(temp);
+                    //            textView.setTextColor(getResources().getColor(R.color.Turquoise));
+                    //            textView.setPadding(5, 5, 5, 5);
+                    //            linearLayout.addView(textView);
+                    arrayListDTC.add(temp);
+
+                    cursor.moveToNext();
+                }
+                cursor.close();
+            }
+        }
+        codes.clear();
+
     }
 }

@@ -14,6 +14,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -32,6 +33,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
@@ -43,6 +45,9 @@ public class Dashboard extends AppCompatActivity {
     ArrayList<Data> dataArrayList;
     DataListAdapter adapter;
     String messages;
+    List<String> BTPIDs = new ArrayList<>();
+    List<String> BTStrings = new ArrayList<>();
+    boolean flag;
     ListView listPids;
     Data FUEL_STATUS;
     Data ENGINE_COOLANT_TEMP;
@@ -80,7 +85,7 @@ public class Dashboard extends AppCompatActivity {
         getSupportActionBar().setTitle("Dashboard");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        listPids = (ListView)findViewById(R.id.listPids);
+        listPids = findViewById(R.id.listPids);
         messages = "";//new StringBuilder();
         dataParsing = new DataParsing();
         //Below code is for setting up the tabular form
@@ -115,6 +120,7 @@ public class Dashboard extends AppCompatActivity {
             System.out.println("pid is");
             System.out.println(checkedPids[i]);
             newData = new Data(checkedPids[i],"0");
+            BTStrings.add(checkedPids[i]);
             dataArrayList.add(newData);
         }
 
@@ -137,6 +143,19 @@ public class Dashboard extends AppCompatActivity {
 
         adapter = new DataListAdapter(this, R.layout.adapter_view_pidstable_layout, dataArrayList);
         listPids.setAdapter(adapter);
+
+        convertStringtoPIDs();
+        //creating thread for each pids
+        Log.d("table", Integer.toString(BTPIDs.size()));
+
+        //pass the socket into Dashboard activity
+        //try {
+        //    mBTSocket = SocketHandler.getSocket();
+        //    mConnectedThread = new BTCommunication.ConnectedThread(mBTSocket, Dashboard.this);
+        //    mConnectedThread.start();
+        //} catch (Exception e) {//dashboard opened without connecting to device
+        //    e.printStackTrace();
+        //}
 
         //for export log
         calendar = Calendar.getInstance();
@@ -175,6 +194,80 @@ public class Dashboard extends AppCompatActivity {
 
     }
 
+    private void sendPID2BT(){
+        for(int i = 0; i < BTPIDs.size(); i++){
+            final Intent sendingMessageIntent = new Intent("sendingMessage");
+            final int finalI = i;
+            Thread t = new Thread(){
+                public void run() {
+                    while (true) {
+                        sendingMessageIntent.putExtra("theMessage", "01 " + BTPIDs.get(finalI) + ">");
+                        Log.d("table", BTPIDs.get(finalI));
+                        LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
+                        try {
+                            Thread.sleep(1500);
+                        } catch (InterruptedException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                        if (flag)
+                            break;
+                    }
+                }
+            };
+            t.start();
+        }
+    }
+
+    private void convertStringtoPIDs() {
+        for(String s : BTStrings){
+            switch (s){
+                case "ENGINE COOLANT TEMP":
+                    BTPIDs.add("05 ");
+                    break;
+                case "FUEL PRESSURE":
+                    BTPIDs.add("0A ");
+                    break;
+                case "ENGINE RPM":
+                    BTPIDs.add("0C ");
+                    break;
+                case "VEHICLE SPEED":
+                    BTPIDs.add("0D ");
+                    break;
+                case "MAF SENSOR":
+                    BTPIDs.add("10 ");
+                    break;
+                case "THROTTLE":
+                    BTPIDs.add("11 ");
+                    break;
+                case "O2 VOLTAGE":
+                    BTPIDs.add("14 ");
+                    break;
+                case "Fuel Type":
+                    BTPIDs.add("03 ");
+                    break;
+                case "FUEL LEVEL":
+                    BTPIDs.add("2F ");
+                    break;
+                case "Driver Demand Engine Torque":
+                    BTPIDs.add("61 ");
+                    break;
+                case "ACTUAL ENGINE TORQUE":
+                    BTPIDs.add("62 ");
+                    break;
+                case "Calculated Engine Load":
+                    BTPIDs.add("04 ");
+                    break;
+                case "INTAKE AIR TEMPERATURE":
+                    BTPIDs.add("0F ");
+                    break;
+                default:
+                    BTPIDs.add("Invalid");
+                    break;
+            }
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater=getMenuInflater();
@@ -206,8 +299,8 @@ public class Dashboard extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("theMessage");
             messages+=text;
-            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(messages.substring(0, messages.length() - 10));//remove  \n255255\r\n and then parse
-
+            String[] parsed = DataParsing.convertOBD2FrameToUserFormat(messages);
+            Log.d("receiver", parsed[0]);
             switch(parsed[0])
             {
                 case "FUEL STATUS":
@@ -298,6 +391,17 @@ public class Dashboard extends AppCompatActivity {
                     }
                     adapter.notifyDataSetChanged();
                     break;
+                case "AMBIENT AIR TEMP":
+                    newData = new Data("AMBIENT AIR TEMP",parsed[1]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("AMBIENT AIR TEMP")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    adapter.notifyDataSetChanged();
+                    break;
                 case "6DOF":
                     String[] data = parsed[1].split(",");
                     newData = new Data("Acceleration-x",data[0]);
@@ -353,6 +457,72 @@ public class Dashboard extends AppCompatActivity {
                     }
                     adapter.notifyDataSetChanged();
                     break;
+                case "ACTUAL ENGINE TORQUE":
+                    newData = new Data("ACTUAL ENGINE TORQUE",parsed[1]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("ACTUAL ENGINE TORQUE")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    adapter.notifyDataSetChanged();
+                    break;
+                case "DEMAND ENGINE TORQUE":
+                    newData = new Data("DEMAND ENGINE TORQUE",parsed[1]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("DEMAND ENGINE TORQUE")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    adapter.notifyDataSetChanged();
+                    break;
+                case "FUEL LEVEL":
+                    newData = new Data("FUEL LEVEL",parsed[1]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("FUEL LEVEL")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    adapter.notifyDataSetChanged();
+                    break;
+                case "ABSOLUTE LOAD VALUE":
+                    newData = new Data("ABSOLUTE LOAD VALUE",parsed[1]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("ABSOLUTE LOAD VALUE")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    adapter.notifyDataSetChanged();
+                    break;
+                case "INTAKE AIR TEMPERATURE":
+                    newData = new Data("AMBIENT AIR TEMP",parsed[1]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("INTAKE AIR TEMPERATURE")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    adapter.notifyDataSetChanged();
+                    break;
+                case "CALCULATED ENGINE LOAD":
+                    newData = new Data("CALCULATED ENGINE LOAD",parsed[1]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("CALCULATED ENGINE LOAD")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    adapter.notifyDataSetChanged();
+                    break;
                 default:
                     System.out.println("default");
             }
@@ -384,10 +554,19 @@ public class Dashboard extends AppCompatActivity {
 
     // called whenever Dashboard visited
     @Override
-    protected void onStart() {
-        super.onStart();
-        //register broadcast receiver
+    protected void onResume() {
+        super.onResume();
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+        sendPID2BT();
+        flag = false;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        BTPIDs.clear();
+        BTStrings.clear();
+        flag = true;
     }
 
     // called whenever Dashboard leaves

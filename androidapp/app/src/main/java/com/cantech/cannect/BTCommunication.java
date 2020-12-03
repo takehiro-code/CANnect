@@ -8,16 +8,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
@@ -103,12 +96,14 @@ public class BTCommunication {
                         System.out.println("Incoming message string below:");
                         System.out.println(incomingMessage);
 
-                        if (incomingMessage.length() > 9) {
+                        if (incomingMessage.length() > 8) {
                             Intent incomingMessageIntent = new Intent("incomingMessage");
                             incomingMessageIntent.putExtra("theMessage", incomingMessage);
                             LocalBroadcastManager.getInstance(mContext).sendBroadcast(incomingMessageIntent);
                         } else {
                             System.out.println("Sending message less than 4 characters will not be sent ...");
+
+
                         }
 
                         // initialize String of incomingMessage after sending
