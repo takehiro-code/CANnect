@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>C:\Users\Jin-Desktop\Documents\Projects\ensc-405w\hardware\Reader\Reader.sch</source>
-    <date>11/29/20 23:53:44</date>
+    <date>12/02/20 16:09:37</date>
     <tool>Eeschema (5.1.7)-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -1155,9 +1155,9 @@
       <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf</datasheet>
       <fields>
         <field name="Manufacturer">Yageo</field>
-        <field name="Part Name">CC0603KRX7R9BB561</field>
+        <field name="Part Name">CC0603JRX7R9BB561</field>
         <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">311-1079-1-ND</field>
+        <field name="digikeypn">311-4020-1-ND‎</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/OBDII Interpreter/High Speed CAN Transceiver/" tstamps="/5F95F80B/5FAEE035/"/>
@@ -1169,9 +1169,9 @@
       <datasheet>https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-50V_18.pdf</datasheet>
       <fields>
         <field name="Manufacturer">Yageo</field>
-        <field name="Part Name">CC0603KRX7R9BB561</field>
+        <field name="Part Name">CC0603JRX7R9BB561</field>
         <field name="Vendor">DigiKey Canada</field>
-        <field name="digikeypn">311-1079-1-ND</field>
+        <field name="digikeypn">311-4020-1-ND‎</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <sheetpath names="/OBDII Interpreter/High Speed CAN Transceiver/" tstamps="/5F95F80B/5FAEE035/"/>
