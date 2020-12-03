@@ -7,8 +7,17 @@
         android:id="@+id/RPMView_menu"
         android:title="RPM" />
     <item
+        android:id="@+id/MAF_menu"
+        android:title="MAF Reading"/>
+    <item
         android:id="@+id/AmbientAirTemp_menu"
         android:title="Ambient Air Temperature"/>
+    <item
+        android:id="@+id/intake_air_temp_menu"
+        android:title="Intake Air Temperature"/>
+    <item
+        android:id="@+id/runtime_since_engine_start_menu"
+        android:title="Runtime Since Engine Started"/>
 
 
 </menu>

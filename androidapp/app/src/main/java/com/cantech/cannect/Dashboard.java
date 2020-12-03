@@ -124,29 +124,7 @@ public class Dashboard extends AppCompatActivity {
         convertStringtoPIDs();
         //creating thread for each pids
         Log.d("table", Integer.toString(BTPIDs.size()));
-        for(int i = 0; i < BTPIDs.size(); i++){
-            final Intent sendingMessageIntent = new Intent("sendingMessage");
-            final int finalI = i;
-            Thread t = new Thread(){
-              public void run() {
-                  while (true) {
-                      sendingMessageIntent.putExtra("theMessage", "01 " + BTPIDs.get(finalI) + ">");
-                      Log.d("table", BTPIDs.get(finalI));
-                      LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
-                      try {
-                          Thread.sleep(1000);
-                      } catch (InterruptedException e) {
-                          // TODO Auto-generated catch block
-                          e.printStackTrace();
-                      }
-                      if (flag)
-                          break;
-                  }
-              }
-            };
-            t.start();
 
-        }
         //pass the socket into Dashboard activity
         //try {
         //    mBTSocket = SocketHandler.getSocket();
@@ -192,6 +170,31 @@ public class Dashboard extends AppCompatActivity {
 
     }
 
+    private void sendPID2BT(){
+        for(int i = 0; i < BTPIDs.size(); i++){
+            final Intent sendingMessageIntent = new Intent("sendingMessage");
+            final int finalI = i;
+            Thread t = new Thread(){
+                public void run() {
+                    while (true) {
+                        sendingMessageIntent.putExtra("theMessage", "01 " + BTPIDs.get(finalI) + ">");
+                        Log.d("table", BTPIDs.get(finalI));
+                        LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
+                        try {
+                            Thread.sleep(1500);
+                        } catch (InterruptedException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                        if (flag)
+                            break;
+                    }
+                }
+            };
+            t.start();
+        }
+    }
+
     private void convertStringtoPIDs() {
         for(String s : BTStrings){
             switch (s){
@@ -219,23 +222,20 @@ public class Dashboard extends AppCompatActivity {
                 case "Fuel Type":
                     BTPIDs.add("03 ");
                     break;
-                case "Fuel Level":
+                case "FUEL LEVEL":
                     BTPIDs.add("2F ");
                     break;
                 case "Driver Demand Engine Torque":
                     BTPIDs.add("61 ");
                     break;
-                case "Actual Engine Torque":
+                case "ACTUAL ENGINE TORQUE":
                     BTPIDs.add("62 ");
                     break;
                 case "Calculated Engine Load":
                     BTPIDs.add("04 ");
                     break;
-                case "Absolute Engine Load":
-                    BTPIDs.add("43 ");
-                    break;
-                case "Ambient Air Temperature":
-                    BTPIDs.add("46 ");
+                case "INTAKE AIR TEMPERATURE":
+                    BTPIDs.add("0F ");
                     break;
                 default:
                     BTPIDs.add("Invalid");
@@ -367,11 +367,11 @@ public class Dashboard extends AppCompatActivity {
                     }
                     adapter.notifyDataSetChanged();
                     break;
-                case "AMBIENT AIR TEMP":
+                case "INTAKE AIR TEMPERATURE":
                     newData = new Data("AMBIENT AIR TEMP",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
-                        if (pid.equals("AMBIENT AIR TEMP")){
+                        if (pid.equals("INTAKE AIR TEMPERATURE")){
                             dataArrayList.set(i, newData);
                             break;
                         }
@@ -422,17 +422,6 @@ public class Dashboard extends AppCompatActivity {
                     }
                     adapter.notifyDataSetChanged();
                     break;
-                case "ABSOLUTE LOAD VALUE":
-                    newData = new Data("ABSOLUTE LOAD VALUE",parsed[1]);
-                    for (int i=0;i<dataArrayList.size();i++){
-                        String pid = dataArrayList.get(i).getPid();
-                        if (pid.equals("ABSOLUTE LOAD VALUE")){
-                            dataArrayList.set(i, newData);
-                            break;
-                        }
-                    }
-                    adapter.notifyDataSetChanged();
-                    break;
                 default:
                     System.out.println("default");
             }
@@ -473,6 +462,7 @@ public class Dashboard extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+        sendPID2BT();
         flag = false;
     }
 

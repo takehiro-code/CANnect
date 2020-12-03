@@ -7,8 +7,16 @@
         android:id="@+id/fuelpressure_menu"
         android:title="Fuel Pressure" />
     <item
-        android:id="@+id/throttle_menu"
-        android:title="Throttle Position" />
+        android:id="@+id/warnup_since_code_cleared_menu"
+        android:title="Numbers Of Since Codes Cleared"/>
+    <item
+        android:id="@+id/distance_travelled_since_code_cleared_menu"
+        android:title="Distance Travelled since Codes Cleared"/>
+    <item
+        android:id="@+id/time_run_with_MIL_on_menu"
+        android:title="Time Run with MIL On"/>
+    
+
 
 
 

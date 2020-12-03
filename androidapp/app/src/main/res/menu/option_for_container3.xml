@@ -7,9 +7,12 @@
         android:id="@+id/Fuel_type_menu"
         android:title="Fuel Type"/>
     <item
-        android:id="@+id/CalELoad_menu"
-        android:title="Calculated Engine Load"/>
+        android:id="@+id/engine_fuel_rate_menu"
+        android:title="Engine Fuel Rate"/>
     <item
-        android:id="@+id/AbsLoad_menu"
-        android:title="Absolute Load Value"/>
+        android:id="@+id/engine_oil_temp_menu"
+        android:title="Engine Oil Temperature"/>
+    <item
+        android:id="@+id/throttle_menu"
+        android:title="Throttle Position" />
 </menu>

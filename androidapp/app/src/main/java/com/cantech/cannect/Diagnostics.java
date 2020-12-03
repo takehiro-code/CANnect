@@ -26,6 +26,7 @@ import com.cantech.cannect.database.DataBase;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Diagnostics extends AppCompatActivity {
@@ -40,6 +41,7 @@ public class Diagnostics extends AppCompatActivity {
     DTCArrayAdapter arrayAdapterDTC;
     ArrayList<String> codes = new ArrayList<>();
     ArrayList<String> arrayListDTC;
+    boolean noData = false;
 
     @SuppressLint("WrongConstant")
     @Override
@@ -72,7 +74,6 @@ public class Diagnostics extends AppCompatActivity {
         arrayListDTC = new ArrayList<>();
         arrayAdapterDTC = new DTCArrayAdapter(this, R.layout.adapter_view_dtc, arrayListDTC);
         dtclv.setAdapter(arrayAdapterDTC);
-        codes.add("P1234");
         sqLiteDatabase = openOrCreateDatabase("data.db", SQLiteDatabase.CREATE_IF_NECESSARY, null);
 
         displayDTC();
@@ -89,14 +90,13 @@ public class Diagnostics extends AppCompatActivity {
             String text = intent.getStringExtra("theMessage");
             Log.d("Diagnositc", text);
             text = text.substring(0, 5);  //getting rid off 255255;
+            Log.d("Diagnositc", text);
+            noData = true;
             if(!text.equals("P0000")){
                 codes.add(text);
                 displayDTC();
                 arrayAdapterDTC.notifyDataSetChanged();
             }
-
-
-
         }
     };
 
@@ -115,33 +115,35 @@ public class Diagnostics extends AppCompatActivity {
 
 
     public void displayDTC() {
+        Log.d("Diagnositc", "indisplay");
+        if(codes.isEmpty() && noData){
+            codes.add("P0000");
+        }
         for (String s : codes) {
             String[] str = {s};
-            if (str != null) {
-                String query="select * from DTCdata_Sheet1 where DTC == ?";
-                String[] selectionArgs = {"P1234"};
-                Cursor cursor = sqLiteDatabase.rawQuery(query, selectionArgs);
-                if (cursor != null) {
-                    cursor.moveToFirst();
-                    while (!cursor.isAfterLast()) {
-                        String temp = "";
-                        String field1 = cursor.getString(0);
-                        String field2 = cursor.getString(1);
-                        temp = temp + "\nDTC:\t" + field1 + "\nDescription:\t" + field2;
-                        //            TextView textView = new TextView(this);
-                        //            textView.setText(temp);
-                        //            textView.setTextColor(getResources().getColor(R.color.Turquoise));
-                        //            textView.setPadding(5, 5, 5, 5);
-                        //            linearLayout.addView(textView);
-                        arrayListDTC.add(temp);
+            Log.d("Diagnositc", Arrays.toString(str));
+            String query="select * from DTCdata_Sheet1 where DTC == ?";
+            Cursor cursor = sqLiteDatabase.rawQuery(query, str);
+            if (cursor != null) {
+                cursor.moveToFirst();
+                while (!cursor.isAfterLast()) {
+                    String temp = "";
+                    String field1 = cursor.getString(0);
+                    String field2 = cursor.getString(1);
+                    temp = temp + "\nDTC:\t" + field1 + "\nDescription:\t" + field2;
+                    //            TextView textView = new TextView(this);
+                    //            textView.setText(temp);
+                    //            textView.setTextColor(getResources().getColor(R.color.Turquoise));
+                    //            textView.setPadding(5, 5, 5, 5);
+                    //            linearLayout.addView(textView);
+                    arrayListDTC.add(temp);
 
-                        cursor.moveToNext();
-                    }
-                    cursor.close();
+                    cursor.moveToNext();
                 }
+                cursor.close();
             }
-
         }
+        codes.clear();
 
     }
 }

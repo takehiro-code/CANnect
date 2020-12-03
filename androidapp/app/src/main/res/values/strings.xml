@@ -21,15 +21,17 @@
     <string-array name="PIDs">
         <item>Choose...</item>
         <item>VEHICLE SPEED</item>
-        <item>FUEL PRESSURE</item>
+<!--        <item>FUEL PRESSURE</item>-->
         <item>ENGINE RPM</item>
         <item>ENGINE COOLANT TEMP</item>
         <item>MAF SENSOR</item>
-        <item>THROTTLE POSITION</item>
-        <item>DEMAND ENGINE TORQUE</item>
-        <item>ACTUAL ENGINE TORQUE</item>
-        <item>CALCULATED ENGINE LOAD</item>
-        <item>ABSOLUTE ENGINE LOAD</item>
+        <item>INTAKE AIR TEMPERATURE</item>
+<!--        <item>ENGINE OIL TEMPERATURE</item>-->
+<!--        <item>THROTTLE POSITION</item>-->
+<!--        <item>DEMAND ENGINE TORQUE</item>-->
+<!--        <item>ACTUAL ENGINE TORQUE</item>-->
+<!--        <item>CALCULATED ENGINE LOAD</item>-->
+<!--        <item>ABSOLUTE ENGINE LOAD</item>-->
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -11,8 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import android.text.Layout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,21 +20,18 @@ import com.cantech.cannect.DataParsing;
 import com.cantech.cannect.R;
 import com.cantech.cannect.SharedPref;
 
-import de.nitri.gauge.Gauge;
-
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Fuel_Pressure_fragment#newInstance} factory method to
+ * Use the {@link Engine_oil_temp_fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fuel_Pressure_fragment extends Fragment {
-    private static final String TAG = "Fuel Pressure Fragment";
-    private Context mContext;
+public class Engine_oil_temp_fragment extends Fragment {
+
+    TextView oil;
     SharedPref sharedPref;
+    private Context mContext;
     private DataParsing dataParsing;
     private StringBuilder data_message;
-    TextView fuelPressure;
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -46,12 +41,7 @@ public class Fuel_Pressure_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public interface FromFuelPressureGauge{
-        void sendFuelPressurePID(String string);
-    }
-
-    FromFuelPressureGauge mCallback;
-    public Fuel_Pressure_fragment() {
+    public Engine_oil_temp_fragment() {
         // Required empty public constructor
     }
 
@@ -61,11 +51,11 @@ public class Fuel_Pressure_fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fuel_Pressure_fragment.
+     * @return A new instance of fragment Engine_oil_temp_fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fuel_Pressure_fragment newInstance(String param1, String param2) {
-        Fuel_Pressure_fragment fragment = new Fuel_Pressure_fragment();
+    public static Engine_oil_temp_fragment newInstance(String param1, String param2) {
+        Engine_oil_temp_fragment fragment = new Engine_oil_temp_fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -75,13 +65,8 @@ public class Fuel_Pressure_fragment extends Fragment {
 
     @Override
     public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
+        super.onAttach(mContext);
         mContext = context;
-        if(context instanceof FromFuelPressureGauge){
-            mCallback = (FromFuelPressureGauge) context;
-        }else{
-            throw new ClassCastException(context.toString() + "must implement sendFuelPressurePID");
-        }
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
@@ -107,15 +92,13 @@ public class Fuel_Pressure_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-
-        return inflater.inflate(R.layout.fragment_fuel_pressure, container, false);
+        return inflater.inflate(R.layout.fragment_engine_oil_temp, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        fuelPressure = view.findViewById(R.id.fuelPressure_TextView);
+        oil = view.findViewById(R.id.engine_oil_TextView);
     }
 
     @Override
@@ -139,7 +122,6 @@ public class Fuel_Pressure_fragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mContext = null;
-        mCallback = null;
     }
 
     @Override
@@ -151,19 +133,15 @@ public class Fuel_Pressure_fragment extends Fragment {
         @Override
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("theMessage");
-            Log.d(TAG, text);
             data_message.append(text + "\n");
             String[] parsed = dataParsing.convertOBD2FrameToUserFormat(data_message.toString());
             try {
                 switch (parsed[0]) {
-                    case "FUEL PRESSURE":
-                        //changing string to float
-                        fuelPressure.setText(parsed[1]);
+                    case "ENGINE OIL TEMP":
+                        //changing string to float.
+                        oil.setText(parsed[1]);
                         break;
 
-                    default:
-                       //mCallback.sendFuelPressurePID("0A");
-                        break;
                 }
             }catch (Exception e){
                 e.printStackTrace();

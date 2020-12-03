@@ -13,7 +13,6 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewDebug;
 import android.widget.FrameLayout;
 
 import com.cantech.cannect.fragment.Absolute_Load_Fragment;
@@ -22,13 +21,20 @@ import com.cantech.cannect.fragment.Air_temp_fragment;
 import com.cantech.cannect.fragment.Calculate_Engine_Load_Fragment;
 import com.cantech.cannect.fragment.Coolant_temp_fragment;
 import com.cantech.cannect.fragment.Demand_Engine_Torque_Fragment;
+import com.cantech.cannect.fragment.Distance_travelled_since_cleared_fragment;
+import com.cantech.cannect.fragment.Engine_fuel_rate_fragment;
+import com.cantech.cannect.fragment.Engine_oil_temp_fragment;
 import com.cantech.cannect.fragment.Fuel_Pressure_fragment;
 import com.cantech.cannect.fragment.Fuel_fragment;
 import com.cantech.cannect.fragment.Fuel_type_Fragment;
+import com.cantech.cannect.fragment.Intake_air_temp_fragment;
 import com.cantech.cannect.fragment.MAF_Fragment;
 import com.cantech.cannect.fragment.RPMgauge_fragment;
 import com.cantech.cannect.fragment.Speedgauge_fragment;
 import com.cantech.cannect.fragment.Throttle_Fragment;
+import com.cantech.cannect.fragment.Time_run_with_mil_on_fragment;
+import com.cantech.cannect.fragment.Time_since_engine_started_fragment;
+import com.cantech.cannect.fragment.Warmups_since_cleared_fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Set;
@@ -56,11 +62,20 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
     Absolute_Load_Fragment absLoad_fragment = new Absolute_Load_Fragment();
     Demand_Engine_Torque_Fragment demandETorque_fragment = new Demand_Engine_Torque_Fragment();
     Actual_Engine_Torque_Fragment actualETorque_fragment = new Actual_Engine_Torque_Fragment();
-
+    Distance_travelled_since_cleared_fragment distanceTravelled_fragment = new Distance_travelled_since_cleared_fragment();
+    Warmups_since_cleared_fragment warmups_since_cleared_fragment = new Warmups_since_cleared_fragment();
+    Time_run_with_mil_on_fragment mil_on_fragment = new Time_run_with_mil_on_fragment();
+    Time_since_engine_started_fragment engine_started_fragment = new Time_since_engine_started_fragment();
+    Intake_air_temp_fragment intake_air_temp_fragment = new Intake_air_temp_fragment();
+    Engine_fuel_rate_fragment fuel_rate_fragment = new Engine_fuel_rate_fragment();
+    Engine_oil_temp_fragment oil_temp_fragment = new Engine_oil_temp_fragment();
     //speed 0, fuelpressure 1, throttle 2, rpm 3, airtemp 4
     //coolant 5, fueltype 6, fuellevel 7, maf 8, calELoad 9
-    //absLoad 10, demandETorque 11, actualETorque 12
-    private String[] PIDS = {"0D ", "0A ", "11 ", "0C ", "46 ", "05 ", "03 ", "2F ", "10 ", "04 ", "43 ", "61 ", "62 "};
+    //absLoad 10, demandETorque 11, actualETorque 12, distanceTravelled 13
+    //warmups 14, mil 15, engineStarted 16, intake 17
+    //fuel rate 18, oil temp 19
+    private String[] PIDS = {"0D ", "0A ", "11 ", "0C ", "46 ", "05 ", "03 ", "2F ", "10 ", "04 ", "43 ", "61 ", "62 ",
+            "31 ", "30 ", "4D ", "1F ", "0F ", "5E ", "5C "};
     private String[] initialPIDs = {"0D ", "0C ", "05 ", "2F "};
 
 
@@ -133,7 +148,7 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
                         sendingMessageIntent.putExtra("theMessage", "01 " + initialPIDs[finalI] + ">");
                         LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
                         try {
-                            Thread.sleep(1000);
+                            Thread.sleep(1500);
                         } catch (InterruptedException e) {
                             // TODO Auto-generated catch block
                             e.printStackTrace();
@@ -198,7 +213,6 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
         switch (item.getItemId()) {
             case R.id.speedView_menu:
                 ft1.replace(R.id.gauge_container1, speedgauge);
-                ft1.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 0);
                 break;
@@ -228,7 +242,7 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
                 break;
 
             case R.id.MAF_menu:
-                ft1.replace(R.id.gauge_container4, maftextview);
+                ft1.replace(R.id.gauge_container2, maftextview);
                 ft1.commitNow();
                 sendingPID2BT(sendingMessageIntent, 8);
                 break;
@@ -246,22 +260,22 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
                 break;
 
             case R.id.throttle_menu:
-                ft1.replace(R.id.gauge_container1, throttle_fragment);
+                ft1.replace(R.id.gauge_container3, throttle_fragment);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 2);
                 break;
 
             case R.id.CalELoad_menu:
-                ft1.replace(R.id.gauge_container3, calELoad_fragment);
+                ft1.replace(R.id.gauge_container4, calELoad_fragment);
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 9);
                 break;
 
-            case R.id.AbsLoad_menu:
-                ft1.replace(R.id.gauge_container3, absLoad_fragment);
-                ft1.commit();
-                sendingPID2BT(sendingMessageIntent, 10);
-                break;
+//            case R.id.AbsLoad_menu:
+//                ft1.replace(R.id.gauge_container4, absLoad_fragment);
+//                ft1.commit();
+//                sendingPID2BT(sendingMessageIntent, 10);
+//                break;
 
             case R.id.DemandTorque_menu:
                 ft1.replace(R.id.gauge_container4, demandETorque_fragment);
@@ -274,6 +288,48 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
                 ft1.commit();
                 sendingPID2BT(sendingMessageIntent, 12);
                 break;
+
+            case R.id.distance_travelled_since_code_cleared_menu:
+                ft1.replace(R.id.gauge_container1, distanceTravelled_fragment);
+                ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 13);
+                break;
+
+            case R.id.warnup_since_code_cleared_menu:
+                ft1.replace(R.id.gauge_container1, warmups_since_cleared_fragment);
+                ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 14);
+                break;
+
+            case R.id.time_run_with_MIL_on_menu:
+                ft1.replace(R.id.gauge_container1,mil_on_fragment);
+                ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 15);
+                break;
+
+            case R.id.runtime_since_engine_start_menu:
+                ft1.replace(R.id.gauge_container2,engine_started_fragment);
+                ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 16);
+                break;
+
+            case R.id.intake_air_temp_menu:
+                ft1.replace(R.id.gauge_container2,intake_air_temp_fragment);
+                ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 17);
+                break;
+
+            case R.id.engine_fuel_rate_menu:
+                ft1.replace(R.id.gauge_container3,fuel_rate_fragment);
+                ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 18);
+                break;
+            case R.id.engine_oil_temp_menu:
+                ft1.replace(R.id.gauge_container3,oil_temp_fragment);
+                ft1.commit();
+                sendingPID2BT(sendingMessageIntent, 19);
+                break;
+
             default:
                 break;
 
@@ -286,11 +342,11 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
         int threadnum = -1;
         Log.d("dtcount", Integer.toString(Thread.activeCount()));
 
-        if(i == 0 || i == 1 || i == 2){
+        if(i == 0 || i == 1 || i == 13 || i == 14 || i == 15){
             threadnum = 0;
-        }else if(i == 3 || i == 4){
+        }else if(i == 3 || i == 4 || i == 8 || i == 16 || i == 17){
             threadnum = 1;
-        }else if(i == 5 || i == 6 || i == 9 || i == 10){
+        }else if(i == 5 || i == 6 || i == 2 || i == 18 || i == 19){
             threadnum = 2;
         }else{
             threadnum = 3;

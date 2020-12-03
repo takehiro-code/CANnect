@@ -158,7 +158,7 @@ public class Dashboard_chart extends AppCompatActivity {
                     LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
                     Log.d("chart", BTPIDs);
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(1500);
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
@@ -206,9 +206,9 @@ public class Dashboard_chart extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("theMessage");
-            messages.append(text).append("\n");
-            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(messages.substring(0, messages.length() - 10));//remove  \n255255\r\n and then parse
-
+            StringBuilder data_message;
+            messages.append(text + "\n");
+            String[] parsed = dataParsing.convertOBD2FrameToUserFormat(messages.toString());
 
             float value;
             try {
@@ -232,7 +232,7 @@ public class Dashboard_chart extends AppCompatActivity {
                     lineData.notifyDataChanged();
                     mChart.notifyDataSetChanged();
                     mChart.invalidate();
-                    mChart.setVisibleXRangeMaximum(20);
+                    mChart.setVisibleXRangeMaximum(10);
                     // mChart.setVisibleYRange(30, AxisDependency.LEFT);
                     // move to the latest entry
                     mChart.moveViewToX(lineData.getEntryCount());
@@ -285,15 +285,21 @@ public class Dashboard_chart extends AppCompatActivity {
                 leftAxis.setAxisMinimum(0f);
                 BTPIDs = "0C ";
                 break;
-            case "FUEL PRESSURE":
-                leftAxis.setAxisMaximum(765f);
-                leftAxis.setAxisMinimum(0f);
-                BTPIDs = "0A ";
-                break;
+
             case "MAF SENSOR":
                 leftAxis.setAxisMinimum(0f);
-                leftAxis.setAxisMaximum(700f);
+                leftAxis.setAxisMaximum(100f);
                 BTPIDs = "10 ";
+                break;
+            case "ENGINE OIL TEMPERATURE":
+                leftAxis.setAxisMinimum(-50f);
+                leftAxis.setAxisMaximum(210f);
+                BTPIDs = "5C ";
+                break;
+            case "INTAKE AIR TEMPERATURE":
+                leftAxis.setAxisMinimum(-50f);
+                leftAxis.setAxisMaximum(100f);
+                BTPIDs = "0F ";
                 break;
             case "THROTTLE POSITION":
                 leftAxis.setAxisMinimum(0f);
@@ -302,7 +308,7 @@ public class Dashboard_chart extends AppCompatActivity {
                 break;
             case "ABSOLUTE ENGINE LOAD":
                 leftAxis.setAxisMinimum(0f);
-                leftAxis.setAxisMaximum(26000f);
+                leftAxis.setAxisMaximum(100f);
                 BTPIDs = "43 ";
                 break;
             case "CALCULATED ENGINE LOAD":
@@ -315,11 +321,17 @@ public class Dashboard_chart extends AppCompatActivity {
                 leftAxis.setAxisMaximum(130f);
                 BTPIDs = "61 ";
                 break;
+            case "FUEL PRESSURE":
+                leftAxis.setAxisMaximum(765f);
+                leftAxis.setAxisMinimum(0f);
+                BTPIDs = "0A ";
+                break;
             case "ACTUAL ENGINE TORQUE":
                 leftAxis.setAxisMinimum(-125f);
                 leftAxis.setAxisMaximum(130f);
                 BTPIDs = "62 ";
                 break;
+
             default:
                 leftAxis.setAxisMaximum(100f);
                 leftAxis.setAxisMinimum(0f);

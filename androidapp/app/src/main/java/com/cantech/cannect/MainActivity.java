@@ -37,7 +37,9 @@ import static android.bluetooth.BluetoothProfile.GATT;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     SharedPref sharedPref;
     private TextView BTstatus;
+    private TextView protocolstatus;
 
+    static String protocol = "finding protocol...";
     //create objects for cards
     private CardView mapCard, dashboardCard, diagnosticsCard, settingsCard;
     // object for bottom bar (connect)
@@ -45,8 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private BluetoothSocket mBTSocket = null; // bi-directional client-to-client data path
     //list of protocols
     ArrayList<String> protocolList = new ArrayList<>();
-    boolean alreadyRun = false;
-    boolean protocolFound = false;
+    static int flag = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +70,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // 22 ISO 9141 - 2
         // 11 J1850 PWM
         // 12 J1850 VPW
-        protocolList.addAll(Arrays.asList("33" , "34", "35", "36", "22", "11", "12"));
-
+        protocolList.addAll(Arrays.asList("33" , "34", "35", "36", "11", "12", "21", "23", "24", "25", "22"));
+        //protocolstatus = findViewById(R.id.protocol_text);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
@@ -92,23 +94,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         connectBar = (RelativeLayout)findViewById(R.id.connect_bar);
         //add click listener to the bar
         connectBar.setOnClickListener(this);
-        if(!alreadyRun){
-            runOnce();
-        }
+
+
     }
 
     public void runOnce(){
+        Log.d("main", "runOnce");
+        final StringBuilder messages;
         Thread t = new Thread(){
             public void run(){
                 int i = 0;
                 Intent sendingMessageIntent = new Intent("sendingMessage");
-                while(i < protocolList.size() || !protocolFound){
-                    sendingMessageIntent.putExtra("stp", protocolList.get(i)  + ">");
+                while(true){
+                    sendingMessageIntent.putExtra("theMessage", "stp "+ protocolList.get(i)  + ">");
                     LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
+                    Log.d("main", sendingMessageIntent.getExtras().toString());
+                    i++;
+                    if(i == protocolList.size()){
+                        break;
+                    }
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
                 }
-
+                Log.d("main", "thread is existed");
             }
         };
+        t.start();
     }
     @Override
     public void onClick(View view) {
@@ -145,14 +160,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+            Log.d("inside receiver", "receiver");
+
+
+
             final String action = intent.getAction();
             BTstatus = (TextView)findViewById(R.id.status_text);
-
-            String text = intent.getStringExtra("theMessage");
-            if(text != null){
-                Log.d("main", text);
-                protocolFound = true;
-            }
 
             if (action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
                 final int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE,
@@ -184,8 +197,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             if (mBTSocket == null) {
                                 BTstatus.setText("Bluetooth ON");
                             } else {
-                                if (mBTSocket.isConnected())
+                                if (mBTSocket.isConnected()){
                                     BTstatus.setText("Connected");
+                                }
+
                                 else {
                                     BTstatus.setText("Bluetooth ON");
                                 }
@@ -205,19 +220,64 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     };
 
+
+    // 33 ISO 15765 CAN 500Kps // 11bits
+    // 34 ISO 15765 CAN 500Kps // 29bits
+    // 35 ISO 15765 CAN 250Kps // 11bits
+    // 36 ISO 15765 CAN 250Kps // 29bits
+    // 22 ISO 9141 - 2
+    // 11 J1850 PWM
+    // 12 J1850 VPW
+
+    void findProtocol(String str){
+        Log.d("inside find", str);
+        switch(str){
+            case "33":
+                protocol = "ISO 15765 CAN 500Kps/11bits" ;
+                break;
+            case "34":
+                protocol = "ISO 15765 CAN 500Kps/29bits";
+                break;
+            case "35":
+                protocol = "ISO 15765 CAN 500Kps/29bits";
+                break;
+            case "36":
+                protocol = "ISO 15765 CAN 250Kps/29bits";
+                break;
+            case "22":
+                protocol = "ISO 9141 - 2";
+                break;
+            case "11":
+                protocol = "SAE J1850 PWM";
+                break;
+            case "12":
+                protocol = "SAE J1850 VPW";
+                break;
+            default:
+                protocol = "NOT FOUND!";
+                break;
+        }
+        //protocolstatus.setText(protocol);
+    }
     @Override
     public void onResume() {
         super.onResume();
-        for(String s:protocolList){
-           Log.d("main", s);
-        }
         connectionStatusUpdate();
-        alreadyRun = true;
+        LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+        Log.d("main1", protocol);
+        if(flag == 1){
+            runOnce();
+            flag++;
+            //protocolstatus.setText(protocol);
+        }
+
+
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
     }
 
     @Override
@@ -231,6 +291,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         BTstatus = (TextView)findViewById(R.id.status_text);
+       // protocolstatus = findViewById(R.id.protocol_text);
         if (mBluetoothAdapter == null) {
             BTstatus.setText("Bluetooth Not Supported");
         } else if (!mBluetoothAdapter.isEnabled()) {
@@ -242,8 +303,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (mBTSocket == null) {
                     BTstatus.setText("Bluetooth ON");
                 } else {
-                    if (mBTSocket.isConnected())
+                    if (mBTSocket.isConnected()){
                         BTstatus.setText("Connected");
+                        flag++;
+                    }
                     else {
                         BTstatus.setText("Bluetooth ON");
                     }

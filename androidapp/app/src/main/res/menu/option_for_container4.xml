@@ -3,14 +3,21 @@
     <item
         android:id="@+id/Fuel_levle_menu"
         android:title="Fuel Level"/>
-    <item
-        android:id="@+id/MAF_menu"
-        android:title="MAF Reading"/>
+
     <item
         android:id="@+id/DemandTorque_menu"
         android:title="Demand Engine Torque"/>
     <item
         android:id="@+id/ActualTorque_menu"
         android:title="Actual Engine Torque"/>
+    <item
+        android:id="@+id/CalELoad_menu"
+        android:title="Calculated Engine Load"/>
+<!--    <item-->
+<!--        android:id="@+id/AbsLoad_menu"-->
+<!--        android:title="Absolute Load Value"/>-->
+<!--    <item-->
+<!--        android:id="@+id/engine_friction_menu"-->
+<!--        android:title="Engine Friction"/>-->
 
 </menu>

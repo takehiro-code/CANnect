@@ -49,6 +49,16 @@ public class DataParsing extends AppCompatActivity{
     private static final String ACTUAL_ENGINE_TORQUE = "62";
     private static final String AMBIENT_AIR_TEMP = "46";
 
+    private static final String RUNTIME_SINCE_ENGINE_START = "1F";
+    private static final String WARMUPS_SINCE_CODES_CLEARED = "30";
+    private static final String DISTANCE_TRAVELED_SINCE_CODE_CLEARED = "31";
+    private static final String TIME_RUN_WITH_MIL_ON = "4D";
+    private static final String ENGINE_OIL_TEMP = "5C";
+    private static final String ENGINE_FUEL_RATE = "5E";
+    //private static final String ENGINE_FRICTION_PERCENT_TORQUE = "8E";
+    private static final String INTAKE_AIR_TEMP = "0F";
+
+
     public static final String FUEL_STATUS_STRING = "FUEL STATUS";
     public static final String ENGINE_COOLANT_TEMP_STRING = "ENGINE COOLANT TEMP";
     public static final String FUEL_PRESSURE_STRING = "FUEL PRESSURE";
@@ -63,6 +73,15 @@ public class DataParsing extends AppCompatActivity{
     public static final String DEMAND_ENGINE_TORQUE_STRING = "DEMAND ENGINE TORQUE";
     public static final String ACTUAL_ENGINE_TORQUE_STRING = "ACTUAL ENGINE TORQUE";
     public static final String AMBIENT_AIR_TEMP_STRING = "AMBIENT AIR TEMP";
+
+    private static final String RUNTIME_SINCE_ENGINE_START_STRING = "RUNTIME SINCE ENGINE START";
+    private static final String WARMUPS_SINCE_CODES_CLEARED_STRING = "WARMUPS SINCE CODES CLEARED";
+    private static final String DISTANCE_TRAVELED_SINCE_CODE_CLEARED_STRING = "DISTANCE TRAVELED SINCE CODE CLEARED";
+    private static final String TIME_RUN_WITH_MIL_ON_STRING = "TIME RUN WITH MIL ON";
+    private static final String ENGINE_OIL_TEMP_STRING = "ENGINE OIL TEMP";
+    private static final String ENGINE_FUEL_RATE_STRING = "ENGINE FUEL RATE";
+    //private static final String ENGINE_FRICTION_PERCENT_TORQUE_STRING = "ENGINE FRICTION PERCENT TORQUE";
+    private static final String INTAKE_AIR_TEMP_STRING = "INTAKE AIR TEMP";
 
     public static final String PID_CURRENT_DATA = "41";
     public static final String PID_FREEZE_DATA = "42";
@@ -116,7 +135,7 @@ public class DataParsing extends AppCompatActivity{
         {
             case FUEL_STATUS:
                 result[0] = FUEL_STATUS_STRING;
-                result[1] = splitobd2msg[4]; // NEED BETTER SYSTEM TO ORGANIZE THIS
+                result[1] = String.valueOf(Integer.parseInt(splitobd2msg[4], 16)); // NEED BETTER SYSTEM TO ORGANIZE THIS
                 break;
             case ENGINE_COOLANT_TEMP:
                 result[0] = ENGINE_COOLANT_TEMP_STRING;
@@ -177,6 +196,43 @@ public class DataParsing extends AppCompatActivity{
                 result[0] = AMBIENT_AIR_TEMP_STRING;
                 result[1] = Float.toString(convertA - 40);
                 break;
+            case RUNTIME_SINCE_ENGINE_START:
+                result[0] = RUNTIME_SINCE_ENGINE_START_STRING;
+                x = (256*convertA + convertB);
+                result[1] = Integer.toString((int) x);
+                break;
+            case WARMUPS_SINCE_CODES_CLEARED:
+                result[0] = WARMUPS_SINCE_CODES_CLEARED_STRING;
+                result[1] = Integer.toString((int) convertA);
+                break;
+            case TIME_RUN_WITH_MIL_ON:
+                result[0] = TIME_RUN_WITH_MIL_ON_STRING;
+                x = (256*convertA + convertB);
+                result[1] = Integer.toString((int) x);
+                break;
+            case DISTANCE_TRAVELED_SINCE_CODE_CLEARED:
+                result[0] = DISTANCE_TRAVELED_SINCE_CODE_CLEARED_STRING;
+                x = (256*convertA + convertB);
+                result[1] = Integer.toString((int) x);
+                break;
+            case ENGINE_OIL_TEMP:
+                result[0] = ENGINE_OIL_TEMP_STRING;
+                result[1] = Integer.toString(Integer.parseInt(splitobd2msg[4], 16) - 40);
+                break;
+            case ENGINE_FUEL_RATE:
+                result[0] = ENGINE_FUEL_RATE_STRING;
+                result[1] = Float.toString(((convertA * 256) + convertB) / 20.0f);
+                break;
+//            case ENGINE_FRICTION_PERCENT_TORQUE:
+//                result[0] = ENGINE_FRICTION_PERCENT_TORQUE_STRING;
+//                x = (convertA - 125);
+//                result[1] = Integer.toString((int) x);
+//                break;
+            case INTAKE_AIR_TEMP:
+                result[0] = INTAKE_AIR_TEMP_STRING;
+                result[1] = Integer.toString(Integer.parseInt(splitobd2msg[4], 16) - 40);
+                break;
+
             default:
                 result[0] = "UNDEFINED: " + splitobd2msg[3];
                 result[1] = "UNDEFINED: " + splitobd2msg[4] + " " + splitobd2msg[5] + " " + splitobd2msg[6] + " " + splitobd2msg[7];

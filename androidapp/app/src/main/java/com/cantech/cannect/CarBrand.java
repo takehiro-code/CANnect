@@ -141,9 +141,9 @@ public class CarBrand extends AppCompatActivity {
         String[] pids={};
         boolean[] checkedItems={};
         if (i==0){
-            pids = new String[]{"ENGINE COOLANT TEMP", "FUEL PRESSURE", "ENGINE RPM", "VEHICLE SPEED", "MAF SENSOR", "THROTTLE", "O2 VOLTAGE","Fuel Type", "Fuel Level", "Driver Demand Engine Torque"
-                                ,"Actual Engine Torque", "Calculated Engine Load", "Absolute Engine Load", "Ambient Air Temperature"};
-            checkedItems = new boolean[]{ false, false, false, false, false, false, false, false, false, false, false, false, false, false};
+            pids = new String[]{"ENGINE COOLANT TEMP", "FUEL PRESSURE", "ENGINE RPM", "VEHICLE SPEED", "MAF SENSOR", "THROTTLE", "O2 VOLTAGE","Fuel Type", "FUEL LEVEL", "Driver Demand Engine Torque"
+                                ,"ACTUAL ENGINE TORQUE", "CALCULATED ENGINE LOAD", "INTAKE AIR TEMPERATURE"};
+            checkedItems = new boolean[]{ false, false, false, false, false, false, false, false, false, false, false, false, false};
         }
         if (i==1){
             pids = new String[]{"FUEL STATUS", "ENGINE COOLANT TEMP", "FUEL PRESSURE", "ENGINE RPM", "VEHICLE SPEED", "MAF SENSOR", "THROTTLE", "O2 VOLTAGE", "SENSORA", "SENSORB"};
