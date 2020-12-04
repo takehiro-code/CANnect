@@ -139,8 +139,6 @@ void loop() {
     programStarted = currentMillis;
     receivedFromApp();
 
-    // Generate sample IMU messages that will arrive from sensor module
-    // We may want to move this out and onto the the main loop ideally
     IMU_MSG sampleIMUMsg = generateSampleIMUMsg();
     sendSensorModuleData(sampleIMUMsg);
   }
@@ -336,11 +334,14 @@ void findCorrectProtocol() {
       str1 = str1 + c;
     } else {
       Serial2.println(str1);
-
+      Serial.println(str1);
+      Serial.println(Serial2.readString());
       Serial2.println("01 00"); //to check whether it's correct protocol by checking the return message.
-      delay(50);
+      delay(100);
       if (Serial2.available()) {
         String fromSerial2 = Serial2.readString();
+        Serial.print("readstring:");
+        Serial.println(fromSerial2);
         fromSerial2.toCharArray(protocolArray, numChars);
         if (!(StrContains(protocolArray, error) || StrContains(protocolArray, noData))) {
           protocolFlag = true;
@@ -498,33 +499,33 @@ char StrContains(char *str, char *sfind)
 {
   // Better way to search
   // Commented out previous code for legacy reasons
-  if (strstr(str, sfind) != NULL) {
-    return 1;
-  }
-  return 0;
+//  if (strstr(str, sfind) != NULL) {
+//    return 1;
+//  }
+//  return 0;
 
-  //  char found = 0;
-  //  char index = 0;
-  //  char len;
-  //
-  //  len = strlen(str);
-  //
-  //  if (strlen(sfind) > len) {
-  //    return -1;
-  //  }
-  //  while (index < len) {
-  //    if (str[index] == sfind[found]) {
-  //      found++;
-  //      if (strlen(sfind) == found) {
-  //        return index;
-  //      }
-  //    }
-  //    else {
-  //      found = 0;
-  //    }
-  //    index++;
-  //  }
-  //  return 0;
+    char found = 0;
+    char index = 0;
+    char len;
+  
+    len = strlen(str);
+  
+    if (strlen(sfind) > len) {
+      return -1;
+    }
+    while (index < len) {
+      if (str[index] == sfind[found]) {
+        found++;
+        if (strlen(sfind) == found) {
+          return index;
+        }
+      }
+      else {
+        found = 0;
+      }
+      index++;
+    }
+    return 0;
 }
 
 
@@ -532,24 +533,29 @@ char StrContains(char *str, char *sfind)
  * Send IMU data to the app via Bluetooth
  */
 void sendSensorModuleData(IMU_MSG msgData) {
+  String comma = ",";
   SerialBT.print(msgData.msgID);
-
+  SerialBT.print(":");
+  
   SerialBT.print(msgData.accX);
+  SerialBT.print(comma);
   SerialBT.print(msgData.accY);
+  SerialBT.print(comma);
   SerialBT.print(msgData.accZ);
+  SerialBT.print(comma);
 
   SerialBT.print(msgData.gyroX);
+  SerialBT.print(comma);
   SerialBT.print(msgData.gyroY);
+  SerialBT.print(comma);
   SerialBT.print(msgData.gyroZ);
+  SerialBT.print(comma);
 
   SerialBT.print(msgData.temperature);
 
   SerialBT.println("255255"); // end of Msg  
 }
 
-/**
- * Generate sample IMU Messages
- */
 IMU_MSG generateSampleIMUMsg(void) {
   IMU_MSG sample;
 
