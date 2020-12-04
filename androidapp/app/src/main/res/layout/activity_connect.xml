@@ -26,35 +26,35 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_height="wrap_content"
             >
-            <TextView
-                android:textColor="?attr/textcolor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.1"
-                android:text="RX:"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textStyle="bold" />
-            <TextView
-                android:textColor="?attr/textcolor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.9"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="Read Buffer"
-                android:id="@+id/readBuffer"
-                android:layout_centerHorizontal="true" />
+<!--            <TextView-->
+<!--                android:textColor="?attr/textcolor"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="0.1"-->
+<!--                android:text="RX:"-->
+<!--                android:ellipsize="end"-->
+<!--                android:maxLines="1"-->
+<!--                android:textStyle="bold" />-->
+<!--            <TextView-->
+<!--                android:textColor="?attr/textcolor"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="0.9"-->
+<!--                android:ellipsize="end"-->
+<!--                android:maxLines="1"-->
+<!--                android:text="Read Buffer"-->
+<!--                android:id="@+id/readBuffer"-->
+<!--                android:layout_centerHorizontal="true" />-->
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="5dp">
             <TextView
                 android:textColor="?attr/textcolor"
                 android:layout_width="wrap_content"
@@ -66,6 +66,7 @@
                 android:textStyle="bold"
                 />
             <TextView
+                android:layout_marginBottom="5dp"
                 android:textColor="?attr/textcolor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,6 +81,8 @@
         </LinearLayout>
 
         <Button
+            android:textColor="?attr/textcolor"
+            android:layout_margin="1dp"
             android:background="?attr/buttoncolor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -90,6 +93,8 @@
             />
 
         <Button
+            android:textColor="?attr/textcolor"
+            android:layout_margin="1dp"
             android:background="?attr/buttoncolor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -100,6 +105,8 @@
             android:layout_toRightOf="@+id/PairedBtn" />
 
         <Button
+            android:textColor="?attr/textcolor"
+            android:layout_margin="1dp"
             android:background="?attr/buttoncolor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -109,6 +116,8 @@
             android:layout_toStartOf="@+id/discover" />
 
         <Button
+            android:textColor="?attr/textcolor"
+            android:layout_margin="1dp"
             android:background="?attr/buttoncolor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -119,6 +128,7 @@
             android:layout_toEndOf="@+id/checkboxLED1" />
 
         <ListView
+            android:textColor="?attr/textcolor"
             android:background="?attr/backgroundcolor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

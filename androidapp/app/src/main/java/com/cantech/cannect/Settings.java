@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -23,6 +24,7 @@ public class Settings extends AppCompatActivity {
 
     SharedPref sharedPref;
     ListView listView;
+    String textColor;
     String mTitle[] ={"Preferences & Units", "Car Brand","Help","About","Contact Us"};
     String mDescription[] ={"Preferences & Units Description", "Choose a Car Brand and its OBD2 protocol","Help Description","About Description","Contact Us Description"};
     int Images[]={R.drawable.ic_touch_app,R.drawable.ic_car,R.drawable.ic_help,R.drawable.ic_about,R.drawable.ic_contact};
@@ -34,8 +36,10 @@ public class Settings extends AppCompatActivity {
         //set theme
         if(sharedPref.loadDarkModeState()==true){
             setTheme(R.style.darkTheme);
+            textColor = "#FFFFFF";
         }else{
             setTheme(R.style.AppTheme);
+            textColor = "#000000";
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
@@ -107,6 +111,8 @@ public class Settings extends AppCompatActivity {
             imageView.setImageResource(rImgs[position]);
             mmainText.setText(rTitle[position]);
             msubText.setText(rDescription[position]);
+
+            mmainText.setTextColor(Color.parseColor(textColor));
             return row;
         }
     }

@@ -190,19 +190,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                         break;
                     case BluetoothAdapter.STATE_ON:
-                        //BTstatus.setText("Bluetooth ON");
+                        //BTstatus.setText("Disconnected"); // Orginally Bluetooth ON
                         try {
                             mBTSocket = null;
                             mBTSocket = SocketHandler.getSocket();
                             if (mBTSocket == null) {
-                                BTstatus.setText("Bluetooth ON");
+                                BTstatus.setText("Disconnected"); // Originally Bluetooth ON
                             } else {
                                 if (mBTSocket.isConnected()){
                                     BTstatus.setText("Connected");
                                 }
 
                                 else {
-                                    BTstatus.setText("Bluetooth ON");
+                                    BTstatus.setText("Disconnected"); // Originally Bluetooth ON
                                 }
                             }
                         }
@@ -300,14 +300,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mBTSocket = null;
                 mBTSocket = SocketHandler.getSocket();
                 if (mBTSocket == null) {
-                    BTstatus.setText("Bluetooth ON");
+                    BTstatus.setText("Disconnected"); // Originally Bluetooth ON
                 } else {
                     if (mBTSocket.isConnected()){
                         BTstatus.setText("Connected");
                         flag++;
                     }
                     else {
-                        BTstatus.setText("Bluetooth ON");
+                        BTstatus.setText("Disconnected"); // Originally Bluetooth ON
                     }
                 }
             }

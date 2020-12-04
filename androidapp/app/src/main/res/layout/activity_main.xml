@@ -255,7 +255,7 @@
             android:id="@+id/connection_text"
             android:text="@string/connect"
             android:textSize="24sp"
-            android:textColor="?attr/textcolor"
+            android:textColor="#FFFFFF"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></TextView>

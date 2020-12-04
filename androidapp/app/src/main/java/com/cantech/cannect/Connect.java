@@ -60,7 +60,7 @@ public class Connect extends AppCompatActivity {
 
     //GUI components
     private TextView mBluetoothStatus;
-    private TextView mReadBuffer;
+//    private TextView mReadBuffer;
     private TextView mpids;
     private Button mScanBtn;
     private Button mOffBtn;
@@ -101,7 +101,7 @@ public class Connect extends AppCompatActivity {
         //call method start
 
         mBluetoothStatus = (TextView)findViewById(R.id.bluetoothStatus);
-        mReadBuffer = (TextView) findViewById(R.id.readBuffer);
+//        mReadBuffer = (TextView) findViewById(R.id.readBuffer); // for RX buffer debugging
         messages = new StringBuilder();
         
         mScanBtn = (Button)findViewById(R.id.scan);
@@ -109,7 +109,7 @@ public class Connect extends AppCompatActivity {
         mDiscoverBtn = (Button)findViewById(R.id.discover);
         mListPairedDevicesBtn = (Button)findViewById(R.id.PairedBtn);
 
-        mBTArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
+        mBTArrayAdapter = new ArrayAdapter<String>(this, R.layout.custom_textview);
         mBTAdapter = BluetoothAdapter.getDefaultAdapter(); // get a handle on the bluetooth radio
 
         mDevicesListView = (ListView)findViewById(R.id.devicesListView);
@@ -128,13 +128,15 @@ public class Connect extends AppCompatActivity {
                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
-                    mReadBuffer.setText(readMessage);
+//                    mReadBuffer.setText(readMessage);
 
                 }
 
                 if(msg.what == CONNECTING_STATUS){
-                    if(msg.arg1 == 1)
+                    if(msg.arg1 == 1) {
                         mBluetoothStatus.setText("Connected to Device: " + (String)(msg.obj));
+                        Toast.makeText(getApplicationContext(),"Connected",Toast.LENGTH_SHORT).show();
+                    }
                     else
                         mBluetoothStatus.setText("Connection Failed");
                 }
@@ -219,7 +221,7 @@ public class Connect extends AppCompatActivity {
             //System.out.println(text);
             //System.out.println("inside mreceiver messages");
             //System.out.println(messages);
-            mReadBuffer.setText(messages);
+//            mReadBuffer.setText(messages);
         }
     };
 
