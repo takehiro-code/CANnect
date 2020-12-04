@@ -42,8 +42,8 @@ public class Contact extends AppCompatActivity {
                 .addItem(new Element().setTitle("Version 1.0"))
                 .addGroup("CONNECT WITH US!")
                 .addEmail("Your mail id ")
-                .addGitHub("link to source code")
-                .addWebsite("Your website/")
+                .addGitHub("https://csil-git1.cs.surrey.sfu.ca/capstone-1194-group-8/ensc-405w")
+                .addWebsite("http://www.sfu.ca/~eyazici/#home")
                 .addYoutube("https://www.youtube.com/watch?v=w_xi4uaV3mE&feature=youtu.be&ab_channel=PoCDemosSummer2020")   //Enter your youtube link here (replace with my channel link)
                 .addPlayStore("com.cantech.cannect")   //Replace all this with your package name
                 .addItem(createCopyright())

@@ -2,14 +2,19 @@ package com.cantech.cannect;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
 public class Preferences extends AppCompatActivity {
     SharedPref sharedPref;
     private Switch theme_switch;
+    boolean flag;
+    String BTSensor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //load saved theme state
@@ -40,5 +45,26 @@ public class Preferences extends AppCompatActivity {
                 recreate();
             }
         });
+    }
+
+    private void sendPID2BT(){
+        final Intent sendingMessageIntent = new Intent("sendingMessage");
+        Thread t = new Thread(){
+                public void run() {
+             while (true) {
+                 sendingMessageIntent.putExtra("theMessage", "31 ");
+                 LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
+                 try {
+                     Thread.sleep(1500);
+                 } catch (InterruptedException e) {
+                     // TODO Auto-generated catch block
+                     e.printStackTrace();
+                 }
+                 if (flag){
+                     break;}
+                 }
+                }
+            };
+            t.start();
     }
 }

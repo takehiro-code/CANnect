@@ -35,8 +35,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="This app was developed by capstone students working in Cantech.
-Cannect does not store or collect any personal data. This product is licensed under C."
+                android:text="Our team at CANtech is introducing an open source hardware and software platform called CANnect that allows consumers to view car diagnostics and track the maintenance of their vehicle. CANnect is a combination of a CAN Bus reader that can be connect to the OBD-II port of the vehicle, and a mobile application that receives this vehicle data through a Bluetooth connection. Our product being open source allows consumers to customize our base features to meet their needs and introduce new solutions to our platform."
                 android:textColor="?attr/textcolor"
                 android:layout_marginTop="8dp"/>
         </LinearLayout>

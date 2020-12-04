@@ -56,6 +56,8 @@ dependencies {
     //firabase
     implementation 'com.google.firebase:firebase-core:17.0.0'
     implementation 'com.google.firebase:firebase-database:17.0.0'
+    //user manual in help
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 }
 
 buildscript {
