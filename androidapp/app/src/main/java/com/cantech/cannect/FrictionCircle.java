@@ -153,7 +153,7 @@ public class FrictionCircle extends AppCompatActivity {
             dotPoint.setStyle(Paint.Style.FILL);
             try {
                 fx = (float) (data_D[0]) + width / 2;
-                fy = (float) (data_D[0]) + height / 2;
+                fy = (float) (data_D[1]) + height / 2;
             }catch (Exception e){
                 fx = width/2;
                 fy = height/2;
