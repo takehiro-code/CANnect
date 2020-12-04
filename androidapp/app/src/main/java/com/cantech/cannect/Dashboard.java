@@ -60,6 +60,9 @@ public class Dashboard extends AppCompatActivity {
     long seconds;
     long duration;
     final ExportLoadingDialog exportLoadingDialog = new ExportLoadingDialog(Dashboard.this);
+    int toExport;//0=pid,1=sensor
+    double pitch;
+    double roll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,8 +115,14 @@ public class Dashboard extends AppCompatActivity {
         dataArrayList.add(newData);
         newData = new Data("roll","0");
         dataArrayList.add(newData);
-        //newData = new Data("yaw","0");
-        //dataArrayList.add(newData);
+        newData = new Data("Gyroscope-x","0");
+        dataArrayList.add(newData);
+        newData = new Data("Gyroscope-y","0");
+        dataArrayList.add(newData);
+        newData = new Data("Gyroscope-z","0");
+        dataArrayList.add(newData);
+        newData = new Data("Temperature","0");
+        dataArrayList.add(newData);
 
         adapter = new DataListAdapter(this, R.layout.adapter_view_pidstable_layout, dataArrayList);
         listPids.setAdapter(adapter);
@@ -126,6 +135,7 @@ public class Dashboard extends AppCompatActivity {
         calendar = Calendar.getInstance();
         isExport = false;
         exportData = "";
+        start_export();
         //Below code is for page navigation
         //initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -244,13 +254,7 @@ public class Dashboard extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.export_10s:
-                start_export(10);
-                return true;
-            case R.id.export_30s:
-                start_export(30);
-                return true;
-            case R.id.export_60s:
-                start_export(60);
+                finish_export();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -269,6 +273,7 @@ public class Dashboard extends AppCompatActivity {
             switch(parsed[0])
             {
                 case "FUEL STATUS":
+                    toExport = 0;
                     newData = new Data("FUEL STATUS",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -280,6 +285,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "ENGINE COOLANT TEMP":
+                    toExport = 0;
                     newData = new Data("ENGINE COOLANT TEMP",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -291,6 +297,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "FUEL PRESSURE":
+                    toExport = 0;
                     newData = new Data("FUEL PRESSURE",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -302,6 +309,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "ENGINE RPM":
+                    toExport = 0;
                     newData = new Data("ENGINE RPM",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -313,6 +321,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "VEHICLE SPEED":
+                    toExport = 0;
                     newData = new Data("VEHICLE SPEED",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -324,6 +333,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "MAF SENSOR":
+                    toExport = 0;
                     newData = new Data("MAF SENSOR",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -335,6 +345,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "THROTTLE":
+                    toExport = 0;
                     newData = new Data("THROTTLE",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -346,6 +357,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "O2 VOLTAGE":
+                    toExport = 0;
                     newData = new Data("O2 VOLTAGE",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -357,6 +369,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "AMBIENT AIR TEMP":
+                    toExport = 0;
                     newData = new Data("AMBIENT AIR TEMP",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -368,6 +381,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "6DOF":
+                    toExport = 1;
                     String[] data = parsed[1].split(",");
                     newData = new Data("Acceleration-x",data[0]);
                     for (int i=0;i<dataArrayList.size();i++){
@@ -393,12 +407,46 @@ public class Dashboard extends AppCompatActivity {
                             break;
                         }
                     }
+                    //gyro
+                    newData = new Data("Gyroscope-x",data[3]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("Gyroscope-x")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    newData = new Data("Gyroscope-y",data[4]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("Gyroscope-y")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    newData = new Data("Gyroscope-z",data[5]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("Gyroscope-z")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
+                    //temp
+                    newData = new Data("Temperature",data[6]);
+                    for (int i=0;i<dataArrayList.size();i++){
+                        String pid = dataArrayList.get(i).getPid();
+                        if (pid.equals("Temperature")){
+                            dataArrayList.set(i, newData);
+                            break;
+                        }
+                    }
                     double xAxis = Double.parseDouble(data[0]);
                     double yAxis = Double.parseDouble(data[1]);
                     double zAxis = Double.parseDouble(data[2]);
                     // apply trigonometry to get the pitch and roll
-                    double pitch = Math.atan(xAxis/sqrt(pow(yAxis,2) + pow(zAxis,2)));
-                    double roll = Math.atan(yAxis/sqrt(pow(xAxis,2) + pow(zAxis,2)));
+                    pitch = Math.atan(xAxis/sqrt(pow(yAxis,2) + pow(zAxis,2)));
+                    roll = Math.atan(yAxis/sqrt(pow(xAxis,2) + pow(zAxis,2)));
                     //convert radians into degrees
                     pitch = pitch * (180.0/3.14);
                     roll = roll * (180.0/3.14);
@@ -423,6 +471,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "ACTUAL ENGINE TORQUE":
+                    toExport = 0;
                     newData = new Data("ACTUAL ENGINE TORQUE",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -434,6 +483,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "DEMAND ENGINE TORQUE":
+                    toExport = 0;
                     newData = new Data("DEMAND ENGINE TORQUE",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -445,6 +495,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "FUEL LEVEL":
+                    toExport = 0;
                     newData = new Data("FUEL LEVEL",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -456,6 +507,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "ABSOLUTE LOAD VALUE":
+                    toExport = 0;
                     newData = new Data("ABSOLUTE LOAD VALUE",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -467,6 +519,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "INTAKE AIR TEMPERATURE":
+                    toExport = 0;
                     newData = new Data("AMBIENT AIR TEMP",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -478,6 +531,7 @@ public class Dashboard extends AppCompatActivity {
                     adapter.notifyDataSetChanged();
                     break;
                 case "CALCULATED ENGINE LOAD":
+                    toExport = 0;
                     newData = new Data("CALCULATED ENGINE LOAD",parsed[1]);
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
@@ -493,15 +547,14 @@ public class Dashboard extends AppCompatActivity {
             }
             if (isExport){
                 //append
-                calendar.setTimeInMillis(seconds);
-                exportData+="\n"+calendar.getTime()+","+messages.substring(0, messages.length() - 10)+","+parsed[0]+","+parsed[1];
-                //update the timer
                 seconds = System.currentTimeMillis();
-                System.out.println("seconds is");
-                System.out.println(seconds);
-                if (seconds>duration){
-                    isExport = false;
-                    finish_export();
+                calendar.setTimeInMillis(seconds);
+                //if only pid data coming (using indicator variable)
+                if (toExport ==0){//export pids
+                    exportData+="\n"+calendar.getTime()+","+messages.substring(0, messages.length() - 10)+","+parsed[0]+","+parsed[1]+","+"0"+","+"0"+","+"0"+","+"0"+","+"0"+","+"0"+","+"0";
+                }
+                else if (toExport==1){//export sensor
+                    exportData+="\n"+calendar.getTime()+","+"Sensor Data"+","+"0"+","+"0"+","+parsed[1]+","+pitch+","+roll;
                 }
             }
             if (messages.contains("FF") || messages.contains("255255")){//(messages.length()>=28){
@@ -541,19 +594,10 @@ public class Dashboard extends AppCompatActivity {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mReceiver);
     }
 
-    public void start_export(int Duration){
+    public void start_export(){
         isExport = true;
         exportData="";
-        exportData+="Time, OBD2 message, Pid, Value";
-        //calendar = Calendar.getInstance();
-        //simpleDateFormat = new SimpleDateFormat("ss");
-        //dateTime = simpleDateFormat.format(calendar.getTime());
-        //seconds = Integer.parseInt(dateTime);
-        seconds = System.currentTimeMillis();
-        duration = seconds+Duration*1000;
-        System.out.println("duration is");
-        System.out.println(duration);
-        exportLoadingDialog.startLoadingDialog();
+        exportData+="Time, OBD2 message, Pid, Value, Acceleration-x, Acceleration-y, Acceleration-z, Gyroscope-x, Gyroscope-y, Gyroscope-z, Temperature, Pitch, Roll";
     }
     public void finish_export(){
         try{
@@ -577,7 +621,7 @@ public class Dashboard extends AppCompatActivity {
             e.printStackTrace();
         }
         exportData="";
-        exportLoadingDialog.stopLoadingDialog();
+        //exportLoadingDialog.stopLoadingDialog();
     }
     // don't worry about this lifecycle
 //    @Override

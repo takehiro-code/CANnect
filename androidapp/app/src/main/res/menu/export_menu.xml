@@ -6,11 +6,7 @@
         app:showAsAction="never">
             <menu>
                 <item android:id="@+id/export_10s"
-                    android:title="10 seconds"/>
-                <item android:id="@+id/export_30s"
-                    android:title="30 seconds"/>
-                <item android:id="@+id/export_60s"
-                    android:title="60 seconds"/>
+                    android:title="Export csv"/>
             </menu>
     </item>
 </menu>
