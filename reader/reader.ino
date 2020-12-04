@@ -133,21 +133,6 @@ void loop() {
 }
 
 /**
-   CAN Bus Setup
-*/
-//void setupCANBus(void) {
-//  int attempt = 0;
-//  while (CAN_OK != CAN.begin(CAN_500KBPS) && attempt < INITIALISATION_ATTEMPTS) {
-//    Serial.println("CAN BUS init attempt Failed");
-//    delay(SETUP_DELAY);
-//    attempt++;
-//  }
-//
-//  Serial.println("CAN BUS Init OK!");
-//}
-
-
-/**
    WiFi Setup
 */
 void setupWiFi(void) {
@@ -398,7 +383,6 @@ void FromOBD() {
   delay(iso9141Delay);
 }
 
-
 /**
    function for decoding DTC message from obd
 */
@@ -461,7 +445,6 @@ String decodeDTC(String string) {
   return str;
 }
 
-
 void getDTC(String str) {
   String string;
   str.replace(" ", "");
@@ -476,37 +459,13 @@ void getDTC(String str) {
 // searches for the string sfind in the string str
 // returns 1 if string found
 // returns 0 if string not found
+// use this instead of strstr() for legacy reasons
 char StrContains(char *str, char *sfind)
 {
-  // Better way to search
-  // Commented out previous code for legacy reasons
-//  if (strstr(str, sfind) != NULL) {
-//    return 1;
-//  }
-//  return 0;
-
-    char found = 0;
-    char index = 0;
-    char len;
-  
-    len = strlen(str);
-  
-    if (strlen(sfind) > len) {
-      return -1;
-    }
-    while (index < len) {
-      if (str[index] == sfind[found]) {
-        found++;
-        if (strlen(sfind) == found) {
-          return index;
-        }
-      }
-      else {
-        found = 0;
-      }
-      index++;
-    }
-    return 0;
+ if (strstr(str, sfind) != NULL) {
+   return 1;
+ }
+ return 0;
 }
 
 
