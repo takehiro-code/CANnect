@@ -49,14 +49,6 @@ public class Dashboard extends AppCompatActivity {
     List<String> BTStrings = new ArrayList<>();
     boolean flag;
     ListView listPids;
-    Data FUEL_STATUS;
-    Data ENGINE_COOLANT_TEMP;
-    Data FUEL_PRESSURE;
-    Data ENGINE_RPM;
-    Data VEHICLE_SPEED;
-    Data MAF_SENSOR;
-    Data THROTTLE;
-    Data O2_VOLTAGE;
     Data newData;
     DataParsing dataParsing;
     //for export log
@@ -86,28 +78,10 @@ public class Dashboard extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         listPids = findViewById(R.id.listPids);
-        messages = "";//new StringBuilder();
+        messages = "";
         dataParsing = new DataParsing();
-        //Below code is for setting up the tabular form
-        //Create Data objects
-        //FUEL_STATUS = new Data("FUEL STATUS","0");
-        //ENGINE_COOLANT_TEMP = new Data("ENGINE COOLANT TEMPERATURE","0");
-        //FUEL_PRESSURE = new Data("FUEL PRESSURE","0");
-        //ENGINE_RPM = new Data("ENGINE RPM","0");
-        //VEHICLE_SPEED = new Data("VEHICLE SPEED","0");
-        //MAF_SENSOR = new Data("MAF SENSOR","0");
-        //THROTTLE = new Data("THROTTLE","0");
-        //O2_VOLTAGE = new Data("O2 VOLTAGE","0");
 
         dataArrayList = new ArrayList<>();
-        //dataArrayList.add(FUEL_STATUS);
-        //dataArrayList.add(ENGINE_COOLANT_TEMP);
-        //dataArrayList.add(FUEL_PRESSURE);
-        //dataArrayList.add(ENGINE_RPM);
-        //dataArrayList.add(VEHICLE_SPEED);
-        //dataArrayList.add(MAF_SENSOR);
-        //dataArrayList.add(THROTTLE);
-        //dataArrayList.add(O2_VOLTAGE);
 
         //title
         newData = new Data("PIDS");
@@ -147,15 +121,6 @@ public class Dashboard extends AppCompatActivity {
         convertStringtoPIDs();
         //creating thread for each pids
         Log.d("table", Integer.toString(BTPIDs.size()));
-
-        //pass the socket into Dashboard activity
-        //try {
-        //    mBTSocket = SocketHandler.getSocket();
-        //    mConnectedThread = new BTCommunication.ConnectedThread(mBTSocket, Dashboard.this);
-        //    mConnectedThread.start();
-        //} catch (Exception e) {//dashboard opened without connecting to device
-        //    e.printStackTrace();
-        //}
 
         //for export log
         calendar = Calendar.getInstance();
