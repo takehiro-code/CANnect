@@ -22,6 +22,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -40,6 +41,8 @@ import java.util.List;
 
 
 public class Dashboard_chart extends AppCompatActivity {
+    SharedPref sharedPref;
+    String spinnerTextColor;
 
     StringBuilder messages;
     DataParsing dataParsing;
@@ -62,6 +65,16 @@ public class Dashboard_chart extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //load saved theme state
+        sharedPref = new SharedPref(this);
+        //set theme
+        if(sharedPref.loadDarkModeState()==true){
+            setTheme(R.style.darkTheme);
+            spinnerTextColor = "#FFFFFF";
+        }else{
+            setTheme(R.style.AppTheme);
+            spinnerTextColor = "#000000";
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_chart);
 
@@ -98,6 +111,7 @@ public class Dashboard_chart extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 toDisplay = adapterView.getItemAtPosition(i).toString();
                 reDesignChart(lineDataSet, toDisplay);
+                ((TextView) view).setTextColor(Color.parseColor(spinnerTextColor));
             }
 
             @Override
@@ -191,6 +205,10 @@ public class Dashboard_chart extends AppCompatActivity {
                         return true;
                     case R.id.Gauge:
                         startActivity(new Intent(getApplicationContext(),Dashboard_gauge.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.DOF:
+                        startActivity(new Intent(getApplicationContext(),FrictionCircle.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

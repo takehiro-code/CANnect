@@ -175,6 +175,10 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
                         return true;
                     case R.id.Gauge:
                         return true;
+                    case R.id.DOF:
+                        startActivity(new Intent(getApplicationContext(),FrictionCircle.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }

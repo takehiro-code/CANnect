@@ -9,23 +9,11 @@
     android:background="?attr/backgroundcolor"
     tools:context=".Dashboard_gauge">
 
-    <TextView
-
-        android:id="@+id/gauge_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Vehicle DashBoard"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:textSize="30sp"/>
-
     <GridLayout
         android:id="@+id/grid_layout_gauge"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom_navigation"
-        android:layout_below="@+id/gauge_view"
         android:rowCount="2"
         android:columnCount="2">
 
