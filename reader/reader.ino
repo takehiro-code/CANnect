@@ -9,7 +9,8 @@
 /**
    Metadata
 */
-#define CURRENT_VERSION "0.0.1"
+#define SW_VERSION "0.0.1"
+#define HW_VERSION "0.0.5b"
 #define ESP32_BL_NAME "CANnectReader"
 
 /**
@@ -72,25 +73,12 @@ typedef struct IMU_MSG {
 #define MESSAGE_END               0xFF
 #define ESP32_WIFI_MODE           WIFI_STA
 
-typedef struct canTechMsg {
-  float accX;
-  float accY;
-  float accZ;
-
-  float temperature;
-
-  float gyroX;
-  float gyroY;
-  float gyroZ;
-};
-
 /**
    Global Variables
 */
 BluetoothSerial SerialBT;
 uint8_t broadcastAddress[] = {0xF0, 0x08, 0xD1, 0xD3, 0x6D, 0xA0}; // sensor's address - hard-coded for now
 String success;
-canTechMsg incomingData;
 
 float accX, accY, accZ;
 float gyroX, gyroY, gyroZ;
@@ -283,7 +271,9 @@ void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
 
 // Callback when data is received
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingD, int len) {
-  memcpy(&incomingData, incomingD, sizeof(incomingData));
+  IMU_MSG incomingIMUSensorData;
+
+  memcpy(&incomingIMUSensorData, incomingD, sizeof(incomingIMUSensorData));
   uint8_t sensorMacAddress[6];
   memcpy(&sensorMacAddress, mac, sizeof(sensorMacAddress));
 
@@ -297,36 +287,27 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingD, int len) {
   Serial.print(" | Bytes received: ");
   Serial.print(len);
 
-  accX = incomingData.accX;
-  accY = incomingData.accY;
-  accZ = incomingData.accZ;
+  accX = incomingIMUSensorData.accX;
+  accY = incomingIMUSensorData.accY;
+  accZ = incomingIMUSensorData.accZ;
 
-  gyroX = incomingData.gyroX;
-  gyroY = incomingData.gyroY;
-  gyroZ = incomingData.gyroZ;
+  gyroX = incomingIMUSensorData.gyroX;
+  gyroY = incomingIMUSensorData.gyroY;
+  gyroZ = incomingIMUSensorData.gyroZ;
 
-  temperature = incomingData.temperature;
+  temperature = incomingIMUSensorData.temperature;
 
   Serial.print(" | aX = "); Serial.print(accX);
   Serial.print(" | aY = "); Serial.print(accY);
   Serial.print(" | aZ = "); Serial.print(accZ);
-
-  Serial.print(" | tmp = "); Serial.print(temperature);
   Serial.print(" | gX = "); Serial.print(gyroX);
   Serial.print(" | gY = "); Serial.print(gyroY);
   Serial.print(" | gZ = "); Serial.print(gyroZ);
+  Serial.print(" | tmp = "); Serial.print(temperature);
+
   Serial.println();
 
-  //
-  //  // print out data to Bluetooth
-  //  SerialBT.print("aX = "); SerialBT.print(accX);
-  //  SerialBT.print(" | aY = "); SerialBT.print(accY);
-  //  SerialBT.print(" | aZ = "); SerialBT.print(accZ);
-  //  SerialBT.print(" | tmp = "); SerialBT.print(temperature);
-  //  SerialBT.print(" | gX = "); SerialBT.print(gyroX);
-  //  SerialBT.print(" | gY = "); SerialBT.print(gyroY);
-  //  SerialBT.print(" | gZ = "); SerialBT.print(gyroZ);
-  //  SerialBT.println();
+  // sendSensorModuleData(incomingIMUSensorData); // Queue this?
 }
 
 void findCorrectProtocol() {
@@ -555,18 +536,18 @@ IMU_MSG generateSampleIMUMsg(void) {
 
   sample.msgID = "6DOF";
 
-  // Acceleration range is -2g to +2g
-  sample.accX = random(400)*0.01 - 200.0; // m/s^2
-  sample.accY = random(400)*0.01 - 200.0; // m/s^2
-  sample.accZ = random(400)*0.01 - 200.0; // m/s^2
+  // Acceleration range from -20 m/s^2 to +20 m/s^2
+  sample.accX = random(-20,20) + random(10)*0.01; // m/s^2
+  sample.accY = random(-20,20) + random(10)*0.01; // m/s^2
+  sample.accZ = random(-20,20) + random(10)*0.01; // m/s^2
 
   // Gyroscope data range may change
-  sample.gyroX = random(124*2)*0.1 - 125.0 + 0.01*random(100);
-  sample.gyroY = random(124*2)*0.1 - 125.0 + 0.01*random(100);
-  sample.gyroZ = random(124*2)*0.1 - 125.0 + 0.01*random(100);
+  sample.gyroX = random(-125, 125)*0.1 + 0.01*random(10);
+  sample.gyroY = random(-125, 125)*0.1 + 0.01*random(10);
+  sample.gyroZ = random(-125, 125)*0.1 + 0.01*random(10);
 
   // range from -40C to +85C
-  sample.temperature = random(-40, 85) + 0.01*random(100);
+  sample.temperature = random(-40, 85) + 0.01*random(10);
 
   return sample;
 }
