@@ -159,7 +159,7 @@ public class DataParsing extends AppCompatActivity{
         {
             case FUEL_STATUS:
                 result[0] = FUEL_STATUS_STRING;
-                result[1] = String.valueOf(Integer.parseInt(splitobd2msg[4], 16)); // NEED BETTER SYSTEM TO ORGANIZE THIS
+                result[1] = Integer.toString(Integer.parseInt(splitobd2msg[4], 16)); // NEED BETTER SYSTEM TO ORGANIZE THIS
                 break;
             case ENGINE_COOLANT_TEMP:
                 result[0] = ENGINE_COOLANT_TEMP_STRING;
@@ -185,7 +185,7 @@ public class DataParsing extends AppCompatActivity{
                 break;
             case THROTTLE:
                 result[0] = THROTTLE_STRING;
-                x = (convertA * (100.0000f/256.000f));
+                x = (convertA * (100/256.000f));
                 result[1] = Integer.toString((int) x);
                 break;
             case O2_VOLTAGE:
@@ -254,7 +254,8 @@ public class DataParsing extends AppCompatActivity{
 //                break;
             case INTAKE_AIR_TEMP:
                 result[0] = INTAKE_AIR_TEMP_STRING;
-                result[1] = Integer.toString(Integer.parseInt(splitobd2msg[4], 16) - 40);
+                result[1] = Float.toString(Integer.parseInt(splitobd2msg[4], 16) - 40);
+
                 break;
 
             default:

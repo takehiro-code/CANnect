@@ -12,6 +12,7 @@ import android.bluetooth.BluetoothProfile;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //list of protocols
     ArrayList<String> protocolList = new ArrayList<>();
     static int flag = 0;
+    boolean found = false;
 
 
     @Override
@@ -71,7 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // 11 J1850 PWM
         // 12 J1850 VPW
         protocolList.addAll(Arrays.asList("33" , "34", "35", "36", "11", "12", "21", "23", "24", "25", "22"));
-        //protocolstatus = findViewById(R.id.protocol_text);
+        protocolstatus = findViewById(R.id.protocol_text);
+        protocolstatus.setText("Connect to find Protocol");
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
@@ -100,6 +103,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void runOnce(){
         Log.d("main", "runOnce");
+        protocolstatus.setText( "finding protocol...");
+        protocolstatus.setTextColor(Color.rgb(200,0,0));
         final StringBuilder messages;
         Thread t = new Thread(){
             public void run(){
@@ -161,7 +166,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void onReceive(Context context, Intent intent) {
             Log.d("inside receiver", "receiver");
+            String text = intent.getStringExtra("theMessage");
+            if(text != null ){
+                text = text.substring(0, text.length()-6);
+                Log.d("inside receiver", text);
+                if(text.equals("NOT FOUND!")){
+                    protocolstatus.setText("Can't find the correct Protocol!");
+                    protocolstatus.setTextColor(Color.rgb(200,0,0));
+                }else{
+                    found = true;
+                }
+            }
+            if(found) {
+                protocolstatus.setText("Protocol has been found!");
+                protocolstatus.setTextColor(Color.rgb(0,0,200));
 
+            }
 
 
             final String action = intent.getAction();

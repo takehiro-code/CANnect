@@ -468,7 +468,7 @@ public class Dashboard extends AppCompatActivity {
                             break;
                         }
                     }
-                    adapter.notifyDataSetChanged();
+                   adapter.notifyDataSetChanged();
                     break;
                 case "ACTUAL ENGINE TORQUE":
                     toExport = 0;
@@ -586,6 +586,16 @@ public class Dashboard extends AppCompatActivity {
         BTStrings.clear();
         flag = true;
     }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        overridePendingTransition(0, 0);
+        startActivity(getIntent());
+        overridePendingTransition(0, 0);
+    }
+
+
 
     // called whenever Dashboard leaves
     @Override

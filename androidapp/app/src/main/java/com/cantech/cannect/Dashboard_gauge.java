@@ -137,7 +137,8 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
 
         for(int i = 0; i < 4; i++){
             final int finalI = i;
-            Thread t = new Thread(Integer.toString(i)){
+            Thread t = new Thread(new Runnable() {
+                @Override
                 public void run() {
                     Intent sendingMessageIntent = new Intent("sendingMessage");
                     while(true){
@@ -154,9 +155,9 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
                             e.printStackTrace();
                         }
                         Log.d("BT", initialPIDs[finalI]);
-                    }
                 }
-            };
+            }
+        });
             t.start();
         }
 
@@ -385,6 +386,16 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
         for(int i = 0; i < 4; i++){
             flagArray[i] = true;
         }
+    }
+
+
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        finish();
+        overridePendingTransition(0, 0);
+        startActivity(getIntent());
+        overridePendingTransition(0, 0);
     }
 
     @Override

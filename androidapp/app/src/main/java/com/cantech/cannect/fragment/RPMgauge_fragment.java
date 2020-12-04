@@ -114,7 +114,7 @@ public class RPMgauge_fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         engineRPM = (TubeSpeedometer) view.findViewById(R.id.RPMView);
         // change MAX speed to x 1K
-        engineRPM.setMaxSpeed(9);
+        engineRPM.setMaxSpeed(10);
         // set or remove 3D Effects.
         engineRPM.clearSections();
         engineRPM.addSections(
