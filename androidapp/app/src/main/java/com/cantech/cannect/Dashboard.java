@@ -455,7 +455,7 @@ public class Dashboard extends AppCompatActivity {
                             break;
                         }
                     }
-                    adapter.notifyDataSetChanged();
+                   adapter.notifyDataSetChanged();
                     break;
                 case "ACTUAL ENGINE TORQUE":
                     newData = new Data("ACTUAL ENGINE TORQUE",parsed[1]);
