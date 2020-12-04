@@ -569,6 +569,16 @@ public class Dashboard extends AppCompatActivity {
         flag = true;
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        overridePendingTransition(0, 0);
+        startActivity(getIntent());
+        overridePendingTransition(0, 0);
+    }
+
+
+
     // called whenever Dashboard leaves
     @Override
     protected void onStop() {

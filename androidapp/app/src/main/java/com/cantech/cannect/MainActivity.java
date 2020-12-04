@@ -72,8 +72,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // 22 ISO 9141 - 2
         // 11 J1850 PWM
         // 12 J1850 VPW
-        protocolList.addAll(Arrays.asList("33" , "34", "35", "36", "11", "22", "12", "21", "23", "24", "25"));
+        protocolList.addAll(Arrays.asList("33" , "34", "35", "36", "11", "12", "21", "23", "24", "25", "22"));
         protocolstatus = findViewById(R.id.protocol_text);
+        protocolstatus.setText("Connect to find Protocol");
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
@@ -170,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 text = text.substring(0, text.length()-6);
                 Log.d("inside receiver", text);
                 if(text.equals("NOT FOUND!")){
-                    protocolstatus.setText("Can't find correct Protocol!");
+                    protocolstatus.setText("Can't find the correct Protocol!");
                     protocolstatus.setTextColor(Color.rgb(200,0,0));
                 }else{
                     found = true;
