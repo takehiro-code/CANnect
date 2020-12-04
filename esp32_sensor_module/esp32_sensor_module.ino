@@ -70,9 +70,8 @@
 /**
    Structures
 */
-
-//
-typedef struct canTechMsg {
+typedef struct imuMsg {
+  String msgID = "6DOF";
   //  char[10] sensorModuleMACAddress;
 
   float accX;
