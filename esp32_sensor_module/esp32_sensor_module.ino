@@ -8,9 +8,7 @@
     https://randomnerdtutorials.com/esp-now-two-way-communication-esp32/
     https://randomnerdtutorials.com/esp-now-esp32-arduino-ide/
     https://gist.github.com/futechiot/ee0223dd269cbe7d8605ce97d120d7d2
-
 */
-
 
 /**
    Metadata
@@ -33,7 +31,6 @@
 #define IMU_SCL       14 // Pin 13
 #define IMU_SDA       12 // Pin 14
 //#define IMU_SD0       // Not implemented
-
 
 /**
    LSM Registers
@@ -70,7 +67,8 @@
 /**
    Structures
 */
-typedef struct imuMsg {
+// IMU Msg Data
+typedef struct IMU_MSG {
   String msgID = "6DOF";
   //  char[10] sensorModuleMACAddress;
 
@@ -90,16 +88,17 @@ typedef struct imuMsg {
 */
 #define SERIAL_BAUD_RATE            115200
 #define ESP32_WIFI_MODE             WIFI_STA
+#define NETWORK_SCAN_REST_INTERVAL  5000 // Rest before scan again
+#define NETWORK_CONNECT_ATTEMPTS    3
 
-//const char* READER_WIFI_SSD         "CANnect_Reader_WiFi_0.1"   // SSID of reader WiFi
-//const char* READER_WIFI_PASSWORD    "redboats"                  // Password of reader WiFi
+#define READER_WIFI_SSID            "CANnect_Reader_WiFi_0.1"   // SSID of reader WiFi
+#define READER_WIFI_PASSWORD        "redboats"                  // Password of reader WiFi
+
 
 /**
    Variables
 */
-//uint8_t selfMACAddress[];
-//uint8_t readerMACAddress[];
-//esp_now_peer_info_t readerInfo;
+esp_now_peer_info_t readerInfo;
 
 void setup() {
   Serial.begin(SERIAL_BAUD_RATE);
@@ -147,7 +146,8 @@ void imuSetup(void) {
 
 void wifiSetup(void) {
   WiFi.mode(ESP32_WIFI_MODE);
-  Serial.println(WiFi.macAddress());
+  //  selfMACAddress = WiFi.macAddress();
+  //  Serial.println(selfMACAddress);
 }
 
 void espNOWSetup(void) {
@@ -251,89 +251,166 @@ int readAcceleration(float& x, float& y, float& z) {
   return 1;
 }
 
+int readTemperature(float& temp) {
+  temp = 0; // not implemented yet
+
+  return 1;
+}
+
 char* convert_int16_to_str(int i) { // converts int16 to string. Moreover, resulting strings will have the same length in the debug monitor.
   char tmp_str[7];
   sprintf(tmp_str, "%6d", i);
   return tmp_str;
 }
 
-//// Callback when data is sent
-//void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
-//  Serial.print("\r\nLast Packet Send Status:\t");
-//  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
-//  if (status == 0) {
-//    success = "Delivery Success :)";
-//  }
-//  else {
-//    success = "Delivery Fail :(";
-//  }
-//}
+// Callback when data is received
+void OnDataRecv(const uint8_t * mac, const uint8_t *incomingD, int len) {
 
-//void connectToReader() {
-//  WiFi.begin(READER_WIFI_SSD, READER_WIFI_PASSWORD);
-//
-//  while (WiFi.status() != WL_CONNECTED) {
-//    delay(500);
-//    Serial.println("Attempting to connect to WiFi");
-//  }
-//}
+}
+
+// Callback when data is sent
+void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
+  Serial.print("\r\nLast Packet Send Status:\t");
+  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
+}
+
+/**
+   Wait forever for connection to reader
+*/
+void waitForConnectionToReader(void) {
+  bool success = false;
+
+  while (!success) {
+    int numNetworks = WiFi.scanNetworks();
+    Serial.println("Waiting for Reader");
+    delay(NETWORK_SCAN_REST_INTERVAL);
+
+    if (numNetworks != 0) {
+      for (int ii = 0; ii < numNetworks; ++ii) {
+        if (WiFi.SSID(ii) == READER_WIFI_SSID) {
+          success = connectToReader(WiFi.BSSID(ii));
+        }
+      }
+    }
+  }
+
+  Serial.println("Successfully connected to reader");
+}
+
+bool connectToReader(const uint8_t *readerMacAddress) {
+  int numAttempts = 0;
+  Serial.println("Found reader!");
+  WiFi.begin(READER_WIFI_SSID, READER_WIFI_PASSWORD);
+  Serial.print("Attempting to connect to Reader");
+  
+  do {
+    delay(500);
+    numAttempts++;
+    Serial.print(".");
+  } while (WiFi.status() != WL_CONNECTED && numAttempts < NETWORK_CONNECT_ATTEMPTS);
+  Serial.println(".");
+
+  if (WiFi.status() != WL_CONNECTED) {
+    Serial.println("Unable to connect to Reader");
+    return false;
+  }
+
+  return espNOWAddReader(readerMacAddress);
+}
 
 /**
    Register and add reader
 */
-//void espNOWAddReader(uint8_t broadcastAddress) {
-//  if (esp_now_is_peer_exist(broadcastAddress)) {
-//    memcpy(readerInfo.peer_addr, broadcastAddress, 6);
-//    readerInfo.channel = 0;
-//    readerInfo.encrypt = false;
-//
-//    // Add peer
-//    if (esp_now_add_peer(&readerInfo) != ESP_OK) {
-//      Serial.println("Failed to add peer");
-//      return;
-//    }
-//  }
-//
-//  else {
-//    Serial.println("Unexpected behaviour!");
-//    return;
-//  }
-//}
+bool espNOWAddReader(const uint8_t *readerMacAddress) {
+  memcpy(readerInfo.peer_addr, readerMacAddress, 6);
+  readerInfo.channel = 0;
+  readerInfo.encrypt = false;
+
+  // Add peer
+  if (esp_now_add_peer(&readerInfo) != ESP_OK) {
+    Serial.println("Failed to add peer");
+    return false;
+  }
+
+  Serial.println("Successfully added reader!");
+
+  return true;
+}
 
 /**
    Remove reader
 */
-//void espNOWRemoveReader(void) {
-//  if (esp_now_del_peer(&readerInfo) != ESP_OK) {
-//    Serial.println("Failed to delete peer gracefully");
-//    return;
-//  }
-//}
+void espNOWRemoveReader(void) {
+  if (!esp_now_is_peer_exist(readerInfo.peer_addr)) {
+    Serial.println("Unable to find reader to delete! Something went wrong!");
+    return;
+  }
+
+  if (esp_now_del_peer(readerInfo.peer_addr) != ESP_OK) {
+    Serial.println("Failed to delete peer gracefully");
+    return;
+  }
+}
+
+void sendIMUMsg(void) {
+  IMU_MSG imuMsg;
+  bool goodData = true;
+
+  Serial.println("Obtaining data...");
+
+  if (readAcceleration(imuMsg.accX, imuMsg.accY, imuMsg.accZ) == 0) {
+    goodData = false;
+    Serial.println("No acceleration data!");
+  }
+
+  if (readGyroscope(imuMsg.gyroX, imuMsg.gyroY, imuMsg.gyroZ) == 0) {
+    goodData = false;
+    Serial.println("No gyroscope data!");
+  }
+
+  if (readTemperature(imuMsg.temperature) == 0) {
+    Serial.println("No temperature data!");
+    goodData = false;
+  }
+
+  if (goodData && esp_now_is_peer_exist(readerInfo.peer_addr)) {
+    Serial.println("Sending data");
+    esp_err_t result = esp_now_send(readerInfo.peer_addr, (uint8_t *) &imuMsg, sizeof(imuMsg));
+  }
+}
 
 void loop() {
-  float x, y, z;
-
-  if (gyroscopeAvailable()) {
-    readGyroscope(x, y, z);
-
-    Serial.print("Gyroscope: ");
-    Serial.print(x);
-    Serial.print('\t');
-    Serial.print(y);
-    Serial.print('\t');
-    Serial.println(z);
+  if (esp_now_is_peer_exist(readerInfo.peer_addr)) {
+    sendIMUMsg();
   }
 
-  if (accelerationAvailable()) {
-    readAcceleration(x, y, z);
-
-    Serial.print("Acceleration: ");
-    Serial.print(x);
-    Serial.print('\t');
-    Serial.print(y);
-    Serial.print('\t');
-    Serial.println(z);
+  else {
+    waitForConnectionToReader();
   }
+
+//  float x, y, z;
+//
+//  if (gyroscopeAvailable()) {
+//    readGyroscope(x, y, z);
+//
+//    Serial.print("Gyroscope: ");
+//    Serial.print(x);
+//    Serial.print('\t');
+//    Serial.print(y);
+//    Serial.print('\t');
+//    Serial.println(z);
+//  }
+//
+//  if (accelerationAvailable()) {
+//    readAcceleration(x, y, z);
+//
+//    Serial.print("Acceleration: ");
+//    Serial.print(x);
+//    Serial.print('\t');
+//    Serial.print(y);
+//    Serial.print('\t');
+//    Serial.println(z);
+//  }
 
   delay(100);
 }

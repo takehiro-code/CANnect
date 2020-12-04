@@ -73,6 +73,9 @@ typedef struct IMU_MSG {
 #define MESSAGE_END               0xFF
 #define ESP32_WIFI_MODE           WIFI_STA
 
+#define READER_WIFI_SSID            "CANnect_Reader_WiFi_0.1"   // SSID of reader WiFi
+#define READER_WIFI_PASSWORD        "redboats"                  // Password of reader WiFi
+
 /**
    Global Variables
 */
@@ -115,6 +118,9 @@ void setup() {
 
   waitForBluetoothConnection();
   initialiseReaderConnection();
+
+  delay(1000);
+  connectSensorModules();
 }
 
 /**
@@ -127,8 +133,8 @@ void loop() {
     programStarted = currentMillis;
     receivedFromApp();
 
-    IMU_MSG sampleIMUMsg = generateSampleIMUMsg();
-    sendSensorModuleData(sampleIMUMsg);
+//    IMU_MSG sampleIMUMsg = generateSampleIMUMsg();
+//    sendSensorModuleData(sampleIMUMsg);
   }
 }
 
@@ -151,21 +157,22 @@ void setupESPNow(void) {
     return;
   }
 
-  // Once ESPNow is successfully Init, we will register for Send CB to
-  // get the status of Trasnmitted packet
-  esp_now_register_send_cb(OnDataSent);
+//  // Once ESPNow is successfully Init, we will register for Send CB to
+//  // get the status of Trasnmitted packet
+//  esp_now_register_send_cb(OnDataSent);
+//
+//  // Register peer
+//  esp_now_peer_info_t peerInfo;
+//  memcpy(peerInfo.peer_addr, broadcastAddress, 6);
+//  peerInfo.channel = 0;
+//  peerInfo.encrypt = false;
+//
+//  // Add peer
+//  if (esp_now_add_peer(&peerInfo) != ESP_OK) {
+//    Serial.println("Failed to add peer");
+//    return;
+//  }
 
-  // Register peer
-  esp_now_peer_info_t peerInfo;
-  memcpy(peerInfo.peer_addr, broadcastAddress, 6);
-  peerInfo.channel = 0;
-  peerInfo.encrypt = false;
-
-  // Add peer
-  if (esp_now_add_peer(&peerInfo) != ESP_OK) {
-    Serial.println("Failed to add peer");
-    return;
-  }
   // Register for a callback function that will be called when data is received
   esp_now_register_recv_cb(OnDataRecv);
 }
@@ -177,7 +184,6 @@ void setupBluetooth(void) {
   SerialBT.begin(ESP32_BL_NAME); //Bluetooth device name
   Serial.println("The device started, now you can pair it with bluetooth!");
 }
-
 
 void setupReader(void) {
   Serial2.begin(STN_BAUD_RATE, SERIAL_8N1, ESP32_RX_STN_PIN, ESP32_TX_STN_PIN);
@@ -289,7 +295,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingD, int len) {
 
   Serial.println();
 
-  // sendSensorModuleData(incomingIMUSensorData); // Queue this?
+  sendSensorModuleData(incomingIMUSensorData); // Queue this?
 }
 
 void findCorrectProtocol() {
@@ -516,5 +522,24 @@ IMU_MSG generateSampleIMUMsg(void) {
   // range from -40C to +85C
   sample.temperature = random(-40, 85) + 0.01*random(10);
 
+  Serial.println("Sample generated");
+
   return sample;
+}
+
+void connectSensorModules(void) {
+  Serial.println("Setting up reader access point");
+
+  WiFi.mode(WIFI_AP);  
+  WiFi.softAP(READER_WIFI_SSID, READER_WIFI_PASSWORD);
+  IPAddress IP = WiFi.softAPIP();
+  Serial.print("AP IP address: ");
+  Serial.println(IP);
+
+  // Wait for 60s then turn off WiFi. Sensor modules should be connected by this time
+  // Currently, a bug exist here. The sensor module sends data to the reader but the reader does not do anything. Not sure why...
+  delay(60*1000);
+  Serial.println("Turning off");
+  WiFi.softAPdisconnect(false);
+  WiFi.mode(WIFI_STA);
 }
