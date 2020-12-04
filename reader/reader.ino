@@ -210,7 +210,6 @@ void waitForBluetoothConnection(void) {
   }
 
   digitalWrite(ESP32_BLUETOOTH_LED_PIN, HIGH);
-  digitalWrite(ESP32_BLUETOOTH_LED_PIN, HIGH);
 }
 
 void initialiseReaderConnection(void) {
@@ -294,6 +293,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingD, int len) {
 }
 
 void findCorrectProtocol() {
+  digitalWrite(ESP32_OBD_ACT_LED_PIN, HIGH);
   while (SerialBT.available()) {
     char c = SerialBT.read();
     if (c != '>') {
@@ -304,6 +304,7 @@ void findCorrectProtocol() {
       Serial.println(Serial2.readString());
       Serial2.println("01 00"); //to check whether it's correct protocol by checking the return message.
       delay(100);
+      
       if (Serial2.available()) {
         String fromSerial2 = Serial2.readString();
         Serial.print("readstring:");
@@ -318,8 +319,9 @@ void findCorrectProtocol() {
       }
       str1 = "";
     }
-    digitalWrite(ESP32_BLUETOOTH_LED_PIN, LOW);
   }
+
+  digitalWrite(ESP32_OBD_ACT_LED_PIN, LOW);
 }
 
 void flushBuffers() {
@@ -357,7 +359,7 @@ void FromOBD() {
   #endif
   
   if (Serial2.available()) {
-    digitalWrite(ESP32_OBD_ACT_LED_PIN, LOW);
+    digitalWrite(ESP32_OBD_ACT_LED_PIN, HIGH);
     String str = "";
     String subString = "";
 
@@ -379,8 +381,8 @@ void FromOBD() {
       SerialBT.println(str);
     }
   }
-  digitalWrite(ESP32_OBD_ACT_LED_PIN, HIGH);
   delay(iso9141Delay);
+  digitalWrite(ESP32_OBD_ACT_LED_PIN, LOW);
 }
 
 /**
