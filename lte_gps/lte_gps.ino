@@ -9,6 +9,9 @@ HardwareSerial lteSerial(1);
 // program = 0 - serial passthrough, 1 - standalone program
 #define program 1
 
+// APN Setting
+#define APN "hologram"
+
 // Firebase configs
 #define FIREBASE_HOST "https://cannect-cfe24.firebaseio.com/"
 #define FIREBASE_AUTH "5ZmlfW8UPazEO9D91Cifeky6AHd9lcx0gAGga9vU"
@@ -75,7 +78,7 @@ String at_send_receive(Stream& port, String cmd, int retry_num, int timeout)
   memcpy(strbuf, buf, buf_pos + 1);
   //std::cout << "str\n" << buf_pos << "str\n";
   //String str;
-  /*
+  /*h
   for (int i = 0; i < buf_pos + 1; i++)
   {
     str += strbuf[i];
@@ -207,11 +210,12 @@ void network_check(Stream &port)
 {
   int sz = 6;
   String result[sz];
+  String cgdcont_cmd = "AT+CGDCONT=1,\"ip\",\"" + String(APN) + "\"\r";
   bool connect_code = false;
   network_set:
   try
   {
-    result[0] = at_match(port, "AT+CGDCONT=1,\"ip\",\"hologram\"\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
+    result[0] = at_match(port, cgdcont_cmd.c_str(), "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
     result[1] = at_match(port, "AT+CFUN=0\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
     delay(5000);
     result[2] = at_match(port, "AT+CFUN=1\r", "+CPIN: READY", STD_RETRY, STD_RETRY, STD_TIMEOUT);
@@ -254,6 +258,7 @@ String send_to_firebase(Stream &port, String gps_lat, String gps_long)
   
   int msg_size = 38 + 19 + 19 + gps_lat.length() + gps_long.length();
   String cipsend_cmd = "AT+CIPSEND=" + String(msg_size);
+  String cstt_cmd = "AT+CSTT=\"" + String(APN) + "\"\r";
   cipsend_cmd = cipsend_cmd + "\r";
   //std::cout << "LAT: " << cipsend_cmd;
   char buf[512];
@@ -270,7 +275,7 @@ String send_to_firebase(Stream &port, String gps_lat, String gps_long)
       result[0] = at_match(port, "AT+CIPSHUT\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
       result[0] = at_match(port, "AT+CIPSTATUS\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
     }
-    result[1] = at_match(port, "AT+CSTT=\"hologram\"\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
+    result[1] = at_match(port, cstt_cmd, "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
     result[2] = at_match(port, "AT+CIICR\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
     result[3] = at_send_receive_wrapper(port, "AT+CIFSR\r", STD_RETRY, STD_TIMEOUT);
     if (result[3].indexOf("0.0.0.0") != -1)
@@ -465,12 +470,12 @@ void loop() {
         at_match(Serial, "AT+CGNSPWR=1\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
       }
     }
-    result = at_match(Serial, "AT+CGNSPWR=0\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
+    //result = at_match(Serial, "AT+CGNSPWR=0\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
     delay(STD_TIMEOUT);
     bool response_sent = false;
     //while(!response_sent)
     //{
-      //String result = send_to_firebase(Serial, gps_lat, gps_long);
+      String result_1 = send_to_firebase(Serial, gps_lat, gps_long);
       //if (result.indexOf("SEND OK") != -1) //[0,0]
       //{
         response_sent = true;
