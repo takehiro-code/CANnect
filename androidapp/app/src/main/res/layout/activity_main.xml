@@ -27,18 +27,17 @@
 
     </RelativeLayout>
 
-<!--    <RelativeLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content">-->
-<!--        <TextView-->
-<!--            android:id="@+id/protocol_text"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center"-->
-<!--&lt;!&ndash;            android:text="Connect to find Protocol"&ndash;&gt;-->
-<!--            android:textColor="?attr/textcolor"-->
-<!--            android:textSize="20sp" />-->
-<!--    </RelativeLayout>-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/protocol_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="?attr/textcolor"
+            android:textSize="20sp" />
+    </RelativeLayout>
 
     <!-- menu list-->
     <GridLayout

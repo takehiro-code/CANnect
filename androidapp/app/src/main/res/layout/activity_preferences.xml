@@ -121,7 +121,7 @@
                 android:id="@+id/autoBT_switch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Connect Automatically"
+                android:text="Connect Sensor Module"
                 android:textColor="?attr/textcolor"
                 android:layout_marginTop="8dp"/>
         </LinearLayout>

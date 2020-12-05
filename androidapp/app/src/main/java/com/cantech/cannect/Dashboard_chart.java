@@ -62,6 +62,7 @@ public class Dashboard_chart extends AppCompatActivity {
     String previousPID = "";
     String BTPIDs = "";
     boolean flag = false;
+    boolean once = true; //for deleting the (0, 0) input.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +100,8 @@ public class Dashboard_chart extends AppCompatActivity {
         spinner = findViewById(R.id.spinner1);
         mChart.setData(lineData);
         previousPID = toDisplay;
+
+
 
 
 
@@ -235,6 +238,7 @@ public class Dashboard_chart extends AppCompatActivity {
             try {
                 if (!parsed[1].equals("UNDEFINED")) {
                     value = Float.parseFloat(parsed[1]);
+
                 } else {
                     System.out.println("UNDEFINED string received ...");
                     value = 0;
@@ -249,6 +253,10 @@ public class Dashboard_chart extends AppCompatActivity {
             if(previousPID.equals(toDisplay)) {
                 if(parsed[0].equals(toDisplay)) {
                     data.add(new Entry(lineDataSet.getEntryCount(), value));
+                    if(once) {
+                        data.remove(0);
+                    }
+                    once = false;
                     lineDataSet.notifyDataSetChanged();
                     lineData.notifyDataChanged();
                     mChart.notifyDataSetChanged();
@@ -263,6 +271,7 @@ public class Dashboard_chart extends AppCompatActivity {
                 data.clear();
                 data.add(new Entry(0,0));
                 lineDataSet.clear();
+                once = true;
                 lineDataSet = new LineDataSet(data, toDisplay);
                 data.add(new Entry(lineDataSet.getEntryCount(), value));
                 reDesignChart(lineDataSet, toDisplay);
@@ -294,22 +303,30 @@ public class Dashboard_chart extends AppCompatActivity {
             case "ENGINE COOLANT TEMP":
                 leftAxis.setAxisMaximum(100f);
                 leftAxis.setAxisMinimum(-40f);
+                lineDataSet.setColor(getResources().getColor(R.color.debug_red));
+                lineDataSet.notifyDataSetChanged();
                 BTPIDs = "05 ";
                 break;
             case "VEHICLE SPEED":
                 leftAxis.setAxisMaximum(255f);
                 leftAxis.setAxisMinimum(0f);
+                lineDataSet.setColor(getResources().getColor(R.color.debug_blue));
+                lineDataSet.notifyDataSetChanged();
                 BTPIDs = "0D ";
                 break;
             case "ENGINE RPM":
-                leftAxis.setAxisMaximum(17000f);
+                leftAxis.setAxisMaximum(10000f);
                 leftAxis.setAxisMinimum(0f);
+                lineDataSet.setColor(getResources().getColor(R.color.debug_green));
+                lineDataSet.notifyDataSetChanged();
                 BTPIDs = "0C ";
                 break;
 
             case "MAF SENSOR":
                 leftAxis.setAxisMinimum(0f);
                 leftAxis.setAxisMaximum(100f);
+                lineDataSet.setColor(getResources().getColor(R.color.LightCyan));
+                lineDataSet.notifyDataSetChanged();
                 BTPIDs = "10 ";
                 break;
             case "ENGINE OIL TEMPERATURE":
@@ -367,6 +384,14 @@ public class Dashboard_chart extends AppCompatActivity {
         flag = false;
         //register broadcast receiver
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        overridePendingTransition(0, 0);
+        startActivity(getIntent());
+        overridePendingTransition(0, 0);
     }
 
     // called whenever Dashboard leaves
