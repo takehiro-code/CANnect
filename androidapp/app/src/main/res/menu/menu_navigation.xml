@@ -16,4 +16,8 @@
         android:id="@+id/DOF"
         android:title="DOF"
         android:icon="@drawable/ic_gauge"/>
+    <item
+        android:id="@+id/PitchSimulate"
+        android:title="DOF"
+        android:icon="@drawable/ic_rotate"/>
 </menu>
