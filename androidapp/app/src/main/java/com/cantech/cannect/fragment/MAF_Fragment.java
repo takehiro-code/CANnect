@@ -42,11 +42,6 @@ public class MAF_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public interface FromMAFGauge{
-        void sendMAFPID(String string);
-    }
-
-    FromMAFGauge mCallback;
 
     public MAF_Fragment() {
         // Required empty public constructor
@@ -74,11 +69,6 @@ public class MAF_Fragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(mContext);
         mContext = context;
-        if(context instanceof FromMAFGauge){
-            mCallback = (FromMAFGauge) context;
-        }else{
-            throw new ClassCastException(context.toString() + "must implement sendMAFPID");
-        }
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
@@ -135,7 +125,6 @@ public class MAF_Fragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mContext = null;
-        mCallback = null;
     }
 
     @Override
@@ -157,7 +146,6 @@ public class MAF_Fragment extends Fragment {
                         mafsenosr.setText(parsed[1]);
                         break;
                     default:
-                        mCallback.sendMAFPID("MAF_PID");
                         break;
                 }
             }catch (Exception e){

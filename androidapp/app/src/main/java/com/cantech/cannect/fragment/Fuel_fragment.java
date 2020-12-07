@@ -46,12 +46,6 @@ public class Fuel_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public interface FromFuelLevelGauge{
-        void sendFuelLevelPID(String string);
-    }
-
-    FromFuelLevelGauge mCallback;
-
     public Fuel_fragment() {
         // Required empty public constructor
     }
@@ -78,11 +72,6 @@ public class Fuel_fragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         mContext = context;
-        if (context instanceof FromFuelLevelGauge){
-            mCallback = (FromFuelLevelGauge) context;
-        }else{
-            throw new ClassCastException(context.toString() + "must implement sendFuelLevelPID");
-        }
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
@@ -142,7 +131,6 @@ public class Fuel_fragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mContext = null;
-        mCallback = null;
     }
 
     @Override
@@ -166,7 +154,6 @@ public class Fuel_fragment extends Fragment {
                         break;
 
                     default:
-                        mCallback.sendFuelLevelPID("FUELLEVEL_PID");
                         break;
                 }
             }catch (Exception e){

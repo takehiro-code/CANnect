@@ -44,11 +44,7 @@ public class RPMgauge_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public interface FromRPMGauge{
-        void sendRPMPID(String string);
-    }
 
-    FromRPMGauge mCallback;
     public RPMgauge_fragment() {
         // Required empty public constructor
     }
@@ -75,12 +71,6 @@ public class RPMgauge_fragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         mContext = context;
-        if (context instanceof FromRPMGauge) {
-            mCallback = (FromRPMGauge) context;
-        } else {
-            throw new ClassCastException(context.toString() + "must implement sendRPMPID");
-
-        }
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
@@ -146,7 +136,6 @@ public class RPMgauge_fragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mContext = null;
-        mCallback = null;
     }
 
     @Override
@@ -169,7 +158,6 @@ public class RPMgauge_fragment extends Fragment {
                         engineRPM.speedTo(Float.parseFloat(parsed[1]) / 1000.00f);
                         break;
                     default:
-                        mCallback.sendRPMPID("RPM_PID");
                         break;
                 }
             } catch (Exception e) {

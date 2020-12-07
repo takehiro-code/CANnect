@@ -9,9 +9,9 @@
     <item
         android:id="@+id/MAF_menu"
         android:title="MAF Reading"/>
-    <item
-        android:id="@+id/AmbientAirTemp_menu"
-        android:title="Ambient Air Temperature"/>
+<!--    <item-->
+<!--        android:id="@+id/AmbientAirTemp_menu"-->
+<!--        android:title="Ambient Air Temperature"/>-->
     <item
         android:id="@+id/intake_air_temp_menu"
         android:title="Intake Air Temperature"/>

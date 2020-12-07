@@ -54,11 +54,6 @@ public class Speedgauge_fragment extends Fragment {
     private String mParam2;
 
     //interface to the dashboard_gauge activity
-    public interface FromSpeedGauge {
-        void sendSpeedPID(String string);
-    }
-
-    FromSpeedGauge mCallback;
 
     public Speedgauge_fragment() {
         // Required empty public constructor
@@ -86,11 +81,6 @@ public class Speedgauge_fragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         mContext = context;
-        if (context instanceof FromSpeedGauge){
-            mCallback = (FromSpeedGauge) context;
-        }else{
-            throw new ClassCastException(context.toString() + "must implement sendSpeedPID");
-        }
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
@@ -153,7 +143,6 @@ public class Speedgauge_fragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mContext = null;
-        mCallback = null;
     }
 
     @Override
@@ -175,7 +164,6 @@ public class Speedgauge_fragment extends Fragment {
                         carSpeed.speedTo(Float.parseFloat(parsed[1]), 1000);
                         break;
                     default:
-                        mCallback.sendSpeedPID("SPEED_PID");
                         break;
                 }
             }catch (Exception e){

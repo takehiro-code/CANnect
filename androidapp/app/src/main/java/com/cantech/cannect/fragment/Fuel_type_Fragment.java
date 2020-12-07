@@ -43,12 +43,6 @@ public class Fuel_type_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public interface FromFuelTypeGauge{
-        void sendFuelTypePID(String string);
-    }
-
-    FromFuelTypeGauge mCallback;
-
     public Fuel_type_Fragment() {
         // Required empty public constructor
     }
@@ -75,11 +69,6 @@ public class Fuel_type_Fragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         mContext = context;
-        if (context instanceof FromFuelTypeGauge){
-            mCallback = (FromFuelTypeGauge) context;
-        }else{
-            throw new ClassCastException(context.toString() + "must implement sendSpeedPID");
-        }
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
@@ -138,7 +127,6 @@ public class Fuel_type_Fragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mContext = null;
-        mCallback = null;
     }
 
     @Override
@@ -161,7 +149,6 @@ public class Fuel_type_Fragment extends Fragment {
                         break;
 
                     default:
-                        mCallback.sendFuelTypePID("FUELTYPE_PID");
                         break;
                 }
             }catch (Exception e){

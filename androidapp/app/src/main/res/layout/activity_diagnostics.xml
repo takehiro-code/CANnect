@@ -8,26 +8,6 @@
     android:background="?attr/backgroundcolor"
     tools:context=".Diagnostics">
 
-    <!--    <ScrollView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent">-->
-
-    <!--        <androidx.cardview.widget.CardView-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_gravity="fill"-->
-    <!--            android:layout_marginTop="5dp"-->
-    <!--            android:layout_marginBottom="5dp"-->
-    <!--            android:layout_marginStart="5dp"-->
-    <!--            app:cardCornerRadius="8dp"-->
-    <!--            app:cardElevation="8dp">-->
-    <!--        <TextView-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:id="@+id/tvDiagnostics"/>-->
-    <!--        </androidx.cardview.widget.CardView>-->
-    <!--    </ScrollView>-->
-
     <ListView
         android:id="@+id/lvDiagnostics"
         android:layout_width="match_parent"

@@ -44,12 +44,6 @@ public class Actual_Engine_Torque_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public interface FromActualTorque{
-        void sendActualETorquePID(String string);
-    }
-
-    FromActualTorque mCallback;
-
     public Actual_Engine_Torque_Fragment() {
         // Required empty public constructor
     }
@@ -76,11 +70,6 @@ public class Actual_Engine_Torque_Fragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(mContext);
         mContext = context;
-        if(context instanceof FromActualTorque){
-            mCallback = (FromActualTorque) context;
-        }else{
-            throw new ClassCastException(context.toString() + "must implement sendDemandETorquePID");
-        }
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
@@ -137,7 +126,6 @@ public class Actual_Engine_Torque_Fragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mContext = null;
-        mCallback = null;
     }
 
     @Override
@@ -159,7 +147,6 @@ public class Actual_Engine_Torque_Fragment extends Fragment {
                         actualETorque.setText(parsed[1]);
                         break;
                     default:
-                        mCallback.sendActualETorquePID("ACTUALENGINETORQUE_PID");
                         break;
                 }
             }catch (Exception e){

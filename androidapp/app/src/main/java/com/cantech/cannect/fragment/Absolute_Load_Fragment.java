@@ -44,12 +44,6 @@ public class Absolute_Load_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public interface FromAbsLoad{
-        void sendAbsoluteLoadPID(String string);
-    }
-
-    FromAbsLoad mCallback;
-
     public Absolute_Load_Fragment() {
         // Required empty public constructor
     }
@@ -76,12 +70,6 @@ public class Absolute_Load_Fragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(mContext);
         mContext = context;
-        if (context instanceof FromAbsLoad) {
-            mCallback = (FromAbsLoad) context;
-        } else {
-            throw new ClassCastException(context.toString() + "must implement sendCalculatedEngineLoadPID");
-
-        }
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
@@ -137,7 +125,6 @@ public class Absolute_Load_Fragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mContext = null;
-        mCallback = null;
     }
 
     @Override
@@ -159,7 +146,6 @@ public class Absolute_Load_Fragment extends Fragment {
                         AbsLoad.setText(parsed[1]);
                         break;
                     default:
-                        mCallback.sendAbsoluteLoadPID("ABSLOAD_PID");
                         break;
                 }
             }catch (Exception e){

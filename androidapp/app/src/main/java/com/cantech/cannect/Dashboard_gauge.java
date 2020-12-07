@@ -38,10 +38,8 @@ import com.cantech.cannect.fragment.Warmups_since_cleared_fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
-public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fragment.FromSpeedGauge, MAF_Fragment.FromMAFGauge, Fuel_fragment.FromFuelLevelGauge, Actual_Engine_Torque_Fragment.FromActualTorque,
-                                                                RPMgauge_fragment.FromRPMGauge, Air_temp_fragment.FromAirTempGauge, Coolant_temp_fragment.FromCoolantTempGauge,
-                                                                Throttle_Fragment.FromThrottleGauge, Fuel_type_Fragment.FromFuelTypeGauge, Fuel_Pressure_fragment.FromFuelPressureGauge,
-                                                                Demand_Engine_Torque_Fragment.FromDemandTorque, Absolute_Load_Fragment.FromAbsLoad, Calculate_Engine_Load_Fragment.FromEngineLoad{
+public class Dashboard_gauge extends AppCompatActivity{
+
     private static final String TAG = "Dashboard_gauge";
     DataParsing dataParsing;
     StringBuilder data_message;
@@ -53,12 +51,12 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
     Coolant_temp_fragment coolantgauge = new Coolant_temp_fragment();
     Fuel_fragment fuelgauge = new Fuel_fragment();
     Fuel_Pressure_fragment fuelpressuregauge = new Fuel_Pressure_fragment();
-    Air_temp_fragment airtemptextview = new Air_temp_fragment();
+//    Air_temp_fragment airtemptextview = new Air_temp_fragment();
     MAF_Fragment maftextview = new MAF_Fragment();
     Fuel_type_Fragment fuelTypeFragment = new Fuel_type_Fragment();
     Throttle_Fragment throttle_fragment = new Throttle_Fragment();
     Calculate_Engine_Load_Fragment calELoad_fragment = new Calculate_Engine_Load_Fragment();
-    Absolute_Load_Fragment absLoad_fragment = new Absolute_Load_Fragment();
+//    Absolute_Load_Fragment absLoad_fragment = new Absolute_Load_Fragment();
     Demand_Engine_Torque_Fragment demandETorque_fragment = new Demand_Engine_Torque_Fragment();
     Actual_Engine_Torque_Fragment actualETorque_fragment = new Actual_Engine_Torque_Fragment();
     Distance_travelled_since_cleared_fragment distanceTravelled_fragment = new Distance_travelled_since_cleared_fragment();
@@ -240,11 +238,11 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
                 sendingPID2BT(sendingMessageIntent, 5);
                 break;
 
-            case R.id.AmbientAirTemp_menu:
-                ft1.replace(R.id.gauge_container2, airtemptextview);
-                ft1.commit();
-                sendingPID2BT(sendingMessageIntent, 4);
-                break;
+//            case R.id.AmbientAirTemp_menu:
+//                ft1.replace(R.id.gauge_container2, airtemptextview);
+//                ft1.commit();
+//                sendingPID2BT(sendingMessageIntent, 4);
+//                break;
 
             case R.id.MAF_menu:
                 ft1.replace(R.id.gauge_container2, maftextview);
@@ -406,70 +404,6 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
         }
     }
 
-    @Override
-    public void sendAbsoluteLoadPID(String string) {
-
-    }
-
-    @Override
-    public void sendActualETorquePID(String string) {
-
-    }
-
-    @Override
-    public void sendAirTempPID(String string) {
-
-    }
-
-    @Override
-    public void sendCalculatedEngineLoadPID(String string) {
-
-    }
-
-    @Override
-    public void sendCoolantTempPID(String string) {
-
-    }
-
-    @Override
-    public void sendDemandETorquePID(String string) {
-
-    }
-
-    @Override
-    public void sendFuelPressurePID(String string) {
-
-    }
-
-    @Override
-    public void sendFuelLevelPID(String string) {
-
-    }
-
-    @Override
-    public void sendFuelTypePID(String string) {
-
-    }
-
-    @Override
-    public void sendMAFPID(String string) {
-
-    }
-
-    @Override
-    public void sendRPMPID(String string) {
-
-    }
-
-    @Override
-    public void sendSpeedPID(String string) {
-
-    }
-
-    @Override
-    public void sendThrottlePID(String string) {
-
-    }
 }
 
 
