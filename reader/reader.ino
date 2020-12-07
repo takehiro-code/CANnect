@@ -24,6 +24,7 @@
 */
 #include "BluetoothSerial.h"
 #include <WiFi.h>
+#include <esp_wifi.h>
 #include <esp_now.h>
 
 /**
@@ -71,16 +72,20 @@ typedef struct IMU_MSG {
 #define SETUP_DELAY               100
 #define INITIALISATION_ATTEMPTS   5
 #define MESSAGE_END               0xFF
-#define ESP32_WIFI_MODE           WIFI_STA
+#define ESP32_WIFI_MODE           WIFI_AP_STA
 
-#define READER_WIFI_SSID            "CANnect_Reader_WiFi_0.1"   // SSID of reader WiFi
-#define READER_WIFI_PASSWORD        "redboats"                  // Password of reader WiFi
+#define READER_WIFI_SSID          "CANnect_Reader_WiFi_0.1"   // SSID of reader WiFi
+#define READER_WIFI_PASSWORD      "redboats"                  // Password of reader WiFi
+#define READER_WIFI_CHANNEL       14
+
+uint8_t sensorMACAddress[] = {0xF0, 0x08, 0xD1, 0xD3, 0x6D, 0xA0}; // sensor's address - hard-coded for now
+uint8_t readerMACAddress[] = {0xF0, 0x08, 0xD1, 0xD3, 0x6D, 0xA1}; // reader's address - hard-coded for now
 
 /**
    Global Variables
 */
+bool readyForData = false;
 BluetoothSerial SerialBT;
-uint8_t broadcastAddress[] = {0xF0, 0x08, 0xD1, 0xD3, 0x6D, 0xA0}; // sensor's address - hard-coded for now
 String success;
 
 float accX, accY, accZ;
@@ -98,6 +103,7 @@ String str1 = "";
 unsigned long programStarted = 0;
 const long interval = 500;
 
+
 /**
    Setup
 */
@@ -111,6 +117,8 @@ void setup() {
 
   setupReader();
   setupBluetooth();
+  setupWiFi();
+  setupESPNow();
 
   while (!Serial2) {
     Serial.println("Connect to the reader");
@@ -120,7 +128,9 @@ void setup() {
   initialiseReaderConnection();
 
   delay(1000);
-  connectSensorModules();
+  //  connectSensorModules();
+  Serial.println("Ready");
+  readyForData = true;
 }
 
 /**
@@ -129,13 +139,12 @@ void setup() {
 void loop() {
   unsigned long currentMillis = millis();
 
-  if (currentMillis - programStarted >= interval) {
-    programStarted = currentMillis;
-    receivedFromApp();
-
-//    IMU_MSG sampleIMUMsg = generateSampleIMUMsg();
-//    sendSensorModuleData(sampleIMUMsg);
-  }
+    if (currentMillis - programStarted >= interval) {
+      receivedFromApp();
+      programStarted = currentMillis;
+  
+  //    generateSampleIMUMsg
+    }
 }
 
 /**
@@ -143,6 +152,8 @@ void loop() {
 */
 void setupWiFi(void) {
   WiFi.mode(ESP32_WIFI_MODE);
+  esp_wifi_set_mac(ESP_IF_WIFI_STA, &readerMACAddress[0]); // temporarily
+
   Serial.println(WiFi.macAddress());
 }
 
@@ -157,24 +168,21 @@ void setupESPNow(void) {
     return;
   }
 
-//  // Once ESPNow is successfully Init, we will register for Send CB to
-//  // get the status of Trasnmitted packet
-//  esp_now_register_send_cb(OnDataSent);
-//
-//  // Register peer
-//  esp_now_peer_info_t peerInfo;
-//  memcpy(peerInfo.peer_addr, broadcastAddress, 6);
-//  peerInfo.channel = 0;
-//  peerInfo.encrypt = false;
-//
-//  // Add peer
-//  if (esp_now_add_peer(&peerInfo) != ESP_OK) {
-//    Serial.println("Failed to add peer");
-//    return;
-//  }
+  // Register peer
+  esp_now_peer_info_t peerInfo;
+  memcpy(peerInfo.peer_addr, sensorMACAddress, 6);
+  peerInfo.channel = READER_WIFI_CHANNEL;
+  peerInfo.encrypt = false;
+
+  // Add peer
+  if (esp_now_add_peer(&peerInfo) != ESP_OK) {
+    Serial.println("Failed to add peer");
+    return;
+  }
 
   // Register for a callback function that will be called when data is received
   esp_now_register_recv_cb(OnDataRecv);
+  Serial.println("ESP-NOW initialised");
 }
 
 /**
@@ -259,43 +267,51 @@ void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
 
 // Callback when data is received
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingD, int len) {
-  IMU_MSG incomingIMUSensorData;
+  if (!readyForData) {
+    return;
+  }
 
-  memcpy(&incomingIMUSensorData, incomingD, sizeof(incomingIMUSensorData));
-  uint8_t sensorMacAddress[6];
-  memcpy(&sensorMacAddress, mac, sizeof(sensorMacAddress));
+  IMU_MSG msgData;
+  memcpy(&msgData, incomingD, sizeof(msgData));
+  //  uint8_t incomingMacAddress[6];
+  //  memcpy(&incomingMacAddress, mac, sizeof(incomingMacAddress));
+  //
+  //  Serial.print("Mac Address: ");
+  //  Serial.print(incomingMacAddress[0], HEX);
+  //  Serial.print(incomingMacAddress[1], HEX);
+  //  Serial.print(incomingMacAddress[2], HEX);
+  //  Serial.print(incomingMacAddress[3], HEX);
+  //  Serial.print(incomingMacAddress[4], HEX);
+  //  Serial.print(incomingMacAddress[5], HEX);
+  //  Serial.print(" | Bytes received: ");
+  //  Serial.print(len);
+  //  Serial.println();
 
-  Serial.print("Mac Address: ");
-  Serial.print(sensorMacAddress[0], HEX);
-  Serial.print(sensorMacAddress[1], HEX);
-  Serial.print(sensorMacAddress[2], HEX);
-  Serial.print(sensorMacAddress[3], HEX);
-  Serial.print(sensorMacAddress[4], HEX);
-  Serial.print(sensorMacAddress[5], HEX);
-  Serial.print(" | Bytes received: ");
-  Serial.print(len);
+  String comma = ",";
 
-  accX = incomingIMUSensorData.accX;
-  accY = incomingIMUSensorData.accY;
-  accZ = incomingIMUSensorData.accZ;
+  Serial.print("DEBUG: Printing IMUMsg");
+  Serial.println(msgData.accX);
 
-  gyroX = incomingIMUSensorData.gyroX;
-  gyroY = incomingIMUSensorData.gyroY;
-  gyroZ = incomingIMUSensorData.gyroZ;
+  SerialBT.print(msgData.msgID);
+  SerialBT.print(":");
 
-  temperature = incomingIMUSensorData.temperature;
+  SerialBT.print(msgData.accX);
+  SerialBT.print(comma);
+  SerialBT.print(msgData.accY);
+  SerialBT.print(comma);
+  SerialBT.print(msgData.accZ);
+  SerialBT.print(comma);
 
-  Serial.print(" | aX = "); Serial.print(accX);
-  Serial.print(" | aY = "); Serial.print(accY);
-  Serial.print(" | aZ = "); Serial.print(accZ);
-  Serial.print(" | gX = "); Serial.print(gyroX);
-  Serial.print(" | gY = "); Serial.print(gyroY);
-  Serial.print(" | gZ = "); Serial.print(gyroZ);
-  Serial.print(" | tmp = "); Serial.print(temperature);
+  SerialBT.print(msgData.gyroX);
+  SerialBT.print(comma);
+  SerialBT.print(msgData.gyroY);
+  SerialBT.print(comma);
+  SerialBT.print(msgData.gyroZ);
+  SerialBT.print(comma);
 
-  Serial.println();
+  SerialBT.print(msgData.temperature);
 
-  sendSensorModuleData(incomingIMUSensorData); // Queue this?
+  SerialBT.println("255255"); // end of Msg
 }
 
 void findCorrectProtocol() {
@@ -310,7 +326,7 @@ void findCorrectProtocol() {
       Serial.println(Serial2.readString());
       Serial2.println("01 00"); //to check whether it's correct protocol by checking the return message.
       delay(100);
-      
+
       if (Serial2.available()) {
         String fromSerial2 = Serial2.readString();
         Serial.print("readstring:");
@@ -360,10 +376,10 @@ void receivedFromApp(void) {
 }
 
 void FromOBD() {
-  #ifndef STN_CHIP_CONNECTED
-    return;
-  #endif
-  
+#ifndef STN_CHIP_CONNECTED
+  return;
+#endif
+
   if (Serial2.available()) {
     digitalWrite(ESP32_OBD_ACT_LED_PIN, HIGH);
     String str = "";
@@ -386,8 +402,9 @@ void FromOBD() {
       str = "7E8 03 " + str + "255255";
       SerialBT.println(str);
     }
+    delay(iso9141Delay);
   }
-  delay(iso9141Delay);
+
   digitalWrite(ESP32_OBD_ACT_LED_PIN, LOW);
 }
 
@@ -470,76 +487,66 @@ void getDTC(String str) {
 // use this instead of strstr() for legacy reasons
 char StrContains(char *str, char *sfind)
 {
- if (strstr(str, sfind) != NULL) {
-   return 1;
- }
- return 0;
+  if (strstr(str, sfind) != NULL) {
+    return 1;
+  }
+  return 0;
 }
 
-
-/**
- * Send IMU data to the app via Bluetooth
- */
-void sendSensorModuleData(IMU_MSG msgData) {
-  String comma = ",";
-  SerialBT.print(msgData.msgID);
-  SerialBT.print(":");
-  
-  SerialBT.print(msgData.accX);
-  SerialBT.print(comma);
-  SerialBT.print(msgData.accY);
-  SerialBT.print(comma);
-  SerialBT.print(msgData.accZ);
-  SerialBT.print(comma);
-
-  SerialBT.print(msgData.gyroX);
-  SerialBT.print(comma);
-  SerialBT.print(msgData.gyroY);
-  SerialBT.print(comma);
-  SerialBT.print(msgData.gyroZ);
-  SerialBT.print(comma);
-
-  SerialBT.print(msgData.temperature);
-
-  SerialBT.println("255255"); // end of Msg  
-}
-
-IMU_MSG generateSampleIMUMsg(void) {
+void generateSampleIMUMsg(void) {
   IMU_MSG sample;
 
   sample.msgID = "6DOF";
 
   // Acceleration range from -20 m/s^2 to +20 m/s^2
-  sample.accX = random(-20,20) + random(10)*0.01; // m/s^2
-  sample.accY = random(-20,20) + random(10)*0.01; // m/s^2
-  sample.accZ = random(-20,20) + random(10)*0.01; // m/s^2
+  sample.accX = random(-20, 20) + random(10) * 0.01; // m/s^2
+  sample.accY = random(-20, 20) + random(10) * 0.01; // m/s^2
+  sample.accZ = random(-20, 20) + random(10) * 0.01; // m/s^2
 
   // Gyroscope data range may change
-  sample.gyroX = random(-125, 125)*0.1 + 0.01*random(10);
-  sample.gyroY = random(-125, 125)*0.1 + 0.01*random(10);
-  sample.gyroZ = random(-125, 125)*0.1 + 0.01*random(10);
+  sample.gyroX = random(-125, 125) * 0.1 + 0.01 * random(10);
+  sample.gyroY = random(-125, 125) * 0.1 + 0.01 * random(10);
+  sample.gyroZ = random(-125, 125) * 0.1 + 0.01 * random(10);
 
   // range from -40C to +85C
-  sample.temperature = random(-40, 85) + 0.01*random(10);
+  sample.temperature = random(-40, 85) + 0.01 * random(10);
 
-  Serial.println("Sample generated");
+  Serial.print("Sending generated sample");
+  Serial.print(sample.accX);
 
-  return sample;
+  String comma = ",";
+  SerialBT.print(sample.msgID);
+  SerialBT.print(":");
+
+  SerialBT.print(sample.accX);
+  SerialBT.print(comma);
+  SerialBT.print(sample.accY);
+  SerialBT.print(comma);
+  SerialBT.print(sample.accZ);
+  SerialBT.print(comma);
+
+  SerialBT.print(sample.gyroX);
+  SerialBT.print(comma);
+  SerialBT.print(sample.gyroY);
+  SerialBT.print(comma);
+  SerialBT.print(sample.gyroZ);
+  SerialBT.print(comma);
+
+  SerialBT.print(sample.temperature);
 }
 
-void connectSensorModules(void) {
-  Serial.println("Setting up reader access point");
-
-  WiFi.mode(WIFI_AP);  
-  WiFi.softAP(READER_WIFI_SSID, READER_WIFI_PASSWORD);
-  IPAddress IP = WiFi.softAPIP();
-  Serial.print("AP IP address: ");
-  Serial.println(IP);
-
-  // Wait for 60s then turn off WiFi. Sensor modules should be connected by this time
-  // Currently, a bug exist here. The sensor module sends data to the reader but the reader does not do anything. Not sure why...
-  delay(60*1000);
-  Serial.println("Turning off");
-  WiFi.softAPdisconnect(false);
-  WiFi.mode(WIFI_STA);
-}
+//void connectSensorModules(void) {
+//  Serial.println("Setting up reader access point");
+//
+//  WiFi.softAP(READER_WIFI_SSID, READER_WIFI_PASSWORD, READER_WIFI_CHANNEL);
+//  IPAddress IP = WiFi.softAPIP();
+//  Serial.print("AP IP address: ");
+//  Serial.println(IP);
+//
+//  delay(1000);
+//}
+//
+//void disconnectWiFi(void) {
+//  Serial.println("Turning off WiFi");
+//  WiFi.softAPdisconnect(false);
+//}
