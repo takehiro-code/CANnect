@@ -6,9 +6,9 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- need to add user manual -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- need to add user manual -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <permission
         android:name="android.permission.BLUETOOTH"
         android:label="BLUETOOTH" />
@@ -23,6 +23,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PitchSimulation"></activity>
         <activity
             android:name=".CarBrand"
             android:parentActivityName=".Settings" />
