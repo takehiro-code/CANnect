@@ -17,7 +17,7 @@
    Flags
    Change this depending on hardware/version setup
 */
-//#define STN_CHIP_CONNECTED // comment this out if you're not connected to the STN chip
+#define STN_CHIP_CONNECTED // comment this out if you're not connected to the STN chip
 
 /**
    Libraries
@@ -102,7 +102,7 @@ int iso9141Delay = 100; // imperically defined
 String str1 = "";
 unsigned long programStarted = 0;
 const long interval = 500;
-
+boolean readerConnected = false;
 
 /**
    Setup
@@ -117,8 +117,7 @@ void setup() {
 
   setupReader();
   setupBluetooth();
-  setupWiFi();
-  setupESPNow();
+
 
   while (!Serial2) {
     Serial.println("Connect to the reader");
@@ -126,6 +125,13 @@ void setup() {
 
   waitForBluetoothConnection();
   initialiseReaderConnection();
+
+
+  while (!readerConnected) {
+    ;
+  }
+  setupWiFi();
+  setupESPNow();
 
   delay(1000);
   //  connectSensorModules();
@@ -139,12 +145,11 @@ void setup() {
 void loop() {
   unsigned long currentMillis = millis();
 
-    if (currentMillis - programStarted >= interval) {
-      receivedFromApp();
-      programStarted = currentMillis;
-  
-  //    generateSampleIMUMsg
-    }
+  if (currentMillis - programStarted >= interval) {
+    receivedFromApp();
+    programStarted = currentMillis;
+    //generateSampleIMUMsg();
+  }
 }
 
 /**
@@ -213,8 +218,6 @@ void setupReader(void) {
 //}
 
 void waitForBluetoothConnection(void) {
-  digitalWrite(ESP32_BLUETOOTH_LED_PIN, LOW);
-
   while (!SerialBT.available()) {
     digitalWrite(ESP32_BLUETOOTH_LED_PIN, HIGH);
     delay(500);
@@ -222,7 +225,6 @@ void waitForBluetoothConnection(void) {
     delay(500);
     Serial.println("pair up the BT");
   }
-
   digitalWrite(ESP32_BLUETOOTH_LED_PIN, HIGH);
 }
 
@@ -233,8 +235,6 @@ void initialiseReaderConnection(void) {
 #endif
 
   while (!protocolFlag) {
-    digitalWrite(ESP32_OBD_ACT_LED_PIN, HIGH);
-
     findCorrectProtocol();
     flushBuffers();
     if (str1 == "22") {
@@ -288,9 +288,8 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingD, int len) {
   //  Serial.println();
 
   String comma = ",";
-
-  Serial.print("DEBUG: Printing IMUMsg");
-  Serial.println(msgData.accX);
+  //  Serial.print("DEBUG: Printing IMUMsg");
+  //  Serial.println(msgData.accX);
 
   SerialBT.print(msgData.msgID);
   SerialBT.print(":");
@@ -315,9 +314,10 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingD, int len) {
 }
 
 void findCorrectProtocol() {
-  digitalWrite(ESP32_OBD_ACT_LED_PIN, HIGH);
+
   while (SerialBT.available()) {
     char c = SerialBT.read();
+    digitalWrite(ESP32_OBD_ACT_LED_PIN, HIGH);
     if (c != '>') {
       str1 = str1 + c;
     } else {
@@ -336,13 +336,22 @@ void findCorrectProtocol() {
           protocolFlag = true;
           Serial.print("found protocol:");
           Serial.println(str1);
-          break;
+          SerialBT.println("Protocol Found!255255");
+          readerConnected = true;
+          flushBuffers();
+          digitalWrite(ESP32_OBD_ACT_LED_PIN, LOW);
+          return;
         }
+
       }
+      digitalWrite(ESP32_OBD_ACT_LED_PIN, LOW);
       str1 = "";
     }
   }
-
+  flushBuffers();
+  if (!SerialBT.available()) {
+    SerialBT.println("NOT FOUND!255255");
+  }
   digitalWrite(ESP32_OBD_ACT_LED_PIN, LOW);
 }
 
@@ -386,6 +395,7 @@ void FromOBD() {
     String subString = "";
 
     while (Serial2.available() > 0) {
+      digitalWrite(ESP32_OBD_ACT_LED_PIN, HIGH);
       char c = Serial2.read();
       str = str + c;
     }
@@ -395,19 +405,41 @@ void FromOBD() {
     Serial.println(charArray);
 
     if (StrContains(charArray, c43)) {
-      str = str.substring(6, str.length() - 1);
-      getDTC(str);
+      Serial.println(str);
+      //str = removeEnterKey(charArray);
+      Serial.println(str);
+      if (str1 == "stp 22") {
+        str = str.substring(6, str.length() - 1); 
+        Serial.println(str);
+        getDTC(str);
+      } else {
+        str = str.substring(9, str.length() - 1); //"03 43 02 01 08 01 11"
+        Serial.println(str);
+        getDTC(str);
+      }
     } else {
       str = str.substring(6, str.length() - 1); //"01 0D 41 0D D9 >"  getting rid of "01 0D " and ">"
       str = "7E8 03 " + str + "255255";
       SerialBT.println(str);
     }
     delay(iso9141Delay);
+
+    digitalWrite(ESP32_OBD_ACT_LED_PIN, LOW);
   }
 
-  digitalWrite(ESP32_OBD_ACT_LED_PIN, LOW);
 }
 
+
+String removeEnterKey(char* c) {
+  String str = "";
+  char * iterator;
+  for (iterator = c; *iterator != '\0'; iterator++ ) {
+    if (*iterator != '\n') {
+      str = str + *iterator;
+    }
+  }
+  return str;
+}
 /**
    function for decoding DTC message from obd
 */
@@ -470,13 +502,61 @@ String decodeDTC(String string) {
   return str;
 }
 
-void getDTC(String str) {
-  String string;
-  str.replace(" ", "");
-  Serial.println(str);
-  for (int i = 0; i < str.length();) {
-    SerialBT.println(decodeDTC(str.substring(i, i + 4)));
-    i = i + 4;
+
+void getDTC(String string) {
+  Serial.print("length is:");
+  Serial.println(string.length());
+  Serial.print("str is:");
+  Serial.println(string);
+  string.replace(" ", "");
+  Serial.print("length is:");
+  Serial.println(string.length());
+  Serial.println("str is:");
+  for (size_t i = 0; i < string.length(); i++) {
+    Serial.println(string[i]);
+  }
+  Serial.println(string);
+  Serial.println(str1);
+  if (str1 == "stp 22") {
+    for (size_t i = 0; i < string.length();) {
+      Serial.println("iso9141");
+      Serial.println(string.substring(i, i + 4));
+      SerialBT.println(decodeDTC(string.substring(i, i + 4)));
+      i = i + 4;
+    }
+  } else if (string.length() < 12 ) {
+    for (size_t i = 0; i < string.length();) {
+      Serial.println("less than 9");
+      Serial.println(string.substring(i, i + 4));
+      SerialBT.println(decodeDTC(string.substring(i, i + 4)));
+      i = i + 4;
+    }
+  } else {
+    Serial.println("loop");
+    for (size_t  i = 0; i < string.length();) {
+      if(i < 5){
+        i = string.indexOf(":", 0);
+        i = i + 5;      //0:4303  0121  0122   getting rid of 43 and 03
+        SerialBT.println(decodeDTC(string.substring(i, i + 4)));
+        i = i + 4;
+        SerialBT.println(decodeDTC(string.substring(i, i + 4)));
+        Serial.println(string.substring(i, i + 4));
+        i = i + 4;
+      }else{
+        i = string.indexOf(":", i);
+        i++;
+        SerialBT.println(decodeDTC(string.substring(i, i + 4)));
+        Serial.println(string.substring(i, i + 4));
+         i = i + 4;
+        SerialBT.println(decodeDTC(string.substring(i, i + 4)));
+        Serial.println(string.substring(i, i + 4));
+         i = i + 4;
+        SerialBT.println(decodeDTC(string.substring(i, i + 4)));
+        Serial.println(string.substring(i, i + 4));
+         i = i + 4;
+         break;
+      }
+    }
   }
 }
 
