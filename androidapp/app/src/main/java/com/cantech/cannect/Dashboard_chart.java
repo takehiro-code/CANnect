@@ -346,7 +346,7 @@ public class Dashboard_chart extends AppCompatActivity {
                 axisMin = 0f;
                 leftAxis.setAxisMaximum(axisMax);
                 leftAxis.setAxisMinimum(axisMin);
-                lineDataSet.setColor(getResources().getColor(R.color.LightCyan));
+                lineDataSet.setColor(getResources().getColor(R.color.Cyan));
                 lineDataSet.notifyDataSetChanged();
                 BTPIDs = "10 ";
                 break;
@@ -398,7 +398,7 @@ public class Dashboard_chart extends AppCompatActivity {
                 axisMin = 0f;
                 leftAxis.setAxisMaximum(axisMax);
                 leftAxis.setAxisMinimum(axisMin);
-                lineDataSet.setColor(getResources().getColor(R.color.AntiqueWhite));
+                lineDataSet.setColor(getResources().getColor(R.color.MediumAquamarine));
                 BTPIDs = "0A ";
                 break;
             case "ACTUAL ENGINE TORQUE":
