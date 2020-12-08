@@ -6,6 +6,7 @@ HardwareSerial lteSerial(1);
 
 #define TX 16
 #define RX 17
+#define RST 5
 // program = 0 - serial passthrough, 1 - standalone program
 #define program 1
 
@@ -17,12 +18,18 @@ HardwareSerial lteSerial(1);
 #define FIREBASE_AUTH "5ZmlfW8UPazEO9D91Cifeky6AHd9lcx0gAGga9vU"
 
 #define STD_RETRY 5
-#define STD_TIMEOUT 5000
+#define STD_TIMEOUT 2500
 #define ONE_SEC_TIMEOUT 1000
 #define LONG_TIMEOUT 15000
 
-#define GPS_UPDATE_RATE 60000 // 1 minute update rate.
+#define GPS_UPDATE_RATE 5000 
 
+// Send AT Command and get response until timeout expires or end of input is received using carriage return.
+// Return String from result. Returns -1 if nothing is received.
+// port = Serial port
+// cmd = AT command ending with \r
+// retry num = not in use.
+// timeout = timeout to wait for response in milliseconds.
 String at_send_receive(Stream& port, String cmd, int retry_num, int timeout)
 {
   String output;
@@ -41,6 +48,7 @@ String at_send_receive(Stream& port, String cmd, int retry_num, int timeout)
 
     while (lteSerial.available())
     {
+      // read character by character
       char c = lteSerial.read();
       if (c == '\r' && det == 0)
       {
@@ -72,9 +80,7 @@ String at_send_receive(Stream& port, String cmd, int retry_num, int timeout)
     return "-1";
   }
 
-  // add exception and other stuff
   char strbuf[buf_pos];
-  //strbuf = buf[;
   memcpy(strbuf, buf, buf_pos + 1);
   //std::cout << "str\n" << buf_pos << "str\n";
   //String str;
@@ -87,6 +93,12 @@ String at_send_receive(Stream& port, String cmd, int retry_num, int timeout)
   return String(strbuf);
 }
 
+// Send AT Command and get response. Repeats the command if nothing is received.
+// Return output of command. -1 if nothing received.
+// port = Serial port
+// cmd = AT command ending with \r
+// retry num = Number of times to retry.
+// timeout = timeout to wait for response in milliseconds.
 String at_send_receive_wrapper(Stream &port, String cmd, int retry_num, int timeout)
 {
   int num_run = 1;
@@ -94,7 +106,7 @@ String at_send_receive_wrapper(Stream &port, String cmd, int retry_num, int time
 run_trial:
   try
   {
-    std::cout << "RUN COMMAND";
+    //std::cout << "RUN COMMAND";
     Serial.print(cmd);
     result = at_send_receive(port, cmd, retry_num, timeout);
   }
@@ -108,7 +120,6 @@ run_trial:
     }
     else
     {
-      //throw std::runtime_error("Command failed to get response.");
       port.write((char*) "Command failed to get response.");
       return "-1";
     }
@@ -116,7 +127,14 @@ run_trial:
   }
   return result;
 }
-// HardwareSerial& lteSerial,
+
+// Send AT Command and get response. Checks if the comparision String is in output.
+// Return output of command if matching. Else returns -1.
+// port = Serial port
+// cmd = AT command ending with \r
+// retry num = passthrough.
+// retry match = number of times to repeat if match occurs.
+// timeout = timeout to wait for response in milliseconds.
 String at_match(Stream &port, String cmd, String comp, int retry_num, int retry_match, int timeout)
 {
   String result;
@@ -158,6 +176,9 @@ run_match:
   return result;
 }
 
+// Get GPS coordinate from SIM7000A. Not in use due to bug where function does not run.
+// Return latitude and longitude separated by comma.
+// port = Serial port
 String get_GPS_coord(Stream &port)
 {
   bool got_coord = false;
@@ -203,9 +224,22 @@ String get_GPS_coord(Stream &port)
   return gps_coord;
 }
 
-void reboot(Stream &port);
+// Reset the SIM7000A.
+// NO return.
+// port = Serial port
+void reboot(Stream &port)
+{
+  port.print("RESETTING SIM7000A.");
+  digitalWrite(RST, HIGH);
+  delay(1000);
+  digitalWrite(RST, LOW);
+  delay(3000);
+  port.print("DONE RESETTING SIM7000A.");
+}
 
-
+// Configures APN and checks network connection.
+// No return.
+// port = Serial port
 void network_check(Stream &port)
 {
   int sz = 6;
@@ -222,13 +256,26 @@ void network_check(Stream &port)
     do
     {
       result[3] = at_send_receive_wrapper(port, "AT+CEREG?\r", STD_RETRY, STD_TIMEOUT);
+      // connection successful
       if (result[3].indexOf("+CEREG: 0,1") != -1 || result[3].indexOf("+CEREG: 0,5") != -1)
       {
         connect_code = 1;
       }
-      else if (result[3].indexOf("+CEREG: 0,4") != -1)
+      // connection denied or UE not on.
+      else if (result[3].indexOf("+CEREG: 0,3") != -1 || result[3].indexOf("+CEREG: 0,0") != -1)
       {
-        throw std::runtime_error("Network connect denied");
+        throw std::runtime_error("Network connect denied or not UE not operating");
+      }
+      // still searching.
+      else if (result[3].indexOf("+CEREG: 0,2") != -1)
+      {
+        // do nothing.
+      }
+      // device not working as expected.
+      else
+      {
+        reboot(Serial);
+        throw std::runtime_error("Network connect failed - device not working");
       }
     }
     while (connect_code == false);
@@ -250,6 +297,12 @@ void network_check(Stream &port)
   }
 }
 
+// Send information for latitiude and longitude to Firebase. Need to run network_check first.
+// Function sends info to Hologram Routing to Firebase.
+// Return output of the send command over the network.
+// port = Serial port
+// gps lat = latitude
+// gps long = longitude.
 String send_to_firebase(Stream &port, String gps_lat, String gps_long)
 {
   int sz = 4;
@@ -260,7 +313,7 @@ String send_to_firebase(Stream &port, String gps_lat, String gps_long)
   String cipsend_cmd = "AT+CIPSEND=" + String(msg_size);
   String cstt_cmd = "AT+CSTT=\"" + String(APN) + "\"\r";
   cipsend_cmd = cipsend_cmd + "\r";
-  //std::cout << "LAT: " << cipsend_cmd;
+
   char buf[512];
   int buf_pos = 0;
   int det = 0;
@@ -268,26 +321,24 @@ String send_to_firebase(Stream &port, String gps_lat, String gps_long)
   send_firebase:
   try
   {
-    
+    // check active connection status
     result[0] = at_match(port, "AT+CIPSTATUS\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
     if (result[0].indexOf("IP INITIAL") == -1)
     {
       result[0] = at_match(port, "AT+CIPSHUT\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
       result[0] = at_match(port, "AT+CIPSTATUS\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
     }
+
+    // create connection task 
     result[1] = at_match(port, cstt_cmd, "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
+    // link connection task to radio service
     result[2] = at_match(port, "AT+CIICR\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
+    // check IP to see if connection is created
     result[3] = at_send_receive_wrapper(port, "AT+CIFSR\r", STD_RETRY, STD_TIMEOUT);
     if (result[3].indexOf("0.0.0.0") != -1)
     {
       throw std::runtime_error("Network Connection to Hologram Failed");
     }
-    /*result[4] = at_send_receive_wrapper(port, "AT+CIPSTART=\"TCP\",\"cloudsocket.hologram.io\",9999\r", STD_RETRY, STD_TIMEOUT);
-    if (result[4].indexOf("OK") == -1)
-    {
-      throw std::runtime_error("Network Connection to Hologram Failed");
-    }*/
-    //result[5] = at_match(port, cipsend_cmd, ">", STD_RETRY, STD_RETRY, STD_TIMEOUT);
 
     for (int i = 0; i < sz; i++)
     {
@@ -297,52 +348,15 @@ String send_to_firebase(Stream &port, String gps_lat, String gps_long)
       }
     }
     delay(STD_TIMEOUT);
+    // open TCP connection to Hologram Routing
     lteSerial.print("AT+CIPSTART=\"TCP\",\"cloudsocket.hologram.io\",9999\r");
-    /*
-    while (lteSerial.available())
-    {
-      char c = lteSerial.read();
-      if (c == '\r' && det == 0)
-      {
-        //port.write("CR1");
-        det++;
-      }
-      else if (c == '\r' && det > 0)
-      {
-        //port.write("CR2");
-        //port.write("DONE");
-        break;
-      }
-      port.write(c);
-      buf[buf_pos] = c;
-      buf_pos++;
-    }
-    //lteSerial.flush();*/
+
     delay(2000);
+    // Allocate buffer size to send message
     lteSerial.print(cipsend_cmd);
-    //buf_pos=0;
-    /*
-    while (lteSerial.available())
-    {
-      char c = lteSerial.read();
-      if (c == '\r' && det == 0)
-      {
-        //port.write("CR1");
-        det++;
-      }
-      else if (c == '\r' && det > 0)
-      {
-        //port.write("CR2");
-        //port.write("DONE");
-        break;
-      }
-      port.write(c);
-      buf[buf_pos] = c;
-      buf_pos++;
-    }
-    buf_pos=0;*/
-    //lteSerial.flush();
+
     delay(1500);
+    // send message
     lteSerial.print(message);
 
     while (lteSerial.available())
@@ -364,12 +378,6 @@ String send_to_firebase(Stream &port, String gps_lat, String gps_long)
       buf_pos++;
     }
     delay(STD_TIMEOUT);
-    /*
-    if (String(buf).indexOf("[0,0]") == -1)
-    {
-      throw std::runtime_error("Network Send 3 Failed");
-    }*/
-    
   }
   catch (const std::exception& e)
   {
@@ -384,31 +392,27 @@ String send_to_firebase(Stream &port, String gps_lat, String gps_long)
 
 void setup() {
   // put your setup code here, to run once:
+  // create serial connection
   Serial.begin(9600);
   lteSerial.begin(9600, SERIAL_8N1, TX, RX);
-  //delay(5000);
-  //at_match(Serial, "AT\r", "OK", 5, 5, 5000);
-  network_check(Serial);
-  //at_match(Serial, "AT+CGNSPWR=0\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
-  //send_to_firebase(Serial, "123", "456");
 
-  //at_send_receive_wrapper(Serial, "AT+CGNSPWR=1\r", STD_RETRY, STD_TIMEOUT);
-  //at_send_receive_wrapper(Serial, "AT+CGNSINF\r", STD_RETRY, STD_TIMEOUT);
-  /*
-  try
-  {
-    //at_send_receive(Serial, "AT\r", 4, 5000);
-    //network_check(Serial);
-  }
-  catch (const std::exception& e)
-  {
-    std::cerr << e.what() << '\n';
-  }*/
+  Serial.print("WAIT FOR SIM7000A TO BOOT.");
+  delay(5000);
+  Serial.print("DONE WAIT FOR SIM7000A TO BOOT.");
+
+  // configure rst pin
+  pinMode(RST, OUTPUT);
+  digitalWrite(RST, LOW);
+
+  // test at command and check network.
+  at_match(Serial, "AT\r", "OK", 5, 5, 5000);
+  network_check(Serial);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   bool got_coord = false;
+  // serial passthrough
   if (program == 0)
   {
     if (Serial.available())
@@ -421,6 +425,7 @@ void loop() {
       Serial.write((char) lteSerial.read());
     }
   }
+  // regular program
   else
   {
     //Serial.write("Run Program\n");
@@ -428,6 +433,8 @@ void loop() {
     String result, gps_result, gps_lat, gps_long;
     int start_pos, mid_pos, end_pos, slider_pos;
     delay(STD_TIMEOUT);
+
+    // Turn on GPS
     result = at_match(Serial, "AT+CGNSPWR=1\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
     if (result == "-1" || result.indexOf("ERROR") != -1)
     {
@@ -435,12 +442,16 @@ void loop() {
       delay(STD_TIMEOUT);
       result = at_match(Serial, "AT+CGNSPWR=1\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
     }
+
+    // Get the GPS coordinate.
     while (!got_coord)
     {
       delay(STD_TIMEOUT);
       gps_result = at_send_receive_wrapper(Serial, "AT+CGNSINF\r", STD_RETRY, STD_TIMEOUT);
+      // if GPS lock is found.
       if (gps_result.indexOf("+CGNSINF: 1,1") != -1)
       {
+        // grab comma positions to separate lat and long.
         slider_pos = 0;
         for (int i = 0; i < 5; i++)
         {
@@ -459,37 +470,37 @@ void loop() {
           }
         }
         got_coord = true;
-        std::cout << "\nstart " << start_pos << " mid " << mid_pos << " end " << end_pos << "\n";
+        //std::cout << "\nstart " << start_pos << " mid " << mid_pos << " end " << end_pos << "\n";
         gps_lat = gps_result.substring(start_pos, mid_pos);
         gps_long = gps_result.substring(mid_pos + 1, end_pos);
         Serial.print(gps_lat);
-        std::cout << "\nLAT " << gps_lat << " LONG " << gps_long << "\n";
+        Serial.print(gps_long);
       }
+      // catch if the GPS is turned off.
       else if (gps_result.indexOf("+CGNSINF: 0") != -1)
       {
         at_match(Serial, "AT+CGNSPWR=1\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
       }
+      else if (gps_result.indexOf("+CGNSINF: 1,0") != -1)
+      {
+        // do nothing
+      }
+      // device not functioning correctly
+      else
+      {
+        reboot(Serial);
+        result = at_match(Serial, "AT+CGNSPWR=1\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
+      }
     }
-    //result = at_match(Serial, "AT+CGNSPWR=0\r", "OK", STD_RETRY, STD_RETRY, STD_TIMEOUT);
     delay(STD_TIMEOUT);
     bool response_sent = false;
-    //while(!response_sent)
-    //{
-      String result_1 = send_to_firebase(Serial, gps_lat, gps_long);
-      //if (result.indexOf("SEND OK") != -1) //[0,0]
-      //{
-        response_sent = true;
-      //}
-    //}
+
+    String result_1 = send_to_firebase(Serial, gps_lat, gps_long);
+
+    response_sent = true;
+
     
     
     delay(1000);
   }
 }
-// at+csq - signal
-//gnss
-//at+cgnspwr=1
-//at+cgnsurc=1 - auto report
-//at+cgnsinf - manual report
-
-// send format {"k":"Z+c2=5_v","d":"\"latitude/val\":<lat>,\"longitude/val\":<long>","t":"_FIREBASE_"}
