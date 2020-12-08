@@ -57,27 +57,27 @@ public class Settings extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent;
                 if (i == 0){
-                    Toast.makeText(Settings.this, "Preferences", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Settings.this, "Preferences", Toast.LENGTH_SHORT).show();
                     intent = new Intent(view.getContext(), Preferences.class);
                     startActivity(intent);
                 }
                 if (i == 1){
-                    Toast.makeText(Settings.this, "Choose a Brand", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Settings.this, "Choose a Brand", Toast.LENGTH_SHORT).show();
                     intent = new Intent(view.getContext(), CarBrand.class);
                     startActivity(intent);
                 }
                 if (i == 2){
-                    Toast.makeText(Settings.this, "Help", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Settings.this, "Help", Toast.LENGTH_SHORT).show();
                     intent = new Intent(view.getContext(), Help.class);
                     startActivity(intent);
                 }
                 if (i == 3){
-                    Toast.makeText(Settings.this, "About", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Settings.this, "About", Toast.LENGTH_SHORT).show();
                     intent = new Intent(view.getContext(), About.class);
                     startActivity(intent);
                 }
                 if (i == 4){
-                    Toast.makeText(Settings.this, "Contact", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Settings.this, "Contact", Toast.LENGTH_SHORT).show();
                     intent = new Intent(view.getContext(), Contact.class);
                     startActivity(intent);
                 }
