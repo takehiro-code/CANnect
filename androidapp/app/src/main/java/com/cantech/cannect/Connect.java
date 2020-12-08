@@ -28,6 +28,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -277,10 +280,24 @@ public class Connect extends AppCompatActivity {
 
     private void listPairedDevices(View view){
         mPairedDevices = mBTAdapter.getBondedDevices();
+        List<String> arrayList = new ArrayList<>(); // this will be your arraylist
+
         if(mBTAdapter.isEnabled()) {
             // put it's one to the adapter
-            for (BluetoothDevice device : mPairedDevices)
-                mBTArrayAdapter.add(device.getName() + "\n" + device.getAddress());
+            for (BluetoothDevice device : mPairedDevices) {
+                //mBTArrayAdapter.add(device.getName() + "\n" + device.getAddress()); // this will not make items unique
+                arrayList.add(device.getName() + "\n" + device.getAddress()); // instead use arrayList
+            }
+
+            //following operation to make mBTArrayAdapter unique
+            LinkedHashSet<String> linkedHashSet = new LinkedHashSet<>();
+            linkedHashSet.addAll(arrayList);
+            arrayList.clear();
+            arrayList.addAll(linkedHashSet);
+            mBTArrayAdapter.clear();
+            for(String unique_device : arrayList) {
+                mBTArrayAdapter.add(unique_device);
+            }
 
             Toast.makeText(getApplicationContext(), "Show Paired Devices", Toast.LENGTH_SHORT).show();
         }
