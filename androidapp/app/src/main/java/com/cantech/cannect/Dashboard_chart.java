@@ -64,6 +64,8 @@ public class Dashboard_chart extends AppCompatActivity {
     boolean flag = false;
     boolean once = true; //for deleting the (0, 0) input.
 
+    boolean lightFlag;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //load saved theme state
@@ -72,9 +74,11 @@ public class Dashboard_chart extends AppCompatActivity {
         if(sharedPref.loadDarkModeState()==true){
             setTheme(R.style.darkTheme);
             spinnerTextColor = "#FFFFFF";
+            lightFlag = false;
         }else{
             setTheme(R.style.AppTheme);
             spinnerTextColor = "#000000";
+            lightFlag = true;
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_chart);
@@ -109,7 +113,7 @@ public class Dashboard_chart extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 toDisplay = adapterView.getItemAtPosition(i).toString();
-                reDesignChart(lineDataSet, toDisplay);
+                reDesignChart(lineDataSet, toDisplay, 0f);
                 ((TextView) view).setTextColor(Color.parseColor(spinnerTextColor));
             }
 
@@ -164,6 +168,12 @@ public class Dashboard_chart extends AppCompatActivity {
         mChart.getXAxis().setDrawGridLines(true);
         mChart.setDrawBorders(true);
 
+        if (lightFlag){
+            mChart.setBackgroundColor(Color.WHITE);
+            l.setTextColor(Color.BLACK);
+            xl.setTextColor(Color.BLACK);
+            leftAxis.setTextColor(Color.BLACK);
+        }
 
         Thread t = new Thread(){
             public void run(){
@@ -264,6 +274,7 @@ public class Dashboard_chart extends AppCompatActivity {
                     // mChart.setVisibleYRange(30, AxisDependency.LEFT);
                     // move to the latest entry
                     mChart.moveViewToX(lineData.getEntryCount());
+                    reDesignChart(lineDataSet, toDisplay, value);
                 }
 
             }else {
@@ -273,7 +284,7 @@ public class Dashboard_chart extends AppCompatActivity {
                 once = true;
                 lineDataSet = new LineDataSet(data, toDisplay);
                 data.add(new Entry(lineDataSet.getEntryCount(), value));
-                reDesignChart(lineDataSet, toDisplay);
+                reDesignChart(lineDataSet, toDisplay, value);
                 lineData.clearValues();
                 lineData.addDataSet(lineDataSet);
                 mChart.setData(lineData);
@@ -292,82 +303,109 @@ public class Dashboard_chart extends AppCompatActivity {
         }
     };
 
-    protected  void reDesignChart(LineDataSet toChange, String str){
+    protected  void reDesignChart(LineDataSet toChange, String str, float value){
         toChange.setAxisDependency(YAxis.AxisDependency.LEFT);
         toChange.setLineWidth(1f);
         toChange.setHighlightEnabled(false);
         toChange.setDrawValues(false);
         toChange.setDrawCircles(false);
+        float axisMax;
+        float axisMin;
+
         switch (str){
             case "ENGINE COOLANT TEMP":
-                leftAxis.setAxisMaximum(100f);
-                leftAxis.setAxisMinimum(-40f);
+                axisMax = value + 50f;
+                axisMin = value - 50f;
+                leftAxis.setAxisMaximum(axisMax);
+                leftAxis.setAxisMinimum(axisMin);
                 lineDataSet.setColor(getResources().getColor(R.color.debug_red));
                 lineDataSet.notifyDataSetChanged();
                 BTPIDs = "05 ";
                 break;
             case "VEHICLE SPEED":
-                leftAxis.setAxisMaximum(255f);
-                leftAxis.setAxisMinimum(0f);
+                axisMax = value + 100f;
+                axisMin = 0f;
+                leftAxis.setAxisMaximum(axisMax);
+                leftAxis.setAxisMinimum(axisMin);
                 lineDataSet.setColor(getResources().getColor(R.color.debug_blue));
                 lineDataSet.notifyDataSetChanged();
                 BTPIDs = "0D ";
                 break;
             case "ENGINE RPM":
-                leftAxis.setAxisMaximum(10000f);
-                leftAxis.setAxisMinimum(0f);
+                axisMax = value + 5000f;
+                axisMin = 0f;
+                leftAxis.setAxisMaximum(axisMax);
+                leftAxis.setAxisMinimum(axisMin);
                 lineDataSet.setColor(getResources().getColor(R.color.debug_green));
                 lineDataSet.notifyDataSetChanged();
                 BTPIDs = "0C ";
                 break;
 
             case "MAF SENSOR":
-                leftAxis.setAxisMinimum(0f);
-                leftAxis.setAxisMaximum(100f);
-                lineDataSet.setColor(getResources().getColor(R.color.LightCyan));
+                axisMax = value + 50f;
+                axisMin = 0f;
+                leftAxis.setAxisMaximum(axisMax);
+                leftAxis.setAxisMinimum(axisMin);
+                lineDataSet.setColor(getResources().getColor(R.color.Cyan));
                 lineDataSet.notifyDataSetChanged();
                 BTPIDs = "10 ";
                 break;
             case "ENGINE OIL TEMPERATURE":
-                leftAxis.setAxisMinimum(-50f);
-                leftAxis.setAxisMaximum(210f);
+                axisMax = value + 50f;
+                axisMin = value - 50f;
+                leftAxis.setAxisMaximum(axisMax);
+                leftAxis.setAxisMinimum(axisMin);
                 BTPIDs = "5C ";
                 break;
             case "INTAKE AIR TEMPERATURE":
-                leftAxis.setAxisMinimum(-50f);
-                leftAxis.setAxisMaximum(100f);
+                axisMax = value + 50f;
+                axisMin = value - 50f;
+                leftAxis.setAxisMaximum(axisMax);
+                leftAxis.setAxisMinimum(axisMin);
                 BTPIDs = "0F ";
                 break;
             case "THROTTLE POSITION":
-                leftAxis.setAxisMinimum(0f);
-                leftAxis.setAxisMaximum(100f);
+                axisMax = value + 50f;
+                axisMin = 0f;
+                leftAxis.setAxisMaximum(axisMax);
+                leftAxis.setAxisMinimum(axisMin);
                 BTPIDs = "11 ";
                 break;
             case "ABSOLUTE ENGINE LOAD":
-                leftAxis.setAxisMinimum(0f);
-                leftAxis.setAxisMaximum(100f);
+                axisMax = value + 50f;
+                axisMin = 0f;
+                leftAxis.setAxisMaximum(axisMax);
+                leftAxis.setAxisMinimum(axisMin);
                 BTPIDs = "43 ";
                 break;
             case "CALCULATED ENGINE LOAD":
-                leftAxis.setAxisMinimum(0f);
-                leftAxis.setAxisMaximum(100f);
+                axisMax = value + 50f;
+                axisMin = 0f;
+                leftAxis.setAxisMaximum(axisMax);
+                leftAxis.setAxisMinimum(axisMin);
                 BTPIDs = "04 ";
                 break;
             case "DEMAND ENGINE TORQUE":
-                leftAxis.setAxisMinimum(-125f);
-                leftAxis.setAxisMaximum(130f);
+                axisMax = value + 100f;
+                axisMin = value - 100f;
+                leftAxis.setAxisMaximum(axisMax);
+                leftAxis.setAxisMinimum(axisMin);
                 lineDataSet.setColor(getResources().getColor(R.color.Orchid));
                 BTPIDs = "61 ";
                 break;
             case "FUEL PRESSURE":
-                leftAxis.setAxisMaximum(765f);
-                leftAxis.setAxisMinimum(0f);
-                lineDataSet.setColor(getResources().getColor(R.color.AntiqueWhite));
+                axisMax = value + 500;
+                axisMin = 0f;
+                leftAxis.setAxisMaximum(axisMax);
+                leftAxis.setAxisMinimum(axisMin);
+                lineDataSet.setColor(getResources().getColor(R.color.MediumAquamarine));
                 BTPIDs = "0A ";
                 break;
             case "ACTUAL ENGINE TORQUE":
-                leftAxis.setAxisMinimum(-125f);
-                leftAxis.setAxisMaximum(130f);
+                axisMax = value + 100;
+                axisMin = value - 100f;
+                leftAxis.setAxisMaximum(axisMax);
+                leftAxis.setAxisMinimum(axisMin);
                 lineDataSet.setColor(getResources().getColor(R.color.debug_green));
                 BTPIDs = "62 ";
                 break;
