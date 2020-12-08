@@ -184,7 +184,7 @@ public class Dashboard extends AppCompatActivity {
                         Log.d("table", BTPIDs.get(finalI));
                         LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
                         try {
-                            Thread.sleep(1500);
+                            Thread.sleep(1000);
                         } catch (InterruptedException e) {
                             // TODO Auto-generated catch block
                             e.printStackTrace();
@@ -387,7 +387,9 @@ public class Dashboard extends AppCompatActivity {
                 case "6DOF":
                     toExport = 1;
                     String[] data = parsed[1].split(",");
-                    newData = new Data("Acceleration-x",data[0]);
+                    try {
+                        newData = new Data("Acceleration-x", data[0]);
+                    }catch(Exception e) {break; }
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
                         if (pid.equals("Acceleration-x")){
@@ -395,7 +397,9 @@ public class Dashboard extends AppCompatActivity {
                             break;
                         }
                     }
-                    newData = new Data("Acceleration-y",data[1]);
+                    try {
+                        newData = new Data("Acceleration-y", data[1]);
+                    }catch(Exception e) {break; }
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
                         if (pid.equals("Acceleration-y")){
@@ -403,7 +407,9 @@ public class Dashboard extends AppCompatActivity {
                             break;
                         }
                     }
-                    newData = new Data("Acceleration-z",data[2]);
+                    try {
+                        newData = new Data("Acceleration-z", data[2]);
+                    }catch(Exception e) {break; }
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
                         if (pid.equals("Acceleration-z")){
@@ -412,7 +418,9 @@ public class Dashboard extends AppCompatActivity {
                         }
                     }
                     //gyro
-                    newData = new Data("Gyroscope-x",data[3]);
+                    try{
+                        newData = new Data("Gyroscope-x",data[3]);
+                    }catch(Exception e) { break;}
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
                         if (pid.equals("Gyroscope-x")){
@@ -420,7 +428,9 @@ public class Dashboard extends AppCompatActivity {
                             break;
                         }
                     }
-                    newData = new Data("Gyroscope-y",data[4]);
+                    try{
+                        newData = new Data("Gyroscope-y",data[4]);
+                    }catch(Exception e) {break; }
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
                         if (pid.equals("Gyroscope-y")){
@@ -428,7 +438,9 @@ public class Dashboard extends AppCompatActivity {
                             break;
                         }
                     }
-                    newData = new Data("Gyroscope-z",data[5]);
+                    try{
+                        newData = new Data("Gyroscope-z",data[5]);
+                    }catch(Exception e) { break;}
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
                         if (pid.equals("Gyroscope-z")){
@@ -437,7 +449,9 @@ public class Dashboard extends AppCompatActivity {
                         }
                     }
                     //temp
-                    newData = new Data("Temperature",data[6]);
+                    try {
+                        newData = new Data("Temperature", data[6]);
+                    }catch(Exception e) {break; }
                     for (int i=0;i<dataArrayList.size();i++){
                         String pid = dataArrayList.get(i).getPid();
                         if (pid.equals("Temperature")){

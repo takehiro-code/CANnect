@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // 22 ISO 9141 - 2
         // 11 J1850 PWM
         // 12 J1850 VPW
-        protocolList.addAll(Arrays.asList("33" , "34", "35", "36", "11", "22")); // "12", "21", "23", "24", "25"
+        protocolList.addAll(Arrays.asList("33" , "34", "35",  "36",  "21", "23", "24", "25", "22")); // "12", "11",
         protocolstatus = findViewById(R.id.protocol_text);
         protocolstatus.setText(protocol);
         ActionBar actionBar = getSupportActionBar();
@@ -115,15 +115,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
                     Log.d("main", sendingMessageIntent.getExtras().toString());
                     i++;
-                    if(i == protocolList.size()){
-                        break;
-                    }
                     try {
                         Thread.sleep(100);
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
+                    if(i == protocolList.size()){
+                        break;
+                    }
+
                 }
                 Log.d("main", "thread is existed");
             }

@@ -178,7 +178,7 @@ public class Dashboard_chart extends AppCompatActivity {
                     LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
                     Log.d("chart", BTPIDs);
                     try {
-                        Thread.sleep(1500);
+                        Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
@@ -236,8 +236,7 @@ public class Dashboard_chart extends AppCompatActivity {
 
             float value;
             try {
-                if (!parsed[1].equals("UNDEFINED")) {
-                    value = Float.parseFloat(parsed[1]);
+                if (!parsed[1].equals("UNDEFINED")) { value = Float.parseFloat(parsed[1]);
 
                 } else {
                     System.out.println("UNDEFINED string received ...");
@@ -357,16 +356,19 @@ public class Dashboard_chart extends AppCompatActivity {
             case "DEMAND ENGINE TORQUE":
                 leftAxis.setAxisMinimum(-125f);
                 leftAxis.setAxisMaximum(130f);
+                lineDataSet.setColor(getResources().getColor(R.color.Orchid));
                 BTPIDs = "61 ";
                 break;
             case "FUEL PRESSURE":
                 leftAxis.setAxisMaximum(765f);
                 leftAxis.setAxisMinimum(0f);
+                lineDataSet.setColor(getResources().getColor(R.color.AntiqueWhite));
                 BTPIDs = "0A ";
                 break;
             case "ACTUAL ENGINE TORQUE":
                 leftAxis.setAxisMinimum(-125f);
                 leftAxis.setAxisMaximum(130f);
+                lineDataSet.setColor(getResources().getColor(R.color.debug_green));
                 BTPIDs = "62 ";
                 break;
             default:
