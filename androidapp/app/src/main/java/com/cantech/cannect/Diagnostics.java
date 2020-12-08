@@ -32,13 +32,12 @@ import java.util.List;
 public class Diagnostics extends AppCompatActivity {
     SharedPref sharedPref;
     DataBase dataBase;
-    String path;
     final Context context = this;
     private static String DBName = "data.db";
     ListView dtclv;
-    int counter = 0;
     SQLiteDatabase sqLiteDatabase;
     DTCArrayAdapter arrayAdapterDTC;
+    String dtc = "";
     ArrayList<String> codes = new ArrayList<>();
     ArrayList<String> arrayListDTC;
     boolean noData = false;
@@ -49,9 +48,9 @@ public class Diagnostics extends AppCompatActivity {
         //load saved theme state
         sharedPref = new SharedPref(this);
         //set theme
-        if(sharedPref.loadDarkModeState()==true){
+        if (sharedPref.loadDarkModeState() == true) {
             setTheme(R.style.darkTheme);
-        }else{
+        } else {
             setTheme(R.style.AppTheme);
         }
         super.onCreate(savedInstanceState);
@@ -63,9 +62,9 @@ public class Diagnostics extends AppCompatActivity {
         dtclv = findViewById(R.id.lvDiagnostics);
         dataBase = new DataBase(context);
 
-        try{
+        try {
             dataBase.creatingDB();
-        }catch (IOException e){
+        } catch (IOException e) {
             throw new Error("Database not created.");
         }
 
@@ -74,10 +73,8 @@ public class Diagnostics extends AppCompatActivity {
         arrayListDTC = new ArrayList<>();
         arrayAdapterDTC = new DTCArrayAdapter(this, R.layout.adapter_view_dtc, arrayListDTC);
         dtclv.setAdapter(arrayAdapterDTC);
-        codes.add("P1234");
         sqLiteDatabase = openOrCreateDatabase("data.db", SQLiteDatabase.CREATE_IF_NECESSARY, null);
 
-        displayDTC();
         arrayAdapterDTC.notifyDataSetChanged();
         Intent sendingMessageIntent = new Intent("sendingMessage");
         sendingMessageIntent.putExtra("theMessage", "03 >");
@@ -89,65 +86,52 @@ public class Diagnostics extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String text = intent.getStringExtra("theMessage");
-            Log.d("Diagnositc", text);
+            noData = false;
             text = text.substring(0, 5);  //getting rid off 255255;
-            Log.d("Diagnositc", text);
-            noData = true;
-            if(!text.equals("P0000")){
-                codes.add(text);
-                displayDTC();
-                arrayAdapterDTC.notifyDataSetChanged();
+            if (text.charAt(0) == 'P' || text.charAt(0) == 'C' || text.charAt(0) == 'B' || text.charAt(0) == 'U') {
+                Log.d("Received", text);
+                if (!text.equals("P0000")) {
+                    dtc = text;
+                    displayDTC();
+                    arrayAdapterDTC.notifyDataSetChanged();
+                }
             }
-
-
-
+            dtc = "";
         }
     };
-
 
     @Override
     public void onPause() {
         super.onPause();
         LocalBroadcastManager.getInstance(context).unregisterReceiver(mReceiver);
+        Intent sendingMessageIntent = new Intent("sendingMessage");
+        sendingMessageIntent.putExtra("theMessage", "03 >");
+        LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        LocalBroadcastManager.getInstance(context).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
+         LocalBroadcastManager.getInstance(context).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
 
     public void displayDTC() {
-        Log.d("Diagnositc", "indisplay");
-        if(codes.isEmpty() && noData){
-            codes.add("P0000");
-        }
-        for (String s : codes) {
-            String[] str = {s};
-            Log.d("Diagnositc", Arrays.toString(str));
-            String query="select * from DTCdata_Sheet1 where DTC == ?";
-            Cursor cursor = sqLiteDatabase.rawQuery(query, str);
-            if (cursor != null) {
-                cursor.moveToFirst();
-                while (!cursor.isAfterLast()) {
-                    String temp = "";
-                    String field1 = cursor.getString(0);
-                    String field2 = cursor.getString(1);
-                    temp = temp + "\nDTC:\t" + field1 + "\nDescription:\t" + field2;
-                    //            TextView textView = new TextView(this);
-                    //            textView.setText(temp);
-                    //            textView.setTextColor(getResources().getColor(R.color.Turquoise));
-                    //            textView.setPadding(5, 5, 5, 5);
-                    //            linearLayout.addView(textView);
-                    arrayListDTC.add(temp);
-
-                    cursor.moveToNext();
-                }
-                cursor.close();
+        String[] str = {dtc};
+        String query = "select * from DTCdata_Sheet1 where DTC == ?";
+        Cursor cursor = sqLiteDatabase.rawQuery(query, str);
+        if (cursor != null) {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                String temp = "";
+                String field1 = cursor.getString(0);
+                String field2 = cursor.getString(1);
+                temp = temp + "\nDTC:\t" + field1 + "\nDescription:\t" + field2;
+                arrayListDTC.add(temp);
+                cursor.moveToNext();
             }
+            cursor.close();
         }
-        codes.clear();
-
     }
+
 }

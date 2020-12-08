@@ -9,14 +9,14 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="fill"
+        android:padding="5dp"
         android:layout_margin="8dp">
 
     <TextView
-        android:gravity="start"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="match_parent"
         android:id="@+id/tvDiagnostics"
-        android:textColor="?attr/textcolor" />
+        android:textAlignment="center"
+        android:textColor="@color/Turquoise" />
     </androidx.cardview.widget.CardView>
 </LinearLayout>

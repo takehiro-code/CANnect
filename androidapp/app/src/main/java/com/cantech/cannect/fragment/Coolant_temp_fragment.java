@@ -45,12 +45,6 @@ public class Coolant_temp_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public interface FromCoolantTempGauge{
-        void sendCoolantTempPID(String string);
-    }
-
-    FromCoolantTempGauge mCallback;
-
     public Coolant_temp_fragment() {
         // Required empty public constructor
     }
@@ -77,11 +71,6 @@ public class Coolant_temp_fragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         mContext = context;
-        if(context instanceof FromCoolantTempGauge){
-            mCallback = (FromCoolantTempGauge) context;
-        }else{
-            throw new ClassCastException(context.toString() + "must implement sendCoolantTempPID");
-        }
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
@@ -144,7 +133,6 @@ public class Coolant_temp_fragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mContext = null;
-        mCallback = null;
     }
 
     @Override
@@ -167,7 +155,6 @@ public class Coolant_temp_fragment extends Fragment {
                         coolantTemp.speedTo(Float.parseFloat(parsed[1]));
                         break;
                     default:
-                        mCallback.sendCoolantTempPID("COOLANTTEMP_PID");
                         break;
                 }
             }catch (Exception e){

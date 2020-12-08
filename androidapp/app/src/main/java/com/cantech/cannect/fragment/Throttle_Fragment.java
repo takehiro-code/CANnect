@@ -42,11 +42,6 @@ public class Throttle_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public interface FromThrottleGauge{
-        void sendThrottlePID(String string);
-    }
-
-    FromThrottleGauge mCallback;
     public Throttle_Fragment() {
         // Required empty public constructor
     }
@@ -73,12 +68,6 @@ public class Throttle_Fragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(mContext);
         mContext = context;
-        if (context instanceof FromThrottleGauge) {
-            mCallback = (FromThrottleGauge) context;
-        } else {
-            throw new ClassCastException(context.toString() + "must implement sendThrottlePID");
-
-        }
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
@@ -135,7 +124,6 @@ public class Throttle_Fragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mContext = null;
-        mCallback = null;
     }
 
     @Override
@@ -157,7 +145,6 @@ public class Throttle_Fragment extends Fragment {
                         throttle.setText(parsed[1]);
                         break;
                     default:
-                        mCallback.sendThrottlePID("THROTTLE_PID");
                         break;
                 }
             }catch (Exception e){

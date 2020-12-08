@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView BTstatus;
     private TextView protocolstatus;
 
-    static String protocol = "finding protocol...";
+    static String protocol = "Connect to find Protocol";
     //create objects for cards
     private CardView mapCard, dashboardCard, diagnosticsCard, settingsCard;
     // object for bottom bar (connect)
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<String> protocolList = new ArrayList<>();
     static int flag = 0;
     boolean found = false;
+    boolean beenFound = false;
 
 
     @Override
@@ -72,9 +73,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // 22 ISO 9141 - 2
         // 11 J1850 PWM
         // 12 J1850 VPW
-        protocolList.addAll(Arrays.asList("33" , "34", "35", "36", "11", "12", "21", "23", "24", "25", "22"));
+        protocolList.addAll(Arrays.asList("33" , "34", "35",  "36",  "21", "23", "24", "25", "22")); // "12", "11",
         protocolstatus = findViewById(R.id.protocol_text);
-        protocolstatus.setText("Connect to find Protocol");
+        protocolstatus.setText(protocol);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
@@ -104,7 +105,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void runOnce(){
         Log.d("main", "runOnce");
         protocolstatus.setText( "finding protocol...");
-        protocolstatus.setTextColor(Color.rgb(200,0,0));
         final StringBuilder messages;
         Thread t = new Thread(){
             public void run(){
@@ -115,15 +115,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(sendingMessageIntent);
                     Log.d("main", sendingMessageIntent.getExtras().toString());
                     i++;
-                    if(i == protocolList.size()){
-                        break;
-                    }
                     try {
                         Thread.sleep(100);
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
+                    if(i == protocolList.size()){
+                        break;
+                    }
+
                 }
                 Log.d("main", "thread is existed");
             }
@@ -165,22 +166,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Log.d("inside receiver", "receiver");
             String text = intent.getStringExtra("theMessage");
-            if(text != null ){
+            if(text != null || !found){
                 text = text.substring(0, text.length()-6);
                 Log.d("inside receiver", text);
                 if(text.equals("NOT FOUND!")){
-                    protocolstatus.setText("Can't find the correct Protocol!");
+                    protocol = "Can't find the correct Protocol!";
+                    protocolstatus.setText(protocol);
                     protocolstatus.setTextColor(Color.rgb(200,0,0));
-                }else{
-                    found = true;
+                }else if(text.equals("Protocol Found!")){
+                    protocol = "Protocol has been found!";
+                    protocolstatus.setText(protocol);
+                    protocolstatus.setTextColor(Color.rgb(0,0,200));
                 }
-            }
-            if(found) {
-                protocolstatus.setText("Protocol has been found!");
-                protocolstatus.setTextColor(Color.rgb(0,0,200));
-
+                found = true;
             }
 
 
@@ -284,12 +283,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onResume();
         connectionStatusUpdate();
         LocalBroadcastManager.getInstance(this).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
-        Log.d("main1", protocol);
         if(flag == 1){
+            protocol = "Finding the correct protocol...";
+            protocolstatus.setText(protocol);
             runOnce();
             flag++;
             //protocolstatus.setText(protocol);
+        }else{
+            protocolstatus.setText(protocol);
+            if(protocol.equals("Can't find the correct Protocol!")){
+                protocolstatus.setTextColor(Color.rgb(200,0,0));
+            }else if(protocol.equals("Protocol has been found!")) {
+                protocolstatus.setTextColor(Color.rgb(0, 0, 200));
+            }
         }
+
+
 
 
     }

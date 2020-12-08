@@ -44,12 +44,6 @@ public class Air_temp_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    //interface to dashboard_gauge activity
-    public interface FromAirTempGauge{
-        void sendAirTempPID(String string);
-    }
-
-    FromAirTempGauge mCallback;
 
     public Air_temp_fragment() {
         // Required empty public constructor
@@ -77,11 +71,6 @@ public class Air_temp_fragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(mContext);
         mContext = context;
-        if(context instanceof FromAirTempGauge){
-            mCallback = (FromAirTempGauge) context;
-        }else{
-            throw new ClassCastException(context.toString() + "must implement sendAirTempPID");
-        }
         LocalBroadcastManager.getInstance(mContext).registerReceiver(mReceiver, new IntentFilter("incomingMessage"));
     }
 
@@ -137,7 +126,6 @@ public class Air_temp_fragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mContext = null;
-        mCallback = null;
     }
 
     @Override
@@ -160,7 +148,6 @@ public class Air_temp_fragment extends Fragment {
                         airtemp.setText(parsed[1]);
                         break;
                     default:
-                        mCallback.sendAirTempPID("AIRTEMP_PID");
                         break;
                 }
             }catch (Exception e){
