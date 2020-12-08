@@ -1,0 +1,10 @@
+Credits
+This application uses Open Source components. You can find the source code of their open source projects along with license information below. We acknowledge and are grateful to these developers for their contributions to this project.
+
+Project: MPAndroidChart https://github.com/PhilJay/MPAndroidChart
+Copyright 2020 Philipp Jahoda
+License (Apache-2.0) https://github.com/PhilJay/MPAndroidChart/blob/master/LICENSE
+
+Project: SpeedView https://github.com/anastr/SpeedView
+Copyright 2016 Anas Altair
+License ((Apache-2.0)) https://github.com/anastr/SpeedView/blob/master/LICENSE
