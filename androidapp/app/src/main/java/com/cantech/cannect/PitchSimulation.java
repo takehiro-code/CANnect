@@ -10,6 +10,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
@@ -19,6 +20,8 @@ public class PitchSimulation extends AppCompatActivity {
     DataParsing dataParsing;
     ImageView mpitch_iv;
     ImageView mroll_iv;
+    TextView mpitch_text;
+    TextView mroll_text;
     String[] data_S = {"", "", ""};//acc-x,acc-y,acc-z respectively
     double[] data_D = {0.0, 0.0, 0.0};//acc-x,acc-y,acc-z respectively
     double pitch = 0.0;
@@ -33,7 +36,10 @@ public class PitchSimulation extends AppCompatActivity {
         setContentView(R.layout.activity_pitch_simulation);
         mpitch_iv = findViewById(R.id.pitch_iv);
         mroll_iv = findViewById(R.id.roll_iv);
-
+        mpitch_text = findViewById(R.id.pitch_text);
+        mpitch_text.setText("0°");
+        mroll_text = findViewById(R.id.roll_text);
+        mpitch_text.setText("0°");
         getSupportActionBar().setTitle("Pitch&Roll");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -57,9 +63,9 @@ public class PitchSimulation extends AppCompatActivity {
                     roll = Math.atan(data_D[1] / sqrt(pow(data_D[0], 2) + pow(data_D[2], 2)));
                     //convert radians into degrees
                     pitch = pitch * (180.0 / 3.14);
-                    newPitchAngle = (int)pitch;
+                    newPitchAngle = currentPitchAngle+(int)pitch;
                     roll = roll * (180.0 / 3.14);
-                    newRollAngle = (int)(roll);
+                    newRollAngle = currentRollAngle+(int)(roll);
                     String pitch_S = String.valueOf(pitch);
                     String roll_S = String.valueOf(roll);
                     //rotate pitch image
@@ -71,6 +77,8 @@ public class PitchSimulation extends AppCompatActivity {
                     rotateAnimation2.setFillAfter(true);
                     rotateAnimation2.setDuration(100);
 
+                    mpitch_text.setText(newPitchAngle+"°");
+                    mroll_text.setText(newRollAngle+"°");
                     mpitch_iv.startAnimation(rotateAnimation);
                     mroll_iv.startAnimation(rotateAnimation2);
                     currentPitchAngle = newPitchAngle;

@@ -101,10 +101,6 @@ public class Dashboard_chart extends AppCompatActivity {
         mChart.setData(lineData);
         previousPID = toDisplay;
 
-
-
-
-
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.PIDs));
         spinner.setAdapter(adapter);
@@ -212,6 +208,10 @@ public class Dashboard_chart extends AppCompatActivity {
                         return true;
                     case R.id.DOF:
                         startActivity(new Intent(getApplicationContext(),FrictionCircle.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.PitchSimulate:
+                        startActivity(new Intent(getApplicationContext(),PitchSimulation.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

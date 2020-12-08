@@ -180,6 +180,10 @@ public class Dashboard_gauge extends AppCompatActivity implements Speedgauge_fra
                         startActivity(new Intent(getApplicationContext(),FrictionCircle.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.PitchSimulate:
+                        startActivity(new Intent(getApplicationContext(),PitchSimulation.class));
+                        overridePendingTransition(0,0);
+                        return true;
                 }
                 return false;
             }

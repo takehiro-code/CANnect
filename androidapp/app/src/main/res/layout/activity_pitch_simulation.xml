@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,9 +10,9 @@
         android:id="@+id/compass_iv"
         android:layout_width="200sp"
         android:layout_height="200sp"
-        android:layout_marginStart="100sp"
+        android:gravity="center_vertical"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="50sp"
-        android:gravity="center_horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/compass" />
@@ -21,18 +21,30 @@
         android:id="@+id/pitch_iv"
         android:layout_width="200sp"
         android:layout_height="200sp"
-        android:layout_marginStart="100sp"
-        android:layout_marginTop="50sp"
         android:gravity="center_vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pitch" />
 
+    <TextView
+        android:id="@+id/pitch_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pitch_iv"
+        android:layout_alignRight="@+id/pitch_iv"
+        android:layout_marginTop="150sp"
+        android:text="0°"
+        android:textAlignment="center"
+        android:textColor="@color/White"
+        android:textSize="24sp" />
     <ImageView
         android:id="@+id/compass_iv2"
         android:layout_width="200sp"
         android:layout_height="200sp"
-        android:layout_marginStart="100sp"
+        android:gravity="center_vertical"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="300sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -42,15 +54,25 @@
         android:id="@+id/roll_iv"
         android:layout_width="200sp"
         android:layout_height="200sp"
-        android:layout_marginStart="100sp"
+        android:gravity="center_vertical"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="300sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/roll" />
 
+    <TextView
+        android:id="@+id/roll_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/roll_iv"
+        android:layout_alignRight="@+id/roll_iv"
+        android:layout_marginTop="400sp"
+        android:text="0°"
+        android:textAlignment="center"
+        android:textColor="@color/White"
+        android:textSize="24sp"
+        android:fontFamily="Berlin Sans FB Demi"/>
 
 
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

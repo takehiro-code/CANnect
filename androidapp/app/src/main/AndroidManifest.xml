@@ -23,7 +23,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PitchSimulation"></activity>
+        <activity android:name=".PitchSimulation"
+            android:parentActivityName=".Dashboard"></activity>
         <activity
             android:name=".CarBrand"
             android:parentActivityName=".Settings" />
@@ -49,7 +50,7 @@
 
         <activity
             android:name=".FrictionCircle"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".Dashboard" />
         <activity
             android:name=".Dashboard_gauge"
             android:parentActivityName=".MainActivity" />
