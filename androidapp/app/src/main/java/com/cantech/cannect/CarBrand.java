@@ -10,8 +10,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,12 +36,14 @@ public class CarBrand extends AppCompatActivity {
     Set<String> checkedPids = new HashSet<String>();
     Set<String> checkMarks = new HashSet<String>();
     SharedPref sharedPref;
+    String textColor;
     ListView listView;
     String mTitle[] ={"Auto", "SAE J1850 VPW", "SAE J1850 PWM","ISO 9141-2","ISO 14230 KWP2000","ISO 15765-4/SAE J2480 (CAN)"};
     String mDescription[] ={"Standard PIDs", "This protocol is usually used by Ford Motor Company", "This protocol is mostly used by General Motors","Asian, Chrysler, and European cars","Asian Cars","vehicles made after 2008"};
     private AlertDialog.Builder dialogBuilder;
     private  AlertDialog dialog;
     int pid_counter = 0;
+    Boolean darkFlag = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +52,12 @@ public class CarBrand extends AppCompatActivity {
         //set theme
         if(sharedPref.loadDarkModeState()==true){
             setTheme(R.style.darkTheme);
+            textColor = "#FFFFFF";
+            darkFlag = true;
         }else{
             setTheme(R.style.AppTheme);
+            textColor = "#000000";
+            darkFlag = false;
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_brand);
@@ -116,13 +124,17 @@ public class CarBrand extends AppCompatActivity {
             TextView msubText = row.findViewById(R.id.subText);
 
             mmainText.setText(rTitle[position]);
+            mmainText.setTextColor(Color.parseColor(textColor));
             msubText.setText(rDescription[position]);
             return row;
         }
     }
 
     public void createNewPidListDialog(int i){
-        dialogBuilder = new AlertDialog.Builder(this);
+        if(darkFlag)
+            dialogBuilder = new AlertDialog.Builder(this, R.style.AlertDialogDark);
+        else
+            dialogBuilder = new AlertDialog.Builder(this, R.style.AlertDialogLight);
         //final View PidListPopupView = getLayoutInflater().inflate(R.layout.pidslistpopup, null);
         //dialogBuilder.setView(PidListPopupView);
         dialogBuilder.setTitle("Choose PIDs");
