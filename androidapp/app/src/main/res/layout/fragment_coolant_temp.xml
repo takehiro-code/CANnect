@@ -31,12 +31,13 @@
             gauge:sv_textColor="@color/Turquoise"
             gauge:sv_tickNumber="3"
             gauge:sv_unit="°C"
+            gauge:sv_trembleDegree="0"
             gauge:sv_unitTextColor="@color/Turquoise" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Coolant Temp"
+            android:text="Coolant Temp (°C)"
             android:textColor="@color/Turquoise"
             android:textStyle="bold"
             android:textAlignment="center"/>

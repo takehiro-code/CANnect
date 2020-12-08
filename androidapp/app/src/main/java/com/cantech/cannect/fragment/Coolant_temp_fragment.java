@@ -103,7 +103,7 @@ public class Coolant_temp_fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        coolantTemp = (Speedometer) view.findViewById(R.id.coolantTempView);
+        coolantTemp = view.findViewById(R.id.coolantTempView);
         coolantTemp.clearSections();
         coolantTemp.addSections(
                 new Section(0f, 0.85f, Color.GRAY),
@@ -152,7 +152,7 @@ public class Coolant_temp_fragment extends Fragment {
                 switch (parsed[0]) {
                     case "ENGINE COOLANT TEMP":
                         //changing string to float.
-                        coolantTemp.speedTo(Float.parseFloat(parsed[1]));
+                        coolantTemp.speedTo(Float.parseFloat(parsed[1]), 1000);
                         break;
                     default:
                         break;
