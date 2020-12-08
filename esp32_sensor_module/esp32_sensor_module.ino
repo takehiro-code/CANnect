@@ -1,4 +1,4 @@
-/**
+b/**
    ESP32 Sensor Module
 
    ESP32 Datasheet: https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf
@@ -19,7 +19,7 @@
 /**
    Flags
 */
-#define DEMO // Comment this out for production
+//#define DEMO // Comment this out for production
 
 /**
    Libraries
@@ -118,14 +118,14 @@ esp_now_peer_info_t readerInfo;
 void setup() {
   Serial.begin(SERIAL_BAUD_RATE);
   Serial.println("Wait for user to be ready");
-  while (true) {
-
-    if (Serial.available() > 0) {
-      if (Serial.read() == 'G') {
-        break;
-      }
-    }
-  }
+//  while (true) {
+//
+//    if (Serial.available() > 0) {
+//      if (Serial.read() == 'G') {
+//        break;
+//      }
+//    }
+//  }
 
   imuSetup();
   wifiSetup();
@@ -422,5 +422,5 @@ void loop() {
     waitForConnectionToReader();
   }
 
-  delay(100);
+  delay(200);
 }
