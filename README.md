@@ -3,7 +3,7 @@
 Automotive diagnostic application developed as a part of 2020 capstone croject.
 
 ## System Overview
-<img src="./img/system_overview.png"  style="width:300px">
+<img src="https://github.com/takehiro-code/CANnect/blob/master/img/system_overview.PNG"  width="50%">
 
 ## Hardware
 
@@ -13,14 +13,14 @@ Developed with Java and XML.
 
 <div class="row">
   <div class="column">
-    <img src="./img/mainmenu.jpg" style="width:25%">
-    <img src="./img/dashboard_table.jpg" style="width:25%">
-    <img src="./img/dashboard_chart.jpg" style="width:25%">
+    <img src="https://github.com/takehiro-code/CANnect/blob/master/img/mainmenu.jpg" align="left" width="25%">
+    <img src="https://github.com/takehiro-code/CANnect/blob/master/img/dashboard_table.jpg" align="left" width="25%">
+    <img src="https://github.com/takehiro-code/CANnect/blob/master/img/dashboard_chart.jpg" align="left" width="25%">
   </div>
   <div class="column">
-    <img src="./img/dashboard_meter.jpg" style="width:25%">
-    <img src="./img/settings_menu.jpg" style="width:25%">
-    <img src="./img/map.jpg" style="width:25%">
+    <img src="https://github.com/takehiro-code/CANnect/blob/master/img/dashboard_meter.jpg" align="left" width="25%">
+    <img src="https://github.com/takehiro-code/CANnect/blob/master/img/settings_menu.jpg" align="left" width="25%">
+    <img src="https://github.com/takehiro-code/CANnect/blob/master/img/map.jpg" align="left" width="25%">
   </div>
 </div>
 
